@@ -256,7 +256,7 @@
             <div class="activity-item">Leo created Founders Hit List Portal — 27 parent contacts</div>
             <div class="activity-item">Scout completed Advisory Board research — 5 profiles</div>
             <div class="activity-item">Leo posted Upwork logo brief — $150-300 AUD</div>
-            <div class="activity-item">Moz pulled Meta Ads report — $174 spend, $3.06 blended CPBC</div>
+            <div class="activity-item">Moz pulled Meta Ads report — $174 spend, Meta Ads report</div>
             <div class="activity-item">Pulse synced HubSpot — 135 members, 362 leads MTD</div>
             <div class="activity-item">Leo built Mission Control V5 — real B&G data</div>
             <div class="activity-item">Leo set up tiered model stack — 70-80% token savings</div>
@@ -272,6 +272,17 @@
       <h2 class="section-title">Live Dashboard</h2>
       <p class="section-subtitle">Operational command centre. Data source: HubSpot + Stripe + Meta. Last sync: March 12, 2026.</p>
 
+      <!-- Global Time Period Toggle -->
+      <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center;flex-wrap:wrap;">
+        <button class="toggle time-sel active" data-period="day">Day</button>
+        <button class="toggle time-sel" data-period="week">Week</button>
+        <button class="toggle time-sel" data-period="month">Month</button>
+        <button class="toggle time-sel" data-period="custom">Custom</button>
+        <input type="date" id="customStart" style="display:none;background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px;font-size:0.85rem;" value="2026-03-01">
+        <input type="date" id="customEnd" style="display:none;background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px;font-size:0.85rem;" value="2026-03-12">
+        <span class="muted" id="periodLabel" style="margin-left:8px;font-size:0.85rem;">Thursday, 12 Mar 2026</span>
+      </div>
+
       <!-- Dashboard Sub-Tabs -->
       <div style="display:flex;gap:10px;margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:10px;flex-wrap:wrap;">
         <button class="toggle db-tab active" data-db="db-overview">Overview</button>
@@ -284,17 +295,6 @@
 
       <!-- ── OVERVIEW TAB ── -->
       <div class="db-panel active" id="db-overview">
-        <!-- Time Period Toggle -->
-        <div style="display:flex;gap:8px;margin-bottom:20px;align-items:center;flex-wrap:wrap;">
-          <button class="toggle time-sel active" data-period="day">Day</button>
-          <button class="toggle time-sel" data-period="week">Week</button>
-          <button class="toggle time-sel" data-period="month">Month</button>
-          <button class="toggle time-sel" data-period="custom">Custom</button>
-          <input type="date" id="customStart" style="display:none;background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px;font-size:0.85rem;" value="2026-03-01">
-          <input type="date" id="customEnd" style="display:none;background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px;font-size:0.85rem;" value="2026-03-12">
-          <span class="muted" id="periodLabel" style="margin-left:8px;font-size:0.85rem;">Thursday, 12 Mar 2026</span>
-        </div>
-
         <!-- Top Metric Cards -->
         <div class="grid cols-3" style="margin-bottom:20px;" id="overviewCards">
           <!-- Day view (default) -->
@@ -356,12 +356,6 @@
       <!-- ── DCs TAB ── -->
       <div class="db-panel" id="db-dcs" style="display:none;">
         <h3 class="section-title" style="font-size:1.2rem;margin-bottom:16px;">DC Rep Performance</h3>
-        <!-- Time Toggle -->
-        <div style="display:flex;gap:8px;margin-bottom:16px;">
-          <button class="toggle dc-time active" data-dct="dc-day">Day</button>
-          <button class="toggle dc-time" data-dct="dc-week">Week</button>
-          <button class="toggle dc-time" data-dct="dc-month">Month</button>
-        </div>
         <!-- Day Table -->
         <div id="dc-day" class="dc-view">
           <table class="table"><thead><tr><th>Rep</th><th>DCs</th><th>Closes</th><th>Close Rate</th><th>Pending W1s</th></tr></thead>
@@ -550,8 +544,8 @@
           </div>
           <div class="card metric">
             <div class="metric-label">Cost Per Booked Call</div>
-            <div class="metric-value" style="color:var(--gold);">$3.06</div>
-            <div class="muted">Blended CPBC (Mar 12)</div>
+            <div class="metric-value" style="color:var(--gold);">—</div>
+            <div class="muted">Needs Meta Ads API — ask Harry</div>
           </div>
         </div>
 
@@ -785,7 +779,7 @@
                 <td><span class="pill">Claude Sonnet 4</span></td>
                 <td><span class="status-dot" style="background:#27ae60;"></span>Active</td>
                 <td>Hook Tournament · Ad Performance · Creative Testing</td>
-                <td>CPBC $3.06 (bench $9.78)</td>
+                <td>CPBC — (bench $9.78)</td>
               </tr>
               <tr>
                 <td style="color:var(--cream);font-weight:600;">Pulse 📊</td>
@@ -1033,7 +1027,7 @@
         <div class="feed-entry">
           <div class="feed-meta"><span>Mar 13, 2026 — 3:00 PM</span><span>Moz 📈</span></div>
           <h4>Meta Ads Daily Report — Mar 13</h4>
-          <p class="muted">$174 spend · $3.06 blended CPBC · H14-B1 champion confirmed at $2.76/conv · Hook E2C emerging at $2.01/conv.</p>
+          <p class="muted">$174 spend · Meta Ads report · H14-B1 champion confirmed at $2.76/conv · Hook E2C emerging at $2.01/conv.</p>
           <div class="feed-details"><div>Impressions: 7,740 · Clicks: 468 · CTR: 6.05% · CPC: $0.37 · Booked calls: 57.</div></div>
           <button class="expand-btn">Expand</button>
         </div>
@@ -1137,12 +1131,12 @@
       });
     });
 
-    // Time period toggle (Overview)
+    // Global time period toggle — controls ALL sub-tabs
     const timeData = {
-      day:   { leads: '27', booked: '8', dcs: '6', close: '67%', w1: '5', agree: '3', lSub: 'From discovery & referrals', bSub: '30% conversion from leads', dSub: '2 onboarding, 2 follow-ups', cSub: '4/6 onboarding booked', wSub: 'Program activation on track', aSub: 'Strong conversion momentum', label: 'Thursday, 12 Mar 2026' },
-      week:  { leads: '158', booked: '35', dcs: '23', close: '70%', w1: '11', agree: '—', lSub: 'Sun 8 – Thu 12', bSub: '22% conversion from leads', dSub: '16 closes, 4 follow-ups', cSub: '16/23 onboarding booked', wSub: 'Weekly target met', aSub: 'Week data', label: 'Week: Sun 8 – Thu 12 Mar' },
-      month: { leads: '351', booked: '70', dcs: '47', close: '70%', w1: '18', agree: '—', lSub: 'Mar 1 – Mar 12', bSub: '20% conversion from leads', dSub: '33 closes, 14 other', cSub: '33/47 closed', wSub: '0 withdrawals MTD', aSub: 'Month data', label: 'Month: Mar 1 – 12, 2026' },
-      custom:{ leads: '—', booked: '—', dcs: '—', close: '—', w1: '—', agree: '—', lSub: 'Select date range', bSub: '—', dSub: '—', cSub: '—', wSub: '—', aSub: '—', label: 'Custom range' }
+      day:   { leads: '27', booked: '8', dcs: '6', close: '67%', w1: '5', agree: '3', lSub: 'From discovery & referrals', bSub: '30% conversion from leads', dSub: '2 onboarding, 2 follow-ups', cSub: '4/6 onboarding booked', wSub: 'Program activation on track', aSub: 'Strong conversion momentum', label: 'Thursday, 12 Mar 2026', dcView: 'dc-day' },
+      week:  { leads: '158', booked: '35', dcs: '23', close: '70%', w1: '11', agree: '—', lSub: 'Sun 8 – Thu 12', bSub: '22% conversion from leads', dSub: '16 closes, 4 follow-ups', cSub: '16/23 onboarding booked', wSub: 'Weekly target met', aSub: 'Week data', label: 'Week: Sun 8 – Thu 12 Mar', dcView: 'dc-week' },
+      month: { leads: '351', booked: '70', dcs: '47', close: '70%', w1: '18', agree: '—', lSub: 'Mar 1 – Mar 12', bSub: '20% conversion from leads', dSub: '33 closes, 14 other', cSub: '33/47 closed', wSub: '0 withdrawals MTD', aSub: 'Month data', label: 'Month: Mar 1 – 12, 2026', dcView: 'dc-month' },
+      custom:{ leads: '—', booked: '—', dcs: '—', close: '—', w1: '—', agree: '—', lSub: 'Select date range', bSub: '—', dSub: '—', cSub: '—', wSub: '—', aSub: '—', label: 'Custom range', dcView: 'dc-day' }
     };
     document.querySelectorAll('.time-sel').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1150,6 +1144,7 @@
         btn.classList.add('active');
         const p = btn.dataset.period;
         const d = timeData[p];
+        // Update Overview metrics
         document.getElementById('m-leads').textContent = d.leads;
         document.getElementById('m-booked').textContent = d.booked;
         document.getElementById('m-dcs').textContent = d.dcs;
@@ -1163,18 +1158,13 @@
         document.getElementById('m-w1-sub').textContent = d.wSub;
         document.getElementById('m-agree-sub').textContent = d.aSub;
         document.getElementById('periodLabel').textContent = d.label;
+        // Show/hide custom date inputs
         document.getElementById('customStart').style.display = p === 'custom' ? 'inline-block' : 'none';
         document.getElementById('customEnd').style.display = p === 'custom' ? 'inline-block' : 'none';
-      });
-    });
-
-    // DC time toggle
-    document.querySelectorAll('.dc-time').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.dc-time').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        // Switch DC rep tables
         document.querySelectorAll('.dc-view').forEach(v => v.style.display = 'none');
-        document.getElementById(btn.dataset.dct).style.display = 'block';
+        const dcTarget = document.getElementById(d.dcView);
+        if (dcTarget) dcTarget.style.display = 'block';
       });
     });
 
