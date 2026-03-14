@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder's Advisory Board — Blues & Greens AI OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--sage:#6B8F5E;--deep-green:#4A6B3E;--forest:#3A5A30;
+--charcoal:#2E2E2E;--cream:#F2F0EB;--warm-grey:#8C8C8C;
+--stone:#B0B0A8;--light-grey:#D5D1C9;
+--bg:#1a1a1a;--surface:#242424;--surface2:#2a2a2a;
+--hormozi:#D4A843;--bartlett:#4A90D9;--musk:#9CA3AF;--carrgregg:#E07B39;--brown:#D45B7A;
+--transition:300ms ease-out;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--cream);min-height:100vh;overflow-x:hidden;position:relative}
+h1,h2,h3,h4{font-family:'Playfair Display',serif}
+
+/* Particles */
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+
+/* Header */
+.header{position:relative;z-index:10;text-align:center;padding:2rem 1.5rem 1rem;border-bottom:1px solid rgba(107,143,94,.15)}
+.header .back{position:absolute;left:1.5rem;top:50%;transform:translateY(-50%);color:var(--sage);text-decoration:none;font-size:.9rem;opacity:.7;transition:var(--transition)}
+.header .back:hover{opacity:1}
+.header h1{font-size:2rem;letter-spacing:2px;background:linear-gradient(135deg,var(--sage),var(--cream));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header .subtitle{color:var(--warm-grey);font-size:.85rem;margin-top:.3rem;letter-spacing:1px;text-transform:uppercase}
+
+/* Main layout */
+.main{position:relative;z-index:5;max-width:1400px;margin:0 auto;padding:1.5rem}
+
+/* Daily Wisdom */
+.wisdom-bar{background:rgba(107,143,94,.08);border:1px solid rgba(107,143,94,.15);border-radius:16px;padding:1.2rem 1.5rem;margin-bottom:2rem;backdrop-filter:blur(20px)}
+.wisdom-bar h3{font-size:.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--sage);margin-bottom:.8rem}
+.wisdom-quotes{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.5rem;scrollbar-width:thin;scrollbar-color:var(--sage) transparent}
+.wisdom-quote{flex:0 0 250px;padding:.8rem 1rem;border-radius:10px;font-size:.78rem;line-height:1.5;color:var(--light-grey);border-left:3px solid;position:relative}
+.wisdom-quote .wq-name{font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:.3rem}
+
+/* Board Meeting Button */
+.board-meeting-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;margin:0 auto 2rem;padding:.8rem 2rem;background:linear-gradient(135deg,rgba(107,143,94,.2),rgba(74,107,62,.2));border:1px solid rgba(107,143,94,.3);border-radius:12px;color:var(--sage);font-family:'Playfair Display',serif;font-size:1.1rem;cursor:pointer;transition:var(--transition);letter-spacing:1px}
+.board-meeting-btn:hover{background:linear-gradient(135deg,rgba(107,143,94,.35),rgba(74,107,62,.35));transform:translateY(-2px);box-shadow:0 8px 30px rgba(107,143,94,.15)}
+
+/* Board meeting overlay */
+.board-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;display:none;flex-direction:column;align-items:center;padding:2rem;overflow-y:auto;backdrop-filter:blur(10px)}
+.board-overlay.active{display:flex}
+.board-overlay .close-board{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer;opacity:.7;transition:var(--transition)}
+.board-overlay .close-board:hover{opacity:1}
+.board-input-area{width:100%;max-width:700px;margin:2rem 0}
+.board-input-area h2{text-align:center;color:var(--sage);margin-bottom:1rem;font-size:1.4rem}
+.board-input-wrap{display:flex;gap:.5rem}
+.board-input-wrap input{flex:1;padding:.8rem 1.2rem;background:var(--surface2);border:1px solid rgba(107,143,94,.3);border-radius:10px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:1rem;outline:none;transition:var(--transition)}
+.board-input-wrap input:focus{border-color:var(--sage)}
+.board-input-wrap button{padding:.8rem 1.5rem;background:var(--sage);border:none;border-radius:10px;color:#fff;font-weight:600;cursor:pointer;transition:var(--transition);white-space:nowrap}
+.board-input-wrap button:hover{background:var(--deep-green)}
+.board-responses{width:100%;max-width:700px;display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.board-response{padding:1.2rem 1.5rem;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);opacity:0;transform:translateY(20px);transition:all .6s ease-out}
+.board-response.visible{opacity:1;transform:translateY(0)}
+.board-response .br-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;font-weight:700;font-size:.95rem}
+.board-response .br-emoji{font-size:1.3rem}
+.board-response .br-text{font-size:.9rem;line-height:1.6;color:var(--light-grey)}
+
+/* Boardroom Grid */
+.boardroom{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;margin-bottom:2rem}
+@media(max-width:900px){.boardroom{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.boardroom{grid-template-columns:repeat(2,1fr)}}
+
+/* Advisor Card */
+.advisor-card{display:flex;flex-direction:column;align-items:center;cursor:pointer;padding:1.5rem 1rem;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);transition:all .35s ease-out;position:relative}
+.advisor-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.06)}
+.advisor-card.active{border-color:var(--advisor-color);background:rgba(255,255,255,.07)}
+
+.avatar-ring{width:100px;height:100px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.8rem;position:relative;margin-bottom:.8rem;transition:var(--transition)}
+.avatar-ring::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--advisor-color);opacity:.6;animation:glow-pulse 3s ease-in-out infinite}
+.avatar-ring::after{content:'';position:absolute;inset:-10px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--advisor-color) 15%,transparent),transparent 70%);z-index:-1}
+.advisor-card:hover .avatar-ring::before{opacity:1;box-shadow:0 0 20px color-mix(in srgb,var(--advisor-color) 30%,transparent)}
+
+@keyframes glow-pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.8;transform:scale(1.03)}}
+
+.advisor-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;margin-bottom:.2rem;text-align:center}
+.advisor-title{font-size:.72rem;color:var(--warm-grey);text-align:center;margin-bottom:.8rem}
+
+.quote-bubble{background:rgba(255,255,255,.05);border-radius:12px;padding:.7rem .9rem;font-size:.75rem;line-height:1.5;color:var(--light-grey);min-height:60px;width:100%;position:relative;transition:opacity .5s ease}
+.quote-bubble::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:rgba(255,255,255,.05);rotate:45deg;border-radius:2px}
+
+/* Detail Panel */
+.detail-panel{position:fixed;top:0;right:0;width:460px;height:100vh;background:var(--surface);border-left:1px solid rgba(255,255,255,.08);z-index:50;transform:translateX(100%);transition:transform .4s ease-out;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.5)}
+.detail-panel.open{transform:translateX(0)}
+@media(max-width:600px){.detail-panel{width:100%}}
+
+.panel-header{padding:1.2rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:1rem;flex-shrink:0}
+.panel-header .ph-avatar{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;border:2px solid var(--advisor-color)}
+.panel-header .ph-info{flex:1}
+.panel-header .ph-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600}
+.panel-header .ph-title{font-size:.75rem;color:var(--warm-grey)}
+.panel-close{background:none;border:none;color:var(--warm-grey);font-size:1.3rem;cursor:pointer;padding:.3rem;transition:var(--transition)}
+.panel-close:hover{color:var(--cream)}
+
+/* Frameworks */
+.panel-frameworks{padding:.8rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0}
+.panel-frameworks h4{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--warm-grey);margin-bottom:.5rem}
+.fw-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.fw-tag{font-size:.68rem;padding:.25rem .6rem;border-radius:20px;background:rgba(255,255,255,.06);color:var(--light-grey);border:1px solid rgba(255,255,255,.08)}
+
+/* Chat Area */
+.chat-area{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.chat-messages{flex:1;overflow-y:auto;padding:1rem 1.5rem;display:flex;flex-direction:column;gap:.8rem;scrollbar-width:thin;scrollbar-color:var(--surface2) transparent}
+.chat-msg{max-width:88%;padding:.7rem 1rem;border-radius:14px;font-size:.85rem;line-height:1.6;animation:msgIn .3s ease-out}
+@keyframes msgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.chat-msg.user{align-self:flex-end;background:rgba(107,143,94,.2);border:1px solid rgba(107,143,94,.15);color:var(--cream)}
+.chat-msg.advisor{align-self:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);color:var(--light-grey)}
+.chat-msg.advisor .msg-name{font-size:.7rem;font-weight:700;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.5px}
+
+.thinking{align-self:flex-start;display:flex;gap:4px;padding:.8rem 1.2rem;border-radius:14px;background:rgba(255,255,255,.06)}
+.thinking span{width:8px;height:8px;border-radius:50%;background:var(--warm-grey);animation:dot-pulse 1.4s ease-in-out infinite}
+.thinking span:nth-child(2){animation-delay:.2s}
+.thinking span:nth-child(3){animation-delay:.4s}
+@keyframes dot-pulse{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+
+.chat-input-area{padding:.8rem 1rem;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:.5rem;flex-shrink:0;align-items:center}
+.chat-input-area input{flex:1;padding:.65rem 1rem;background:var(--surface2);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:var(--transition)}
+.chat-input-area input:focus{border-color:var(--sage)}
+.chat-input-area .send-btn{padding:.65rem 1rem;background:var(--sage);border:none;border-radius:10px;color:#fff;font-weight:600;cursor:pointer;transition:var(--transition);font-size:.85rem}
+.chat-input-area .send-btn:hover{background:var(--deep-green)}
+.clear-chat{background:none;border:none;color:var(--warm-grey);font-size:.75rem;cursor:pointer;padding:.3rem .5rem;opacity:.6;transition:var(--transition)}
+.clear-chat:hover{opacity:1;color:var(--cream)}
+
+/* Bottom Bar */
+.bottom-bar{position:relative;z-index:10;text-align:center;padding:1.2rem;border-top:1px solid rgba(107,143,94,.1);display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:wrap;font-size:.75rem;color:var(--warm-grey)}
+.bottom-bar a{color:var(--sage);text-decoration:none;opacity:.7;transition:var(--transition)}
+.bottom-bar a:hover{opacity:1}
+
+/* Backdrop when panel open */
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:40;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.backdrop.active{opacity:1;pointer-events:auto}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--surface2);border-radius:3px}
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<header class="header">
+  <a href="index.html" class="back">← Mission Control</a>
+  <h1>🏛️ FOUNDER'S ADVISORY BOARD</h1>
+  <div class="subtitle">Blues & Greens — AI Operating System</div>
+</header>
+
+<main class="main">
+  <!-- Daily Wisdom -->
+  <section class="wisdom-bar">
+    <h3>✨ Today's Wisdom</h3>
+    <div class="wisdom-quotes" id="wisdomQuotes"></div>
+  </section>
+
+  <!-- Ask the Board -->
+  <button class="board-meeting-btn" onclick="openBoardMeeting()">🏛️ Ask the Board</button>
+
+  <!-- Boardroom -->
+  <section class="boardroom" id="boardroom"></section>
+</main>
+
+<!-- Board Meeting Overlay -->
+<div class="board-overlay" id="boardOverlay">
+  <button class="close-board" onclick="closeBoardMeeting()">✕</button>
+  <div class="board-input-area">
+    <h2>🏛️ Board Meeting</h2>
+    <p style="text-align:center;color:var(--warm-grey);font-size:.85rem;margin-bottom:1rem">Ask all 5 advisors. They'll each respond in character.</p>
+    <div class="board-input-wrap">
+      <input type="text" id="boardInput" placeholder="What would you like to ask the board?" onkeydown="if(event.key==='Enter')askBoard()">
+      <button onclick="askBoard()">Ask All</button>
+    </div>
+  </div>
+  <div class="board-responses" id="boardResponses"></div>
+</div>
+
+<!-- Backdrop -->
+<div class="backdrop" id="backdrop" onclick="closePanel()"></div>
+
+<!-- Detail Panel -->
+<div class="detail-panel" id="detailPanel">
+  <div class="panel-header">
+    <div class="ph-avatar" id="phAvatar"></div>
+    <div class="ph-info">
+      <div class="ph-name" id="phName"></div>
+      <div class="ph-title" id="phTitle"></div>
+    </div>
+    <button class="panel-close" onclick="closePanel()">✕</button>
+  </div>
+  <div class="panel-frameworks">
+    <h4>Frameworks</h4>
+    <div class="fw-tags" id="fwTags"></div>
+  </div>
+  <div class="chat-area">
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" placeholder="Ask..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button class="send-btn" onclick="sendChat()">Send</button>
+      <button class="clear-chat" onclick="clearChat()">Clear</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Bar -->
+<footer class="bottom-bar">
+  <span>5 Advisors | 41KB of Knowledge Loaded | Powered by B&G AI OS</span>
+  <span id="aestClock"></span>
+  <a href="index.html">← Mission Control</a>
+</footer>
+
+<script>
+// ── ADVISOR DATA ──
+const advisors = [
+  {
+    id:'hormozi', name:'Alex Hormozi', emoji:'💰', title:'CEO, Acquisition.com',
+    color:'#D4A843',
+    frameworks:['Value Equation','$100M Offers','Theory of Constraints','4 Levers of Growth','MOSY 6','Lead Magnets'],
+    responses:{
+      pricing:["Here's the thing about pricing — the more you charge, the more they value it, the more they do the work, the more results they get, the more they refer. Your Founders Experience at $4,990 is actually too cheap for what you're delivering. The question isn't whether the price is right — it's whether you're stacking enough value that it feels like a steal at twice the price.","Price is a signal of value. If you're the cheapest option, you're telling parents 'this isn't that important.' Charge what it's worth. Then deliver 10x that."],
+      offer:["Your offer needs to be so good that people feel stupid saying no. What's the dream outcome? Their son thriving. What's the time delay? Fast results. What's the effort? Minimal from the parent. What's the likelihood of success? Proven. Stack those and your offer sells itself."],
+      churn:["Churn is a product problem, not a sales problem. If people are leaving, it means the gap between what they expected and what they got is too wide. Before you run a single ad, fix the close-to-W1 activation gap. That's your biggest revenue leak right now.","Every churned member is a clue. Call them. Find out exactly WHY they left. Not what they say — what's actually true. The gap between those two is where your product fix lives."],
+      retention:["Retention is the game. A business with 95% retention at $300/mo is worth more than a business with 80% retention at $1,000/mo. Do the math over 24 months. Fix churn before you scale."],
+      sales:["The best sales process makes the close feel like a natural conclusion, not a pressure moment. Your self-set calls close at 58.8% vs 37% overall — that tells me conviction sells, not technique. Let the parents who are already bought in do the heavy lifting.","Stop trying to be better at sales. Start getting better leads. The close rate is a function of lead quality × offer quality × sales skill. Most people only work on the last one."],
+      scaling:["Stop thinking about how to get to 200 members. Ask: what would have to be true to have 2,000? Build the systems for 2,000 and you'll hit 200 as a side effect.","Scale is a function of constraints removed. Find the bottleneck, break it, find the next one. That's the whole game on repeat."],
+      team:["An employee without a scoreboard is just a volunteer. Every person on your team needs to know exactly what number they own and what good looks like. If they can't tell you their number at 3am, you haven't set the expectation clearly enough.","The management diamond: What do I want them to do? What are they doing? What should I do about the gap? How do I communicate it? Run every team conversation through that."],
+      marketing:["More, better, new — in that order. Do MORE of what's already working before you try to make it better. Make it better before you try something new. Most businesses skip straight to 'new' and wonder why nothing works.","The best marketing is a great product. If your NPS isn't above 70, you have a product problem disguised as a marketing problem."],
+      constraint:["What's the ONE thing that, if solved, makes everything else easier or irrelevant? That's your constraint. Right now for B&G, it's LTV and churn. Everything else is a distraction until that's solved."],
+      ads:["Don't increase ad spend until your unit economics are dialed. Spending more on ads with a leaky bucket just empties the bucket faster. Fix the bucket first."],
+      revenue:["Revenue is a vanity metric. Profit is a sanity metric. Cash flow is a reality metric. Which one are you optimising for?"],
+      leads:["More leads won't fix a broken funnel. If you pour more water into a funnel with holes, you just get a bigger mess on the floor."],
+      generic:["Here's what I'd tell you if you were in my office right now: stop thinking about it and start measuring it. Get the data, find the constraint, fix the constraint. That's it. That's the whole game. Action alleviates anxiety.","You're overthinking this. Pick the ONE thing that matters most right now. Do that thing. Ignore everything else until it's done. Then pick the next thing. That's the algorithm.","Volume negates luck. The more swings you take, the more likely you are to hit. Most founders fail because they don't take enough shots, not because they take the wrong ones."]
+    },
+    keywords:{pricing:['price','pricing','charge','cost','expensive','cheap','money','fee','afford'],offer:['offer','value','stack','bonus','guarantee','irresistible'],churn:['churn','leaving','cancel','quit','drop','attrition','lose'],retention:['retention','retain','keep','staying','loyalty','lifetime'],sales:['sales','sell','close','closing','objection','call','pitch','convert'],scaling:['scale','scaling','grow','growth','expand','bigger','100','1000','2000'],team:['team','hire','employee','staff','manage','people','culture','fire'],marketing:['marketing','ads','advertise','content','social','awareness','brand'],constraint:['constraint','bottleneck','block','stuck','problem','issue','challenge'],ads:['ad','ads','facebook','google','spend','campaign','cpc','cpm','roas'],revenue:['revenue','income','profit','cash','money','earnings','mrr','arr'],leads:['leads','lead','funnel','pipeline','prospect','inbound','outbound']}
+  },
+  {
+    id:'bartlett', name:'Steven Bartlett', emoji:'🎙️', title:'Host, Diary of a CEO',
+    color:'#4A90D9',
+    frameworks:['33 Laws','Five Buckets','First 5 Seconds','Sell a Vacation Not a Flight','The Diary Way'],
+    responses:{
+      brand:["The most powerful brand asset you have isn't your logo or your website — it's the story of WHY you started Blues & Greens. A founder who's dedicating his life to ending teenage suicide? That story is worth more than any marketing budget. Share it everywhere, authentically, vulnerably.","Brand is not what you say about yourself. Brand is what others say about you when you're not in the room. So what are your parents saying? That's your real brand."],
+      content:["Fight for the first 5 seconds. That's all you get. The thumbnail, the hook, the opening line. If you don't earn attention in 5 seconds, nothing else matters. Lead with the transformation, not the process.","Sell a vacation, not a flight. Parents don't want 'weekly mentoring sessions.' They want their son back. They want connection, peace of mind, hope. Sell the destination."],
+      storytelling:["Every family that goes through B&G has a transformation story. That mum who was terrified she was losing her son, and now they're having conversations she never imagined. THAT is your content strategy. Real stories, real tears, real transformation. Fight for the first 5 seconds with the emotion, then deliver the journey."],
+      personal:["Your personal brand IS the business right now. And that's not a weakness — it's your biggest advantage. I built a $425M company around my personal brand. You're building something more important than that. Own it.","People follow people, not companies. Your face, your story, your vulnerability — that's what parents will trust before they trust a logo."],
+      culture:["The highest-performing teams have one thing in common: psychological safety. Your mentors need to feel safe enough to say 'I don't know how to handle this kid' without fear of judgment. That's how you prevent burnout."],
+      growth:["Fill your five buckets in order: Knowledge, Skills, Network, Resources, Reputation. Right now, you're in the Skills and Network phase. Don't skip to Reputation before you've earned it through consistent delivery.","Growth isn't linear. It's a staircase. You climb, you plateau, you feel like nothing's working, then you break through. You might be on the plateau right now. Keep climbing."],
+      mental:["Being a founder is lonely. I know because I've been there — running a company at 22 and feeling like no one understood. Make sure you're taking care of YOU, because B&G can't exist without Harry."],
+      podcast:["Start a podcast. Seriously. Interview the parents, the mentors, the boys who are willing to share. The stories inside B&G are more compelling than anything I've heard in 800 episodes. That content becomes your moat."],
+      social:["Stop trying to go viral. Start trying to be valuable. One piece of content that genuinely helps one parent is worth more than a million views of fluff."],
+      purpose:["Your 'why' is so clear it's almost unfair. Most founders are searching for purpose. You wake up every day knowing that what you build could literally save a life. That's rocket fuel. Use it."],
+      failure:["I've failed more times than most people have tried. The difference is I treated each failure as data. What did it teach me? What would I do differently? Your failures at B&G aren't setbacks — they're the curriculum."],
+      generic:["Here's what I've learned from 800 episodes of talking to the world's most successful people: consistency beats talent, vulnerability beats perfection, and stories beat statistics. Every single time.","The thing that separates the founders who make it from those who don't isn't intelligence or resources — it's the ability to keep going when everything inside you says stop. You've got that. I can tell.","Most people overestimate what they can do in a year and underestimate what they can do in ten. B&G in ten years? That's a movement, not a company."]
+    },
+    keywords:{brand:['brand','branding','identity','logo','positioning','image'],content:['content','post','video','tiktok','reel','youtube','hook','thumbnail'],storytelling:['story','storytelling','narrative','journey','transformation'],personal:['personal brand','my brand','face','founder brand','public','visible'],culture:['culture','team','safe','safety','psychological','burnout','environment'],growth:['growth','grow','bucket','knowledge','skills','network','reputation','phase'],mental:['mental','health','lonely','burnout','overwhelm','stress','self-care','tired','exhausted'],podcast:['podcast','interview','show','audio','listen','episode'],social:['social','media','instagram','tiktok','linkedin','twitter','viral','followers'],purpose:['purpose','why','mission','meaning','motivation','drive'],failure:['fail','failure','mistake','wrong','setback','lost','struggle']}
+  },
+  {
+    id:'musk', name:'Elon Musk', emoji:'🚀', title:'CEO, Tesla / SpaceX',
+    color:'#9CA3AF',
+    frameworks:['The Algorithm (5 Steps)','First Principles','10x Thinking','Vertical Integration','Physics-Based Reasoning'],
+    responses:{
+      first_principles:["Strip it down to physics. What is B&G fundamentally? One adult human spending one hour per week with one young human, creating a consistent relationship. Everything else is wrapping. Now ask: what's preventing that from happening at scale? Solve THAT.","Don't reason by analogy. Everyone else in youth services does X, therefore you should do X? No. Start from the fundamental truths and build up. What does a teenager actually need? Start there."],
+      scaling:["Don't think 200 members. Think 20,000. What would have to be true? You'd need a platform that automates matching, scheduling, and quality assurance. You'd need a mentor pipeline that self-replenishes. You'd need outcome data that proves it works. Build for the future, not the present."],
+      speed:["How many days between a parent saying 'yes' and their son having their first session? Every day of delay is a day that family could churn. Compress that to 48 hours and watch your activation rate explode.","Speed of iteration matters more than quality of iteration. If you can try 10 things in the time it takes someone else to try 1, you'll win even if your batting average is lower."],
+      product:["Is the mentoring experience so good that parents literally cannot stop talking about it? If you need marketing to sell it, the product isn't good enough yet. Make it insanely good first.","The best product is one that doesn't need a user manual. Can a parent sign up, get matched, and have their son in a session without calling anyone? If not, simplify."],
+      team:["If you have to manage someone, they're the wrong person for the role. The best people are self-directed. Your job is to set the mission, remove obstacles, and get out of the way."],
+      simplify:["The Algorithm step 2: Delete any part or process you can. If you're not adding back 10% of what you delete, you're not deleting enough. What parts of the B&G process exist because 'that's how we've always done it' rather than because they're necessary?","Simplicity is the ultimate sophistication. How many steps in your onboarding? Cut it in half. Still too many? Cut it again."],
+      moonshot:["You want to put an extinction to teenage suicide. That's a moonshot. Good. The question isn't whether it's possible — it's whether you're building the rocket that can actually get there. Think bigger. Think faster. Think different."],
+      technology:["Build the technology layer. Your mentoring data — session frequency, engagement scores, outcome tracking — that's your moat. No one else in youth services has that data. Make it your competitive advantage."],
+      automation:["Automate everything that doesn't require human judgment. Scheduling? Automated. Reminders? Automated. Progress reports? Automated. Your mentors should spend 100% of their time mentoring, 0% on admin."],
+      competition:["Competition is irrelevant if you're 10x better. Don't look at what other youth programs are doing. Build something so different that comparison becomes impossible."],
+      innovation:["The most innovative thing you can do right now isn't technology — it's proving that mentoring works with data. If you can show that X hours of mentoring = Y% reduction in self-harm ideation, you'll have governments lining up to fund you."],
+      generic:["When something is important enough, you do it even if the odds are not in your favor. Ending teenage suicide is important enough. So stop asking 'can we?' and start asking 'how fast can we?'","Failure is an option here. If things are not failing, you are not innovating enough. Push harder. Break things. Fix them. Push again.","The pace of progress is the only thing that matters. How fast are you learning? How fast are you iterating? How fast are you shipping? Speed. Speed. Speed."]
+    },
+    keywords:{first_principles:['first principles','fundamentally','physics','basics','ground up','from scratch','principle'],scaling:['scale','scaling','10000','20000','mass','platform','millions','bigger'],speed:['speed','fast','slow','delay','quick','rapid','velocity','iterate','ship'],product:['product','experience','quality','user','UX','interface','feature'],team:['team','hire','people','manage','talent','autonomous','self-directed'],simplify:['simplify','simple','delete','remove','cut','reduce','eliminate','unnecessary','process'],moonshot:['moonshot','mission','impossible','audacious','ambitious','big','huge','massive'],technology:['tech','technology','platform','software','data','AI','app','system','automate'],automation:['automate','automation','manual','efficiency','workflow','bot','scheduling'],competition:['competition','competitor','rival','market','differentiate','unique','moat'],innovation:['innovation','innovate','new','novel','creative','invent','disrupt','research']}
+  },
+  {
+    id:'carrgregg', name:'Dr. Michael Carr-Gregg', emoji:'🧠', title:'Adolescent Psychologist',
+    color:'#E07B39',
+    frameworks:['Three Rs of Resilience','5 Protective Factors','Parent-Teen Communication Gap','Developmental Psychology','Risk Assessment'],
+    responses:{
+      teen:["Here's what most people don't understand about teenage boys: their prefrontal cortex isn't fully developed until around 25. They're literally making decisions with an incomplete brain. That's not an excuse — it's context. Your mentors need to understand this so they don't take the behaviour personally.","Teenage boys communicate through activity, not conversation. That's why your mentoring model works — it doesn't force them to 'sit down and talk about feelings.' It creates a relationship where feelings can emerge naturally."],
+      parents:["The biggest thing you can do for the mothers in your program is validate their experience. Most mums of teen boys feel completely shut out. When you say 'this is normal, you're not failing, and we're here to help' — you're not just making a sale, you're giving her permission to breathe.","Dads often feel sidelined in the conversation about teen boys. Include them. A father who feels competent and connected is one of the most powerful protective factors we know of."],
+      suicide:["A single consistent relationship with a caring adult is the most powerful protective factor against youth suicide. That's not my opinion — that's decades of research. What you're building at Blues & Greens isn't just a business, mate. It's a life-saving intervention, one session at a time.","We know that connectedness — feeling like you belong, like someone gives a damn — is the number one protective factor. Every mentor session is a dose of connectedness. Think about that."],
+      mentoring:["The frequency and consistency of contact matters more than the quality of any single session. A mediocre session that HAPPENS is infinitely more valuable than a perfect session that gets cancelled. Show up. That's the whole job.","Your mentors don't need to be therapists. They need to be reliable, warm humans who show up and listen. That's it. The therapeutic benefit comes from the relationship itself, not from any technique."],
+      resilience:["Every boy in your program needs three things: Relationships, Resources, and Rituals. The mentor IS the relationship. The skills they learn are the resources. The weekly session is the ritual. You've built all three into the model. That's textbook resilience-building."],
+      warning:["Train your mentors to know the difference between normal teen moodiness and genuine warning signs. Withdrawal from EVERYONE — not just family — sudden personality changes, giving away possessions, talking about being a burden. These are the red flags that need immediate escalation.","Have a clear escalation protocol. When a mentor sees a warning sign, they should know EXACTLY what to do, who to call, and how quickly. Ambiguity in crisis moments costs lives."],
+      development:["Boys at 13 are completely different creatures from boys at 17. Your program needs to account for developmental stages. What works for a Year 8 kid won't work for a Year 12 kid. Personalise the approach."],
+      schools:["Schools are overwhelmed. Teachers aren't trained in mental health. Your program fills a gap that the education system simply cannot. Position yourselves as a complement to schools, not a competitor."],
+      research:["If you want to be taken seriously by government and institutions, you need outcome data. Pre and post measures. Standardised wellbeing scales. Track the K10 or SDQ scores. That data is your credibility."],
+      boys:["Boys are not broken. They're not defective girls. They're wired differently, they develop differently, and they need different support. Stop pathologising normal male adolescent behaviour and start understanding it."],
+      generic:["Let me tell you something I've learned from 30 years of working with teenagers: every single one of them wants to be seen, heard, and valued. That's it. That's the whole recipe. If your mentors can do those three things consistently, you'll change lives.","You're doing something that matters, mate. Really matters. Don't let the business stuff make you forget that. Every session, every connection, every boy who feels a little less alone — that's the real KPI.","The research is crystal clear: early intervention works. You're catching these boys at exactly the right time. Keep going."]
+    },
+    keywords:{teen:['teen','teenager','adolescent','boy','boys','young','youth','kid','child','puberty','brain','prefrontal'],parents:['parent','parents','mum','mom','mother','dad','father','family','families'],suicide:['suicide','suicidal','self-harm','crisis','death','die','kill','ideation','prevention'],mentoring:['mentor','mentoring','session','relationship','connection','rapport','weekly'],resilience:['resilience','resilient','coping','strength','bounce','recover','tough','grit'],warning:['warning','sign','red flag','danger','risk','concern','worried','alarm','escalat'],development:['development','developmental','stage','age','maturity','grow','brain development'],schools:['school','teacher','education','classroom','learning','academic','principal'],research:['research','data','evidence','study','measure','outcome','science','proof'],boys:['boys','masculine','masculinity','male','men','manhood','gender']}
+  },
+  {
+    id:'brown', name:'Brené Brown', emoji:'❤️', title:'Vulnerability Researcher',
+    color:'#D45B7A',
+    frameworks:['BRAVING Trust','Shame vs Guilt','Rising Strong','Belonging vs Fitting In','Dare to Lead','Rumble Language'],
+    responses:{
+      vulnerability:["Here's what I know for sure: vulnerability is not weakness. It's the most accurate measure of courage. What you're asking these boys to do — open up to a stranger, talk about their feelings, admit they're struggling — that takes extraordinary bravery. Honour that.","The willingness to show up and be seen when you can't control the outcome — that's vulnerability. That's what your mentors model every single week. And that's what those boys learn to do over time."],
+      shame:["Boys are drowning in shame. 'Man up.' 'Don't cry.' 'Stop being soft.' These messages are literally killing them. Your program is an antidote to shame because it says: you are worthy of connection exactly as you are. That's revolutionary.","Shame needs three things to survive: secrecy, silence, and judgment. Your mentoring program attacks all three. You give boys a space to talk (breaking silence), to be known (breaking secrecy), and to be accepted (breaking judgment)."],
+      connection:["Connection is why we're here. It's what gives purpose and meaning to our lives. When a teenage boy sits down with his mentor and feels genuinely seen — not judged, not fixed, just SEEN — something shifts in his neurobiology. You can't fake that. And you can't buy it. You can only create the conditions for it."],
+      belonging:["True belonging doesn't require you to change who you are. It requires you to BE who you are. That's what separates Blues & Greens from peer groups where boys have to perform a version of masculinity they don't believe in. Your program says: bring your whole self.","Fitting in is the opposite of belonging. Fitting in says 'be like us.' Belonging says 'be yourself.' Every boy in your program is learning the difference, whether they know it or not."],
+      leadership:["Clear is kind. Unclear is unkind. Every communication you send to parents, mentors, and families should follow this principle. Don't soften bad news. Don't hedge. Be clear, be kind, be direct.","Brave leaders are never silent about hard things. If you see a problem in your team, your program, your culture — name it. Rumble with it. Don't let discomfort win."],
+      trust:["Trust is built in small moments, not grand gestures. The BRAVING framework: Boundaries, Reliability, Accountability, Vault, Integrity, Non-judgment, Generosity. Embed this in your mentor training and watch the quality of relationships transform."],
+      parenting:["The repair after a fight is more important than preventing the fight. When a mum and her son have a blow-up, the magic isn't in avoiding it — it's in how they come back together. Your mentors can model this repair process.","Parents don't need to be perfect. They need to be present. Tell your families that. The research is clear: perfectly imperfect parenting — showing up, making mistakes, repairing — that's what builds secure attachment."],
+      courage:["Courage is contagious. When one boy in your program opens up, it gives the next boy permission. When one mentor shares their own struggles, it normalises being human. You're creating a culture of courage, one session at a time."],
+      empathy:["Empathy is not fixing. It's not solving. It's not 'at least...' It's sitting in the dark with someone and saying 'I don't know what to say, but I'm glad you told me.' Train your mentors in empathy, not problem-solving."],
+      emotions:["We can't selectively numb emotions. When we numb the painful ones — sadness, fear, shame — we also numb joy, gratitude, and love. Your program teaches boys that ALL feelings are welcome. That's life-changing."],
+      culture:["Culture is not what you say. It's what you tolerate. If you tolerate mentors showing up unprepared, that becomes the culture. If you tolerate parents being dismissive, that becomes the culture. Be intentional about what you accept."],
+      generic:["You can choose courage or you can choose comfort, but you cannot choose both. Building B&G — a company that tackles teenage suicide head-on — that's not comfortable. But it's courageous. And the world desperately needs more of that right now.","What I know for certain is this: we are hardwired for connection. It's in our neurobiology. And when that connection is missing — especially for teenage boys — the consequences are devastating. You're literally rewiring neurobiology. Keep going.","Wholehearted living is about engaging in our lives from a place of worthiness. Every boy who walks into your program deserves to know: you are enough. Just as you are. Right now. Today."]
+    },
+    keywords:{vulnerability:['vulnerability','vulnerable','open up','brave','courage','courageous','risk','expose'],shame:['shame','ashamed','worthy','worthiness','enough','man up','toughen','weak','weakness'],connection:['connection','connect','connected','seen','heard','belong','relationship','human'],belonging:['belonging','belong','fit in','fitting in','identity','self','authentic','real'],leadership:['leadership','leader','lead','manage','communicate','clarity','clear','kind'],trust:['trust','braving','boundaries','reliable','accountability','integrity','judgment','generous'],parenting:['parent','parenting','mum','mom','dad','family','repair','fight','conflict','attachment'],courage:['courage','brave','courageous','bold','dare','fear','afraid','scared','risk'],empathy:['empathy','empathetic','listen','understand','compassion','care','feel','feeling'],emotions:['emotion','feelings','numb','sad','happy','joy','anger','fear','grief','pain','hurt'],culture:['culture','values','tolerate','standard','norm','environment','accept']}
+  }
+];
+
+// ── CHAT HISTORY (localStorage) ──
+function getChatKey(id){return 'bg-advisory-chat-'+id}
+function loadChat(id){try{return JSON.parse(localStorage.getItem(getChatKey(id)))||[]}catch(e){return[]}}
+function saveChat(id,msgs){try{localStorage.setItem(getChatKey(id),JSON.stringify(msgs))}catch(e){}}
+
+// ── KEYWORD MATCHING ──
+function findResponse(advisor,message){
+  const msg=message.toLowerCase();
+  let bestCat=null, bestScore=0;
+  for(const [cat,kws] of Object.entries(advisor.keywords)){
+    let score=0;
+    for(const kw of kws){if(msg.includes(kw))score+=kw.split(' ').length}
+    if(score>bestScore){bestScore=score;bestCat=cat}
+  }
+  if(bestCat && advisor.responses[bestCat]){
+    const arr=advisor.responses[bestCat];
+    return arr[Math.floor(Math.random()*arr.length)];
+  }
+  const gen=advisor.responses.generic;
+  return gen[Math.floor(Math.random()*gen.length)];
+}
+
+// ── QUOTE ROTATION DATA ──
+function getQuotes(advisor){
+  const all=[];
+  for(const arr of Object.values(advisor.responses)){
+    for(const r of arr){
+      const short=r.length>120?r.substring(0,117)+'...':r;
+      all.push(short);
+    }
+  }
+  return all;
+}
+
+// ── BUILD UI ──
+let currentAdvisor=null;
+let quoteIntervals=[];
+
+function buildBoardroom(){
+  const grid=document.getElementById('boardroom');
+  grid.innerHTML='';
+  advisors.forEach((a,i)=>{
+    const card=document.createElement('div');
+    card.className='advisor-card';
+    card.style.setProperty('--advisor-color',a.color);
+    card.dataset.id=a.id;
+    card.innerHTML=`
+      <div class="avatar-ring" style="--advisor-color:${a.color}">${a.emoji}</div>
+      <div class="advisor-name" style="color:${a.color}">${a.name}</div>
+      <div class="advisor-title">${a.title}</div>
+      <div class="quote-bubble" id="quote-${a.id}"></div>
+    `;
+    card.onclick=()=>openPanel(a);
+    grid.appendChild(card);
+    // Start quote rotation
+    const quotes=getQuotes(a);
+    let qi=Math.floor(Math.random()*quotes.length);
+    const bubble=card.querySelector('.quote-bubble');
+    bubble.textContent=quotes[qi];
+    const iv=setInterval(()=>{
+      bubble.style.opacity='0';
+      setTimeout(()=>{
+        qi=(qi+1)%quotes.length;
+        bubble.textContent=quotes[qi];
+        bubble.style.opacity='1';
+      },500);
+    },8000+i*400);
+    quoteIntervals.push(iv);
+  });
+}
+
+// ── DAILY WISDOM ──
+function buildWisdom(){
+  const container=document.getElementById('wisdomQuotes');
+  const day=Math.floor(Date.now()/86400000);
+  advisors.forEach(a=>{
+    const quotes=getQuotes(a);
+    const idx=day%quotes.length;
+    const div=document.createElement('div');
+    div.className='wisdom-quote';
+    div.style.borderColor=a.color;
+    div.innerHTML=`<div class="wq-name" style="color:${a.color}">${a.emoji} ${a.name.split(' ').pop()}</div>${quotes[idx]}`;
+    container.appendChild(div);
+  });
+}
+
+// ── PANEL ──
+function openPanel(advisor){
+  currentAdvisor=advisor;
+  document.getElementById('phAvatar').textContent=advisor.emoji;
+  document.getElementById('phAvatar').style.setProperty('--advisor-color',advisor.color);
+  document.getElementById('phAvatar').style.borderColor=advisor.color;
+  document.getElementById('phName').textContent=advisor.name;
+  document.getElementById('phName').style.color=advisor.color;
+  document.getElementById('phTitle').textContent=advisor.title;
+  // Frameworks
+  const tags=document.getElementById('fwTags');
+  tags.innerHTML=advisor.frameworks.map(f=>`<span class="fw-tag" style="border-color:${advisor.color}30">${f}</span>`).join('');
+  // Chat placeholder
+  document.getElementById('chatInput').placeholder=`Ask ${advisor.name.split(' ')[0]}...`;
+  // Load chat
+  renderChat(advisor);
+  // Show
+  document.getElementById('detailPanel').classList.add('open');
+  document.getElementById('backdrop').classList.add('active');
+  // Active card
+  document.querySelectorAll('.advisor-card').forEach(c=>c.classList.toggle('active',c.dataset.id===advisor.id));
+}
+
+function closePanel(){
+  document.getElementById('detailPanel').classList.remove('open');
+  document.getElementById('backdrop').classList.remove('active');
+  document.querySelectorAll('.advisor-card').forEach(c=>c.classList.remove('active'));
+  currentAdvisor=null;
+}
+
+function renderChat(advisor){
+  const container=document.getElementById('chatMessages');
+  const msgs=loadChat(advisor.id);
+  container.innerHTML='';
+  if(msgs.length===0){
+    container.innerHTML=`<div style="text-align:center;color:var(--warm-grey);font-size:.85rem;padding:2rem 1rem;opacity:.6">Start a conversation with ${advisor.name.split(' ')[0]}. Ask about anything — business, strategy, life.</div>`;
+    return;
+  }
+  msgs.forEach(m=>{
+    const div=document.createElement('div');
+    div.className='chat-msg '+(m.role==='user'?'user':'advisor');
+    if(m.role==='advisor'){
+      div.innerHTML=`<div class="msg-name" style="color:${advisor.color}">${advisor.emoji} ${advisor.name.split(' ').pop()}</div>${m.text}`;
+    }else{
+      div.textContent=m.text;
+    }
+    container.appendChild(div);
+  });
+  container.scrollTop=container.scrollHeight;
+}
+
+function sendChat(){
+  if(!currentAdvisor)return;
+  const input=document.getElementById('chatInput');
+  const text=input.value.trim();
+  if(!text)return;
+  input.value='';
+  const msgs=loadChat(currentAdvisor.id);
+  msgs.push({role:'user',text});
+  saveChat(currentAdvisor.id,msgs);
+  renderChat(currentAdvisor);
+  // Show thinking
+  const container=document.getElementById('chatMessages');
+  const thinking=document.createElement('div');
+  thinking.className='thinking';
+  thinking.id='thinking-dots';
+  thinking.innerHTML='<span></span><span></span><span></span>';
+  container.appendChild(thinking);
+  container.scrollTop=container.scrollHeight;
+  // Respond after delay
+  const advisor=currentAdvisor;
+  const delay=800+Math.random()*1200;
+  setTimeout(()=>{
+    const el=document.getElementById('thinking-dots');
+    if(el)el.remove();
+    const response=findResponse(advisor,text);
+    const updatedMsgs=loadChat(advisor.id);
+    updatedMsgs.push({role:'advisor',text:response});
+    saveChat(advisor.id,updatedMsgs);
+    if(currentAdvisor && currentAdvisor.id===advisor.id){
+      renderChat(advisor);
+    }
+  },delay);
+}
+
+function clearChat(){
+  if(!currentAdvisor)return;
+  if(!confirm(`Clear chat with ${currentAdvisor.name}?`))return;
+  localStorage.removeItem(getChatKey(currentAdvisor.id));
+  renderChat(currentAdvisor);
+}
+
+// ── BOARD MEETING ──
+function openBoardMeeting(){
+  document.getElementById('boardOverlay').classList.add('active');
+  document.getElementById('boardResponses').innerHTML='';
+  document.getElementById('boardInput').value='';
+  setTimeout(()=>document.getElementById('boardInput').focus(),300);
+}
+function closeBoardMeeting(){
+  document.getElementById('boardOverlay').classList.remove('active');
+}
+
+function askBoard(){
+  const input=document.getElementById('boardInput');
+  const question=input.value.trim();
+  if(!question)return;
+  input.value='';
+  const container=document.getElementById('boardResponses');
+  container.innerHTML='';
+  // Show user question
+  const qDiv=document.createElement('div');
+  qDiv.className='board-response visible';
+  qDiv.style.background='rgba(107,143,94,.12)';
+  qDiv.style.borderColor='rgba(107,143,94,.2)';
+  qDiv.innerHTML=`<div class="br-header"><span class="br-emoji">🙋</span><span style="color:var(--sage)">Harry (You)</span></div><div class="br-text">${question}</div>`;
+  container.appendChild(qDiv);
+  // Each advisor responds with stagger
+  advisors.forEach((a,i)=>{
+    const resp=findResponse(a,question);
+    const div=document.createElement('div');
+    div.className='board-response';
+    div.style.borderLeftColor=a.color;
+    div.style.borderLeftWidth='3px';
+    div.innerHTML=`<div class="br-header"><span class="br-emoji">${a.emoji}</span><span style="color:${a.color}">${a.name}</span></div><div class="br-text">${resp}</div>`;
+    container.appendChild(div);
+    setTimeout(()=>{
+      div.classList.add('visible');
+      div.scrollIntoView({behavior:'smooth',block:'end'});
+    },2000*(i+1));
+  });
+}
+
+// ── CLOCK ──
+function updateClock(){
+  const now=new Date().toLocaleString('en-AU',{timeZone:'Australia/Melbourne',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
+  document.getElementById('aestClock').textContent='🕐 '+now+' AEST';
+}
+
+// ── PARTICLES ──
+function initParticles(){
+  const canvas=document.getElementById('particles');
+  const ctx=canvas.getContext('2d');
+  let w,h;
+  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight}
+  resize();
+  window.addEventListener('resize',resize);
+  const particles=[];
+  for(let i=0;i<40;i++){
+    particles.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+.5,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,o:Math.random()*.15+.05});
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(p=>{
+      p.x+=p.dx;p.y+=p.dy;
+      if(p.x<0)p.x=w;if(p.x>w)p.x=0;
+      if(p.y<0)p.y=h;if(p.y>h)p.y=0;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(107,143,94,${p.o})`;ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+// ── INIT ──
+buildBoardroom();
+buildWisdom();
+initParticles();
+updateClock();
+setInterval(updateClock,1000);
+</script>
+</body>
+</html>
