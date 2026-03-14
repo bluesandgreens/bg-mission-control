@@ -163,6 +163,7 @@
       <button class="nav-btn" data-view="live-dashboard">Live Dashboard</button>
       <button class="nav-btn" data-view="team-office">Team Office</button>
       <button class="nav-btn" data-view="advisory-board">Advisory Board</button>
+      <button class="nav-btn" data-view="agent-org">Agent Org</button>
       <button class="nav-btn" data-view="feed">Feed</button>
     </nav>
   </header>
@@ -515,6 +516,187 @@
       </div>
     </section>
 
+    <!-- ═══════════════════ AGENT ORG ═══════════════════ -->
+    <section class="view" id="agent-org">
+      <h2 class="section-title">Agent Organisation</h2>
+      <p class="section-subtitle">Full team structure — who each agent is, what model they run on, and their live project status.</p>
+      <div class="grid" style="gap:16px;">
+        <div class="panel" style="overflow-x:auto;">
+          <table class="table" style="min-width:900px;">
+            <thead>
+              <tr>
+                <th>Agent</th>
+                <th>Role</th>
+                <th>Model</th>
+                <th>Status</th>
+                <th>Active Projects</th>
+                <th>Key Metric</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color:var(--gold);font-weight:600;">Leo 🦁</td>
+                <td>Chief of Staff</td>
+                <td><span class="pill">Claude Opus 4</span></td>
+                <td><span class="status-dot" style="background:#27ae60;"></span>Online</td>
+                <td>Website Content · DC Transcriptions · Mission Control · Memory System</td>
+                <td>All agents coordinated</td>
+              </tr>
+              <tr>
+                <td style="color:var(--cream);font-weight:600;">Moz 📈</td>
+                <td>Marketing & Growth</td>
+                <td><span class="pill">Claude Sonnet 4</span></td>
+                <td><span class="status-dot" style="background:#27ae60;"></span>Active</td>
+                <td>Hook Tournament · Ad Performance · Creative Testing</td>
+                <td>CPBC $3.06 (bench $9.78)</td>
+              </tr>
+              <tr>
+                <td style="color:var(--cream);font-weight:600;">Pulse 📊</td>
+                <td>Data & Analytics</td>
+                <td><span class="pill">Claude Sonnet 4</span></td>
+                <td><span class="status-dot" style="background:#27ae60;"></span>Active</td>
+                <td>Daily Dashboard · Morning Brief · Stripe-HubSpot Sync</td>
+                <td>135 members · $56K MRR</td>
+              </tr>
+              <tr>
+                <td style="color:var(--cream);font-weight:600;">Coach 🎯</td>
+                <td>DC Coaching</td>
+                <td><span class="pill">Claude Sonnet 4</span></td>
+                <td><span class="status-dot" style="background:#e67e22;"></span>Processing</td>
+                <td>DC Call Scoring (SIEL) · Transcription Pipeline · Training Portal</td>
+                <td>61/181 transcribed</td>
+              </tr>
+              <tr>
+                <td style="color:var(--cream);font-weight:600;">Scribe ✍️</td>
+                <td>Content</td>
+                <td><span class="pill">Claude Sonnet 4</span></td>
+                <td><span class="status-dot" style="background:#27ae60;"></span>Active</td>
+                <td>12-Post Blog Calendar · Website Copy · Email Sequences</td>
+                <td>9 pages + 3 posts done</td>
+              </tr>
+              <tr>
+                <td style="color:var(--cream);font-weight:600;">Vault 💰</td>
+                <td>CFO / Finance</td>
+                <td><span class="pill">Claude Sonnet 4</span></td>
+                <td><span class="status-dot" style="background:#3498db;"></span>Setup</td>
+                <td>Xero OAuth · Revenue Forecasting · P&L Automation</td>
+                <td>MRR $56K (peak $77K)</td>
+              </tr>
+              <tr>
+                <td style="color:var(--cream);font-weight:600;">Scout 🔍</td>
+                <td>Research</td>
+                <td><span class="pill">Gemini Flash</span></td>
+                <td><span class="status-dot" style="background:#27ae60;"></span>Active</td>
+                <td>Advisory Board Research · Competitor Analysis · Market Intel</td>
+                <td>5 profiles complete</td>
+              </tr>
+              <tr>
+                <td style="color:var(--cream);font-weight:600;">Bridge 🤝</td>
+                <td>Mentor Ops</td>
+                <td><span class="pill">Claude Sonnet 4</span></td>
+                <td><span class="status-dot" style="background:#27ae60;"></span>Active</td>
+                <td>Mentor Roster · Supply Pipeline · Progression Path Design</td>
+                <td>31 mentors · $45/session</td>
+              </tr>
+              <tr>
+                <td style="color:var(--cream);font-weight:600;">Shield 🛡️</td>
+                <td>Parent Success</td>
+                <td><span class="pill">Claude Sonnet 4</span></td>
+                <td><span class="status-dot" style="background:#27ae60;"></span>Active</td>
+                <td>Letter to Son Questionnaire · Parent Email · Retention Calls</td>
+                <td>FE pipeline active</td>
+              </tr>
+              <tr>
+                <td style="color:var(--cream);font-weight:600;">Launch 🚀</td>
+                <td>Activation</td>
+                <td><span class="pill">Claude Sonnet 4</span></td>
+                <td><span class="status-dot" style="background:#e67e22;"></span>Priority</td>
+                <td>Close→W1 Fix · 14-Day Activation Protocol · W1 Tracking</td>
+                <td>56% → target 75%</td>
+              </tr>
+              <tr>
+                <td style="color:var(--cream);font-weight:600;">Wrench 🔧</td>
+                <td>Tech / Portal</td>
+                <td><span class="pill">GPT Codex</span></td>
+                <td><span class="status-dot" style="background:#27ae60;"></span>Active</td>
+                <td>Portal Maintenance · Feature Requests · Supabase (37 tables)</td>
+                <td>React/TS on Lovable</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid cols-3">
+          <div class="panel">
+            <h3 class="section-title">Org Hierarchy</h3>
+            <div class="card" style="margin-bottom:12px;border-left:3px solid var(--gold);padding-left:16px;">
+              <strong style="color:var(--gold);">Harry Quayle</strong>
+              <div class="muted">CEO · Human Commander</div>
+            </div>
+            <div class="card" style="margin-bottom:12px;margin-left:20px;border-left:3px solid var(--gold);padding-left:16px;">
+              <strong style="color:var(--cream);">Leo 🦁</strong>
+              <div class="muted">Chief of Staff · Orchestrates all agents</div>
+            </div>
+            <div style="margin-left:40px;display:grid;gap:8px;">
+              <div class="card" style="padding:12px;"><span style="color:var(--cream);">Moz 📈</span> <span class="muted">· Growth</span></div>
+              <div class="card" style="padding:12px;"><span style="color:var(--cream);">Pulse 📊</span> <span class="muted">· Data</span></div>
+              <div class="card" style="padding:12px;"><span style="color:var(--cream);">Coach 🎯</span> <span class="muted">· DC Training</span></div>
+              <div class="card" style="padding:12px;"><span style="color:var(--cream);">Scribe ✍️</span> <span class="muted">· Content</span></div>
+              <div class="card" style="padding:12px;"><span style="color:var(--cream);">Vault 💰</span> <span class="muted">· Finance</span></div>
+              <div class="card" style="padding:12px;"><span style="color:var(--cream);">Scout 🔍</span> <span class="muted">· Research</span></div>
+              <div class="card" style="padding:12px;"><span style="color:var(--cream);">Bridge 🤝</span> <span class="muted">· Mentors</span></div>
+              <div class="card" style="padding:12px;"><span style="color:var(--cream);">Shield 🛡️</span> <span class="muted">· Parents</span></div>
+              <div class="card" style="padding:12px;"><span style="color:var(--cream);">Launch 🚀</span> <span class="muted">· Activation</span></div>
+              <div class="card" style="padding:12px;"><span style="color:var(--cream);">Wrench 🔧</span> <span class="muted">· Tech</span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3 class="section-title">Model Stack</h3>
+            <div class="card" style="margin-bottom:12px;">
+              <div class="pill">Strategy / Deep Work</div>
+              <div style="color:var(--cream);font-weight:600;margin-top:8px;">Claude Opus 4</div>
+              <div class="muted">Leo (main session), complex analysis</div>
+            </div>
+            <div class="card" style="margin-bottom:12px;">
+              <div class="pill">Operations / Execution</div>
+              <div style="color:var(--cream);font-weight:600;margin-top:8px;">Claude Sonnet 4</div>
+              <div class="muted">Most agents — balanced speed + quality</div>
+            </div>
+            <div class="card" style="margin-bottom:12px;">
+              <div class="pill">Research / Search</div>
+              <div style="color:var(--cream);font-weight:600;margin-top:8px;">Gemini Flash</div>
+              <div class="muted">Scout — fast web search + synthesis</div>
+            </div>
+            <div class="card">
+              <div class="pill">Code Generation</div>
+              <div style="color:var(--cream);font-weight:600;margin-top:8px;">GPT Codex</div>
+              <div class="muted">Wrench — portal builds, code structure</div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3 class="section-title">System Stats</h3>
+            <div class="card metric" style="margin-bottom:12px;">
+              <div class="metric-label">Total Agents</div>
+              <div class="metric-value">11</div>
+            </div>
+            <div class="card metric" style="margin-bottom:12px;">
+              <div class="metric-label">Active Projects</div>
+              <div class="metric-value">24</div>
+            </div>
+            <div class="card metric" style="margin-bottom:12px;">
+              <div class="metric-label">Token Savings</div>
+              <div class="metric-value">~75%</div>
+              <div class="muted">vs all-Opus baseline</div>
+            </div>
+            <div class="card metric">
+              <div class="metric-label">Uptime</div>
+              <div class="metric-value">Day 2</div>
+              <div class="muted">Since: March 13, 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══════════════════ FEED ═══════════════════ -->
     <section class="view" id="feed">
       <h2 class="section-title">Feed</h2>
@@ -675,7 +857,7 @@
       'Vault': {completed: ['Revenue tier analysis','FE offer pricing model'], in_progress: ['Xero OAuth setup'], upcoming: ['Monthly P&L automation','Revenue forecasting']},
       'Scout': {completed: ['5 Advisory Board profiles (Hormozi, Bartlett, Musk, Carr-Gregg, Brown)','Competitor SEO analysis','Brand case studies'], in_progress: ['Market research updates'], upcoming: ['School partnership research','PR media list']},
       'Bridge': {completed: ['31-mentor roster mapped','$45/session rate confirmed','Jack McIntosh onboarded'], in_progress: ['Mentor supply pipeline'], upcoming: ['Mentor progression path design','Group interview format']},
-      'Shield': {completed: ['Parent portal analysis','FE retention call tracking'], in_progress: ['Letter to Your Son questionnaire','Parent email campaign'], upcoming: ['Through Mum's Eyes questionnaire','Retention call sequencing']},
+      'Shield': {completed: ['Parent portal analysis','FE retention call tracking'], in_progress: ['Letter to Your Son questionnaire','Parent email campaign'], upcoming: ['Through Mums Eyes questionnaire','Retention call sequencing']},
       'Launch': {completed: ['14-Day Activation Protocol mapped','W1 conversion tracking setup'], in_progress: ['Close→W1 fix with Brodie (56% → 75%)'], upcoming: ['Activation Portal (self-serve)','W2 retention improvements']},
       'Wrench': {completed: ['Portal stability review','37-table Supabase map'], in_progress: ['Portal maintenance'], upcoming: ['Feature requests queue','Lovable project updates']}
     };
