@@ -262,42 +262,50 @@ h1,h2,h3,h4{font-family:var(--font-head);font-weight:700;letter-spacing:-.02em}
     <div class="stat-card">
       <span class="stat-icon">💰</span>
       <div class="stat-info">
-        <span class="stat-value">£42.8k</span>
-        <span class="stat-label">MRR</span>
+        <span class="stat-value">$56K</span>
+        <span class="stat-label">MRR (Feb)</span>
       </div>
-      <span class="stat-trend up">↑ 12%</span>
+      <span class="stat-trend up">↑ live</span>
     </div>
     <div class="stat-card">
       <span class="stat-icon">👥</span>
       <div class="stat-info">
-        <span class="stat-value">187</span>
+        <span class="stat-value">135</span>
         <span class="stat-label">Active Members</span>
       </div>
-      <span class="stat-trend up">↑ 8</span>
+      <span class="stat-trend up">↑ active</span>
     </div>
     <div class="stat-card">
       <span class="stat-icon">📞</span>
       <div class="stat-info">
-        <span class="stat-value">34%</span>
-        <span class="stat-label">Close Rate</span>
+        <span class="stat-value">42%</span>
+        <span class="stat-label">Close Rate MTD</span>
       </div>
-      <span class="stat-trend up">↑ 2.1%</span>
+      <span class="stat-trend up">↑ MTD</span>
     </div>
     <div class="stat-card">
       <span class="stat-icon">🎯</span>
       <div class="stat-info">
-        <span class="stat-value">£38</span>
-        <span class="stat-label">CPBC</span>
+        <span class="stat-value">$3.06</span>
+        <span class="stat-label">CPBC (yesterday)</span>
       </div>
-      <span class="stat-trend down">↓ £4</span>
+      <span class="stat-trend up">↓ strong</span>
     </div>
     <div class="stat-card">
-      <span class="stat-icon">⭐</span>
+      <span class="stat-icon">🚀</span>
       <div class="stat-info">
-        <span class="stat-value">72</span>
-        <span class="stat-label">NPS Score</span>
+        <span class="stat-value">56%</span>
+        <span class="stat-label">Close→W1 MTD</span>
       </div>
-      <span class="stat-trend up">↑ 3</span>
+      <span class="stat-trend up">↑ from 30%</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">⏳</span>
+      <div class="stat-info">
+        <span class="stat-value">19-20</span>
+        <span class="stat-label">Pending W1s</span>
+      </div>
+      <span class="stat-trend up">tracking</span>
     </div>
   </div>
 
@@ -384,122 +392,163 @@ const AGENTS = [
     anim:'thinking',status:'online',
     desc:'Orchestrator agent — routes tasks, manages memory, coordinates all agents.',
     projects:[
-      {name:'Agent Orchestration v2',desc:'Improved routing & context sharing between agents',status:'Active',statusColor:'#4ade80'},
-      {name:'Weekly Sprint Planning',desc:'Automated sprint generation from HubSpot + Stripe data',status:'In Progress',statusColor:'#facc15'},
+      {name:'Brand Identity Pack',desc:'Full distinctive assets document — complete',status:'Done',statusColor:'#818cf8'},
+      {name:'Brand Identity Summary',desc:'One-page exec brief — complete',status:'Done',statusColor:'#818cf8'},
+      {name:'Distinctive Assets Pack',desc:'Full brand assets documentation — complete',status:'Done',statusColor:'#818cf8'},
+      {name:'Business Workflow Map',desc:'Hormozi framework — every atomic action mapped',status:'Done',statusColor:'#818cf8'},
+      {name:'Logo Design Exploration',desc:'20+ AI variations generated',status:'Done',statusColor:'#818cf8'},
+      {name:'Upwork Logo Brief',desc:'Posted to Notion for freelancer sourcing',status:'Done',statusColor:'#818cf8'},
+      {name:'Mission Control V4',desc:'Deployed to GitHub Pages',status:'Done',statusColor:'#818cf8'},
+      {name:'Memory System Fix',desc:'Agent memory persistence resolved',status:'Done',statusColor:'#818cf8'},
+      {name:'Live Data Integration',desc:'Connecting Mission Control to live sources',status:'In Progress',statusColor:'#facc15'},
+      {name:'Daily Morning Briefs',desc:'Proactive daily status & research',status:'Upcoming',statusColor:'#9ca3af'},
     ],
     skills:['Task Routing','Memory Management','Inter-agent Comms','Priority Scoring','Context Synthesis'],
     kbs:['📋 Master Playbook','🧠 Agent Memory Store','📊 Sprint History'],
-    bubbles:['Routing task to Moz...','Sprint sync complete','All agents reporting in']
+    bubbles:['Brand Identity Pack complete','Mission Control V4 deployed','Upwork brief posted to Notion']
   },
   { id:'moz',name:'Moz',emoji:'🔥',color:'#c49a2e',role:'Marketing & Growth',
     anim:'typing',status:'online',
     desc:'Hormozi-style marketing frameworks, ad scripts, hooks, and copy.',
     projects:[
-      {name:'Meta Ads Q1 Campaign',desc:'$100M Leads framework applied to B&G ads',status:'Active',statusColor:'#4ade80'},
-      {name:'Hook Library v3',desc:'300+ tested hooks for parent acquisition',status:'Done',statusColor:'#818cf8'},
+      {name:'Meta Ads Daily Report',desc:'March 13 data — strong day, $3.06 blended CPBC',status:'Done',statusColor:'#818cf8'},
+      {name:'Daily Ad Monitoring',desc:'2pm checks on Meta Ads performance',status:'In Progress',statusColor:'#facc15'},
+      {name:'Hook Tournament Analysis',desc:'Analyzing hook performance across ad sets',status:'In Progress',statusColor:'#facc15'},
+      {name:'Competitor Ad Research',desc:'Researching competitor creative strategies',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'New Hook Rotation',desc:'Fresh hook strategy for next ad cycle',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Ad Creative from Calls',desc:'Mining call transcripts for ad copy angles',status:'Upcoming',statusColor:'#9ca3af'},
     ],
     skills:['Ad Copywriting','Hook Generation','Hormozi Frameworks','Landing Pages','A/B Testing','VSL Scripts'],
     kbs:['📕 $100M Leads','📕 $100M Offers','🎯 Ad Swipe File','📊 Meta Ads Data'],
-    bubbles:['New hook variant ready','CTR up 23% on ad set B','Testing new VSL angle']
+    bubbles:['Meta Ads daily report — $3.06 CPBC ✅','Hook tournament running','2pm ad check complete']
   },
   { id:'pulse',name:'Pulse',emoji:'📊',color:'#3a7ec8',role:'Data & Analytics',
     anim:'typing',status:'online',
     desc:'HubSpot, Stripe, Meta Ads dashboards and data insights.',
     projects:[
-      {name:'Unified Dashboard',desc:'Single view: HubSpot + Stripe + Meta Ads metrics',status:'Active',statusColor:'#4ade80'},
-      {name:'Cohort Analysis',desc:'Monthly retention cohorts with churn prediction',status:'In Progress',statusColor:'#facc15'},
+      {name:'Daily Dashboard',desc:'Built and deployed — HubSpot/Stripe data pulls',status:'Done',statusColor:'#818cf8'},
+      {name:'Live Data Integration',desc:'Connecting Mission Control to live data sources',status:'In Progress',statusColor:'#facc15'},
+      {name:'Weekly Data Drag Automation',desc:'Automated weekly reporting pipeline',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Automated Reporting',desc:'Scheduled report generation & distribution',status:'Upcoming',statusColor:'#9ca3af'},
     ],
     skills:['HubSpot API','Stripe Analytics','Meta Ads Reporting','Data Visualization','Churn Prediction'],
     kbs:['📊 HubSpot CRM','💳 Stripe Dashboard','📈 Meta Ads Manager','📉 Cohort Data'],
-    bubbles:['MRR updated: £42.8k','New cohort data ready','Churn risk: 3 members flagged']
+    bubbles:['MRR updated: $56K','Dashboard data refreshed','HubSpot sync complete']
   },
   { id:'coach',name:'Coach',emoji:'🎯',color:'#c44a4a',role:'DC Call Coaching',
-    anim:'nodding',status:'online',
+    anim:'nodding',status:'busy',
     desc:'SIEL scoring, call reviews, DC training and performance tracking.',
     projects:[
-      {name:'SIEL Score Engine',desc:'Automated call scoring: Situation, Impact, Emotion, Logic',status:'Active',statusColor:'#4ade80'},
-      {name:'DC Leaderboard',desc:'Weekly performance rankings with coaching tips',status:'Active',statusColor:'#4ade80'},
+      {name:'DC Training Portal',desc:'Full branded HTML portal — 7 sittings, all script content',status:'Done',statusColor:'#818cf8'},
+      {name:'Call Recordings Download',desc:'181 call recordings downloaded (9.7GB)',status:'Done',statusColor:'#818cf8'},
+      {name:'DC Call Transcriptions',desc:'Whisper running — 58/181 done, 123 remaining',status:'In Progress',statusColor:'#facc15'},
+      {name:'SIEL Scoring Pipeline',desc:'Automated call scoring system',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Call Insights Dashboard',desc:'Performance analytics from transcribed calls',status:'Upcoming',statusColor:'#9ca3af'},
     ],
     skills:['Call Analysis','SIEL Scoring','Objection Handling','Script Optimization','Performance Tracking'],
-    kbs:['📞 Call Recordings','🎯 SIEL Framework','📋 Objection Library','🏆 DC Scorecards'],
-    bubbles:['Call #847 scored: 82/100','Top objection this week: price','New training module ready']
+    kbs:['📞 Call Recordings (181)','🎯 SIEL Framework','📋 DC Training Portal','🏆 DC Scorecards'],
+    bubbles:['Whisper transcription 58/181 (32%)','DC Training Portal complete','Processing call recordings...']
   },
   { id:'scribe',name:'Scribe',emoji:'✍️',color:'#8a5ec4',role:'Content & Comms',
     anim:'typing',status:'online',
     desc:'Personality reports, parent letters, email campaigns, brand voice.',
     projects:[
-      {name:'Personality Reports v4',desc:'AI-generated youth personality profiles for parents',status:'Active',statusColor:'#4ade80'},
-      {name:'Email Nurture Sequence',desc:'12-week parent engagement email series',status:'In Progress',statusColor:'#facc15'},
+      {name:'Personality Report V2',desc:'Bridge Report — complete',status:'Done',statusColor:'#818cf8'},
+      {name:'SEO Strategy & Content Plan',desc:'Full SEO strategy document — complete',status:'Done',statusColor:'#818cf8'},
+      {name:'Keyword Research',desc:'Comprehensive keyword analysis — complete',status:'Done',statusColor:'#818cf8'},
+      {name:'Current Site Audit',desc:'Full audit of existing website — complete',status:'Done',statusColor:'#818cf8'},
+      {name:'Competitor SEO Analysis',desc:'SEO competitive landscape — complete',status:'Done',statusColor:'#818cf8'},
+      {name:'Website Rebuild Brief',desc:'Spec for new site build — complete',status:'Done',statusColor:'#818cf8'},
+      {name:'Content Calendar for SEO',desc:'Building editorial calendar from keyword research',status:'In Progress',statusColor:'#facc15'},
+      {name:'Letter to My Son Questionnaire',desc:'Parent questionnaire design',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'FE Email Campaign',desc:'Founders Experience email sequence (parked)',status:'Upcoming',statusColor:'#9ca3af'},
     ],
-    skills:['Report Writing','Email Campaigns','Brand Voice','Parent Letters','Personality Analysis'],
-    kbs:['✍️ Brand Guidelines','📧 Email Templates','📋 Personality Framework','💌 Parent Comms Archive'],
-    bubbles:['Report generated for Jake M.','Email sequence A/B test live','New parent letter template done']
+    skills:['Report Writing','SEO Strategy','Brand Voice','Content Planning','Keyword Research'],
+    kbs:['✍️ Brand Guidelines','📧 Email Templates','📋 SEO Research','🔍 Competitor Analysis'],
+    bubbles:['SEO Strategy & Content Plan complete','Keyword research delivered','Content calendar in progress']
   },
   { id:'vault',name:'Vault',emoji:'💰',color:'#c8a951',role:'CFO & Finance',
     anim:'reading',status:'online',
     desc:'Stripe revenue tracking, Xero integration, forecasting, cash flow.',
     projects:[
-      {name:'Cash Flow Forecast',desc:'13-week rolling cash flow model from Stripe + Xero',status:'Active',statusColor:'#4ade80'},
-      {name:'Revenue Recognition',desc:'Automated MRR/ARR breakdown by product line',status:'Done',statusColor:'#818cf8'},
+      {name:'Xero OAuth Connection',desc:'Connect Xero API for live financial data',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Cash Flow Forecasting',desc:'Rolling forecast from Stripe + Xero',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Financial Dashboards',desc:'Live P&L, cash flow, unit economics views',status:'Upcoming',statusColor:'#9ca3af'},
     ],
     skills:['Stripe Revenue','Xero Integration','Cash Flow Modelling','Financial Forecasting','Unit Economics'],
     kbs:['💳 Stripe Financials','📒 Xero Ledger','📊 P&L Tracker','💷 Cash Flow Model'],
-    bubbles:['Cash runway: 14 months','March revenue on track','CPBC down £4 this week']
+    bubbles:['Awaiting Xero OAuth connection','Financial dashboards queued','Ready to build forecasts']
   },
   { id:'scout',name:'Scout',emoji:'🔍',color:'#2ea8a0',role:'Research & Intel',
     anim:'reading',status:'online',
     desc:'Competitor intelligence, market analysis, framework research.',
     projects:[
-      {name:'Competitor Tracker',desc:'Weekly competitor pricing, messaging & feature changes',status:'Active',statusColor:'#4ade80'},
-      {name:'Market Sizing Update',desc:'UK youth mentoring TAM/SAM/SOM refresh',status:'In Progress',statusColor:'#facc15'},
+      {name:'Hormozi Knowledge Base',desc:'500KB+ — operating system, 7hr transcript, team scaling, money models',status:'Done',statusColor:'#818cf8'},
+      {name:'Advisory Board Profiles',desc:'Hormozi, Bartlett, Musk, Carr-Gregg, Brown — complete',status:'Done',statusColor:'#818cf8'},
+      {name:'Brand Research',desc:'Competitors, case studies, colour/typography, positioning map, Ritson framework',status:'Done',statusColor:'#818cf8'},
+      {name:'Advisory Board Integration',desc:'Integrating advisory profiles into Mission Control',status:'In Progress',statusColor:'#facc15'},
+      {name:'Market Analysis',desc:'Deeper market sizing and opportunity research',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Competitor Intel',desc:'Ongoing competitive intelligence gathering',status:'Upcoming',statusColor:'#9ca3af'},
     ],
     skills:['Competitor Analysis','Market Research','Framework Synthesis','Trend Spotting','SWOT Analysis'],
-    kbs:['🔍 Competitor Files','📊 Market Data','📚 Framework Library','🌍 Industry Reports'],
-    bubbles:['New competitor spotted','Market report updated','Framework comparison ready']
+    kbs:['🔍 Competitor Files','📊 Market Data','📚 Hormozi Knowledge Base (500KB+)','🌍 Advisory Board Research'],
+    bubbles:['Advisory Board research complete','Hormozi knowledge base: 500KB+','Brand positioning map delivered']
   },
   { id:'bridge',name:'Bridge',emoji:'🤝',color:'#2ab5d1',role:'Mentor Operations',
     anim:'waving',status:'online',
     desc:'Mentor roster, scheduling, matching algorithm, supply management.',
     projects:[
-      {name:'Smart Matching v2',desc:'AI mentor-mentee matching based on personality + interests',status:'Active',statusColor:'#4ade80'},
-      {name:'Mentor Recruitment',desc:'Pipeline of 40+ new mentor candidates',status:'In Progress',statusColor:'#facc15'},
+      {name:'Mentor Roster Management',desc:'Roster tracking and management system',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Matching Automation',desc:'AI mentor-mentee matching based on personality + interests',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Supply Partnerships',desc:'New mentor sourcing and partnership channels',status:'Upcoming',statusColor:'#9ca3af'},
     ],
     skills:['Mentor Matching','Scheduling','Roster Management','Supply Planning','Recruitment'],
     kbs:['🤝 Mentor Roster','📅 Schedule System','🧩 Matching Algorithm','📋 Recruitment Pipeline'],
-    bubbles:['12 sessions booked today','New mentor onboarded','Match score: 94% for pair #231']
+    bubbles:['Roster management queued','Matching system planned','Supply partnerships upcoming']
   },
   { id:'shield',name:'Shield',emoji:'🛡️',color:'#d47a2e',role:'Parent Success',
     anim:'nodding',status:'online',
     desc:'Retention, NPS tracking, parent communications, success management.',
     projects:[
-      {name:'NPS Automation',desc:'Monthly NPS surveys with automated follow-up',status:'Active',statusColor:'#4ade80'},
-      {name:'Churn Prevention',desc:'Early-warning system for at-risk families',status:'Active',statusColor:'#4ade80'},
+      {name:'Founders Experience Hit List',desc:'27 contacts — Stripe/HubSpot cross-referenced',status:'Done',statusColor:'#818cf8'},
+      {name:'FE Offer Finalised',desc:'$4,990 / 18 weeks — locked in',status:'Done',statusColor:'#818cf8'},
+      {name:'FE Lite Offer',desc:'$2,990 / 6+2 weeks — finalised',status:'Done',statusColor:'#818cf8'},
+      {name:'Retention Call Tracking',desc:'Monitoring retention call completion rates',status:'In Progress',statusColor:'#facc15'},
+      {name:'Parent NPS',desc:'NPS survey automation for parents',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'NDIS Billing Research',desc:'Exploring NDIS billing integration',status:'Upcoming',statusColor:'#9ca3af'},
     ],
     skills:['NPS Management','Retention Strategy','Parent Comms','Churn Prevention','Success Tracking'],
-    kbs:['🛡️ NPS Data','📊 Retention Metrics','💬 Parent Feedback','⚠️ At-Risk Alerts'],
-    bubbles:['NPS: 72 (+3 this month)','2 at-risk families flagged','Parent survey sent to 187']
+    kbs:['🛡️ FE Hit List (27 contacts)','📊 Retention Metrics','💬 FE Offers','⚠️ At-Risk Alerts'],
+    bubbles:['FE hit list: 27 contacts ready','FE offer locked: $4,990/18wks','Retention calls tracking']
   },
   { id:'launch',name:'Launch',emoji:'🚀',color:'#6ab82e',role:'Activation',
     anim:'typing',status:'online',
     desc:'Close→Week 1 journey, onboarding flows, 14-day activation protocol.',
     projects:[
-      {name:'14-Day Protocol v3',desc:'Optimised activation sequence: close to first session',status:'Active',statusColor:'#4ade80'},
-      {name:'Onboarding Automation',desc:'Automated welcome pack, first-call scheduling, portal setup',status:'Done',statusColor:'#818cf8'},
+      {name:'Close→W1 Tracking',desc:'56% MTD — up from 30%, 19-20 pending W1s',status:'In Progress',statusColor:'#facc15'},
+      {name:'14-Day Activation Protocol',desc:'Optimised activation sequence: close to first session',status:'In Progress',statusColor:'#facc15'},
+      {name:'Activation Automation',desc:'Automated activation workflows',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Self-Serve Portal',desc:'Parent self-service onboarding portal',status:'Upcoming',statusColor:'#9ca3af'},
     ],
     skills:['Onboarding Design','Activation Metrics','Welcome Sequences','First-Call Prep','Portal Setup'],
     kbs:['🚀 Activation Playbook','📋 Onboarding Checklist','📊 Activation Metrics','✉️ Welcome Templates'],
-    bubbles:['3 new members activated','W1 completion: 94%','Welcome sequence sent']
+    bubbles:['Close→W1: 56% MTD (up from 30%)','19-20 pending W1s','Activation protocol running']
   },
   { id:'wrench',name:'Wrench',emoji:'🔧',color:'#7a8c9e',role:'Tech & Portal',
     anim:'typing',status:'busy',
     desc:'Supabase backend, React portal, bug fixes, feature development.',
     projects:[
-      {name:'Portal v2.1',desc:'Parent dashboard redesign with session booking',status:'Active',statusColor:'#4ade80'},
-      {name:'Bug Backlog Sprint',desc:'Clearing 14 open bugs from last release',status:'In Progress',statusColor:'#facc15'},
+      {name:'Supabase Connected',desc:'Database connected and configured',status:'Done',statusColor:'#818cf8'},
+      {name:'GitHub Repos Cloned',desc:'5 repos cloned and organised',status:'Done',statusColor:'#818cf8'},
+      {name:'GitHub Pages Deployment',desc:'Mission Control deployed to Pages',status:'Done',statusColor:'#818cf8'},
+      {name:'Portal Integration',desc:'Connecting portal to backend systems',status:'In Progress',statusColor:'#facc15'},
+      {name:'Bug Fixes',desc:'Ongoing bug triage and fixes',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Feature Builds',desc:'New feature development queue',status:'Upcoming',statusColor:'#9ca3af'},
+      {name:'Health Checks',desc:'System monitoring and health checks',status:'Upcoming',statusColor:'#9ca3af'},
     ],
     skills:['React/Next.js','Supabase','TypeScript','API Design','Bug Triage','CI/CD'],
-    kbs:['🔧 Codebase Docs','🐛 Bug Tracker','📦 Supabase Schema','🏗️ Architecture Docs'],
-    bubbles:['Deployed fix #847','Running test suite...','PR #32 merged']
+    kbs:['🔧 Codebase Docs (5 repos)','🐛 Bug Tracker','📦 Supabase Schema','🏗️ GitHub Pages'],
+    bubbles:['Supabase connected','GitHub Pages deployed','Portal integration in progress']
   }
 ];
 
@@ -523,6 +572,11 @@ const ADVISORS = [
     title:'Teen Psychology & Adolescent Development Expert',
     frameworks:['Adolescent Resilience Model','Digital Wellbeing','Parent-Teen Communication','Growth Mindset in Youth'],
     quote:'"Every young person has the potential to thrive — they just need the right support at the right time."'
+  },
+  { name:'Brené Brown',emoji:'💛',color:'#C77DBA',glow:'rgba(199,125,186,.2)',
+    title:'Vulnerability, Courage & Leadership',
+    frameworks:['Dare to Lead','Rising Strong','Braving Trust','Rumbling with Vulnerability'],
+    quote:'"Vulnerability is not winning or losing; it\'s having the courage to show up and be seen."'
   }
 ];
 
@@ -715,16 +769,21 @@ function startFeed() {
 function addFeedItem() {
   const agent = AGENTS[Math.floor(Math.random() * AGENTS.length)];
   const messages = [
-    `Completed analysis on latest metrics`,
-    `Updated project status`,
-    `Generated new report`,
-    `Synced with upstream data`,
-    `Processed incoming request`,
-    `Optimised workflow step`,
-    `Reviewed and approved changes`,
-    `Flagged item for review`,
-    `Automated task completed`,
-    `Data refresh complete`,
+    `Completed Brand Identity Pack — full distinctive assets`,
+    `Posted Upwork logo brief to Notion`,
+    `Deployed Mission Control V4 to GitHub Pages`,
+    `SEO Strategy & Content Plan complete`,
+    `Whisper transcription 58/181 (32%) — processing`,
+    `Meta Ads daily report — $3.06 CPBC ✅`,
+    `Advisory Board research complete`,
+    `FE hit list: 27 contacts cross-referenced`,
+    `Close→W1 tracking: 56% MTD (up from 30%)`,
+    `Hormozi knowledge base delivered (500KB+)`,
+    `DC Training Portal built — 7 sittings`,
+    `Brand positioning map complete`,
+    `Dashboard data refreshed from HubSpot/Stripe`,
+    `Memory system fix deployed`,
+    `Business Workflow Map — Hormozi framework complete`,
   ];
   const msg = agent.bubbles[Math.floor(Math.random() * agent.bubbles.length)] ||
               messages[Math.floor(Math.random() * messages.length)];
