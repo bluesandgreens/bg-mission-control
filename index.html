@@ -270,93 +270,330 @@
     <!-- ═══════════════════ LIVE DASHBOARD ═══════════════════ -->
     <section class="view" id="live-dashboard">
       <h2 class="section-title">Live Dashboard</h2>
-      <p class="section-subtitle">Revenue pulse, marketing efficiency, pipeline progression, and rep performance. Data as of March 14, 2026.</p>
-      <div class="dashboard-controls">
-        <button class="toggle">Day</button>
-        <button class="toggle active">Month</button>
-        <button class="toggle">All Time</button>
+      <p class="section-subtitle">Operational command centre. Data source: HubSpot + Stripe + Meta. Last sync: March 12, 2026.</p>
+
+      <!-- Dashboard Sub-Tabs -->
+      <div style="display:flex;gap:10px;margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:10px;flex-wrap:wrap;">
+        <button class="toggle db-tab active" data-db="db-overview">Overview</button>
+        <button class="toggle db-tab" data-db="db-dcs">DCs</button>
+        <button class="toggle db-tab" data-db="db-activation">DC → W1</button>
+        <button class="toggle db-tab" data-db="db-mentors">Mentors</button>
+        <button class="toggle db-tab" data-db="db-program">Program</button>
+        <button class="toggle db-tab" data-db="db-unit-economics">Unit Economics</button>
       </div>
-      <div class="grid cols-4" style="margin-bottom:24px;">
-        <div class="card metric">
-          <div class="metric-label">MRR</div>
-          <div class="metric-value">$56K</div>
-          <div class="muted">↓ from $77K peak (Nov)</div>
+
+      <!-- ── OVERVIEW TAB ── -->
+      <div class="db-panel active" id="db-overview">
+        <!-- Time Period Toggle -->
+        <div style="display:flex;gap:8px;margin-bottom:20px;align-items:center;flex-wrap:wrap;">
+          <button class="toggle time-sel active" data-period="day">Day</button>
+          <button class="toggle time-sel" data-period="week">Week</button>
+          <button class="toggle time-sel" data-period="month">Month</button>
+          <button class="toggle time-sel" data-period="custom">Custom</button>
+          <input type="date" id="customStart" style="display:none;background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px;font-size:0.85rem;" value="2026-03-01">
+          <input type="date" id="customEnd" style="display:none;background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px;font-size:0.85rem;" value="2026-03-12">
+          <span class="muted" id="periodLabel" style="margin-left:8px;font-size:0.85rem;">Thursday, 12 Mar 2026</span>
         </div>
-        <div class="card metric">
-          <div class="metric-label">Active Members</div>
-          <div class="metric-value">135</div>
-          <div class="muted">Retention focus active</div>
+
+        <!-- Top Metric Cards -->
+        <div class="grid cols-3" style="margin-bottom:20px;" id="overviewCards">
+          <!-- Day view (default) -->
+          <div class="card metric"><div class="metric-label">New Leads</div><div class="metric-value" style="color:var(--gold);" id="m-leads">27</div><div class="muted" id="m-leads-sub">From discovery & referrals</div></div>
+          <div class="card metric"><div class="metric-label">Booked Calls</div><div class="metric-value" style="color:var(--gold);" id="m-booked">8</div><div class="muted" id="m-booked-sub">30% conversion from leads</div></div>
+          <div class="card metric"><div class="metric-label">DCs Completed</div><div class="metric-value" style="color:var(--gold);" id="m-dcs">6</div><div class="muted" id="m-dcs-sub">2 onboarding, 2 follow-ups</div></div>
+          <div class="card metric"><div class="metric-label">Close Rate</div><div class="metric-value" style="color:#27ae60;" id="m-close">67%</div><div class="muted" id="m-close-sub">4/6 onboarding booked</div></div>
+          <div class="card metric"><div class="metric-label">W1 Starts</div><div class="metric-value" style="color:#27ae60;" id="m-w1">5</div><div class="muted" id="m-w1-sub">Program activation on track</div></div>
+          <div class="card metric"><div class="metric-label">Agreement Forms</div><div class="metric-value" style="color:var(--gold);" id="m-agree">3</div><div class="muted" id="m-agree-sub">Strong conversion momentum</div></div>
         </div>
-        <div class="card metric">
-          <div class="metric-label">Close→W1 Rate</div>
-          <div class="metric-value">56%</div>
-          <div class="muted">Target: 75% · Brodie owns</div>
+
+        <!-- Key Metrics Row -->
+        <div class="grid cols-4" style="margin-bottom:20px;">
+          <div class="card metric"><div class="metric-label">MRR</div><div class="metric-value">$56K</div><div class="muted">↓ from $77K peak (Nov)</div></div>
+          <div class="card metric"><div class="metric-label">Active Members</div><div class="metric-value">135</div><div class="muted">Retention focus active</div></div>
+          <div class="card metric"><div class="metric-label">14-Day Leads</div><div class="metric-value" style="color:var(--gold);">238</div><div class="muted">Hot pipeline</div></div>
+          <div class="card metric"><div class="metric-label">Full Pipeline</div><div class="metric-value" style="color:var(--gold);">83</div><div class="muted">Families booked & in flight</div></div>
         </div>
-        <div class="card metric">
-          <div class="metric-label">Blended CPBC</div>
-          <div class="metric-value">$3.06</div>
-          <div class="muted">Benchmark: $9.78 · H14-B1 leads</div>
+
+        <!-- Pipeline Funnel + Meta Ads -->
+        <div class="grid cols-3">
+          <div class="panel">
+            <h3 class="section-title" style="font-size:1rem;">Pipeline Funnel (MTD)</h3>
+            <div class="funnel">
+              <div class="funnel-step"><div class="muted">New Leads — 351</div><div class="bar"><span style="width:100%;"></span></div></div>
+              <div class="funnel-step"><div class="muted">Booked Calls — 70</div><div class="bar"><span style="width:20%;"></span></div></div>
+              <div class="funnel-step"><div class="muted">DCs Completed — 47</div><div class="bar"><span style="width:13%;"></span></div></div>
+              <div class="funnel-step"><div class="muted">Closes — 33 (70%)</div><div class="bar"><span style="width:9%;"></span></div></div>
+              <div class="funnel-step"><div class="muted">W1 Starts — 18</div><div class="bar"><span style="width:5%;"></span></div></div>
+              <div class="funnel-step"><div class="muted">Withdrawals — 0</div><div class="bar"><span style="width:0%;background:#E74C3C;"></span></div></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3 class="section-title" style="font-size:1rem;">Meta Ads (Mar 12)</h3>
+            <div class="card" style="margin-bottom:12px;"><div class="metric-label">Daily Spend</div><div class="metric-value" style="font-size:1.4rem;">$174</div><div class="muted">CTR 6.05% · CPC $0.37</div></div>
+            <div class="card" style="margin-bottom:12px;"><div class="metric-label">Booked Calls</div><div class="metric-value" style="font-size:1.4rem;">57</div><div class="muted">Champion: H14-B1 @ $2.76/conv</div></div>
+            <div class="card"><div class="metric-label">Program Tiers</div><div class="muted" style="margin-top:8px;">FE: $4,990 / 18wks</div><div class="muted">Big Brother: $2,730 / 90d</div><div class="muted">Lighthouse: $1,899 / 90d</div></div>
+          </div>
+          <div class="panel">
+            <h3 class="section-title" style="font-size:1rem;">Pending W1s (12)</h3>
+            <div style="max-height:300px;overflow:auto;font-size:0.85rem;">
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Leah West</span> <span class="muted">· Big Bro · Mar 13 · Elliot</span></div>
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Tenniel Harman-York</span> <span class="muted">· Big Bro · Mar 16</span></div>
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Amy Greensword</span> <span class="muted">· Big Bro · Mar 11 · Harry</span></div>
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Hailey Paine</span> <span class="muted">· Big Bro · Mar 15 · Harry</span></div>
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Michelle Noyce</span> <span class="muted">· Big Bro · Mar 13</span></div>
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Annie Stazak</span> <span class="muted">· Big Bro · Mar 18 · Harry</span></div>
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Sally Quintero</span> <span class="muted">· Lighthouse · Mar 14 · Harry</span></div>
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Sari Jackson</span> <span class="muted">· Lighthouse · Mar 16 · Elliot</span></div>
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Jessica Apthorpe</span> <span class="muted">· Big Bro · Mar 14 · Elliot</span></div>
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);color:#E74C3C;"><span>Kirsty Madigan</span> <span>· Big Bro · Mar 4 · Anthony · OVERDUE</span></div>
+              <div style="padding:8px 0;border-bottom:1px solid var(--border);color:#E74C3C;"><span>Karen Vargas</span> <span>· Big Bro · Mar 8 · Elliot · OVERDUE</span></div>
+              <div style="padding:8px 0;color:#E74C3C;"><span>Tania Paton</span> <span>· Lighthouse · Mar 6 · Elliot · OVERDUE</span></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="grid cols-3">
-        <div class="panel">
-          <h3 class="section-title">Rep Performance</h3>
-          <table class="table">
-            <thead><tr><th>Rep</th><th>Close Rate</th><th>Status</th></tr></thead>
-            <tbody>
-              <tr><td>Harry</td><td>81%</td><td style="color:var(--gold)">Lead</td></tr>
-              <tr><td>Elliot</td><td>50%</td><td style="color:#27ae60">Active</td></tr>
-              <tr><td>Rye</td><td>67%</td><td style="color:#27ae60">Active</td></tr>
-              <tr><td>Anthony</td><td>Growing</td><td style="color:#27ae60">Active</td></tr>
-              <tr><td>Bailey</td><td>—</td><td style="color:var(--muted)">On Hold</td></tr>
-              <tr><td>Tom</td><td>—</td><td style="color:#3498db">Shadowing</td></tr>
-              <tr><td>Riv</td><td>—</td><td style="color:#3498db">Pending</td></tr>
-            </tbody>
-          </table>
+
+      <!-- ── DCs TAB ── -->
+      <div class="db-panel" id="db-dcs" style="display:none;">
+        <h3 class="section-title" style="font-size:1.2rem;margin-bottom:16px;">DC Rep Performance</h3>
+        <!-- Time Toggle -->
+        <div style="display:flex;gap:8px;margin-bottom:16px;">
+          <button class="toggle dc-time active" data-dct="dc-day">Day</button>
+          <button class="toggle dc-time" data-dct="dc-week">Week</button>
+          <button class="toggle dc-time" data-dct="dc-month">Month</button>
         </div>
-        <div class="panel">
-          <h3 class="section-title">Pipeline Funnel (MTD)</h3>
-          <div class="funnel">
-            <div class="funnel-step">
-              <div class="muted">New Leads — 362</div>
-              <div class="bar"><span style="width: 100%;"></span></div>
+        <!-- Day Table -->
+        <div id="dc-day" class="dc-view">
+          <table class="table"><thead><tr><th>Rep</th><th>DCs</th><th>Closes</th><th>Close Rate</th><th>Pending W1s</th></tr></thead>
+          <tbody>
+            <tr><td>Elliot Mahoney</td><td>4</td><td>3</td><td style="color:#27ae60;font-weight:700;">75%</td><td>2</td></tr>
+            <tr><td>Other</td><td>2</td><td>2</td><td style="color:#27ae60;font-weight:700;">100%</td><td>0</td></tr>
+          </tbody></table>
+        </div>
+        <!-- Week Table -->
+        <div id="dc-week" class="dc-view" style="display:none;">
+          <table class="table"><thead><tr><th>Rep</th><th>DCs</th><th>Closes</th><th>Close Rate</th></tr></thead>
+          <tbody>
+            <tr><td>Harry Quayle</td><td>6</td><td>5</td><td style="color:#27ae60;font-weight:700;">83%</td></tr>
+            <tr><td>Elliot Mahoney</td><td>8</td><td>4</td><td style="color:var(--gold);font-weight:700;">50%</td></tr>
+            <tr><td>Bailey</td><td>2</td><td>2</td><td style="color:#27ae60;font-weight:700;">100%</td></tr>
+            <tr><td>Rye Penny</td><td>1</td><td>0</td><td style="color:#E74C3C;font-weight:700;">0%</td></tr>
+          </tbody></table>
+        </div>
+        <!-- Month Table -->
+        <div id="dc-month" class="dc-view" style="display:none;">
+          <table class="table"><thead><tr><th>Rep</th><th>DCs</th><th>Closes</th><th>Close Rate</th></tr></thead>
+          <tbody>
+            <tr><td>Harry Quayle</td><td>18</td><td>15</td><td style="color:#27ae60;font-weight:700;">83%</td></tr>
+            <tr><td>Elliot Mahoney</td><td>17</td><td>10</td><td style="color:var(--gold);font-weight:700;">59%</td></tr>
+            <tr><td>Bailey</td><td>3</td><td>2</td><td style="color:#27ae60;font-weight:700;">67%</td></tr>
+            <tr><td>Rye Penny</td><td>2</td><td>0</td><td style="color:#E74C3C;font-weight:700;">0%</td></tr>
+          </tbody></table>
+        </div>
+
+        <!-- Week DC Outcomes -->
+        <h3 style="margin:24px 0 12px;color:var(--cream);font-size:0.95rem;">This Week's DCs by Outcome (23 total)</h3>
+        <div class="grid cols-3" style="margin-bottom:20px;">
+          <div class="card metric" style="text-align:center;"><div class="metric-label">Onboarding Booked</div><div class="metric-value" style="color:#27ae60;">16</div><div class="muted">70%</div></div>
+          <div class="card metric" style="text-align:center;"><div class="metric-label">Follow Up Scheduled</div><div class="metric-value" style="color:var(--gold);">4</div><div class="muted">17%</div></div>
+          <div class="card metric" style="text-align:center;"><div class="metric-label">Objections / No Show</div><div class="metric-value" style="color:#E74C3C;">3</div><div class="muted">13% (time, partner, no-show)</div></div>
+        </div>
+
+        <!-- Today's DCs Detail -->
+        <h3 style="margin:24px 0 12px;color:var(--cream);font-size:0.95rem;">Today's DCs (6 completed)</h3>
+        <table class="table"><thead><tr><th>Member</th><th>Outcome</th><th>Rep</th></tr></thead>
+        <tbody>
+          <tr><td>Cass Bailey</td><td style="color:#27ae60;font-weight:700;">Onboarding Booked</td><td>Elliot</td></tr>
+          <tr><td>Fiona Merrin</td><td style="color:#27ae60;font-weight:700;">Onboarding Booked</td><td>—</td></tr>
+          <tr><td>Kylie Solomon</td><td style="color:var(--gold);font-weight:700;">Follow Up</td><td>Elliot</td></tr>
+          <tr><td>Hayley Kirk</td><td style="color:#27ae60;font-weight:700;">Onboarding Booked</td><td>—</td></tr>
+          <tr><td>Michelle Stephenson</td><td style="color:#27ae60;font-weight:700;">Onboarding Booked</td><td>—</td></tr>
+          <tr><td>Elisabeth Hayhurst</td><td style="color:var(--gold);font-weight:700;">Follow Up</td><td>Elliot</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- ── ACTIVATION TAB ── -->
+      <div class="db-panel" id="db-activation" style="display:none;">
+        <h3 class="section-title" style="font-size:1.2rem;margin-bottom:16px;">Activation Pipeline</h3>
+        <div class="grid cols-3" style="margin-bottom:20px;">
+          <div class="card metric"><div class="metric-label">Full Pipeline</div><div class="metric-value">83</div><div class="muted">Families booked & in flight</div></div>
+          <div class="card metric"><div class="metric-label">Pending W1s</div><div class="metric-value" style="color:var(--gold);">12</div><div class="muted">Scheduled but not started</div></div>
+          <div class="card metric"><div class="metric-label">W1s Today</div><div class="metric-value" style="color:#27ae60;">5</div><div class="muted">Activation on track</div></div>
+        </div>
+
+        <h3 style="margin:24px 0 12px;color:var(--cream);font-size:0.95rem;">Today's W1 Starts (5)</h3>
+        <table class="table"><thead><tr><th>Family</th><th>Program</th><th>Rep</th></tr></thead>
+        <tbody>
+          <tr><td>Whitney Trigwell</td><td>Big Brother</td><td>Elliot</td></tr>
+          <tr><td>Mardi Moore</td><td>Lighthouse</td><td>Harry</td></tr>
+          <tr><td>Heather Bullied</td><td>Big Brother</td><td>Rye</td></tr>
+          <tr><td>Aeshlie Wheeler</td><td>Big Brother</td><td>Elliot</td></tr>
+          <tr><td>Sarah Ziebell</td><td>Big Brother</td><td>Claudia</td></tr>
+        </tbody></table>
+
+        <h3 style="margin:24px 0 12px;color:var(--cream);font-size:0.95rem;">Conversion Rates</h3>
+        <div class="grid cols-3">
+          <div class="card metric" style="text-align:center;"><div class="metric-label">Lead→Booked</div><div class="metric-value" style="color:var(--gold);">20%</div><div class="muted">70/351 MTD</div></div>
+          <div class="card metric" style="text-align:center;"><div class="metric-label">Booked→DC</div><div class="metric-value" style="color:var(--gold);">67%</div><div class="muted">47/70 MTD</div></div>
+          <div class="card metric" style="text-align:center;"><div class="metric-label">DC→Close</div><div class="metric-value" style="color:#27ae60;">70%</div><div class="muted">33/47 MTD</div></div>
+        </div>
+      </div>
+
+      <!-- ── MENTORS TAB ── -->
+      <div class="db-panel" id="db-mentors" style="display:none;">
+        <h3 class="section-title" style="font-size:1.2rem;margin-bottom:16px;">Mentor Network</h3>
+        <div class="grid cols-3" style="margin-bottom:20px;">
+          <div class="card metric"><div class="metric-label">Total Capacity</div><div class="metric-value">109</div><div class="muted">24 active mentors</div></div>
+          <div class="card metric"><div class="metric-label">Support Requests</div><div class="metric-value" style="color:#E74C3C;">3</div><div class="muted">Pending resolution</div></div>
+          <div class="card metric"><div class="metric-label">Safeguarding Flags</div><div class="metric-value" style="color:#27ae60;">0</div><div class="muted">All clear</div></div>
+        </div>
+
+        <h3 style="margin:24px 0 12px;color:var(--cream);font-size:0.95rem;">Mentor Capacity</h3>
+        <div style="max-height:400px;overflow:auto;">
+        <table class="table"><thead><tr><th>Mentor</th><th style="text-align:right;">Slots</th></tr></thead>
+        <tbody>
+          <tr><td>Cristian Milograd</td><td style="text-align:right;color:var(--gold);font-weight:700;">9</td></tr>
+          <tr><td>Harper Montgomery</td><td style="text-align:right;color:var(--gold);font-weight:700;">9</td></tr>
+          <tr><td>Xavier Lewis</td><td style="text-align:right;color:var(--gold);font-weight:700;">8</td></tr>
+          <tr><td>Anthony Audino</td><td style="text-align:right;color:var(--gold);font-weight:700;">7</td></tr>
+          <tr><td>Elliot Mahoney</td><td style="text-align:right;color:var(--gold);font-weight:700;">6</td></tr>
+          <tr><td>Hayden Sampson</td><td style="text-align:right;color:var(--gold);font-weight:700;">6</td></tr>
+          <tr><td>Tom Hermans</td><td style="text-align:right;color:var(--gold);font-weight:700;">6</td></tr>
+          <tr><td>Benjamin Philip</td><td style="text-align:right;color:var(--gold);font-weight:700;">5</td></tr>
+          <tr><td>Jed Woods</td><td style="text-align:right;color:var(--gold);font-weight:700;">5</td></tr>
+          <tr><td>Jett Cara</td><td style="text-align:right;color:var(--gold);font-weight:700;">5</td></tr>
+          <tr><td>Lachlan Hall</td><td style="text-align:right;color:var(--gold);font-weight:700;">5</td></tr>
+          <tr><td>Noah Cockerell</td><td style="text-align:right;color:var(--gold);font-weight:700;">5</td></tr>
+          <tr><td>Shane Clough</td><td style="text-align:right;color:var(--gold);font-weight:700;">4</td></tr>
+          <tr><td>Aidan Cole</td><td style="text-align:right;color:var(--gold);font-weight:700;">3</td></tr>
+          <tr><td>Charlie Bolmat</td><td style="text-align:right;color:var(--gold);font-weight:700;">3</td></tr>
+          <tr><td>Connor Savill</td><td style="text-align:right;color:var(--gold);font-weight:700;">3</td></tr>
+          <tr><td>Fletcher Gauci</td><td style="text-align:right;color:var(--gold);font-weight:700;">3</td></tr>
+          <tr><td>Josh Gould</td><td style="text-align:right;color:var(--gold);font-weight:700;">3</td></tr>
+          <tr><td>Luke Vella</td><td style="text-align:right;color:var(--gold);font-weight:700;">3</td></tr>
+          <tr><td>Miles Dalgliesh</td><td style="text-align:right;color:var(--gold);font-weight:700;">3</td></tr>
+          <tr><td>Rye Penny</td><td style="text-align:right;color:var(--gold);font-weight:700;">3</td></tr>
+          <tr><td>Luke Dixon</td><td style="text-align:right;color:var(--gold);font-weight:700;">2</td></tr>
+          <tr><td>Callum Sargentson</td><td style="text-align:right;color:var(--gold);font-weight:700;">1</td></tr>
+          <tr><td>Tom Pierce</td><td style="text-align:right;color:var(--gold);font-weight:700;">1</td></tr>
+        </tbody></table>
+        </div>
+
+        <h3 style="margin:24px 0 12px;color:var(--cream);font-size:0.95rem;">Parent NPS</h3>
+        <div class="grid cols-3">
+          <div class="card metric" style="text-align:center;"><div class="metric-label">Promoters (10)</div><div class="metric-value" style="color:#27ae60;">7</div></div>
+          <div class="card metric" style="text-align:center;"><div class="metric-label">Passives (8-9)</div><div class="metric-value" style="color:var(--gold);">0</div></div>
+          <div class="card metric" style="text-align:center;"><div class="metric-label">Detractors (≤5)</div><div class="metric-value" style="color:#E74C3C;">3</div></div>
+        </div>
+
+        <h3 style="margin:24px 0 12px;color:var(--cream);font-size:0.95rem;">Support Requests</h3>
+        <div style="font-size:0.85rem;">
+          <div class="card" style="margin-bottom:8px;"><strong>Fletcher Gauci</strong><div class="muted">Fred Parsons profile disappeared after session logging · Feb 17</div></div>
+          <div class="card" style="margin-bottom:8px;"><strong>Bailey Kiefer</strong><div class="muted">Custom win title bug + can't delete logged wins · Mar 3</div></div>
+          <div class="card"><strong>Support Team</strong><div class="muted">Missing mentor update records for session logging · Mar 11</div></div>
+        </div>
+      </div>
+
+      <!-- ── PROGRAM TAB ── -->
+      <div class="db-panel" id="db-program" style="display:none;">
+        <h3 class="section-title" style="font-size:1.2rem;margin-bottom:16px;">Program Operations</h3>
+        <div class="grid cols-4" style="margin-bottom:20px;">
+          <div class="card metric"><div class="metric-label">W1 Starts Today</div><div class="metric-value" style="color:#27ae60;">5</div></div>
+          <div class="card metric"><div class="metric-label">Agreement Forms</div><div class="metric-value" style="color:var(--gold);">3</div></div>
+          <div class="card metric"><div class="metric-label">Pending W1s</div><div class="metric-value" style="color:var(--gold);">12</div></div>
+          <div class="card metric"><div class="metric-label">Withdrawals MTD</div><div class="metric-value" style="color:#E74C3C;">12</div></div>
+        </div>
+
+        <h3 style="margin:24px 0 12px;color:var(--cream);font-size:0.95rem;">Withdrawals This Month (12)</h3>
+        <div style="font-size:0.85rem;max-height:300px;overflow:auto;">
+          <div class="card" style="margin-bottom:4px;padding:10px;">Stacey Verco</div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Carrie Fildes</div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Alicia Honey</div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Kerry Taylor</div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Christine Howden</div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Vered Bar</div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Rhiannon Pinnell</div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Mellany Gavrilos</div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Jude Penny</div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Tanya Butler</div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Marietta Wood <span class="muted">· Budget</span></div>
+          <div class="card" style="margin-bottom:4px;padding:10px;">Kate Van der Schaaf</div>
+        </div>
+
+        <div class="panel" style="margin-top:20px;background:rgba(39,174,96,0.08);border-color:rgba(39,174,96,0.3);">
+          <h3 style="color:#27ae60;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">Program Health Check</h3>
+          <div style="font-size:0.85rem;">
+            <div style="margin-bottom:6px;"><span style="color:#27ae60;">✓</span> 5 W1 starts today on track</div>
+            <div style="margin-bottom:6px;"><span style="color:var(--gold);">→</span> 12 families pending W1 activation</div>
+            <div style="margin-bottom:6px;"><span style="color:#27ae60;">✓</span> 83 families in full pipeline</div>
+            <div><span style="color:#E74C3C;">⚠</span> 12 withdrawals this month — retention critical</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── UNIT ECONOMICS TAB ── -->
+      <div class="db-panel" id="db-unit-economics" style="display:none;">
+        <h3 class="section-title" style="font-size:1.2rem;margin-bottom:16px;">Unit Economics & CAC</h3>
+
+        <div class="grid cols-3" style="margin-bottom:20px;">
+          <div class="card metric">
+            <div class="metric-label">Rolling CAC (MTD)</div>
+            <div class="metric-value" style="color:var(--gold);" id="cac-mtd">$116</div>
+            <div class="muted">Ad spend ÷ W1 starts</div>
+            <div class="muted" style="margin-top:4px;font-size:0.8rem;">$2,088 spend ÷ 18 W1s (Mar 1-12)</div>
+          </div>
+          <div class="card metric">
+            <div class="metric-label">CAC : LTV Ratio</div>
+            <div class="metric-value" style="color:#27ae60;" id="cac-ltv">—</div>
+            <div class="muted">All-time ad spend ÷ total revenue</div>
+            <div class="muted" style="margin-top:4px;font-size:0.8rem;">Needs Stripe total revenue + Meta all-time spend</div>
+          </div>
+          <div class="card metric">
+            <div class="metric-label">Cost Per Booked Call</div>
+            <div class="metric-value" style="color:var(--gold);">$3.06</div>
+            <div class="muted">Blended CPBC (Mar 12)</div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-bottom:20px;">
+          <h3 style="color:var(--cream);font-size:0.95rem;margin-bottom:16px;">CAC Calculator</h3>
+          <div class="grid cols-3" style="gap:12px;">
+            <div>
+              <label class="muted" style="font-size:0.8rem;display:block;margin-bottom:4px;">Ad Spend ($)</label>
+              <input type="number" id="cac-spend" value="2088" style="width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:8px;font-size:1rem;">
             </div>
-            <div class="funnel-step">
-              <div class="muted">Booked Calls — 74</div>
-              <div class="bar"><span style="width: 20%;"></span></div>
+            <div>
+              <label class="muted" style="font-size:0.8rem;display:block;margin-bottom:4px;">W1 Starts</label>
+              <input type="number" id="cac-w1s" value="18" style="width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:8px;font-size:1rem;">
             </div>
-            <div class="funnel-step">
-              <div class="muted">DCs Completed — 48</div>
-              <div class="bar"><span style="width: 13%;"></span></div>
-            </div>
-            <div class="funnel-step">
-              <div class="muted">Closes — 32</div>
-              <div class="bar"><span style="width: 9%;"></span></div>
-            </div>
-            <div class="funnel-step">
-              <div class="muted">W1 Starts — 18 (56%)</div>
-              <div class="bar"><span style="width: 5%;"></span></div>
+            <div>
+              <label class="muted" style="font-size:0.8rem;display:block;margin-bottom:4px;">Result</label>
+              <div id="cac-result" style="padding:10px;background:var(--card);border:1px solid var(--gold);border-radius:8px;font-size:1.2rem;color:var(--gold);font-weight:700;text-align:center;">$116</div>
             </div>
           </div>
         </div>
+
         <div class="panel">
-          <h3 class="section-title">Meta Ads (Mar 13)</h3>
-          <div class="card" style="margin-bottom:16px;">
-            <div class="metric-label">Spend</div>
-            <div class="metric-value">$174</div>
-            <div class="muted">CTR 6.05% · CPC $0.37</div>
+          <h3 style="color:var(--cream);font-size:0.95rem;margin-bottom:16px;">CAC : LTV Calculator</h3>
+          <div class="grid cols-4" style="gap:12px;">
+            <div>
+              <label class="muted" style="font-size:0.8rem;display:block;margin-bottom:4px;">All-Time Ad Spend ($)</label>
+              <input type="number" id="ltv-spend" value="0" placeholder="Enter total" style="width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:8px;font-size:1rem;">
+            </div>
+            <div>
+              <label class="muted" style="font-size:0.8rem;display:block;margin-bottom:4px;">Total Revenue ($)</label>
+              <input type="number" id="ltv-revenue" value="0" placeholder="Enter total" style="width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:8px;font-size:1rem;">
+            </div>
+            <div>
+              <label class="muted" style="font-size:0.8rem;display:block;margin-bottom:4px;">Total W1 Starts</label>
+              <input type="number" id="ltv-w1s" value="0" placeholder="Enter total" style="width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:8px;font-size:1rem;">
+            </div>
+            <div>
+              <label class="muted" style="font-size:0.8rem;display:block;margin-bottom:4px;">CAC : LTV</label>
+              <div id="ltv-result" style="padding:10px;background:var(--card);border:1px solid var(--gold);border-radius:8px;font-size:1.2rem;color:var(--gold);font-weight:700;text-align:center;">Enter data</div>
+            </div>
           </div>
-          <div class="card" style="margin-bottom:16px;">
-            <div class="metric-label">Booked Calls</div>
-            <div class="metric-value">57</div>
-            <div class="muted">Champion: H14-B1 @ $2.76/conv</div>
-          </div>
-          <div class="card">
-            <div class="metric-label">Program Tiers</div>
-            <div class="muted" style="margin-top:8px;">FE: $4,990 / 18wks</div>
-            <div class="muted">Big Brother: $2,730 / 90d</div>
-            <div class="muted">Lighthouse: $1,899 / 90d</div>
-          </div>
+          <div class="muted" style="margin-top:12px;font-size:0.8rem;">CAC = All-Time Spend ÷ Total W1s · LTV = Total Revenue ÷ Total W1s · Target ratio: 1:3+</div>
         </div>
       </div>
     </section>
@@ -889,6 +1126,85 @@
     });
     panelClose.addEventListener('click', () => panel.classList.remove('open'));
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { panel.classList.remove('open'); } });
+    // Dashboard sub-tabs
+    document.querySelectorAll('.db-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.db-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.db-panel').forEach(p => { p.style.display = 'none'; p.classList.remove('active'); });
+        const target = document.getElementById(btn.dataset.db);
+        if (target) { target.style.display = 'block'; target.classList.add('active'); }
+      });
+    });
+
+    // Time period toggle (Overview)
+    const timeData = {
+      day:   { leads: '27', booked: '8', dcs: '6', close: '67%', w1: '5', agree: '3', lSub: 'From discovery & referrals', bSub: '30% conversion from leads', dSub: '2 onboarding, 2 follow-ups', cSub: '4/6 onboarding booked', wSub: 'Program activation on track', aSub: 'Strong conversion momentum', label: 'Thursday, 12 Mar 2026' },
+      week:  { leads: '158', booked: '35', dcs: '23', close: '70%', w1: '11', agree: '—', lSub: 'Sun 8 – Thu 12', bSub: '22% conversion from leads', dSub: '16 closes, 4 follow-ups', cSub: '16/23 onboarding booked', wSub: 'Weekly target met', aSub: 'Week data', label: 'Week: Sun 8 – Thu 12 Mar' },
+      month: { leads: '351', booked: '70', dcs: '47', close: '70%', w1: '18', agree: '—', lSub: 'Mar 1 – Mar 12', bSub: '20% conversion from leads', dSub: '33 closes, 14 other', cSub: '33/47 closed', wSub: '0 withdrawals MTD', aSub: 'Month data', label: 'Month: Mar 1 – 12, 2026' },
+      custom:{ leads: '—', booked: '—', dcs: '—', close: '—', w1: '—', agree: '—', lSub: 'Select date range', bSub: '—', dSub: '—', cSub: '—', wSub: '—', aSub: '—', label: 'Custom range' }
+    };
+    document.querySelectorAll('.time-sel').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.time-sel').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const p = btn.dataset.period;
+        const d = timeData[p];
+        document.getElementById('m-leads').textContent = d.leads;
+        document.getElementById('m-booked').textContent = d.booked;
+        document.getElementById('m-dcs').textContent = d.dcs;
+        document.getElementById('m-close').textContent = d.close;
+        document.getElementById('m-w1').textContent = d.w1;
+        document.getElementById('m-agree').textContent = d.agree;
+        document.getElementById('m-leads-sub').textContent = d.lSub;
+        document.getElementById('m-booked-sub').textContent = d.bSub;
+        document.getElementById('m-dcs-sub').textContent = d.dSub;
+        document.getElementById('m-close-sub').textContent = d.cSub;
+        document.getElementById('m-w1-sub').textContent = d.wSub;
+        document.getElementById('m-agree-sub').textContent = d.aSub;
+        document.getElementById('periodLabel').textContent = d.label;
+        document.getElementById('customStart').style.display = p === 'custom' ? 'inline-block' : 'none';
+        document.getElementById('customEnd').style.display = p === 'custom' ? 'inline-block' : 'none';
+      });
+    });
+
+    // DC time toggle
+    document.querySelectorAll('.dc-time').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.dc-time').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.dc-view').forEach(v => v.style.display = 'none');
+        document.getElementById(btn.dataset.dct).style.display = 'block';
+      });
+    });
+
+    // CAC Calculator
+    ['cac-spend','cac-w1s'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        const spend = parseFloat(document.getElementById('cac-spend').value) || 0;
+        const w1s = parseFloat(document.getElementById('cac-w1s').value) || 1;
+        document.getElementById('cac-result').textContent = '$' + Math.round(spend / w1s);
+      });
+    });
+
+    // CAC:LTV Calculator
+    ['ltv-spend','ltv-revenue','ltv-w1s'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        const spend = parseFloat(document.getElementById('ltv-spend').value) || 0;
+        const rev = parseFloat(document.getElementById('ltv-revenue').value) || 0;
+        const w1s = parseFloat(document.getElementById('ltv-w1s').value) || 1;
+        if (spend > 0 && rev > 0 && w1s > 0) {
+          const cac = spend / w1s;
+          const ltv = rev / w1s;
+          const ratio = ltv / cac;
+          document.getElementById('ltv-result').textContent = '1 : ' + ratio.toFixed(1);
+          document.getElementById('ltv-result').style.color = ratio >= 3 ? '#27ae60' : ratio >= 2 ? 'var(--gold)' : '#E74C3C';
+        } else {
+          document.getElementById('ltv-result').textContent = 'Enter data';
+        }
+      });
+    });
+
     document.querySelectorAll('.feed-entry').forEach(entry => {
       const button = entry.querySelector('.expand-btn');
       button.addEventListener('click', () => {
