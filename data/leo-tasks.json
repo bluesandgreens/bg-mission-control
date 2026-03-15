@@ -13,13 +13,14 @@
         {
           "id": "mon-2",
           "name": "DC Transcript Analysis (168 calls)",
-          "status": "in_progress",
-          "progress": 36
+          "status": "complete",
+          "progress": 100
         },
         {
           "id": "mon-3",
           "name": "Granular Task Map (all B&G micro-actions, owner-tagged)",
-          "status": "pending"
+          "status": "complete",
+          "progress": 100
         },
         {
           "id": "mon-4",
