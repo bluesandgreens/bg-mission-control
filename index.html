@@ -117,6 +117,21 @@
     .dashboard-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
     .toggle { border: 1px solid var(--border); padding: 8px 12px; border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; }
     .toggle.active { background: var(--navy); color: var(--gold); border-color: var(--gold); box-shadow: var(--glow); }
+    .period-nav { display: flex; align-items: center; gap: 8px; }
+    .nav-arrow {
+      border: 1px solid var(--border); background: transparent; color: var(--muted);
+      width: 28px; height: 28px; border-radius: 50%; cursor: pointer; transition: all 0.2s ease;
+    }
+    .nav-arrow:hover { color: var(--gold); border-color: var(--gold); box-shadow: var(--glow); }
+    .period-label { font-size: 0.85rem; }
+    .period-label.current { color: var(--gold); }
+    .badge {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 8px;
+      border-radius: 999px; border: 1px solid var(--border); color: var(--muted);
+    }
+    .badge.historical { color: var(--gold); border-color: rgba(200, 169, 81, 0.4); }
+    .badge.alert { color: #E74C3C; border-color: rgba(231, 76, 60, 0.4); }
+    .status-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
     .metric { display: grid; gap: 6px; }
     .metric-value { font-size: 1.8rem; font-weight: 600; color: var(--cream); }
     .metric-label { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; }
@@ -150,6 +165,78 @@
       .nav button { flex: 1 1 auto; }
       .slide-panel { top: 160px; }
     }
+
+    /* ═══ LEO HQ ═══ */
+    .leo-layout { display: grid; gap: 24px; grid-template-columns: 1fr 340px; }
+    @media (max-width: 980px) { .leo-layout { grid-template-columns: 1fr; } }
+
+    .leo-summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+    @media (max-width: 640px) { .leo-summary-grid { grid-template-columns: 1fr; } }
+    .leo-summary-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; text-align: center; }
+    .leo-summary-card .leo-big { font-size: 2rem; font-weight: 700; color: var(--cream); }
+    .leo-summary-card .leo-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-top: 4px; }
+    .leo-summary-card.gold-accent { border-color: rgba(200,169,81,0.5); }
+    .leo-summary-card.gold-accent .leo-big { color: var(--gold); }
+
+    .leo-day-group { margin-bottom: 24px; }
+    .leo-day-label {
+      font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--gold);
+      margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(200,169,81,0.2);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .leo-day-label .leo-today-badge {
+      font-family: 'DM Sans', sans-serif; font-size: 0.65rem; text-transform: uppercase;
+      letter-spacing: 0.1em; background: var(--gold); color: #101318; padding: 2px 8px;
+      border-radius: 999px; font-weight: 600;
+    }
+    .leo-task {
+      display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      margin-bottom: 6px; transition: border-color 0.2s;
+    }
+    .leo-task:hover { border-color: rgba(200,169,81,0.4); }
+    .leo-task-name { flex: 1; font-size: 0.9rem; color: var(--text); }
+    .leo-status {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 3px 10px; border-radius: 999px; white-space: nowrap; font-weight: 500;
+    }
+    .leo-status.complete { background: rgba(39,174,96,0.15); color: #27ae60; border: 1px solid rgba(39,174,96,0.3); }
+    .leo-status.in_progress { background: rgba(52,152,219,0.15); color: #3498db; border: 1px solid rgba(52,152,219,0.3); }
+    .leo-status.pending { background: rgba(200,169,81,0.1); color: var(--gold); border: 1px solid rgba(200,169,81,0.25); }
+    .leo-status.recurring { background: rgba(155,89,182,0.12); color: #bb86fc; border: 1px solid rgba(155,89,182,0.3); }
+    .leo-progress-bar { width: 60px; height: 5px; border-radius: 999px; background: rgba(52,152,219,0.15); overflow: hidden; }
+    .leo-progress-bar span { display: block; height: 100%; background: #3498db; border-radius: 999px; transition: width 0.4s ease; }
+
+    .leo-sidebar > * { margin-bottom: 20px; }
+    .leo-sidebar > *:last-child { margin-bottom: 0; }
+
+    .leo-schedule-panel {
+      background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px;
+    }
+    .leo-schedule-now { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .leo-pulse {
+      width: 10px; height: 10px; border-radius: 50%; background: #27ae60;
+      box-shadow: 0 0 8px rgba(39,174,96,0.6); animation: leoPulse 2s ease-in-out infinite;
+    }
+    @keyframes leoPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .leo-schedule-item { padding: 8px 0; border-bottom: 1px solid rgba(42,48,64,0.5); font-size: 0.85rem; }
+    .leo-schedule-item:last-child { border-bottom: none; }
+    .leo-schedule-item .leo-sched-time { color: var(--gold); font-weight: 500; min-width: 60px; display: inline-block; }
+
+    .leo-notif-panel {
+      background: var(--panel); border: 2px solid rgba(200,169,81,0.3); border-radius: var(--radius-lg); padding: 20px;
+    }
+    .leo-notif-panel.has-pending { border-color: var(--gold); box-shadow: 0 0 24px rgba(200,169,81,0.15); }
+    .leo-notif-panel h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--cream); margin-bottom: 12px; }
+    .leo-notif-empty { color: var(--muted); font-size: 0.85rem; font-style: italic; }
+    .leo-notif-item {
+      padding: 12px; background: rgba(200,169,81,0.06); border: 1px solid rgba(200,169,81,0.2);
+      border-radius: 12px; margin-bottom: 8px; cursor: pointer; transition: background 0.2s;
+    }
+    .leo-notif-item:hover { background: rgba(200,169,81,0.12); }
+    .leo-notif-item .leo-notif-task { font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; }
+    .leo-notif-item .leo-notif-q { font-size: 0.9rem; color: var(--text); margin-top: 4px; }
+    .leo-notif-item .leo-notif-reply { font-size: 0.75rem; color: var(--muted); margin-top: 6px; }
   </style>
 </head>
 <body>
@@ -165,6 +252,7 @@
       <button class="nav-btn" data-view="advisory-board">Advisory Board</button>
       <button class="nav-btn" data-view="agent-org">Agent Org</button>
       <button class="nav-btn" data-view="feed">Feed</button>
+      <button class="nav-btn" data-view="leo-hq">🦁 Leo HQ</button>
     </nav>
   </header>
   <main>
@@ -270,17 +358,24 @@
     <!-- ═══════════════════ LIVE DASHBOARD ═══════════════════ -->
     <section class="view" id="live-dashboard">
       <h2 class="section-title">Live Dashboard</h2>
-      <p class="section-subtitle">Operational command centre. Data source: HubSpot + Stripe + Meta. Last sync: March 12, 2026.</p>
+      <p class="section-subtitle">Operational command centre. Data source: HubSpot + Stripe + Windsor AI. <span id="liveSync">Loading live data…</span></p>
+
+      <div class="status-row">
+        <span class="badge alert" id="liveStale" style="display:none;">Data stale (>1 hour)</span>
+        <span class="badge alert" id="liveError" style="display:none;">Live data unavailable</span>
+      </div>
 
       <!-- Global Time Period Toggle -->
       <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center;flex-wrap:wrap;">
         <button class="toggle time-sel active" data-period="day">Day</button>
         <button class="toggle time-sel" data-period="week">Week</button>
         <button class="toggle time-sel" data-period="month">Month</button>
-        <button class="toggle time-sel" data-period="custom">Custom</button>
-        <input type="date" id="customStart" style="display:none;background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px;font-size:0.85rem;" value="2026-03-01">
-        <input type="date" id="customEnd" style="display:none;background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px;font-size:0.85rem;" value="2026-03-12">
-        <span class="muted" id="periodLabel" style="margin-left:8px;font-size:0.85rem;">Thursday, 12 Mar 2026</span>
+        <div class="period-nav">
+          <button class="nav-arrow" id="periodPrev" aria-label="Previous period">&lt;</button>
+          <span class="muted period-label current" id="periodLabel">Sunday, March 15</span>
+          <button class="nav-arrow" id="periodNext" aria-label="Next period">&gt;</button>
+          <span class="badge historical" id="periodBadge" style="display:none;">Historical</span>
+        </div>
       </div>
 
       <!-- Dashboard Sub-Tabs -->
@@ -308,47 +403,34 @@
 
         <!-- Key Metrics Row -->
         <div class="grid cols-4" style="margin-bottom:20px;">
-          <div class="card metric"><div class="metric-label">MRR</div><div class="metric-value">$56K</div><div class="muted">↓ from $77K peak (Nov)</div></div>
-          <div class="card metric"><div class="metric-label">Active Members</div><div class="metric-value">135</div><div class="muted">Retention focus active</div></div>
-          <div class="card metric"><div class="metric-label">14-Day Leads</div><div class="metric-value" style="color:var(--gold);">238</div><div class="muted">Hot pipeline</div></div>
-          <div class="card metric"><div class="metric-label">Full Pipeline</div><div class="metric-value" style="color:var(--gold);">83</div><div class="muted">Families booked & in flight</div></div>
+          <div class="card metric"><div class="metric-label">MRR</div><div class="metric-value" id="m-mrr">$—</div><div class="muted" id="m-mrr-sub">Live from Stripe</div></div>
+          <div class="card metric"><div class="metric-label">Active Members</div><div class="metric-value" id="m-members">—</div><div class="muted" id="m-members-sub">Live from HubSpot</div></div>
+          <div class="card metric"><div class="metric-label">14-Day Leads</div><div class="metric-value" style="color:var(--gold);" id="m-leads-14">—</div><div class="muted" id="m-leads-14-sub">Rolling 14 days</div></div>
+          <div class="card metric"><div class="metric-label">Full Pipeline</div><div class="metric-value" style="color:var(--gold);" id="m-pipeline-full">—</div><div class="muted" id="m-pipeline-full-sub">Active deals in flight</div></div>
         </div>
 
         <!-- Pipeline Funnel + Meta Ads -->
         <div class="grid cols-3">
           <div class="panel">
-            <h3 class="section-title" style="font-size:1rem;">Pipeline Funnel (MTD)</h3>
+            <h3 class="section-title" style="font-size:1rem;">Pipeline Funnel (<span id="funnelLabel">MTD</span>)</h3>
             <div class="funnel">
-              <div class="funnel-step"><div class="muted">New Leads — 351</div><div class="bar"><span style="width:100%;"></span></div></div>
-              <div class="funnel-step"><div class="muted">Booked Calls — 70</div><div class="bar"><span style="width:20%;"></span></div></div>
-              <div class="funnel-step"><div class="muted">DCs Completed — 47</div><div class="bar"><span style="width:13%;"></span></div></div>
-              <div class="funnel-step"><div class="muted">Closes — 33 (70%)</div><div class="bar"><span style="width:9%;"></span></div></div>
-              <div class="funnel-step"><div class="muted">W1 Starts — 18</div><div class="bar"><span style="width:5%;"></span></div></div>
-              <div class="funnel-step"><div class="muted">Withdrawals — 0</div><div class="bar"><span style="width:0%;background:#E74C3C;"></span></div></div>
+              <div class="funnel-step"><div class="muted">New Leads — <span id="funnel-leads">—</span></div><div class="bar"><span id="funnel-leads-bar" style="width:0%;"></span></div></div>
+              <div class="funnel-step"><div class="muted">Booked Calls — <span id="funnel-booked">—</span></div><div class="bar"><span id="funnel-booked-bar" style="width:0%;"></span></div></div>
+              <div class="funnel-step"><div class="muted">DCs Completed — <span id="funnel-dcs">—</span></div><div class="bar"><span id="funnel-dcs-bar" style="width:0%;"></span></div></div>
+              <div class="funnel-step"><div class="muted">Closes — <span id="funnel-closes">—</span> (<span id="funnel-close-rate">—</span>)</div><div class="bar"><span id="funnel-closes-bar" style="width:0%;"></span></div></div>
+              <div class="funnel-step"><div class="muted">W1 Starts — <span id="funnel-w1s">—</span></div><div class="bar"><span id="funnel-w1s-bar" style="width:0%;"></span></div></div>
+              <div class="funnel-step"><div class="muted">Withdrawals — <span id="funnel-withdrawals">—</span></div><div class="bar"><span id="funnel-withdrawals-bar" style="width:0%;background:#E74C3C;"></span></div></div>
             </div>
           </div>
           <div class="panel">
-            <h3 class="section-title" style="font-size:1rem;">Meta Ads (Mar 12)</h3>
-            <div class="card" style="margin-bottom:12px;"><div class="metric-label">Daily Spend</div><div class="metric-value" style="font-size:1.4rem;">$174</div><div class="muted">CTR 6.05% · CPC $0.37</div></div>
-            <div class="card" style="margin-bottom:12px;"><div class="metric-label">Booked Calls</div><div class="metric-value" style="font-size:1.4rem;">57</div><div class="muted">Champion: H14-B1 @ $2.76/conv</div></div>
+            <h3 class="section-title" style="font-size:1rem;">Windsor Ads (<span id="meta-date">—</span>)</h3>
+            <div class="card" style="margin-bottom:12px;"><div class="metric-label">Daily Spend</div><div class="metric-value" style="font-size:1.4rem;" id="meta-spend">$—</div><div class="muted" id="meta-spend-sub">Live spend</div></div>
+            <div class="card" style="margin-bottom:12px;"><div class="metric-label">Booked Calls</div><div class="metric-value" style="font-size:1.4rem;" id="meta-booked">—</div><div class="muted" id="meta-cpbc">CPBC —</div></div>
             <div class="card"><div class="metric-label">Program Tiers</div><div class="muted" style="margin-top:8px;">FE: $4,990 / 18wks</div><div class="muted">Big Brother: $2,730 / 90d</div><div class="muted">Lighthouse: $1,899 / 90d</div></div>
           </div>
           <div class="panel">
-            <h3 class="section-title" style="font-size:1rem;">Pending W1s (12)</h3>
-            <div style="max-height:300px;overflow:auto;font-size:0.85rem;">
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Leah West</span> <span class="muted">· Big Bro · Mar 13 · Elliot</span></div>
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Tenniel Harman-York</span> <span class="muted">· Big Bro · Mar 16</span></div>
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Amy Greensword</span> <span class="muted">· Big Bro · Mar 11 · Harry</span></div>
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Hailey Paine</span> <span class="muted">· Big Bro · Mar 15 · Harry</span></div>
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Michelle Noyce</span> <span class="muted">· Big Bro · Mar 13</span></div>
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Annie Stazak</span> <span class="muted">· Big Bro · Mar 18 · Harry</span></div>
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Sally Quintero</span> <span class="muted">· Lighthouse · Mar 14 · Harry</span></div>
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Sari Jackson</span> <span class="muted">· Lighthouse · Mar 16 · Elliot</span></div>
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);"><span style="color:var(--cream);">Jessica Apthorpe</span> <span class="muted">· Big Bro · Mar 14 · Elliot</span></div>
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);color:#E74C3C;"><span>Kirsty Madigan</span> <span>· Big Bro · Mar 4 · Anthony · OVERDUE</span></div>
-              <div style="padding:8px 0;border-bottom:1px solid var(--border);color:#E74C3C;"><span>Karen Vargas</span> <span>· Big Bro · Mar 8 · Elliot · OVERDUE</span></div>
-              <div style="padding:8px 0;color:#E74C3C;"><span>Tania Paton</span> <span>· Lighthouse · Mar 6 · Elliot · OVERDUE</span></div>
-            </div>
+            <h3 class="section-title" style="font-size:1rem;">Pending W1s (<span id="pending-w1-count">—</span>)</h3>
+            <div id="pending-w1-list" style="max-height:300px;overflow:auto;font-size:0.85rem;"></div>
           </div>
         </div>
       </div>
@@ -1047,6 +1129,45 @@
         </div>
       </div>
     </section>
+    <!-- ═══════════════════ LEO HQ ═══════════════════ -->
+    <section class="view" id="leo-hq">
+      <h2 class="section-title">🦁 Leo HQ</h2>
+      <p class="section-subtitle">Leo's task board, schedule, and notification centre. Updated in real-time.</p>
+
+      <!-- Progress Summary -->
+      <div class="leo-summary-grid" id="leoSummary">
+        <div class="leo-summary-card"><div class="leo-big" id="leoComplete">—/—</div><div class="leo-label">Tasks Complete</div></div>
+        <div class="leo-summary-card"><div class="leo-big" id="leoInProgress">—</div><div class="leo-label">In Progress</div></div>
+        <div class="leo-summary-card gold-accent"><div class="leo-big" id="leoBlocking">0</div><div class="leo-label">Blocking Harry</div></div>
+      </div>
+
+      <div class="leo-layout">
+        <!-- Left: Task List -->
+        <div class="panel" id="leoTaskList">
+          <h3 class="section-title" style="font-size:1.1rem;margin-bottom:16px;" id="leoWeekTitle">Week 12 — Mar 16-21</h3>
+          <div id="leoTasks"><!-- Rendered by JS --></div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="leo-sidebar">
+          <!-- Schedule -->
+          <div class="leo-schedule-panel">
+            <div class="pill" style="margin-bottom:8px;">Schedule</div>
+            <div class="leo-schedule-now">
+              <div class="leo-pulse"></div>
+              <span style="font-size:0.85rem;color:var(--cream);" id="leoNowLabel">Loading…</span>
+            </div>
+            <div id="leoSchedule"><!-- Rendered by JS --></div>
+          </div>
+
+          <!-- Notifications -->
+          <div class="leo-notif-panel" id="leoNotifPanel">
+            <h3>🔔 Leo needs your input</h3>
+            <div id="leoNotifs"><div class="leo-notif-empty">All clear — no pending requests.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <aside class="slide-panel" id="agentPanel">
@@ -1202,6 +1323,190 @@
         button.textContent = entry.classList.contains('open') ? 'Collapse' : 'Expand';
       });
     });
+
+    // ═══ LEO HQ ═══
+    (function leoHQ() {
+      const STATUS_META = {
+        complete:    { icon: '✅', label: 'Complete' },
+        in_progress: { icon: '🔄', label: 'In Progress' },
+        pending:     { icon: '⏳', label: 'Pending' },
+        recurring:   { icon: '🔁', label: 'Recurring' }
+      };
+
+      const DATA_BASE = location.hostname.includes('github.io')
+        ? 'https://bluesandgreens.github.io/bg-mission-control/data'
+        : 'data';
+
+      function todayStr() {
+        const d = new Date();
+        return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+      }
+
+      function todayDayName() {
+        return new Date().toLocaleDateString('en-AU', { weekday: 'long' });
+      }
+
+      function renderTasks(data) {
+        const container = document.getElementById('leoTasks');
+        const title = document.getElementById('leoWeekTitle');
+        if (data.week) title.textContent = data.week;
+
+        let html = '';
+        let totalTasks = 0, completeTasks = 0, inProgressTasks = 0;
+        const today = todayStr();
+        const dayName = todayDayName();
+
+        (data.days || []).forEach(day => {
+          const isToday = day.date === today || (day.day === 'Every Day');
+          const isTodayExact = day.date === today;
+          html += '<div class="leo-day-group">';
+          html += '<div class="leo-day-label">' + day.day;
+          if (isTodayExact) html += ' <span class="leo-today-badge">Today</span>';
+          html += '</div>';
+
+          (day.tasks || []).forEach(task => {
+            const sm = STATUS_META[task.status] || STATUS_META.pending;
+            if (task.status !== 'recurring') totalTasks++;
+            if (task.status === 'complete') completeTasks++;
+            if (task.status === 'in_progress') inProgressTasks++;
+
+            html += '<div class="leo-task">';
+            html += '<span style="font-size:1.1rem;">' + sm.icon + '</span>';
+            html += '<span class="leo-task-name">' + task.name + '</span>';
+            if (task.status === 'in_progress' && task.progress != null) {
+              html += '<div class="leo-progress-bar"><span style="width:' + task.progress + '%;"></span></div>';
+            }
+            html += '<span class="leo-status ' + task.status + '">' + sm.label + '</span>';
+            html += '</div>';
+          });
+          html += '</div>';
+        });
+
+        container.innerHTML = html;
+
+        // Update summary
+        document.getElementById('leoComplete').textContent = completeTasks + '/' + totalTasks;
+        document.getElementById('leoInProgress').textContent = inProgressTasks;
+      }
+
+      function renderSchedule(data) {
+        const today = todayStr();
+        const dayName = todayDayName();
+        let currentTasks = [];
+        let nextDay = null;
+        let nextTasks = [];
+        let foundToday = false;
+
+        (data.days || []).forEach(day => {
+          if (day.date === today) {
+            foundToday = true;
+            currentTasks = day.tasks || [];
+          }
+        });
+
+        // Find next day with tasks
+        const days = (data.days || []).filter(d => d.date);
+        const todayIdx = days.findIndex(d => d.date === today);
+        if (todayIdx >= 0 && todayIdx < days.length - 1) {
+          nextDay = days[todayIdx + 1];
+          nextTasks = nextDay.tasks || [];
+        }
+
+        // Daily recurring
+        const dailyDay = (data.days || []).find(d => !d.date);
+        const dailyTasks = dailyDay ? dailyDay.tasks : [];
+
+        // Now label
+        const nowLabel = document.getElementById('leoNowLabel');
+        const working = currentTasks.find(t => t.status === 'in_progress');
+        if (working) {
+          nowLabel.textContent = 'Working on: ' + working.name;
+        } else if (currentTasks.length > 0) {
+          const nextPending = currentTasks.find(t => t.status === 'pending');
+          nowLabel.textContent = nextPending ? 'Next up: ' + nextPending.name : dayName + ' — all tasks addressed';
+        } else {
+          nowLabel.textContent = dayName;
+        }
+
+        let html = '';
+
+        // Today's remaining
+        const remaining = currentTasks.filter(t => t.status === 'pending' || t.status === 'in_progress');
+        if (remaining.length) {
+          html += '<div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin:10px 0 6px;">Today — ' + remaining.length + ' remaining</div>';
+          remaining.forEach(t => {
+            const sm = STATUS_META[t.status] || STATUS_META.pending;
+            html += '<div class="leo-schedule-item">' + sm.icon + ' ' + t.name + '</div>';
+          });
+        }
+
+        // Daily recurrings
+        if (dailyTasks.length) {
+          html += '<div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin:10px 0 6px;">Daily</div>';
+          dailyTasks.forEach(t => {
+            html += '<div class="leo-schedule-item">🔁 ' + t.name + '</div>';
+          });
+        }
+
+        // Tomorrow preview
+        if (nextDay && nextTasks.length) {
+          html += '<div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin:14px 0 6px;">Up Next — ' + nextDay.day + '</div>';
+          nextTasks.slice(0, 3).forEach(t => {
+            html += '<div class="leo-schedule-item" style="color:var(--muted);">⏳ ' + t.name + '</div>';
+          });
+          if (nextTasks.length > 3) {
+            html += '<div class="leo-schedule-item" style="color:var(--muted);font-style:italic;">+ ' + (nextTasks.length - 3) + ' more</div>';
+          }
+        }
+
+        document.getElementById('leoSchedule').innerHTML = html;
+      }
+
+      function renderNotifications(data) {
+        const panel = document.getElementById('leoNotifPanel');
+        const container = document.getElementById('leoNotifs');
+        const notifs = (data.notifications || []).filter(n => n.status === 'pending');
+
+        document.getElementById('leoBlocking').textContent = notifs.length;
+
+        if (notifs.length === 0) {
+          panel.classList.remove('has-pending');
+          container.innerHTML = '<div class="leo-notif-empty">All clear — no pending requests.</div>';
+          return;
+        }
+
+        panel.classList.add('has-pending');
+        let html = '';
+        notifs.forEach(n => {
+          html += '<div class="leo-notif-item" onclick="window.open(\'https://t.me/bluesgreens_bot\',\'_blank\')">';
+          html += '<div class="leo-notif-task">' + (n.task || 'General') + '</div>';
+          html += '<div class="leo-notif-q">' + (n.question || '') + '</div>';
+          html += '<div class="leo-notif-reply">Tap to reply via Telegram →</div>';
+          html += '</div>';
+        });
+        container.innerHTML = html;
+      }
+
+      // Load data
+      function loadLeoData() {
+        fetch(DATA_BASE + '/leo-tasks.json?' + Date.now())
+          .then(r => r.json())
+          .then(data => { renderTasks(data); renderSchedule(data); })
+          .catch(() => {
+            document.getElementById('leoTasks').innerHTML = '<div class="muted">Could not load task data.</div>';
+          });
+
+        fetch(DATA_BASE + '/leo-notifications.json?' + Date.now())
+          .then(r => r.json())
+          .then(renderNotifications)
+          .catch(() => {});
+      }
+
+      // Initial load
+      loadLeoData();
+      // Refresh every 60 seconds
+      setInterval(loadLeoData, 60000);
+    })();
   </script>
 </body>
 </html>
