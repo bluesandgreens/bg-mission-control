@@ -1,0 +1,2499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder's Experience — Hit List Tracker</title>
+<style>
+:root {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --surface2: #1a1a26;
+  --border: #2a2a3a;
+  --text: #e8e8f0;
+  --text2: #8888a0;
+  --accent: #6366f1;
+  --accent2: #818cf8;
+  --green: #22c55e;
+  --green-bg: rgba(34,197,94,0.12);
+  --yellow: #eab308;
+  --yellow-bg: rgba(234,179,8,0.12);
+  --red: #ef4444;
+  --red-bg: rgba(239,68,68,0.12);
+  --blue: #3b82f6;
+  --blue-bg: rgba(59,130,246,0.12);
+  --orange: #f97316;
+  --orange-bg: rgba(249,115,22,0.12);
+  --purple: #a855f7;
+  --purple-bg: rgba(168,85,247,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+.app { max-width: 1400px; margin: 0 auto; padding: 16px; }
+
+/* Header */
+.header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; flex-wrap: wrap; gap: 12px; }
+.header h1 { font-size: 24px; font-weight: 700; }
+.header h1 span { color: var(--accent2); }
+.header-stats { display: flex; gap: 16px; flex-wrap: wrap; }
+.stat-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 8px 16px; font-size: 13px; display: flex; align-items: center; gap: 6px; }
+.stat-pill .num { font-weight: 700; font-size: 15px; }
+.stat-pill.green .num { color: var(--green); }
+.stat-pill.yellow .num { color: var(--yellow); }
+.stat-pill.blue .num { color: var(--blue); }
+.stat-pill.red .num { color: var(--red); }
+
+/* Tabs */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); padding-bottom: 0; margin-bottom: 20px; overflow-x: auto; }
+.tab { padding: 10px 18px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--text2); border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; }
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--accent2); border-bottom-color: var(--accent); }
+
+/* Filters */
+.filters { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+.filter-btn { padding: 6px 14px; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); color: var(--text2); cursor: pointer; font-size: 12px; transition: all 0.2s; }
+.filter-btn:hover, .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+.search-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px 14px; color: var(--text); font-size: 13px; width: 220px; outline: none; }
+.search-box:focus { border-color: var(--accent); }
+
+/* Pipeline View */
+.pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.pipeline-col { background: var(--surface); border-radius: 12px; padding: 14px; min-height: 200px; }
+.pipeline-col-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.pipeline-col-title { font-weight: 600; font-size: 14px; }
+.pipeline-col-count { background: var(--surface2); border-radius: 10px; padding: 2px 8px; font-size: 12px; color: var(--text2); }
+
+/* Cards */
+.card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s; position: relative; }
+.card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.card-name { font-weight: 600; font-size: 14px; }
+.card-score { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+.score-high { background: var(--green-bg); color: var(--green); }
+.score-med { background: var(--yellow-bg); color: var(--yellow); }
+.score-low { background: var(--red-bg); color: var(--red); }
+.card-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.badge { padding: 2px 8px; border-radius: 8px; font-size: 11px; font-weight: 500; }
+.badge-ndis { background: var(--purple-bg); color: var(--purple); }
+.badge-melb { background: var(--blue-bg); color: var(--blue); }
+.badge-prepay { background: var(--green-bg); color: var(--green); }
+.badge-weekly { background: var(--orange-bg); color: var(--orange); }
+.badge-inactive { background: var(--red-bg); color: var(--red); }
+.badge-irl { background: var(--yellow-bg); color: var(--yellow); }
+.card-detail { font-size: 12px; color: var(--text2); line-height: 1.5; }
+.card-revenue { font-size: 12px; color: var(--green); font-weight: 600; margin-top: 6px; }
+.card-flags { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+.flag { font-size: 11px; padding: 3px 0; display: flex; align-items: flex-start; gap: 4px; }
+.flag-icon { flex-shrink: 0; }
+
+/* List View */
+.list-view { display: none; }
+.list-table { width: 100%; border-collapse: collapse; }
+.list-table th { text-align: left; padding: 10px 12px; font-size: 12px; color: var(--text2); font-weight: 600; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); }
+.list-table td { padding: 10px 12px; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.list-table tr:hover td { background: var(--surface); }
+
+/* Detail Modal */
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 100; justify-content: center; align-items: flex-start; padding: 40px 16px; overflow-y: auto; }
+.modal-overlay.show { display: flex; }
+.modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; width: 100%; max-width: 680px; padding: 0; animation: slideUp 0.2s ease; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.modal-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.modal-header h2 { font-size: 20px; }
+.modal-close { cursor: pointer; font-size: 24px; color: var(--text2); background: none; border: none; }
+.modal-body { padding: 20px 24px; }
+.modal-section { margin-bottom: 20px; }
+.modal-section h3 { font-size: 14px; color: var(--accent2); margin-bottom: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.modal-field { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; }
+.modal-field .label { color: var(--text2); }
+.modal-field .value { font-weight: 500; text-align: right; }
+.modal-notes { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 12px; color: var(--text); font-size: 13px; font-family: inherit; resize: vertical; min-height: 100px; outline: none; }
+.modal-notes:focus { border-color: var(--accent); }
+.modal-footer { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; gap: 10px; justify-content: space-between; flex-wrap: wrap; }
+.btn { padding: 8px 18px; border-radius: 10px; border: none; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: var(--accent2); }
+.btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+.btn-success { background: var(--green); color: white; }
+.btn-danger { background: transparent; color: var(--red); border: 1px solid var(--red); }
+select.stage-select { background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 13px; outline: none; }
+
+/* Conversation Points */
+.convo-points { list-style: none; }
+.convo-points li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; display: flex; gap: 8px; align-items: flex-start; }
+.convo-points li:last-child { border-bottom: none; }
+.convo-icon { flex-shrink: 0; margin-top: 2px; }
+
+/* NDIS Info Panel */
+.ndis-panel { background: var(--purple-bg); border: 1px solid rgba(168,85,247,0.3); border-radius: 12px; padding: 16px; margin-bottom: 20px; }
+.ndis-panel h3 { color: var(--purple); margin-bottom: 10px; font-size: 14px; }
+.ndis-panel p { font-size: 13px; line-height: 1.6; color: var(--text); margin-bottom: 8px; }
+.ndis-panel ul { list-style: none; padding-left: 0; }
+.ndis-panel li { padding: 4px 0; font-size: 13px; }
+.ndis-panel li::before { content: "→ "; color: var(--purple); }
+
+/* Summary bar */
+.summary-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.summary-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; }
+.summary-card .big { font-size: 28px; font-weight: 700; }
+.summary-card .label { font-size: 12px; color: var(--text2); margin-top: 4px; }
+
+/* View toggle */
+.view-toggle { display: flex; gap: 4px; background: var(--surface); border-radius: 8px; padding: 3px; }
+.view-btn { padding: 6px 12px; border-radius: 6px; border: none; background: transparent; color: var(--text2); cursor: pointer; font-size: 12px; }
+.view-btn.active { background: var(--accent); color: white; }
+
+/* Call Mode */
+.call-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:200; overflow-y:auto; }
+.call-overlay.show { display:block; }
+.call-header { background:var(--surface); border-bottom:1px solid var(--border); padding:16px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:10; }
+.call-header-left { display:flex; align-items:center; gap:16px; }
+.call-header-left h2 { font-size:20px; }
+.call-header-left .call-meta { font-size:13px; color:var(--text2); }
+.call-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.call-body { display:grid; grid-template-columns:1fr 380px; gap:0; min-height:calc(100vh - 70px); }
+.call-scripts { padding:20px; overflow-y:auto; }
+.call-sidebar { background:var(--surface); border-left:1px solid var(--border); padding:20px; overflow-y:auto; }
+.call-script-tabs { display:flex; gap:4px; margin-bottom:16px; position:sticky; top:0; background:var(--bg); padding:8px 0; z-index:5; }
+.call-script-tab { padding:10px 20px; border-radius:10px; border:2px solid var(--border); background:var(--surface); color:var(--text2); cursor:pointer; font-size:14px; font-weight:600; transition:all 0.2s; flex:1; text-align:center; }
+.call-script-tab:hover { border-color:var(--accent); }
+.call-script-tab.active-fe { border-color:var(--accent); color:var(--accent2); background:rgba(99,102,241,0.1); }
+.call-script-tab.active-accel { border-color:var(--yellow); color:var(--yellow); background:rgba(234,179,8,0.1); }
+.script-content { font-size:15px; line-height:1.9; color:var(--text); }
+.script-content .script-section { margin-bottom:24px; padding:16px; background:var(--surface); border-radius:12px; border:1px solid var(--border); }
+.script-content .script-section h4 { color:var(--accent2); font-size:13px; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px; }
+.script-content .script-line { margin-bottom:12px; padding-left:12px; border-left:2px solid var(--border); }
+.script-content .script-line.emphasis { border-left-color:var(--accent); background:rgba(99,102,241,0.05); padding:10px 12px; border-radius:0 8px 8px 0; }
+.script-content .script-line.accel-emphasis { border-left-color:var(--yellow); background:rgba(234,179,8,0.05); padding:10px 12px; border-radius:0 8px 8px 0; }
+.call-sidebar h3 { font-size:13px; color:var(--accent2); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px; }
+.call-sidebar .sidebar-section { margin-bottom:20px; }
+.call-quick-note { width:100%; background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:10px; color:var(--text); font-size:13px; font-family:inherit; resize:vertical; min-height:80px; outline:none; }
+.call-quick-note:focus { border-color:var(--accent); }
+.call-point { font-size:13px; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05); line-height:1.5; }
+.call-info-row { display:flex; justify-content:space-between; padding:5px 0; font-size:13px; }
+.call-info-row .label { color:var(--text2); }
+.pulse-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 1.5s infinite; margin-right:6px; }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .pipeline { grid-template-columns: 1fr; }
+  .header { flex-direction: column; align-items: flex-start; }
+  .filters { flex-direction: column; }
+  .search-box { width: 100%; }
+  .modal { margin-top: 0; border-radius: 12px; }
+  .call-body { grid-template-columns: 1fr; }
+  .call-sidebar { border-left: none; border-top: 1px solid var(--border); }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <h1>🎯 Founder's <span>Experience</span> — Hit List</h1>
+    <div class="header-stats" id="headerStats"></div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="pipeline">Pipeline</div>
+    <div class="tab" data-tab="list">List View</div>
+    <div class="tab" data-tab="ndis">NDIS Playbook</div>
+    <div class="tab" data-tab="scripts">Talk Tracks</div>
+  </div>
+
+  <div class="filters">
+    <input type="text" class="search-box" placeholder="Search contacts..." id="searchBox">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ndis">NDIS</button>
+    <button class="filter-btn" data-filter="melb">Melbourne IRL</button>
+    <button class="filter-btn" data-filter="prepay">Has Prepaid</button>
+    <button class="filter-btn" data-filter="inactive">Re-engage</button>
+    <button class="filter-btn" data-filter="due">Payment Due</button>
+    <div class="view-toggle">
+      <button class="view-btn active" data-view="board">Board</button>
+      <button class="view-btn" data-view="list">List</button>
+    </div>
+  </div>
+
+  <div class="summary-bar" id="summaryBar"></div>
+
+  <div id="pipelineView" class="pipeline"></div>
+  <div id="listView" class="list-view"></div>
+  <div id="ndisView" style="display:none"></div>
+  <div id="scriptsView" style="display:none"></div>
+</div>
+
+<!-- Call Mode -->
+<div class="call-overlay" id="callOverlay">
+  <div class="call-header">
+    <div class="call-header-left">
+      <button class="btn btn-secondary" onclick="exitCallMode()" style="padding:6px 12px">← Back</button>
+      <div>
+        <h2 id="callName"><span class="pulse-dot"></span></h2>
+        <div class="call-meta" id="callMeta"></div>
+      </div>
+    </div>
+    <div class="call-actions" id="callActions"></div>
+  </div>
+  <div class="call-body">
+    <div class="call-scripts">
+      <div class="call-script-tabs">
+        <div class="call-script-tab active-fe" id="tabFE" onclick="switchScript('fe')">🎯 Founder's Experience — $4,990 · 19wks</div>
+        <div class="call-script-tab" id="tabAccel" onclick="switchScript('fe-lite')">⚡ FE Lite — $2,990 · 6wks</div>
+      </div>
+      <div id="scriptArea"></div>
+    </div>
+    <div class="call-sidebar" id="callSidebar"></div>
+  </div>
+</div>
+
+<!-- Detail Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalName"></h2>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer" id="modalFooter"></div>
+  </div>
+</div>
+
+<script>
+// ============ DATA ============
+const STAGES = {
+  'not-contacted': { label: 'Not Contacted', color: '#6b7280' },
+  'no-answer': { label: 'No Answer', color: '#94a3b8' },
+  'called': { label: 'Called', color: '#3b82f6' },
+  'offer-sent': { label: 'Offer Sent', color: '#f97316' },
+  'follow-up': { label: 'Follow Up', color: '#a855f7' },
+  'accepted': { label: 'Accepted ✅', color: '#22c55e' },
+  'declined': { label: 'Declined', color: '#ef4444' }
+};
+
+const FE_PRICE = 4990;
+const ACCEL_PRICE = 2990;
+
+let contacts = [
+  {
+    id: 1,
+    name: "Taya Wear",
+    sonName: "Harry",
+    stage: "called",
+    location: "Unknown",
+    state: "",
+    mentorLocation: "",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 4349,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_TXH3qEIWfjjtcr",
+    hubspotId: "180740122775",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/180740122775",
+    email: "mitchlovestaya@gmail.com",
+    phone: "+61451456150",
+    currentSub: "$1,808 prepay (active)",
+    paymentDue: "",
+    score: 7,
+    flags: ["💰 $4,349 total — already heavily invested", "✅ Active prepay sub"],
+    convoPoints: [
+      "✅ Already called — follow up on interest level",
+      "Total spend: $4,349 ($2,430 invoice + $1,808 prepay + $111 deposit)",
+      "Active $1,808 prepay subscription — she's committed",
+      "Get son Harry's engagement feedback"
+    ],
+    notes: "Called March 13. Part of initial 4 calls. $4,349 total in Stripe.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"
+  },
+  {
+    id: 2,
+    name: "Kate Alchin",
+    sonName: "",
+    stage: "called",
+    location: "Sydney, NSW",
+    state: "New South Wales",
+    mentorLocation: "",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 8014,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_S49P78IOtvPEp6",
+    hubspotId: "112276992556",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/112276992556",
+    email: "kate.alchin1503@gmail.com",
+    phone: "+61424179261",
+    currentSub: "Canceled — was $1,899 prepay",
+    paymentDue: "",
+    score: 8,
+    flags: ["💰 $8,014 total — 3rd highest spender on the list", "✅ Consistently prepaid across multiple rounds"],
+    convoPoints: [
+      "✅ Already called — follow up on interest level",
+      "MASSIVE spender: $8,014 total across 4 successful prepayments",
+      "3 rounds at $2,001 + 1 round at $1,899 + $111 deposit",
+      "Sydney-based — IRL trip to Melbourne would be special",
+      "She's proven repeatedly she'll prepay — FE is a natural next step"
+    ],
+    notes: "Called March 13. Part of initial 4 calls. $8,014 total — one of the biggest spenders.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"
+  },
+  {
+    id: 3,
+    name: "Julie-Anne Jacotine",
+    sonName: "",
+    stage: "called",
+    location: "Eagleby, QLD",
+    state: "Queensland",
+    mentorLocation: "",
+    paymentType: "weekly",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 3127,
+    weeklyRate: 232,
+    weeksActive: 13,
+    sessions: 0,
+    stripeCust: "cus_TZtvr9Yg97CuOI",
+    hubspotId: "183231550491",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/183231550491",
+    email: "julzie79@gmail.com",
+    phone: "+610412139229",
+    currentSub: "$232/week (active)",
+    paymentDue: "",
+    score: 6,
+    flags: ["⚠️ Had a failed payment Feb 23 — recovered"],
+    convoPoints: [
+      "✅ Already called — follow up",
+      "She's been paying $232/week consistently since Feb",
+      "Total spend: $3,127 — she's committed",
+      "Located in QLD — IRL would need travel accommodation"
+    ],
+    notes: "Called March 13. Part of initial 4 calls.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 4,
+    name: "Alicia Davies",
+    sonName: "",
+    stage: "called",
+    location: "Brisbane",
+    state: "Queensland",
+    mentorLocation: "",
+    paymentType: "weekly",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 1271,
+    weeklyRate: 232,
+    weeksActive: 5,
+    sessions: 0,
+    stripeCust: "cus_TwGp8ebkCzaDWN",
+    hubspotId: "200268113285",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/200268113285",
+    email: "aliciadavies87@hotmail.com",
+    phone: "+61421759547",
+    currentSub: "$232/week",
+    paymentDue: "",
+    score: 5,
+    flags: ["⚠️ Had a failed payment Feb 19"],
+    convoPoints: [
+      "✅ Already called — follow up",
+      "Relatively new member — 5 weeks paying",
+      "Brisbane-based — IRL trip would need travel"
+    ],
+    notes: "Called March 13. Part of initial 4 calls.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 5,
+    name: "Natalie Oberman",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Scarborough, Perth (WA)",
+    state: "Western Australia",
+    mentorLocation: "Melbourne",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 3727,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_TOX2y93zvRdB6o",
+    hubspotId: "172399953580",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/172399953580",
+    email: "obievan@westnet.com.au",
+    phone: "",
+    currentSub: "$1,808/month (active)",
+    paymentDue: "~15 days (payment resets)",
+    score: 8,
+    flags: [],
+    convoPoints: [
+      "💰 Two rounds of Big Brother prepayments done ($3,727 total)",
+      "Payment resets in ~15 days — perfect timing for FE pitch",
+      "Perth-based — IRL trip to Melbourne would be an experience for the family",
+      "She's already proven she values the program enough to prepay twice",
+      "Anchor: 'You've already invested $3,700 — the FE is the next level'"
+    ],
+    notes: "",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 6,
+    name: "Deb Caruso",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Melbourne",
+    state: "Victoria",
+    mentorLocation: "Melbourne (Hayden)",
+    paymentType: "weekly",
+    isNDIS: false,
+    isMelbourne: true,
+    totalPaid: 1503,
+    weeklyRate: 232,
+    weeksActive: 6,
+    sessions: 6,
+    stripeCust: "cus_Trk5686XtHhwrW",
+    hubspotId: "126700344428",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/126700344428",
+    email: "deb@inpublishing.com.au",
+    phone: "+610428853224",
+    currentSub: "$232/week (active)",
+    paymentDue: "",
+    score: 9,
+    flags: ["✅ Zero card failures — reliable payer", "🏠 Melbourne — IRL ready"],
+    convoPoints: [
+      "🔥 STRONG CANDIDATE — Melbourne, reliable payer, with Hayden",
+      "6 sessions done, going well, no card failures ever",
+      "Mentor is Hayden (also IRL Lead Coordinator) — IRL synergy is natural",
+      "She's paying weekly — FE locks in commitment + adds the IRL magic",
+      "Pitch angle: 'Hayden can meet [son] in person — we've got a special experience for families who are getting great results'",
+      "Use session wins to reinforce momentum"
+    ],
+    notes: "",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 7,
+    name: "Kimberley Davies",
+    sonName: "Marley",
+    stage: "not-contacted",
+    location: "Alexandra Hills, Brisbane (QLD)",
+    state: "Queensland",
+    mentorLocation: "Melbourne",
+    paymentType: "ndis-weekly",
+    isNDIS: true,
+    isMelbourne: false,
+    totalPaid: 111,
+    weeklyRate: 0,
+    weeksActive: 21,
+    sessions: 21,
+    stripeCust: "cus_T6dhF0sbNwWHs7",
+    hubspotId: "141185768804",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/141185768804",
+    email: "kld_90@hotmail.com",
+    phone: "",
+    currentSub: "NDIS weekly billing",
+    paymentDue: "N/A — NDIS billed weekly",
+    score: 7,
+    flags: ["🟣 NDIS — needs bulk billing research", "⚠️ Only $111 in Stripe — NDIS likely billed externally", "📍 QLD → Melbourne mentor — IRL would need travel"],
+    convoPoints: [
+      "21 weeks — longest-tenured NDIS client on the list",
+      "Key question: Is she plan-managed, self-managed, or NDIA-managed?",
+      "If PLAN-MANAGED → invoice plan manager for full program as a service agreement",
+      "If SELF-MANAGED → she can pay directly like any other parent",
+      "The Veteran Mentors model: create a formal NDIS Service Agreement specifying a block of sessions → invoice upfront",
+      "NDIS category likely: Capacity Building — Increased Social & Community Participation (09_011_0116_6_3)",
+      "Pitch: 'We want to formalise [son]'s program into a structured block — better outcomes, and it makes claiming cleaner for your plan manager'",
+      "⚠️ Don't say 'prepayment' — say 'service agreement for a defined program block'"
+    ],
+    notes: "NDIS billing investigation needed. Only $111 deposit showing in Stripe — NDIS payments may be processed outside Stripe.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 8,
+    name: "Alysha Nation",
+    sonName: "Lincoln",
+    stage: "not-contacted",
+    location: "Yarra Junction, Melbourne (VIC)",
+    state: "Victoria",
+    mentorLocation: "Melbourne",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: true,
+    totalPaid: 3727,
+    weeklyRate: 0,
+    weeksActive: 16,
+    sessions: 0,
+    stripeCust: "cus_TPE8cDN2aHcwov",
+    hubspotId: "173285792010",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/173285792010",
+    email: "alysha_nation@outlook.com",
+    phone: "+61437255877",
+    currentSub: "$1,808/week (active — likely monthly cycle)",
+    paymentDue: "~1 week (payment resets)",
+    score: 9,
+    flags: ["✅ Two prepayments done", "🏠 Melbourne — IRL ready", "⏰ Payment resets in ~1 week — URGENT"],
+    convoPoints: [
+      "🔥 TOP PRIORITY — Melbourne, prepaid twice, payment resetting NOW",
+      "Son Lincoln — 16 weeks in, 2 remaining sessions on current block",
+      "Total spend: $3,727 — she's all in",
+      "Melbourne family + Melbourne mentor = IRL is a no-brainer",
+      "Pitch: 'Lincoln's about to roll into his next block — before that happens, I want to share something special we've put together'",
+      "Offer the city trip, beverage, the whole experience",
+      "Had a failed payment Jan 17 but recovered — she stayed. That's commitment."
+    ],
+    notes: "Harry mentioned: 'Book a beverage, same as Marley.' Melbourne IRL candidate. Payment resets in ~1 week.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 9,
+    name: "Brooke Beveridge",
+    sonName: "Joby",
+    stage: "not-contacted",
+    location: "Perry Bridge, VIC",
+    state: "Victoria",
+    mentorLocation: "Melbourne",
+    paymentType: "ndis-weekly",
+    isNDIS: true,
+    isMelbourne: false,
+    totalPaid: 0,
+    weeklyRate: 0,
+    weeksActive: 18,
+    sessions: 18,
+    stripeCust: "",
+    hubspotId: "135675291824",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/135675291824",
+    email: "gippypanels@gmail.com",
+    phone: "+610400665492",
+    currentSub: "NDIS weekly",
+    paymentDue: "",
+    score: 8,
+    flags: ["🟣 NDIS — budget available", "⭐ Great results, has done IRL, wants more IRL", "🏠 Requested more IRL sessions"],
+    convoPoints: [
+      "🔥 HIGH POTENTIAL — Son Joby has had great benefit, 18 weeks",
+      "Has done IRL before AND requested more IRL — she's pre-sold on the concept",
+      "NDIS = they have budget, just need to bill correctly",
+      "Same NDIS approach: service agreement for a defined program block",
+      "Perry Bridge VIC — relatively close to Melbourne for IRL",
+      "Pitch: 'Joby's been asking for more face-to-face time — we've created something that includes exactly that'",
+      "The IRL request means FE sells itself — just frame it right",
+      "Use Joby's growth story as the emotional anchor"
+    ],
+    notes: "NDIS weekly. Son Joby. Has done IRL and wants more. Great candidate for FE. Perry Bridge VIC.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"
+  },
+  {
+    id: 10,
+    name: "Jodine Farkas",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Willunga, SA",
+    state: "South Australia",
+    mentorLocation: "Melbourne",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 1919,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_TXsI49Goxdri2Y",
+    hubspotId: "156312293686",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/156312293686",
+    email: "jozza72@yahoo.com.au",
+    phone: "+61438357649",
+    currentSub: "First prepayment done — sub canceled",
+    paymentDue: "~3 weeks (next prepayment due)",
+    score: 7,
+    flags: ["💰 First round prepaid", "⏰ Due next prepayment in ~3 weeks"],
+    convoPoints: [
+      "One prepayment completed ($1,808 + $111 deposit = $1,919)",
+      "South Australia — Melbourne IRL would be a trip for the family",
+      "She's already chosen prepay over weekly — values commitment",
+      "Due for another prepayment in ~3 weeks — get in before the renewal",
+      "Pitch: 'Before your next block kicks in, I wanted to share something we've created for our most committed families'"
+    ],
+    notes: "",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 11,
+    name: "Angela Volcic",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Orient Point, NSW",
+    state: "New South Wales",
+    mentorLocation: "Melbourne",
+    paymentType: "ndis-weekly",
+    isNDIS: true,
+    isMelbourne: false,
+    totalPaid: 111,
+    weeklyRate: 0,
+    weeksActive: 15,
+    sessions: 15,
+    stripeCust: "cus_TI7KTYd8jhwlgo",
+    hubspotId: "166376477192",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/166376477192",
+    email: "charlotte.jesse@bigpond.com",
+    phone: "",
+    currentSub: "NDIS weekly",
+    paymentDue: "N/A — NDIS",
+    score: 6,
+    flags: ["🟣 NDIS — needs bulk billing approach", "⚠️ Had $1,808 payment fail (Nov 2) — NDIS billing may be external", "📍 NSW → Melbourne mentor"],
+    convoPoints: [
+      "15 weeks in, paying NDIS weekly",
+      "Only $111 in Stripe — same pattern as other NDIS clients",
+      "Failed $1,808 monthly charge in Nov — suggests tried to move to prepay but failed",
+      "Need to find out: plan-managed, self-managed, or NDIA-managed?",
+      "Pitch: 'We want to structure a proper program block for [son] — it'll give you a clear deliverable to take to your plan manager'"
+    ],
+    notes: "NDIS weekly. NSW based. $111 deposit only in Stripe — NDIS payments processed externally.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 12,
+    name: "Amy Pakinga",
+    sonName: "Tahi",
+    stage: "not-contacted",
+    location: "Unknown",
+    state: "",
+    mentorLocation: "Ben (Melbourne?)",
+    paymentType: "ndis",
+    isNDIS: true,
+    isMelbourne: false,
+    totalPaid: 0,
+    weeklyRate: 0,
+    weeksActive: 12,
+    sessions: 12,
+    stripeCust: "",
+    hubspotId: "168469422633",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/168469422633",
+    email: "amy@amareecollective.com.au",
+    phone: "+61413776815",
+    currentSub: "NDIS — recently billed",
+    paymentDue: "",
+    score: 6,
+    flags: ["🟣 NDIS — just billed, good time to discuss structure", "⚠️ No Stripe record — NDIS billed externally"],
+    convoPoints: [
+      "Son Tahi, mentor Ben, 12 sessions so far",
+      "Just recently billed for NDIS — good rapport moment",
+      "Same NDIS conversation: service agreement for program block",
+      "Pitch: 'We've just got Tahi's next block sorted — before we continue, I wanted to talk about something that could take his experience to another level'"
+    ],
+    notes: "NDIS. Son Tahi. No Stripe record. Harry mentioned 'same sort of thing' re NDIS approach.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 13,
+    name: "Karen Louwrens",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Melbourne",
+    state: "Victoria",
+    mentorLocation: "Melbourne",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: true,
+    totalPaid: 1015,
+    weeklyRate: 0,
+    weeksActive: 8,
+    sessions: 8,
+    stripeCust: "cus_Tnc2SZPXoi0FsS",
+    hubspotId: "192531640371",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/192531640371",
+    email: "greencontours@gmail.com",
+    phone: "+61410124774",
+    currentSub: "NDIS prepayment — $904 invoice paid",
+    paymentDue: "~1 week (next payment due)",
+    score: 8,
+    flags: ["✅ Melbourne — IRL ready", "💰 NDIS prepayment done", "⏰ Due next payment in ~1 week"],
+    convoPoints: [
+      "🔥 STRONG — Melbourne, session 8, payment due soon",
+      "Has done one prepayment ($904 invoice) — ready for next block",
+      "Melbourne family + Melbourne mentor = ideal IRL candidate",
+      "Payment resetting in ~1 week — timing is perfect",
+      "Pitch: 'You're coming up to your next block — I want to offer you something that includes a face-to-face experience here in Melbourne'"
+    ],
+    notes: "Melbourne. NDIS prepayment. Due next payment in ~1 week.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 14,
+    name: "Joanna Vlachos",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Westbourne Park, SA",
+    state: "South Australia",
+    mentorLocation: "Not Melbourne",
+    paymentType: "weekly",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 4062,
+    weeklyRate: 119,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_T2SncAEZh80pFU",
+    hubspotId: "154423486980",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/154423486980",
+    email: "vlachos@outlook.com.au",
+    phone: "+610422022460",
+    currentSub: "$119/week (active — Lighthouse rate)",
+    paymentDue: "",
+    score: 7,
+    flags: ["⭐ Long history with B&G — high mission buy-in", "💰 $4,062 total spend", "📍 Mentor not in Melbourne", "Lighthouse rate ($119/wk) — previously was $249/wk"],
+    convoPoints: [
+      "Been around B&G for a while — left and came back. Deep mission alignment.",
+      "Currently on Lighthouse rate ($119/week) — was previously $249/week (Big Brother)",
+      "Total spend: $4,062 — she's invested significantly over time",
+      "$119/week → $4,990 FE is a big jump, but her buy-in is strong",
+      "Mentor isn't in Melbourne — IRL component would need a special arrangement",
+      "Harry has built rapport with the kid — use that connection",
+      "Pitch: 'I know you've been part of the B&G family for a while — I've seen [son]'s growth firsthand. We've created something for families like yours...'"
+    ],
+    notes: "Left B&G and came back. Previously prepaid, now weekly at Lighthouse rate. Strong mission buy-in. Mentor not in Melbourne.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 15,
+    name: "Janine Wright",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Melbourne",
+    state: "Victoria",
+    mentorLocation: "Melbourne (Xavier)",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: true,
+    totalPaid: 1919,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_TpZUrx1624z1lR",
+    hubspotId: "194776451184",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/194776451184",
+    email: "wrightjanine30@gmail.com",
+    phone: "+610401865878",
+    currentSub: "Prepaid 8 sessions ($1,576) — sub canceled",
+    paymentDue: "Next few days",
+    score: 9,
+    flags: ["✅ Melbourne — IRL ready", "⭐ Great feedback from mentor Xavier", "⏰ Due to prepay NOW", "👦 Only child — engaged"],
+    convoPoints: [
+      "🔥 TOP PRIORITY — Melbourne, due to prepay NOW, great feedback",
+      "Mentor is Xavier — 'great feedback so far'",
+      "Only child, engaged with program — parents likely very invested",
+      "She prepaid 8 sessions ($1,576) upfront — already comfortable with commitment",
+      "Melbourne family + Melbourne mentor = perfect IRL setup",
+      "Pitch: 'Xavier's been telling me about the progress [son] has been making — before your next block, I want to share something special'",
+      "Use Xavier's specific feedback as the emotional hook"
+    ],
+    notes: "Due to prepay in next couple of days. Melbourne. Mentor Xavier. Only child, engaged.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 16,
+    name: "Troy Speed",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Long Jetty, NSW",
+    state: "New South Wales",
+    mentorLocation: "Melbourne",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 1071,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_Tnbj2BTpeLPHtr",
+    hubspotId: "186715470737",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/186715470737",
+    email: "jackrspeed@gmail.com",
+    phone: "+61414224759",
+    currentSub: "$536/cycle (active)",
+    paymentDue: "",
+    score: 8,
+    flags: ["👨 Dad — wants strong father-son relationship", "⭐ Getting really good growth", "📍 NSW → Melbourne mentor"],
+    convoPoints: [
+      "DAD buyer — rare and powerful. He specifically wanted to build a stronger relationship with his son",
+      "Total: $1,071 across 2 payments ($536 each)",
+      "Harry remembers the sign-up: 'the dad was really looking to build a strong relationship'",
+      "Getting 'really good growth' — use this as proof",
+      "A dad wanting connection with his son + FE's IRL component = emotional slam dunk",
+      "Pitch: 'Troy, when you first signed up, you told me you wanted to build a stronger bond with [son]. I've put something together that gives you both an experience — not just sessions, but time together'"
+    ],
+    notes: "Dad buyer. Long Jetty NSW. Wants father-son relationship building. Great growth happening.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 17,
+    name: "Leeanne Jackson",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Regional Melbourne",
+    state: "Victoria",
+    mentorLocation: "Melbourne (has met son in-person)",
+    paymentType: "weekly",
+    isNDIS: false,
+    isMelbourne: true,
+    totalPaid: 9657,
+    weeklyRate: 222,
+    weeksActive: 37,
+    sessions: 37,
+    stripeCust: "cus_SDp7DJqdZ2mEDo",
+    hubspotId: "114162757489",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/114162757489",
+    email: "jackson.honey@hotmail.com",
+    phone: "+61 455 274 788",
+    currentSub: "$222/week (active)",
+    paymentDue: "",
+    score: 9,
+    flags: ["💰 HIGHEST SPENDER — $9,657 total", "✅ 37 weeks loyal — never quit", "🏠 Regional Melbourne — IRL possible", "⭐ Mentor has already met son IRL", "⚠️ Recent card failures but always recovers"],
+    convoPoints: [
+      "🔥 GOLDEN CANDIDATE — 37 weeks, $9,657 spent, never left",
+      "Longest active member on this list by far",
+      "Quite wealthy family, regional Melbourne",
+      "Mentor has ALREADY met the son in-person out there — IRL proof of concept",
+      "She's been paying $222/week for 37 weeks with zero complaints",
+      "Recent card failures (Feb) but always recovers — she's not leaving",
+      "At $222/week, she'll spend $11,544/year. FE at $4,990 for 18 weeks is actually BETTER value",
+      "Pitch: 'You've been with us longer than almost anyone. You've seen the growth. We've created something for families like yours — and your mentor has already been out to see [son]...'"
+    ],
+    notes: "37 weeks. $9,657 total. Wealthy family. Regional Melbourne. Mentor already met son IRL. Some card failures but always recovers.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 18,
+    name: "Jodhi McGrath",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Kingswood, NSW",
+    state: "New South Wales",
+    mentorLocation: "Melbourne",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 1919,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_TmTIBKNqrxFeio",
+    hubspotId: "191863680526",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/191863680526",
+    email: "jodhi@cherubsanddust.com.au",
+    phone: "+610448133331",
+    currentSub: "$1,808/month (active)",
+    paymentDue: "TODAY (due for prepayment)",
+    score: 8,
+    flags: ["⏰ PREPAYMENT DUE TODAY", "💰 First prepayment done", "📍 NSW → Melbourne mentor"],
+    convoPoints: [
+      "🔥 URGENT — Prepayment due TODAY",
+      "She already prepaid first round ($1,808 + $111 deposit)",
+      "Now on $1,808/month cycle — next charge imminent",
+      "NSW-based, mentor in Melbourne",
+      "Catch her BEFORE the automatic renewal hits",
+      "Pitch: 'Before your next payment processes, I wanted to call you about something — we've put together an experience for our committed families...'"
+    ],
+    notes: "Prepayment due today. NSW. First prepayment done. Catch before auto-renewal.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 19,
+    name: "Melanie Heskin",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Elsternwick, Melbourne (VIC)",
+    state: "Victoria",
+    mentorLocation: "Melbourne",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: true,
+    totalPaid: 7824,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_T8lmAqz2nl67bt",
+    hubspotId: "158931135104",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/158931135104",
+    email: "melanie.heskin@gmail.com",
+    phone: "+610421826588",
+    currentSub: "Inactive — massive prepay of $5,712 (19 credited sessions)",
+    paymentDue: "N/A — 19 sessions remaining",
+    score: 5,
+    flags: ["💰 $7,824 total — 2nd highest spender", "🏠 Elsternwick, Melbourne — IRL ready", "⚠️ 19 credited sessions remaining — careful with ask", "🤔 Harry unsure whether to pitch"],
+    convoPoints: [
+      "⚠️ HANDLE WITH CARE — she's already spent $7,824 and has 19 sessions banked",
+      "$5,712 six-month prepay in December — obviously wealthy and committed",
+      "Melbourne (Elsternwick) + Melbourne mentor = perfect IRL",
+      "The question: do you ask for MORE money when she has 19 sessions left?",
+      "OPTION A: Don't pitch FE now. Wait until sessions draw down. Build relationship.",
+      "OPTION B: Pitch the IRL + Personality Report as ADD-ONS to her existing sessions — not a new purchase, an enhancement",
+      "OPTION C: Plant the seed now — 'When you come up to your next renewal, we have something special'",
+      "Recommendation: Go with Option B or C. Don't hard-sell. She's your ideal customer — don't risk the relationship."
+    ],
+    notes: "Harry's concern: she has 19 credited sessions and already spent $6K+. May not be appropriate to ask for more. Consider add-on pitch or seed-planting approach.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 20,
+    name: "Holly Walters",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Perth, WA",
+    state: "Western Australia",
+    mentorLocation: "Melbourne",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 6113,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_SDseqKGrRTqxwD",
+    hubspotId: "114742483072",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/114742483072",
+    email: "noackholly@yahoo.com.au",
+    phone: "",
+    currentSub: "Unpaid — $2,001/week sub (failed Nov, stopped)",
+    paymentDue: "OVERDUE — stopped paying over Christmas",
+    score: 7,
+    flags: ["⚠️ LAPSED — stopped paying over Christmas", "💰 Was one of first members — $6,113 total", "⭐ Really engaged kid", "📍 Perth → Melbourne mentor"],
+    convoPoints: [
+      "One of the FIRST B&G members — legacy family",
+      "Used to always prepay — stopped over Christmas",
+      "Total spend: $6,113 — she was committed for a long time",
+      "Really engaged kid — the value is there, just need to re-ignite",
+      "Perth-based — Melbourne IRL trip could be the re-engagement hook",
+      "Don't lead with money — lead with 'I miss [son], he was doing so well'",
+      "Pitch: 'Holly, [son] was one of our earliest members and honestly one of our best stories. I've put something together that I think would bring him back in a big way'"
+    ],
+    notes: "First member. Perth. Stopped paying Christmas. Engaged kid. Re-engagement opportunity.",
+    sessionWins: [],
+    inactive: true,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 21,
+    name: "Keira Cooper",
+    sonName: "",
+    stage: "not-contacted",
+    location: "NSW",
+    state: "New South Wales",
+    mentorLocation: "Melbourne",
+    paymentType: "weekly",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 2109,
+    weeklyRate: 0,
+    weeksActive: 11,
+    sessions: 11,
+    stripeCust: "cus_T4gt5C8n41zjvW",
+    hubspotId: "155794217393",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/155794217393",
+    email: "keiracooper@gmail.com",
+    phone: "+61434199972",
+    currentSub: "Canceled — was $222/week and $1,802 prepay",
+    paymentDue: "N/A — inactive",
+    score: 6,
+    flags: ["⚠️ CHURNED — prepaid first round then left after 11 weeks", "💡 Consider secondary IRL-only offer"],
+    convoPoints: [
+      "Prepaid first round, stayed 11 weeks, then pulled out",
+      "NSW-based, Melbourne mentor — distance may have been a factor",
+      "Total spend: $2,109 — she was willing to invest",
+      "Harry's idea: SECONDARY OFFER — IRL component only, fewer sessions, more affordable",
+      "This could be the test case for a 'lite' FE — IRL weekend + limited sessions",
+      "Pitch: 'Keira, I know things didn't work out last time. We've actually created something new — it's more about the experience than the weekly commitment'",
+      "The key: address why she left. Was it value? Distance? Cost? Kid engagement?"
+    ],
+    notes: "Churned after 11 weeks. First round prepaid. Harry thinking about a secondary, more affordable IRL offer for re-engagement cases.",
+    sessionWins: [],
+    inactive: true,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 22,
+    name: "Elizabeth Pender",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Brisbane, QLD",
+    state: "Queensland",
+    mentorLocation: "Melbourne",
+    paymentType: "weekly",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 2351,
+    weeklyRate: 115,
+    weeksActive: 10,
+    sessions: 10,
+    stripeCust: "cus_ShBl6xFPjxbXEV",
+    hubspotId: "137591129642",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/137591129642",
+    email: "beth_pender@outlook.com",
+    phone: "+61430074403",
+    currentSub: "$115/week (active — Lighthouse rate)",
+    paymentDue: "",
+    score: 5,
+    flags: ["⚠️ Inactive since Nov — needs re-engagement", "📍 Brisbane → Melbourne mentor", "💰 Still on active sub at $115/week — is she still being billed?"],
+    convoPoints: [
+      "10 sessions, great mentor — went inactive",
+      "⚠️ Still has active $115/week subscription — check if still billing",
+      "Brisbane-based, need to confirm extra details",
+      "Harry said 'need to confirm a few extra details' — don't pitch until those are confirmed",
+      "Worth re-engaging but need more info first"
+    ],
+    notes: "Harry wants to confirm extra details before pitching. Was with a great mentor. Inactive since Nov but sub may still be active at $115/wk.",
+    sessionWins: [],
+    inactive: true,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 23,
+    name: "Lynell Taramoeroa",
+    sonName: "",
+    stage: "not-contacted",
+    location: "WA",
+    state: "Western Australia",
+    mentorLocation: "Melbourne",
+    paymentType: "weekly",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 5376,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_SFUt7jyaWhTo1B",
+    hubspotId: "118373601971",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/118373601971",
+    email: "lynellee@hotmail.com",
+    phone: "+61404329206",
+    currentSub: "Canceled — was $310/week",
+    paymentDue: "N/A — inactive",
+    score: 6,
+    flags: ["⚠️ INACTIVE for some time", "💰 $5,376 total — was very committed", "⭐ Super engaged, great growth", "📍 WA → Melbourne mentor"],
+    convoPoints: [
+      "Was a super engaged family with great growth",
+      "Total spend: $5,376 — was paying $310/week at Big Brother rate",
+      "WA-based with Melbourne mentor",
+      "Been inactive for some time but had strong results",
+      "Pitch: Re-engagement through the experience — 'I've been thinking about [son] and how well things were going. We've created something new...'"
+    ],
+    notes: "WA. Inactive but was super engaged with great growth. $5,376 total. Re-engagement candidate.",
+    sessionWins: [],
+    inactive: true,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 24,
+    name: "Meghan Cockburn",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Unknown",
+    state: "",
+    mentorLocation: "Harry (personal member)",
+    paymentType: "ndis",
+    isNDIS: true,
+    isMelbourne: false,
+    totalPaid: 0,
+    weeklyRate: 244,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_S3pTgTtY0X1sUP",
+    hubspotId: "112203615869",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/112203615869",
+    email: "meghanecockburn@gmail.com",
+    phone: "61411062940",
+    currentSub: "$244/week (past_due)",
+    paymentDue: "PAST DUE",
+    score: 5,
+    flags: ["🟣 NDIS", "⚠️ Subscription past due", "👤 Harry's personal member — son only wants Harry", "🤔 Time commitment concern"],
+    convoPoints: [
+      "Harry's personal member — son has said he doesn't want another mentor",
+      "NDIS client, wants to re-engage but Harry's time is the constraint",
+      "Subscription is past_due — needs action regardless",
+      "Harry's idea: shorten the sessions, same price, less time commitment",
+      "Prepayment conversation could work with NDIS budget",
+      "⚠️ Consider: do you want a weekly member right now? This ties you down.",
+      "If yes: structure as a defined block with an end date, not open-ended"
+    ],
+    notes: "Harry's member. Kid only wants Harry. NDIS. Sub past due. Harry considering shorter sessions at same price to reduce time commitment.",
+    sessionWins: [],
+    inactive: true,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 25,
+    name: "Diahann Marsh",
+    sonName: "",
+    stage: "not-contacted",
+    location: "Currumbin Waters, QLD",
+    state: "Queensland",
+    mentorLocation: "",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 5535,
+    weeklyRate: 0,
+    weeksActive: 18,
+    sessions: 18,
+    stripeCust: "cus_TMe39DCixF75HT",
+    hubspotId: "171374299217",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/171374299217",
+    email: "diahann@iinet.net.au",
+    phone: "+610412007519",
+    currentSub: "$1,808/month (active)",
+    paymentDue: "Just reset or due now",
+    score: 8,
+    flags: ["💰 Two prepayments + third just processed", "✅ 3 successful $1,808 charges — super reliable", "⏰ Just paid or about to pay — credit into FE"],
+    convoPoints: [
+      "18 sessions, 2 rounds of prepayment, third just processed March 10",
+      "Total spend: $5,535 — she's all in on Big Brother",
+      "QLD (Currumbin Waters) — Melbourne IRL trip would be special",
+      "She just paid $1,808 on March 10 — could credit that into FE",
+      "Harry's idea: credit the recent payment into the FE offer",
+      "Pitch: 'I see you just renewed — before that kicks in, I want to offer you something that includes everything you're getting plus a lot more. We can credit what you've just paid.'"
+    ],
+    notes: "Just paid $1,808 on March 10. Harry wants to credit recent payment into FE offer. 18 sessions. QLD.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 26,
+    name: "Cara Santangelo",
+    sonName: "",
+    stage: "not-contacted",
+    location: "North Curl Curl, Sydney (NSW)",
+    state: "New South Wales",
+    mentorLocation: "",
+    paymentType: "prepay",
+    isNDIS: false,
+    isMelbourne: false,
+    totalPaid: 2145,
+    weeklyRate: 0,
+    weeksActive: 0,
+    sessions: 0,
+    stripeCust: "cus_Sk5KLB011lm2xz",
+    hubspotId: "140066485524",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/140066485524",
+    email: "cara.j.santangelo@gmail.com",
+    phone: "+61 411 953 537",
+    currentSub: "Canceled — was $231/month & $1,802 prepay",
+    paymentDue: "",
+    score: 8,
+    flags: ["⭐ Pulled out then CAME BACK — bought a previous Founder offer", "💰 $2,145 total — willing to invest", "🔁 Already bought a Founder offer before — knows the format"],
+    convoPoints: [
+      "🔥 STRONG — She's already bought a Founder offer from you before",
+      "Initially pulled out, then signed back up with a previous Founder offer — she CHOSE to come back",
+      "Total spend: $2,145 — $1,802 prepay + $231 sub + $111 deposit",
+      "North Curl Curl (Sydney) — Melbourne IRL trip would be an experience",
+      "She's proven twice over: left and came back, AND bought a premium offer",
+      "This is the easiest pitch — she already knows what a Founder offer looks like",
+      "Pitch: 'Cara, you were one of the first families to do our original Founder offer. We've levelled it up — I wanted to give you first look before we open it to anyone else'"
+    ],
+    notes: "Current member. Initially pulled out, signed back up with a previous Founder offer. Already knows the format — warm lead.",
+    sessionWins: [],
+    inactive: false,
+    likelihood: 0,
+    offerType: "fe"  },
+  {
+    id: 27,
+    name: "Keera Mitrokli",
+    sonName: "Mason",
+    stage: "not-contacted",
+    location: "Melbourne",
+    state: "Victoria",
+    mentorLocation: "",
+    paymentType: "weekly",
+    isNDIS: false,
+    isMelbourne: true,
+    totalPaid: 2220,
+    weeklyRate: 222,
+    weeksActive: 10,
+    sessions: 10,
+    stripeCust: "cus_SeUlouooeTy4Cl",
+    hubspotId: "134288267071",
+    hubspotUrl: "https://app.hubspot.com/contacts/48782903/record/0-1/134288267071",
+    email: "keera44@hotmail.com",
+    phone: "0431914291",
+    currentSub: "Canceled — was $222/week",
+    paymentDue: "N/A — inactive",
+    score: 7,
+    flags: ["⚠️ Left pre-Christmas due to finances", "⭐ Super engaged, loved it", "🏠 Melbourne — IRL ready", "💡 FE could be the way back in"],
+    convoPoints: [
+      "Left before Christmas due to finances — not disengagement",
+      "Was super engaged and loved the program — 10 weeks, $2,220 total, zero missed payments while active",
+      "Melbourne-based — IRL component is a natural fit",
+      "The reason she left was MONEY, not VALUE. FE needs to address that.",
+      "⚠️ $4,990 may be a stretch if finances were the issue — consider payment plan or the IRL Lite secondary offer",
+      "OR: frame FE as better value than weekly ($277/week on FE vs $222/week before — but includes IRL, report, everything)",
+      "Pitch: 'Keera, I know things got tough before Christmas. [Son] was doing so well and I've been thinking about him. We've created something new — and honestly, it might be a better fit than weekly because you get so much more for a similar commitment'"
+    ],
+    notes: "Left pre-Christmas, finances. Super engaged. Melbourne. FE could be re-engagement path but price sensitivity is a factor.",
+    sessionWins: [],
+    inactive: true,
+    likelihood: 0,
+    offerType: "fe"  }
+];
+
+// ============ STATE ============
+let currentFilter = 'all';
+let currentView = 'board';
+let currentTab = 'pipeline';
+let searchTerm = '';
+
+// Load saved state
+function loadState() {
+  try {
+    const saved = localStorage.getItem('fe-hitlist-state');
+    if (saved) {
+      const state = JSON.parse(saved);
+      contacts = contacts.map(c => {
+        const s = state.find(x => x.id === c.id);
+        if (s) {
+          c.stage = s.stage || c.stage;
+          c.notes = s.notes || c.notes;
+          c.score = s.score !== undefined ? s.score : c.score;
+          c.likelihood = s.likelihood !== undefined ? s.likelihood : c.likelihood;
+          c.offerType = s.offerType || c.offerType;
+        }
+        return c;
+      });
+    }
+  } catch(e) {}
+}
+
+function saveState() {
+  const state = contacts.map(c => ({ id: c.id, stage: c.stage, notes: c.notes, score: c.score, likelihood: c.likelihood, offerType: c.offerType }));
+  localStorage.setItem('fe-hitlist-state', JSON.stringify(state));
+}
+
+// ============ RENDER ============
+function getFilteredContacts() {
+  let filtered = contacts;
+  if (currentFilter === 'ndis') filtered = filtered.filter(c => c.isNDIS);
+  if (currentFilter === 'melb') filtered = filtered.filter(c => c.isMelbourne);
+  if (currentFilter === 'prepay') filtered = filtered.filter(c => c.paymentType.includes('prepay'));
+  if (currentFilter === 'inactive') filtered = filtered.filter(c => c.inactive);
+  if (currentFilter === 'due') filtered = filtered.filter(c => c.paymentDue && c.paymentDue !== '' && c.paymentDue !== 'N/A — NDIS' && c.paymentDue !== 'N/A — inactive' && c.paymentDue !== 'N/A — 19 sessions remaining');
+  if (searchTerm) {
+    const s = searchTerm.toLowerCase();
+    filtered = filtered.filter(c => c.name.toLowerCase().includes(s) || (c.sonName && c.sonName.toLowerCase().includes(s)) || c.location.toLowerCase().includes(s));
+  }
+  return filtered;
+}
+
+function getPipelineValue() {
+  return contacts
+    .filter(c => c.stage === 'offer-sent')
+    .reduce((sum, c) => {
+      const price = c.offerType === 'fe-lite' ? ACCEL_PRICE : FE_PRICE;
+      return sum + (price * (c.likelihood || 0) / 100);
+    }, 0);
+}
+
+function getTotalPipelineValue() {
+  return contacts
+    .filter(c => c.stage === 'offer-sent')
+    .reduce((sum, c) => {
+      const price = c.offerType === 'fe-lite' ? ACCEL_PRICE : FE_PRICE;
+      return sum + price;
+    }, 0);
+}
+
+function getAcceptedValue() {
+  return contacts
+    .filter(c => c.stage === 'accepted')
+    .reduce((sum, c) => {
+      const price = c.offerType === 'fe-lite' ? ACCEL_PRICE : FE_PRICE;
+      return sum + price;
+    }, 0);
+}
+
+function renderStats() {
+  const total = contacts.length;
+  const contacted = contacts.filter(c => c.stage !== 'not-contacted').length;
+  const accepted = contacts.filter(c => c.stage === 'accepted').length;
+  const offerSent = contacts.filter(c => c.stage === 'offer-sent').length;
+  const pipelineVal = getPipelineValue();
+  const acceptedVal = getAcceptedValue();
+  document.getElementById('headerStats').innerHTML = `
+    <div class="stat-pill blue"><span class="num">${total}</span> Total</div>
+    <div class="stat-pill yellow"><span class="num">${contacted}</span> Contacted</div>
+    <div class="stat-pill" style="border-color:var(--orange)"><span class="num" style="color:var(--orange)">${offerSent}</span> Offers Out</div>
+    <div class="stat-pill green"><span class="num">${accepted}</span> Accepted</div>
+    <div class="stat-pill"><span class="num" style="color:var(--orange)">$${(pipelineVal/1000).toFixed(1)}K</span> Weighted Pipeline</div>
+    <div class="stat-pill green"><span class="num">$${(acceptedVal/1000).toFixed(1)}K</span> Accepted Rev</div>
+  `;
+}
+
+function renderSummary() {
+  const ndis = contacts.filter(c => c.isNDIS).length;
+  const melb = contacts.filter(c => c.isMelbourne).length;
+  const urgent = contacts.filter(c => c.paymentDue && (c.paymentDue.includes('TODAY') || c.paymentDue.includes('URGENT') || c.paymentDue.includes('OVERDUE') || c.paymentDue.includes('~1 week'))).length;
+  const totalPipeline = getTotalPipelineValue();
+  const weightedPipeline = getPipelineValue();
+  const accelCount = contacts.filter(c => c.offerType === 'fe-lite').length;
+  document.getElementById('summaryBar').innerHTML = `
+    <div class="summary-card"><div class="big" style="color:var(--purple)">${ndis}</div><div class="label">NDIS Clients</div></div>
+    <div class="summary-card"><div class="big" style="color:var(--blue)">${melb}</div><div class="label">Melbourne IRL</div></div>
+    <div class="summary-card"><div class="big" style="color:var(--red)">${urgent}</div><div class="label">Urgent / Due Now</div></div>
+    <div class="summary-card"><div class="big" style="color:var(--orange)">$${(totalPipeline/1000).toFixed(1)}K</div><div class="label">Total Pipeline</div></div>
+    <div class="summary-card"><div class="big" style="color:var(--green)">$${(weightedPipeline/1000).toFixed(1)}K</div><div class="label">Weighted (by likelihood)</div></div>
+    <div class="summary-card"><div class="big" style="color:var(--yellow)">${accelCount}</div><div class="label">FE Lite Offers</div></div>
+  `;
+}
+
+function renderCard(c) {
+  const scoreClass = c.score >= 8 ? 'score-high' : c.score >= 6 ? 'score-med' : 'score-low';
+  const badges = [];
+  if (c.offerType === 'fe-lite') badges.push('<span class="badge" style="background:rgba(234,179,8,0.2);color:#eab308">⚡ FE Lite</span>');
+  if (c.isNDIS) badges.push('<span class="badge badge-ndis">NDIS</span>');
+  if (c.isMelbourne) badges.push('<span class="badge badge-melb">Melbourne</span>');
+  if (c.paymentType.includes('prepay')) badges.push('<span class="badge badge-prepay">Prepaid</span>');
+  if (c.paymentType.includes('weekly')) badges.push('<span class="badge badge-weekly">Weekly</span>');
+  if (c.inactive) badges.push('<span class="badge badge-inactive">Re-engage</span>');
+  if (c.isMelbourne && !c.inactive) badges.push('<span class="badge badge-irl">IRL Ready</span>');
+  
+  const flagsHtml = c.flags.slice(0,3).map(f => `<div class="flag"><span class="flag-icon">${f.charAt(0)}</span>${f.substring(2)}</div>`).join('');
+  
+  const price = c.offerType === 'fe-lite' ? ACCEL_PRICE : FE_PRICE;
+  const likelihoodHtml = c.stage === 'offer-sent' && c.likelihood > 0 
+    ? `<div style="margin-top:6px;display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:4px;height:6px;overflow:hidden;">
+          <div style="width:${c.likelihood}%;height:100%;background:${c.likelihood >= 70 ? 'var(--green)' : c.likelihood >= 40 ? 'var(--yellow)' : 'var(--red)'};border-radius:4px;"></div>
+        </div>
+        <span style="font-size:11px;font-weight:700;color:${c.likelihood >= 70 ? 'var(--green)' : c.likelihood >= 40 ? 'var(--yellow)' : 'var(--red)'}">${c.likelihood}%</span>
+        <span style="font-size:11px;color:var(--text2)">$${(price * c.likelihood / 100).toLocaleString()}</span>
+      </div>` 
+    : c.stage === 'offer-sent' 
+    ? `<div style="font-size:11px;color:var(--text2);margin-top:6px">⚠️ Set likelihood →</div>` 
+    : '';
+  
+  return `
+    <div class="card" onclick="openModal(${c.id})" draggable="true" ondragstart="dragStart(event, ${c.id})">
+      <div class="card-header">
+        <div class="card-name">${c.name}</div>
+        <div class="card-score ${scoreClass}">${c.score}</div>
+      </div>
+      <div class="card-meta">${badges.join('')}</div>
+      <div class="card-detail">${c.location}${c.sonName ? ' · Son: '+c.sonName : ''}</div>
+      ${c.totalPaid > 0 ? `<div class="card-revenue">$${c.totalPaid.toLocaleString()} lifetime</div>` : ''}
+      ${c.paymentDue && c.paymentDue !== '' ? `<div class="card-detail" style="color:var(--orange);margin-top:4px">⏰ ${c.paymentDue}</div>` : ''}
+      ${likelihoodHtml}
+      ${flagsHtml ? `<div class="card-flags">${flagsHtml}</div>` : ''}
+    </div>
+  `;
+}
+
+function renderPipeline() {
+  const filtered = getFilteredContacts();
+  let html = '';
+  for (const [stageId, stageInfo] of Object.entries(STAGES)) {
+    const stageContacts = filtered.filter(c => c.stage === stageId);
+    const stageValue = stageContacts.reduce((sum, c) => {
+      const price = c.offerType === 'fe-lite' ? ACCEL_PRICE : FE_PRICE;
+      if (stageId === 'offer-sent') return sum + (price * (c.likelihood || 0) / 100);
+      if (stageId === 'accepted') return sum + price;
+      return sum;
+    }, 0);
+    const valueLabel = (stageId === 'offer-sent' || stageId === 'accepted') && stageValue > 0 
+      ? `<div style="font-size:11px;color:${stageInfo.color};margin-left:4px">$${stageValue.toLocaleString()}</div>` 
+      : '';
+    html += `
+      <div class="pipeline-col" ondrop="drop(event, '${stageId}')" ondragover="allowDrop(event)">
+        <div class="pipeline-col-header">
+          <div class="pipeline-col-title" style="color:${stageInfo.color}">${stageInfo.label}</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            ${valueLabel}
+            <div class="pipeline-col-count">${stageContacts.length}</div>
+          </div>
+        </div>
+        ${stageContacts.map(c => renderCard(c)).join('')}
+      </div>
+    `;
+  }
+  document.getElementById('pipelineView').innerHTML = html;
+}
+
+function renderList() {
+  const filtered = getFilteredContacts();
+  let html = `
+    <table class="list-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Stage</th>
+          <th>Location</th>
+          <th>Type</th>
+          <th>Offer</th>
+          <th>Likelihood</th>
+          <th>Total Paid</th>
+          <th>Flags</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+  filtered.sort((a,b) => b.score - a.score).forEach(c => {
+    const scoreClass = c.score >= 8 ? 'score-high' : c.score >= 6 ? 'score-med' : 'score-low';
+    html += `
+      <tr onclick="openModal(${c.id})" style="cursor:pointer">
+        <td><strong>${c.name}</strong>${c.sonName ? '<br><small style="color:var(--text2)">Son: '+c.sonName+'</small>' : ''}</td>
+        <td><span class="card-score ${scoreClass}" style="width:28px;height:28px;font-size:12px">${c.score}</span></td>
+        <td><span style="color:${STAGES[c.stage].color}">${STAGES[c.stage].label}</span></td>
+        <td>${c.location}</td>
+        <td>${c.isNDIS ? '<span class="badge badge-ndis">NDIS</span>' : c.paymentType.includes('prepay') ? '<span class="badge badge-prepay">Prepay</span>' : '<span class="badge badge-weekly">Weekly</span>'}</td>
+        <td>${c.offerType === 'fe-lite' ? '<span class="badge" style="background:rgba(234,179,8,0.2);color:#eab308">⚡ FE Lite</span>' : '<span class="badge" style="background:rgba(99,102,241,0.2);color:#818cf8">🎯 FE</span>'}</td>
+        <td>${c.likelihood ? c.likelihood+'%' : '—'}</td>
+        <td style="color:var(--green)">$${c.totalPaid.toLocaleString()}</td>
+        <td style="font-size:11px">${c.flags.slice(0,2).join('<br>')}</td>
+      </tr>
+    `;
+  });
+  html += '</tbody></table>';
+  document.getElementById('listView').innerHTML = html;
+}
+
+function renderNDIS() {
+  document.getElementById('ndisView').innerHTML = `
+    <div class="ndis-panel">
+      <h3>🟣 NDIS Billing for B&G — Full Protocol</h3>
+      <p>The key insight: <strong>it's not "prepayment" — it's a "service agreement for a defined program block."</strong> How you bill depends entirely on the participant's plan management type.</p>
+    </div>
+    
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;">
+      <h3 style="color:var(--red);margin-bottom:12px;font-size:16px;">🚨 CRITICAL: The Three Management Types</h3>
+      <p style="font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:12px;">The FIRST question on every NDIS call: <em>"How is your NDIS plan managed?"</em></p>
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;">
+        <div style="background:var(--surface2);border-radius:10px;padding:16px;border-left:3px solid var(--green);">
+          <h4 style="color:var(--green);margin-bottom:8px;">Self-Managed ✅ EASIEST</h4>
+          <ul style="list-style:none;padding:0;">
+            <li style="padding:4px 0;font-size:13px;">→ Parent controls their own NDIS funds</li>
+            <li style="padding:4px 0;font-size:13px;">→ <strong>Can pay you directly</strong> — treat like any other parent</li>
+            <li style="padding:4px 0;font-size:13px;">→ No price limits — can charge whatever you agree on</li>
+            <li style="padding:4px 0;font-size:13px;">→ Invoice them directly for the full program</li>
+            <li style="padding:4px 0;font-size:13px;">→ They claim it back from NDIS themselves</li>
+            <li style="padding:4px 0;font-size:13px;color:var(--green)"><strong>✅ Can absolutely do a block/upfront invoice</strong></li>
+          </ul>
+        </div>
+        
+        <div style="background:var(--surface2);border-radius:10px;padding:16px;border-left:3px solid var(--blue);">
+          <h4 style="color:var(--blue);margin-bottom:8px;">Plan-Managed 👍 MOST COMMON</h4>
+          <ul style="list-style:none;padding:0;">
+            <li style="padding:4px 0;font-size:13px;">→ A plan manager (e.g., My Plan Manager, Plan Partners) handles payments</li>
+            <li style="padding:4px 0;font-size:13px;">→ <strong>Invoice the plan manager</strong>, not the parent</li>
+            <li style="padding:4px 0;font-size:13px;">→ No price limits (plan managers have more flexibility than NDIA)</li>
+            <li style="padding:4px 0;font-size:13px;">→ <strong>B&G does NOT need to be a registered provider</strong></li>
+            <li style="padding:4px 0;font-size:13px;">→ Create a Service Agreement → send invoice to plan manager</li>
+            <li style="padding:4px 0;font-size:13px;color:var(--blue)"><strong>✅ Plan managers routinely process block program invoices</strong></li>
+          </ul>
+        </div>
+        
+        <div style="background:var(--surface2);border-radius:10px;padding:16px;border-left:3px solid var(--orange);">
+          <h4 style="color:var(--orange);margin-bottom:8px;">NDIA-Managed ⚠️ HARDEST</h4>
+          <ul style="list-style:none;padding:0;">
+            <li style="padding:4px 0;font-size:13px;">→ NDIA pays providers directly through their portal</li>
+            <li style="padding:4px 0;font-size:13px;">→ <strong>Must be a registered NDIS provider</strong> (B&G likely isn't)</li>
+            <li style="padding:4px 0;font-size:13px;">→ <strong>Must comply with NDIS Price Guide limits</strong></li>
+            <li style="padding:4px 0;font-size:13px;">→ Claims must be for supports <strong>already delivered</strong> — no upfront</li>
+            <li style="padding:4px 0;font-size:13px;">→ Can do "service bookings" to reserve funds, but still claim per-session</li>
+            <li style="padding:4px 0;font-size:13px;color:var(--orange)"><strong>❌ Cannot bill upfront — claim after each session delivery</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent2);margin-bottom:12px;font-size:14px;">📋 The Service Agreement (Required)</h3>
+        <p style="font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:10px;">A formal document between B&G and the participant/plan manager. Must include:</p>
+        <ul style="list-style:none;padding:0;">
+          <li style="padding:4px 0;font-size:13px;">→ Participant's name & NDIS number</li>
+          <li style="padding:4px 0;font-size:13px;">→ Support category & line item number</li>
+          <li style="padding:4px 0;font-size:13px;">→ Total sessions (18 for FE, fewer for Founder's Experience Lite)</li>
+          <li style="padding:4px 0;font-size:13px;">→ Per-session rate breakdown</li>
+          <li style="padding:4px 0;font-size:13px;">→ Total program cost</li>
+          <li style="padding:4px 0;font-size:13px;">→ IRL component as separate line item</li>
+          <li style="padding:4px 0;font-size:13px;">→ Start date, end date, review date</li>
+          <li style="padding:4px 0;font-size:13px;color:var(--red);">→ <strong>Cancellation policy</strong> — pro-rata refund for undelivered sessions (MANDATORY)</li>
+          <li style="padding:4px 0;font-size:13px;">→ B&G ABN: 14 688 738 098</li>
+        </ul>
+      </div>
+      
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent2);margin-bottom:12px;font-size:14px;">💰 How to Structure the Invoice</h3>
+        <p style="font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:10px;">Break FE down into NDIS-friendly line items:</p>
+        <ul style="list-style:none;padding:0;">
+          <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><strong>18× Mentoring Sessions</strong> — Capacity Building: Increased Social & Community Participation (09_011_0116_6_3) — e.g., $220/session = $3,960</li>
+          <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><strong>IRL Experience</strong> — Community Participation / Assist Travel (incl. activities, group participation) — e.g., $530</li>
+          <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><strong>Personality Report</strong> — Capacity Building: Improved Daily Living (assessment) — e.g., $500</li>
+          <li style="padding:6px 0;font-size:13px;"><strong>Total: $4,990</strong></li>
+        </ul>
+        <p style="font-size:12px;color:var(--text2);margin-top:8px;">Note: Accommodation (Marriott) is typically NOT covered by NDIS — parent may need to cover that separately or B&G absorbs it.</p>
+      </div>
+      
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent2);margin-bottom:12px;font-size:14px;">🏗️ The Veteran Mentors Model</h3>
+        <p style="font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:10px;">How they bill NDIS for block programs:</p>
+        <ul style="list-style:none;padding:0;">
+          <li style="padding:4px 0;font-size:13px;">→ 9-day Junior Leader Program = structured block</li>
+          <li style="padding:4px 0;font-size:13px;">→ NDIS categories: Assist Travel/Transport, Community Participation, Development-Life Skills</li>
+          <li style="padding:4px 0;font-size:13px;">→ Single invoice to plan manager for the full program</li>
+          <li style="padding:4px 0;font-size:13px;">→ Service Agreement specifies clear outcomes and deliverables</li>
+          <li style="padding:4px 0;font-size:13px;color:var(--green);">→ <strong>This is exactly the model B&G should follow</strong></li>
+        </ul>
+      </div>
+      
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent2);margin-bottom:12px;font-size:14px;">🔑 B&G's Current NDIS Position</h3>
+        <ul style="list-style:none;padding:0;">
+          <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><strong>Registration status:</strong> Likely unregistered — this means you can ONLY serve self-managed and plan-managed NDIS participants</li>
+          <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><strong>Current NDIS clients (6):</strong> Kimberley Davies, Brooke Beveridge, Angela Volcic, Amy Pakinga, Karen Louwrens, Meghan Cockburn</li>
+          <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><strong>Only $111 showing in Stripe</strong> for most NDIS clients — payments likely processed externally via plan manager</li>
+          <li style="padding:6px 0;font-size:13px;"><strong>Next step:</strong> Ask each NDIS parent if they're plan-managed or self-managed. For plan-managed, get the plan manager's name and invoice contact.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:16px;">
+      <h3 style="color:var(--red);margin-bottom:12px;font-size:14px;">⚠️ Compliance Checklist — Don't Skip These</h3>
+      <ul style="list-style:none;padding:0;">
+        <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">☐ <strong>Never say "prepayment"</strong> — use "program fee" or "service agreement for a defined program"</li>
+        <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">☐ <strong>Cancellation policy is mandatory</strong> — pro-rata refund for undelivered sessions</li>
+        <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">☐ <strong>Must provide a Service Agreement</strong> before invoicing</li>
+        <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">☐ <strong>Keep session records</strong> — plan managers may audit to confirm sessions were delivered</li>
+        <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">☐ <strong>IRL component:</strong> Bill under Community Participation — accommodation costs may not be claimable</li>
+        <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">☐ <strong>Include B&G ABN</strong> (14 688 738 098) on all invoices</li>
+        <li style="padding:6px 0;font-size:13px;">☐ <strong>Consider NDIS registration</strong> long-term — unlocks NDIA-managed participants (bigger pool)</li>
+      </ul>
+    </div>
+    
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:16px;">
+      <h3 style="color:var(--green);margin-bottom:12px;font-size:14px;">✅ Recommended NDIS Talk Track</h3>
+      <div style="font-size:13px;color:var(--text);line-height:1.8;font-style:italic;padding:12px;background:var(--surface2);border-radius:8px;">
+        "Hi [Parent], I wanted to have a chat about [Son]'s program. We've structured a defined mentoring block — 18 sessions plus an in-person experience — that we've found gives families the best outcomes.<br><br>
+        Quick question first — is your NDIS plan managed by a plan manager, or are you self-managed?<br><br>
+        <strong>[If plan-managed]:</strong> Perfect. The way it works is we create a service agreement — your plan manager can process it as a single program invoice. It actually makes it cleaner on your end because it's one invoice rather than weekly claims. We break it down by support category so it maps directly to your plan.<br><br>
+        <strong>[If self-managed]:</strong> Even easier. We send you the invoice directly with the NDIS line items, and you can claim it back yourself. Same as how you'd claim any other provider.<br><br>
+        The total for the program is $4,990, which covers the mentoring sessions, the personality report, and the in-person experience. Can I send the service agreement through?"
+      </div>
+    </div>
+  `;
+}
+
+function renderScripts() {
+  document.getElementById('scriptsView').innerHTML = `
+    <div style="display:grid;gap:16px;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent2);margin-bottom:12px;font-size:14px;">🔥 Warm Prepay Parent — Payment Resetting</h3>
+        <div style="font-size:13px;color:var(--text);line-height:1.8;padding:12px;background:var(--surface2);border-radius:8px;">
+          "Hey [Parent], it's Harry from Blues & Greens. I can see [Son]'s block is about to renew — before that goes through, I wanted to give you a call because we've put something special together.<br><br>
+          It's called the Founder's Experience. It includes everything [Son] is getting now — the weekly sessions — plus a personality and communication report for you and [Son], and an in-real-life weekend here in Melbourne. [Son] gets to meet his mentor face-to-face, you get two nights at the Marriott Docklands, and we film the whole thing — including a letter from you to [Son] on his 18th birthday that we lock in a time capsule.<br><br>
+          It's $4,990 all up for 18 weeks. That's actually better value than what you're paying now, and you get all this on top. How does that sound?"
+        </div>
+      </div>
+      
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent2);margin-bottom:12px;font-size:14px;">💰 Weekly Payer — Melbourne IRL</h3>
+        <div style="font-size:13px;color:var(--text);line-height:1.8;padding:12px;background:var(--surface2);border-radius:8px;">
+          "Hey [Parent], I've been looking at [Son]'s progress with [Mentor] and honestly, I'm really impressed with where things are at.<br><br>
+          I wanted to share something we've created for families who are getting great results. It's called the Founder's Experience — everything you're getting now, plus [Mentor] gets to meet [Son] in person. We do a weekend in Melbourne, personality report, the whole nine yards. It's our way of going deeper with the families who are really committed.<br><br>
+          It's $4,990 for 18 weeks — which when you break it down is actually comparable to what you're paying weekly. But you get all this extra stuff on top. Shall I walk you through the details?"
+        </div>
+      </div>
+      
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent2);margin-bottom:12px;font-size:14px;">🔄 Re-Engagement — Lapsed Member</h3>
+        <div style="font-size:13px;color:var(--text);line-height:1.8;padding:12px;background:var(--surface2);border-radius:8px;">
+          "Hey [Parent], it's Harry from Blues & Greens. I know it's been a while — I've been thinking about [Son] and how well things were going when you were with us.<br><br>
+          We've actually created something new since you were here. It's called the Founder's Experience — it's more than just the weekly sessions. We bring [Son] down to Melbourne to meet their mentor in person, do a full personality report, film some incredible moments between you and [Son]...<br><br>
+          I thought of you because I remember how much [Son] was getting out of it. Would you be open to hearing more about it?"
+        </div>
+      </div>
+      
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent2);margin-bottom:12px;font-size:14px;">👨 Dad Buyer (Troy)</h3>
+        <div style="font-size:13px;color:var(--text);line-height:1.8;padding:12px;background:var(--surface2);border-radius:8px;">
+          "Hey Troy, it's Harry. I remember when you first signed up — you said you wanted to build a stronger connection with [Son]. And honestly, from what [Mentor] is telling me, that's exactly what's happening.<br><br>
+          I've put together something that I think is right up your alley. It's called the Founder's Experience. The highlight? You and [Son] come down to Melbourne for a weekend — he meets [Mentor] in person, we do activities together, and we film a few things including a letter from you to [Son] on his 18th. It's locked in a time capsule that only opens on his birthday.<br><br>
+          It's $4,990 for 18 weeks of sessions plus all of that. For a dad who wants what you want, I think this is it."
+        </div>
+      </div>
+      
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent2);margin-bottom:12px;font-size:14px;">🟣 NDIS Parent</h3>
+        <div style="font-size:13px;color:var(--text);line-height:1.8;padding:12px;background:var(--surface2);border-radius:8px;">
+          "Hey [Parent], I wanted to chat about [Son]'s mentoring program. We've put together a structured 18-week block that includes everything we're doing now plus an in-person experience and a personality report.<br><br>
+          The reason I'm calling is that for NDIS families, we can set this up as a formal service agreement — your plan manager can process it as a single program fee instead of weekly claims. It actually makes it cleaner on your end.<br><br>
+          The total program is $4,990, and it falls under Capacity Building — social and community participation. Can I ask — are you plan-managed or self-managed? Great. I can send the service agreement through to [plan manager] and they'll sort it from there."
+        </div>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent2);margin-bottom:12px;font-size:14px;">💡 Secondary Offer — IRL Lite (for re-engagement / price-sensitive)</h3>
+        <div style="font-size:13px;color:var(--text);line-height:1.8;padding:12px;background:var(--surface2);border-radius:8px;">
+          "Hey [Parent], we've created something new — a shorter, more experience-focused program. Instead of the full 18 weeks, it's [X] sessions plus the in-real-life weekend. [Son] gets to meet [Mentor] in person, we do the personality report, film the key moments.<br><br>
+          It's [price] all up. It's designed for families who want the experience without the longer commitment. Would that be something you'd be interested in?"
+        </div>
+        <p style="font-size:12px;color:var(--text2);margin-top:10px;">⚠️ Harry mentioned this idea for Keira Cooper — needs pricing and structure defined. Could work for other re-engagement cases.</p>
+      </div>
+      
+      <div style="background:linear-gradient(135deg, rgba(234,179,8,0.1), rgba(249,115,22,0.1));border:2px solid rgba(234,179,8,0.3);border-radius:12px;padding:24px;margin-top:8px;">
+        <h3 style="color:var(--yellow);margin-bottom:16px;font-size:18px;">⚡ THE ACCELERATE — Offer Economics</h3>
+        <p style="font-size:14px;color:var(--text);line-height:1.6;margin-bottom:16px;">Experience-heavy, session-light. All the IRL magic of FE, 6 weeks instead of 19. Three use cases: grand finale, re-engagement, or long-term loyals who need something DIFFERENT, not more of the same.</p>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px;">
+          <div style="background:var(--surface);border-radius:10px;padding:14px;">
+            <h4 style="color:var(--green);font-size:13px;margin-bottom:6px;">1. Grand Finale</h4>
+            <p style="font-size:12px;color:var(--text2);line-height:1.5;">End of program capstone. E.g. <strong>Melanie Heskin</strong> — 19 sessions banked, $7.8K spent. Don't ask for more sessions. The experience IS the offer.</p>
+          </div>
+          <div style="background:var(--surface);border-radius:10px;padding:14px;">
+            <h4 style="color:var(--blue);font-size:13px;margin-bottom:6px;">2. Re-Engagement</h4>
+            <p style="font-size:12px;color:var(--text2);line-height:1.5;">Churned families. E.g. <strong>Keera + Mason</strong> — left due to finances, loved it. Lower barrier back in.</p>
+          </div>
+          <div style="background:var(--surface);border-radius:10px;padding:14px;">
+            <h4 style="color:var(--orange);font-size:13px;margin-bottom:6px;">3. Long-Term Loyal</h4>
+            <p style="font-size:12px;color:var(--text2);line-height:1.5;">20+ week members. E.g. <strong>Leeanne Jackson</strong> — 37 weeks, $9.6K. Doesn't need more sessions. Needs the EXPERIENCE.</p>
+          </div>
+        </div>
+        
+        <div style="background:var(--surface);border-radius:10px;padding:16px;margin-bottom:16px;">
+          <h4 style="color:var(--accent2);font-size:14px;margin-bottom:12px;">Offer Comparison — Side by Side</h4>
+          <table style="width:100%;font-size:13px;border-collapse:collapse;">
+            <tr style="border-bottom:2px solid var(--border)">
+              <th style="padding:8px 4px;text-align:left;color:var(--text2)"></th>
+              <th style="padding:8px 4px;text-align:center;color:var(--accent2)">🎯 Founder's Exp</th>
+              <th style="padding:8px 4px;text-align:center;color:var(--yellow)">⚡ FE Lite</th>
+              <th style="padding:8px 4px;text-align:center;color:var(--text2)">BB Premium</th>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Price</td><td style="padding:6px 4px;text-align:center;font-weight:700">$4,990</td><td style="padding:6px 4px;text-align:center;font-weight:700;color:var(--yellow)">$2,990</td><td style="padding:6px 4px;text-align:center">$2,730</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Weeks delivered</td><td style="padding:6px 4px;text-align:center">19 (13+6 bonus)</td><td style="padding:6px 4px;text-align:center;color:var(--yellow)">6</td><td style="padding:6px 4px;text-align:center">17 (13+4 bonus)</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">IRL Weekend (hotel)</td><td style="padding:6px 4px;text-align:center">✅ 2 nights Marriott</td><td style="padding:6px 4px;text-align:center;color:var(--yellow)">✅ 2 nights Marriott</td><td style="padding:6px 4px;text-align:center;color:var(--text2)">❌ Day Pass only</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Hero Letter / Time Capsule</td><td style="padding:6px 4px;text-align:center">✅</td><td style="padding:6px 4px;text-align:center">✅</td><td style="padding:6px 4px;text-align:center">✅</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Personality Report</td><td style="padding:6px 4px;text-align:center">✅</td><td style="padding:6px 4px;text-align:center">✅</td><td style="padding:6px 4px;text-align:center">❌</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Harry Strategy Calls</td><td style="padding:6px 4px;text-align:center">3 calls</td><td style="padding:6px 4px;text-align:center">1 call</td><td style="padding:6px 4px;text-align:center">1 call</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Progress Report</td><td style="padding:6px 4px;text-align:center">✅</td><td style="padding:6px 4px;text-align:center">✅</td><td style="padding:6px 4px;text-align:center">✅</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Session Highlights</td><td style="padding:6px 4px;text-align:center">✅</td><td style="padding:6px 4px;text-align:center">✅</td><td style="padding:6px 4px;text-align:center">✅</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Outcome Guarantee</td><td style="padding:6px 4px;text-align:center">Full</td><td style="padding:6px 4px;text-align:center">IRL guarantee</td><td style="padding:6px 4px;text-align:center">Full</td></tr>
+            <tr style="border-bottom:2px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Bonus Weeks</td><td style="padding:6px 4px;text-align:center">6</td><td style="padding:6px 4px;text-align:center;color:var(--yellow)">2</td><td style="padding:6px 4px;text-align:center">4</td></tr>
+          </table>
+        </div>
+        
+        <div style="background:var(--surface);border-radius:10px;padding:16px;margin-bottom:16px;">
+          <h4 style="color:var(--red);font-size:14px;margin-bottom:12px;">💰 Economics — Does It Stack Up?</h4>
+          <table style="width:100%;font-size:13px;border-collapse:collapse;">
+            <tr style="border-bottom:2px solid var(--border)">
+              <th style="padding:8px 4px;text-align:left;color:var(--text2)">Cost Line</th>
+              <th style="padding:8px 4px;text-align:center;color:var(--accent2)">FE ($4,990)</th>
+              <th style="padding:8px 4px;text-align:center;color:var(--yellow)">Founder's Experience Lite ($2,990)</th>
+              <th style="padding:8px 4px;text-align:center;color:var(--text2)">BB Prem ($2,730)</th>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Mentor (weeks × $50)</td><td style="padding:6px 4px;text-align:center">$950</td><td style="padding:6px 4px;text-align:center">$300</td><td style="padding:6px 4px;text-align:center">$850</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Marriott (nights × $300)</td><td style="padding:6px 4px;text-align:center">$600</td><td style="padding:6px 4px;text-align:center">$600</td><td style="padding:6px 4px;text-align:center">$0</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">IRL Day</td><td style="padding:6px 4px;text-align:center">$150</td><td style="padding:6px 4px;text-align:center">$150</td><td style="padding:6px 4px;text-align:center">$150</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Harry calls</td><td style="padding:6px 4px;text-align:center">$90 (3×)</td><td style="padding:6px 4px;text-align:center">$30 (1×)</td><td style="padding:6px 4px;text-align:center">$30 (1×)</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 4px;color:var(--text2)">Report + Highlights</td><td style="padding:6px 4px;text-align:center">$80</td><td style="padding:6px 4px;text-align:center">$80</td><td style="padding:6px 4px;text-align:center">$80</td></tr>
+            <tr style="border-bottom:2px solid var(--border);font-weight:700"><td style="padding:8px 4px">TOTAL COST</td><td style="padding:8px 4px;text-align:center;color:var(--red)">$1,870</td><td style="padding:8px 4px;text-align:center;color:var(--red)">$1,260</td><td style="padding:8px 4px;text-align:center;color:var(--red)">$1,110</td></tr>
+            <tr style="border-bottom:1px solid var(--border);font-weight:700"><td style="padding:8px 4px">GROSS PROFIT</td><td style="padding:8px 4px;text-align:center;color:var(--green)">$3,120</td><td style="padding:8px 4px;text-align:center;color:var(--green)">$1,730</td><td style="padding:8px 4px;text-align:center;color:var(--green)">$1,620</td></tr>
+            <tr style="font-weight:700"><td style="padding:8px 4px">MARGIN %</td><td style="padding:8px 4px;text-align:center;color:var(--green)">62.5%</td><td style="padding:8px 4px;text-align:center;color:var(--green)">61.2%</td><td style="padding:8px 4px;text-align:center;color:var(--green)">59.3%</td></tr>
+          </table>
+          <p style="font-size:12px;color:var(--text2);margin-top:10px;">Founder's Experience Lite margin (57.9%) is in line with your Lighthouse Plus tier. The Marriott is the biggest fixed cost — without it you'd be at 75%+ margin. But the hotel IS the offer.</p>
+        </div>
+        
+        <div style="background:var(--surface);border-radius:10px;padding:16px;">
+          <h4 style="color:var(--yellow);font-size:14px;margin-bottom:10px;">⚡ Key Positioning</h4>
+          <ul style="list-style:none;padding:0;">
+            <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">→ Founder's Experience Lite is NOT a cheaper FE — it's a <strong>different product</strong>. FE = session-heavy + experience. Founder's Experience Lite = experience-heavy + light sessions.</li>
+            <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">→ It's $260 MORE than BB Premium but includes the <strong>full IRL weekend with hotel</strong> (BB Premium only gets a day pass). That's the differentiator.</li>
+            <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">→ For re-engagement: it's the lowest commitment way to get the full B&G experience.</li>
+            <li style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">→ For long-termers: it's not "more of the same" — it's the graduation ceremony.</li>
+            <li style="padding:6px 0;font-size:13px;">→ Structure: <strong>3 weeks build-up → IRL Weekend → 3 weeks lock-in</strong>. The IRL is the centrepiece, sessions are the frame around it.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ============ MODAL ============
+function openModal(id) {
+  const c = contacts.find(x => x.id === id);
+  if (!c) return;
+  
+  document.getElementById('modalName').textContent = c.name;
+  
+  const convoHtml = c.convoPoints.map(p => `<li><span class="convo-icon">${p.substring(0,2)}</span>${p.substring(2)}</li>`).join('');
+  const flagsHtml = c.flags.map(f => `<div class="flag">${f}</div>`).join('');
+  
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-section">
+      <h3>Contact Info</h3>
+      <div class="modal-field"><span class="label">Email</span><span class="value">${c.email || 'Unknown'}</span></div>
+      <div class="modal-field"><span class="label">Phone</span><span class="value">${c.phone || 'Unknown'}</span></div>
+      <div class="modal-field"><span class="label">Location</span><span class="value">${c.location}</span></div>
+      <div class="modal-field"><span class="label">Son</span><span class="value">${c.sonName || 'Check HubSpot'}</span></div>
+      <div class="modal-field"><span class="label">Mentor</span><span class="value">${c.mentorLocation || 'Check HubSpot'}</span></div>
+      ${c.hubspotUrl ? `<div class="modal-field"><span class="label">HubSpot</span><span class="value"><a href="${c.hubspotUrl}" target="_blank" style="color:var(--accent2)">View →</a></span></div>` : ''}
+    </div>
+    
+    <div class="modal-section">
+      <h3>Payment History</h3>
+      <div class="modal-field"><span class="label">Total Paid</span><span class="value" style="color:var(--green)">$${c.totalPaid.toLocaleString()}</span></div>
+      <div class="modal-field"><span class="label">Current Plan</span><span class="value">${c.currentSub || 'Unknown'}</span></div>
+      <div class="modal-field"><span class="label">Payment Due</span><span class="value" style="color:${c.paymentDue && (c.paymentDue.includes('TODAY') || c.paymentDue.includes('URGENT') || c.paymentDue.includes('OVERDUE')) ? 'var(--red)' : 'var(--text)'}">${c.paymentDue || '—'}</span></div>
+      <div class="modal-field"><span class="label">Payment Type</span><span class="value">${c.paymentType}</span></div>
+      <div class="modal-field"><span class="label">Sessions/Weeks</span><span class="value">${c.sessions || c.weeksActive || '—'}</span></div>
+    </div>
+    
+    ${c.flags.length ? `
+    <div class="modal-section">
+      <h3>Flags</h3>
+      ${flagsHtml}
+    </div>` : ''}
+    
+    <div class="modal-section">
+      <h3>Conversation Points</h3>
+      <ul class="convo-points">${convoHtml}</ul>
+    </div>
+    
+    <div class="modal-section">
+      <h3>Stage</h3>
+      <select class="stage-select" onchange="updateStage(${c.id}, this.value)">
+        ${Object.entries(STAGES).map(([k,v]) => `<option value="${k}" ${c.stage===k?'selected':''}>${v.label}</option>`).join('')}
+      </select>
+    </div>
+    
+    <div class="modal-section">
+      <h3>Offer Type</h3>
+      <div style="display:flex;gap:8px;">
+        <button class="btn ${c.offerType !== 'fe-lite' ? 'btn-primary' : 'btn-secondary'}" onclick="updateOfferType(${c.id},'fe')" id="modalBtnFE">🎯 Founder's Experience ($4,990)</button>
+        <button class="btn ${c.offerType === 'fe-lite' ? 'btn-primary' : 'btn-secondary'}" onclick="updateOfferType(${c.id},'fe-lite')" id="modalBtnAccel">⚡ FE Lite ($2,990)</button>
+      </div>
+    </div>
+    
+    <div class="modal-section" id="modalScriptSection">
+      <div id="modalScriptContent"></div>
+    </div>
+    
+    ${c.isNDIS ? `
+    <div class="modal-section">
+      <div onclick="toggleNDIS()" style="cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.3);border-radius:10px;">
+        <span style="font-size:16px">🟣</span>
+        <span style="font-weight:600;color:var(--purple);font-size:14px">NDIS Talking Points</span>
+        <span style="margin-left:auto;color:var(--purple)" id="ndisChevron">▼</span>
+      </div>
+      <div id="ndisPopup" style="display:none;margin-top:10px;padding:14px;background:rgba(168,85,247,0.06);border:1px solid rgba(168,85,247,0.2);border-radius:10px;">
+        <div style="font-size:13px;line-height:1.7;color:var(--text);">
+          <p style="font-weight:600;color:var(--purple);margin-bottom:8px;">First question: "How is your NDIS plan managed?"</p>
+          <div style="padding:8px 0;border-bottom:1px solid rgba(168,85,247,0.15);">
+            <strong style="color:var(--green)">If PLAN-MANAGED (most common):</strong>
+            <ul style="list-style:none;padding:4px 0 0 0;margin:0;">
+              <li style="padding:2px 0;">→ "We set it up as a service agreement — your plan manager processes it as one program invoice"</li>
+              <li style="padding:2px 0;">→ "It falls under Capacity Building — social and community participation"</li>
+              <li style="padding:2px 0;">→ "It's actually cleaner than weekly claims"</li>
+              <li style="padding:2px 0;">→ ✅ Can bill upfront. Plan managers routinely process block invoices.</li>
+              <li style="padding:2px 0;">→ Ask: "Who's your plan manager?" — then invoice them directly</li>
+            </ul>
+          </div>
+          <div style="padding:8px 0;border-bottom:1px solid rgba(168,85,247,0.15);">
+            <strong style="color:var(--blue)">If SELF-MANAGED:</strong>
+            <ul style="list-style:none;padding:4px 0 0 0;margin:0;">
+              <li style="padding:2px 0;">→ "Even easier — we invoice you directly with the NDIS line items"</li>
+              <li style="padding:2px 0;">→ "You claim it back yourself, same as any other provider"</li>
+              <li style="padding:2px 0;">→ ✅ Can bill upfront. No price limits. No registration needed.</li>
+            </ul>
+          </div>
+          <div style="padding:8px 0;border-bottom:1px solid rgba(168,85,247,0.15);">
+            <strong style="color:var(--red)">If NDIA-MANAGED:</strong>
+            <ul style="list-style:none;padding:4px 0 0 0;margin:0;">
+              <li style="padding:2px 0;">→ ❌ Cannot bill upfront — NDIA only pays for delivered sessions</li>
+              <li style="padding:2px 0;">→ Must claim per-session through the NDIS portal</li>
+              <li style="padding:2px 0;">→ Must be a registered provider (B&G likely isn't)</li>
+              <li style="padding:2px 0;">→ Pivot: "Let's keep you on weekly for now — if you ever switch to plan-managed, we can set up the program block"</li>
+            </ul>
+          </div>
+          <div style="padding:8px 0;">
+            <strong style="color:var(--orange)">⚠️ Language rules:</strong>
+            <ul style="list-style:none;padding:4px 0 0 0;margin:0;">
+              <li style="padding:2px 0;">→ Never say "prepayment" — say <strong>"service agreement"</strong> or <strong>"program fee"</strong></li>
+              <li style="padding:2px 0;">→ Must include pro-rata refund clause for undelivered sessions</li>
+              <li style="padding:2px 0;">→ Invoice needs: NDIS participant number, support category, B&G ABN (14 688 738 098)</li>
+              <li style="padding:2px 0;">→ IRL component: bill under Community Participation. Marriott may not be claimable — flag this.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>` : ''}
+    
+    <div class="modal-section">
+      <h3>Likelihood to Close (%)</h3>
+      <input type="range" min="0" max="100" step="5" value="${c.likelihood||0}" style="width:100%" oninput="updateLikelihood(${c.id}, parseInt(this.value)); document.getElementById('likelihoodLabel').innerHTML=this.value+'% → <strong>$'+Math.round((c.offerType==='fe-lite'?${ACCEL_PRICE}:${FE_PRICE})*this.value/100).toLocaleString()+'</strong> weighted'">
+      <span style="font-size:13px;color:var(--accent2)" id="likelihoodLabel">${c.likelihood||0}% → <strong>$${Math.round((c.offerType === 'fe-lite' ? ACCEL_PRICE : FE_PRICE)*(c.likelihood||0)/100).toLocaleString()}</strong> weighted</span>
+    </div>
+    
+    <div class="modal-section">
+      <h3>Score (1-10)</h3>
+      <input type="range" min="1" max="10" value="${c.score}" style="width:100%" oninput="updateScore(${c.id}, parseInt(this.value)); this.nextElementSibling.textContent=this.value">
+      <span style="font-weight:700;color:var(--accent2)">${c.score}</span>
+    </div>
+    
+    <div class="modal-section">
+      <h3>Notes</h3>
+      <textarea class="modal-notes" id="notesArea" placeholder="Add notes...">${c.notes}</textarea>
+    </div>
+  `;
+  
+  document.getElementById('modalFooter').innerHTML = `
+    <button class="btn btn-primary" onclick="saveNotes(${c.id})">💾 Save Notes</button>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-success" onclick="enterCallMode(${c.id})">📞 Start Call</button>
+      ${c.hubspotUrl ? `<a href="${c.hubspotUrl}" target="_blank" class="btn btn-secondary">🔗 HubSpot</a>` : ''}
+    </div>
+  `;
+  
+  renderModalScript(c);
+  document.getElementById('modalOverlay').classList.add('show');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('show');
+}
+
+function updateStage(id, stage) {
+  const c = contacts.find(x => x.id === id);
+  if (c) { c.stage = stage; saveState(); render(); }
+}
+
+function updateScore(id, score) {
+  const c = contacts.find(x => x.id === id);
+  if (c) { c.score = score; saveState(); }
+}
+
+function updateLikelihood(id, likelihood) {
+  const c = contacts.find(x => x.id === id);
+  if (c) { c.likelihood = likelihood; saveState(); render(); }
+}
+
+function updateOfferType(id, type) {
+  const c = contacts.find(x => x.id === id);
+  if (c) {
+    c.offerType = type;
+    saveState();
+    // Update buttons without full re-render
+    document.getElementById('modalBtnFE').className = 'btn ' + (type !== 'fe-lite' ? 'btn-primary' : 'btn-secondary');
+    document.getElementById('modalBtnAccel').className = 'btn ' + (type === 'fe-lite' ? 'btn-primary' : 'btn-secondary');
+    renderModalScript(c);
+    render();
+  }
+}
+
+function toggleNDIS() {
+  const el = document.getElementById('ndisPopup');
+  const chev = document.getElementById('ndisChevron');
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    chev.textContent = '▲';
+  } else {
+    el.style.display = 'none';
+    chev.textContent = '▼';
+  }
+}
+
+function renderModalScript(c) {
+  const name = c.sonName || '[Son]';
+  const mentor = c.mentorLocation ? c.mentorLocation.replace('Melbourne (','').replace(')','').replace('Melbourne','their mentor') : '[Mentor]';
+  const el = document.getElementById('modalScriptContent');
+  
+  if (c.offerType === 'fe-lite') {
+    el.innerHTML = `
+      <div style="background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.25);border-radius:10px;padding:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:16px">⚡</span>
+          <span style="font-weight:700;color:var(--yellow);font-size:14px">Founder's Experience Lite Script — $2,990 · 8 weeks</span>
+        </div>
+        <div style="font-size:13px;line-height:1.8;color:var(--text);">
+          ${c.inactive ? `<div style="padding:8px 10px;border-left:2px solid var(--orange);margin-bottom:10px;background:rgba(249,115,22,0.05);border-radius:0 6px 6px 0;">
+            <strong style="color:var(--orange)">Re-engagement opener:</strong><br>
+            "Hey ${c.name}, it's Harry from Blues & Greens. I know it's been a while — I've been thinking about ${name} and how well things were going when you were with us. We've created something new and honestly I thought of you straight away."
+          </div>` : `<div style="padding:8px 10px;border-left:2px solid var(--yellow);margin-bottom:10px;background:rgba(234,179,8,0.05);border-radius:0 6px 6px 0;">
+            "Hey ${c.name}, it's Harry. I've been looking at ${name}'s journey and I want to share something we've put together."
+          </div>`}
+          
+          <div style="padding:8px 10px;border-left:2px solid var(--yellow);margin-bottom:10px;background:rgba(234,179,8,0.05);border-radius:0 6px 6px 0;">
+            "It's called the <strong>Founder's Experience Lite</strong>. Think of it as the highlight reel — all the best parts of what we do, concentrated into 8 weeks."
+          </div>
+          
+          <div style="padding:8px 10px;border-left:2px solid var(--yellow);margin-bottom:10px;">
+            "You get <strong>6 weeks of mentoring</strong> — 3 weeks building up, then we bring you and ${name} to Melbourne for the <strong>in-real-life weekend</strong>, then 3 more weeks to lock in everything."
+          </div>
+          
+          <div style="padding:8px 10px;border-left:2px solid var(--yellow);margin-bottom:10px;background:rgba(234,179,8,0.05);border-radius:0 6px 6px 0;">
+            "${name} meets ${mentor} <strong>face-to-face</strong>. We do the personality report, the <strong>Hero Letter to ${name} on his 18th</strong> locked in a time capsule. Two nights at the <strong>Marriott Docklands</strong>."
+          </div>
+          
+          <div style="padding:8px 10px;border-left:3px solid var(--yellow);margin-bottom:10px;background:rgba(234,179,8,0.1);border-radius:0 6px 6px 0;font-weight:600;">
+            "It's <strong>$2,990</strong> all up."
+          </div>
+          
+          ${c.inactive ? `<div style="padding:8px 10px;border-left:2px solid var(--text2);margin-bottom:10px;">
+            "You don't need another 18 weeks — ${name} was already doing well. This is about taking it to the next level with something he'll never forget."
+          </div>` : `<div style="padding:8px 10px;border-left:2px solid var(--text2);margin-bottom:10px;">
+            "It's all the IRL magic, shorter commitment. For families who want the experience."
+          </div>`}
+          
+          ${c.totalPaid > 0 ? `<div style="font-size:12px;color:var(--text2);padding:4px 10px;">💡 Anchor: "You've already invested $${c.totalPaid.toLocaleString()} — this isn't starting over, it's the crescendo."</div>` : ''}
+          
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(234,179,8,0.2);">
+            <div style="padding:4px 0;font-size:12px;"><strong>If they want more sessions →</strong> "We've also got the full Founder's Experience — 19 weeks plus all of this — for $4,990."</div>
+            <div style="padding:4px 0;font-size:12px;"><strong>If still too much →</strong> "The Big Brother Premium is $2,730 — you get an IRL Day Pass, strategy call with me, Hero Letter, 17 weeks."</div>
+            <div style="padding:4px 0;font-size:12px;"><strong>If no →</strong> "No worries at all. ${name}'s doing great. Just wanted you to know about it."</div>
+          </div>
+        </div>
+      </div>`;
+  } else {
+    el.innerHTML = `
+      <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.25);border-radius:10px;padding:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:16px">🎯</span>
+          <span style="font-weight:700;color:var(--accent2);font-size:14px">Founder's Experience Script — $4,990 · 19 weeks</span>
+        </div>
+        <div style="font-size:13px;line-height:1.8;color:var(--text);">
+          <div style="padding:8px 10px;border-left:2px solid var(--accent);margin-bottom:10px;background:rgba(99,102,241,0.05);border-radius:0 6px 6px 0;">
+            "Hey ${c.name}, it's Harry from Blues & Greens. How are you going?"<br>
+            <em style="color:var(--text2);font-size:12px">[Let them talk. Ask about ${name}. Reference wins.]</em><br>
+            "I've been hearing great things about ${name}'s progress — I actually wanted to call because we've put something together for families like yours."
+          </div>
+          
+          <div style="padding:8px 10px;border-left:3px solid var(--accent);margin-bottom:10px;background:rgba(99,102,241,0.05);border-radius:0 6px 6px 0;">
+            "It's called the <strong>Founder's Experience</strong>. It includes <strong>19 weeks of Big Brother mentoring</strong> — that's about $4,000 worth of sessions alone."
+          </div>
+          
+          <div style="padding:8px 10px;border-left:2px solid var(--accent);margin-bottom:10px;">
+            "On top of that, a full <strong>personality and communication report</strong> — a deep dive into how ${name} communicates, how you two connect, and tools to strengthen that."
+          </div>
+          
+          <div style="padding:8px 10px;border-left:3px solid var(--accent);margin-bottom:10px;background:rgba(99,102,241,0.05);border-radius:0 6px 6px 0;">
+            "We bring you and ${name} to <strong>Melbourne for an IRL weekend</strong>. ${name} meets ${mentor} face-to-face. Two nights at the <strong>Marriott Docklands</strong>. We film a <strong>Hero Letter from you to ${name} on his 18th birthday</strong> — locked in a time capsule that only opens on that date."
+          </div>
+          
+          <div style="padding:8px 10px;border-left:3px solid var(--accent);margin-bottom:10px;background:rgba(99,102,241,0.1);border-radius:0 6px 6px 0;font-weight:600;">
+            "The whole thing is <strong>$4,990</strong> all up. 19 weeks, the hotel, the IRL day, 3 strategy calls with me, everything."
+          </div>
+          
+          ${c.totalPaid > 0 ? `<div style="font-size:12px;color:var(--text2);padding:4px 10px;">💡 Anchor: "You've already invested $${c.totalPaid.toLocaleString()} in ${name}'s growth — this takes it to the next level."</div>` : ''}
+          
+          <div style="padding:8px 10px;border-left:2px solid var(--accent);margin-bottom:10px;">
+            "How does that sound?"<br>
+            <em style="color:var(--text2);font-size:12px">[Pause. Don't fill the silence.]</em>
+          </div>
+          
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(99,102,241,0.2);">
+            <div style="padding:4px 0;font-size:12px;"><strong>If price objection →</strong> "We've got the Founder's Experience Lite — same IRL weekend, same Marriott, 6 weeks instead of 19. $2,990." <em style="color:var(--yellow)">[Switch to ⚡ above]</em></div>
+            <div style="padding:4px 0;font-size:12px;"><strong>If still too much →</strong> "Big Brother Premium — IRL Day Pass, strategy call, Hero Letter, 17 weeks. $2,730."</div>
+            <div style="padding:4px 0;font-size:12px;"><strong>If still no →</strong> "No worries. Let's keep ${name} on the current plan. He's doing great."</div>
+          </div>
+          
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(99,102,241,0.2);font-size:12px;color:var(--text2);">
+            <strong>After the call:</strong> Testimonial ask → "Would you share a few words?" · Referral ask → "Know any other mums going through similar?"
+          </div>
+        </div>
+      </div>`;
+  }
+}
+
+function saveNotes(id) {
+  const c = contacts.find(x => x.id === id);
+  if (c) {
+    c.notes = document.getElementById('notesArea').value;
+    saveState();
+    closeModal();
+    render();
+  }
+}
+
+// ============ DRAG & DROP ============
+let draggedId = null;
+function dragStart(e, id) { draggedId = id; e.dataTransfer.effectAllowed = 'move'; }
+function allowDrop(e) { e.preventDefault(); }
+function drop(e, stage) {
+  e.preventDefault();
+  if (draggedId) {
+    const c = contacts.find(x => x.id === draggedId);
+    if (c) { c.stage = stage; saveState(); render(); }
+    draggedId = null;
+  }
+}
+
+// ============ EVENTS ============
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+document.querySelectorAll('.view-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentView = btn.dataset.view;
+    document.getElementById('pipelineView').style.display = currentView === 'board' ? 'grid' : 'none';
+    document.getElementById('listView').style.display = currentView === 'list' ? 'block' : 'none';
+    render();
+  });
+});
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    currentTab = tab.dataset.tab;
+    
+    document.getElementById('pipelineView').style.display = 'none';
+    document.getElementById('listView').style.display = 'none';
+    document.getElementById('ndisView').style.display = 'none';
+    document.getElementById('scriptsView').style.display = 'none';
+    document.querySelector('.filters').style.display = 'none';
+    document.getElementById('summaryBar').style.display = 'none';
+    
+    if (currentTab === 'pipeline') {
+      document.querySelector('.filters').style.display = 'flex';
+      document.getElementById('summaryBar').style.display = 'grid';
+      if (currentView === 'board') document.getElementById('pipelineView').style.display = 'grid';
+      else document.getElementById('listView').style.display = 'block';
+    } else if (currentTab === 'list') {
+      document.querySelector('.filters').style.display = 'flex';
+      document.getElementById('summaryBar').style.display = 'grid';
+      document.getElementById('listView').style.display = 'block';
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('.view-btn[data-view="list"]').classList.add('active');
+      currentView = 'list';
+    } else if (currentTab === 'ndis') {
+      document.getElementById('ndisView').style.display = 'block';
+      renderNDIS();
+    } else if (currentTab === 'scripts') {
+      document.getElementById('scriptsView').style.display = 'block';
+      renderScripts();
+    }
+    render();
+  });
+});
+
+document.getElementById('searchBox').addEventListener('input', (e) => {
+  searchTerm = e.target.value;
+  render();
+});
+
+document.getElementById('modalOverlay').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+});
+
+// ============ CALL MODE ============
+let callContactId = null;
+let callScriptType = 'fe';
+
+function enterCallMode(id) {
+  const c = contacts.find(x => x.id === id);
+  if (!c) return;
+  callContactId = id;
+  callScriptType = c.offerType || 'fe';
+  closeModal();
+  
+  document.getElementById('callName').innerHTML = `<span class="pulse-dot"></span>${c.name}${c.sonName ? ' — Son: '+c.sonName : ''}`;
+  document.getElementById('callMeta').textContent = `${c.location} · ${c.phone || c.email || 'No contact info'}`;
+  
+  document.getElementById('callActions').innerHTML = `
+    ${c.phone ? `<a href="tel:${c.phone}" class="btn btn-success">📞 Dial</a>` : ''}
+    <button class="btn btn-primary" onclick="updateStage(${c.id},'offer-sent');renderCallActions(${c.id})">📤 Offer Sent</button>
+    <button class="btn btn-secondary" onclick="updateStage(${c.id},'follow-up');renderCallActions(${c.id})">📅 Follow Up</button>
+    <button class="btn btn-danger" onclick="updateStage(${c.id},'declined');renderCallActions(${c.id})">✗ Declined</button>
+    <button class="btn" style="background:var(--green);color:white" onclick="updateStage(${c.id},'accepted');renderCallActions(${c.id})">✓ Accepted</button>
+  `;
+  
+  renderCallSidebar(c);
+  switchScript(callScriptType);
+  document.getElementById('callOverlay').classList.add('show');
+}
+
+function renderCallActions(id) {
+  const c = contacts.find(x => x.id === id);
+  if (c) {
+    document.getElementById('callActions').innerHTML = `
+      <span style="color:${STAGES[c.stage].color};font-weight:600;font-size:13px;padding:8px">Stage: ${STAGES[c.stage].label}</span>
+      ${c.phone ? `<a href="tel:${c.phone}" class="btn btn-success">📞 Dial</a>` : ''}
+      <button class="btn btn-primary" onclick="updateStage(${c.id},'offer-sent');renderCallActions(${c.id})">📤 Offer Sent</button>
+      <button class="btn btn-secondary" onclick="updateStage(${c.id},'follow-up');renderCallActions(${c.id})">📅 Follow Up</button>
+      <button class="btn btn-danger" onclick="updateStage(${c.id},'declined');renderCallActions(${c.id})">✗ Declined</button>
+      <button class="btn" style="background:var(--green);color:white" onclick="updateStage(${c.id},'accepted');renderCallActions(${c.id})">✓ Accepted</button>
+    `;
+  }
+}
+
+function renderCallSidebar(c) {
+  document.getElementById('callSidebar').innerHTML = `
+    <div class="sidebar-section">
+      <h3>📋 Contact</h3>
+      <div class="call-info-row"><span class="label">Phone</span><span>${c.phone || '—'}</span></div>
+      <div class="call-info-row"><span class="label">Email</span><span style="font-size:11px">${c.email || '—'}</span></div>
+      <div class="call-info-row"><span class="label">Location</span><span>${c.location}</span></div>
+      <div class="call-info-row"><span class="label">Son</span><span>${c.sonName || 'Check HubSpot'}</span></div>
+      <div class="call-info-row"><span class="label">Mentor</span><span>${c.mentorLocation || '—'}</span></div>
+      ${c.hubspotUrl ? `<a href="${c.hubspotUrl}" target="_blank" style="color:var(--accent2);font-size:12px;display:block;margin-top:4px">Open HubSpot →</a>` : ''}
+    </div>
+    
+    <div class="sidebar-section">
+      <h3>💰 Payment</h3>
+      <div class="call-info-row"><span class="label">Lifetime</span><span style="color:var(--green);font-weight:700">$${c.totalPaid.toLocaleString()}</span></div>
+      <div class="call-info-row"><span class="label">Current</span><span>${c.currentSub || '—'}</span></div>
+      <div class="call-info-row"><span class="label">Due</span><span style="color:${c.paymentDue && c.paymentDue.includes('TODAY') ? 'var(--red)' : 'var(--text)'}">${c.paymentDue || '—'}</span></div>
+      <div class="call-info-row"><span class="label">Type</span><span>${c.isNDIS ? '🟣 NDIS' : c.paymentType}</span></div>
+    </div>
+    
+    <div class="sidebar-section">
+      <h3>🎯 Conversation Points</h3>
+      ${c.convoPoints.map(p => `<div class="call-point">${p}</div>`).join('')}
+    </div>
+    
+    <div class="sidebar-section">
+      <h3>⚠️ Flags</h3>
+      ${c.flags.map(f => `<div class="call-point">${f}</div>`).join('') || '<div class="call-point" style="color:var(--text2)">No flags</div>'}
+    </div>
+    
+    <div class="sidebar-section">
+      <h3>📝 Call Notes</h3>
+      <textarea class="call-quick-note" id="callNotes" placeholder="Type notes during the call...">${c.notes}</textarea>
+      <button class="btn btn-primary" style="width:100%;margin-top:8px" onclick="saveCallNotes(${c.id})">💾 Save Notes</button>
+    </div>
+    
+    <div class="sidebar-section">
+      <h3>Likelihood</h3>
+      <input type="range" min="0" max="100" step="5" value="${c.likelihood||0}" style="width:100%" 
+        oninput="updateLikelihood(${c.id}, parseInt(this.value)); this.nextElementSibling.textContent=this.value+'%'">
+      <span style="font-weight:700;color:var(--accent2)">${c.likelihood||0}%</span>
+    </div>
+  `;
+}
+
+function saveCallNotes(id) {
+  const c = contacts.find(x => x.id === id);
+  if (c) {
+    c.notes = document.getElementById('callNotes').value;
+    saveState();
+  }
+}
+
+function switchScript(type) {
+  callScriptType = type;
+  const c = contacts.find(x => x.id === callContactId);
+  
+  document.getElementById('tabFE').className = 'call-script-tab' + (type === 'fe' ? ' active-fe' : '');
+  document.getElementById('tabAccel').className = 'call-script-tab' + (type === 'fe-lite' ? ' active-accel' : '');
+  
+  if (c) {
+    c.offerType = type;
+    saveState();
+  }
+  
+  if (type === 'fe') {
+    renderFEScript(c);
+  } else {
+    renderAccelScript(c);
+  }
+}
+
+function renderFEScript(c) {
+  const name = c ? c.sonName || '[Son]' : '[Son]';
+  const parent = c ? c.name : '[Parent]';
+  const mentor = c && c.mentorLocation ? c.mentorLocation.replace('Melbourne (','').replace(')','').replace('Melbourne','their mentor') : '[Mentor]';
+  const isNDIS = c && c.isNDIS;
+  
+  document.getElementById('scriptArea').innerHTML = `
+    <div class="script-content">
+      <div class="script-section">
+        <h4>Opening — Build Rapport</h4>
+        <div class="script-line">
+          "Hey ${parent}, it's Harry from Blues & Greens. How are you going?"
+        </div>
+        <div class="script-line">
+          <em style="color:var(--text2)">[Let them talk. Ask about ${name}. Reference specific wins if you have them.]</em>
+        </div>
+        <div class="script-line">
+          "I've been hearing great things about ${name}'s progress — I actually wanted to give you a call because we've put something together that I think is perfect for families like yours."
+        </div>
+      </div>
+      
+      <div class="script-section">
+        <h4>The Offer — Founder's Experience</h4>
+        <div class="script-line emphasis">
+          "So here's what I've put together. It's called the <strong>Founder's Experience</strong>."
+        </div>
+        <div class="script-line">
+          "It includes <strong>18 weeks of Big Brother mentoring</strong> — that's about $4,000 worth of sessions alone."
+        </div>
+        <div class="script-line">
+          "On top of that, we do a full <strong>personality and communication report</strong> — it's a deep dive into how ${name} communicates, how you two connect, and specific tools to strengthen that relationship."
+        </div>
+        <div class="script-line emphasis">
+          "And then the big one — we bring you and ${name} down to <strong>Melbourne for an in-real-life weekend</strong>. ${name} gets to meet ${mentor} face-to-face. We do activities together, film the whole thing."
+        </div>
+        <div class="script-line">
+          "We put you up for <strong>two nights at the Marriott Docklands</strong>."
+        </div>
+        <div class="script-line emphasis">
+          "And here's the part that gets every mum — we film a <strong>letter from you to ${name} on his 18th birthday</strong>. We lock it in a time capsule with a QR code that only unlocks on his 18th. It's yours forever."
+        </div>
+      </div>
+      
+      <div class="script-section">
+        <h4>The Price</h4>
+        <div class="script-line emphasis">
+          "The whole thing is <strong>$4,990</strong> all up."
+        </div>
+        <div class="script-line">
+          "When you break it down, you're getting $4,000 worth of sessions, the report, the Melbourne weekend, the Marriott, the filming — it's genuinely the best thing we've ever put together."
+        </div>
+        ${c && c.totalPaid > 0 ? `<div class="script-line"><em style="color:var(--text2)">[Anchor: "You've already invested $${c.totalPaid.toLocaleString()} in ${name}'s growth — this takes it to the next level."]</em></div>` : ''}
+      </div>
+      
+      ${isNDIS ? `
+      <div class="script-section" style="border-color:var(--purple)">
+        <h4 style="color:var(--purple)">🟣 NDIS — Additional Script</h4>
+        <div class="script-line">
+          "Quick question — how is your NDIS plan managed? Are you with a plan manager, or self-managed?"
+        </div>
+        <div class="script-line" style="border-left-color:var(--purple)">
+          <strong>[If plan-managed]:</strong> "Perfect. We can set this up as a service agreement — your plan manager can process it as a single program invoice. It falls under Capacity Building, social and community participation. It's actually cleaner than weekly claims."
+        </div>
+        <div class="script-line" style="border-left-color:var(--purple)">
+          <strong>[If self-managed]:</strong> "Even easier. We send you the invoice with the NDIS line items, and you claim it back yourself."
+        </div>
+        <div class="script-line" style="border-left-color:var(--red)">
+          <strong>⚠️ Never say "prepayment"</strong> — say "program fee" or "service agreement for the full program."
+        </div>
+      </div>` : ''}
+      
+      <div class="script-section">
+        <h4>The Close</h4>
+        <div class="script-line">
+          "How does that sound to you?"
+        </div>
+        <div class="script-line">
+          <em style="color:var(--text2)">[Pause. Let them respond. Don't fill the silence.]</em>
+        </div>
+        <div class="script-line">
+          <strong>If yes/interested:</strong> "Amazing. I'll send through the details now and we can lock it in."
+        </div>
+        <div class="script-line">
+          <strong>If hesitant:</strong> "Look, I totally get it. This is something I've only put together for a handful of families. There's no pressure — have a think about it and let me know."
+        </div>
+        <div class="script-line">
+          <strong>If price objection:</strong> "Totally understand. We've actually got something called the <strong>Founder's Experience Lite</strong> — same IRL weekend, same Marriott, same filming, just 6 weeks instead of 19. It's $2,990. Want me to walk you through it?"
+          <br><em style="color:var(--yellow);font-size:12px">[Click the ⚡ FE Lite tab above to switch]</em>
+        </div>
+        <div class="script-line">
+          <strong>If still too much → BB Premium:</strong> "I hear you. Here's what I can do — the Big Brother Premium. You still get an IRL Day Pass to come meet the team, a strategy call with me, the Hero Letter, Progress Report, and 4 bonus weeks. It's $2,730 for the block."
+        </div>
+        <div class="script-line">
+          <strong>If still no → soft land:</strong> "No worries at all, ${parent}. Let's keep ${name} on the current plan. He's doing great. I just wanted to make sure you knew about these options."
+        </div>
+      </div>
+      
+      <div class="script-section" style="background:rgba(34,197,94,0.05)">
+        <h4 style="color:var(--green)">After the Call — Ask for These</h4>
+        <div class="script-line">
+          <strong>Testimonial:</strong> "Would you be happy to share a few words about your experience? Even just a sentence or two — other mums find it really helpful."
+        </div>
+        <div class="script-line">
+          <strong>Referral:</strong> "Do you know any other mums going through something similar with their son? We'd love to help them too."
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderAccelScript(c) {
+  const name = c ? c.sonName || '[Son]' : '[Son]';
+  const parent = c ? c.name : '[Parent]';
+  const mentor = c && c.mentorLocation ? c.mentorLocation.replace('Melbourne (','').replace(')','').replace('Melbourne','their mentor') : '[Mentor]';
+  const isNDIS = c && c.isNDIS;
+  const isReEngagement = c && c.inactive;
+  
+  document.getElementById('scriptArea').innerHTML = `
+    <div class="script-content">
+      <div style="background:rgba(234,179,8,0.1);border:1px solid rgba(234,179,8,0.3);border-radius:12px;padding:16px;margin-bottom:20px;">
+        <h3 style="color:var(--yellow);margin-bottom:8px;font-size:16px;">⚡ The Founder's Experience Lite Program</h3>
+        <p style="font-size:13px;color:var(--text);line-height:1.6;">6 weeks of mentoring built around a Melbourne IRL weekend. 4 weeks to build up, the experience, then 3 weeks to lock in the growth. All the highlights, shorter commitment.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;">
+          <div style="background:var(--surface);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:20px;font-weight:700;color:var(--yellow)">6</div>
+            <div style="font-size:11px;color:var(--text2)">weeks mentoring</div>
+          </div>
+          <div style="background:var(--surface);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:20px;font-weight:700;color:var(--yellow)">1</div>
+            <div style="font-size:11px;color:var(--text2)">IRL weekend</div>
+          </div>
+          <div style="background:var(--surface);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:18px;font-weight:700;color:var(--yellow)">$2,990</div>
+            <div style="font-size:11px;color:var(--text2)">total</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text2);margin-top:10px;">
+          <strong>Includes:</strong> 8× mentoring sessions · IRL weekend in Melbourne · Personality report · 2 nights Marriott · Time capsule filming · Founders Day
+        </div>
+      </div>
+      
+      ${isReEngagement ? `
+      <div class="script-section" style="border-color:var(--orange)">
+        <h4 style="color:var(--orange)">🔄 Re-Engagement Opening</h4>
+        <div class="script-line accel-emphasis">
+          "Hey ${parent}, it's Harry from Blues & Greens. I know it's been a while — I've been thinking about ${name} and how well things were going when you were with us."
+        </div>
+        <div class="script-line">
+          "We've created something new since you were here, and honestly I thought of you straight away."
+        </div>
+      </div>` : `
+      <div class="script-section">
+        <h4>Opening</h4>
+        <div class="script-line">
+          "Hey ${parent}, it's Harry. I've been looking at ${name}'s journey with us and I want to share something we've put together."
+        </div>
+      </div>`}
+      
+      <div class="script-section">
+        <h4>The Founder's Experience Lite Offer</h4>
+        <div class="script-line accel-emphasis">
+          "It's called the <strong>Founder's Experience Lite</strong>. Think of it as the highlight reel — all the best parts of what we do, concentrated into 8 weeks."
+        </div>
+        <div class="script-line">
+          "You get <strong>6 weeks of mentoring</strong> — 3 weeks building up, then we bring you and ${name} to Melbourne for the <strong>in-real-life weekend</strong>, then 3 more weeks to lock in everything ${name} experienced."
+        </div>
+        <div class="script-line accel-emphasis">
+          "${name} meets ${mentor} <strong>face-to-face</strong>. We do the activities, we film the whole thing. We do the <strong>personality report</strong>, the <strong>letter to ${name} on his 18th birthday</strong> locked in a time capsule."
+        </div>
+        <div class="script-line">
+          "Two nights at the <strong>Marriott Docklands</strong> for you and ${name}."
+        </div>
+      </div>
+      
+      <div class="script-section">
+        <h4>The Price & Frame</h4>
+        <div class="script-line accel-emphasis">
+          "It's <strong>$2,990</strong> all up."
+        </div>
+        <div class="script-line">
+          "${isReEngagement 
+            ? `"It's designed for families like yours — you don't need another 18 weeks of sessions, you need the <strong>experience</strong>. ${name} was already doing well. This is about taking it to the next level with something he'll never forget."` 
+            : `"It's less than the full Founder's Experience, but you get all the same IRL magic. It's for families who want the experience without the longer commitment."`
+          }"
+        </div>
+        ${c && c.totalPaid > 0 ? `<div class="script-line"><em style="color:var(--text2)">[You've already invested $${c.totalPaid.toLocaleString()} — this isn't starting over, it's the crescendo.]</em></div>` : ''}
+      </div>
+      
+      ${isNDIS ? `
+      <div class="script-section" style="border-color:var(--purple)">
+        <h4 style="color:var(--purple)">🟣 NDIS — Founder's Experience Lite</h4>
+        <div class="script-line">
+          "For NDIS, we set it up as a service agreement — 8 sessions plus the community participation experience. Your plan manager processes it as one invoice."
+        </div>
+        <div class="script-line" style="border-left-color:var(--red)">
+          <strong>⚠️ Frame as "structured program" not "prepayment"</strong>
+        </div>
+      </div>` : ''}
+      
+      <div class="script-section">
+        <h4>The Close</h4>
+        <div class="script-line">
+          "How does that land with you?"
+        </div>
+        <div class="script-line">
+          <em style="color:var(--text2)">[Pause. Let them process.]</em>
+        </div>
+        <div class="script-line">
+          <strong>If they want more sessions:</strong> "We've also got the full Founder's Experience — 18 weeks plus all of this — for $4,990. Want me to walk you through that?"
+          <br><em style="color:var(--accent2);font-size:12px">[Click the 🎯 Founder's Experience tab above to switch]</em>
+        </div>
+        <div class="script-line">
+          <strong>If price objection:</strong> "I get it. Look, ${name} was getting so much out of it — if it's the right time, this is the best way to come back. Have a think and let me know."
+        </div>
+      </div>
+      
+      <div class="script-section" style="border-color:var(--yellow)">
+        <h4 style="color:var(--yellow)">⚡ Why Founder's Experience Lite Works for ${parent}</h4>
+        <ul style="list-style:none;padding:0;">
+          ${c && c.inactive ? '<li style="padding:4px 0;font-size:13px;">→ Re-engagement: Lower commitment than 18 weeks — easier yes</li>' : ''}
+          ${c && c.totalPaid > 3000 ? '<li style="padding:4px 0;font-size:13px;">→ High spender: She knows the value — this is the capstone experience</li>' : ''}
+          ${c && c.weeksActive > 15 ? '<li style="padding:4px 0;font-size:13px;">→ Long-term member: Doesn\'t need more sessions — needs the EXPERIENCE</li>' : ''}
+          ${c && c.isMelbourne ? '<li style="padding:4px 0;font-size:13px;">→ Melbourne: IRL is easy — no flights, just show up</li>' : '<li style="padding:4px 0;font-size:13px;">→ Interstate: The Melbourne trip IS the experience — make it special</li>'}
+          ${c && c.isNDIS ? '<li style="padding:4px 0;font-size:13px;">→ NDIS: Shorter program = easier to get plan manager approval</li>' : ''}
+        </ul>
+      </div>
+    </div>
+  `;
+}
+
+function exitCallMode() {
+  document.getElementById('callOverlay').classList.remove('show');
+  callContactId = null;
+  render();
+}
+
+// ============ INIT ============
+function render() {
+  renderStats();
+  renderSummary();
+  renderPipeline();
+  renderList();
+}
+
+loadState();
+render();
+</script>
+</body>
+</html>
