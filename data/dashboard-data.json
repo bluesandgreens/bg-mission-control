@@ -1,0 +1,1992 @@
+{
+  "generated_at": "2026-03-18T11:20:19.870300Z",
+  "period": {
+    "today": "2026-03-18",
+    "week_start": "2026-03-16",
+    "month_start": "2026-03-01"
+  },
+  "pulse": {
+    "today": {
+      "new_leads": 12,
+      "booked_calls": 2,
+      "dcs_completed": 2,
+      "closes": 2,
+      "w1_starts": 3,
+      "agreement_forms": 2
+    },
+    "wtd": {
+      "new_leads": 69,
+      "booked_calls": 16,
+      "dcs_completed": 16,
+      "closes": 8,
+      "w1_starts": 8,
+      "agreement_forms": 10
+    },
+    "mtd": {
+      "new_leads": 513,
+      "booked_calls": 97,
+      "dcs_completed": 70,
+      "closes": 49,
+      "w1_starts": 31,
+      "agreement_forms": 46
+    }
+  },
+  "reps": [
+    {
+      "name": "Harry",
+      "owner_id": "75967744",
+      "today": {
+        "leads": 9,
+        "dcs_taken": 0,
+        "closes": 0,
+        "w1_starts": 2,
+        "close_rate": 0.0
+      },
+      "wtd": {
+        "leads": 50,
+        "dcs_taken": 9,
+        "closes": 3,
+        "w1_starts": 2,
+        "close_rate": 0.33
+      },
+      "mtd": {
+        "leads": 400,
+        "dcs_taken": 41,
+        "closes": 26,
+        "w1_starts": 6,
+        "close_rate": 0.63
+      }
+    },
+    {
+      "name": "Elliot",
+      "owner_id": "86194016",
+      "today": {
+        "leads": 0,
+        "dcs_taken": 1,
+        "closes": 1,
+        "w1_starts": 0,
+        "close_rate": 1.0
+      },
+      "wtd": {
+        "leads": 1,
+        "dcs_taken": 1,
+        "closes": 1,
+        "w1_starts": 1,
+        "close_rate": 1.0
+      },
+      "mtd": {
+        "leads": 14,
+        "dcs_taken": 8,
+        "closes": 4,
+        "w1_starts": 2,
+        "close_rate": 0.5
+      }
+    },
+    {
+      "name": "Anthony",
+      "owner_id": "87029276",
+      "today": {
+        "leads": 1,
+        "dcs_taken": 0,
+        "closes": 0,
+        "w1_starts": 0,
+        "close_rate": 0.0
+      },
+      "wtd": {
+        "leads": 4,
+        "dcs_taken": 3,
+        "closes": 1,
+        "w1_starts": 1,
+        "close_rate": 0.33
+      },
+      "mtd": {
+        "leads": 12,
+        "dcs_taken": 7,
+        "closes": 2,
+        "w1_starts": 1,
+        "close_rate": 0.29
+      }
+    },
+    {
+      "name": "Bailey",
+      "owner_id": "88035516",
+      "today": {
+        "leads": 0,
+        "dcs_taken": 1,
+        "closes": 1,
+        "w1_starts": 0,
+        "close_rate": 1.0
+      },
+      "wtd": {
+        "leads": 3,
+        "dcs_taken": 2,
+        "closes": 2,
+        "w1_starts": 0,
+        "close_rate": 1.0
+      },
+      "mtd": {
+        "leads": 22,
+        "dcs_taken": 3,
+        "closes": 3,
+        "w1_starts": 1,
+        "close_rate": 1.0
+      }
+    },
+    {
+      "name": "Rye",
+      "owner_id": "86488316",
+      "today": {
+        "leads": 0,
+        "dcs_taken": 0,
+        "closes": 0,
+        "w1_starts": 0,
+        "close_rate": 0.0
+      },
+      "wtd": {
+        "leads": 3,
+        "dcs_taken": 0,
+        "closes": 0,
+        "w1_starts": 0,
+        "close_rate": 0.0
+      },
+      "mtd": {
+        "leads": 10,
+        "dcs_taken": 2,
+        "closes": 3,
+        "w1_starts": 0,
+        "close_rate": 1.5
+      }
+    },
+    {
+      "name": "Brodie",
+      "owner_id": "86750401",
+      "today": {
+        "leads": 0,
+        "dcs_taken": 0,
+        "closes": 0,
+        "w1_starts": 0,
+        "close_rate": 0.0
+      },
+      "wtd": {
+        "leads": 0,
+        "dcs_taken": 0,
+        "closes": 0,
+        "w1_starts": 0,
+        "close_rate": 0.0
+      },
+      "mtd": {
+        "leads": 0,
+        "dcs_taken": 0,
+        "closes": 0,
+        "w1_starts": 0,
+        "close_rate": 0.0
+      }
+    }
+  ],
+  "meta_ads": {
+    "today": {
+      "spend": 148.49,
+      "booked_calls": 0,
+      "cpbc": 0
+    },
+    "wtd": {
+      "spend": 525.7,
+      "booked_calls": 0,
+      "cpbc": 0
+    },
+    "mtd": {
+      "spend": 3757.76,
+      "booked_calls": 0,
+      "cpbc": 0
+    }
+  },
+  "stripe": {
+    "active_subscriptions": 87,
+    "mrr": 63208.32,
+    "failed_payments": 1,
+    "new_subscriptions": 4,
+    "recent_cancellations": [
+      {
+        "id": "sub_1TAOo72mA5zLxyK8TlxsqSdu",
+        "canceled_at": 1773795228,
+        "customer": "cus_U7U7U7L0gbrjII"
+      },
+      {
+        "id": "sub_1TAOHN2mA5zLxyK8gLekZYt7",
+        "canceled_at": 1773619569,
+        "customer": "cus_U62Zos5fBgCgBa"
+      },
+      {
+        "id": "sub_1T9hgX2mA5zLxyK8js66WiYj",
+        "canceled_at": 1773620174,
+        "customer": "cus_U2yXdlJPd9h98b"
+      },
+      {
+        "id": "sub_1T9gcC2mA5zLxyK85njXZHVx",
+        "canceled_at": 1773212029,
+        "customer": "cus_U5LIFTmq2uW58D"
+      },
+      {
+        "id": "sub_1T7xzE2mA5zLxyK8vYBRSXQR",
+        "canceled_at": 1773050137,
+        "customer": "cus_U5zW6hXcG4aOZK"
+      },
+      {
+        "id": "sub_1T7kZ02mA5zLxyK8GHJWhlNk",
+        "canceled_at": 1773817909,
+        "customer": "cus_SQZpjsLnlSNV9X"
+      },
+      {
+        "id": "sub_1T7QUV2mA5zLxyK8grgbRCeA",
+        "canceled_at": 1773054431,
+        "customer": "cus_TKMmHFXrHYV6et"
+      }
+    ]
+  },
+  "activation_pipeline": {
+    "deposit_paid": [
+      {
+        "name": "Stacey Taylor",
+        "date": "2025-12-08T04:42:51.782Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Crystal White",
+        "date": "2026-02-09T00:39:37.151Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Elliot Mahoney",
+        "date": "2026-01-13T03:59:35.189Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Laura Newman",
+        "date": "2026-02-15T02:57:03.272Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kate Van der Schaaf",
+        "date": "2026-02-03T02:17:32.906Z",
+        "w1_activation_stage": "Stage 4: Phone Handover"
+      },
+      {
+        "name": "Peta Thorniley",
+        "date": "2026-02-13T04:02:24.051Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Vivien Vassos",
+        "date": "2025-10-11T21:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Claudia Willimann",
+        "date": "2026-01-12T00:09:23.648Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Maxine Dudman",
+        "date": "2025-10-24T21:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Ashoo Rajput",
+        "date": "2025-12-04T10:44:15.160Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Belynda Pope",
+        "date": "2026-03-11T03:26:41.211Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Trinette Renneberg",
+        "date": "2025-09-30T22:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Rebecca Maguire",
+        "date": "2025-10-05T21:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Michelle Destefanis",
+        "date": "2026-01-16T02:45:35.273Z",
+        "w1_activation_stage": "Hesitant"
+      },
+      {
+        "name": "Amanda  Calabro",
+        "date": "2026-01-07T02:59:28.250Z",
+        "w1_activation_stage": "Hesitant"
+      },
+      {
+        "name": "Susan Collings",
+        "date": "2025-10-21T00:45:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Nadia salama",
+        "date": "2025-10-21T21:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Maria Comitogianni",
+        "date": "2025-10-25T21:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Chrissy Glasson",
+        "date": "2025-10-28T04:33:26.045Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Danielle J",
+        "date": "2025-11-30T22:39:08.433Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Lindi Shull",
+        "date": "2025-10-31T02:40:42.811Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Lauren Broom",
+        "date": "2025-11-03T01:27:28.650Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Rachel LEAH",
+        "date": "2025-10-29T22:39:59.275Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Natania BOWLES",
+        "date": "2025-11-01T01:01:05.435Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Marietta Wood",
+        "date": "2025-11-03T22:46:30.823Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Anita De Angelis",
+        "date": "2025-11-04T01:18:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Sarah Phillips",
+        "date": "2025-11-05T02:20:29.428Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Sarah Brownhall",
+        "date": "2025-11-07T00:20:50.089Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Sarah-Jade Libke",
+        "date": "2025-11-12T06:34:07.005Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Jozie champion",
+        "date": "2025-11-10T00:45:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Anthony Audino",
+        "date": "2026-01-27T01:54:19.117Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Selina Loo",
+        "date": "2025-11-12T00:45:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Rachel Trafford",
+        "date": "2025-11-17T01:18:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Fleur Clifton",
+        "date": "2025-11-17T00:45:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kate Buzari",
+        "date": "2025-11-16T08:26:32.079Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Emily Hill",
+        "date": "2025-11-21T01:18:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Melita Spencer",
+        "date": "2025-11-18T00:52:04.084Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Cherrie Miriklis",
+        "date": "2025-11-17T23:12:39.053Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kyla Daly",
+        "date": "2025-11-18T00:56:51.957Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Katrina Woolgar",
+        "date": "2025-11-21T00:04:50.832Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Cherie Wills",
+        "date": "2025-11-19T21:55:00.572Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Peta Binskin",
+        "date": "2025-11-21T00:59:35.472Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Katherine Cordeiro",
+        "date": "2025-11-21T03:44:10.382Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kimberlie Lawrence",
+        "date": "2025-11-20T23:53:41.739Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Jessie moss",
+        "date": "2025-11-26T21:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Yvette Hogg",
+        "date": "2025-11-23T00:54:01.869Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Nathan Greatz",
+        "date": "2025-11-27T01:18:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Angela Joy",
+        "date": "2025-11-28T01:18:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Amy Blume",
+        "date": "2025-11-28T01:18:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Katie Grant",
+        "date": "2025-12-04T01:18:54.092Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Edi Silcox",
+        "date": "2025-12-02T05:06:26.940Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Bridget Jones",
+        "date": "2025-12-02T01:18:00Z",
+        "w1_activation_stage": "Stage 3: Cold Call"
+      },
+      {
+        "name": "Dawn Bombak",
+        "date": "2025-12-04T05:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Jessica Margaret Hall",
+        "date": "2025-12-03T01:46:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Louise Quilter",
+        "date": "2025-12-04T04:23:22.600Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Joanne Affleck",
+        "date": "2025-12-11T23:26:09.799Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Carrie Barnes",
+        "date": "2026-01-06T00:34:22.954Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Laura FAIRWEATHER",
+        "date": "2025-12-05T04:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Ryann wurf",
+        "date": "2025-12-08T05:29:16.773Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Linda Jelliman",
+        "date": "2025-12-14T03:31:47.332Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Katrina Olsen",
+        "date": "2025-12-14T00:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kerrie Speechley",
+        "date": "2026-01-08T07:27:59.387Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Lisa Cliff",
+        "date": "2025-12-16T07:13:26.421Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Seri Qoon",
+        "date": "2025-12-16T08:20:09.862Z",
+        "w1_activation_stage": "Hesitant"
+      },
+      {
+        "name": "HELEN FISHER",
+        "date": "2025-12-17T07:06:20.098Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Nicole Rasmussen",
+        "date": "2025-12-19T05:08:30.772Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Dory Dorazio",
+        "date": "2025-12-18T03:09:10.312Z",
+        "w1_activation_stage": "Stage 4: Phone Handover"
+      },
+      {
+        "name": "Kylie Taite",
+        "date": "2025-12-18T06:06:36.237Z",
+        "w1_activation_stage": "Hesitant"
+      },
+      {
+        "name": "Bron Lea",
+        "date": "2025-12-19T06:45:14.730Z",
+        "w1_activation_stage": "Hesitant"
+      },
+      {
+        "name": "Angeline Hiscox",
+        "date": "2025-12-22T06:47:38.047Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Maria Spencer",
+        "date": "2025-12-27T03:01:30.106Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Louise Said",
+        "date": "2025-12-22T06:04:09.482Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Nickwebservices None",
+        "date": "2026-01-08T15:33:29.884Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Trish ALEGRE",
+        "date": "2025-12-23T20:33:08.833Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Samara Dela roza",
+        "date": "2026-01-08T01:42:12.016Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Bev Henderson",
+        "date": "2025-12-23T03:18:33.702Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Emily Rose Martell",
+        "date": "2026-02-09T05:27:15.123Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Harry Quayle",
+        "date": "2026-03-10T06:00:33.472Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Katrina Glover",
+        "date": "2025-12-23T23:03:07.788Z",
+        "w1_activation_stage": "Stage 2: Follow Up"
+      },
+      {
+        "name": "Shelley Hughes",
+        "date": "2025-12-26T23:46:34.255Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Samantha Moore",
+        "date": "2026-01-13T03:45:21.381Z",
+        "w1_activation_stage": "Stage 5: Recovery"
+      },
+      {
+        "name": "Catherine Gregson",
+        "date": "2025-12-27T00:30:52.212Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Laurelle Gladman",
+        "date": "2025-12-28T03:59:10.666Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Beckie Blair",
+        "date": "2025-12-29T01:31:51.921Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Natalie Fisher",
+        "date": "2025-12-28T09:04:05.374Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Nik Crowley",
+        "date": "2026-02-16T01:11:35.282Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Vicki Fiasco",
+        "date": "2025-12-31T00:28:52.070Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Eva Frengstad",
+        "date": "2025-12-30T22:43:57.861Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Renee Connolly",
+        "date": "2026-01-03T00:30:23.055Z",
+        "w1_activation_stage": "Stage 4: Phone Handover"
+      },
+      {
+        "name": "Carrianne Blanchard",
+        "date": "2026-01-07T00:48:01.520Z",
+        "w1_activation_stage": "Stage 4: Phone Handover"
+      },
+      {
+        "name": "Dee Parker",
+        "date": "2026-01-04T06:43:13.990Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Veronika Prskalo",
+        "date": "2026-01-13T23:46:45.050Z",
+        "w1_activation_stage": "Awaiting First Message"
+      },
+      {
+        "name": "Crystal Harris",
+        "date": "2026-01-07T06:33:46.067Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Claire  Kenney",
+        "date": "2026-01-08T07:44:19.834Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Emily Dawson",
+        "date": "2026-01-18T23:37:14.085Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Elizabeth Rowley",
+        "date": "2026-01-08T06:35:37.337Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "cathpowell@hotmail.com Field",
+        "date": "2026-01-11T00:54:01.786Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kathryn Sleigh",
+        "date": "2026-01-14T00:40:26.159Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Sandy Madden",
+        "date": "2026-01-14T04:04:49.307Z",
+        "w1_activation_stage": "Stage 1: First Message Sent"
+      },
+      {
+        "name": "Tarralyn Polichronis",
+        "date": "2026-01-16T00:59:41.065Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kathy Roberts",
+        "date": "2026-01-12T02:49:36.530Z",
+        "w1_activation_stage": "Stage 5: Recovery"
+      },
+      {
+        "name": "Skye Pember",
+        "date": "2026-01-13T04:10:39.834Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Nicola Kerr",
+        "date": "2026-01-16T02:09:18.335Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Maxine Dunne",
+        "date": "2026-01-19T00:27:29.175Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Leesa Jacobs",
+        "date": "2026-01-28T02:57:39.359Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kelly Dean",
+        "date": "2026-01-30T06:02:49.244Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Melissa Redmayne",
+        "date": "2026-01-30T02:01:58.701Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Misty Fernandez",
+        "date": "2026-02-02T04:37:48.645Z",
+        "w1_activation_stage": "Intro Call Complete"
+      },
+      {
+        "name": "Brigid Faust",
+        "date": "2026-02-01T23:10:59.481Z",
+        "w1_activation_stage": "Ghosted"
+      },
+      {
+        "name": "Anastasia Elliott",
+        "date": "2026-02-02T06:10:12.802Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Christine Howden",
+        "date": "2026-02-10T00:34:03.960Z",
+        "w1_activation_stage": "Intro Call Complete"
+      },
+      {
+        "name": "Joyce Tan",
+        "date": "2026-02-25T06:12:55.541Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kerry Taylor",
+        "date": "2026-02-11T00:39:51.311Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Alicia Honey",
+        "date": "2026-02-13T10:50:00Z",
+        "w1_activation_stage": "Stage 5: Recovery"
+      },
+      {
+        "name": "Marissa Galatis",
+        "date": "2026-02-13T00:21:15.576Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Mel Mannix",
+        "date": "2026-02-16T00:44:20.305Z",
+        "w1_activation_stage": "Stage 5: Recovery"
+      },
+      {
+        "name": "Hayley kiker",
+        "date": "2026-02-16T01:28:37.901Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Joanne Begley",
+        "date": "2026-02-18T01:30:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Tricia Lee",
+        "date": "2026-02-18T23:31:07.179Z",
+        "w1_activation_stage": "Hesitant"
+      },
+      {
+        "name": "Monika  Jabbour",
+        "date": "2026-03-02T05:38:32.467Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Alison Ratcliffe",
+        "date": "2026-02-23T02:35:28.607Z",
+        "w1_activation_stage": "Stage 2: Follow Up"
+      },
+      {
+        "name": "Trooptti",
+        "date": "2026-02-21T21:00:00Z",
+        "w1_activation_stage": "Stage 4: Phone Handover"
+      },
+      {
+        "name": "Priscilla Haddad",
+        "date": "2026-02-23T22:40:36.071Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Helena Agaibi",
+        "date": "2026-02-27T06:16:27.026Z",
+        "w1_activation_stage": "Hesitant"
+      },
+      {
+        "name": "Ashley Totten",
+        "date": "2026-02-26T02:10:06.780Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Puja Soeny",
+        "date": "2026-02-27T04:22:17.842Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "April Gosling",
+        "date": "2026-02-26T23:33:07.662Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Tracey di palma",
+        "date": "2026-03-02T06:53:44.278Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Rachel Renald",
+        "date": "2026-03-05T01:38:48.113Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Patricia Taylor",
+        "date": "2026-03-03T11:14:17.884Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Brooke Finlay",
+        "date": "2026-03-05T00:31:39.594Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "SHERTAM MOTTO",
+        "date": "2026-03-09T00:30:04.871Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Samantha Lord",
+        "date": "2026-03-10T23:20:14.116Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kelly Steele",
+        "date": "2026-03-09T23:24:46.168Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Eileen Kamp",
+        "date": "2026-03-13T03:04:22.782Z",
+        "w1_activation_stage": null
+      }
+    ],
+    "agreement_signed": [
+      {
+        "name": "Mel Tewman",
+        "date": "2026-03-16T01:40:31.806Z",
+        "w1_activation_stage": "Awaiting First Message"
+      },
+      {
+        "name": "Rhiannon Medcraft",
+        "date": "2026-03-12T20:47:20.003Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kat Peatey",
+        "date": "2026-02-26T00:25:58.904Z",
+        "w1_activation_stage": "Stage 2: Follow Up"
+      },
+      {
+        "name": "Carrie Fildes",
+        "date": "2026-02-25T06:43:31.894Z",
+        "w1_activation_stage": "Stage 2: Follow Up"
+      },
+      {
+        "name": "Hania  Trzaskowski",
+        "date": "2026-03-09T23:20:51.921Z",
+        "w1_activation_stage": "Awaiting First Message"
+      },
+      {
+        "name": "Becka Tearoa",
+        "date": "2026-03-02T09:59:49.238Z",
+        "w1_activation_stage": "Stage 1: First Message Sent"
+      },
+      {
+        "name": "Mel Colles",
+        "date": "2026-03-09T05:56:51.747Z",
+        "w1_activation_stage": "Awaiting First Message"
+      },
+      {
+        "name": "Jaye Williams",
+        "date": "2026-03-17T00:12:18.617Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Charmaine Collins",
+        "date": "2026-03-17T11:22:53.710Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Krushauna  Van Anholt",
+        "date": "2026-03-15T05:53:24.958Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Pet Goh",
+        "date": "2026-03-09T10:23:28.358Z",
+        "w1_activation_stage": "Awaiting First Message"
+      },
+      {
+        "name": "Javed Anwar",
+        "date": "2026-03-11T07:55:37.212Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Wayde Mainard",
+        "date": "2026-03-17T02:55:54.368Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Emma Hargreaves",
+        "date": "2026-03-18T04:18:31.443Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Jenny Lee",
+        "date": "2026-03-13T03:13:08.797Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Lacey Jurd",
+        "date": "2026-03-16T03:55:30.670Z",
+        "w1_activation_stage": "Awaiting First Message"
+      },
+      {
+        "name": "Rebecca Maggiora",
+        "date": "2026-03-16T23:16:09.311Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Belinda Mackie",
+        "date": "2026-03-17T23:46:32.413Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Jodee O'Connor",
+        "date": "2026-03-18T03:01:47.945Z",
+        "w1_activation_stage": null
+      }
+    ],
+    "mentor_allocated": [],
+    "w1_scheduled": [
+      {
+        "name": "Virginia Akhtar",
+        "date": "2025-12-30T11:57:25.924Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Erin Green",
+        "date": "2026-01-28T08:00:00Z",
+        "w1_activation_stage": "Intro Call Complete"
+      },
+      {
+        "name": "Caroline beresford",
+        "date": "2025-12-26T02:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Niquita Ellis",
+        "date": "2026-02-04T01:36:33.498Z",
+        "w1_activation_stage": "Intro Call Complete"
+      },
+      {
+        "name": "Melody Reifler",
+        "date": "2025-12-24T02:30:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Brooke Miranda",
+        "date": "2026-03-19T01:30:00Z",
+        "w1_activation_stage": "Awaiting First Message"
+      },
+      {
+        "name": "Tania paton",
+        "date": "2026-03-06T00:00:00Z",
+        "w1_activation_stage": "Intro Call Complete"
+      },
+      {
+        "name": "Jessica Apthorpe",
+        "date": "2026-03-14T02:00:00Z",
+        "w1_activation_stage": "Stage 3: Cold Call"
+      },
+      {
+        "name": "Karen Vargas",
+        "date": "2026-03-07T23:30:00Z",
+        "w1_activation_stage": "Stage 3: Cold Call"
+      },
+      {
+        "name": "Megan Harker",
+        "date": "2026-02-26T06:30:00Z",
+        "w1_activation_stage": "Intro Call Complete"
+      },
+      {
+        "name": "Hailey  Paine",
+        "date": "2026-03-21T00:00:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Amy Greensword",
+        "date": "2026-03-11T00:00:00Z",
+        "w1_activation_stage": "Awaiting First Message"
+      },
+      {
+        "name": "Maria Morton",
+        "date": "2026-03-18T08:00:00Z",
+        "w1_activation_stage": null
+      }
+    ],
+    "w1_complete": []
+  },
+  "retention": {
+    "session_7_plus": [
+      {
+        "name": "Lucy Pink",
+        "session_count": "19",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Ebony Jackson",
+        "session_count": "25",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Kate Alchin",
+        "session_count": "46",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Kate Pascoe",
+        "session_count": "24",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Tanya Zaffino",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Monica Verboon",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Vanessa Beattie",
+        "session_count": "19",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Jessica Ball",
+        "session_count": "25",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Leeanne JACKSON",
+        "session_count": "37",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Holly Walters",
+        "session_count": "27",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Sarah Baker",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Bianka Black",
+        "session_count": "21",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Allison Lamont",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Crystal  Alexander",
+        "session_count": "33",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Shannyn Stevens",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Clinton Curtis",
+        "session_count": "18",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Colleen Zwolsman",
+        "session_count": "19",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Anita Lee",
+        "session_count": "19",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Susan Rowe",
+        "session_count": "15",
+        "payment_reset_date": null
+      },
+      {
+        "name": "KAREN CORKSIE - FINBAR WILSON",
+        "session_count": "10",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Lorinda McDermott",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Kelly Hardy",
+        "session_count": "21",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Amber Loxton",
+        "session_count": "17",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Amy Staib",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Mark Rayner",
+        "session_count": "20",
+        "payment_reset_date": "2026-07-22"
+      },
+      {
+        "name": "Sylvia Rogowska",
+        "session_count": "27",
+        "payment_reset_date": "2026-04-07"
+      },
+      {
+        "name": "Anna Gray",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Jo Flanagan",
+        "session_count": "20",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Catherine Homes",
+        "session_count": "19",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Meagan Van Anen",
+        "session_count": "32",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Alicia Verso",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Elena Marchetti",
+        "session_count": "12",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Sue McIness",
+        "session_count": "27",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Bec Cossio",
+        "session_count": "12",
+        "payment_reset_date": null
+      },
+      {
+        "name": "SARAH MORRIS",
+        "session_count": "19",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Shaye Medlicott",
+        "session_count": "10",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Tammy Green",
+        "session_count": "12",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Keera Mitrokli",
+        "session_count": "13",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Abbie n Taylor",
+        "session_count": "19",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Kaara A Bradley",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Brooke Beveridge",
+        "session_count": "19",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Natalie Massey",
+        "session_count": "11",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Stephanie Mckeown",
+        "session_count": "17",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Amy Parsons",
+        "session_count": "27",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Tracey Bunyan",
+        "session_count": "26",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Rachel Hawyes",
+        "session_count": "15",
+        "payment_reset_date": "2026-04-09"
+      },
+      {
+        "name": "Victoria Holahan",
+        "session_count": "18",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Natalie Giallourakis",
+        "session_count": "12",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Kate Barrow",
+        "session_count": "11",
+        "payment_reset_date": "2026-07-10"
+      },
+      {
+        "name": "Anna Neve",
+        "session_count": "35",
+        "payment_reset_date": "2026-07-27"
+      },
+      {
+        "name": "Elizabeth Pender",
+        "session_count": "10",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Samantha Wallace",
+        "session_count": "15",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Anastasia Georgiou",
+        "session_count": "27",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Anita Stewart",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Liz Atkins",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Simant Singh",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Cara Santangelo",
+        "session_count": "23",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Kate O'Sullivan",
+        "session_count": "19",
+        "payment_reset_date": "2026-07-12"
+      },
+      {
+        "name": "Nicolette Karaman",
+        "session_count": "30",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Lisa james",
+        "session_count": "22",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Kimberley Davies",
+        "session_count": "22",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Fallon Glossop",
+        "session_count": "28",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Jamie Nugent",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Renee Venville",
+        "session_count": "19",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Luisa Peters",
+        "session_count": "11",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Ronnie Toohey",
+        "session_count": "17",
+        "payment_reset_date": "2026-07-12"
+      },
+      {
+        "name": "Lisa Caton",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Melissa Eades",
+        "session_count": "20",
+        "payment_reset_date": null
+      },
+      {
+        "name": "melanie brodhurst",
+        "session_count": "13",
+        "payment_reset_date": null
+      },
+      {
+        "name": "AMANDA RASMUSSEN",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Colin Miller",
+        "session_count": "26",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Kylie Summers",
+        "session_count": "24",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Louise Thornton",
+        "session_count": "12",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Gabrielle Munro",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Liz Peck",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Joanna Vlachos",
+        "session_count": "20",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Mel Angell",
+        "session_count": "18",
+        "payment_reset_date": "2026-03-27"
+      },
+      {
+        "name": "Sara Anza",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Elizabeth Tanti",
+        "session_count": "22",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Keira Cooper",
+        "session_count": "11",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Chelsea Beckers",
+        "session_count": "11",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Kristen Birkett",
+        "session_count": "12",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Jodine farkas",
+        "session_count": "10",
+        "payment_reset_date": "2026-05-26"
+      },
+      {
+        "name": "Natalie Holmes",
+        "session_count": "15",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Gina Kaney",
+        "session_count": "17",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Laine Mills",
+        "session_count": "14",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Melanie Heskin",
+        "session_count": "21",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Bethany Hill",
+        "session_count": "15",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Noella Hextall",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Milena Fratini",
+        "session_count": "18",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Gaby Welton",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Tamara Grant",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Tanya Major",
+        "session_count": "15",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Elke RYAN",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Amanda Lewis",
+        "session_count": "17",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Rebecca Newman",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Angela Volcic",
+        "session_count": "16",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Ishil Sterling-Levis",
+        "session_count": "16",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Amy Pakinga",
+        "session_count": "12",
+        "payment_reset_date": "2026-05-09"
+      },
+      {
+        "name": "Anna Triffett",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Rachel LEAH",
+        "session_count": "11",
+        "payment_reset_date": "2026-03-09"
+      },
+      {
+        "name": "Em Guest",
+        "session_count": "11",
+        "payment_reset_date": null
+      },
+      {
+        "name": "DEBORAH GRAHAM",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Lisa Jones",
+        "session_count": "15",
+        "payment_reset_date": null
+      },
+      {
+        "name": "None None",
+        "session_count": "10",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Diahann Marsh",
+        "session_count": "18",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Rannvijay Guron",
+        "session_count": "13",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Natalie Oberman",
+        "session_count": "16",
+        "payment_reset_date": "2026-03-28"
+      },
+      {
+        "name": "Vanessa Koina",
+        "session_count": "17",
+        "payment_reset_date": "2026-03-13"
+      },
+      {
+        "name": "Naomi Marr",
+        "session_count": "11",
+        "payment_reset_date": null
+      },
+      {
+        "name": "T Summerfield",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Catherine Homes",
+        "session_count": "16",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Jess Steadman",
+        "session_count": "28",
+        "payment_reset_date": "2026-07-15"
+      },
+      {
+        "name": "Alysha Nation",
+        "session_count": "16",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Selena Fletcher",
+        "session_count": "32",
+        "payment_reset_date": "2026-07-16"
+      },
+      {
+        "name": "Simon Duffy",
+        "session_count": "8",
+        "payment_reset_date": "2026-01-19"
+      },
+      {
+        "name": "Lucia Ciccollitto",
+        "session_count": "40",
+        "payment_reset_date": "2026-06-16"
+      },
+      {
+        "name": "Sarah Curtis",
+        "session_count": "23",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Marlene Harris",
+        "session_count": "13",
+        "payment_reset_date": "2026-01-24"
+      },
+      {
+        "name": "Nia Mavridis",
+        "session_count": "10",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Leeanne Jackson",
+        "session_count": "29",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Jennifer McCafferty",
+        "session_count": "18",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Tiffany Thomas",
+        "session_count": "14",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Taya & Mitch Wear",
+        "session_count": "14",
+        "payment_reset_date": "2026-05-18"
+      },
+      {
+        "name": "Maria Cristina Duarte",
+        "session_count": "11",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Cyra frost",
+        "session_count": "8",
+        "payment_reset_date": "2026-02-24"
+      },
+      {
+        "name": "Bianca Hurle",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Kym Baillie",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Julie-Anne Jacotine",
+        "session_count": "15",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Emily Greaves",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Tess Jarman",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Jordan Carlson",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Karen Corksie",
+        "session_count": "11",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Jessica Schoultz",
+        "session_count": "11",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Lauren Blake",
+        "session_count": "11",
+        "payment_reset_date": "2026-04-26"
+      },
+      {
+        "name": "Toni Tighe",
+        "session_count": "10",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Jen Murray",
+        "session_count": "9",
+        "payment_reset_date": "2026-03-16"
+      },
+      {
+        "name": "Lorin Bridgman",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Troy Speed",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Val Najdovska",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Tanya Andrijich",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Lynne PARKER",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Edith  Shardlow",
+        "session_count": "8",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Celeste Paull",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Lisa Kerin",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Jodhi Mcgrath",
+        "session_count": "8",
+        "payment_reset_date": "2026-03-17"
+      },
+      {
+        "name": "KAREN LOUWRENS",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Gemma Garner",
+        "session_count": "7",
+        "payment_reset_date": null
+      },
+      {
+        "name": "Janine Wright",
+        "session_count": "9",
+        "payment_reset_date": null
+      },
+      {
+        "name": "JORDAN CARLSON",
+        "session_count": "7",
+        "payment_reset_date": "2026-04-19"
+      },
+      {
+        "name": "Anna - use Josiahs contact card Neve",
+        "session_count": "32",
+        "payment_reset_date": "2026-07-27"
+      }
+    ],
+    "payment_resets_30d": [
+      {
+        "name": "Sylvia Rogowska",
+        "payment_reset_date": "2026-04-07"
+      },
+      {
+        "name": "Rachel Hawyes",
+        "payment_reset_date": "2026-04-09"
+      },
+      {
+        "name": "Mel Angell",
+        "payment_reset_date": "2026-03-27"
+      },
+      {
+        "name": "Natalie Oberman",
+        "payment_reset_date": "2026-03-28"
+      },
+      {
+        "name": "Kristy Nash",
+        "payment_reset_date": "2026-04-02"
+      },
+      {
+        "name": "Kylie Sutherland",
+        "payment_reset_date": "2026-04-06"
+      },
+      {
+        "name": "Robyn Marchesi",
+        "payment_reset_date": "2026-04-05"
+      },
+      {
+        "name": "Nicki Poole",
+        "payment_reset_date": "2026-04-13"
+      },
+      {
+        "name": "Sally Quintero",
+        "payment_reset_date": "2026-04-06"
+      }
+    ],
+    "_notes": []
+  },
+  "mentors": {
+    "active_count": 24,
+    "members_per_mentor": [
+      {
+        "mentor": "Anthony Audino",
+        "count": 11
+      },
+      {
+        "mentor": "Bailey Kiefer",
+        "count": 7
+      },
+      {
+        "mentor": "Ben Cantwell",
+        "count": 7
+      },
+      {
+        "mentor": "Ben Phillips",
+        "count": 1
+      },
+      {
+        "mentor": "Blair Huggins",
+        "count": 7
+      },
+      {
+        "mentor": "Brodie Paul",
+        "count": 12
+      },
+      {
+        "mentor": "Callum Sargentson",
+        "count": 1
+      },
+      {
+        "mentor": "Charlie Bolmat",
+        "count": 3
+      },
+      {
+        "mentor": "Connor Savil",
+        "count": 4
+      },
+      {
+        "mentor": "Cristian Milograd",
+        "count": 8
+      },
+      {
+        "mentor": "Elliot Mahoney",
+        "count": 4
+      },
+      {
+        "mentor": "Fletcher Gauci",
+        "count": 1
+      },
+      {
+        "mentor": "George Sullivan",
+        "count": 5
+      },
+      {
+        "mentor": "Harper Montgomery",
+        "count": 4
+      },
+      {
+        "mentor": "Hayden Sampson",
+        "count": 11
+      },
+      {
+        "mentor": "Jack Petruccelle",
+        "count": 1
+      },
+      {
+        "mentor": "Jed Woods",
+        "count": 5
+      },
+      {
+        "mentor": "Koltyn Tholstrup",
+        "count": 1
+      },
+      {
+        "mentor": "Luke Dixon",
+        "count": 1
+      },
+      {
+        "mentor": "Marcus Lazzara",
+        "count": 1
+      },
+      {
+        "mentor": "Mark O'Mahony",
+        "count": 1
+      },
+      {
+        "mentor": "Shane Clough",
+        "count": 3
+      },
+      {
+        "mentor": "Taj Schofield",
+        "count": 3
+      },
+      {
+        "mentor": "Xavier Lewis",
+        "count": 8
+      }
+    ],
+    "at_capacity": 3,
+    "_notes": []
+  }
+}
