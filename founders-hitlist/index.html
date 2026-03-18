@@ -175,6 +175,28 @@ select.stage-select { background: var(--surface2); color: var(--text); border: 1
 .pulse-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 1.5s infinite; margin-right:6px; }
 @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
 
+/* HubSpot Add Button */
+.col-add-btn { background: none; border: none; color: var(--text2); cursor: pointer; font-size: 16px; line-height: 1; padding: 2px 5px; border-radius: 6px; transition: all 0.2s; flex-shrink: 0; }
+.col-add-btn:hover { background: var(--accent); color: white; }
+
+/* HubSpot Search Modal */
+.hs-modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.75); z-index: 150; justify-content: center; align-items: center; padding: 16px; }
+.hs-modal-overlay.show { display: flex; }
+.hs-modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; width: 100%; max-width: 480px; animation: slideUp 0.2s ease; overflow: hidden; }
+.hs-modal-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.hs-modal-header h3 { font-size: 15px; font-weight: 600; }
+.hs-search-row { display: flex; gap: 8px; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+.hs-search-input { flex: 1; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 9px 14px; color: var(--text); font-size: 14px; outline: none; font-family: inherit; }
+.hs-search-input:focus { border-color: var(--accent); }
+.hs-results { max-height: 340px; overflow-y: auto; }
+.hs-result-item { padding: 12px 20px; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.15s; }
+.hs-result-item:hover { background: var(--surface2); }
+.hs-result-item:last-child { border-bottom: none; }
+.hs-result-name { font-weight: 600; font-size: 14px; }
+.hs-result-meta { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.hs-empty { padding: 28px 20px; text-align: center; color: var(--text2); font-size: 13px; }
+.hs-token-bar { padding: 10px 20px; font-size: 12px; color: var(--text2); border-top: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+
 /* Mobile */
 @media (max-width: 768px) {
   .pipeline { grid-template-columns: 1fr; }
@@ -1450,6 +1472,7 @@ function renderPipeline() {
           <div style="display:flex;align-items:center;gap:6px">
             ${valueLabel}
             <div class="pipeline-col-count">${stageContacts.length}</div>
+            <button class="col-add-btn" onclick="event.stopPropagation();openHSSearch('${stageId}')" title="Add from HubSpot">+</button>
           </div>
         </div>
         ${stageContacts.map(c => renderCard(c)).join('')}
@@ -2494,6 +2517,147 @@ function render() {
 
 loadState();
 render();
+
+// ============ HUBSPOT CONTACT SEARCH ============
+const HS_PORTAL_ID = '48782903';
+let hsCurrentStage = null;
+let hsSearchTimer = null;
+let hsSearchResults = [];
+
+function getHSToken() { return localStorage.getItem('hs_pat') || ''; }
+
+function promptHSToken() {
+  const cur = getHSToken();
+  const tok = prompt('Enter your HubSpot Private App Token:', cur);
+  if (tok !== null && tok.trim()) {
+    localStorage.setItem('hs_pat', tok.trim());
+    updateHSTokenBar();
+  }
+}
+
+function updateHSTokenBar() {
+  const bar = document.getElementById('hsTokenBar');
+  if (!bar) return;
+  const tok = getHSToken();
+  bar.innerHTML = tok
+    ? `<span style="color:var(--green)">✓ Token set</span> · <a href="#" onclick="event.preventDefault();promptHSToken()" style="color:var(--text2)">Change</a>`
+    : `<a href="#" onclick="event.preventDefault();promptHSToken()" style="color:var(--accent2)">⚙ Set HubSpot API token</a> to enable search`;
+}
+
+function openHSSearch(stageId) {
+  hsCurrentStage = stageId;
+  document.getElementById('hsStageLabel').textContent = STAGES[stageId].label;
+  document.getElementById('hsStageLabel').style.color = STAGES[stageId].color;
+  document.getElementById('hsSearchInput').value = '';
+  document.getElementById('hsResults').innerHTML = '<div class="hs-empty">Type a name to search your HubSpot contacts</div>';
+  document.getElementById('hsModalOverlay').classList.add('show');
+  updateHSTokenBar();
+  setTimeout(() => document.getElementById('hsSearchInput').focus(), 100);
+}
+
+function closeHSSearch() {
+  document.getElementById('hsModalOverlay').classList.remove('show');
+  hsCurrentStage = null;
+}
+
+function debounceHSSearch() {
+  clearTimeout(hsSearchTimer);
+  const q = document.getElementById('hsSearchInput').value.trim();
+  if (q.length < 2) {
+    document.getElementById('hsResults').innerHTML = '<div class="hs-empty">Type a name to search your HubSpot contacts</div>';
+    return;
+  }
+  hsSearchTimer = setTimeout(doHSSearch, 400);
+}
+
+async function doHSSearch() {
+  const q = document.getElementById('hsSearchInput').value.trim();
+  if (!q) return;
+  const token = getHSToken();
+  if (!token) {
+    document.getElementById('hsResults').innerHTML = '<div class="hs-empty">⚠️ <a href="#" onclick="event.preventDefault();promptHSToken()" style="color:var(--accent2)">Set your HubSpot API token first</a></div>';
+    return;
+  }
+  document.getElementById('hsResults').innerHTML = '<div class="hs-empty">Searching…</div>';
+  try {
+    const res = await fetch('https://api.hubapi.com/crm/v3/objects/contacts/search', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: q,
+        limit: 10,
+        properties: ['firstname', 'lastname', 'email', 'phone', 'city', 'state']
+      })
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      document.getElementById('hsResults').innerHTML = `<div class="hs-empty">Error ${res.status}: ${err.message || 'Check token & scopes'}. <a href="#" onclick="event.preventDefault();promptHSToken()" style="color:var(--accent2)">Update token</a></div>`;
+      return;
+    }
+    const data = await res.json();
+    hsSearchResults = data.results || [];
+    renderHSResults();
+  } catch(e) {
+    document.getElementById('hsResults').innerHTML = `<div class="hs-empty">Request failed — HubSpot API may block browser requests due to CORS. See console.</div>`;
+    console.error('HubSpot search error:', e);
+  }
+}
+
+function renderHSResults() {
+  if (!hsSearchResults.length) {
+    document.getElementById('hsResults').innerHTML = '<div class="hs-empty">No contacts found</div>';
+    return;
+  }
+  document.getElementById('hsResults').innerHTML = hsSearchResults.map((r, i) => {
+    const p = r.properties;
+    const name = [p.firstname, p.lastname].filter(Boolean).join(' ') || '(No name)';
+    const meta = [p.email, p.city, p.state].filter(Boolean).join(' · ');
+    const exists = contacts.some(c => c.hubspotId === r.id);
+    return `<div class="hs-result-item" onclick="addContactFromHS(${i})">
+      <div class="hs-result-name">${name}${exists ? ' <span style="color:var(--text2);font-size:11px;font-weight:400">(already in pipeline)</span>' : ''}</div>
+      <div class="hs-result-meta">${meta || 'No email on file'}</div>
+    </div>`;
+  }).join('');
+}
+
+function addContactFromHS(idx) {
+  const r = hsSearchResults[idx];
+  const p = r.properties;
+  const name = [p.firstname, p.lastname].filter(Boolean).join(' ') || 'Unknown';
+  const newId = Math.max(...contacts.map(c => c.id), 0) + 1;
+  contacts.push({
+    id: newId, name, sonName: '', stage: hsCurrentStage,
+    location: [p.city, p.state].filter(Boolean).join(', ') || 'Unknown',
+    state: p.state || '', mentorLocation: '', paymentType: 'weekly',
+    isNDIS: false, isMelbourne: false, totalPaid: 0, weeklyRate: 0,
+    weeksActive: 0, sessions: 0, stripeCust: '', hubspotId: r.id,
+    hubspotUrl: `https://app.hubspot.com/contacts/${HS_PORTAL_ID}/record/0-1/${r.id}`,
+    email: p.email || '', phone: p.phone || '',
+    currentSub: 'New — check HubSpot', paymentDue: '',
+    score: 5, flags: ['🆕 Added from HubSpot'], convoPoints: [],
+    notes: '', sessionWins: [], inactive: false, likelihood: 0, offerType: 'fe'
+  });
+  closeHSSearch();
+  render();
+}
 </script>
+
+<!-- HubSpot Contact Search Modal -->
+<div class="hs-modal-overlay" id="hsModalOverlay" onclick="if(event.target===this)closeHSSearch()">
+  <div class="hs-modal">
+    <div class="hs-modal-header">
+      <h3>Add to <span id="hsStageLabel"></span></h3>
+      <button class="modal-close" onclick="closeHSSearch()">&times;</button>
+    </div>
+    <div class="hs-search-row">
+      <input class="hs-search-input" id="hsSearchInput" placeholder="Search HubSpot contact name…" oninput="debounceHSSearch()" onkeydown="if(event.key==='Enter')doHSSearch()" autocomplete="off">
+      <button class="btn btn-primary" onclick="doHSSearch()" style="flex-shrink:0;padding:9px 16px">Search</button>
+    </div>
+    <div class="hs-results" id="hsResults">
+      <div class="hs-empty">Type a name to search your HubSpot contacts</div>
+    </div>
+    <div class="hs-token-bar" id="hsTokenBar"></div>
+  </div>
+</div>
 </body>
 </html>
