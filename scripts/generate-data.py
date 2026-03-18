@@ -40,7 +40,13 @@ HUBSPOT_OWNERS = {
 }
 
 META_AD_ACCOUNT = "act_1631004910795417"
-META_PIXEL_ACTION = "offsite_conversion.fb_pixel_custom.956033550334742"
+# CRITICAL: When using 'conversions' field (not 'actions'), the action_type
+# uses the EVENT NAME not the numeric pixel ID.
+# 'actions' field uses: offsite_conversion.fb_pixel_custom.956033550334742
+# 'conversions' field uses: offsite_conversion.fb_pixel_custom.Booked Call (HS)
+# We use 'conversions' because it breaks out individual events properly.
+# DO NOT change this back to the numeric ID -- it won't match.
+META_PIXEL_ACTION = "offsite_conversion.fb_pixel_custom.Booked Call (HS)"
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -298,9 +304,14 @@ def fetch_meta_insights(api_key: str, since: str, until: str) -> dict:
     if not api_key:
         return {"spend": 0, "booked_calls": 0, "cpbc": 0}
 
-    url = f"https://graph.facebook.com/v19.0/{META_AD_ACCOUNT}/insights"
+    # CRITICAL: Use 'conversions' field, NOT 'actions'.
+    # 'actions' lumps ALL pixel events together = wrong number.
+    # 'conversions' breaks out individual custom pixel events so we can
+    # isolate Booked Call (HS) specifically.
+    # This was debugged on March 14 and March 18 2026 -- do NOT revert.
+    url = f"https://graph.facebook.com/v22.0/{META_AD_ACCOUNT}/insights"
     params = {
-        "fields": "spend,actions,cost_per_action_type",
+        "fields": "spend,conversions,cost_per_conversion",
         "time_range": json.dumps({"since": since, "until": until}),
         "level": "account",
         "access_token": api_key,
@@ -315,12 +326,23 @@ def fetch_meta_insights(api_key: str, since: str, until: str) -> dict:
         row = data[0]
         spend = float(row.get("spend", 0))
         booked_calls = 0
-        for action in row.get("actions", []):
-            if action.get("action_type") == META_PIXEL_ACTION:
-                booked_calls = int(action.get("value", 0))
+        cpbc_from_api = 0
+
+        # Extract booked calls from conversions (NOT actions)
+        for conv in row.get("conversions", []):
+            if conv.get("action_type") == META_PIXEL_ACTION:
+                booked_calls = int(conv.get("value", 0))
                 break
-        cpbc = round(spend / booked_calls, 2) if booked_calls > 0 else 0
-        return {"spend": round(spend, 2), "booked_calls": booked_calls, "cpbc": cpbc}
+
+        # Try to get CPBC directly from cost_per_conversion
+        for cpc in row.get("cost_per_conversion", []):
+            if cpc.get("action_type") == META_PIXEL_ACTION:
+                cpbc_from_api = float(cpc.get("value", 0))
+                break
+
+        # Fall back to manual calc if API doesn't return cost_per_conversion
+        cpbc = cpbc_from_api if cpbc_from_api > 0 else (round(spend / booked_calls, 2) if booked_calls > 0 else 0)
+        return {"spend": round(spend, 2), "booked_calls": booked_calls, "cpbc": round(cpbc, 2)}
     except Exception as e:
         log(f"Meta Ads error: {e}")
         return {"spend": 0, "booked_calls": 0, "cpbc": 0}

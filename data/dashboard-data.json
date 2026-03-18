@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-18T11:20:19.870300Z",
+  "generated_at": "2026-03-18T11:47:30.003818Z",
   "period": {
     "today": "2026-03-18",
     "week_start": "2026-03-16",
@@ -185,19 +185,19 @@
   ],
   "meta_ads": {
     "today": {
-      "spend": 148.49,
-      "booked_calls": 0,
-      "cpbc": 0
+      "spend": 156.42,
+      "booked_calls": 5,
+      "cpbc": 31.28
     },
     "wtd": {
-      "spend": 525.7,
-      "booked_calls": 0,
-      "cpbc": 0
+      "spend": 534.53,
+      "booked_calls": 21,
+      "cpbc": 25.45
     },
     "mtd": {
-      "spend": 3757.76,
-      "booked_calls": 0,
-      "cpbc": 0
+      "spend": 3765.69,
+      "booked_calls": 159,
+      "cpbc": 23.68
     }
   },
   "stripe": {
