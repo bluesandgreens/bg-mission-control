@@ -2580,7 +2580,7 @@ async function doHSSearch() {
   }
   document.getElementById('hsResults').innerHTML = '<div class="hs-empty">Searching…</div>';
   try {
-    const res = await fetch('https://api.hubapi.com/crm/v3/objects/contacts/search', {
+    const res = await fetch('https://ltpkeddkkrexynlhgxal.supabase.co/functions/v1/hs-proxy', {
       method: 'POST',
       headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -2598,7 +2598,7 @@ async function doHSSearch() {
     hsSearchResults = data.results || [];
     renderHSResults();
   } catch(e) {
-    document.getElementById('hsResults').innerHTML = `<div class="hs-empty">Request failed — HubSpot API may block browser requests due to CORS. See console.</div>`;
+    document.getElementById('hsResults').innerHTML = `<div class="hs-empty">Request failed — check your token and try again.</div>`;
     console.error('HubSpot search error:', e);
   }
 }
