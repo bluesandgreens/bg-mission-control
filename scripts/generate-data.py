@@ -536,6 +536,43 @@ def fetch_stripe(api_key: str, target: datetime) -> dict:
     result["recent_cancellations"] = cancellations
     log(f"  Recent cancellations: {len(cancellations)}")
 
+    # Upcoming renewals (next 10 days, excluding weekly billing)
+    log("  Fetching upcoming renewals (next 10 days, non-weekly)...")
+    upcoming = []
+    now_unix = int(datetime.now(timezone.utc).timestamp())
+    ten_days_unix = now_unix + (10 * 86400)
+    for sub in active_subs:
+        period_end = sub.get("current_period_end", 0)
+        if now_unix < period_end <= ten_days_unix:
+            sub_items = sub.get("items", {}).get("data", [])
+            for item in sub_items:
+                price = item.get("price", {}) or item.get("plan", {})
+                interval = price.get("recurring", {}).get("interval", "month") if "recurring" in price else price.get("interval", "month")
+                if interval == "week":
+                    continue  # Skip weekly
+                amount = price.get("unit_amount", 0) or price.get("amount", 0)
+                interval_count = price.get("recurring", {}).get("interval_count", 1) if "recurring" in price else price.get("interval_count", 1)
+                cust_id = sub.get("customer", "")
+                # Try to get customer name
+                cust_name = ""
+                try:
+                    cust_data = stripe_get(api_key, f"/customers/{cust_id}", {})
+                    cust_name = cust_data.get("name", cust_data.get("email", cust_id))
+                except Exception:
+                    cust_name = cust_id
+                upcoming.append({
+                    "name": cust_name,
+                    "customer_id": cust_id,
+                    "renewal_date": period_end,
+                    "amount": round(amount / 100, 2),
+                    "interval": f"{interval_count} {interval}{'s' if interval_count > 1 else ''}",
+                    "status": sub.get("status", "active"),
+                    "subscription_id": sub.get("id"),
+                })
+    upcoming.sort(key=lambda x: x["renewal_date"])
+    result["upcoming_renewals"] = upcoming
+    log(f"  Upcoming renewals (non-weekly, 10d): {len(upcoming)}")
+
     return result
 
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-19T11:57:24.617413Z",
+  "generated_at": "2026-03-19T12:35:22.734891Z",
   "period": {
     "today": "2026-03-19",
     "week_start": "2026-03-16",
@@ -185,19 +185,19 @@
   ],
   "meta_ads": {
     "today": {
-      "spend": 153.82,
+      "spend": 163.24,
       "booked_calls": 5,
-      "cpbc": 30.76
+      "cpbc": 32.65
     },
     "wtd": {
-      "spend": 717.22,
+      "spend": 726.64,
       "booked_calls": 26,
-      "cpbc": 27.59
+      "cpbc": 27.95
     },
     "mtd": {
-      "spend": 3948.38,
+      "spend": 3957.8,
       "booked_calls": 164,
-      "cpbc": 24.08
+      "cpbc": 24.13
     }
   },
   "stripe": {
@@ -245,6 +245,62 @@
         "id": "sub_1T7QUV2mA5zLxyK8grgbRCeA",
         "canceled_at": 1773054431,
         "customer": "cus_TKMmHFXrHYV6et"
+      }
+    ],
+    "upcoming_renewals": [
+      {
+        "name": "Brooke Miranda",
+        "customer_id": "cus_U8fCr3UFSc3YQR",
+        "renewal_date": 1773925200,
+        "amount": 940.0,
+        "interval": "1 month",
+        "status": "active",
+        "subscription_id": "sub_1TCG1m2mA5zLxyK819BJSq9C"
+      },
+      {
+        "name": "Maria Morton",
+        "customer_id": "cus_U8cilaZJ5P4ZDv",
+        "renewal_date": 1773925200,
+        "amount": 2730.0,
+        "interval": "90 days",
+        "status": "active",
+        "subscription_id": "sub_1TCAHZ2mA5zLxyK809cVE77x"
+      },
+      {
+        "name": "Troy Speed",
+        "customer_id": "cus_Tnbj2BTpeLPHtr",
+        "renewal_date": 1774051403,
+        "amount": 535.5,
+        "interval": "32 days",
+        "status": "active",
+        "subscription_id": "sub_1Sq0Vf2mA5zLxyK8weKggu2e"
+      },
+      {
+        "name": "GEMMA GARNER",
+        "customer_id": "cus_TpZ21yOB2eDdbV",
+        "renewal_date": 1774338164,
+        "amount": 930.0,
+        "interval": "60 days",
+        "status": "active",
+        "subscription_id": "sub_1Ssf0y2mA5zLxyK8tdUuSWcA"
+      },
+      {
+        "name": "Liz Atkins",
+        "customer_id": "cus_SiZgYeQOaFMnKs",
+        "renewal_date": 1774612560,
+        "amount": 1802.4,
+        "interval": "60 days",
+        "status": "active",
+        "subscription_id": "sub_1RqYc02mA5zLxyK8TZYTxjHX"
+      },
+      {
+        "name": "Natalie Oberman",
+        "customer_id": "cus_TOX2y93zvRdB6o",
+        "renewal_date": 1774616400,
+        "amount": 1808.0,
+        "interval": "2 months",
+        "status": "active",
+        "subscription_id": "sub_1SXzy92mA5zLxyK8VlwIt1sL"
       }
     ]
   },
@@ -943,11 +999,6 @@
         "w1_activation_stage": "Awaiting First Message"
       },
       {
-        "name": "Rhiannon Medcraft",
-        "date": "2026-03-12T20:47:20.003Z",
-        "w1_activation_stage": null
-      },
-      {
         "name": "Kat Peatey",
         "date": "2026-02-26T00:25:58.904Z",
         "w1_activation_stage": "Stage 2: Follow Up"
@@ -1013,11 +1064,6 @@
         "w1_activation_stage": null
       },
       {
-        "name": "Lacey Jurd",
-        "date": "2026-03-16T03:55:30.670Z",
-        "w1_activation_stage": "Awaiting First Message"
-      },
-      {
         "name": "Belinda Mackie",
         "date": "2026-03-17T23:46:32.413Z",
         "w1_activation_stage": null
@@ -1033,6 +1079,11 @@
       {
         "name": "Virginia Akhtar",
         "date": "2025-12-30T11:57:25.924Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Rhiannon Medcraft",
+        "date": "2026-03-20T04:00:00Z",
         "w1_activation_stage": null
       },
       {
@@ -1089,6 +1140,11 @@
         "name": "Maria Morton",
         "date": "2026-03-19T17:45:00Z",
         "w1_activation_stage": null
+      },
+      {
+        "name": "Lacey Jurd",
+        "date": "2026-03-30T04:00:00Z",
+        "w1_activation_stage": "Awaiting First Message"
       },
       {
         "name": "Rebecca Maggiora",
