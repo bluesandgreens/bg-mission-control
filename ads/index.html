@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ads Mission Control — Blues & Greens</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #101318; color: #e2e8f0; font-size: 13px; }
+.header { background: linear-gradient(135deg, #104791, #0d3a76); padding: 20px 28px; }
+.header h1 { font-size: 20px; font-weight: 700; color: #fff; }
+.header p { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+.notes-bar { background: #1a2235; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 14px 28px; }
+.notes-bar h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.3); margin-bottom: 10px; }
+.notes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.note { border-radius: 8px; padding: 12px; font-size: 12px; line-height: 1.5; }
+.note.red { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); color: #fca5a5; }
+.note.green { background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.2); color: #86efac; }
+.note.amber { background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2); color: #fde68a; }
+.note strong { display: block; font-weight: 700; margin-bottom: 3px; font-size: 10px; text-transform: uppercase; }
+.stats-strip { display: flex; gap: 0; background: #151b24; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
+.strip-stat { padding: 14px 22px; border-right: 1px solid rgba(255,255,255,0.06); }
+.strip-stat .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.3); }
+.strip-stat .value { font-size: 22px; font-weight: 700; color: #fff; margin-top: 2px; }
+.strip-stat.gold .value { color: #C8A951; }
+.strip-stat.green .value { color: #4ade80; }
+.main { padding: 20px 28px; }
+.camp-block { margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; overflow: hidden; }
+.camp-header { background: #1a2235; padding: 13px 16px; cursor: pointer; display: flex; align-items: center; gap: 12px; }
+.camp-header:hover { background: #1e2a3a; }
+.chev { font-size: 9px; color: rgba(255,255,255,0.3); transition: transform 0.15s; width: 12px; }
+.chev.open { transform: rotate(90deg); }
+.camp-name { font-weight: 700; font-size: 13px; flex: 1; }
+.meta-row { display: flex; gap: 20px; }
+.meta-item { font-size: 11px; }
+.meta-label { color: rgba(255,255,255,0.35); }
+.meta-val { color: #e2e8f0; font-weight: 600; }
+.camp-body { display: none; }
+.camp-body.open { display: block; }
+.aset-block { border-top: 1px solid rgba(255,255,255,0.05); }
+.aset-header { padding: 10px 16px 10px 32px; cursor: pointer; display: flex; align-items: center; gap: 10px; background: #161e2c; }
+.aset-header:hover { background: #1a2438; }
+.aset-name { font-weight: 600; font-size: 12px; flex: 1; color: rgba(255,255,255,0.8); }
+.aset-body { display: none; overflow-x: auto; }
+.aset-body.open { display: block; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #111827; padding: 8px 14px; text-align: left; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.3); white-space: nowrap; }
+td { padding: 9px 14px; border-top: 1px solid rgba(255,255,255,0.04); font-size: 12px; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+.badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 700; }
+.active { background: rgba(74,222,128,0.15); color: #4ade80; }
+.paused { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.issues { background: rgba(239,68,68,0.15); color: #f87171; }
+.archived { background: rgba(148,163,184,0.1); color: #94a3b8; }
+.good { color: #4ade80; font-weight: 700; }
+.warn { color: #fbbf24; font-weight: 700; }
+.bad { color: #f87171; font-weight: 700; }
+.refresh-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 11px; font-weight: 600; margin-left: 10px; }
+.refresh-btn:hover { background: rgba(255,255,255,0.18); }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Ads Mission Control</h1>
+  <p>Blues & Greens · Meta Ads Account · <span id="updatedAt">Loading...</span><button class="refresh-btn" onclick="load()">↻ Refresh</button></p>
+</div>
+<div class="notes-bar">
+  <h2>Flags &amp; Insights</h2>
+  <div class="notes-grid" id="notesGrid"><div class="note amber"><strong>Loading</strong>Fetching ad data...</div></div>
+</div>
+<div class="stats-strip" id="statsStrip"></div>
+<div class="main" id="campTree"><p style="color:rgba(255,255,255,0.3)">Loading...</p></div>
+
+<script>
+function badge(s) {
+  var cls = s==='ACTIVE'?'active':s==='PAUSED'?'paused':(s&&(s.includes('ISSUE')||s.includes('DISAPPROVED')))?'issues':'archived';
+  return '<span class="badge '+cls+'">'+s+'</span>';
+}
+function dollar(n) { return n?'$'+parseFloat(n).toFixed(2):'—'; }
+function num(n) { return n?parseInt(n).toLocaleString():'—'; }
+function pct(n) { return n?parseFloat(n).toFixed(1)+'%':'—'; }
+
+function notes(camps) {
+  var out=[], spend=0, clicks=0, imps=0;
+  camps.forEach(function(c){
+    spend+=c.spend_7d||0;
+    c.adsets.forEach(function(a){
+      a.ads.forEach(function(ad){
+        clicks+=ad.clicks_7d||0; imps+=ad.impressions_7d||0;
+        var ctr=imps>0?clicks/imps*100:0;
+        if(ad.status==='ACTIVE'&&ad.spend_7d>30&&ad.impressions_7d>1000){
+          var adCtr=ad.impressions_7d>0?ad.clicks_7d/ad.impressions_7d*100:0;
+          if(adCtr<0.8) out.push({t:'red',h:'⚠ Low CTR',b:ad.name+' — '+adCtr.toFixed(1)+'% CTR on $'+ad.spend_7d.toFixed(0)+' spend'});
+          if(adCtr>3.5) out.push({t:'green',h:'🏆 Hot Hook',b:ad.name+' — '+adCtr.toFixed(1)+'% CTR. Scale candidate.'});
+        }
+        if(ad.status&&(ad.status.includes('ISSUE')||ad.status.includes('DISAPPROVED')))
+          out.push({t:'red',h:'🚫 Rejected',b:ad.name+' — needs review in Ads Manager'});
+      });
+    });
+  });
+  var avgCTR=imps>0?(clicks/imps*100).toFixed(1)+'%':'—';
+  out.unshift({t:'amber',h:'📊 7-Day Overview','b':'$'+spend.toFixed(0)+' spend · '+clicks.toLocaleString()+' clicks · '+avgCTR+' avg CTR'});
+  return out.slice(0,6);
+}
+
+function stats(camps) {
+  var spend=0, active=0, paused=0, clicks=0, imps=0;
+  camps.forEach(function(c){
+    spend+=c.spend_7d||0;
+    c.adsets.forEach(function(a){
+      a.ads.forEach(function(ad){
+        if(ad.status==='ACTIVE') active++; else if(ad.status==='PAUSED') paused++;
+        clicks+=ad.clicks_7d||0; imps+=ad.impressions_7d||0;
+      });
+    });
+  });
+  var avgCPC=clicks>0?(spend/clicks).toFixed(2):'—';
+  var avgCTR=imps>0?(clicks/imps*100).toFixed(1)+'%':'—';
+  return [
+    {l:'7d Spend',v:'$'+spend.toFixed(0),c:'gold'},
+    {l:'Active Ads',v:active,c:'green'},
+    {l:'Paused',v:paused,c:''},
+    {l:'7d Clicks',v:clicks.toLocaleString(),c:''},
+    {l:'Avg CTR',v:avgCTR,c:''},
+    {l:'Avg CPC',v:'$'+avgCPC,c:''},
+    {l:'Campaigns',v:camps.length,c:''},
+  ];
+}
+
+function tree(camps) {
+  return camps.map(function(c, ci) {
+    var asets = (c.adsets||[]).map(function(a, ai) {
+      var rows = (a.ads||[]).map(function(ad) {
+        var ctr = ad.impressions_7d>0?(ad.clicks_7d/ad.impressions_7d*100).toFixed(1)+'%':'—';
+        return '<tr><td>'+ad.name+'</td><td>'+badge(ad.status)+'</td>' +
+          '<td>'+dollar(ad.spend_7d)+'</td><td>'+num(ad.clicks_7d)+'</td>' +
+          '<td>'+ctr+'</td><td>'+dollar(ad.cpc_7d)+'</td>' +
+          '<td style="color:rgba(255,255,255,0.3)">— (Windsor)</td></tr>';
+      }).join('');
+      return '<div class="aset-block">' +
+        '<div class="aset-header" onclick="tog(\'a\',\''+ci+'-'+ai+'\')">' +
+          '<span class="chev" id="ac-'+ci+'-'+ai+'">▶</span>' +
+          '<span class="aset-name">'+a.name+'</span>' +
+          '<div class="meta-row">' +
+            '<div class="meta-item"><span class="meta-label">Status </span><span class="meta-val">'+a.status+'</span></div>' +
+            '<div class="meta-item"><span class="meta-label">Spend </span><span class="meta-val">$'+(a.spend_7d||0).toFixed(0)+'</span></div>' +
+            '<div class="meta-item"><span class="meta-label">Ads </span><span class="meta-val">'+a.ads.length+'</span></div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="aset-body" id="ab-'+ci+'-'+ai+'">' +
+          '<table><thead><tr><th>Ad</th><th>Status</th><th>Spend (7d)</th><th>Clicks</th><th>CTR</th><th>CPC</th><th>CPBC</th></tr></thead><tbody>'+rows+'</tbody></table>' +
+        '</div></div>';
+    }).join('');
+    return '<div class="camp-block">' +
+      '<div class="camp-header" onclick="tog(\'c\',\''+ci+'\')">' +
+        '<span class="chev" id="cc-'+ci+'">▶</span>' +
+        '<span class="camp-name">'+c.name+'</span>' +
+        '<div class="meta-row">' +
+          '<div class="meta-item"><span class="meta-label">Status </span><span class="meta-val">'+c.status+'</span></div>' +
+          '<div class="meta-item"><span class="meta-label">7d Spend </span><span class="meta-val">$'+(c.spend_7d||0).toFixed(0)+'</span></div>' +
+          '<div class="meta-item"><span class="meta-label">Ad Sets </span><span class="meta-val">'+c.adsets.length+'</span></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="camp-body" id="cb-'+ci+'">'+asets+'</div></div>';
+  }).join('');
+}
+
+function tog(type, id) {
+  var pre = type==='c' ? ['cb-','cc-'] : ['ab-','ac-'];
+  var body = document.getElementById(pre[0]+id);
+  var chev = document.getElementById(pre[1]+id);
+  if (!body) return;
+  var open = body.classList.toggle('open');
+  chev.classList.toggle('open', open);
+}
+
+function load() {
+  fetch('../data/meta-hierarchy.json?t='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(d) {
+      var camps = d.campaigns||[];
+      document.getElementById('updatedAt').textContent = 'Updated '+(d.generated_at?new Date(d.generated_at).toLocaleString('en-AU',{timeZone:'Australia/Melbourne',hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'}):'recently');
+      var ns = notes(camps);
+      document.getElementById('notesGrid').innerHTML = ns.map(function(n){return '<div class="note '+n.t+'"><strong>'+n.h+'</strong>'+n.b+'</div>';}).join('');
+      var ss = stats(camps);
+      document.getElementById('statsStrip').innerHTML = ss.map(function(s){return '<div class="strip-stat '+s.c+'"><div class="label">'+s.l+'</div><div class="value">'+s.v+'</div></div>';}).join('');
+      document.getElementById('campTree').innerHTML = tree(camps);
+    })
+    .catch(function(e){console.error(e); document.getElementById('campTree').innerHTML='<p style="color:#f87171">Failed to load data.</p>';});
+}
+load();
+setInterval(load, 30*60*1000);
+</script>
+</body>
+</html>
