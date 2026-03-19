@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-19T03:02:56.043172Z",
+  "generated_at": "2026-03-19T11:57:24.617413Z",
   "period": {
     "today": "2026-03-19",
     "week_start": "2026-03-16",
@@ -7,27 +7,27 @@
   },
   "pulse": {
     "today": {
-      "new_leads": 5,
-      "booked_calls": 1,
+      "new_leads": 20,
+      "booked_calls": 3,
       "dcs_completed": 1,
       "closes": 1,
-      "w1_starts": 0,
+      "w1_starts": 1,
       "agreement_forms": 0
     },
     "wtd": {
-      "new_leads": 86,
-      "booked_calls": 19,
+      "new_leads": 101,
+      "booked_calls": 21,
       "dcs_completed": 18,
       "closes": 10,
-      "w1_starts": 8,
+      "w1_starts": 9,
       "agreement_forms": 10
     },
     "mtd": {
-      "new_leads": 530,
-      "booked_calls": 100,
+      "new_leads": 545,
+      "booked_calls": 102,
       "dcs_completed": 72,
       "closes": 51,
-      "w1_starts": 31,
+      "w1_starts": 32,
       "agreement_forms": 46
     }
   },
@@ -36,21 +36,21 @@
       "name": "Harry",
       "owner_id": "75967744",
       "today": {
-        "leads": 3,
+        "leads": 17,
         "dcs_taken": 1,
         "closes": 1,
         "w1_starts": 0,
         "close_rate": 1.0
       },
       "wtd": {
-        "leads": 63,
+        "leads": 76,
         "dcs_taken": 10,
         "closes": 4,
         "w1_starts": 2,
         "close_rate": 0.4
       },
       "mtd": {
-        "leads": 413,
+        "leads": 426,
         "dcs_taken": 42,
         "closes": 27,
         "w1_starts": 6,
@@ -86,21 +86,21 @@
       "name": "Anthony",
       "owner_id": "87029276",
       "today": {
-        "leads": 0,
+        "leads": 1,
         "dcs_taken": 0,
         "closes": 0,
         "w1_starts": 0,
         "close_rate": 0.0
       },
       "wtd": {
-        "leads": 4,
+        "leads": 5,
         "dcs_taken": 3,
         "closes": 1,
         "w1_starts": 1,
         "close_rate": 0.33
       },
       "mtd": {
-        "leads": 12,
+        "leads": 13,
         "dcs_taken": 7,
         "closes": 2,
         "w1_starts": 1,
@@ -118,14 +118,14 @@
         "close_rate": 0.0
       },
       "wtd": {
-        "leads": 4,
+        "leads": 5,
         "dcs_taken": 2,
         "closes": 2,
         "w1_starts": 0,
         "close_rate": 1.0
       },
       "mtd": {
-        "leads": 23,
+        "leads": 24,
         "dcs_taken": 3,
         "closes": 3,
         "w1_starts": 1,
@@ -139,21 +139,21 @@
         "leads": 0,
         "dcs_taken": 0,
         "closes": 0,
-        "w1_starts": 0,
+        "w1_starts": 1,
         "close_rate": 0.0
       },
       "wtd": {
         "leads": 3,
         "dcs_taken": 1,
         "closes": 1,
-        "w1_starts": 0,
+        "w1_starts": 1,
         "close_rate": 1.0
       },
       "mtd": {
         "leads": 10,
         "dcs_taken": 3,
         "closes": 4,
-        "w1_starts": 0,
+        "w1_starts": 1,
         "close_rate": 1.33
       }
     },
@@ -185,19 +185,19 @@
   ],
   "meta_ads": {
     "today": {
-      "spend": 69.94,
-      "booked_calls": 3,
-      "cpbc": 23.31
+      "spend": 153.82,
+      "booked_calls": 5,
+      "cpbc": 30.76
     },
     "wtd": {
-      "spend": 633.11,
-      "booked_calls": 24,
-      "cpbc": 26.38
+      "spend": 717.22,
+      "booked_calls": 26,
+      "cpbc": 27.59
     },
     "mtd": {
-      "spend": 3864.27,
-      "booked_calls": 162,
-      "cpbc": 23.85
+      "spend": 3948.38,
+      "booked_calls": 164,
+      "cpbc": 24.08
     }
   },
   "stripe": {
@@ -206,6 +206,11 @@
     "failed_payments": 1,
     "new_subscriptions": 2,
     "recent_cancellations": [
+      {
+        "id": "sub_1TCWOI2mA5zLxyK8YfkaaIYn",
+        "canceled_at": 1773889949,
+        "customer": "cus_U8Eve3yyMnvpsy"
+      },
       {
         "id": "sub_1TAOo72mA5zLxyK8TlxsqSdu",
         "canceled_at": 1773795228,
@@ -1013,11 +1018,6 @@
         "w1_activation_stage": "Awaiting First Message"
       },
       {
-        "name": "Rebecca Maggiora",
-        "date": "2026-03-16T23:16:09.311Z",
-        "w1_activation_stage": null
-      },
-      {
         "name": "Belinda Mackie",
         "date": "2026-03-17T23:46:32.413Z",
         "w1_activation_stage": null
@@ -1056,11 +1056,6 @@
         "w1_activation_stage": null
       },
       {
-        "name": "Brooke Miranda",
-        "date": "2026-03-19T01:30:00Z",
-        "w1_activation_stage": "Awaiting First Message"
-      },
-      {
         "name": "Tania paton",
         "date": "2026-03-06T00:00:00Z",
         "w1_activation_stage": "Intro Call Complete"
@@ -1093,6 +1088,11 @@
       {
         "name": "Maria Morton",
         "date": "2026-03-19T17:45:00Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Rebecca Maggiora",
+        "date": "2026-03-25T17:00:00Z",
         "w1_activation_stage": null
       }
     ],
@@ -1142,7 +1142,7 @@
       },
       {
         "name": "Leeanne JACKSON",
-        "session_count": "37",
+        "session_count": "38",
         "payment_reset_date": null
       },
       {
@@ -1207,7 +1207,7 @@
       },
       {
         "name": "Kelly Hardy",
-        "session_count": "21",
+        "session_count": "22",
         "payment_reset_date": null
       },
       {
@@ -1227,7 +1227,7 @@
       },
       {
         "name": "Sylvia Rogowska",
-        "session_count": "27",
+        "session_count": "28",
         "payment_reset_date": "2026-04-07"
       },
       {
@@ -1477,7 +1477,7 @@
       },
       {
         "name": "Joanna Vlachos",
-        "session_count": "20",
+        "session_count": "21",
         "payment_reset_date": null
       },
       {
@@ -1532,7 +1532,7 @@
       },
       {
         "name": "Melanie Heskin",
-        "session_count": "21",
+        "session_count": "22",
         "payment_reset_date": null
       },
       {
@@ -1587,7 +1587,7 @@
       },
       {
         "name": "Ishil Sterling-Levis",
-        "session_count": "16",
+        "session_count": "17",
         "payment_reset_date": null
       },
       {
@@ -1627,7 +1627,7 @@
       },
       {
         "name": "Diahann Marsh",
-        "session_count": "18",
+        "session_count": "19",
         "payment_reset_date": null
       },
       {
@@ -1682,7 +1682,7 @@
       },
       {
         "name": "Lucia Ciccollitto",
-        "session_count": "40",
+        "session_count": "41",
         "payment_reset_date": "2026-06-16"
       },
       {
@@ -1817,7 +1817,7 @@
       },
       {
         "name": "Celeste Paull",
-        "session_count": "7",
+        "session_count": "8",
         "payment_reset_date": null
       },
       {
@@ -1837,7 +1837,7 @@
       },
       {
         "name": "Gemma Garner",
-        "session_count": "7",
+        "session_count": "8",
         "payment_reset_date": null
       },
       {
