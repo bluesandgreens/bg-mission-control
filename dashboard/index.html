@@ -488,7 +488,6 @@ tbody tr.pending-row { opacity: 0.35; }
   .header { flex-direction: column; text-align: center; gap: 12px; }
   .header-right { text-align: center; }
   .dashboard { padding: 16px 12px 40px; }
-  .main-tab-row { flex-wrap: wrap; width: 100%; }
 }
 
 ::-webkit-scrollbar { height: 6px; }
@@ -570,13 +569,6 @@ tbody tr.pending-row { opacity: 0.35; }
 .status-dot.green { background: var(--green-on); box-shadow: 0 0 8px rgba(39,174,96,0.5); }
 .status-dot.red { background: var(--red-alert); box-shadow: 0 0 8px rgba(231,76,60,0.5); }
 .status-dot.gold { background: var(--warm-gold); box-shadow: 0 0 8px rgba(200,169,81,0.5); }
-
-.empty-state {
-  padding: 40px;
-  text-align: center;
-  color: rgba(255,255,255,0.4);
-  font-size: 14px;
-}
 </style>
 </head>
 <body>
@@ -589,8 +581,8 @@ tbody tr.pending-row { opacity: 0.35; }
       <div class="subtitle">Daily DC & Activation Dashboard</div>
     </div>
     <div class="header-right">
-      <div class="date-display" id="date-display"></div>
-      <div id="last-refreshed"></div>
+      <div class="date-display" id="header-date">Loading...</div>
+      <div id="header-refresh">Last refreshed: --</div>
     </div>
   </div>
 
@@ -607,204 +599,270 @@ tbody tr.pending-row { opacity: 0.35; }
   <!-- TAB: ACTIVATION DASHBOARD -->
   <div id="main-tab-activation" class="main-tab-content active">
 
-    <!-- PERFORMANCE STATUS FLAGS -->
-    <div id="status-flags" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;"></div>
+  <!-- PERFORMANCE FLAGS -->
+  <div id="perf-flags" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;"></div>
 
-    <!-- WEEKEND PULSE -->
-    <div class="section-header">WEEKEND PULSE</div>
-    <div class="pulse-grid" id="pulse-grid"></div>
+  <!-- DAILY PULSE -->
+  <div class="section-header">DAILY PULSE</div>
+  <div id="daily-pulse" class="pulse-grid"></div>
 
-    <!-- 14-DAY TREND -->
-    <div class="section-header">14-DAY TREND</div>
-    <div id="trend-section" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;"></div>
+  <!-- 14-DAY TREND -->
+  <div class="section-header">14-DAY TREND</div>
+  <div id="trend-section"></div>
 
-    <!-- CONVERSION FLAGS -->
-    <div id="conversion-flags" style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;"></div>
+  <!-- CONVERSION FLAGS -->
+  <div id="conversion-flags" style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;"></div>
 
-    <!-- RYE GOALS -->
-    <div class="section-header">RYE &mdash; DC & PIPELINE GOALS</div>
-    <div class="goals-row" id="rye-goals"></div>
+  <!-- RYE'S GOALS -->
+  <div class="section-header">RYE — DC & PIPELINE GOALS</div>
+  <div id="rye-goals" class="goals-row"></div>
 
-    <!-- BRODIE GOALS -->
-    <div class="section-header">BRODIE &mdash; ACTIVATION GOALS</div>
-    <div class="goals-row" id="brodie-goals"></div>
+  <!-- BRODIE'S GOALS -->
+  <div class="section-header">BRODIE — ACTIVATION GOALS</div>
+  <div id="brodie-goals" class="goals-row"></div>
 
-    <!-- REP BREAKDOWN -->
-    <div class="section-header">REP BREAKDOWN</div>
-    <div class="tab-row">
-      <button class="tab-btn active" onclick="switchTab('day', this)">Weekend</button>
-      <button class="tab-btn" onclick="switchTab('week', this)">Week-to-Date</button>
-      <button class="tab-btn" onclick="switchTab('month', this)">Month-to-Date</button>
-    </div>
-    <div id="tab-day" class="table-wrapper" style="display: block;"></div>
-    <div id="tab-week" class="table-wrapper" style="display: none;"></div>
-    <div id="tab-month" class="table-wrapper" style="display: none;"></div>
+  <!-- REP BREAKDOWN -->
+  <div class="section-header">REP BREAKDOWN</div>
+  <div class="tab-row" id="rep-tab-row">
+    <button class="tab-btn active" onclick="switchRepTab('day', this)">Today</button>
+    <button class="tab-btn" onclick="switchRepTab('week', this)">Week-to-Date</button>
+    <button class="tab-btn" onclick="switchRepTab('month', this)">Month-to-Date</button>
+  </div>
+  <div id="rep-tab-day" class="table-wrapper" style="display: block;"></div>
+  <div id="rep-tab-week" class="table-wrapper" style="display: none;"></div>
+  <div id="rep-tab-month" class="table-wrapper" style="display: none;"></div>
 
-    <!-- CLOSES PIPELINE -->
-    <div class="section-header">CLOSES PIPELINE</div>
-    <div id="closes-pipeline"></div>
+  <!-- DC CLOSES PIPELINE -->
+  <div class="section-header">DISCOVERY CALLS CLOSED — PIPELINE TRACKER</div>
+  <div id="dc-closes-pipeline"></div>
 
-    <!-- RETENTION WINDOW -->
-    <div class="section-header">RETENTION WINDOW &mdash; SESSION 7+ (WEEKLY BILLING)</div>
-    <div style="margin-bottom: 12px; font-size: 13px; color: rgba(255,255,255,0.5);">These families are approaching or past renewal decision points. Proactive outreach recommended.</div>
-    <div id="retention-window"></div>
+  <!-- RETENTION WINDOW -->
+  <div class="section-header">RETENTION WINDOW — SESSION 7+ (WEEKLY BILLING)</div>
+  <div style="margin-bottom: 12px; font-size: 13px; color: rgba(255,255,255,0.5);">These families are approaching or past renewal decision points. Proactive outreach recommended.</div>
+  <div id="retention-session7" class="table-wrapper"></div>
 
-    <!-- PAYMENT RESETS -->
-    <div class="section-header">PAYMENT RESETS &mdash; NEXT 30 DAYS (NON-WEEKLY BILLING)</div>
-    <div style="margin-bottom: 12px; font-size: 13px; color: rgba(255,255,255,0.5);">Monthly, fortnightly, and quarterly renewals approaching. These are larger payments that need proactive retention touchpoints.</div>
-    <div id="payment-resets"></div>
+  <!-- PAYMENT RESETS -->
+  <div class="section-header">PAYMENT RESETS — NEXT 30 DAYS</div>
+  <div style="margin-bottom: 12px; font-size: 13px; color: rgba(255,255,255,0.5);">Upcoming payment resets. Proactive retention touchpoints recommended.</div>
+  <div id="payment-resets" class="table-wrapper"></div>
 
-    <!-- PERFORMANCE FLAGS -->
-    <div class="section-header">PERFORMANCE FLAGS</div>
-    <div id="performance-flags"></div>
+  <!-- PERFORMANCE FLAGS DETAIL -->
+  <div class="section-header">PERFORMANCE FLAGS</div>
+  <div id="perf-flags-detail"></div>
 
   </div><!-- END ACTIVATION TAB -->
 
   <!-- TAB: RYE'S DC PERFORMANCE -->
   <div id="main-tab-rye" class="main-tab-content">
 
-    <div class="section-header">REP SCORECARDS (MTD)</div>
-    <div id="rep-scorecards"></div>
+  <div class="section-header">REP SCORECARDS (MTD)</div>
+  <div id="rye-scorecards" class="table-wrapper"></div>
 
-    <div class="section-header">OBJECTION BREAKDOWN (MTD)</div>
-    <div id="objection-breakdown"></div>
+  <div class="section-header">OBJECTION BREAKDOWN (MTD)</div>
+  <div id="rye-objections"></div>
 
-    <div class="section-header">NO-SHOWS THIS WEEK</div>
-    <div id="no-shows"></div>
+  <div class="section-header">NO-SHOWS THIS WEEK</div>
+  <div id="rye-noshows"></div>
 
   </div><!-- END RYE TAB -->
 
   <!-- TAB: BRODIE'S ACTIVATION PIPELINE -->
   <div id="main-tab-brodie" class="main-tab-content">
 
-    <div class="section-header">WEEKEND INPUTS (BRODIE)</div>
-    <div id="brodie-inputs"></div>
+  <div class="section-header">WEEKEND INPUTS (BRODIE)</div>
+  <div id="brodie-inputs"></div>
 
-    <div class="section-header">W1 CALENDAR &mdash; NEXT 14 DAYS</div>
-    <div id="w1-calendar"></div>
+  <div class="section-header">W1 CALENDAR — NEXT 14 DAYS</div>
+  <div id="brodie-calendar"></div>
 
-    <div class="section-header">LIVE ACTIVATION PIPELINE (Recent Closes)</div>
-    <div style="margin-bottom: 8px; font-size: 12px; color: rgba(255,255,255,0.4);">Families who signed recently but haven't completed W1. Sorted by date.</div>
-    <div id="live-activation-pipeline"></div>
+  <div class="section-header">LIVE ACTIVATION PIPELINE (Recent Closes)</div>
+  <div style="margin-bottom: 8px; font-size: 12px; color: rgba(255,255,255,0.4);">Families who signed recently. Sorted by stage.</div>
+  <div id="brodie-pipeline" class="table-wrapper"></div>
 
-    <div class="section-header">FAMILIES AT RISK</div>
-    <div id="families-at-risk"></div>
+  <div class="section-header">FAMILIES AT RISK</div>
+  <div id="brodie-risk"></div>
 
-    <div class="section-header">W1 DONE, W2 PENDING (Session 1 Only)</div>
-    <div id="w1-done-w2-pending"></div>
+  <div class="section-header">W1 DONE, W2 PENDING (Session 1 Only)</div>
+  <div id="brodie-w2pending"></div>
 
   </div><!-- END BRODIE TAB -->
 
   <!-- TAB: MENTOR DASHBOARD -->
   <div id="main-tab-mentor" class="main-tab-content">
 
-    <div class="section-header">MENTOR CAPACITY</div>
-    <div id="mentor-capacity-pulse"></div>
+  <div class="section-header">MENTOR CAPACITY</div>
+  <div id="mentor-pulse" class="pulse-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));"></div>
 
-    <div class="section-header">MENTOR SUPPLY FORECAST</div>
-    <div id="mentor-supply-forecast"></div>
+  <div class="section-header">MENTOR CAPACITY CHECKER</div>
+  <div id="mentor-table" class="table-wrapper"></div>
 
-    <div class="section-header">MENTOR CAPACITY CHECKER</div>
-    <div id="mentor-capacity-table"></div>
+  <div class="section-header">MENTOR FLAGS</div>
+  <div id="mentor-flags"></div>
 
-    <div class="section-header">MENTOR FLAGS</div>
-    <div id="mentor-flags"></div>
+  <div class="section-header">OVERDUE SESSIONS</div>
+  <div id="mentor-overdue"></div>
 
-    <div class="section-header">MENTOR PIPELINE</div>
-    <div id="mentor-pipeline"></div>
+  <div class="section-header">LOW PARENT SCORES (NPS)</div>
+  <div id="mentor-nps"></div>
+
+  <div class="section-header">OPEN SUPPORT REQUESTS</div>
+  <div id="mentor-support"></div>
+
+  <div class="section-header">SAFEGUARDING & WELLBEING FLAGS</div>
+  <div id="mentor-wellbeing"></div>
+
+  <div class="section-header">MENTOR PIPELINE</div>
+  <div id="mentor-pipeline-section"></div>
 
   </div><!-- END MENTOR TAB -->
 
   <!-- TAB: NORRI'S DASHBOARD -->
   <div id="main-tab-norri" class="main-tab-content">
 
-    <div class="section-header">NEW W1s NEEDING WELCOME CALL (Last 48hrs)</div>
-    <div id="welcome-calls"></div>
+  <div class="section-header">NEW W1s NEEDING WELCOME CALL (Last 48hrs)</div>
+  <div id="norri-welcome"></div>
 
-    <div class="section-header">W1 STARTS &mdash; PAYMENT CHECK</div>
-    <div id="w1-payment-check"></div>
+  <div class="section-header">W1 STARTS — LAST 14 DAYS (PAYMENT CHECK)</div>
+  <div id="norri-w1payment"></div>
 
-    <div class="section-header">PAYMENT FLAGS</div>
-    <div id="payment-flags"></div>
+  <div class="section-header">PAYMENT FLAGS</div>
+  <div id="norri-payflags"></div>
 
-    <div class="section-header">SUBSCRIPTION SETUP PENDING (SLA: 24hrs)</div>
-    <div id="subscription-pending"></div>
+  <div class="section-header">SUBSCRIPTION SETUP PENDING (SLA: 24hrs)</div>
+  <div id="norri-subpending"></div>
 
-    <div class="section-header">RECENT NPS SCORES</div>
-    <div id="nps-scores"></div>
+  <div class="section-header">RECENT NPS SCORES (Last 14 Days)</div>
+  <div id="norri-nps"></div>
 
-    <div id="monday-invoice" style="display: none;">
-      <div class="section-header">MONDAY INVOICE QUEUE</div>
-      <div class="flag-card" style="border-left: 4px solid var(--warm-gold);">
-        <span class="flag-icon">&#128203;</span>
-        <div class="flag-text"><strong>Mentor invoices pending review.</strong> Check portal admin view and push to Xero. Review session counts against expected before approving.</div>
-      </div>
-    </div>
+  <div class="section-header">UPCOMING PAYMENT REFRESHES (Next 10 Days)</div>
+  <div style="margin-bottom: 8px; font-size: 12px; color: rgba(255,255,255,0.4);">Upcoming Stripe subscription renewals.</div>
+  <div id="norri-renewals" class="table-wrapper"></div>
 
-    <div class="section-header">WITHDRAWALS</div>
-    <div id="withdrawals"></div>
+  <div class="section-header">META ADS PERFORMANCE</div>
+  <div id="meta-ads-section"></div>
 
-    <div class="section-header">UPCOMING PAYMENT REFRESHES (Next 10 Days)</div>
-    <div id="upcoming-renewals"></div>
+  <div class="section-header">STRIPE OVERVIEW</div>
+  <div id="stripe-overview" class="pulse-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));"></div>
+
+  <div class="section-header">WITHDRAWALS</div>
+  <div id="norri-withdrawals"></div>
 
   </div><!-- END NORRI TAB -->
 
   <!-- TAB: OVERDUE W1s -->
   <div id="main-tab-overdue" class="main-tab-content">
+  <div class="section-header">OVERDUE W1s — SCHEDULED BUT NOT COMPLETED</div>
+  <div style="margin-bottom: 12px; font-size: 13px; color: rgba(255,255,255,0.5);">W1 date has passed but week_1_complete is still empty. Either W1 happened and wasn't logged, or family needs re-engagement.</div>
+  <div id="overdue-content"></div>
+  </div>
 
-    <div class="section-header">OVERDUE W1s</div>
-    <div id="overdue-w1s"></div>
-
-  </div><!-- END OVERDUE TAB -->
-
-</div><!-- END DASHBOARD -->
+</div>
 
 <!-- DRILL-DOWN OVERLAYS -->
-<div class="drill-overlay" id="drill-leads" onclick="if(event.target===this)closeDrillDown('leads')">
+<div class="drill-overlay" id="drill-leads">
   <div class="drill-panel">
-    <button class="drill-close" onclick="closeDrillDown('leads')">&times;</button>
-    <h3>New Leads Detail</h3>
+    <button class="drill-close" onclick="closeDrillDown('leads')">&#215;</button>
+    <h3>New Leads</h3>
     <div id="drill-leads-content"></div>
   </div>
 </div>
-<div class="drill-overlay" id="drill-booked" onclick="if(event.target===this)closeDrillDown('booked')">
+<div class="drill-overlay" id="drill-booked">
   <div class="drill-panel">
-    <button class="drill-close" onclick="closeDrillDown('booked')">&times;</button>
-    <h3>Booked Calls Detail</h3>
+    <button class="drill-close" onclick="closeDrillDown('booked')">&#215;</button>
+    <h3>Booked Calls</h3>
     <div id="drill-booked-content"></div>
   </div>
 </div>
-<div class="drill-overlay" id="drill-taken" onclick="if(event.target===this)closeDrillDown('taken')">
+<div class="drill-overlay" id="drill-taken">
   <div class="drill-panel">
-    <button class="drill-close" onclick="closeDrillDown('taken')">&times;</button>
-    <h3>DCs Completed Detail</h3>
+    <button class="drill-close" onclick="closeDrillDown('taken')">&#215;</button>
+    <h3>DCs Completed</h3>
     <div id="drill-taken-content"></div>
   </div>
 </div>
-<div class="drill-overlay" id="drill-dials" onclick="if(event.target===this)closeDrillDown('dials')">
+<div class="drill-overlay" id="drill-dials">
   <div class="drill-panel">
-    <button class="drill-close" onclick="closeDrillDown('dials')">&times;</button>
-    <h3>Setter Dials Detail</h3>
-    <div class="drill-item">Setter dials data not yet available in JSON feed.</div>
+    <button class="drill-close" onclick="closeDrillDown('dials')">&#215;</button>
+    <h3>Setter Dials</h3>
+    <div id="drill-dials-content"></div>
   </div>
 </div>
-<div class="drill-overlay" id="drill-closes" onclick="if(event.target===this)closeDrillDown('closes')">
+<div class="drill-overlay" id="drill-closes">
   <div class="drill-panel">
-    <button class="drill-close" onclick="closeDrillDown('closes')">&times;</button>
-    <h3>Closes Detail</h3>
+    <button class="drill-close" onclick="closeDrillDown('closes')">&#215;</button>
+    <h3>Closes</h3>
     <div id="drill-closes-content"></div>
   </div>
 </div>
-<div class="drill-overlay" id="drill-agreements" onclick="if(event.target===this)closeDrillDown('agreements')">
+<div class="drill-overlay" id="drill-agreements">
   <div class="drill-panel">
-    <button class="drill-close" onclick="closeDrillDown('agreements')">&times;</button>
-    <h3>Agreement Forms Detail</h3>
+    <button class="drill-close" onclick="closeDrillDown('agreements')">&#215;</button>
+    <h3>Agreement Forms</h3>
     <div id="drill-agreements-content"></div>
   </div>
 </div>
 
 <script>
-// ==================== TAB SWITCHING ====================
+// ===== HELPERS =====
+function formatDate(dateStr) {
+  if (!dateStr) return '--';
+  try {
+    var d = new Date(dateStr + 'T00:00:00');
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    return days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+  } catch(e) { return dateStr; }
+}
+
+function formatShortDate(dateStr) {
+  if (!dateStr) return '--';
+  try {
+    var d = new Date(dateStr + 'T00:00:00');
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return months[d.getMonth()] + ' ' + d.getDate();
+  } catch(e) { return dateStr; }
+}
+
+function formatTimestamp(unix) {
+  if (!unix) return '--';
+  try {
+    var d = new Date(unix * 1000);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+  } catch(e) { return '--'; }
+}
+
+function formatCurrency(num) {
+  if (num === null || num === undefined) return '--';
+  return '$' + Number(num).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+}
+
+function formatPercent(decimal) {
+  if (decimal === null || decimal === undefined) return '--';
+  return Math.round(decimal * 100) + '%';
+}
+
+function closeRateBadge(rate) {
+  if (rate === null || rate === undefined) return '<span class="badge badge-navy">--</span>';
+  var pct = typeof rate === 'number' ? Math.round(rate * 100) : rate;
+  if (pct >= 50) return '<span class="badge badge-green">' + pct + '%</span>';
+  if (pct >= 25) return '<span class="badge badge-warning">' + pct + '%</span>';
+  return '<span class="badge badge-red">' + pct + '%</span>';
+}
+
+function noData() {
+  return '<div style="padding: 24px; text-align: center; color: rgba(255,255,255,0.4); font-size: 13px; background: var(--card-bg); border: var(--card-border); border-radius: 16px;">No data available &mdash; data source pending</div>';
+}
+
+function safeVal(v, def) { return (v !== null && v !== undefined) ? v : (def !== undefined ? def : '--'); }
+
+function pulseCard(label, value, colorClass, onclick) {
+  var cls = colorClass ? ' ' + colorClass : '';
+  var oc = onclick ? ' onclick="' + onclick + '"' : '';
+  return '<div class="pulse-card"' + oc + '><div class="metric-label">' + label + '</div><div class="metric-value' + cls + '">' + safeVal(value) + '</div></div>';
+}
+
+// ===== TAB SWITCHING =====
 function switchMainTab(tab, btn) {
   document.querySelectorAll('.main-tab-content').forEach(function(el) { el.classList.remove('active'); });
   document.querySelectorAll('.main-tab-btn').forEach(function(el) { el.classList.remove('active'); });
@@ -812,13 +870,13 @@ function switchMainTab(tab, btn) {
   btn.classList.add('active');
 }
 
-function switchTab(tab, btn) {
-  ['tab-day', 'tab-week', 'tab-month'].forEach(function(id) {
-    var el = document.getElementById(id);
+function switchRepTab(tab, btn) {
+  ['day','week','month'].forEach(function(id) {
+    var el = document.getElementById('rep-tab-' + id);
     if (el) el.style.display = 'none';
   });
   btn.parentElement.querySelectorAll('.tab-btn').forEach(function(el) { el.classList.remove('active'); });
-  document.getElementById('tab-' + tab).style.display = 'block';
+  document.getElementById('rep-tab-' + tab).style.display = 'block';
   btn.classList.add('active');
 }
 
@@ -832,784 +890,501 @@ function closeDrillDown(id) {
   if (el) el.classList.remove('active');
 }
 
-// ==================== HELPERS ====================
-function fmt(v) { return (v !== null && v !== undefined) ? v : '--'; }
-function pct(n, d) { return d > 0 ? Math.round((n / d) * 100) : 0; }
-function pctStr(n, d) { return d > 0 ? Math.round((n / d) * 100) + '%' : '--'; }
-function money(v) { return v != null ? '$' + Number(v).toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0}) : '--'; }
-function moneyDec(v) { return v != null ? '$' + Number(v).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) : '--'; }
-
-function closeBadge(rate, dcsTaken) {
-  if (dcsTaken === 0) return '<span class="badge badge-navy">--</span>';
-  var p = Math.round(rate * 100) + '%';
-  if (rate >= 0.7) return '<span class="badge badge-green">' + p + '</span>';
-  if (rate >= 0.4) return '<span class="badge badge-warning">' + p + '</span>';
-  return '<span class="badge badge-red">' + p + '</span>';
-}
-
-function emptyState(msg) {
-  return '<div class="table-wrapper"><div class="empty-state">' + (msg || 'No data available') + '</div></div>';
-}
-
-function formatDateNice(dateStr) {
-  if (!dateStr) return '--';
-  var d = new Date(dateStr + 'T00:00:00');
-  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
-}
-
-function formatShortDate(dateStr) {
-  if (!dateStr) return '--';
-  var d = new Date(dateStr + 'T00:00:00');
-  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return months[d.getMonth()] + ' ' + d.getDate();
-}
-
-function nowAEDT() {
-  var now = new Date();
-  var s = now.toLocaleString('en-AU', { timeZone: 'Australia/Sydney', hour: 'numeric', minute: '2-digit', hour12: true });
-  return 'Last refreshed: ' + s + ' AEDT';
-}
-
-function hsLink(contactId, name) {
-  if (!contactId) return '<strong>' + (name || '--') + '</strong>';
-  return '<a class="hs-link" href="https://app.hubspot.com/contacts/48782903/record/0-1/' + contactId + '" target="_blank">' + name + '</a>';
-}
-
-var REP_FILTER = ['Harry', 'Elliot', 'Anthony', 'Bailey', 'Rye'];
-
-function filterReps(reps) {
-  return (reps || []).filter(function(r) { return REP_FILTER.indexOf(r.name) !== -1; });
-}
-
-// ==================== MAIN RENDER ====================
-function renderDashboard(data) {
-  // Header
-  document.getElementById('date-display').textContent = formatDateNice(data.period.today);
-  document.getElementById('last-refreshed').textContent = nowAEDT();
-
-  var pulse = data.pulse;
-  var reps = data.reps || [];
-  var filteredReps = filterReps(reps);
-  var meta = data.meta_ads || {};
-  var stripe = data.stripe || {};
-  var activation = data.activation_pipeline || {};
-  var retention = data.retention || {};
-  var mentors = data.mentors || {};
-
-  // Monday invoice
-  var today = new Date();
-  if (today.getDay() === 1) {
-    var mi = document.getElementById('monday-invoice');
-    if (mi) mi.style.display = 'block';
-  }
-
-  renderStatusFlags(data);
-  renderPulse(pulse);
-  renderTrend(pulse);
-  renderConversionFlags(pulse);
-  renderRyeGoals(pulse);
-  renderBrodieGoals(pulse);
-  renderRepBreakdown(filteredReps);
-  renderClosesPipeline(activation);
-  renderRetentionWindow(retention);
-  renderPaymentResets(retention);
-  renderPerformanceFlags(data);
-
-  // DCs tab
-  renderRepScorecards(filteredReps, pulse);
-  renderObjectionBreakdown();
-  renderNoShows();
-
-  // Brodie tab
-  renderBrodieInputs(pulse);
-  renderW1Calendar(activation);
-  renderLiveActivationPipeline(activation);
-  renderFamiliesAtRisk();
-  renderW1DoneW2Pending();
-
-  // Mentors tab
-  renderMentorCapacityPulse(mentors);
-  renderMentorSupplyForecast(mentors);
-  renderMentorCapacityTable(mentors);
-  renderMentorFlags();
-  renderMentorPipeline();
-
-  // Program tab
-  renderWelcomeCalls();
-  renderW1PaymentCheck();
-  renderPaymentFlags();
-  renderSubscriptionPending();
-  renderNpsScores();
-  renderWithdrawals();
-  renderUpcomingRenewals(stripe);
-
-  // Overdue W1s
-  renderOverdueW1s();
-
-  // Drill-down content
-  renderDrillDowns(pulse, reps);
-}
-
-// ==================== STATUS FLAGS ====================
-function renderStatusFlags(data) {
-  var el = document.getElementById('status-flags');
-  var html = '';
-  var pulse = data.pulse;
-  var mtd = pulse.mtd;
-  var closeRate = mtd.dcs_completed > 0 ? Math.round((mtd.closes / mtd.dcs_completed) * 100) : 0;
-  var crColor = closeRate >= 50 ? 'green' : closeRate >= 30 ? 'gold' : 'red';
-  var crLabel = closeRate >= 50 ? 'ON TARGET' : closeRate >= 30 ? 'MONITOR' : 'BELOW TARGET';
-  var crLabelColor = closeRate >= 50 ? 'var(--green-on)' : closeRate >= 30 ? 'var(--warm-gold)' : 'var(--red-alert)';
-
-  html += '<div class="status-card"><div class="status-dot ' + crColor + '"></div>';
-  html += '<span style="font-size: 12px; font-weight: 600;">Close Rate ' + closeRate + '% <span style="color:' + crLabelColor + ';">' + crLabel + '</span></span></div>';
-
-  var dayOfWeek = new Date().getDay();
-  if (dayOfWeek === 0 || dayOfWeek === 5 || dayOfWeek === 6) {
-    html += '<div class="status-card"><div class="status-dot gold"></div>';
-    html += '<span style="font-size: 12px; font-weight: 600;">Weekend Mode <span style="color: var(--warm-gold);">FRI-SUN</span></span></div>';
-  }
-
-  var stripe = data.stripe || {};
-  if (stripe.failed_payments > 0) {
-    html += '<div class="status-card"><div class="status-dot gold"></div>';
-    html += '<span style="font-size: 12px; font-weight: 600;">' + stripe.failed_payments + ' Failed <span style="color: var(--warm-gold);">PAYMENTS</span></span></div>';
-  }
-
-  html += '<div class="status-card"><div class="status-dot green"></div>';
-  html += '<span style="font-size: 12px; font-weight: 600;">MRR ' + money(stripe.mrr) + ' <span style="color: var(--green-on);">ACTIVE</span></span></div>';
-
-  el.innerHTML = html;
-}
-
-// ==================== PULSE ====================
-function renderPulse(pulse) {
-  var el = document.getElementById('pulse-grid');
-  var p = pulse.wtd;
-  var items = [
-    { label: 'New Leads', value: fmt(p.new_leads), cls: '', drill: 'leads' },
-    { label: 'Booked Calls', value: fmt(p.booked_calls), cls: '', drill: 'booked' },
-    { label: 'DCs Completed', value: fmt(p.dcs_completed), cls: '', drill: 'taken' },
-    { label: 'Setter Dials', value: '--', cls: '', drill: 'dials' },
-    { label: 'Closes', value: fmt(p.closes), cls: p.closes > 0 ? 'green' : '', drill: 'closes' },
-    { label: 'Agreement Forms', value: fmt(p.agreement_forms), cls: '', drill: 'agreements' },
-    { label: 'W1 Starts', value: fmt(p.w1_starts), cls: p.w1_starts > 0 ? 'green' : '', drill: '' }
-  ];
-  var html = '';
-  items.forEach(function(item) {
-    var onclick = item.drill ? ' onclick="showDrillDown(\'' + item.drill + '\')"' : '';
-    html += '<div class="pulse-card"' + onclick + '>';
-    html += '<div class="metric-label">' + item.label + '</div>';
-    html += '<div class="metric-value ' + item.cls + '">' + item.value + '</div>';
-    html += '</div>';
+document.querySelectorAll('.drill-overlay').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('active');
   });
-  el.innerHTML = html;
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.drill-overlay.active').forEach(function(el) { el.classList.remove('active'); });
+  }
+});
+
+// ===== RENDER FUNCTIONS =====
+
+function renderHeader(data) {
+  var dateEl = document.getElementById('header-date');
+  var refreshEl = document.getElementById('header-refresh');
+  if (data.period && data.period.today) {
+    dateEl.textContent = formatDate(data.period.today);
+  }
+  if (data.generated_at) {
+    var d = new Date(data.generated_at);
+    var timeStr = d.toLocaleString('en-AU', {timeZone: 'Australia/Melbourne', hour: '2-digit', minute: '2-digit', hour12: true});
+    refreshEl.textContent = 'Last refreshed: ' + timeStr + ' AEDT';
+  }
 }
 
-// ==================== 14-DAY TREND ====================
-function renderTrend(pulse) {
-  var el = document.getElementById('trend-section');
-  var trendData = [
-    { label: 'New Leads / Day', color: 'var(--warm-gold)', points: '0,52 20,22 40,37 60,37 80,37 100,27 120,27 140,37 160,17 180,27 200,32 220,40 240,37 260,47' },
-    { label: 'Booked Calls / Day', color: '#27AE60', points: '0,48 20,40 40,44 60,36 80,32 100,28 120,40 140,24 160,16 180,20 200,28 220,8 240,16 260,44' },
-    { label: 'DCs Completed / Day', color: '#104791', points: '0,44 20,36 40,48 60,36 80,28 100,48 120,40 140,28 160,36 180,40 200,48 220,52 240,36 260,44' },
-    { label: 'Closes / Day', color: 'var(--green-on)', points: '0,44 20,52 40,52 60,36 80,44 100,52 120,52 140,36 160,44 180,52 200,52 220,36 240,44 260,44' }
-  ];
+function renderPerfFlags(data) {
+  var el = document.getElementById('perf-flags');
   var html = '';
-  trendData.forEach(function(t) {
-    var lastPoint = t.points.split(' ').pop();
-    var cx = lastPoint.split(',')[0];
-    var cy = lastPoint.split(',')[1];
-    html += '<div style="background: var(--card-bg); border: var(--card-border); border-radius: 16px; padding: 16px;">';
-    html += '<div style="font-size: 11px; color: var(--warm-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">' + t.label + '</div>';
-    html += '<svg width="100%" height="60" viewBox="0 0 280 60" preserveAspectRatio="none">';
-    html += '<polyline points="' + t.points + '" fill="none" stroke="' + t.color + '" stroke-width="2"/>';
-    html += '<circle cx="' + cx + '" cy="' + cy + '" r="3" fill="' + t.color + '"/>';
-    html += '</svg>';
-    html += '<div style="display: flex; justify-content: space-between; font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 4px;">';
-    html += '<span>14 days ago</span><span>7 days ago</span><span>3 days ago</span><span>Today</span>';
-    html += '</div></div>';
-  });
+  var mtd = data.pulse && data.pulse.mtd;
+  if (mtd && mtd.dcs_completed > 0) {
+    var cr = Math.round((mtd.closes / mtd.dcs_completed) * 100);
+    var crColor = cr >= 50 ? 'green' : (cr >= 30 ? 'gold' : 'red');
+    var crLabel = cr >= 50 ? 'ON TARGET' : (cr >= 30 ? 'MONITOR' : 'BELOW TARGET');
+    var crStyle = cr >= 50 ? 'color: var(--green-on);' : (cr >= 30 ? 'color: var(--warm-gold);' : 'color: var(--red-alert);');
+    html += '<div class="status-card"><div class="status-dot ' + crColor + '"></div><span style="font-size: 12px; font-weight: 600;">Close Rate ' + cr + '% <span style="' + crStyle + '">' + crLabel + '</span></span></div>';
+  }
+  if (data.stripe && data.stripe.failed_payments > 0) {
+    html += '<div class="status-card"><div class="status-dot gold"></div><span style="font-size: 12px; font-weight: 600;">' + data.stripe.failed_payments + ' Failed <span style="color: var(--warm-gold);">PAYMENTS</span></span></div>';
+  }
   el.innerHTML = html;
 }
 
-// ==================== CONVERSION FLAGS ====================
-function renderConversionFlags(pulse) {
+function renderDailyPulse(data) {
+  var el = document.getElementById('daily-pulse');
+  var p = data.pulse && data.pulse.today ? data.pulse.today : {};
+  el.innerHTML =
+    pulseCard('New Leads', safeVal(p.new_leads, 0), '', 'showDrillDown(\"leads\")') +
+    pulseCard('Booked Calls', safeVal(p.booked_calls, 0), '', 'showDrillDown(\"booked\")') +
+    pulseCard('DCs Completed', safeVal(p.dcs_completed, 0), '', 'showDrillDown(\"taken\")') +
+    pulseCard('Setter Dials', '--', '', 'showDrillDown(\"dials\")') +
+    pulseCard('Closes', safeVal(p.closes, 0), 'green', 'showDrillDown(\"closes\")') +
+    pulseCard('Agreement Forms', safeVal(p.agreement_forms, 0), '', 'showDrillDown(\"agreements\")') +
+    pulseCard('W1 Starts', safeVal(p.w1_starts, 0), 'green', '');
+}
+
+function renderTrend() {
+  document.getElementById('trend-section').innerHTML = noData();
+}
+
+function renderConversionFlags(data) {
   var el = document.getElementById('conversion-flags');
-  var p = pulse.wtd;
-  var leadToBooked = pct(p.booked_calls, p.new_leads);
-  var bookedToTaken = pct(p.dcs_completed, p.booked_calls);
-  var takenToClosed = pct(p.closes, p.dcs_completed);
+  var p = data.pulse && data.pulse.today ? data.pulse.today : {};
+  var leads = p.new_leads || 0;
+  var booked = p.booked_calls || 0;
+  var taken = p.dcs_completed || 0;
+  var closes = p.closes || 0;
 
-  function flagColor(val) { return val >= 40 ? 'var(--green-on)' : val >= 20 ? 'var(--warm-gold)' : 'var(--red-alert)'; }
+  var lbPct = leads > 0 ? Math.round((booked / leads) * 100) : 0;
+  var btPct = booked > 0 ? Math.round((taken / booked) * 100) : 0;
+  var tcPct = taken > 0 ? Math.round((closes / taken) * 100) : 0;
 
-  var items = [
-    { label: 'Lead &rarr; Booked', val: leadToBooked + '%', color: flagColor(leadToBooked), detail: p.booked_calls + ' booked / ' + p.new_leads + ' leads (WTD)' },
-    { label: 'Booked &rarr; Taken', val: bookedToTaken + '%', color: flagColor(bookedToTaken), detail: p.dcs_completed + ' taken / ' + p.booked_calls + ' booked (WTD)' },
-    { label: 'Taken &rarr; Closed', val: takenToClosed + '%', color: flagColor(takenToClosed), detail: p.closes + ' closes / ' + p.dcs_completed + ' taken (WTD)' }
-  ];
+  function convCard(label, pct, num, denom, numLabel, denomLabel) {
+    var color = pct >= 40 ? 'var(--green-on)' : 'var(--warm-gold)';
+    return '<div style="flex: 1; min-width: 200px; padding: 12px 16px; border-radius: 12px; background: rgba(39,174,96,0.08); border-left: 4px solid var(--green-on);">' +
+      '<div style="font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 600;">' + label + '</div>' +
+      '<div style="font-size: 18px; font-weight: 700; color: ' + color + ';">' + pct + '%</div>' +
+      '<div style="font-size: 10px; color: rgba(255,255,255,0.3);">' + num + ' ' + numLabel + ' / ' + denom + ' ' + denomLabel + '</div></div>';
+  }
 
-  var html = '';
-  items.forEach(function(item) {
-    html += '<div style="flex: 1; min-width: 200px; padding: 12px 16px; border-radius: 12px; background: rgba(39,174,96,0.08); border-left: 4px solid var(--green-on);">';
-    html += '<div style="font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 600;">' + item.label + '</div>';
-    html += '<div style="font-size: 18px; font-weight: 700; color: ' + item.color + ';">' + item.val + '</div>';
-    html += '<div style="font-size: 10px; color: rgba(255,255,255,0.3);">' + item.detail + '</div>';
-    html += '</div>';
-  });
-  el.innerHTML = html;
+  el.innerHTML =
+    convCard('Lead &rarr; Booked', lbPct, booked, leads, 'booked', 'leads') +
+    convCard('Booked &rarr; Taken', btPct, taken, booked, 'taken', 'booked') +
+    convCard('Taken &rarr; Closed', tcPct, closes, taken, 'closes', 'taken');
 }
 
-// ==================== RYE GOALS ====================
-function renderRyeGoals(pulse) {
+function renderRyeGoals(data) {
   var el = document.getElementById('rye-goals');
-  var mtd = pulse.mtd;
-  var wtd = pulse.wtd;
-  var callsToW1 = mtd.dcs_completed > 0 ? Math.round((mtd.w1_starts / mtd.dcs_completed) * 100) : 0;
-  var callsToW1Color = callsToW1 >= 25 ? 'green' : callsToW1 >= 18 ? 'gold' : 'red';
-  var callsToW1Fill = Math.min(callsToW1 / 25 * 100, 100);
-  var callsToW1Status = callsToW1 >= 25 ? 'ABOVE TARGET' : 'BELOW TARGET';
-  var callsToW1StatusColor = callsToW1 >= 25 ? 'var(--green-on)' : 'var(--red-alert)';
+  var wtd = data.pulse && data.pulse.wtd ? data.pulse.wtd : {};
+  var mtd = data.pulse && data.pulse.mtd ? data.pulse.mtd : {};
 
-  var html = '<div class="goal-panel">';
-  html += '<div class="panel-title">Pipeline Performance (Rolling Month)</div>';
-  html += '<div class="goal-row"><span class="goal-label">W1 Starts This Week (WTD)</span><span class="goal-value green">' + fmt(wtd.w1_starts) + '</span></div>';
-  html += '<div class="goal-row"><span class="goal-label">W1 Starts This Month (MTD)</span><span class="goal-value green">' + fmt(mtd.w1_starts) + '</span></div>';
-  html += '<div class="goal-row"><span class="goal-label">DCs Completed (MTD)</span><span class="goal-value">' + fmt(mtd.dcs_completed) + '</span></div>';
-  html += '<div class="goal-row"><span class="goal-label">Closes (MTD)</span><span class="goal-value green">' + fmt(mtd.closes) + '</span></div>';
-  html += '</div>';
+  var dcToW1 = mtd.dcs_completed > 0 ? Math.round((mtd.w1_starts / mtd.dcs_completed) * 100) : 0;
+  var dcToW1Width = Math.min(dcToW1 * 4, 100);
+  var dcToW1Color = dcToW1 >= 25 ? 'green' : (dcToW1 >= 18 ? 'gold' : 'red');
+  var dcToW1FillClass = dcToW1 >= 25 ? 'green-fill' : (dcToW1 >= 18 ? 'gold-fill' : 'red-fill');
+  var dcToW1Status = dcToW1 >= 25 ? 'ABOVE TARGET' : 'BELOW TARGET';
+  var dcToW1StatusColor = dcToW1 >= 25 ? 'var(--green-on)' : 'var(--red-alert)';
 
-  html += '<div class="goal-panel">';
-  html += '<div class="panel-title">Calls Taken to W1 % (Rolling Month)</div>';
-  html += '<div class="goal-row"><span class="goal-label">Current</span><span class="goal-value ' + callsToW1Color + '">' + callsToW1 + '%</span></div>';
-  html += '<div class="progress-container">';
-  html += '<div class="progress-meta"><span>Baseline: 18%</span><span>Target: 25%</span></div>';
-  html += '<div class="progress-track"><div class="progress-fill ' + callsToW1Color + '-fill" style="width: ' + callsToW1Fill + '%;"></div>';
-  html += '<div class="progress-target-line" style="left: 100%;"></div></div></div>';
-  html += '<div style="margin-top: 16px; padding: 10px 14px; background: rgba(39, 174, 96, 0.1); border-radius: 10px; border-left: 3px solid ' + callsToW1StatusColor + ';">';
-  html += '<div style="font-size: 12px; color: ' + callsToW1StatusColor + '; font-weight: 600;">' + callsToW1Status + '</div>';
-  html += '<div style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px;">' + mtd.w1_starts + ' W1s from ' + mtd.dcs_completed + ' completed DCs = ' + callsToW1 + '%</div>';
-  html += '</div></div>';
-
-  el.innerHTML = html;
+  el.innerHTML =
+    '<div class="goal-panel">' +
+      '<div class="panel-title">Pipeline Performance (Rolling Month)</div>' +
+      '<div class="goal-row"><span class="goal-label">W1 Starts This Week (WTD)</span><span class="goal-value green">' + safeVal(wtd.w1_starts, 0) + '</span></div>' +
+      '<div class="goal-row"><span class="goal-label">W1 Starts This Month (MTD)</span><span class="goal-value green">' + safeVal(mtd.w1_starts, 0) + '</span></div>' +
+      '<div class="goal-row"><span class="goal-label">DCs Completed (MTD)</span><span class="goal-value">' + safeVal(mtd.dcs_completed, 0) + '</span></div>' +
+      '<div class="goal-row"><span class="goal-label">Closes (MTD)</span><span class="goal-value green">' + safeVal(mtd.closes, 0) + '</span></div>' +
+    '</div>' +
+    '<div class="goal-panel">' +
+      '<div class="panel-title">Calls Taken to W1 % (Rolling Month)</div>' +
+      '<div class="goal-row"><span class="goal-label">Current</span><span class="goal-value ' + dcToW1Color + '">' + dcToW1 + '%</span></div>' +
+      '<div class="progress-container">' +
+        '<div class="progress-meta"><span>Baseline: 18%</span><span>Target: 25%</span></div>' +
+        '<div class="progress-track"><div class="progress-fill ' + dcToW1FillClass + '" style="width: ' + dcToW1Width + '%;"></div><div class="progress-target-line" style="left: 100%;"></div></div>' +
+      '</div>' +
+      '<div style="margin-top: 16px; padding: 10px 14px; background: rgba(' + (dcToW1 >= 25 ? '39, 174, 96' : '231, 76, 60') + ', 0.1); border-radius: 10px; border-left: 3px solid ' + dcToW1StatusColor + ';">' +
+        '<div style="font-size: 12px; color: ' + dcToW1StatusColor + '; font-weight: 600;">' + dcToW1Status + '</div>' +
+        '<div style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px;">' + safeVal(mtd.w1_starts, 0) + ' W1s from ' + safeVal(mtd.dcs_completed, 0) + ' completed DCs = ' + dcToW1 + '%</div>' +
+      '</div>' +
+    '</div>';
 }
 
-// ==================== BRODIE GOALS ====================
-function renderBrodieGoals(pulse) {
+function renderBrodieGoals(data) {
   var el = document.getElementById('brodie-goals');
-  var mtd = pulse.mtd;
-  var wtd = pulse.wtd;
-  var agreementToW1 = mtd.closes > 0 ? Math.round((mtd.w1_starts / mtd.closes) * 100) : 0;
-  var a2w1Color = agreementToW1 >= 60 ? 'green' : agreementToW1 >= 40 ? 'gold' : 'red';
-  var a2w1Fill = Math.min(agreementToW1 / 60 * 100, 100);
-  var closeToW1Rate = mtd.closes > 0 ? Math.round((mtd.w1_starts / mtd.closes) * 100) : 0;
-  var pendingInPipeline = mtd.closes - mtd.w1_starts;
-  if (pendingInPipeline < 0) pendingInPipeline = 0;
+  var mtd = data.pulse && data.pulse.mtd ? data.pulse.mtd : {};
+  var wtd = data.pulse && data.pulse.wtd ? data.pulse.wtd : {};
 
-  var html = '<div class="goal-panel">';
-  html += '<div class="panel-title">Activation Speed (Rolling Month)</div>';
-  html += '<div class="goal-row"><span class="goal-label">Agreement to W1 %</span><span class="goal-value ' + a2w1Color + '">' + agreementToW1 + '%</span></div>';
-  html += '<div class="progress-container">';
-  html += '<div class="progress-meta"><span>' + mtd.w1_starts + ' W1s from ' + mtd.closes + ' closes (MTD)</span><span>Target: 60%+</span></div>';
-  html += '<div class="progress-track"><div class="progress-fill ' + a2w1Color + '-fill" style="width: ' + a2w1Fill + '%;"></div>';
-  html += '<div class="progress-target-line" style="left: 100%;"></div></div></div>';
-  html += '</div>';
+  var closeToW1 = mtd.closes > 0 ? Math.round((mtd.w1_starts / mtd.closes) * 100) : 0;
+  var closeToW1Width = Math.min(closeToW1 * 1.67, 100);
+  var closeToW1Color = closeToW1 >= 60 ? 'green' : (closeToW1 >= 40 ? 'gold' : 'red');
+  var closeToW1FillClass = closeToW1 >= 60 ? 'green-fill' : (closeToW1 >= 40 ? 'gold-fill' : 'red-fill');
+  var closeToW1Status = closeToW1 >= 60 ? 'ABOVE TARGET' : 'BELOW TARGET';
+  var closeToW1StatusColor = closeToW1 >= 60 ? 'var(--green-on)' : 'var(--red-alert)';
 
-  html += '<div class="goal-panel">';
-  html += '<div class="panel-title">W1 Starts Summary</div>';
-  html += '<div class="goal-row"><span class="goal-label">W1 Starts MTD</span><span class="goal-value green">' + fmt(mtd.w1_starts) + '</span></div>';
-  html += '<div class="goal-row"><span class="goal-label">W1 Starts WTD</span><span class="goal-value green">' + fmt(wtd.w1_starts) + '</span></div>';
-  html += '<div class="goal-row"><span class="goal-label">Closes MTD</span><span class="goal-value green">' + fmt(mtd.closes) + '</span></div>';
-  html += '<div class="goal-row"><span class="goal-label">Close-to-W1 Rate MTD</span><span class="goal-value ' + a2w1Color + '">' + closeToW1Rate + '%</span></div>';
-  html += '<div style="margin-top: 12px; padding: 10px 14px; background: rgba(200, 169, 81, 0.08); border-radius: 10px; border-left: 3px solid var(--warm-gold);">';
-  var statusLabel = agreementToW1 >= 60 ? 'ABOVE TARGET' : 'BELOW TARGET';
-  var statusColor = agreementToW1 >= 60 ? 'var(--green-on)' : 'var(--red-alert)';
-  html += '<div style="font-size: 12px; color: ' + statusColor + '; font-weight: 600;">' + statusLabel + '</div>';
-  html += '<div style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 4px;">' + mtd.closes + ' closes, ' + mtd.w1_starts + ' W1s. ' + pendingInPipeline + ' families still in activation pipeline.</div>';
-  html += '</div></div>';
+  var pipeline = data.activation_pipeline || {};
+  var pipelineCount = 0;
+  ['deposit_paid','agreement_signed','mentor_allocated','w1_scheduled'].forEach(function(k) {
+    if (pipeline[k]) pipelineCount += pipeline[k].length;
+  });
 
-  el.innerHTML = html;
+  el.innerHTML =
+    '<div class="goal-panel">' +
+      '<div class="panel-title">Activation Speed (Rolling Month)</div>' +
+      '<div class="goal-row"><span class="goal-label">Close to W1 %</span><span class="goal-value ' + closeToW1Color + '">' + closeToW1 + '%</span></div>' +
+      '<div class="progress-container">' +
+        '<div class="progress-meta"><span>' + safeVal(mtd.w1_starts, 0) + ' W1s from ' + safeVal(mtd.closes, 0) + ' closes (MTD)</span><span>Target: 60%+</span></div>' +
+        '<div class="progress-track"><div class="progress-fill ' + closeToW1FillClass + '" style="width: ' + closeToW1Width + '%;"></div><div class="progress-target-line" style="left: 100%;"></div></div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="goal-panel">' +
+      '<div class="panel-title">W1 Starts Summary</div>' +
+      '<div class="goal-row"><span class="goal-label">W1 Starts MTD</span><span class="goal-value green">' + safeVal(mtd.w1_starts, 0) + '</span></div>' +
+      '<div class="goal-row"><span class="goal-label">W1 Starts WTD</span><span class="goal-value green">' + safeVal(wtd.w1_starts, 0) + '</span></div>' +
+      '<div class="goal-row"><span class="goal-label">Closes MTD</span><span class="goal-value green">' + safeVal(mtd.closes, 0) + '</span></div>' +
+      '<div class="goal-row"><span class="goal-label">Close-to-W1 Rate MTD</span><span class="goal-value ' + closeToW1Color + '">' + closeToW1 + '%</span></div>' +
+      '<div style="margin-top: 12px; padding: 10px 14px; background: rgba(200, 169, 81, 0.08); border-radius: 10px; border-left: 3px solid var(--warm-gold);">' +
+        '<div style="font-size: 12px; color: ' + closeToW1StatusColor + '; font-weight: 600;">' + closeToW1Status + '</div>' +
+        '<div style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 4px;">' + safeVal(mtd.closes, 0) + ' closes, ' + safeVal(mtd.w1_starts, 0) + ' W1s. ' + pipelineCount + ' families still in activation pipeline.</div>' +
+      '</div>' +
+    '</div>';
 }
 
-// ==================== REP BREAKDOWN ====================
-function renderRepBreakdown(reps) {
-  // Day (today)
-  var dayEl = document.getElementById('tab-day');
-  var html = '<table><thead><tr><th>Rep</th><th>Total Dials</th><th>Setting Booked</th><th>DC Taken</th><th>DC Closed</th><th>W1 Starts</th><th>Show %</th><th>Close %</th></tr></thead><tbody>';
-  var totDC = 0, totClose = 0, totW1 = 0;
-  reps.forEach(function(r) {
-    var d = r.today;
-    totDC += d.dcs_taken; totClose += d.closes; totW1 += d.w1_starts;
-    html += '<tr><td><strong>' + r.name + '</strong></td><td>--</td><td>--</td>';
-    html += '<td>' + d.dcs_taken + '</td><td>' + d.closes + '</td><td>' + d.w1_starts + '</td>';
-    html += '<td>' + (d.dcs_taken > 0 ? '<span class="badge badge-green">100%</span>' : '<span class="badge badge-navy">--</span>') + '</td>';
-    html += '<td>' + closeBadge(d.close_rate, d.dcs_taken) + '</td></tr>';
-  });
-  var teamCloseRate = totDC > 0 ? Math.round((totClose / totDC) * 100) + '%' : '--';
-  html += '<tr class="total-row"><td>TEAM TOTAL</td><td>--</td><td>--</td><td>' + totDC + '</td><td>' + totClose + '</td><td>' + totW1 + '</td><td>--</td><td>' + teamCloseRate + '</td></tr>';
-  html += '</tbody></table>';
-  dayEl.innerHTML = html;
+function renderRepTable(reps, period, containerId) {
+  var el = document.getElementById(containerId);
+  if (!reps || reps.length === 0) { el.innerHTML = noData(); return; }
 
-  // Week (wtd)
-  var weekEl = document.getElementById('tab-week');
-  html = '<table><thead><tr><th>Rep</th><th>Total Dials</th><th>Setting Booked</th><th>DC Taken</th><th>DC Closed</th><th>W1 Starts</th><th>Close %</th></tr></thead><tbody>';
-  totDC = 0; totClose = 0; totW1 = 0;
-  reps.forEach(function(r) {
-    var d = r.wtd;
-    totDC += d.dcs_taken; totClose += d.closes; totW1 += d.w1_starts;
-    html += '<tr><td><strong>' + r.name + '</strong></td><td>--</td><td>--</td>';
-    html += '<td>' + d.dcs_taken + '</td><td>' + d.closes + '</td><td>' + d.w1_starts + '</td>';
-    html += '<td>' + closeBadge(d.close_rate, d.dcs_taken) + '</td></tr>';
-  });
-  teamCloseRate = totDC > 0 ? Math.round((totClose / totDC) * 100) + '%' : '--';
-  html += '<tr class="total-row"><td>TEAM TOTAL</td><td>--</td><td>--</td><td>' + totDC + '</td><td>' + totClose + '</td><td>' + totW1 + '</td><td>' + teamCloseRate + '</td></tr>';
-  html += '</tbody></table>';
-  weekEl.innerHTML = html;
+  var isMonth = period === 'mtd';
 
-  // Month (mtd)
-  var monthEl = document.getElementById('tab-month');
-  html = '<table><thead><tr><th>Rep</th><th>DC Taken</th><th>DC Closed</th><th>W1 Starts</th><th>Close %</th><th>Close-to-W1 %</th></tr></thead><tbody>';
-  totDC = 0; totClose = 0; totW1 = 0;
-  reps.forEach(function(r) {
-    var d = r.mtd;
-    totDC += d.dcs_taken; totClose += d.closes; totW1 += d.w1_starts;
-    var c2w1 = d.closes > 0 ? Math.round((d.w1_starts / d.closes) * 100) + '%' : '--';
-    html += '<tr><td><strong>' + r.name + '</strong></td>';
-    html += '<td>' + d.dcs_taken + '</td><td>' + d.closes + '</td><td>' + d.w1_starts + '</td>';
-    html += '<td>' + closeBadge(d.close_rate, d.dcs_taken) + '</td><td>' + c2w1 + '</td></tr>';
-  });
-  teamCloseRate = totDC > 0 ? Math.round((totClose / totDC) * 100) + '%' : '--';
-  var teamC2W1 = totClose > 0 ? Math.round((totW1 / totClose) * 100) + '%' : '--';
-  html += '<tr class="total-row"><td>TEAM TOTAL</td><td>' + totDC + '</td><td>' + totClose + '</td><td>' + totW1 + '</td><td>' + teamCloseRate + '</td><td>' + teamC2W1 + '</td></tr>';
-  html += '</tbody></table>';
-  monthEl.innerHTML = html;
-}
-
-// ==================== CLOSES PIPELINE ====================
-function renderClosesPipeline(activation) {
-  var el = document.getElementById('closes-pipeline');
-  var scheduled = activation.w1_scheduled || [];
-  if (scheduled.length === 0) {
-    el.innerHTML = emptyState('No closes pipeline data available');
-    return;
+  var headerCols = '<th>Rep</th><th>Total Dials</th><th>Setting Booked</th><th>DC Taken</th><th>DC Closed</th><th>W1 Starts</th><th>Close %</th>';
+  if (isMonth) {
+    headerCols = '<th>Rep</th><th>DC Taken</th><th>DC Closed</th><th>W1 Starts</th><th>Close %</th>';
   }
-  var html = '<div class="table-wrapper"><table>';
-  html += '<thead><tr><th>Name</th><th>W1 Date</th><th>Activation Stage</th></tr></thead><tbody>';
-  scheduled.forEach(function(c) {
-    var stage = c.w1_activation_stage || '--';
-    var stageBadge = stage === '--' ? '<span class="badge badge-navy">--</span>' : '<span class="badge badge-warning">' + stage + '</span>';
-    html += '<tr><td><strong>' + (c.name || '--') + '</strong></td>';
-    html += '<td>' + formatShortDate(c.date) + '</td>';
-    html += '<td>' + stageBadge + '</td></tr>';
-  });
-  html += '</tbody></table></div>';
-  el.innerHTML = html;
-}
 
-// ==================== RETENTION WINDOW ====================
-function renderRetentionWindow(retention) {
-  var el = document.getElementById('retention-window');
-  var items = retention.session_7_plus || [];
-  if (items.length === 0) {
-    el.innerHTML = emptyState('No retention data available');
-    return;
+  var html = '<table><thead><tr>' + headerCols + '</tr></thead><tbody>';
+  var totTaken = 0, totCloses = 0, totW1 = 0;
+
+  reps.forEach(function(rep) {
+    var d = isMonth ? rep.mtd : (period === 'wtd' ? rep.wtd : rep.today);
+    if (!d) d = {};
+    var taken = safeVal(d.dcs_taken, 0);
+    var closes = safeVal(d.closes, 0);
+    var w1 = safeVal(d.w1_starts, 0);
+    var cr = d.dcs_taken > 0 ? d.close_rate : null;
+    totTaken += (d.dcs_taken || 0);
+    totCloses += (d.closes || 0);
+    totW1 += (d.w1_starts || 0);
+
+    if (isMonth) {
+      html += '<tr><td><strong>' + rep.name + '</strong></td><td>' + taken + '</td><td>' + closes + '</td><td>' + w1 + '</td><td>' + closeRateBadge(cr) + '</td></tr>';
+    } else {
+      html += '<tr><td><strong>' + rep.name + '</strong></td><td>--</td><td>--</td><td>' + taken + '</td><td>' + closes + '</td><td>' + w1 + '</td><td>' + closeRateBadge(cr) + '</td></tr>';
+    }
+  });
+
+  var totalCR = totTaken > 0 ? Math.round((totCloses / totTaken) * 100) + '%' : '--';
+  if (isMonth) {
+    html += '<tr class="total-row"><td>TEAM TOTAL</td><td>' + totTaken + '</td><td>' + totCloses + '</td><td>' + totW1 + '</td><td>' + totalCR + '</td></tr>';
+  } else {
+    html += '<tr class="total-row"><td>TEAM TOTAL</td><td>--</td><td>--</td><td>' + totTaken + '</td><td>' + totCloses + '</td><td>' + totW1 + '</td><td>' + totalCR + '</td></tr>';
   }
-  var html = '<div class="table-wrapper"><table>';
-  html += '<thead><tr><th>Name</th><th>Son</th><th>Program</th><th>Session #</th><th>Total Paid</th><th>Stripe Status</th></tr></thead><tbody>';
-  items.forEach(function(c) {
-    html += '<tr>';
-    html += '<td><strong>' + (c.name || '--') + '</strong></td>';
-    html += '<td>--</td><td>--</td>';
-    html += '<td><span class="badge badge-gold">' + fmt(c.session_count) + '</span></td>';
-    html += '<td>--</td>';
-    html += '<td><span class="badge badge-green">Active</span></td>';
-    html += '</tr>';
-  });
-  html += '</tbody></table></div>';
+
+  html += '</tbody></table>';
   el.innerHTML = html;
 }
 
-// ==================== PAYMENT RESETS ====================
-function renderPaymentResets(retention) {
+function renderRepBreakdown(data) {
+  var reps = data.reps || [];
+  renderRepTable(reps, 'today', 'rep-tab-day');
+  renderRepTable(reps, 'wtd', 'rep-tab-week');
+  renderRepTable(reps, 'mtd', 'rep-tab-month');
+}
+
+function renderDCClosesPipeline() {
+  document.getElementById('dc-closes-pipeline').innerHTML = noData();
+}
+
+function renderRetentionSession7(data) {
+  var el = document.getElementById('retention-session7');
+  var items = data.retention && data.retention.session_7_plus ? data.retention.session_7_plus : [];
+  if (items.length === 0) { el.innerHTML = noData(); return; }
+
+  var html = '<table><thead><tr><th>Name</th><th>Session Count</th><th>Payment Reset Date</th></tr></thead><tbody>';
+  items.forEach(function(item) {
+    html += '<tr><td><strong>' + safeVal(item.name) + '</strong></td>' +
+      '<td><span class="badge badge-gold">' + safeVal(item.session_count) + '</span></td>' +
+      '<td>' + formatShortDate(item.payment_reset_date) + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderPaymentResets(data) {
   var el = document.getElementById('payment-resets');
-  var items = retention.session_7_plus || [];
-  var now = new Date();
-  var thirtyDays = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
-  var resets = items.filter(function(c) {
-    if (!c.payment_reset_date) return false;
-    var d = new Date(c.payment_reset_date + 'T00:00:00');
-    return d >= now && d <= thirtyDays;
+  var items = data.retention && data.retention.payment_resets_30d ? data.retention.payment_resets_30d : [];
+  if (items.length === 0) { el.innerHTML = noData(); return; }
+
+  var html = '<table><thead><tr><th>Name</th><th>Payment Reset Date</th></tr></thead><tbody>';
+  items.forEach(function(item) {
+    html += '<tr><td><strong>' + safeVal(item.name) + '</strong></td><td>' + formatShortDate(item.payment_reset_date) + '</td></tr>';
   });
-  if (resets.length === 0) {
-    el.innerHTML = emptyState('No payment resets in the next 30 days');
-    return;
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderPerfFlagsDetail() {
+  document.getElementById('perf-flags-detail').innerHTML = noData();
+}
+
+// ===== DCs TAB =====
+function renderRyeScorecards(data) {
+  var el = document.getElementById('rye-scorecards');
+  var reps = data.reps || [];
+  if (reps.length === 0) { el.innerHTML = noData(); return; }
+
+  var html = '<table><thead><tr><th>Rep</th><th>Calls Taken</th><th>Close Rate</th><th>W1 Starts</th><th>Calls-to-W1 %</th></tr></thead><tbody>';
+  var totTaken = 0, totCloses = 0, totW1 = 0;
+
+  reps.forEach(function(rep) {
+    var d = rep.mtd || {};
+    var taken = d.dcs_taken || 0;
+    var closes = d.closes || 0;
+    var w1 = d.w1_starts || 0;
+    var cr = d.close_rate;
+    var callsToW1 = taken > 0 ? Math.round((w1 / taken) * 100) + '%' : '--';
+    totTaken += taken;
+    totCloses += closes;
+    totW1 += w1;
+
+    html += '<tr><td><strong>' + rep.name + '</strong></td><td>' + taken + '</td><td>' + closeRateBadge(cr) + '</td><td>' + w1 + '</td><td>' + callsToW1 + '</td></tr>';
+  });
+
+  var totalCR = totTaken > 0 ? Math.round((totCloses / totTaken) * 100) + '%' : '--';
+  var totalC2W1 = totTaken > 0 ? Math.round((totW1 / totTaken) * 100) + '%' : '--';
+  html += '<tr class="total-row"><td>TEAM</td><td>' + totTaken + '</td><td>' + totalCR + '</td><td>' + totW1 + '</td><td>' + totalC2W1 + '</td></tr>';
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderRyeTab(data) {
+  renderRyeScorecards(data);
+  document.getElementById('rye-objections').innerHTML = noData();
+  document.getElementById('rye-noshows').innerHTML = noData();
+}
+
+// ===== DC -> W1 TAB =====
+function renderBrodieTab(data) {
+  document.getElementById('brodie-inputs').innerHTML = noData();
+  document.getElementById('brodie-calendar').innerHTML = noData();
+
+  // Live activation pipeline
+  var pipeline = data.activation_pipeline || {};
+  var items = pipeline.agreement_signed || [];
+  var el = document.getElementById('brodie-pipeline');
+  if (items.length === 0) {
+    el.innerHTML = '<table><thead><tr><th>Name</th><th>Date</th><th>Stage</th></tr></thead><tbody><tr><td colspan="3" style="text-align:center;padding:20px;color:rgba(255,255,255,0.4);">No families in agreement_signed stage</td></tr></tbody></table>';
+  } else {
+    var html = '<table><thead><tr><th>Name</th><th>Date</th><th>Stage</th></tr></thead><tbody>';
+    items.forEach(function(item) {
+      html += '<tr><td><strong>' + safeVal(item.name) + '</strong></td><td>' + formatShortDate(item.date) + '</td><td><span class="badge badge-gold">' + safeVal(item.w1_activation_stage, '--') + '</span></td></tr>';
+    });
+    html += '</tbody></table>';
+    el.innerHTML = html;
   }
-  resets.sort(function(a, b) { return (a.payment_reset_date || '').localeCompare(b.payment_reset_date || ''); });
-  var html = '<div class="table-wrapper"><table>';
-  html += '<thead><tr><th>Name</th><th>Session #</th><th>Reset Date</th></tr></thead><tbody>';
-  resets.forEach(function(c) {
-    html += '<tr><td><strong>' + (c.name || '--') + '</strong></td>';
-    html += '<td>' + fmt(c.session_count) + '</td>';
-    html += '<td><strong>' + formatShortDate(c.payment_reset_date) + '</strong></td></tr>';
-  });
-  html += '</tbody></table></div>';
-  el.innerHTML = html;
+
+  document.getElementById('brodie-risk').innerHTML = noData();
+  document.getElementById('brodie-w2pending').innerHTML = noData();
 }
 
-// ==================== PERFORMANCE FLAGS ====================
-function renderPerformanceFlags(data) {
-  var el = document.getElementById('performance-flags');
-  var html = '';
-  var reps = filterReps(data.reps || []);
-  var pulse = data.pulse;
-  var mtd = pulse.mtd;
-  var wtd = pulse.wtd;
-  var teamCloseRate = mtd.dcs_completed > 0 ? Math.round((mtd.closes / mtd.dcs_completed) * 100) : 0;
-
-  // Red flags: low close rate MTD
-  reps.forEach(function(r) {
-    if (r.mtd.dcs_taken >= 3 && r.mtd.close_rate < 0.3) {
-      html += '<div class="flag-card" style="border-left: 4px solid var(--red-alert);">';
-      html += '<span class="flag-icon">&#128308;</span>';
-      html += '<div class="flag-text"><strong>' + r.name + ': ' + r.mtd.dcs_taken + ' DCs MTD but only ' + r.mtd.closes + ' closes (' + Math.round(r.mtd.close_rate * 100) + '%).</strong> Close rate needs attention.</div></div>';
-    }
-  });
-
-  // W1 starts flag
-  html += '<div class="flag-card" style="border-left: 4px solid var(--warm-gold);">';
-  html += '<span class="flag-icon">&#128993;</span>';
-  html += '<div class="flag-text"><strong>W1 pace:</strong> ' + wtd.w1_starts + ' W1 starts this week, ' + mtd.w1_starts + ' MTD. ' + mtd.closes + ' closes MTD with ' + Math.max(mtd.closes - mtd.w1_starts, 0) + ' families still in activation pipeline.</div></div>';
-
-  // Green: team close rate
-  if (teamCloseRate >= 50) {
-    html += '<div class="flag-card" style="border-left: 4px solid var(--green-on);">';
-    html += '<span class="flag-icon">&#128994;</span>';
-    html += '<div class="flag-text"><strong>Close rate ' + teamCloseRate + '% MTD.</strong> DC team converting well. ' + wtd.closes + ' closes this week from ' + wtd.dcs_completed + ' DCs.</div></div>';
-  }
-
-  // Green highlight: 100% close rate reps (WTD with >= 2 DCs)
-  reps.forEach(function(r) {
-    if (r.wtd.dcs_taken >= 2 && r.wtd.close_rate >= 1.0) {
-      html += '<div class="flag-card" style="border-left: 4px solid var(--green-on);">';
-      html += '<span class="flag-icon">&#128994;</span>';
-      html += '<div class="flag-text"><strong>' + r.name + ': ' + r.wtd.closes + '/' + r.wtd.dcs_taken + ' closes WTD (100% close rate).</strong> Strongest closer on the team this week.</div></div>';
-    }
-  });
-
-  if (!html) {
-    html = '<div class="flag-card" style="border-left: 4px solid var(--green-on);"><span class="flag-icon">&#128994;</span><div class="flag-text"><strong>No critical flags.</strong> All metrics within normal range.</div></div>';
-  }
-
-  el.innerHTML = html;
-}
-
-// ==================== REP SCORECARDS ====================
-function renderRepScorecards(reps, pulse) {
-  var el = document.getElementById('rep-scorecards');
-  var mtd = pulse.mtd;
-  var html = '<div class="table-wrapper"><table>';
-  html += '<thead><tr><th>Rep</th><th>Calls Taken</th><th>Close Rate</th><th>Show Rate</th><th>W1 Starts</th><th>Calls-to-W1 %</th><th>Pending W1s</th></tr></thead><tbody>';
-  var totTaken = 0, totW1 = 0;
-  reps.forEach(function(r) {
-    var d = r.mtd;
-    totTaken += d.dcs_taken; totW1 += d.w1_starts;
-    var c2w1 = d.dcs_taken > 0 ? pctStr(d.w1_starts, d.dcs_taken) : '--';
-    html += '<tr><td><strong>' + r.name + '</strong></td>';
-    html += '<td>' + d.dcs_taken + '</td>';
-    html += '<td>' + closeBadge(d.close_rate, d.dcs_taken) + '</td>';
-    html += '<td><span class="badge badge-navy">--</span></td>';
-    html += '<td>' + d.w1_starts + '</td>';
-    html += '<td>' + c2w1 + '</td>';
-    html += '<td>--</td></tr>';
-  });
-  var teamClose = mtd.dcs_completed > 0 ? Math.round((mtd.closes / mtd.dcs_completed) * 100) + '%' : '--';
-  var teamC2W1 = mtd.dcs_completed > 0 ? pctStr(mtd.w1_starts, mtd.dcs_completed) : '--';
-  html += '<tr class="total-row"><td>TEAM</td><td>' + mtd.dcs_completed + '</td><td>' + teamClose + '</td><td>--</td><td>' + mtd.w1_starts + '</td><td>' + teamC2W1 + '</td><td>--</td></tr>';
-  html += '</tbody></table></div>';
-  el.innerHTML = html;
-}
-
-function renderObjectionBreakdown() {
-  document.getElementById('objection-breakdown').innerHTML = emptyState('No data available');
-}
-
-function renderNoShows() {
-  document.getElementById('no-shows').innerHTML = emptyState('No data available');
-}
-
-// ==================== BRODIE TAB ====================
-function renderBrodieInputs(pulse) {
-  var el = document.getElementById('brodie-inputs');
-  var p = pulse.today;
-  var html = '<div class="pulse-grid" style="grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">';
-  html += '<div class="pulse-card"><div class="metric-label">DCs Completed Today</div><div class="metric-value">' + fmt(p.dcs_completed) + '</div></div>';
-  html += '<div class="pulse-card"><div class="metric-label">Closes Today</div><div class="metric-value ' + (p.closes > 0 ? 'green' : '') + '">' + fmt(p.closes) + '</div></div>';
-  html += '<div class="pulse-card"><div class="metric-label">W1 Starts Today</div><div class="metric-value ' + (p.w1_starts > 0 ? 'green' : '') + '">' + fmt(p.w1_starts) + '</div></div>';
-  html += '<div class="pulse-card"><div class="metric-label">Agreement Forms</div><div class="metric-value">' + fmt(p.agreement_forms) + '</div></div>';
-  html += '</div>';
-  el.innerHTML = html;
-}
-
-function renderW1Calendar(activation) {
-  var el = document.getElementById('w1-calendar');
-  var scheduled = activation.w1_scheduled || [];
-  if (scheduled.length === 0) {
-    el.innerHTML = emptyState('No W1s scheduled');
-    return;
-  }
-  var html = '<div class="table-wrapper"><table>';
-  html += '<thead><tr><th>Date</th><th>Parent</th><th>Stage</th></tr></thead><tbody>';
-  scheduled.forEach(function(c) {
-    var stage = c.w1_activation_stage || '--';
-    var stageBadge = stage === '--' ? '<span class="badge badge-navy">--</span>' : '<span class="badge badge-warning">' + stage + '</span>';
-    html += '<tr><td>' + formatShortDate(c.date) + '</td>';
-    html += '<td><strong>' + (c.name || '--') + '</strong></td>';
-    html += '<td>' + stageBadge + '</td></tr>';
-  });
-  html += '</tbody></table></div>';
-  el.innerHTML = html;
-}
-
-function renderLiveActivationPipeline(activation) {
-  var el = document.getElementById('live-activation-pipeline');
-  var deposits = activation.deposit_paid || [];
-  if (deposits.length === 0) {
-    el.innerHTML = emptyState('No families in activation pipeline');
-    return;
-  }
-  // Sort by date descending
-  deposits.sort(function(a, b) { return (b.date || '').localeCompare(a.date || ''); });
-  var html = '<div class="table-wrapper"><table>';
-  html += '<thead><tr><th>Name</th><th>Date</th><th>Stage</th></tr></thead><tbody>';
-  deposits.forEach(function(c) {
-    var stage = c.w1_activation_stage || '--';
-    var stageBadge = stage === '--' ? '<span class="badge badge-navy">--</span>' : '<span class="badge badge-warning">' + stage + '</span>';
-    html += '<tr><td><strong>' + (c.name || '--') + '</strong></td>';
-    html += '<td>' + formatShortDate(c.date) + '</td>';
-    html += '<td>' + stageBadge + '</td></tr>';
-  });
-  html += '</tbody></table></div>';
-  el.innerHTML = html;
-}
-
-function renderFamiliesAtRisk() {
-  document.getElementById('families-at-risk').innerHTML = emptyState('No data available');
-}
-
-function renderW1DoneW2Pending() {
-  document.getElementById('w1-done-w2-pending').innerHTML = emptyState('No data available');
-}
-
-// ==================== MENTOR TAB ====================
-function renderMentorCapacityPulse(mentors) {
-  var el = document.getElementById('mentor-capacity-pulse');
+// ===== MENTORS TAB =====
+function renderMentorTab(data) {
+  var mentors = data.mentors || {};
+  var members = mentors.members_per_mentor || [];
   var totalMembers = 0;
-  var mpm = mentors.members_per_mentor || [];
-  mpm.forEach(function(m) { totalMembers += m.count; });
+  members.forEach(function(m) { totalMembers += (m.count || 0); });
 
-  var html = '<div class="pulse-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">';
-  html += '<div class="pulse-card"><div class="metric-label">Total Active Mentors</div><div class="metric-value">' + fmt(mentors.active_count) + '</div></div>';
-  html += '<div class="pulse-card"><div class="metric-label">Total Members</div><div class="metric-value gold">' + totalMembers + '</div></div>';
-  html += '<div class="pulse-card"><div class="metric-label">At Capacity</div><div class="metric-value red">' + fmt(mentors.at_capacity) + '</div></div>';
-  html += '</div>';
-  el.innerHTML = html;
-}
+  // Pulse cards
+  var pulseEl = document.getElementById('mentor-pulse');
+  pulseEl.innerHTML =
+    pulseCard('Total Active Mentors', safeVal(mentors.active_count, 0), '', '') +
+    pulseCard('Total Members', totalMembers, '', '') +
+    pulseCard('At Capacity', safeVal(mentors.at_capacity, 0), 'red', '');
 
-function renderMentorSupplyForecast(mentors) {
-  var el = document.getElementById('mentor-supply-forecast');
-  var totalMembers = 0;
-  var mpm = mentors.members_per_mentor || [];
-  mpm.forEach(function(m) { totalMembers += m.count; });
-  var totalCapacity = mentors.active_count * 5;
-  var available = totalCapacity - totalMembers;
-  if (available < 0) available = 0;
-  var weeksUntil = available > 0 ? Math.round(available / 6) : 0;
-  var utilPct = totalCapacity > 0 ? Math.round((totalMembers / totalCapacity) * 100) : 0;
-
-  var html = '<div class="goals-row">';
-  html += '<div class="countdown-card">';
-  html += '<div style="font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">At Current W1 Pace</div>';
-  html += '<div class="countdown-number">~' + weeksUntil + '</div>';
-  html += '<div class="countdown-unit">weeks until capacity</div>';
-  html += '<div style="margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.4);">Based on ~6 W1s/week run rate and ' + available + ' available mentor slots</div>';
-  html += '</div>';
-
-  html += '<div class="goal-panel">';
-  html += '<div class="panel-title">Capacity Breakdown</div>';
-  html += '<div class="goal-row"><span class="goal-label">Total Capacity (est.)</span><span class="goal-value">' + totalCapacity + '</span></div>';
-  html += '<div class="goal-row"><span class="goal-label">Current Members Assigned</span><span class="goal-value gold">' + totalMembers + '</span></div>';
-  html += '<div class="goal-row"><span class="goal-label">Available Slots</span><span class="goal-value green">' + available + '</span></div>';
-  html += '<div class="progress-container" style="margin-top: 8px;">';
-  html += '<div class="progress-meta"><span>' + totalMembers + ' / ' + totalCapacity + ' slots filled</span><span>' + utilPct + '%</span></div>';
-  html += '<div class="progress-track"><div class="progress-fill gold-fill" style="width: ' + Math.min(utilPct, 100) + '%;"></div></div>';
-  html += '</div></div></div>';
-  el.innerHTML = html;
-}
-
-function renderMentorCapacityTable(mentors) {
-  var el = document.getElementById('mentor-capacity-table');
-  var mpm = mentors.members_per_mentor || [];
-  if (mpm.length === 0) {
-    el.innerHTML = emptyState('No mentor data available');
-    return;
+  // Capacity table
+  var tableEl = document.getElementById('mentor-table');
+  if (members.length === 0) {
+    tableEl.innerHTML = noData();
+  } else {
+    var html = '<table><thead><tr><th>Mentor</th><th>Members</th><th>Status</th></tr></thead><tbody>';
+    members.sort(function(a, b) { return (b.count || 0) - (a.count || 0); });
+    members.forEach(function(m) {
+      var count = m.count || 0;
+      var maxCap = 5;
+      var pct = Math.min(Math.round((count / maxCap) * 100), 100);
+      var barColor, badge;
+      if (count >= 5) {
+        barColor = 'var(--red-alert)';
+        badge = '<span class="badge badge-red">FULL</span>';
+      } else if (count >= 4) {
+        barColor = 'var(--warm-gold)';
+        badge = '<span class="badge badge-warning">NEAR</span>';
+      } else {
+        barColor = 'var(--green-on)';
+        badge = '<span class="badge badge-green">OPEN</span>';
+      }
+      html += '<tr><td><strong>' + safeVal(m.mentor) + '</strong></td><td><div class="cap-bar-track"><div class="cap-bar-fill" style="width:' + pct + '%; background: ' + barColor + ';"></div></div>' + count + '</td><td>' + badge + '</td></tr>';
+    });
+    html += '</tbody></table>';
+    tableEl.innerHTML = html;
   }
-  // Sort by count descending
-  var sorted = mpm.slice().sort(function(a, b) { return b.count - a.count; });
-  var html = '<div class="table-wrapper"><table>';
-  html += '<thead><tr><th>Mentor</th><th>Members</th><th>Utilisation</th><th>Status</th></tr></thead><tbody>';
-  sorted.forEach(function(m) {
-    var cap = 5;
-    var util = Math.round((m.count / cap) * 100);
-    var barWidth = Math.min(util, 100);
-    var barColor, status, statusClass;
-    if (util >= 100) { barColor = 'var(--red-alert)'; status = 'FULL'; statusClass = 'badge-red'; }
-    else if (util >= 80) { barColor = 'var(--warm-gold)'; status = 'NEAR'; statusClass = 'badge-warning'; }
-    else if (util >= 60) { barColor = 'var(--warm-gold)'; status = 'OPEN'; statusClass = 'badge-gold'; }
-    else { barColor = 'var(--green-on)'; status = 'OPEN'; statusClass = 'badge-green'; }
 
-    html += '<tr><td><strong>' + m.mentor + '</strong></td>';
-    html += '<td>' + m.count + '</td>';
-    html += '<td><div class="cap-bar-track"><div class="cap-bar-fill" style="width:' + barWidth + '%; background:' + barColor + ';"></div></div>' + util + '%</td>';
-    html += '<td><span class="badge ' + statusClass + '">' + status + '</span></td></tr>';
-  });
-  html += '</tbody></table></div>';
-  el.innerHTML = html;
+  document.getElementById('mentor-flags').innerHTML = noData();
+  document.getElementById('mentor-overdue').innerHTML = noData();
+  document.getElementById('mentor-nps').innerHTML = noData();
+  document.getElementById('mentor-support').innerHTML = noData();
+  document.getElementById('mentor-wellbeing').innerHTML = noData();
+  document.getElementById('mentor-pipeline-section').innerHTML = noData();
 }
 
-function renderMentorFlags() {
-  document.getElementById('mentor-flags').innerHTML = emptyState('No data available');
-}
+// ===== PROGRAM TAB =====
+function renderNorriTab(data) {
+  document.getElementById('norri-welcome').innerHTML = noData();
+  document.getElementById('norri-w1payment').innerHTML = noData();
+  document.getElementById('norri-payflags').innerHTML = noData();
+  document.getElementById('norri-subpending').innerHTML = noData();
+  document.getElementById('norri-nps').innerHTML = noData();
 
-function renderMentorPipeline() {
-  document.getElementById('mentor-pipeline').innerHTML = emptyState('No data available');
-}
-
-// ==================== PROGRAM TAB ====================
-function renderWelcomeCalls() {
-  document.getElementById('welcome-calls').innerHTML = emptyState('No data available');
-}
-
-function renderW1PaymentCheck() {
-  document.getElementById('w1-payment-check').innerHTML = emptyState('No data available');
-}
-
-function renderPaymentFlags() {
-  document.getElementById('payment-flags').innerHTML = emptyState('No data available');
-}
-
-function renderSubscriptionPending() {
-  document.getElementById('subscription-pending').innerHTML = emptyState('No data available');
-}
-
-function renderNpsScores() {
-  document.getElementById('nps-scores').innerHTML = emptyState('No data available');
-}
-
-function renderWithdrawals() {
-  document.getElementById('withdrawals').innerHTML = emptyState('No data available');
-}
-
-function renderUpcomingRenewals(stripe) {
-  var el = document.getElementById('upcoming-renewals');
+  // Upcoming renewals
+  var renewalsEl = document.getElementById('norri-renewals');
+  var stripe = data.stripe || {};
   var renewals = stripe.upcoming_renewals || [];
   if (renewals.length === 0) {
-    el.innerHTML = emptyState('No upcoming renewals in the next 10 days');
+    renewalsEl.innerHTML = '<table><thead><tr><th>Name</th><th>Renewal Date</th><th>Amount</th><th>Billing Interval</th><th>Status</th></tr></thead><tbody><tr><td colspan="5" style="text-align:center;padding:20px;color:rgba(255,255,255,0.4);">No upcoming renewals</td></tr></tbody></table>';
+  } else {
+    var html = '<table><thead><tr><th>Name</th><th>Renewal Date</th><th>Amount</th><th>Billing Interval</th><th>Status</th></tr></thead><tbody>';
+    renewals.forEach(function(r) {
+      var statusBadge = r.status === 'active' ? '<span class="badge badge-green">Active</span>' :
+                        r.status === 'past_due' ? '<span class="badge badge-red">Past Due</span>' :
+                        '<span class="badge badge-gold">' + safeVal(r.status) + '</span>';
+      html += '<tr>' +
+        '<td><strong>' + safeVal(r.name) + '</strong></td>' +
+        '<td>' + formatTimestamp(r.renewal_date) + '</td>' +
+        '<td>' + formatCurrency(r.amount) + '</td>' +
+        '<td>' + safeVal(r.interval, '--') + '</td>' +
+        '<td>' + statusBadge + '</td></tr>';
+    });
+    html += '</tbody></table>';
+    renewalsEl.innerHTML = html;
+  }
+
+  // Meta Ads
+  renderMetaAds(data);
+
+  // Stripe overview
+  renderStripeOverview(data);
+
+  // Withdrawals
+  renderWithdrawals(data);
+}
+
+function renderMetaAds(data) {
+  var el = document.getElementById('meta-ads-section');
+  var meta = data.meta_ads;
+  if (!meta) { el.innerHTML = noData(); return; }
+
+  function metaRow(label, period) {
+    if (!period) return '';
+    return '<div style="margin-bottom: 16px;"><div style="font-size: 12px; color: var(--warm-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">' + label + '</div>' +
+      '<div class="pulse-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">' +
+      pulseCard('Spend', formatCurrency(period.spend), '', '') +
+      pulseCard('Booked Calls', safeVal(period.booked_calls, 0), '', '') +
+      pulseCard('CPBC', formatCurrency(period.cpbc), '', '') +
+    '</div></div>';
+  }
+
+  el.innerHTML = metaRow('TODAY', meta.today) + metaRow('WEEK-TO-DATE', meta.wtd) + metaRow('MONTH-TO-DATE', meta.mtd);
+}
+
+function renderStripeOverview(data) {
+  var el = document.getElementById('stripe-overview');
+  var s = data.stripe || {};
+  el.innerHTML =
+    pulseCard('Active Subscriptions', safeVal(s.active_subscriptions, 0), '', '') +
+    pulseCard('MRR', formatCurrency(s.mrr), '', '') +
+    pulseCard('Failed Payments', safeVal(s.failed_payments, 0), s.failed_payments > 0 ? 'red' : '', '') +
+    pulseCard('New Subscriptions', safeVal(s.new_subscriptions, 0), 'green', '');
+}
+
+function renderWithdrawals(data) {
+  var el = document.getElementById('norri-withdrawals');
+  var s = data.stripe || {};
+  var cancellations = s.recent_cancellations || [];
+  if (cancellations.length === 0) {
+    el.innerHTML = noData();
     return;
   }
-  var html = '<div class="table-wrapper"><table>';
-  html += '<thead><tr><th>Name</th><th>Son</th><th>Program</th><th>Renewal Date</th><th>Amount</th><th>Billing Interval</th><th>Stripe Status</th></tr></thead><tbody>';
-  renewals.forEach(function(r) {
-    html += '<tr>';
-    html += '<td><strong>' + fmt(r.name) + '</strong></td>';
-    html += '<td>' + fmt(r.son) + '</td>';
-    html += '<td>' + fmt(r.program) + '</td>';
-    html += '<td>' + formatShortDate(r.renewal_date || r.date) + '</td>';
-    html += '<td>' + (r.amount != null ? moneyDec(r.amount) : '--') + '</td>';
-    html += '<td>' + fmt(r.billing_interval) + '</td>';
-    html += '<td><span class="badge badge-green">' + fmt(r.stripe_status || 'Active') + '</span></td>';
-    html += '</tr>';
+
+  var html = '<div class="table-wrapper"><table><thead><tr><th>Customer ID</th><th>Canceled At</th></tr></thead><tbody>';
+  cancellations.forEach(function(c) {
+    html += '<tr><td>' + safeVal(c.customer) + '</td><td>' + formatTimestamp(c.canceled_at) + '</td></tr>';
   });
   html += '</tbody></table></div>';
   el.innerHTML = html;
 }
 
-// ==================== OVERDUE W1s ====================
-function renderOverdueW1s() {
-  document.getElementById('overdue-w1s').innerHTML = emptyState('No data available');
+// ===== OVERDUE W1s TAB =====
+function renderOverdueTab() {
+  document.getElementById('overdue-content').innerHTML = noData();
 }
 
-// ==================== DRILL-DOWNS ====================
-function renderDrillDowns(pulse, reps) {
-  var wtd = pulse.wtd;
-  var mtd = pulse.mtd;
-  var today = pulse.today;
-  var filteredReps = filterReps(reps);
-
-  function repBreakdownHtml(period) {
-    var html = '';
-    filteredReps.forEach(function(r) {
-      var d = r[period];
-      if (d) {
-        html += '<div class="drill-item"><strong>' + r.name + ':</strong> ' + d.dcs_taken + ' DCs, ' + d.closes + ' closes, ' + d.w1_starts + ' W1 starts</div>';
-      }
-    });
-    return html;
-  }
-
-  document.getElementById('drill-leads-content').innerHTML =
-    '<div class="drill-item"><strong>Today:</strong> ' + today.new_leads + ' new leads</div>' +
-    '<div class="drill-item"><strong>WTD:</strong> ' + wtd.new_leads + ' new leads</div>' +
-    '<div class="drill-item"><strong>MTD:</strong> ' + mtd.new_leads + ' new leads</div>';
-
-  document.getElementById('drill-booked-content').innerHTML =
-    '<div class="drill-item"><strong>Today:</strong> ' + today.booked_calls + ' booked calls</div>' +
-    '<div class="drill-item"><strong>WTD:</strong> ' + wtd.booked_calls + ' booked calls</div>' +
-    '<div class="drill-item"><strong>MTD:</strong> ' + mtd.booked_calls + ' booked calls</div>';
-
-  document.getElementById('drill-taken-content').innerHTML =
-    '<div class="drill-item"><strong>Today:</strong> ' + today.dcs_completed + ' DCs completed</div>' +
-    '<div class="drill-item"><strong>WTD:</strong> ' + wtd.dcs_completed + ' DCs completed</div>' +
-    '<div class="drill-item"><strong>MTD:</strong> ' + mtd.dcs_completed + ' DCs completed</div>' +
-    '<div style="margin-top: 12px; font-size: 12px; color: var(--warm-gold); font-weight: 600;">REP BREAKDOWN (WTD)</div>' +
-    repBreakdownHtml('wtd');
-
-  document.getElementById('drill-closes-content').innerHTML =
-    '<div class="drill-item"><strong>Today:</strong> ' + today.closes + ' closes</div>' +
-    '<div class="drill-item"><strong>WTD:</strong> ' + wtd.closes + ' closes</div>' +
-    '<div class="drill-item"><strong>MTD:</strong> ' + mtd.closes + ' closes</div>' +
-    '<div style="margin-top: 12px; font-size: 12px; color: var(--warm-gold); font-weight: 600;">REP BREAKDOWN (WTD)</div>' +
-    repBreakdownHtml('wtd');
-
-  document.getElementById('drill-agreements-content').innerHTML =
-    '<div class="drill-item"><strong>Today:</strong> ' + today.agreement_forms + ' agreement forms</div>' +
-    '<div class="drill-item"><strong>WTD:</strong> ' + wtd.agreement_forms + ' agreement forms</div>' +
-    '<div class="drill-item"><strong>MTD:</strong> ' + mtd.agreement_forms + ' agreement forms</div>';
+// ===== DRILL DOWNS =====
+function renderDrillDowns(data) {
+  var p = data.pulse && data.pulse.today ? data.pulse.today : {};
+  document.getElementById('drill-leads-content').innerHTML = '<div class="drill-item">' + safeVal(p.new_leads, 0) + ' new leads today. Detailed lead list requires HubSpot data.</div>';
+  document.getElementById('drill-booked-content').innerHTML = '<div class="drill-item">' + safeVal(p.booked_calls, 0) + ' booked calls today. Detailed list requires HubSpot data.</div>';
+  document.getElementById('drill-taken-content').innerHTML = '<div class="drill-item">' + safeVal(p.dcs_completed, 0) + ' DCs completed today. Detailed list requires HubSpot data.</div>';
+  document.getElementById('drill-dials-content').innerHTML = '<div class="drill-item">Setter dial data not available in current data source.</div>';
+  document.getElementById('drill-closes-content').innerHTML = '<div class="drill-item">' + safeVal(p.closes, 0) + ' closes today. Detailed list requires HubSpot data.</div>';
+  document.getElementById('drill-agreements-content').innerHTML = '<div class="drill-item">' + safeVal(p.agreement_forms, 0) + ' agreement forms today. Detailed list requires HubSpot data.</div>';
 }
 
-// ==================== FETCH & AUTO-REFRESH ====================
+// ===== MAIN LOAD =====
 function loadDashboard() {
   fetch('../data/dashboard-data.json')
-    .then(function(response) {
-      if (!response.ok) throw new Error('Failed to load data');
-      return response.json();
-    })
+    .then(function(res) { return res.json(); })
     .then(function(data) {
-      renderDashboard(data);
+      renderHeader(data);
+      renderPerfFlags(data);
+      renderDailyPulse(data);
+      renderTrend();
+      renderConversionFlags(data);
+      renderRyeGoals(data);
+      renderBrodieGoals(data);
+      renderRepBreakdown(data);
+      renderDCClosesPipeline();
+      renderRetentionSession7(data);
+      renderPaymentResets(data);
+      renderPerfFlagsDetail();
+      renderRyeTab(data);
+      renderBrodieTab(data);
+      renderMentorTab(data);
+      renderNorriTab(data);
+      renderOverdueTab();
+      renderDrillDowns(data);
     })
     .catch(function(err) {
-      console.error('Dashboard load error:', err);
-      document.getElementById('date-display').textContent = 'Error loading data';
-      document.getElementById('last-refreshed').textContent = err.message;
+      console.error('Failed to load dashboard data:', err);
+      document.getElementById('header-date').textContent = 'Error loading data';
     });
 }
 
-// Initial load
+// Load on page ready
 loadDashboard();
 
 // Auto-refresh every 30 minutes
 setInterval(loadDashboard, 1800000);
 </script>
+
 </body>
 </html>
