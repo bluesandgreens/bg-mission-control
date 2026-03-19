@@ -1,32 +1,32 @@
 {
-  "generated_at": "2026-03-18T11:47:30.003818Z",
+  "generated_at": "2026-03-19T03:02:56.043172Z",
   "period": {
-    "today": "2026-03-18",
+    "today": "2026-03-19",
     "week_start": "2026-03-16",
     "month_start": "2026-03-01"
   },
   "pulse": {
     "today": {
-      "new_leads": 12,
-      "booked_calls": 2,
-      "dcs_completed": 2,
-      "closes": 2,
-      "w1_starts": 3,
-      "agreement_forms": 2
+      "new_leads": 5,
+      "booked_calls": 1,
+      "dcs_completed": 1,
+      "closes": 1,
+      "w1_starts": 0,
+      "agreement_forms": 0
     },
     "wtd": {
-      "new_leads": 69,
-      "booked_calls": 16,
-      "dcs_completed": 16,
-      "closes": 8,
+      "new_leads": 86,
+      "booked_calls": 19,
+      "dcs_completed": 18,
+      "closes": 10,
       "w1_starts": 8,
       "agreement_forms": 10
     },
     "mtd": {
-      "new_leads": 513,
-      "booked_calls": 97,
-      "dcs_completed": 70,
-      "closes": 49,
+      "new_leads": 530,
+      "booked_calls": 100,
+      "dcs_completed": 72,
+      "closes": 51,
       "w1_starts": 31,
       "agreement_forms": 46
     }
@@ -36,25 +36,25 @@
       "name": "Harry",
       "owner_id": "75967744",
       "today": {
-        "leads": 9,
-        "dcs_taken": 0,
-        "closes": 0,
-        "w1_starts": 2,
-        "close_rate": 0.0
+        "leads": 3,
+        "dcs_taken": 1,
+        "closes": 1,
+        "w1_starts": 0,
+        "close_rate": 1.0
       },
       "wtd": {
-        "leads": 50,
-        "dcs_taken": 9,
-        "closes": 3,
+        "leads": 63,
+        "dcs_taken": 10,
+        "closes": 4,
         "w1_starts": 2,
-        "close_rate": 0.33
+        "close_rate": 0.4
       },
       "mtd": {
-        "leads": 400,
-        "dcs_taken": 41,
-        "closes": 26,
+        "leads": 413,
+        "dcs_taken": 42,
+        "closes": 27,
         "w1_starts": 6,
-        "close_rate": 0.63
+        "close_rate": 0.64
       }
     },
     {
@@ -62,10 +62,10 @@
       "owner_id": "86194016",
       "today": {
         "leads": 0,
-        "dcs_taken": 1,
-        "closes": 1,
+        "dcs_taken": 0,
+        "closes": 0,
         "w1_starts": 0,
-        "close_rate": 1.0
+        "close_rate": 0.0
       },
       "wtd": {
         "leads": 1,
@@ -86,7 +86,7 @@
       "name": "Anthony",
       "owner_id": "87029276",
       "today": {
-        "leads": 1,
+        "leads": 0,
         "dcs_taken": 0,
         "closes": 0,
         "w1_starts": 0,
@@ -111,21 +111,21 @@
       "name": "Bailey",
       "owner_id": "88035516",
       "today": {
-        "leads": 0,
-        "dcs_taken": 1,
-        "closes": 1,
+        "leads": 1,
+        "dcs_taken": 0,
+        "closes": 0,
         "w1_starts": 0,
-        "close_rate": 1.0
+        "close_rate": 0.0
       },
       "wtd": {
-        "leads": 3,
+        "leads": 4,
         "dcs_taken": 2,
         "closes": 2,
         "w1_starts": 0,
         "close_rate": 1.0
       },
       "mtd": {
-        "leads": 22,
+        "leads": 23,
         "dcs_taken": 3,
         "closes": 3,
         "w1_starts": 1,
@@ -144,17 +144,17 @@
       },
       "wtd": {
         "leads": 3,
-        "dcs_taken": 0,
-        "closes": 0,
+        "dcs_taken": 1,
+        "closes": 1,
         "w1_starts": 0,
-        "close_rate": 0.0
+        "close_rate": 1.0
       },
       "mtd": {
         "leads": 10,
-        "dcs_taken": 2,
-        "closes": 3,
+        "dcs_taken": 3,
+        "closes": 4,
         "w1_starts": 0,
-        "close_rate": 1.5
+        "close_rate": 1.33
       }
     },
     {
@@ -185,26 +185,26 @@
   ],
   "meta_ads": {
     "today": {
-      "spend": 156.42,
-      "booked_calls": 5,
-      "cpbc": 31.28
+      "spend": 69.94,
+      "booked_calls": 3,
+      "cpbc": 23.31
     },
     "wtd": {
-      "spend": 534.53,
-      "booked_calls": 21,
-      "cpbc": 25.45
+      "spend": 633.11,
+      "booked_calls": 24,
+      "cpbc": 26.38
     },
     "mtd": {
-      "spend": 3765.69,
-      "booked_calls": 159,
-      "cpbc": 23.68
+      "spend": 3864.27,
+      "booked_calls": 162,
+      "cpbc": 23.85
     }
   },
   "stripe": {
-    "active_subscriptions": 87,
-    "mrr": 63208.32,
+    "active_subscriptions": 90,
+    "mrr": 66206.5,
     "failed_payments": 1,
-    "new_subscriptions": 4,
+    "new_subscriptions": 2,
     "recent_cancellations": [
       {
         "id": "sub_1TAOo72mA5zLxyK8TlxsqSdu",
@@ -273,6 +273,11 @@
       {
         "name": "Peta Thorniley",
         "date": "2026-02-13T04:02:24.051Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Stephanie  Samuel",
+        "date": "2026-03-18T23:10:44.478Z",
         "w1_activation_stage": null
       },
       {
@@ -919,6 +924,11 @@
         "name": "Eileen Kamp",
         "date": "2026-03-13T03:04:22.782Z",
         "w1_activation_stage": null
+      },
+      {
+        "name": "Kate Harding",
+        "date": "2026-03-19T00:35:48.619Z",
+        "w1_activation_stage": null
       }
     ],
     "agreement_signed": [
@@ -1082,7 +1092,7 @@
       },
       {
         "name": "Maria Morton",
-        "date": "2026-03-18T08:00:00Z",
+        "date": "2026-03-19T17:45:00Z",
         "w1_activation_stage": null
       }
     ],
@@ -1497,7 +1507,7 @@
       },
       {
         "name": "Kristen Birkett",
-        "session_count": "12",
+        "session_count": "13",
         "payment_reset_date": null
       },
       {
@@ -1882,6 +1892,10 @@
       {
         "name": "Sally Quintero",
         "payment_reset_date": "2026-04-06"
+      },
+      {
+        "name": "Tenniel Harman-York",
+        "payment_reset_date": "2026-04-18"
       }
     ],
     "_notes": []
