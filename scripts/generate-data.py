@@ -890,6 +890,11 @@ def fetch_overdue_w1s(supabase_url: str, supabase_key: str) -> list:
             w1_complete = m.get("week_1_complete", "") or m.get("w1_complete", "")
             if not w1_date_str or w1_complete:
                 continue
+            # Skip withdrawn or inactive members
+            onboarding_stage = (m.get("onboarding_stage") or "").lower()
+            member_status = (m.get("member_status") or "").lower()
+            if "withdrew" in onboarding_stage or member_status in ("inactive", "churn"):
+                continue
             try:
                 w1_date = datetime.strptime(str(w1_date_str)[:10], "%Y-%m-%d").date()
             except (ValueError, TypeError):

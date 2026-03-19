@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-19T23:35:52.074265Z",
+  "generated_at": "2026-03-19T23:42:55.156398Z",
   "period": {
     "today": "2026-03-19",
     "week_start": "2026-03-16",
@@ -7,7 +7,7 @@
   },
   "pulse": {
     "today": {
-      "new_leads": 32,
+      "new_leads": 33,
       "booked_calls": 4,
       "dcs_completed": 1,
       "closes": 1,
@@ -15,7 +15,7 @@
       "agreement_forms": 0
     },
     "wtd": {
-      "new_leads": 113,
+      "new_leads": 114,
       "booked_calls": 22,
       "dcs_completed": 18,
       "closes": 10,
@@ -23,7 +23,7 @@
       "agreement_forms": 10
     },
     "mtd": {
-      "new_leads": 557,
+      "new_leads": 558,
       "booked_calls": 103,
       "dcs_completed": 72,
       "closes": 51,
@@ -3444,20 +3444,6 @@
     ]
   },
   "overdue_w1s": [
-    {
-      "name": "Jack",
-      "w1_scheduled_date": "2026-01-28",
-      "days_overdue": 50,
-      "activation_stage": "Intro Call Complete",
-      "mentor": "Jed Woods"
-    },
-    {
-      "name": "Manaia",
-      "w1_scheduled_date": "2026-01-12",
-      "days_overdue": 66,
-      "activation_stage": "Intro Call Complete",
-      "mentor": "Hayden Sampson"
-    },
     {
       "name": "Lachlan",
       "w1_scheduled_date": "2026-03-06",
