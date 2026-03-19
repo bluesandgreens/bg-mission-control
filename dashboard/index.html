@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blues &amp; Greens — Mission Control Live Dashboard</title>
+<title>Blues &amp; Greens — Daily Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,16 +12,16 @@
   --dark-bg: #101318;
   --deep-navy: #0A2E5C;
   --brand-navy: #104791;
-  --brand-green: #386217;
   --warm-gold: #C8A951;
-  --sage-green: #E8EFE2;
-  --warm-cream: #FBF8F3;
   --white: #FFFFFF;
   --red-alert: #E74C3C;
   --green-on: #27AE60;
-  --gold-glow: 0 0 40px rgba(200, 169, 81, 0.45);
   --card-border: 1px solid rgba(16, 71, 145, 0.25);
   --card-bg: linear-gradient(135deg, rgba(10, 46, 92, 0.6) 0%, rgba(16, 19, 24, 0.8) 100%);
+  --gold-glow: 0 0 40px rgba(200, 169, 81, 0.45);
+  --text-muted: rgba(255,255,255,0.5);
+  --text-dim: rgba(255,255,255,0.35);
+  --border-subtle: rgba(255,255,255,0.06);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,139 +41,102 @@ h1, h2, h3, .metric-value { font-family: 'Archivo Black', sans-serif; }
 /* Header */
 .header {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 24px 0; border-bottom: 1px solid rgba(200, 169, 81, 0.2);
+  padding: 28px 0; border-bottom: 1px solid rgba(200, 169, 81, 0.2);
   flex-wrap: wrap; gap: 16px;
 }
-.header-left {}
-.header-title { font-family: 'Archivo Black', sans-serif; font-size: 28px; color: var(--warm-gold); letter-spacing: 1px; }
-.header-subtitle { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+.header-title {
+  font-family: 'Archivo Black', sans-serif; font-size: 26px;
+  color: var(--warm-gold); letter-spacing: 1px;
+}
+.header-subtitle { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
 .header-right { text-align: right; display: flex; align-items: center; gap: 16px; }
 .header-date { font-size: 14px; color: var(--warm-gold); font-weight: 600; }
 .header-updated { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; }
 .refresh-btn {
-  width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(200, 169, 81, 0.4);
-  background: transparent; color: var(--warm-gold); font-size: 18px; cursor: pointer;
-  display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid rgba(200, 169, 81, 0.4);
+  background: transparent; color: var(--warm-gold); font-size: 18px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
 }
 .refresh-btn:hover { background: rgba(200, 169, 81, 0.15); box-shadow: var(--gold-glow); }
 .refresh-btn.spinning { animation: spin 1s linear infinite; }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* Period Selector */
-.period-selector {
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-  padding: 20px 0; flex-wrap: wrap;
-}
-.pill-group { display: flex; gap: 0; }
-.pill-btn {
-  padding: 8px 20px; border: 1px solid rgba(16, 71, 145, 0.5); background: transparent;
-  color: rgba(255,255,255,0.5); font-family: 'DM Sans', sans-serif; font-size: 12px;
-  font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer;
-  transition: all 0.25s;
-}
-.pill-btn:first-child { border-radius: 20px 0 0 20px; }
-.pill-btn:last-child { border-radius: 0 20px 20px 0; }
-.pill-btn.active {
-  background: var(--brand-navy); color: var(--warm-gold);
-  border-color: var(--warm-gold);
-}
-.pill-btn:hover:not(.active) { background: rgba(16, 71, 145, 0.3); color: rgba(255,255,255,0.8); }
-.date-nav { display: flex; align-items: center; gap: 12px; margin-left: 20px; }
-.nav-arrow {
-  width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(16, 71, 145, 0.4);
-  background: transparent; color: rgba(255,255,255,0.5); font-size: 16px; cursor: pointer;
-  display: flex; align-items: center; justify-content: center; transition: all 0.2s;
-}
-.nav-arrow:hover { border-color: var(--warm-gold); color: var(--warm-gold); }
-.date-label { font-size: 14px; color: rgba(255,255,255,0.6); min-width: 140px; text-align: center; }
-
-/* Section */
-.section { margin-top: 32px; }
+/* Sections */
+.section { margin-top: 36px; }
 .section-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 16px; border-left: 4px solid var(--warm-gold);
+  display: flex; align-items: center; padding: 12px 16px;
+  border-left: 4px solid var(--warm-gold);
   background: linear-gradient(90deg, rgba(10, 46, 92, 0.4) 0%, transparent 100%);
-  border-radius: 0 8px 8px 0; cursor: pointer; user-select: none;
-  transition: background 0.2s;
+  border-radius: 0 8px 8px 0; margin-bottom: 16px;
 }
-.section-header:hover { background: linear-gradient(90deg, rgba(10, 46, 92, 0.6) 0%, transparent 100%); }
 .section-header h2 {
-  font-family: 'Archivo Black', sans-serif; font-size: 14px; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--warm-gold);
+  font-family: 'Archivo Black', sans-serif; font-size: 13px;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gold);
 }
-.section-chevron { font-size: 12px; color: rgba(255,255,255,0.4); transition: transform 0.3s; }
-.section-header.collapsed .section-chevron { transform: rotate(-90deg); }
-.section-content { padding-top: 16px; transition: all 0.3s; }
-.section-content.hidden { display: none; }
 
-/* Pulse Cards Grid */
-.pulse-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px;
+/* Stat Cards */
+.stats-row {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
 }
-.pulse-card {
+.stat-card {
   background: var(--card-bg); border: var(--card-border); border-radius: 16px;
   padding: 20px 16px; position: relative; overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s; cursor: default;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.pulse-card::before {
+.stat-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
   background: linear-gradient(90deg, var(--warm-gold), transparent);
 }
-.pulse-card:hover { transform: translateY(-2px); box-shadow: var(--gold-glow); }
-.metric-label {
+.stat-card:hover { transform: translateY(-2px); box-shadow: var(--gold-glow); }
+.stat-label {
   font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
-  color: rgba(255,255,255,0.5); margin-bottom: 8px;
+  color: var(--text-muted); margin-bottom: 8px;
 }
-.metric-value { font-size: 36px; color: var(--warm-gold); line-height: 1; }
+.metric-value { font-size: 32px; color: var(--warm-gold); line-height: 1; }
 .metric-value.red { color: var(--red-alert); }
 .metric-value.green { color: var(--green-on); }
+.metric-sub { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
 
-/* Goal Panels */
-.goals-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.goal-panel {
-  background: var(--card-bg); border: var(--card-border); border-radius: 20px;
-  padding: 24px; border-left: 4px solid var(--warm-gold); position: relative;
+/* Funnel */
+.funnel { display: flex; gap: 0; align-items: stretch; margin-top: 4px; }
+.funnel-stage {
+  flex: 1; text-align: center; padding: 20px 12px; position: relative;
+  background: var(--card-bg); border: var(--card-border);
+  transition: transform 0.2s;
 }
-.goal-panel-title {
-  font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
-  color: rgba(255,255,255,0.45); margin-bottom: 16px; font-weight: 600;
+.funnel-stage:first-child { border-radius: 16px 0 0 16px; }
+.funnel-stage:last-child { border-radius: 0 16px 16px 0; }
+.funnel-stage:hover { transform: translateY(-2px); }
+.funnel-stage .stage-count {
+  font-family: 'Archivo Black', sans-serif; font-size: 28px;
+  color: var(--warm-gold); display: block;
 }
-.goal-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+.funnel-stage .stage-name {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+  color: var(--text-muted); margin-top: 6px; display: block;
 }
-.goal-row:last-child { border-bottom: none; }
-.goal-label { font-size: 13px; color: rgba(255,255,255,0.7); }
-.goal-value { font-size: 18px; font-weight: 700; color: var(--white); }
-.goal-value.gold { color: var(--warm-gold); }
-.goal-value.green { color: var(--green-on); }
-.goal-value.red { color: var(--red-alert); }
-.goal-target { font-size: 11px; color: rgba(255,255,255,0.35); margin-left: 6px; }
-.progress-wrap { width: 100%; margin-top: 8px; }
-.progress-track {
-  width: 100%; height: 10px; background: rgba(255,255,255,0.08);
-  border-radius: 5px; overflow: hidden; position: relative;
+.funnel-arrow {
+  display: flex; align-items: center; color: rgba(200,169,81,0.4);
+  font-size: 20px; padding: 0 2px;
 }
-.progress-fill {
-  height: 100%; border-radius: 5px; transition: width 0.6s ease;
-  background: var(--warm-gold);
+.funnel-bar {
+  height: 4px; margin-top: 10px; border-radius: 2px; background: rgba(255,255,255,0.08);
+  overflow: hidden;
 }
-.progress-fill.green { background: var(--green-on); }
-.progress-fill.red { background: var(--red-alert); }
-.target-line {
-  position: absolute; top: -2px; bottom: -2px; width: 2px;
-  background: var(--white); border-radius: 1px; opacity: 0.6;
+.funnel-bar-fill {
+  height: 100%; border-radius: 2px; background: var(--warm-gold);
+  transition: width 0.6s;
 }
-.progress-labels { display: flex; justify-content: space-between; margin-top: 4px; }
-.progress-labels span { font-size: 10px; color: rgba(255,255,255,0.35); }
-.status-indicator {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 12px; font-weight: 600; padding: 4px 10px;
-  border-radius: 12px; margin-top: 8px;
+
+/* Meta Ads */
+.meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.cpbc-highlight {
+  background: var(--card-bg); border: 2px solid var(--warm-gold); border-radius: 16px;
+  padding: 24px; text-align: center;
 }
-.status-indicator.on-track { background: rgba(39,174,96,0.15); color: var(--green-on); }
-.status-indicator.behind { background: rgba(231,76,60,0.15); color: var(--red-alert); }
-.status-indicator.at-risk { background: rgba(200,169,81,0.15); color: var(--warm-gold); }
+.cpbc-highlight .metric-value { font-size: 40px; }
 
 /* Tables */
 .table-wrapper {
@@ -188,13 +151,18 @@ thead th {
   background: rgba(10, 46, 92, 0.5); border-bottom: 1px solid rgba(16, 71, 145, 0.3);
   white-space: nowrap;
 }
+thead th.right { text-align: right; }
 tbody td {
-  padding: 12px 16px; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.04);
-  white-space: nowrap;
+  padding: 12px 16px; font-size: 14px;
+  border-bottom: 1px solid var(--border-subtle); white-space: nowrap;
 }
+tbody td.right { text-align: right; }
 tbody tr:hover { background: rgba(200, 169, 81, 0.05); }
 tbody tr:last-child td { border-bottom: none; }
-.total-row td { color: var(--warm-gold); font-weight: 700; border-top: 2px solid rgba(200,169,81,0.3); }
+.total-row td {
+  color: var(--warm-gold); font-weight: 700;
+  border-top: 2px solid rgba(200,169,81,0.3);
+}
 
 /* Badges */
 .badge {
@@ -203,18 +171,23 @@ tbody tr:last-child td { border-bottom: none; }
 }
 .badge-green { background: rgba(39,174,96,0.15); color: var(--green-on); }
 .badge-gold { background: rgba(200,169,81,0.15); color: var(--warm-gold); }
-.badge-navy { background: rgba(16,71,145,0.25); color: #5B9BD5; }
 .badge-red { background: rgba(231,76,60,0.15); color: var(--red-alert); }
-.badge-sage { background: rgba(56,98,23,0.2); color: var(--sage-green); }
+.badge-navy { background: rgba(16,71,145,0.25); color: #5B9BD5; }
 
-/* Capacity bars */
-.cap-bar-track {
-  width: 100%; height: 8px; background: rgba(255,255,255,0.08);
-  border-radius: 4px; overflow: hidden;
+/* Retention summary cards */
+.retention-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+
+/* Mentor summary */
+.mentor-summary { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+
+/* Notes */
+.notes-box {
+  background: var(--card-bg); border: var(--card-border); border-radius: 16px;
+  padding: 20px; min-height: 80px;
 }
-.cap-bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s; }
+.notes-empty { color: var(--text-dim); font-size: 14px; font-style: italic; }
 
-/* Tab buttons inside sections */
+/* Period tabs */
 .tab-group { display: flex; gap: 0; margin-bottom: 16px; }
 .tab-btn {
   padding: 6px 16px; border: 1px solid rgba(16, 71, 145, 0.4); background: transparent;
@@ -224,22 +197,11 @@ tbody tr:last-child td { border-bottom: none; }
 }
 .tab-btn:first-child { border-radius: 16px 0 0 16px; }
 .tab-btn:last-child { border-radius: 0 16px 16px 0; }
-.tab-btn.active { background: var(--brand-navy); color: var(--warm-gold); border-color: var(--warm-gold); }
-
-/* Flag cards */
-.flags-grid { display: flex; flex-direction: column; gap: 10px; }
-.flag-card {
-  background: var(--card-bg); border: var(--card-border); border-radius: 14px;
-  padding: 14px 18px; display: flex; align-items: center; gap: 14px;
+.tab-btn.active {
+  background: var(--brand-navy); color: var(--warm-gold); border-color: var(--warm-gold);
 }
-.flag-icon { font-size: 22px; flex-shrink: 0; }
-.flag-text { font-size: 14px; color: rgba(255,255,255,0.8); }
-.flag-text strong { color: var(--warm-gold); }
 
-/* Stripe metric cards */
-.stripe-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-bottom: 16px; }
-
-/* Loading overlay */
+/* Loading */
 .loading-overlay {
   position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(16, 19, 24, 0.85); display: flex; align-items: center;
@@ -254,16 +216,22 @@ tbody tr:last-child td { border-bottom: none; }
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .stats-row { grid-template-columns: repeat(3, 1fr); }
+  .meta-grid { grid-template-columns: 1fr; }
+  .funnel { flex-wrap: wrap; }
+  .funnel-stage { min-width: calc(50% - 8px); border-radius: 12px !important; }
+  .funnel-arrow { display: none; }
+  .retention-cards { grid-template-columns: 1fr; }
+  .mentor-summary { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
   .header { flex-direction: column; align-items: flex-start; }
   .header-right { text-align: left; }
-  .header-title { font-size: 22px; }
-  .pulse-grid { grid-template-columns: repeat(2, 1fr); }
-  .goals-row { grid-template-columns: 1fr; }
-  .period-selector { flex-direction: column; }
-  .date-nav { margin-left: 0; }
-  .metric-value { font-size: 28px; }
-  .stripe-cards { grid-template-columns: repeat(2, 1fr); }
+  .header-title { font-size: 20px; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .metric-value { font-size: 26px; }
+  .funnel-stage { min-width: 100%; }
 }
 </style>
 </head>
@@ -272,419 +240,264 @@ tbody tr:last-child td { border-bottom: none; }
 <div class="loading-overlay" id="loadingOverlay"><div class="spinner"></div></div>
 
 <div class="container">
-  <!-- Header -->
   <header class="header">
-    <div class="header-left">
-      <div class="header-title">BLUES &amp; GREENS</div>
-      <div class="header-subtitle">Mission Control — Live Dashboard</div>
+    <div>
+      <div class="header-title">BLUES &amp; GREENS &mdash; DAILY DASHBOARD</div>
+      <div class="header-subtitle" id="headerDate"></div>
     </div>
     <div class="header-right">
       <div>
-        <div class="header-date" id="headerDate"></div>
-        <div class="header-updated" id="headerUpdated">Last Updated: --</div>
+        <div class="header-updated" id="headerUpdated">Last updated: --</div>
       </div>
       <button class="refresh-btn" id="refreshBtn" title="Refresh data">&#x21bb;</button>
     </div>
   </header>
 
-  <!-- Period Selector -->
-  <div class="period-selector">
-    <div class="pill-group">
-      <button class="pill-btn active" data-period="today">Day</button>
-      <button class="pill-btn" data-period="wtd">Week</button>
-      <button class="pill-btn" data-period="mtd">Month</button>
-    </div>
-    <div class="date-nav">
-      <button class="nav-arrow" id="navPrev">&#8249;</button>
-      <span class="date-label" id="dateLabel"></span>
-      <button class="nav-arrow" id="navNext">&#8250;</button>
-    </div>
-  </div>
-
-  <!-- Sections rendered by JS -->
-  <div id="dashboardSections"></div>
+  <div id="dashboard"></div>
 </div>
 
 <script>
 (function() {
   'use strict';
 
-  let DATA = null;
-  let currentPeriod = 'today';
-  let repTabPeriod = 'today';
-  let dateOffset = 0;
-  const REFRESH_INTERVAL = 5 * 60 * 1000;
+  var DATA = null;
+  var repPeriod = 'mtd';
+  var REFRESH_MS = 30 * 60 * 1000;
 
-  // Helpers
   function fmt(v, type) {
-    if (v == null || v === undefined || v === '') return '--';
+    if (v == null || v === '') return '--';
     if (type === '$') return '$' + Number(v).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    if (type === '$int') return '$' + Number(v).toLocaleString('en-US');
-    if (type === '%') return Number(v).toFixed(1) + '%';
+    if (type === '$int') return '$' + Math.round(Number(v)).toLocaleString('en-US');
+    if (type === '%') return (Number(v) * 100).toFixed(0) + '%';
+    if (type === '%raw') return Number(v).toFixed(1) + '%';
     if (type === 'int') return Number(v).toLocaleString('en-US');
     return String(v);
   }
 
-  function safeGet(obj, path, fallback) {
-    try { return path.split('.').reduce((o, k) => o[k], obj); } catch(e) { return fallback; }
+  function closeBadge(rate) {
+    if (rate == null) return '<span class="badge badge-gold">--</span>';
+    var pct = Number(rate) * 100;
+    var cls = pct >= 50 ? 'badge-green' : pct >= 30 ? 'badge-gold' : 'badge-red';
+    return '<span class="badge ' + cls + '">' + pct.toFixed(0) + '%</span>';
   }
 
-  function closeBadge(pct) {
-    if (pct == null) return '<span class="badge badge-gold">--</span>';
-    const v = Number(pct);
-    if (v >= 50) return '<span class="badge badge-green">' + v.toFixed(1) + '%</span>';
-    if (v >= 30) return '<span class="badge badge-gold">' + v.toFixed(1) + '%</span>';
-    return '<span class="badge badge-red">' + v.toFixed(1) + '%</span>';
+  function section(title, html) {
+    return '<div class="section"><div class="section-header"><h2>' + title + '</h2></div>' + html + '</div>';
   }
 
-  function stageBadge(stage) {
-    const map = {
-      'Agreement Signed': 'badge-green',
-      'W1 Scheduled': 'badge-gold',
-      'W1 Completed': 'badge-sage',
-      'DC Completed': 'badge-navy',
-      'DC Scheduled': 'badge-navy'
-    };
-    const cls = map[stage] || 'badge-gold';
-    return '<span class="badge ' + cls + '">' + stage + '</span>';
-  }
-
-  function progressBar(actual, target, color) {
-    if (actual == null || target == null) return '';
-    const pct = Math.min((actual / target) * 100, 100);
-    const fillColor = color || (pct >= 100 ? 'green' : pct >= 60 ? '' : 'red');
-    const tgtPct = Math.min(100, 100);
-    return '<div class="progress-wrap"><div class="progress-track"><div class="progress-fill ' + fillColor + '" style="width:' + pct + '%"></div>' +
-      '<div class="target-line" style="left:' + tgtPct + '%"></div></div>' +
-      '<div class="progress-labels"><span>' + fmt(actual, 'int') + '</span><span>Target: ' + fmt(target, 'int') + '</span></div></div>';
-  }
-
-  function progressBarPct(actual, target, color) {
-    if (actual == null || target == null) return '';
-    const pct = Math.min((actual / target) * 100, 100);
-    const tgtPct = 100;
-    const fillColor = color || (actual >= target ? 'green' : actual >= target * 0.6 ? '' : 'red');
-    return '<div class="progress-wrap"><div class="progress-track"><div class="progress-fill ' + fillColor + '" style="width:' + pct + '%"></div>' +
-      '<div class="target-line" style="left:' + tgtPct + '%"></div></div>' +
-      '<div class="progress-labels"><span>' + fmt(actual, '%') + '</span><span>Target: ' + fmt(target, '%') + '</span></div></div>';
-  }
-
-  function goalColor(actual, target) {
-    if (actual == null) return '';
-    if (actual >= target) return 'green';
-    if (actual >= target * 0.7) return 'gold';
-    return 'red';
-  }
-
-  function section(id, title, contentHtml) {
-    return '<div class="section" id="section-' + id + '">' +
-      '<div class="section-header" onclick="window.__toggleSection(\'' + id + '\')">' +
-      '<h2>' + title + '</h2><span class="section-chevron">&#9660;</span></div>' +
-      '<div class="section-content" id="content-' + id + '">' + contentHtml + '</div></div>';
-  }
-
-  window.__toggleSection = function(id) {
-    var header = document.querySelector('#section-' + id + ' .section-header');
-    var content = document.getElementById('content-' + id);
-    header.classList.toggle('collapsed');
-    content.classList.toggle('hidden');
-  };
-
-  // Date label
-  function updateDateLabel() {
-    var now = new Date();
-    now.setDate(now.getDate() + dateOffset);
-    var labels = {
-      'today': now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }),
-      'wtd': 'Week of ' + new Date(now - ((now.getDay() || 7) - 1) * 86400000).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
-      'mtd': now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
-    };
-    document.getElementById('dateLabel').textContent = labels[currentPeriod];
-    document.getElementById('headerDate').textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-  }
-
-  // Render
   function render() {
     if (!DATA) return;
-    var p = currentPeriod;
-    var pulse = DATA.pulse[p] || {};
-    var meta = DATA.meta_ads[p] || {};
+    var stripe = DATA.stripe || {};
+    var pipeline = DATA.activation_pipeline || {};
+    var meta = DATA.meta_ads || {};
     var reps = DATA.reps || [];
-    var goals = DATA.goals || {};
+    var retention = DATA.retention || {};
+    var mentors = DATA.mentors || {};
+    var out = '';
 
-    var html = '';
+    // 1. TOP STATS ROW
+    var failedCls = stripe.failed_payments > 0 ? ' red' : '';
+    var cancelCount = (stripe.recent_cancellations || []).length;
+    out += '<div class="section" style="margin-top:24px"><div class="stats-row">';
+    out += statCard('Active Members', fmt(stripe.active_subscriptions, 'int'), '');
+    out += statCard('MRR', fmt(stripe.mrr, '$int'), '');
+    out += statCard('New Subs Today', fmt(stripe.new_subscriptions, 'int'), '');
+    out += statCard('Cancellations', fmt(cancelCount, 'int'), cancelCount > 0 ? ' red' : '');
+    out += statCard('Failed Payments', fmt(stripe.failed_payments, 'int'), failedCls);
+    out += '</div></div>';
 
-    // 1. PULSE
-    var pulseCards = [
-      ['New Leads', fmt(pulse.new_leads, 'int')],
-      ['Booked Calls', fmt(pulse.booked_calls, 'int')],
-      ['DCs Completed', fmt(pulse.dcs_completed, 'int')],
-      ['Closes', fmt(pulse.closes, 'int')],
-      ['W1 Starts', fmt(pulse.w1_starts, 'int')],
-      ['Agreement Forms', fmt(pulse.agreement_forms, 'int')]
+    // 2. PIPELINE FUNNEL
+    var stages = [
+      { key: 'deposit_paid', label: 'Deposit Paid' },
+      { key: 'agreement_signed', label: 'Agreement Signed' },
+      { key: 'mentor_allocated', label: 'Mentor Allocated' },
+      { key: 'w1_scheduled', label: 'W1 Scheduled' },
+      { key: 'w1_complete', label: 'W1 Complete' }
     ];
-    var pulseHtml = '<div class="pulse-grid">';
-    pulseCards.forEach(function(c) {
-      pulseHtml += '<div class="pulse-card"><div class="metric-label">' + c[0] + '</div><div class="metric-value">' + c[1] + '</div></div>';
+    var maxCount = 1;
+    stages.forEach(function(s) {
+      var arr = pipeline[s.key];
+      s.count = Array.isArray(arr) ? arr.length : 0;
+      if (s.count > maxCount) maxCount = s.count;
     });
-    pulseHtml += '</div>';
-    html += section('pulse', 'Pulse', pulseHtml);
+    var funnelHtml = '<div class="funnel">';
+    stages.forEach(function(s, i) {
+      if (i > 0) funnelHtml += '<div class="funnel-arrow">&#9654;</div>';
+      var pct = Math.max(8, (s.count / maxCount) * 100);
+      funnelHtml += '<div class="funnel-stage"><span class="stage-count">' + s.count +
+        '</span><span class="stage-name">' + s.label + '</span>' +
+        '<div class="funnel-bar"><div class="funnel-bar-fill" style="width:' + pct + '%"></div></div></div>';
+    });
+    funnelHtml += '</div>';
+    out += section('Activation Pipeline', funnelHtml);
 
-    // 2. META ADS PULSE
-    var cpbcClass = (meta.cpbc != null && meta.cpbc > 150) ? ' red' : '';
-    var metaCards = [
-      ['Spend', '<div class="metric-value">' + fmt(meta.spend, '$') + '</div>'],
-      ['Booked Calls', '<div class="metric-value">' + fmt(meta.booked_calls, 'int') + '</div>'],
-      ['CPBC', '<div class="metric-value' + cpbcClass + '">' + fmt(meta.cpbc, '$') + '</div>']
-    ];
-    var metaHtml = '<div class="pulse-grid">';
-    metaCards.forEach(function(c) {
-      metaHtml += '<div class="pulse-card"><div class="metric-label">' + c[0] + '</div>' + c[1] + '</div>';
+    // 3. META ADS
+    var metaPeriods = ['today', 'wtd', 'mtd'];
+    var metaHtml = '<div class="meta-grid">';
+    metaPeriods.forEach(function(p) {
+      var m = meta[p] || {};
+      var label = p === 'today' ? 'Today' : p === 'wtd' ? 'Week to Date' : 'Month to Date';
+      var cpbcVal = m.cpbc != null ? '$' + Number(m.cpbc).toFixed(2) : '--';
+      var spendVal = m.spend != null ? '$' + Number(m.spend).toFixed(2) : '--';
+      metaHtml += '<div class="stat-card" style="text-align:center">' +
+        '<div class="stat-label" style="margin-bottom:12px">' + label + '</div>' +
+        '<div class="metric-value" style="font-size:28px">' + cpbcVal + '</div>' +
+        '<div class="metric-sub">Cost Per Booked Call</div>' +
+        '<div style="margin-top:14px;display:flex;justify-content:space-around">' +
+        '<div><div style="font-size:11px;color:' + 'rgba(255,255,255,0.4)' + ';text-transform:uppercase;letter-spacing:0.5px">Spend</div>' +
+        '<div style="font-size:16px;font-weight:700;color:var(--white);margin-top:2px">' + spendVal + '</div></div>' +
+        '<div><div style="font-size:11px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.5px">Calls</div>' +
+        '<div style="font-size:16px;font-weight:700;color:var(--white);margin-top:2px">' + fmt(m.booked_calls, 'int') + '</div></div>' +
+        '</div></div>';
     });
     metaHtml += '</div>';
-    html += section('meta-ads', 'Meta Ads Pulse', metaHtml);
+    out += section('Meta Ads', metaHtml);
 
-    // 3. RYE - DC & PIPELINE GOALS
-    var rye = goals.rye || {};
-    var ryeLeft = '<div class="goal-panel"><div class="goal-panel-title">Pipeline Performance</div>';
-    [
-      ['W1 Starts WTD', rye.w1_starts_wtd],
-      ['W1 Starts MTD', rye.w1_starts_mtd],
-      ['DCs Completed MTD', rye.dcs_completed_mtd],
-      ['Closes MTD', rye.closes_mtd]
-    ].forEach(function(row) {
-      var g = row[1] || {};
-      var c = goalColor(g.actual, g.target);
-      ryeLeft += '<div class="goal-row"><span class="goal-label">' + row[0] + '</span>' +
-        '<span><span class="goal-value ' + c + '">' + fmt(g.actual, 'int') + '</span>' +
-        '<span class="goal-target">/ ' + fmt(g.target, 'int') + '</span></span></div>';
-      ryeLeft += progressBar(g.actual, g.target);
-    });
-    ryeLeft += '</div>';
-
-    var ctw = rye.calls_to_w1_pct || {};
-    var ctwColor = goalColor(ctw.actual, ctw.target);
-    var ryeRight = '<div class="goal-panel"><div class="goal-panel-title">Calls Taken to W1 %</div>' +
-      '<div class="goal-row"><span class="goal-label">Conversion Rate</span>' +
-      '<span><span class="goal-value ' + ctwColor + '">' + fmt(ctw.actual, '%') + '</span>' +
-      '<span class="goal-target">/ ' + fmt(ctw.target, '%') + '</span></span></div>' +
-      progressBarPct(ctw.actual, ctw.target) + '</div>';
-
-    html += section('rye-goals', 'Rye — DC &amp; Pipeline Goals', '<div class="goals-row">' + ryeLeft + ryeRight + '</div>');
-
-    // 4. BRODIE - ACTIVATION GOALS
-    var brodie = goals.brodie || {};
-    var bLeft = '<div class="goal-panel"><div class="goal-panel-title">Activation Speed</div>';
-    [
-      ['Agreement to W1 %', brodie.agreement_to_w1_pct, '%'],
-      ['Agreement to W1 within 7d %', brodie.agreement_to_w1_within_7d_pct, '%'],
-      ['Median Days DC to W1', brodie.median_days_dc_to_w1, 'int']
-    ].forEach(function(row) {
-      var g = row[1] || {};
-      var isLower = row[0].indexOf('Median') >= 0;
-      var c = isLower ? (g.actual != null && g.actual <= g.target ? 'green' : g.actual <= g.target * 1.3 ? 'gold' : 'red') : goalColor(g.actual, g.target);
-      bLeft += '<div class="goal-row"><span class="goal-label">' + row[0] + '</span>' +
-        '<span><span class="goal-value ' + c + '">' + fmt(g.actual, row[2]) + '</span>' +
-        '<span class="goal-target">/ ' + fmt(g.target, row[2]) + '</span></span></div>';
-      if (row[2] === '%') bLeft += progressBarPct(g.actual, g.target);
-    });
-    bLeft += '</div>';
-
-    var ws = brodie.w1_starts_summary || {};
-    var wsStatus = ws.status || 'on_track';
-    var statusLabel = wsStatus === 'on_track' ? 'On Track' : wsStatus === 'behind' ? 'Behind' : 'At Risk';
-    var bRight = '<div class="goal-panel"><div class="goal-panel-title">W1 Starts Summary</div>' +
-      '<div class="goal-row"><span class="goal-label">W1 Starts</span>' +
-      '<span><span class="goal-value ' + goalColor(ws.actual, ws.target) + '">' + fmt(ws.actual, 'int') + '</span>' +
-      '<span class="goal-target">/ ' + fmt(ws.target, 'int') + '</span></span></div>' +
-      progressBar(ws.actual, ws.target) +
-      '<div class="status-indicator ' + wsStatus.replace('_', '-') + '">' +
-      (wsStatus === 'on_track' ? '&#9679;' : '&#9888;') + ' ' + statusLabel + '</div></div>';
-
-    html += section('brodie-goals', 'Brodie — Activation Goals', '<div class="goals-row">' + bLeft + bRight + '</div>');
-
-    // 5. REP BREAKDOWN
+    // 4. REP PERFORMANCE
     var repTabHtml = '<div class="tab-group">' +
-      '<button class="tab-btn' + (repTabPeriod === 'today' ? ' active' : '') + '" onclick="window.__setRepTab(\'today\')">Day</button>' +
-      '<button class="tab-btn' + (repTabPeriod === 'wtd' ? ' active' : '') + '" onclick="window.__setRepTab(\'wtd\')">Week</button>' +
-      '<button class="tab-btn' + (repTabPeriod === 'mtd' ? ' active' : '') + '" onclick="window.__setRepTab(\'mtd\')">Month</button>' +
-      '</div>';
+      ['today', 'wtd', 'mtd'].map(function(p) {
+        var label = p === 'today' ? 'Day' : p === 'wtd' ? 'Week' : 'Month';
+        return '<button class="tab-btn' + (repPeriod === p ? ' active' : '') + '" onclick="window.__setRepPeriod(\'' + p + '\')">' + label + '</button>';
+      }).join('') + '</div>';
+
     var repTable = '<div class="table-wrapper"><div class="table-scroll"><table><thead><tr>' +
-      '<th>Rep</th><th>DC Taken</th><th>DC Closed</th><th>W1 Starts</th><th>Close %</th></tr></thead><tbody>';
-    var totals = { dc_taken: 0, dc_closed: 0, w1_starts: 0 };
+      '<th>Rep</th><th class="right">DCs Completed</th><th class="right">Closes</th>' +
+      '<th class="right">W1 Starts</th><th class="right">Close Rate</th><th class="right">Revenue</th></tr></thead><tbody>';
+    var totDC = 0, totClose = 0, totW1 = 0;
     reps.forEach(function(r) {
-      var d = r[repTabPeriod] || {};
-      totals.dc_taken += (d.dc_taken || 0);
-      totals.dc_closed += (d.dc_closed || 0);
-      totals.w1_starts += (d.w1_starts || 0);
-      repTable += '<tr><td>' + r.name + '</td><td>' + fmt(d.dc_taken, 'int') + '</td><td>' + fmt(d.dc_closed, 'int') + '</td>' +
-        '<td>' + fmt(d.w1_starts, 'int') + '</td><td>' + closeBadge(d.close_pct) + '</td></tr>';
+      var d = r[repPeriod] || {};
+      var dc = d.dcs_taken || 0;
+      var cl = d.closes || 0;
+      var w1 = d.w1_starts || 0;
+      totDC += dc; totClose += cl; totW1 += w1;
+      repTable += '<tr><td>' + r.name + '</td><td class="right">' + dc +
+        '</td><td class="right">' + cl + '</td><td class="right">' + w1 +
+        '</td><td class="right">' + closeBadge(d.close_rate) +
+        '</td><td class="right">--</td></tr>';
     });
-    var totalPct = totals.dc_taken > 0 ? (totals.dc_closed / totals.dc_taken * 100) : 0;
-    repTable += '<tr class="total-row"><td>Total</td><td>' + totals.dc_taken + '</td><td>' + totals.dc_closed + '</td>' +
-      '<td>' + totals.w1_starts + '</td><td>' + closeBadge(totalPct) + '</td></tr>';
+    var totRate = totDC > 0 ? totClose / totDC : 0;
+    repTable += '<tr class="total-row"><td>Total</td><td class="right">' + totDC +
+      '</td><td class="right">' + totClose + '</td><td class="right">' + totW1 +
+      '</td><td class="right">' + closeBadge(totRate) + '</td><td class="right">--</td></tr>';
     repTable += '</tbody></table></div></div>';
-    html += section('rep-breakdown', 'Rep Breakdown', repTabHtml + repTable);
+    out += section('Rep Performance', repTabHtml + repTable);
 
-    // 6. ACTIVATION PIPELINE
-    var pipeline = DATA.activation_pipeline || [];
-    var pipeTable = '<div class="table-wrapper"><div class="table-scroll"><table><thead><tr>' +
-      '<th>Name</th><th>Stage</th><th>Date</th><th>Days in Stage</th></tr></thead><tbody>';
-    pipeline.forEach(function(r) {
-      pipeTable += '<tr><td>' + r.name + '</td><td>' + stageBadge(r.stage) + '</td>' +
-        '<td>' + r.date + '</td><td>' + r.days_in_stage + '</td></tr>';
-    });
-    pipeTable += '</tbody></table></div></div>';
-    html += section('activation-pipeline', 'Activation Pipeline', pipeTable);
-
-    // 7. RETENTION WINDOW
-    var ret = DATA.retention_window || [];
-    var retTable = '<div class="table-wrapper"><div class="table-scroll"><table><thead><tr>' +
-      '<th>Name</th><th>Current Session</th><th>Payment Reset Date</th><th>Days Until Reset</th></tr></thead><tbody>';
-    ret.forEach(function(r) {
-      var urgent = r.days_until_reset != null && r.days_until_reset < 7;
-      var cls = urgent ? ' style="color:var(--red-alert);font-weight:600"' : '';
-      retTable += '<tr><td' + cls + '>' + r.name + '</td><td>' + r.current_session + '</td>' +
-        '<td>' + r.payment_reset_date + '</td><td' + cls + '>' + r.days_until_reset + (urgent ? ' !!!' : '') + '</td></tr>';
-    });
-    retTable += '</tbody></table></div></div>';
-    html += section('retention-window', 'Retention Window', retTable);
-
-    // 8. MENTOR CAPACITY
-    var mentors = DATA.mentor_capacity || [];
-    var mentorTable = '<div class="table-wrapper"><div class="table-scroll"><table><thead><tr>' +
-      '<th>Mentor</th><th>Active Members</th><th>Capacity</th><th>Utilisation</th></tr></thead><tbody>';
-    mentors.forEach(function(m) {
-      var atCap = m.utilisation >= 100;
-      var barColor = atCap ? 'var(--red-alert)' : m.utilisation >= 80 ? 'var(--warm-gold)' : 'var(--green-on)';
-      mentorTable += '<tr><td>' + m.mentor + '</td><td>' + m.active_members + '</td><td>' + m.capacity + '</td>' +
-        '<td><div style="display:flex;align-items:center;gap:10px"><div class="cap-bar-track" style="width:100px">' +
-        '<div class="cap-bar-fill" style="width:' + m.utilisation + '%;background:' + barColor + '"></div></div>' +
-        '<span style="font-size:13px;font-weight:600;color:' + (atCap ? 'var(--red-alert)' : 'var(--white)') + '">' + m.utilisation + '%</span></div></td></tr>';
-    });
-    mentorTable += '</tbody></table></div></div>';
-    html += section('mentor-capacity', 'Mentor Capacity', mentorTable);
-
-    // 9. STRIPE PULSE
-    var stripe = DATA.stripe || {};
-    var stripeCards = '<div class="stripe-cards">';
-    var failedClass = stripe.failed_payments > 0 ? ' red' : '';
-    [
-      ['MRR', fmt(stripe.mrr, '$int'), ''],
-      ['Active Subs', fmt(stripe.active_subs, 'int'), ''],
-      ['Failed Payments', fmt(stripe.failed_payments, 'int'), failedClass],
-      ['New Subs', fmt(stripe.new_subs, 'int'), '']
-    ].forEach(function(c) {
-      stripeCards += '<div class="pulse-card"><div class="metric-label">' + c[0] + '</div><div class="metric-value' + c[2] + '">' + c[1] + '</div></div>';
-    });
-    stripeCards += '</div>';
-
-    var cancels = stripe.recent_cancellations || [];
-    var cancelTable = '';
-    if (cancels.length > 0) {
-      cancelTable = '<div class="table-wrapper"><div class="table-scroll"><table><thead><tr>' +
-        '<th>Name</th><th>Date</th><th>Reason</th></tr></thead><tbody>';
-      cancels.forEach(function(c) {
-        cancelTable += '<tr><td>' + c.name + '</td><td>' + c.date + '</td><td>' + (c.reason || '--') + '</td></tr>';
+    // 5. RETENTION
+    var s7count = (retention.session_7_plus || []).length;
+    var resets = retention.payment_resets_30d || [];
+    var retHtml = '<div class="retention-cards">';
+    retHtml += '<div class="stat-card"><div class="stat-label">Session 7+ Members</div><div class="metric-value">' + s7count + '</div>' +
+      '<div class="metric-sub">Long-term active members</div></div>';
+    retHtml += '<div class="stat-card"><div class="stat-label">Payment Resets (Next 30d)</div><div class="metric-value' +
+      (resets.length > 5 ? ' red' : '') + '">' + resets.length + '</div>' +
+      '<div class="metric-sub">Coming up for renewal</div></div>';
+    retHtml += '</div>';
+    if (resets.length > 0) {
+      retHtml += '<div class="table-wrapper"><div class="table-scroll"><table><thead><tr>' +
+        '<th>Name</th><th>Reset Date</th><th>Days Away</th></tr></thead><tbody>';
+      resets.forEach(function(r) {
+        var days = Math.round((new Date(r.payment_reset_date) - new Date()) / 86400000);
+        var urgent = days <= 7;
+        var style = urgent ? ' style="color:var(--red-alert);font-weight:600"' : '';
+        retHtml += '<tr><td' + style + '>' + r.name + '</td><td>' + r.payment_reset_date +
+          '</td><td' + style + '>' + days + (urgent ? ' !!!' : '') + '</td></tr>';
       });
-      cancelTable += '</tbody></table></div></div>';
+      retHtml += '</tbody></table></div></div>';
     }
-    html += section('stripe-pulse', 'Stripe Pulse', stripeCards + cancelTable);
+    out += section('Retention', retHtml);
 
-    // 10. PERFORMANCE FLAGS
-    var flags = [];
-    if (meta.cpbc != null && meta.cpbc > 150) flags.push({ icon: '&#128680;', text: '<strong>High CPBC alert</strong> — Cost per booked call is $' + meta.cpbc.toFixed(2) + ' (above $150 threshold)' });
-    var totalClose = totals.dc_taken > 0 ? (totals.dc_closed / totals.dc_taken * 100) : 100;
-    if (totalClose < 40) flags.push({ icon: '&#9888;&#65039;', text: '<strong>Low close rate warning</strong> — Overall close rate is ' + totalClose.toFixed(1) + '% (below 40% target)' });
-    pipeline.forEach(function(p) {
-      if (p.days_in_stage > 14) flags.push({ icon: '&#9203;', text: '<strong>Stuck activation</strong> — ' + p.name + ' has been in "' + p.stage + '" for ' + p.days_in_stage + ' days' });
-    });
-    if (stripe.failed_payments > 0) flags.push({ icon: '&#128181;', text: '<strong>Payment failures detected</strong> — ' + stripe.failed_payments + ' failed payment(s) require attention' });
-    reps.forEach(function(r) {
-      var d = r.today || {};
-      if (d.dc_taken === 0) flags.push({ icon: '&#128564;', text: '<strong>Rep idle today</strong> — ' + r.name + ' has 0 DCs taken today' });
-    });
+    // 6. MENTORS
+    var mentorList = mentors.members_per_mentor || [];
+    var mentorHtml = '<div class="mentor-summary">';
+    mentorHtml += '<div class="stat-card"><div class="stat-label">Active Mentors</div><div class="metric-value">' +
+      fmt(mentors.active_count, 'int') + '</div></div>';
+    mentorHtml += '<div class="stat-card"><div class="stat-label">At Capacity</div><div class="metric-value' +
+      (mentors.at_capacity > 0 ? ' red' : '') + '">' + fmt(mentors.at_capacity, 'int') + '</div></div>';
+    var totalMembers = 0;
+    mentorList.forEach(function(m) { totalMembers += m.count; });
+    var avg = mentorList.length > 0 ? (totalMembers / mentorList.length).toFixed(1) : '--';
+    mentorHtml += '<div class="stat-card"><div class="stat-label">Avg Members / Mentor</div><div class="metric-value" style="font-size:28px">' + avg + '</div></div>';
+    mentorHtml += '</div>';
+    if (mentorList.length > 0) {
+      mentorHtml += '<div class="table-wrapper"><div class="table-scroll"><table><thead><tr>' +
+        '<th>Mentor</th><th class="right">Members</th><th>Load</th></tr></thead><tbody>';
+      var maxMembers = Math.max.apply(null, mentorList.map(function(m) { return m.count; }));
+      mentorList.sort(function(a, b) { return b.count - a.count; });
+      mentorList.forEach(function(m) {
+        var pct = maxMembers > 0 ? (m.count / maxMembers * 100) : 0;
+        var barColor = m.count >= 10 ? 'var(--red-alert)' : m.count >= 7 ? 'var(--warm-gold)' : 'var(--green-on)';
+        mentorHtml += '<tr><td>' + m.mentor + '</td><td class="right">' + m.count +
+          '</td><td><div style="display:flex;align-items:center;gap:8px">' +
+          '<div style="width:100px;height:8px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden">' +
+          '<div style="width:' + pct + '%;height:100%;border-radius:4px;background:' + barColor + '"></div></div>' +
+          '</div></td></tr>';
+      });
+      mentorHtml += '</tbody></table></div></div>';
+    }
+    out += section('Mentors', mentorHtml);
 
-    var flagsHtml = '<div class="flags-grid">';
-    if (flags.length === 0) {
-      flagsHtml += '<div class="flag-card"><span class="flag-icon">&#9989;</span><span class="flag-text">No performance flags — all systems nominal.</span></div>';
+    // 7. DAILY NOTES
+    var notesHtml = '<div class="notes-box">';
+    var notifications = (window.__notifications || []);
+    if (notifications.length > 0) {
+      notifications.forEach(function(n) {
+        notesHtml += '<div style="padding:6px 0;border-bottom:1px solid var(--border-subtle);color:rgba(255,255,255,0.8);font-size:14px">' + n + '</div>';
+      });
     } else {
-      flags.forEach(function(f) {
-        flagsHtml += '<div class="flag-card"><span class="flag-icon">' + f.icon + '</span><span class="flag-text">' + f.text + '</span></div>';
-      });
+      notesHtml += '<div class="notes-empty">No flags or notes for today.</div>';
     }
-    flagsHtml += '</div>';
-    html += section('perf-flags', 'Performance Flags', flagsHtml);
+    notesHtml += '</div>';
+    out += section('Daily Notes', notesHtml);
 
-    document.getElementById('dashboardSections').innerHTML = html;
-    updateDateLabel();
+    document.getElementById('dashboard').innerHTML = out;
 
-    // Update timestamp
-    var ts = DATA.last_updated ? new Date(DATA.last_updated) : new Date();
-    document.getElementById('headerUpdated').textContent = 'Last Updated: ' + ts.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, month: 'short', day: 'numeric' });
+    // Update header
+    var now = new Date();
+    document.getElementById('headerDate').textContent =
+      now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    var gen = DATA.generated_at ? new Date(DATA.generated_at) : now;
+    document.getElementById('headerUpdated').textContent =
+      'Last updated: ' + gen.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, month: 'short', day: 'numeric' });
   }
 
-  window.__setRepTab = function(period) {
-    repTabPeriod = period;
+  function statCard(label, value, cls) {
+    return '<div class="stat-card"><div class="stat-label">' + label +
+      '</div><div class="metric-value' + (cls || '') + '">' + value + '</div></div>';
+  }
+
+  window.__setRepPeriod = function(p) {
+    repPeriod = p;
     render();
   };
 
-  // Fetch data
   function fetchData(showLoader) {
     if (showLoader) document.getElementById('loadingOverlay').classList.add('visible');
     var btn = document.getElementById('refreshBtn');
     btn.classList.add('spinning');
 
-    fetch('../data/dashboard-data.json?t=' + Date.now())
-      .then(function(r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .then(function(data) {
-        DATA = data;
-        render();
-      })
-      .catch(function(e) {
-        console.error('Failed to load dashboard data:', e);
-        if (!DATA) {
-          document.getElementById('dashboardSections').innerHTML =
-            '<div class="flag-card" style="margin-top:40px;justify-content:center">' +
-            '<span class="flag-text" style="color:var(--red-alert)">Failed to load data. Ensure ../data/dashboard-data.json exists.</span></div>';
-        }
-      })
-      .finally(function() {
-        document.getElementById('loadingOverlay').classList.remove('visible');
-        btn.classList.remove('spinning');
-      });
+    Promise.all([
+      fetch('../data/dashboard-data.json?t=' + Date.now()).then(function(r) { return r.json(); }),
+      fetch('../data/leo-notifications.json?t=' + Date.now()).then(function(r) { return r.json(); }).catch(function() { return { notifications: [] }; })
+    ]).then(function(results) {
+      DATA = results[0];
+      window.__notifications = results[1].notifications || [];
+      render();
+    }).catch(function(e) {
+      console.error('Failed to load data:', e);
+      if (!DATA) {
+        document.getElementById('dashboard').innerHTML =
+          '<div style="margin-top:40px;text-align:center;color:var(--red-alert)">Failed to load data. Ensure ../data/dashboard-data.json exists.</div>';
+      }
+    }).finally(function() {
+      document.getElementById('loadingOverlay').classList.remove('visible');
+      btn.classList.remove('spinning');
+    });
   }
 
-  // Event listeners
-  document.querySelectorAll('.pill-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.pill-btn').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      currentPeriod = btn.dataset.period;
-      dateOffset = 0;
-      render();
-    });
-  });
+  document.getElementById('refreshBtn').addEventListener('click', function() { fetchData(true); });
 
-  document.getElementById('navPrev').addEventListener('click', function() {
-    dateOffset--;
-    updateDateLabel();
-  });
-  document.getElementById('navNext').addEventListener('click', function() {
-    dateOffset++;
-    updateDateLabel();
-  });
-
-  document.getElementById('refreshBtn').addEventListener('click', function() {
-    fetchData(true);
-  });
-
-  // Init
   fetchData(true);
-  setInterval(function() { fetchData(false); }, REFRESH_INTERVAL);
+  setInterval(function() { fetchData(false); }, REFRESH_MS);
 })();
 </script>
 </body>
