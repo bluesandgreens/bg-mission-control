@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 generate-data.py
-Pull live data from HubSpot, Stripe, and Meta Ads APIs and output
+Pull live data from HubSpot, Stripe, Meta Ads, and Supabase APIs and output
 consolidated JSON to data/dashboard-data.json.
 
 Usage:
@@ -108,6 +108,61 @@ def parse_period(period_str: str) -> datetime:
     else:
         d = datetime.strptime(period_str, "%Y-%m-%d")
         return d
+
+
+# ---------------------------------------------------------------------------
+# Supabase helpers
+# ---------------------------------------------------------------------------
+
+SUPABASE_URL = "https://ltpkeddkkrexynlhgxal.supabase.co"
+
+
+def load_supabase_key() -> str:
+    """Read Supabase service_role_key from ~/.config/supabase/config.json."""
+    config_path = os.path.expanduser("~/.config/supabase/config.json")
+    try:
+        with open(config_path, "r") as f:
+            config = json.load(f)
+        return config.get("service_role_key", "")
+    except Exception as e:
+        log(f"WARNING: Could not load Supabase config: {e}")
+        return ""
+
+
+def supabase_get(supabase_url: str, supabase_key: str, table: str, params: str = "") -> list:
+    """Make a GET request to Supabase REST API. Returns list of rows or empty list."""
+    if not supabase_key:
+        return []
+    url = f"{supabase_url}/rest/v1/{table}"
+    if params:
+        url = f"{url}?{params}"
+    headers = {
+        "apikey": supabase_key,
+        "Authorization": f"Bearer {supabase_key}",
+    }
+    try:
+        resp = requests.get(url, headers=headers, timeout=30)
+        resp.raise_for_status()
+        return resp.json()
+    except Exception as e:
+        log(f"Supabase error ({table}): {e}")
+        return []
+
+
+def fetch_supabase_cache(supabase_url: str, supabase_key: str, cache_key: str) -> dict:
+    """Fetch a hubspot_cache entry by cache_key. Returns the data field or empty dict."""
+    try:
+        rows = supabase_get(
+            supabase_url, supabase_key,
+            "hubspot_cache",
+            f"cache_key=eq.{cache_key}&select=data,updated_at",
+        )
+        if rows and isinstance(rows, list) and len(rows) > 0:
+            return rows[0].get("data", {}) or {}
+        return {}
+    except Exception as e:
+        log(f"Supabase cache fetch error ({cache_key}): {e}")
+        return {}
 
 
 # ---------------------------------------------------------------------------
@@ -793,6 +848,363 @@ def fetch_mentors(api_key: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Section H: Supabase Data Pulls
+# ---------------------------------------------------------------------------
+
+def fetch_portal_stats(supabase_url: str, supabase_key: str) -> dict:
+    """Fetch portal stats from admin_dashboard_stats cache key."""
+    try:
+        data = fetch_supabase_cache(supabase_url, supabase_key, "admin_dashboard_stats")
+        if not data:
+            return {}
+        return {
+            "active_users": data.get("active_users", 0),
+            "active_mentors": data.get("active_mentors", 0),
+            "unassigned_count": data.get("unassigned_count", 0),
+            "parent_nps_score": data.get("parent_nps_score", 0),
+            "safeguarding_flags": data.get("safeguarding_flags", 0),
+            "support_requests_open": data.get("support_requests_open", 0),
+            "parent_escalations_open": data.get("parent_escalations_open", 0),
+            "activation_pipeline_total": data.get("activation_pipeline_total", 0),
+        }
+    except Exception as e:
+        log(f"fetch_portal_stats error: {e}")
+        return {}
+
+
+def fetch_overdue_w1s(supabase_url: str, supabase_key: str) -> list:
+    """Fetch overdue Week 1 sessions from activation_pipeline cache."""
+    try:
+        data = fetch_supabase_cache(supabase_url, supabase_key, "activation_pipeline")
+        if not data:
+            return []
+
+        members = data if isinstance(data, list) else data.get("members", data.get("contacts", []))
+        if not isinstance(members, list):
+            return []
+
+        today = datetime.utcnow().date()
+        overdue = []
+        for m in members:
+            w1_date_str = m.get("week_1_scheduled_for", "")
+            w1_complete = m.get("week_1_complete", "") or m.get("w1_complete", "")
+            if not w1_date_str or w1_complete:
+                continue
+            try:
+                w1_date = datetime.strptime(str(w1_date_str)[:10], "%Y-%m-%d").date()
+            except (ValueError, TypeError):
+                continue
+            if w1_date < today:
+                days_overdue = (today - w1_date).days
+                name = m.get("son_name") or f"{m.get('firstname', '')} {m.get('lastname', '')}".strip() or "Unknown"
+                overdue.append({
+                    "name": name,
+                    "w1_scheduled_date": str(w1_date_str)[:10],
+                    "days_overdue": days_overdue,
+                    "activation_stage": m.get("w1_activation_stage", ""),
+                    "mentor": m.get("mentor_name1") or m.get("associated_mentor_name", ""),
+                })
+        return overdue
+    except Exception as e:
+        log(f"fetch_overdue_w1s error: {e}")
+        return []
+
+
+def fetch_dc_closes(supabase_url: str, supabase_key: str) -> list:
+    """Fetch recent pipeline closes from pipeline_members cache."""
+    try:
+        data = fetch_supabase_cache(supabase_url, supabase_key, "pipeline_members")
+        if not data:
+            return []
+
+        members = data if isinstance(data, list) else data.get("members", data.get("contacts", []))
+        if not isinstance(members, list):
+            return []
+
+        seven_days_ago = (datetime.utcnow() - timedelta(days=7)).date()
+        closes = []
+        for m in members:
+            close_date_str = m.get("close_date") or m.get("onboarding_call_scheduled", "")
+            name = m.get("name") or f"{m.get('firstname', '')} {m.get('lastname', '')}".strip() or "Unknown"
+            entry = {
+                "name": name,
+                "close_date": str(close_date_str)[:10] if close_date_str else "",
+                "rep": m.get("rep") or m.get("hubspot_owner_id", ""),
+                "status": m.get("status", ""),
+            }
+            # Filter to last 7 days if we have a parseable date
+            if close_date_str:
+                try:
+                    cd = datetime.strptime(str(close_date_str)[:10], "%Y-%m-%d").date()
+                    if cd >= seven_days_ago:
+                        closes.append(entry)
+                    continue
+                except (ValueError, TypeError):
+                    pass
+            # If no parseable date, include it anyway
+            closes.append(entry)
+        return closes
+    except Exception as e:
+        log(f"fetch_dc_closes error: {e}")
+        return []
+
+
+def fetch_perf_flags(supabase_url: str, supabase_key: str) -> list:
+    """Build performance flags from leaderboard and team_health cache keys."""
+    try:
+        leaderboard = fetch_supabase_cache(supabase_url, supabase_key, "leaderboard")
+        team_health = fetch_supabase_cache(supabase_url, supabase_key, "team_health")
+        flags = []
+
+        # Process leaderboard data
+        if leaderboard:
+            mentors_lb = leaderboard if isinstance(leaderboard, list) else leaderboard.get("mentors", [])
+            if isinstance(mentors_lb, list):
+                for mentor in mentors_lb:
+                    mentor_name = mentor.get("name", "Unknown")
+
+                    # No-shows this week
+                    no_shows = mentor.get("noShows", {})
+                    no_shows_week = no_shows.get("week", []) if isinstance(no_shows, dict) else []
+                    if isinstance(no_shows_week, list) and len(no_shows_week) > 0:
+                        flags.append({
+                            "type": "no_show",
+                            "detail": f"{len(no_shows_week)} no-show(s) this week",
+                            "mentor": mentor_name,
+                            "severity": "high",
+                        })
+
+                    # Wellbeing flags from leaderboard
+                    wellbeing = mentor.get("wellbeing", {})
+                    wellbeing_week = wellbeing.get("week", []) if isinstance(wellbeing, dict) else []
+                    if isinstance(wellbeing_week, list) and len(wellbeing_week) > 0:
+                        flags.append({
+                            "type": "wellbeing",
+                            "detail": f"{len(wellbeing_week)} wellbeing flag(s) this week",
+                            "mentor": mentor_name,
+                            "severity": "high",
+                        })
+
+        # Process team_health data
+        if team_health:
+            members_th = team_health if isinstance(team_health, list) else team_health.get("members", [])
+            if isinstance(members_th, list):
+                for member in members_th:
+                    mentor_name = member.get("mentor", member.get("name", "Unknown"))
+
+                    # Low session consistency
+                    consistency = member.get("avgSessionConsistency", 1.0)
+                    try:
+                        if float(consistency) < 0.6:
+                            flags.append({
+                                "type": "low_consistency",
+                                "detail": f"Session consistency {consistency}",
+                                "mentor": mentor_name,
+                                "severity": "medium",
+                            })
+                    except (ValueError, TypeError):
+                        pass
+
+                    # Overdue sessions
+                    days_since = member.get("daysSinceSession", 0)
+                    try:
+                        if int(days_since) > 14:
+                            flags.append({
+                                "type": "overdue_session",
+                                "detail": f"{days_since} days since last session",
+                                "mentor": mentor_name,
+                                "severity": "high" if int(days_since) > 21 else "medium",
+                            })
+                    except (ValueError, TypeError):
+                        pass
+
+            # Wellbeing flags from team_health flaggedCount
+            flagged_count = team_health.get("flaggedCount", 0)
+            try:
+                if int(flagged_count) > 0:
+                    flags.append({
+                        "type": "wellbeing",
+                        "detail": f"{flagged_count} flagged in team health",
+                        "mentor": "team",
+                        "severity": "high",
+                    })
+            except (ValueError, TypeError):
+                pass
+
+        return flags
+    except Exception as e:
+        log(f"fetch_perf_flags error: {e}")
+        return []
+
+
+def fetch_mentor_leaderboard(supabase_url: str, supabase_key: str) -> list:
+    """Fetch mentor leaderboard from leaderboard cache key."""
+    try:
+        data = fetch_supabase_cache(supabase_url, supabase_key, "leaderboard")
+        if not data:
+            return []
+
+        mentors = data if isinstance(data, list) else data.get("mentors", [])
+        if not isinstance(mentors, list):
+            return []
+
+        result = []
+        for m in mentors:
+            sessions = m.get("sessions", {})
+            wins = m.get("wins", {})
+            no_shows = m.get("noShows", {})
+            result.append({
+                "name": m.get("name", "Unknown"),
+                "tier": m.get("tier", ""),
+                "active_members": m.get("activeMembers", m.get("active_members", 0)),
+                "sessions_week": sessions.get("week", 0) if isinstance(sessions, dict) else 0,
+                "sessions_month": sessions.get("month", 0) if isinstance(sessions, dict) else 0,
+                "wins_week": wins.get("week", 0) if isinstance(wins, dict) else 0,
+                "retention_pct": m.get("retentionPct", m.get("retention_pct", 0)),
+                "avg_parent_nps": m.get("avgParentNps", m.get("avg_parent_nps", 0)),
+                "no_shows_week": len(no_shows.get("week", [])) if isinstance(no_shows, dict) and isinstance(no_shows.get("week"), list) else 0,
+                "capacity": m.get("capacity", m.get("mentor_capacity_target", None)),
+            })
+        return result
+    except Exception as e:
+        log(f"fetch_mentor_leaderboard error: {e}")
+        return []
+
+
+def fetch_trend_14d(supabase_url: str, supabase_key: str, hubspot_key: str, target: datetime) -> list:
+    """
+    Fetch 14-day trend data.
+    TODO: requires daily snapshot storage in Supabase for full historical data.
+    For now, returns a single-point entry with today's data if available.
+    """
+    try:
+        # Try to get current pulse data from Supabase
+        stats = fetch_supabase_cache(supabase_url, supabase_key, "admin_dashboard_stats")
+        if stats:
+            return [{
+                "date": target.strftime("%Y-%m-%d"),
+                "active_users": stats.get("active_users", 0),
+                "active_mentors": stats.get("active_mentors", 0),
+                "activation_pipeline_total": stats.get("activation_pipeline_total", 0),
+                "unassigned_count": stats.get("unassigned_count", 0),
+            }]
+        # TODO: requires daily snapshot storage — once we have a daily_snapshots
+        # table in Supabase, query last 14 entries ordered by date.
+        return []
+    except Exception as e:
+        log(f"fetch_trend_14d error: {e}")
+        return []
+
+
+def fetch_surround_sound(supabase_url: str, supabase_key: str) -> list:
+    """Fetch members needing team touches from surround_sound cache."""
+    try:
+        data = fetch_supabase_cache(supabase_url, supabase_key, "surround_sound")
+        if not data:
+            return []
+
+        members = data if isinstance(data, list) else data.get("members", data.get("contacts", []))
+        if not isinstance(members, list):
+            return []
+
+        result = []
+        for m in members:
+            mentor_touch = m.get("surround_mentor", m.get("mentor_touch", ""))
+            dcrep_touch = m.get("surround_dcrep", m.get("dcrep_touch", ""))
+            norri_touch = m.get("surround_norri", m.get("norri_touch", ""))
+            brodie_touch = m.get("surround_brodie", m.get("brodie_touch", ""))
+
+            # Include if any touch is missing
+            touches = [mentor_touch, dcrep_touch, norri_touch, brodie_touch]
+            if any(not t or t.lower() == "no" for t in touches):
+                name = m.get("name") or f"{m.get('firstname', '')} {m.get('lastname', '')}".strip() or "Unknown"
+                result.append({
+                    "name": name,
+                    "mentor_touch": mentor_touch or "No",
+                    "dcrep_touch": dcrep_touch or "No",
+                    "norri_touch": norri_touch or "No",
+                    "brodie_touch": brodie_touch or "No",
+                })
+        return result
+    except Exception as e:
+        log(f"fetch_surround_sound error: {e}")
+        return []
+
+
+def fetch_unassigned(supabase_url: str, supabase_key: str) -> list:
+    """Fetch unassigned members from admin_unassigned_default cache."""
+    try:
+        data = fetch_supabase_cache(supabase_url, supabase_key, "admin_unassigned_default")
+        if not data:
+            return []
+
+        members = data if isinstance(data, list) else data.get("members", data.get("contacts", []))
+        if not isinstance(members, list):
+            return []
+
+        result = []
+        for m in members:
+            name = m.get("name") or f"{m.get('firstname', '')} {m.get('lastname', '')}".strip() or "Unknown"
+            result.append({
+                "name": name,
+                "program": m.get("program", ""),
+                "status": m.get("status", ""),
+            })
+        return result
+    except Exception as e:
+        log(f"fetch_unassigned error: {e}")
+        return []
+
+
+def enrich_activation_from_supabase(supabase_url: str, supabase_key: str,
+                                     activation_data: dict) -> dict:
+    """
+    Enrich existing activation pipeline data with Supabase cache data.
+    Fills in mentor_allocated and w1_complete arrays if they're empty.
+    """
+    try:
+        data = fetch_supabase_cache(supabase_url, supabase_key, "activation_pipeline")
+        if not data:
+            return activation_data
+
+        members = data if isinstance(data, list) else data.get("members", data.get("contacts", []))
+        if not isinstance(members, list):
+            return activation_data
+
+        # If mentor_allocated is empty, populate from Supabase
+        if not activation_data.get("mentor_allocated"):
+            for m in members:
+                has_mentor = m.get("has_associated_mentor") or m.get("associated_mentor_name")
+                w1_complete = m.get("week_1_complete") or m.get("w1_complete")
+                w1_scheduled = m.get("week_1_scheduled_for")
+                if has_mentor and not w1_scheduled and not w1_complete:
+                    name = m.get("son_name") or f"{m.get('firstname', '')} {m.get('lastname', '')}".strip() or "Unknown"
+                    activation_data["mentor_allocated"].append({
+                        "name": name,
+                        "date": m.get("mentor_allocated_time", ""),
+                        "w1_activation_stage": m.get("w1_activation_stage", ""),
+                        "mentor": m.get("associated_mentor_name", ""),
+                    })
+
+        # If w1_complete is empty, populate from Supabase
+        if not activation_data.get("w1_complete"):
+            for m in members:
+                w1_complete = m.get("week_1_complete") or m.get("w1_complete")
+                if w1_complete:
+                    name = m.get("son_name") or f"{m.get('firstname', '')} {m.get('lastname', '')}".strip() or "Unknown"
+                    activation_data["w1_complete"].append({
+                        "name": name,
+                        "date": str(w1_complete)[:10] if w1_complete else "",
+                        "w1_activation_stage": m.get("w1_activation_stage", ""),
+                    })
+
+        return activation_data
+    except Exception as e:
+        log(f"enrich_activation_from_supabase error: {e}")
+        return activation_data
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -839,6 +1251,14 @@ def main():
     else:
         log("  WARNING: Meta key missing")
 
+    # Load Supabase config
+    supabase_key = load_supabase_key()
+    supabase_url = SUPABASE_URL
+    if supabase_key:
+        log("  Supabase key loaded")
+    else:
+        log("  WARNING: Supabase key missing — Supabase data pulls will be skipped")
+
     # Fetch all sections
     pulse = fetch_pulse(hubspot_key, target)
     reps = fetch_reps(hubspot_key, target)
@@ -847,6 +1267,31 @@ def main():
     activation = fetch_activation_pipeline(hubspot_key)
     retention = fetch_retention(hubspot_key, target)
     mentors = fetch_mentors(hubspot_key)
+
+    # Supabase data pulls
+    log("Fetching Supabase data...")
+    overdue_w1s = fetch_overdue_w1s(supabase_url, supabase_key)
+    log(f"  Overdue W1s: {len(overdue_w1s)}")
+    dc_closes = fetch_dc_closes(supabase_url, supabase_key)
+    log(f"  DC closes: {len(dc_closes)}")
+    perf_flags = fetch_perf_flags(supabase_url, supabase_key)
+    log(f"  Perf flags: {len(perf_flags)}")
+    trend_14d = fetch_trend_14d(supabase_url, supabase_key, hubspot_key, target)
+    log(f"  Trend 14d entries: {len(trend_14d)}")
+    portal_stats = fetch_portal_stats(supabase_url, supabase_key)
+    log(f"  Portal stats: {'loaded' if portal_stats else 'empty'}")
+    surround_sound = fetch_surround_sound(supabase_url, supabase_key)
+    log(f"  Surround sound: {len(surround_sound)}")
+    unassigned = fetch_unassigned(supabase_url, supabase_key)
+    log(f"  Unassigned: {len(unassigned)}")
+    mentor_leaderboard = fetch_mentor_leaderboard(supabase_url, supabase_key)
+    log(f"  Mentor leaderboard: {len(mentor_leaderboard)}")
+
+    # Enrich activation pipeline with Supabase data
+    activation = enrich_activation_from_supabase(supabase_url, supabase_key, activation)
+
+    # Add leaderboard to mentors
+    mentors["leaderboard"] = mentor_leaderboard
 
     # Assemble output
     output = {
@@ -863,6 +1308,13 @@ def main():
         "activation_pipeline": activation,
         "retention": retention,
         "mentors": mentors,
+        "overdue_w1s": overdue_w1s,
+        "dc_closes": dc_closes,
+        "perf_flags": perf_flags,
+        "trend_14d": trend_14d,
+        "portal_stats": portal_stats,
+        "surround_sound": surround_sound,
+        "unassigned": unassigned,
     }
 
     # Write output

@@ -719,6 +719,8 @@ tbody tr.pending-row { opacity: 0.35; }
   <!-- TAB: NORRI'S DASHBOARD -->
   <div id="main-tab-norri" class="main-tab-content">
 
+  <div id="norri-portal-stats" class="pulse-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 24px;"></div>
+
   <div class="section-header">NEW W1s NEEDING WELCOME CALL (Last 48hrs)</div>
   <div id="norri-welcome"></div>
 
@@ -947,8 +949,46 @@ function renderDailyPulse(data) {
     pulseCard('W1 Starts', safeVal(p.w1_starts, 0), 'green', '');
 }
 
-function renderTrend() {
-  document.getElementById('trend-section').innerHTML = noData();
+function renderTrend(data) {
+  var el = document.getElementById('trend-section');
+  var trend = data.trend_14d || [];
+  if (trend.length <= 1) { el.innerHTML = noData(); return; }
+
+  // Find max values for scaling
+  var maxLeads = 1, maxBooked = 1, maxCloses = 1;
+  trend.forEach(function(d) {
+    if ((d.new_leads || 0) > maxLeads) maxLeads = d.new_leads;
+    if ((d.booked_calls || 0) > maxBooked) maxBooked = d.booked_calls;
+    if ((d.closes || 0) > maxCloses) maxCloses = d.closes;
+  });
+  var maxVal = Math.max(maxLeads, maxBooked, maxCloses, 1);
+
+  var html = '<div style="background: var(--card-bg); border: var(--card-border); border-radius: 16px; padding: 20px; overflow-x: auto;">';
+  html += '<div style="display: flex; gap: 4px; align-items: flex-end; height: 120px; min-width: ' + (trend.length * 48) + 'px;">';
+
+  trend.forEach(function(d) {
+    var leadsH = Math.max(((d.new_leads || 0) / maxVal) * 100, 2);
+    var bookedH = Math.max(((d.booked_calls || 0) / maxVal) * 100, 2);
+    var closesH = Math.max(((d.closes || 0) / maxVal) * 100, 2);
+    var dayLabel = d.date ? d.date.substring(5) : '';
+
+    html += '<div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">' +
+      '<div style="display: flex; gap: 1px; align-items: flex-end; height: 100px;">' +
+      '<div style="width: 10px; height: ' + leadsH + '%; background: rgba(200,169,81,0.6); border-radius: 2px 2px 0 0;" title="Leads: ' + (d.new_leads || 0) + '"></div>' +
+      '<div style="width: 10px; height: ' + bookedH + '%; background: rgba(16,71,145,0.8); border-radius: 2px 2px 0 0;" title="Booked: ' + (d.booked_calls || 0) + '"></div>' +
+      '<div style="width: 10px; height: ' + closesH + '%; background: rgba(39,174,96,0.8); border-radius: 2px 2px 0 0;" title="Closes: ' + (d.closes || 0) + '"></div>' +
+      '</div>' +
+      '<div style="font-size: 9px; color: rgba(255,255,255,0.3); white-space: nowrap;">' + dayLabel + '</div>' +
+      '</div>';
+  });
+
+  html += '</div>';
+  html += '<div style="display: flex; gap: 16px; margin-top: 12px; font-size: 11px; color: rgba(255,255,255,0.5);">';
+  html += '<span><span style="display: inline-block; width: 10px; height: 10px; background: rgba(200,169,81,0.6); border-radius: 2px; margin-right: 4px;"></span>Leads</span>';
+  html += '<span><span style="display: inline-block; width: 10px; height: 10px; background: rgba(16,71,145,0.8); border-radius: 2px; margin-right: 4px;"></span>Booked</span>';
+  html += '<span><span style="display: inline-block; width: 10px; height: 10px; background: rgba(39,174,96,0.8); border-radius: 2px; margin-right: 4px;"></span>Closes</span>';
+  html += '</div></div>';
+  el.innerHTML = html;
 }
 
 function renderConversionFlags(data) {
@@ -1101,8 +1141,18 @@ function renderRepBreakdown(data) {
   renderRepTable(reps, 'mtd', 'rep-tab-month');
 }
 
-function renderDCClosesPipeline() {
-  document.getElementById('dc-closes-pipeline').innerHTML = noData();
+function renderDCClosesPipeline(data) {
+  var el = document.getElementById('dc-closes-pipeline');
+  var items = data.dc_closes || [];
+  if (items.length === 0) { el.innerHTML = noData(); return; }
+
+  var html = '<table><thead><tr><th>Name</th><th>Close Date</th><th>Rep</th><th>Status</th></tr></thead><tbody>';
+  items.forEach(function(item) {
+    var statusBadge = '<span class="badge badge-green">' + safeVal(item.status, 'Closed') + '</span>';
+    html += '<tr><td><strong>' + safeVal(item.name) + '</strong></td><td>' + formatShortDate(item.close_date) + '</td><td>' + safeVal(item.rep, '--') + '</td><td>' + statusBadge + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
 }
 
 function renderRetentionSession7(data) {
@@ -1133,8 +1183,26 @@ function renderPaymentResets(data) {
   el.innerHTML = html;
 }
 
-function renderPerfFlagsDetail() {
-  document.getElementById('perf-flags-detail').innerHTML = noData();
+function renderPerfFlagsDetail(data) {
+  var el = document.getElementById('perf-flags-detail');
+  var flags = data.perf_flags || [];
+  if (flags.length === 0) { el.innerHTML = '<div style="padding: 16px; text-align: center; color: rgba(255,255,255,0.4); font-size: 13px;">No performance flags — all clear</div>'; return; }
+
+  var html = '';
+  flags.forEach(function(flag) {
+    var icon = '⚠️';
+    var borderColor = 'var(--warm-gold)';
+    if (flag.severity === 'high') { icon = '🔴'; borderColor = 'var(--red-alert)'; }
+    else if (flag.type === 'wellbeing') { icon = '💛'; }
+    else if (flag.type === 'overdue_session') { icon = '⏰'; }
+    else if (flag.type === 'no_show') { icon = '❌'; borderColor = 'var(--red-alert)'; }
+
+    html += '<div class="flag-card" style="border-left: 3px solid ' + borderColor + ';">' +
+      '<div class="flag-icon">' + icon + '</div>' +
+      '<div class="flag-text"><strong>' + safeVal(flag.mentor, '') + '</strong> ' + safeVal(flag.detail, '') + '</div>' +
+    '</div>';
+  });
+  el.innerHTML = html;
 }
 
 // ===== DCs TAB =====
@@ -1206,10 +1274,12 @@ function renderMentorTab(data) {
 
   // Pulse cards
   var pulseEl = document.getElementById('mentor-pulse');
+  var ps = data.portal_stats || {};
   pulseEl.innerHTML =
-    pulseCard('Total Active Mentors', safeVal(mentors.active_count, 0), '', '') +
-    pulseCard('Total Members', totalMembers, '', '') +
-    pulseCard('At Capacity', safeVal(mentors.at_capacity, 0), 'red', '');
+    pulseCard('Total Active Mentors', safeVal(ps.active_mentors, safeVal(mentors.active_count, 0)), '', '') +
+    pulseCard('Total Members', safeVal(ps.active_users, totalMembers), '', '') +
+    pulseCard('At Capacity', safeVal(mentors.at_capacity, 0), 'red', '') +
+    pulseCard('Unassigned', safeVal(ps.unassigned_count, 0), ps.unassigned_count > 0 ? 'red' : '', '');
 
   // Capacity table
   var tableEl = document.getElementById('mentor-table');
@@ -1239,16 +1309,95 @@ function renderMentorTab(data) {
     tableEl.innerHTML = html;
   }
 
-  document.getElementById('mentor-flags').innerHTML = noData();
-  document.getElementById('mentor-overdue').innerHTML = noData();
-  document.getElementById('mentor-nps').innerHTML = noData();
-  document.getElementById('mentor-support').innerHTML = noData();
-  document.getElementById('mentor-wellbeing').innerHTML = noData();
+  // Leaderboard
+  var lb = mentors.leaderboard || [];
+  if (lb.length > 0) {
+    var lbEl = document.getElementById('mentor-flags');
+    var lbHtml = '<table><thead><tr><th>Mentor</th><th>Tier</th><th>Members</th><th>Sessions (Wk/Mo)</th><th>Wins (Wk)</th><th>Retention %</th><th>NPS</th><th>No-Shows (Wk)</th></tr></thead><tbody>';
+    lb.forEach(function(m) {
+      var tierBadge = m.tier === 'gold' ? '<span class="badge badge-gold">Gold</span>' : (m.tier === 'silver' ? '<span class="badge badge-navy">Silver</span>' : '<span class="badge badge-navy">' + safeVal(m.tier, '--') + '</span>');
+      var retBadge = (m.retention_pct >= 80) ? '<span class="badge badge-green">' + m.retention_pct + '%</span>' : (m.retention_pct >= 60 ? '<span class="badge badge-warning">' + m.retention_pct + '%</span>' : '<span class="badge badge-red">' + safeVal(m.retention_pct, '--') + '%</span>');
+      var noshowVal = m.no_shows_week || 0;
+      var noshowBadge = noshowVal > 0 ? '<span class="badge badge-red">' + noshowVal + '</span>' : '<span class="badge badge-green">0</span>';
+      lbHtml += '<tr><td><strong>' + safeVal(m.name) + '</strong></td><td>' + tierBadge + '</td><td>' + safeVal(m.active_members, '--') + '</td><td>' + safeVal(m.sessions_week, 0) + ' / ' + safeVal(m.sessions_month, 0) + '</td><td>' + safeVal(m.wins_week, 0) + '</td><td>' + retBadge + '</td><td>' + safeVal(m.avg_parent_nps, '--') + '</td><td>' + noshowBadge + '</td></tr>';
+    });
+    lbHtml += '</tbody></table>';
+    lbEl.innerHTML = lbHtml;
+  } else {
+    document.getElementById('mentor-flags').innerHTML = noData();
+  }
+
+  // Overdue sessions from perf_flags
+  var perfFlags = data.perf_flags || [];
+  var overdueFlags = perfFlags.filter(function(f) { return f.type === 'overdue_session'; });
+  var overdueEl = document.getElementById('mentor-overdue');
+  if (overdueFlags.length === 0) {
+    overdueEl.innerHTML = '<div style="padding: 16px; text-align: center; color: rgba(255,255,255,0.4); font-size: 13px;">No overdue sessions</div>';
+  } else {
+    var oHtml = '';
+    overdueFlags.forEach(function(f) {
+      oHtml += '<div class="flag-card" style="border-left: 3px solid var(--red-alert);"><div class="flag-icon">⏰</div><div class="flag-text"><strong>' + safeVal(f.mentor, '') + '</strong> ' + safeVal(f.detail, '') + '</div></div>';
+    });
+    overdueEl.innerHTML = oHtml;
+  }
+
+  // NPS
+  var npsEl = document.getElementById('mentor-nps');
+  var lowNps = lb.filter(function(m) { return m.avg_parent_nps !== null && m.avg_parent_nps !== undefined && m.avg_parent_nps < 7; });
+  if (lowNps.length === 0) {
+    npsEl.innerHTML = '<div style="padding: 16px; text-align: center; color: rgba(255,255,255,0.4); font-size: 13px;">No low NPS scores</div>';
+  } else {
+    var nHtml = '';
+    lowNps.forEach(function(m) {
+      nHtml += '<div class="flag-card" style="border-left: 3px solid var(--warm-gold);"><div class="flag-icon">📊</div><div class="flag-text"><strong>' + safeVal(m.name) + '</strong> — NPS: ' + m.avg_parent_nps + '</div></div>';
+    });
+    npsEl.innerHTML = nHtml;
+  }
+
+  // Support & Wellbeing from portal stats
+  var suppEl = document.getElementById('mentor-support');
+  if (ps.support_requests_open) {
+    suppEl.innerHTML = '<div class="flag-card" style="border-left: 3px solid var(--warm-gold);"><div class="flag-icon">📋</div><div class="flag-text"><strong>' + ps.support_requests_open + '</strong> open support requests</div></div>';
+  } else {
+    suppEl.innerHTML = '<div style="padding: 16px; text-align: center; color: rgba(255,255,255,0.4); font-size: 13px;">No open support requests</div>';
+  }
+
+  var wbEl = document.getElementById('mentor-wellbeing');
+  var wbFlags = perfFlags.filter(function(f) { return f.type === 'wellbeing'; });
+  if (ps.safeguarding_flags || wbFlags.length > 0) {
+    var wHtml = '';
+    if (ps.safeguarding_flags) {
+      wHtml += '<div class="flag-card" style="border-left: 3px solid var(--red-alert);"><div class="flag-icon">🛡️</div><div class="flag-text"><strong>' + ps.safeguarding_flags + '</strong> safeguarding flags active</div></div>';
+    }
+    wbFlags.forEach(function(f) {
+      wHtml += '<div class="flag-card" style="border-left: 3px solid var(--warm-gold);"><div class="flag-icon">💛</div><div class="flag-text"><strong>' + safeVal(f.mentor, '') + '</strong> ' + safeVal(f.detail, '') + '</div></div>';
+    });
+    wbEl.innerHTML = wHtml;
+  } else {
+    wbEl.innerHTML = '<div style="padding: 16px; text-align: center; color: rgba(255,255,255,0.4); font-size: 13px;">No wellbeing flags</div>';
+  }
+
+  // Mentor pipeline
   document.getElementById('mentor-pipeline-section').innerHTML = noData();
 }
 
 // ===== PROGRAM TAB =====
 function renderNorriTab(data) {
+  // Portal stats banner
+  var ps = data.portal_stats || {};
+  var portalEl = document.getElementById('norri-portal-stats');
+  if (ps.active_users || ps.active_mentors || ps.parent_nps_score) {
+    portalEl.innerHTML =
+      pulseCard('Active Users', safeVal(ps.active_users, 0), '', '') +
+      pulseCard('Active Mentors', safeVal(ps.active_mentors, 0), '', '') +
+      pulseCard('Unassigned', safeVal(ps.unassigned_count, 0), ps.unassigned_count > 0 ? 'red' : '', '') +
+      pulseCard('Parent NPS', safeVal(ps.parent_nps_score, '--'), '', '') +
+      pulseCard('Escalations', safeVal(ps.parent_escalations_open, 0), ps.parent_escalations_open > 0 ? 'red' : '', '') +
+      pulseCard('Support Open', safeVal(ps.support_requests_open, 0), '', '');
+  } else {
+    portalEl.innerHTML = '';
+  }
+
   document.getElementById('norri-welcome').innerHTML = noData();
   document.getElementById('norri-w1payment').innerHTML = noData();
   document.getElementById('norri-payflags').innerHTML = noData();
@@ -1334,8 +1483,21 @@ function renderWithdrawals(data) {
 }
 
 // ===== OVERDUE W1s TAB =====
-function renderOverdueTab() {
-  document.getElementById('overdue-content').innerHTML = noData();
+function renderOverdueTab(data) {
+  var el = document.getElementById('overdue-content');
+  var items = data.overdue_w1s || [];
+  if (items.length === 0) { el.innerHTML = noData(); return; }
+
+  var html = '<table><thead><tr><th>Name</th><th>W1 Scheduled</th><th>Days Overdue</th><th>Stage</th><th>Mentor</th></tr></thead><tbody>';
+  items.sort(function(a, b) { return (b.days_overdue || 0) - (a.days_overdue || 0); });
+  items.forEach(function(item) {
+    var days = item.days_overdue || 0;
+    var rowStyle = days > 14 ? ' style="background: rgba(231,76,60,0.12);"' : (days > 7 ? ' style="background: rgba(200,169,81,0.10);"' : '');
+    var daysBadge = days > 14 ? '<span class="badge badge-red">' + days + 'd</span>' : (days > 7 ? '<span class="badge badge-warning">' + days + 'd</span>' : '<span class="badge badge-navy">' + days + 'd</span>');
+    html += '<tr' + rowStyle + '><td><strong>' + safeVal(item.name) + '</strong></td><td>' + formatShortDate(item.w1_scheduled_date) + '</td><td>' + daysBadge + '</td><td>' + safeVal(item.activation_stage, '--') + '</td><td>' + safeVal(item.mentor, '--') + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
 }
 
 // ===== DRILL DOWNS =====
@@ -1357,20 +1519,20 @@ function loadDashboard() {
       renderHeader(data);
       renderPerfFlags(data);
       renderDailyPulse(data);
-      renderTrend();
+      renderTrend(data);
       renderConversionFlags(data);
       renderRyeGoals(data);
       renderBrodieGoals(data);
       renderRepBreakdown(data);
-      renderDCClosesPipeline();
+      renderDCClosesPipeline(data);
       renderRetentionSession7(data);
       renderPaymentResets(data);
-      renderPerfFlagsDetail();
+      renderPerfFlagsDetail(data);
       renderRyeTab(data);
       renderBrodieTab(data);
       renderMentorTab(data);
       renderNorriTab(data);
-      renderOverdueTab();
+      renderOverdueTab(data);
       renderDrillDowns(data);
     })
     .catch(function(err) {
