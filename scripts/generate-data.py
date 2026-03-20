@@ -965,42 +965,60 @@ def fetch_overdue_w1s(supabase_url: str, supabase_key: str) -> list:
         return []
 
 
-def fetch_dc_closes(supabase_url: str, supabase_key: str) -> list:
-    """Fetch recent pipeline closes from pipeline_members cache."""
+def fetch_dc_closes(supabase_url: str, supabase_key: str, hubspot_key: str = None) -> list:
+    """Fetch recent DC closes from HubSpot directly (with rep names)."""
+    if not hubspot_key:
+        return _fetch_dc_closes_supabase(supabase_url, supabase_key)
+    try:
+        fourteen_days_ago_ms = int((datetime.now(timezone.utc) - timedelta(days=14)).timestamp() * 1000)
+        payload = {
+            "filterGroups": [{
+                "filters": [{
+                    "propertyName": "onboarding_call_scheduled",
+                    "operator": "GTE",
+                    "value": str(fourteen_days_ago_ms)
+                }]
+            }],
+            "properties": ["firstname", "lastname", "onboarding_call_scheduled",
+                           "discovery_call_taken_by", "discovery_call_outcome", "member_status"],
+            "limit": 100
+        }
+        headers = {"Authorization": f"Bearer {hubspot_key}", "Content-Type": "application/json"}
+        resp = requests.post("https://api.hubapi.com/crm/v3/objects/contacts/search",
+                             headers=headers, json=payload, timeout=30)
+        resp.raise_for_status()
+        results = resp.json().get("results", [])
+        closes = []
+        for r in results:
+            p = r.get("properties", {})
+            name = f"{p.get('firstname', '')} {p.get('lastname', '')}".strip() or "Unknown"
+            close_date = str(p.get("onboarding_call_scheduled", ""))[:10]
+            closes.append({
+                "name": name,
+                "close_date": close_date,
+                "rep": p.get("discovery_call_taken_by", ""),
+                "status": p.get("member_status", p.get("discovery_call_outcome", "")),
+            })
+        closes.sort(key=lambda x: x.get("close_date", ""), reverse=True)
+        return closes
+    except Exception as e:
+        log(f"fetch_dc_closes HubSpot error: {e}")
+        return _fetch_dc_closes_supabase(supabase_url, supabase_key)
+
+
+def _fetch_dc_closes_supabase(supabase_url: str, supabase_key: str) -> list:
+    """Fallback: fetch closes from Supabase pipeline_members cache."""
     try:
         data = fetch_supabase_cache(supabase_url, supabase_key, "pipeline_members")
         if not data:
             return []
-
         members = data if isinstance(data, list) else data.get("members", data.get("contacts", []))
         if not isinstance(members, list):
             return []
-
-        seven_days_ago = (datetime.utcnow() - timedelta(days=7)).date()
-        closes = []
-        for m in members:
-            close_date_str = m.get("close_date") or m.get("onboarding_call_scheduled", "")
-            name = m.get("name") or f"{m.get('firstname', '')} {m.get('lastname', '')}".strip() or "Unknown"
-            entry = {
-                "name": name,
-                "close_date": str(close_date_str)[:10] if close_date_str else "",
-                "rep": m.get("rep") or m.get("hubspot_owner_id", ""),
-                "status": m.get("status", ""),
-            }
-            # Filter to last 7 days if we have a parseable date
-            if close_date_str:
-                try:
-                    cd = datetime.strptime(str(close_date_str)[:10], "%Y-%m-%d").date()
-                    if cd >= seven_days_ago:
-                        closes.append(entry)
-                    continue
-                except (ValueError, TypeError):
-                    pass
-            # If no parseable date, include it anyway
-            closes.append(entry)
-        return closes
+        return [{"name": f"{m.get('firstname','')} {m.get('lastname','')}".strip() or "Unknown",
+                 "close_date": "", "rep": "", "status": ""} for m in members]
     except Exception as e:
-        log(f"fetch_dc_closes error: {e}")
+        log(f"fetch_dc_closes supabase error: {e}")
         return []
 
 
@@ -1128,27 +1146,33 @@ def fetch_mentor_leaderboard(supabase_url: str, supabase_key: str) -> list:
 
 def fetch_trend_14d(supabase_url: str, supabase_key: str, hubspot_key: str, target: datetime) -> list:
     """
-    Fetch 14-day trend data.
-    TODO: requires daily snapshot storage in Supabase for full historical data.
-    For now, returns a single-point entry with today's data if available.
+    Build 14-day trend from HubSpot daily counts.
+    Queries new_leads, booked_calls, and closes for each of the last 14 days.
     """
+    trend = []
+    if not hubspot_key:
+        return trend
     try:
-        # Try to get current pulse data from Supabase
-        stats = fetch_supabase_cache(supabase_url, supabase_key, "admin_dashboard_stats")
-        if stats:
-            return [{
-                "date": target.strftime("%Y-%m-%d"),
-                "active_users": stats.get("active_users", 0),
-                "active_mentors": stats.get("active_mentors", 0),
-                "activation_pipeline_total": stats.get("activation_pipeline_total", 0),
-                "unassigned_count": stats.get("unassigned_count", 0),
-            }]
-        # TODO: requires daily snapshot storage — once we have a daily_snapshots
-        # table in Supabase, query last 14 entries ordered by date.
-        return []
+        for i in range(13, -1, -1):
+            day = target - timedelta(days=i)
+            day_start = date_to_ms(day)
+            day_end = end_of_day_ms(day)
+
+            leads = hubspot_search_count(hubspot_key, hubspot_date_filter("createdate", day_start, day_end))
+            booked = hubspot_search_count(hubspot_key, hubspot_date_filter("discovery_call_booked", day_start, day_end))
+            closes = hubspot_search_count(hubspot_key, hubspot_date_filter("onboarding_call_scheduled", day_start, day_end))
+
+            trend.append({
+                "date": day.strftime("%Y-%m-%d"),
+                "new_leads": leads,
+                "booked_calls": booked,
+                "closes": closes,
+            })
+
+        return trend
     except Exception as e:
         log(f"fetch_trend_14d error: {e}")
-        return []
+        return trend
 
 
 def fetch_surround_sound(supabase_url: str, supabase_key: str) -> list:
@@ -1193,7 +1217,16 @@ def fetch_unassigned(supabase_url: str, supabase_key: str) -> list:
         if not data:
             return []
 
-        members = data if isinstance(data, list) else data.get("members", data.get("contacts", []))
+        # Check multiple possible keys for the member list
+        if isinstance(data, list):
+            members = data
+        elif isinstance(data, dict):
+            members = (data.get("unassignedMembers") or
+                       data.get("members") or
+                       data.get("contacts") or [])
+        else:
+            return []
+
         if not isinstance(members, list):
             return []
 
@@ -1202,9 +1235,29 @@ def fetch_unassigned(supabase_url: str, supabase_key: str) -> list:
             name = m.get("name") or f"{m.get('firstname', '')} {m.get('lastname', '')}".strip() or "Unknown"
             result.append({
                 "name": name,
+                "son_name": m.get("son_name", ""),
                 "program": m.get("program", ""),
                 "status": m.get("status", ""),
             })
+
+        # Also pull admin_unassigned_matching for broader unassigned count
+        try:
+            matching_data = fetch_supabase_cache(supabase_url, supabase_key, "admin_unassigned_matching")
+            if matching_data and isinstance(matching_data, dict):
+                matching_members = matching_data.get("unassignedMembers", [])
+                existing_names = {r["name"] for r in result}
+                for m in matching_members:
+                    name = m.get("name") or f"{m.get('firstname', '')} {m.get('lastname', '')}".strip() or "Unknown"
+                    if name not in existing_names:
+                        result.append({
+                            "name": name,
+                            "son_name": m.get("son_name", ""),
+                            "program": m.get("program", ""),
+                            "status": m.get("status", "matching"),
+                        })
+        except Exception:
+            pass
+
         return result
     except Exception as e:
         log(f"fetch_unassigned error: {e}")
@@ -1327,7 +1380,7 @@ def main():
     log("Fetching Supabase data...")
     overdue_w1s = fetch_overdue_w1s(supabase_url, supabase_key)
     log(f"  Overdue W1s: {len(overdue_w1s)}")
-    dc_closes = fetch_dc_closes(supabase_url, supabase_key)
+    dc_closes = fetch_dc_closes(supabase_url, supabase_key, hubspot_key)
     log(f"  DC closes: {len(dc_closes)}")
     perf_flags = fetch_perf_flags(supabase_url, supabase_key)
     log(f"  Perf flags: {len(perf_flags)}")

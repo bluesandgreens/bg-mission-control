@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T01:15:10.335552Z",
+  "generated_at": "2026-03-20T01:54:34.407413Z",
   "period": {
     "today": "2026-03-20",
     "week_start": "2026-03-16",
@@ -185,19 +185,19 @@
   ],
   "meta_ads": {
     "today": {
-      "spend": 60.52,
+      "spend": 63.91,
       "booked_calls": 2,
-      "cpbc": 30.26
+      "cpbc": 31.95
     },
     "wtd": {
-      "spend": 807.58,
+      "spend": 810.98,
       "booked_calls": 28,
-      "cpbc": 28.84
+      "cpbc": 28.96
     },
     "mtd": {
-      "spend": 4038.74,
+      "spend": 4042.14,
       "booked_calls": 166,
-      "cpbc": 24.33
+      "cpbc": 24.35
     }
   },
   "stripe": {
@@ -3112,7 +3112,7 @@
         "tier": "gold",
         "active_members": 5,
         "sessions_week": 2,
-        "sessions_month": 10,
+        "sessions_month": 9,
         "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 10,
@@ -3136,7 +3136,7 @@
         "tier": "gold",
         "active_members": 7,
         "sessions_week": 4,
-        "sessions_month": 12,
+        "sessions_month": 11,
         "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 5,
@@ -3208,7 +3208,7 @@
         "tier": "gold",
         "active_members": 9,
         "sessions_week": 8,
-        "sessions_month": 28,
+        "sessions_month": 27,
         "wins_week": 10,
         "retention_pct": 0,
         "avg_parent_nps": 10,
@@ -3220,7 +3220,7 @@
         "tier": "gold",
         "active_members": 3,
         "sessions_week": 1,
-        "sessions_month": 7,
+        "sessions_month": 6,
         "wins_week": 1,
         "retention_pct": 0,
         "avg_parent_nps": 10,
@@ -3328,7 +3328,7 @@
         "tier": "standard",
         "active_members": 8,
         "sessions_week": 7,
-        "sessions_month": 24,
+        "sessions_month": 23,
         "wins_week": 5,
         "retention_pct": 0,
         "avg_parent_nps": 8,
@@ -3623,154 +3623,232 @@
   ],
   "dc_closes": [
     {
-      "name": "Mel Tewman",
-      "close_date": "",
-      "rep": "",
-      "status": ""
+      "name": "Kate Harding",
+      "close_date": "2026-03-19",
+      "rep": "Rye Penny",
+      "status": "Deposit Paid"
     },
     {
-      "name": "Rhiannon Medcraft",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Harry Quayle",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Karen Vargas",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Hania  Trzaskowski",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Becka Tearoa",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Hailey  Paine",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Amy Greensword",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Mel Colles",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Sonja Botha",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Jaye Williams",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Charmaine Collins",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Krushauna  Van Anholt",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Pet Goh",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Javed Anwar",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "None None",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Cass Bailey",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Wayde Mainard",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Maria Morton",
-      "close_date": "",
-      "rep": "",
-      "status": ""
+      "name": "Stephanie  Samuel",
+      "close_date": "2026-03-18",
+      "rep": "Rye Penny",
+      "status": "Deposit Paid"
     },
     {
       "name": "Emma Hargreaves",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Lacey Jurd",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Amanda  Thomas",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Rebecca Maggiora",
-      "close_date": "",
-      "rep": "",
-      "status": ""
-    },
-    {
-      "name": "Belinda Mackie",
-      "close_date": "",
-      "rep": "",
-      "status": ""
+      "close_date": "2026-03-18",
+      "rep": null,
+      "status": "Deposit Paid"
     },
     {
       "name": "Jodee O'Connor",
-      "close_date": "",
-      "rep": "",
-      "status": ""
+      "close_date": "2026-03-18",
+      "rep": "Elliot Mahoney",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Charmaine Collins",
+      "close_date": "2026-03-17",
+      "rep": "Harry Quayle",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Wayde Mainard",
+      "close_date": "2026-03-17",
+      "rep": null,
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Belinda Mackie",
+      "close_date": "2026-03-17",
+      "rep": null,
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Mel Tewman",
+      "close_date": "2026-03-16",
+      "rep": "Harry Quayle",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Lacey Jurd",
+      "close_date": "2026-03-16",
+      "rep": null,
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Rebecca Maggiora",
+      "close_date": "2026-03-16",
+      "rep": null,
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Maria Morton",
+      "close_date": "2026-03-15",
+      "rep": "Harry Quayle",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Brooke Miranda",
+      "close_date": "2026-03-13",
+      "rep": "Rye Penny",
+      "status": "Active Sessions"
+    },
+    {
+      "name": "Eileen Kamp",
+      "close_date": "2026-03-13",
+      "rep": null,
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Sarah Anwar",
+      "close_date": "2026-03-13",
+      "rep": null,
+      "status": "Active Sessions"
+    },
+    {
+      "name": "Jenny Lee",
+      "close_date": "2026-03-13",
+      "rep": "Rye Penny",
+      "status": "Churn"
+    },
+    {
+      "name": "Michelle Stephenson",
+      "close_date": "2026-03-12",
+      "rep": null,
+      "status": "Active Sessions"
+    },
+    {
+      "name": "Hayley  Kirk",
+      "close_date": "2026-03-12",
+      "rep": null,
+      "status": "Active Sessions"
+    },
+    {
+      "name": "Fiona Merrin",
+      "close_date": "2026-03-12",
+      "rep": null,
+      "status": "Active Sessions"
+    },
+    {
+      "name": "Cass Bailey",
+      "close_date": "2026-03-12",
+      "rep": "Elliot Mahoney",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Belynda Pope",
+      "close_date": "2026-03-11",
+      "rep": "Elliot Mahoney",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Rhiannon Medcraft",
+      "close_date": "2026-03-11",
+      "rep": "Harry Quayle",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Harry Quayle",
+      "close_date": "2026-03-10",
+      "rep": "Harry Quayle",
+      "status": "Team Member"
+    },
+    {
+      "name": "Samantha Lord",
+      "close_date": "2026-03-10",
+      "rep": "Harry Quayle",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Tenniel Harman-York",
+      "close_date": "2026-03-10",
+      "rep": null,
+      "status": "Active Sessions"
+    },
+    {
+      "name": "LEAH WEST",
+      "close_date": "2026-03-10",
+      "rep": "Elliot Mahoney",
+      "status": "Active Sessions"
+    },
+    {
+      "name": "Javed Anwar",
+      "close_date": "2026-03-10",
+      "rep": null,
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Sarah Ziebell",
+      "close_date": "2026-03-09",
+      "rep": "Claudia Willimann",
+      "status": "Active Sessions"
+    },
+    {
+      "name": "SHERTAM MOTTO",
+      "close_date": "2026-03-09",
+      "rep": "Elliot Mahoney",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Mel Colles",
+      "close_date": "2026-03-09",
+      "rep": null,
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Kelly Steele",
+      "close_date": "2026-03-09",
+      "rep": null,
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Krushauna  Van Anholt",
+      "close_date": "2026-03-09",
+      "rep": "Harry Quayle",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Pet Goh",
+      "close_date": "2026-03-09",
+      "rep": "Harry Quayle",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Whitney Trigwell",
+      "close_date": "2026-03-08",
+      "rep": "Elliot Mahoney",
+      "status": "Active Sessions"
+    },
+    {
+      "name": "Heather Bullied",
+      "close_date": "2026-03-07",
+      "rep": "Rye Penny",
+      "status": "Active Sessions"
+    },
+    {
+      "name": "Jaye Williams",
+      "close_date": "2026-03-07",
+      "rep": "Harry Quayle",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Teah Loccisano",
+      "close_date": "2026-03-06",
+      "rep": "Harry Quayle",
+      "status": "Active Sessions"
+    },
+    {
+      "name": "Amy Greensword",
+      "close_date": "2026-03-06",
+      "rep": "Harry Quayle",
+      "status": "Deposit Paid"
+    },
+    {
+      "name": "Mardi Moore",
+      "close_date": "2026-03-06",
+      "rep": "Harry Quayle",
+      "status": "Active Sessions"
     }
   ],
   "perf_flags": [
@@ -3812,12 +3890,6 @@
     },
     {
       "type": "overdue_session",
-      "detail": "18 days since last session",
-      "mentor": "Alexander",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
       "detail": "16 days since last session",
       "mentor": "Thomas",
       "severity": "medium"
@@ -3830,21 +3902,9 @@
     },
     {
       "type": "overdue_session",
-      "detail": "44 days since last session",
-      "mentor": "Rudy",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "29 days since last session",
-      "mentor": "Darcy",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "26 days since last session",
-      "mentor": "Kellen",
-      "severity": "high"
+      "detail": "18 days since last session",
+      "mentor": "Alexander",
+      "severity": "medium"
     },
     {
       "type": "overdue_session",
@@ -3857,18 +3917,6 @@
       "detail": "35 days since last session",
       "mentor": "Toby",
       "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "16 days since last session",
-      "mentor": "Derrick",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "16 days since last session",
-      "mentor": "Luca",
-      "severity": "medium"
     },
     {
       "type": "overdue_session",
@@ -3890,9 +3938,63 @@
     },
     {
       "type": "overdue_session",
+      "detail": "16 days since last session",
+      "mentor": "Derrick",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "16 days since last session",
+      "mentor": "Luca",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "44 days since last session",
+      "mentor": "Rudy",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "29 days since last session",
+      "mentor": "Darcy",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "26 days since last session",
+      "mentor": "Kellen",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "19 days since last session",
+      "mentor": "Max ",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
       "detail": "17 days since last session",
       "mentor": "Ari",
       "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "18 days since last session",
+      "mentor": "George",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "15 days since last session",
+      "mentor": "Elwyn Vesey",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "30 days since last session",
+      "mentor": "Val Duffy",
+      "severity": "high"
     },
     {
       "type": "overdue_session",
@@ -3917,39 +4019,92 @@
       "detail": "16 days since last session",
       "mentor": "Max",
       "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "18 days since last session",
-      "mentor": "George",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "15 days since last session",
-      "mentor": "Elwyn Vesey",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "30 days since last session",
-      "mentor": "Val Duffy",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "19 days since last session",
-      "mentor": "Max ",
-      "severity": "medium"
     }
   ],
   "trend_14d": [
     {
+      "date": "2026-03-07",
+      "new_leads": 25,
+      "booked_calls": 9,
+      "closes": 2
+    },
+    {
+      "date": "2026-03-08",
+      "new_leads": 24,
+      "booked_calls": 9,
+      "closes": 1
+    },
+    {
+      "date": "2026-03-09",
+      "new_leads": 40,
+      "booked_calls": 10,
+      "closes": 6
+    },
+    {
+      "date": "2026-03-10",
+      "new_leads": 34,
+      "booked_calls": 13,
+      "closes": 5
+    },
+    {
+      "date": "2026-03-11",
+      "new_leads": 36,
+      "booked_calls": 12,
+      "closes": 2
+    },
+    {
+      "date": "2026-03-12",
+      "new_leads": 27,
+      "booked_calls": 13,
+      "closes": 4
+    },
+    {
+      "date": "2026-03-13",
+      "new_leads": 27,
+      "booked_calls": 6,
+      "closes": 4
+    },
+    {
+      "date": "2026-03-14",
+      "new_leads": 31,
+      "booked_calls": 9,
+      "closes": 0
+    },
+    {
+      "date": "2026-03-15",
+      "new_leads": 27,
+      "booked_calls": 5,
+      "closes": 1
+    },
+    {
+      "date": "2026-03-16",
+      "new_leads": 29,
+      "booked_calls": 10,
+      "closes": 3
+    },
+    {
+      "date": "2026-03-17",
+      "new_leads": 28,
+      "booked_calls": 9,
+      "closes": 3
+    },
+    {
+      "date": "2026-03-18",
+      "new_leads": 24,
+      "booked_calls": 5,
+      "closes": 3
+    },
+    {
+      "date": "2026-03-19",
+      "new_leads": 33,
+      "booked_calls": 6,
+      "closes": 1
+    },
+    {
       "date": "2026-03-20",
-      "active_users": 144,
-      "active_mentors": 39,
-      "activation_pipeline_total": 34,
-      "unassigned_count": 20
+      "new_leads": 0,
+      "booked_calls": 0,
+      "closes": 0
     }
   ],
   "portal_stats": {
@@ -4062,5 +4217,234 @@
       "brodie_touch": "No"
     }
   ],
-  "unassigned": []
+  "unassigned": [
+    {
+      "name": "Harry Quayle",
+      "son_name": "Jimmy",
+      "program": "Big Brother",
+      "status": ""
+    },
+    {
+      "name": "Harry Quayle",
+      "son_name": "Jimmy",
+      "program": "The Big Brother",
+      "status": ""
+    },
+    {
+      "name": "Sarah Miller",
+      "son_name": "Lachy",
+      "program": "The Big Brother",
+      "status": ""
+    },
+    {
+      "name": "Tanisha Pepperell",
+      "son_name": "Flynn",
+      "program": "The Big Brother",
+      "status": ""
+    },
+    {
+      "name": "Kate Van der Schaaf",
+      "son_name": "Oliver",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Amanda  Calabro",
+      "son_name": "Oscar",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Michelle Destefanis",
+      "son_name": "Josh",
+      "program": "Lighthouse",
+      "status": "matching"
+    },
+    {
+      "name": "Bridget Jones",
+      "son_name": "Lachlan ",
+      "program": null,
+      "status": "matching"
+    },
+    {
+      "name": "Rosanna Bell",
+      "son_name": "Xavier",
+      "program": "Mentor",
+      "status": "matching"
+    },
+    {
+      "name": "Dory Dorazio",
+      "son_name": "Leon",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Kylie Taite",
+      "son_name": "Ezra",
+      "program": "Lighthouse",
+      "status": "matching"
+    },
+    {
+      "name": "Seri Qoon",
+      "son_name": "Eli ",
+      "program": null,
+      "status": "matching"
+    },
+    {
+      "name": "Katrina Glover",
+      "son_name": "Lachlan",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Samantha Moore",
+      "son_name": "Bronson Henry",
+      "program": null,
+      "status": "matching"
+    },
+    {
+      "name": "Niquita Ellis",
+      "son_name": "Hades",
+      "program": "Lighthouse",
+      "status": "matching"
+    },
+    {
+      "name": "Bron Lea",
+      "son_name": "Jasper",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Renee Connolly",
+      "son_name": "Hayden",
+      "program": null,
+      "status": "matching"
+    },
+    {
+      "name": "Carrianne Blanchard",
+      "son_name": "Emannuel",
+      "program": "Mentor",
+      "status": "matching"
+    },
+    {
+      "name": "Kathy Roberts",
+      "son_name": "Luka",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Sandy Madden",
+      "son_name": "Lucas",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Misty Fernandez",
+      "son_name": "Charlie",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Ingrid Mendes",
+      "son_name": "Madden",
+      "program": null,
+      "status": "matching"
+    },
+    {
+      "name": "Brigid Faust",
+      "son_name": "Harper Badcock",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Vered Bar",
+      "son_name": "Max",
+      "program": null,
+      "status": "matching"
+    },
+    {
+      "name": "Christine Howden",
+      "son_name": "Kobi",
+      "program": "The Lighthouse",
+      "status": "matching"
+    },
+    {
+      "name": "Tricia Lee",
+      "son_name": "Ryan",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Sarah-leigh Kent",
+      "son_name": "Koby",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Megan Harker",
+      "son_name": "Tate",
+      "program": null,
+      "status": "matching"
+    },
+    {
+      "name": "Mel Mannix",
+      "son_name": "Benny",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Alicia Honey",
+      "son_name": "Hunter",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Alison Ratcliffe",
+      "son_name": "Archer",
+      "program": null,
+      "status": "matching"
+    },
+    {
+      "name": "Trooptti None",
+      "son_name": "Vivaan",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Kirsty Madigan",
+      "son_name": "Jake",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Carrie Fildes",
+      "son_name": "George Fildes",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Helena Agaibi",
+      "son_name": "Aiden",
+      "program": null,
+      "status": "matching"
+    },
+    {
+      "name": "Pet Goh",
+      "son_name": "Aiden",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Becka Tearoa",
+      "son_name": "Julius ",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Hania  Trzaskowski",
+      "son_name": "Dacian",
+      "program": "The Big Brother",
+      "status": "matching"
+    }
+  ]
 }
