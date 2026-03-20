@@ -624,13 +624,13 @@ tbody tr.pending-row { opacity: 0.35; }
   <!-- REP BREAKDOWN -->
   <div class="section-header">REP BREAKDOWN</div>
   <div class="tab-row" id="rep-tab-row">
-    <button class="tab-btn active" onclick="switchRepTab('day', this)">Today</button>
+    <button class="tab-btn" onclick="switchRepTab('day', this)">Today</button>
     <button class="tab-btn" onclick="switchRepTab('week', this)">Week-to-Date</button>
-    <button class="tab-btn" onclick="switchRepTab('month', this)">Month-to-Date</button>
+    <button class="tab-btn active" onclick="switchRepTab('month', this)">Month-to-Date</button>
   </div>
-  <div id="rep-tab-day" class="table-wrapper" style="display: block;"></div>
+  <div id="rep-tab-day" class="table-wrapper" style="display: none;"></div>
   <div id="rep-tab-week" class="table-wrapper" style="display: none;"></div>
-  <div id="rep-tab-month" class="table-wrapper" style="display: none;"></div>
+  <div id="rep-tab-month" class="table-wrapper" style="display: block;"></div>
 
   <!-- DC CLOSES PIPELINE -->
   <div class="section-header">DISCOVERY CALLS CLOSED — PIPELINE TRACKER</div>
@@ -669,7 +669,7 @@ tbody tr.pending-row { opacity: 0.35; }
   <!-- TAB: BRODIE'S ACTIVATION PIPELINE -->
   <div id="main-tab-brodie" class="main-tab-content">
 
-  <div class="section-header">WEEKEND INPUTS (BRODIE)</div>
+  <div class="section-header">DAILY INPUTS (BRODIE)</div>
   <div id="brodie-inputs"></div>
 
   <div class="section-header">W1 CALENDAR — NEXT 14 DAYS</div>

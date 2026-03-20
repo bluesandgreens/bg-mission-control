@@ -329,11 +329,15 @@ def fetch_reps(api_key: str, target: datetime) -> list:
         "mtd": (month_start, day_end),
     }
 
-    rep_metrics = [
+    # Metrics that use hubspot_owner_id (lead assignment)
+    owner_metrics = [
         ("leads", "createdate"),
+        ("w1_starts", "week_1_complete"),
+    ]
+    # Metrics that use discovery_call_user (who actually took the call)
+    dc_user_metrics = [
         ("dcs_taken", "discovery_call_completed_on"),
         ("closes", "onboarding_call_scheduled"),
-        ("w1_starts", "week_1_complete"),
     ]
 
     reps = []
@@ -342,9 +346,24 @@ def fetch_reps(api_key: str, target: datetime) -> list:
         rep = {"name": name, "owner_id": owner_id}
         for period_key, (start, end) in periods.items():
             data = {}
-            for metric_name, hs_prop in rep_metrics:
+            # Owner-based metrics (leads, w1 starts)
+            for metric_name, hs_prop in owner_metrics:
                 filters = hubspot_date_filter_with_owner(hs_prop, start, end, owner_id)
                 data[metric_name] = hubspot_search_count(api_key, filters)
+            # DC user-based metrics — uses discovery_call_user property
+            # DCs taken: discovery_call_completed_on in date range + discovery_call_user = owner
+            dc_filters = hubspot_date_filter("discovery_call_completed_on", start, end) + [
+                {"propertyName": "discovery_call_user", "operator": "EQ", "value": owner_id},
+            ]
+            data["dcs_taken"] = hubspot_search_count(api_key, dc_filters)
+
+            # Closes: same DCs but with outcome = Onboarding Booked
+            close_filters = hubspot_date_filter("discovery_call_completed_on", start, end) + [
+                {"propertyName": "discovery_call_user", "operator": "EQ", "value": owner_id},
+                {"propertyName": "discovery_call_outcome", "operator": "EQ", "value": "Onboarding Booked"},
+            ]
+            data["closes"] = hubspot_search_count(api_key, close_filters)
+
             # Close rate
             dcs = data.get("dcs_taken", 0)
             closes = data.get("closes", 0)
@@ -778,23 +797,28 @@ def fetch_retention(api_key: str, target: datetime) -> dict:
         log("  Skipping retention (no API key)")
         return result
 
-    # Session 7+ members
+    # Session 7+ members (exclude inactive/churned)
     try:
         filters = [
             {"propertyName": "mentor_session_number", "operator": "GTE", "value": "7"},
         ]
         contacts = hubspot_search_contacts(
             api_key, filters,
-            ["firstname", "lastname", "mentor_session_number", "payment_reset_date"],
+            ["firstname", "lastname", "mentor_session_number", "payment_reset_date", "member_status"],
             max_results=200,
         )
         for c in contacts:
             props = c.get("properties", {})
+            status = (props.get("member_status") or "").lower()
+            # Skip inactive/churned members
+            if status in ("inactive", "churned", "churn", "cancelled", "canceled", "withdrawn"):
+                continue
             name = f"{props.get('firstname', '')} {props.get('lastname', '')}".strip()
             result["session_7_plus"].append({
                 "name": name or "Unknown",
                 "session_count": props.get("mentor_session_number", ""),
                 "payment_reset_date": props.get("payment_reset_date", ""),
+                "member_status": props.get("member_status", ""),
             })
         log(f"  Session 7+ members: {len(result['session_7_plus'])}")
     except Exception as e:
@@ -836,10 +860,10 @@ def fetch_retention(api_key: str, target: datetime) -> dict:
 # Section G: Mentor Data
 # ---------------------------------------------------------------------------
 
-def fetch_mentors(api_key: str) -> dict:
+def fetch_mentors(api_key: str, supabase_url: str = None, supabase_key: str = None) -> dict:
     """
-    Fetch mentor data. Searches for contacts/owners who are mentors.
-    Uses mentor_name or mentor_allocated property to determine assignments.
+    Fetch mentor data from Supabase team_health (primary) with HubSpot fallback.
+    Portal team_health tab has the authoritative mentor capacity data.
     """
     log("Fetching mentor data...")
 
@@ -850,12 +874,48 @@ def fetch_mentors(api_key: str) -> dict:
         "_notes": [],
     }
 
+    # Try Supabase team_health first (authoritative source)
+    if supabase_url and supabase_key:
+        try:
+            team_health = fetch_supabase_cache(supabase_url, supabase_key, "team_health")
+            if team_health and isinstance(team_health, dict):
+                mentors = team_health.get("mentors", [])
+                if mentors:
+                    # Filter out inactive/flagged mentors
+                    active_mentors = []
+                    for m in mentors:
+                        status = (m.get("mentorMemberStatus") or "").lower()
+                        if status in ("flagged by b&g", "inactive", "terminated", "removed"):
+                            continue
+                        active_mentors.append(m)
+
+                    result["active_count"] = len(active_mentors)
+                    result["members_per_mentor"] = [
+                        {
+                            "mentor": m.get("mentorName", "Unknown"),
+                            "count": m.get("memberCount", 0),
+                            "status": m.get("mentorMemberStatus", ""),
+                            "avg_consistency": m.get("avgSessionConsistency", 0),
+                            "flagged_count": m.get("flaggedCount", 0),
+                        }
+                        for m in sorted(active_mentors, key=lambda x: -(x.get("memberCount", 0)))
+                    ]
+                    result["at_capacity"] = sum(
+                        1 for m in active_mentors
+                        if (m.get("mentorMemberStatus") or "").lower() == "at capacity"
+                    )
+                    log(f"  Active mentors (from portal): {result['active_count']}")
+                    log(f"  At capacity: {result['at_capacity']}")
+                    return result
+        except Exception as e:
+            log(f"  Supabase team_health error (falling back to HubSpot): {e}")
+
     if not api_key:
         log("  Skipping mentors (no API key)")
         return result
 
     try:
-        # Find all active members with a mentor assigned
+        # Fallback: HubSpot mentor_name1 grouping
         filters = [
             hubspot_has_property("mentor_name1"),
             hubspot_has_property("week_1_complete"),
@@ -866,7 +926,6 @@ def fetch_mentors(api_key: str) -> dict:
             max_results=500,
         )
 
-        # Group by mentor
         mentor_counts = {}
         for c in contacts:
             mentor = c.get("properties", {}).get("mentor_name1", "Unknown")
@@ -877,7 +936,6 @@ def fetch_mentors(api_key: str) -> dict:
         result["members_per_mentor"] = [
             {"mentor": m, "count": cnt} for m, cnt in sorted(mentor_counts.items())
         ]
-        # Consider "at capacity" as mentors with 10+ members (heuristic)
         result["at_capacity"] = sum(1 for cnt in mentor_counts.values() if cnt >= 10)
 
         log(f"  Active mentors: {result['active_count']}")
@@ -1381,7 +1439,7 @@ def main():
     stripe_data = fetch_stripe(stripe_key, target)
     activation = fetch_activation_pipeline(hubspot_key)
     retention = fetch_retention(hubspot_key, target)
-    mentors = fetch_mentors(hubspot_key)
+    mentors = fetch_mentors(hubspot_key, supabase_url, supabase_key)
 
     # Supabase data pulls
     log("Fetching Supabase data...")

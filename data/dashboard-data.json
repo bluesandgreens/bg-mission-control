@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T01:57:23.010596Z",
+  "generated_at": "2026-03-20T02:27:08.675500Z",
   "period": {
     "today": "2026-03-20",
     "week_start": "2026-03-16",
@@ -9,7 +9,7 @@
     "today": {
       "new_leads": 0,
       "booked_calls": 0,
-      "dcs_completed": 0,
+      "dcs_completed": 1,
       "closes": 0,
       "w1_starts": 0,
       "agreement_forms": 0
@@ -17,7 +17,7 @@
     "wtd": {
       "new_leads": 114,
       "booked_calls": 22,
-      "dcs_completed": 18,
+      "dcs_completed": 19,
       "closes": 10,
       "w1_starts": 9,
       "agreement_forms": 10
@@ -25,7 +25,7 @@
     "mtd": {
       "new_leads": 558,
       "booked_calls": 103,
-      "dcs_completed": 72,
+      "dcs_completed": 73,
       "closes": 51,
       "w1_starts": 32,
       "agreement_forms": 46
@@ -37,24 +37,24 @@
       "owner_id": "75967744",
       "today": {
         "leads": 0,
+        "w1_starts": 0,
         "dcs_taken": 0,
         "closes": 0,
-        "w1_starts": 0,
         "close_rate": 0.0
       },
       "wtd": {
         "leads": 85,
-        "dcs_taken": 10,
-        "closes": 4,
-        "w1_starts": 2,
-        "close_rate": 0.4
+        "w1_starts": 1,
+        "dcs_taken": 1,
+        "closes": 1,
+        "close_rate": 1.0
       },
       "mtd": {
-        "leads": 436,
-        "dcs_taken": 42,
-        "closes": 27,
-        "w1_starts": 6,
-        "close_rate": 0.64
+        "leads": 435,
+        "w1_starts": 5,
+        "dcs_taken": 18,
+        "closes": 15,
+        "close_rate": 0.83
       }
     },
     {
@@ -62,23 +62,23 @@
       "owner_id": "86194016",
       "today": {
         "leads": 0,
+        "w1_starts": 0,
         "dcs_taken": 0,
         "closes": 0,
-        "w1_starts": 0,
         "close_rate": 0.0
       },
       "wtd": {
         "leads": 1,
-        "dcs_taken": 1,
-        "closes": 1,
         "w1_starts": 1,
-        "close_rate": 1.0
+        "dcs_taken": 0,
+        "closes": 0,
+        "close_rate": 0.0
       },
       "mtd": {
         "leads": 14,
-        "dcs_taken": 8,
-        "closes": 4,
         "w1_starts": 2,
+        "dcs_taken": 12,
+        "closes": 6,
         "close_rate": 0.5
       }
     },
@@ -87,24 +87,24 @@
       "owner_id": "87029276",
       "today": {
         "leads": 0,
-        "dcs_taken": 0,
-        "closes": 0,
         "w1_starts": 0,
+        "dcs_taken": 1,
+        "closes": 0,
         "close_rate": 0.0
       },
       "wtd": {
         "leads": 5,
-        "dcs_taken": 3,
-        "closes": 1,
         "w1_starts": 1,
-        "close_rate": 0.33
+        "dcs_taken": 12,
+        "closes": 3,
+        "close_rate": 0.25
       },
       "mtd": {
         "leads": 13,
-        "dcs_taken": 7,
-        "closes": 2,
         "w1_starts": 1,
-        "close_rate": 0.29
+        "dcs_taken": 23,
+        "closes": 6,
+        "close_rate": 0.26
       }
     },
     {
@@ -112,23 +112,23 @@
       "owner_id": "88035516",
       "today": {
         "leads": 0,
+        "w1_starts": 0,
         "dcs_taken": 0,
         "closes": 0,
-        "w1_starts": 0,
         "close_rate": 0.0
       },
       "wtd": {
         "leads": 5,
-        "dcs_taken": 2,
-        "closes": 2,
         "w1_starts": 0,
+        "dcs_taken": 3,
+        "closes": 3,
         "close_rate": 1.0
       },
       "mtd": {
         "leads": 24,
-        "dcs_taken": 3,
-        "closes": 3,
         "w1_starts": 1,
+        "dcs_taken": 11,
+        "closes": 11,
         "close_rate": 1.0
       }
     },
@@ -137,24 +137,24 @@
       "owner_id": "86488316",
       "today": {
         "leads": 0,
+        "w1_starts": 0,
         "dcs_taken": 0,
         "closes": 0,
-        "w1_starts": 0,
         "close_rate": 0.0
       },
       "wtd": {
         "leads": 3,
-        "dcs_taken": 1,
-        "closes": 1,
         "w1_starts": 1,
+        "dcs_taken": 2,
+        "closes": 2,
         "close_rate": 1.0
       },
       "mtd": {
         "leads": 10,
-        "dcs_taken": 3,
-        "closes": 4,
         "w1_starts": 1,
-        "close_rate": 1.33
+        "dcs_taken": 8,
+        "closes": 7,
+        "close_rate": 0.88
       }
     },
     {
@@ -162,42 +162,42 @@
       "owner_id": "86750401",
       "today": {
         "leads": 0,
+        "w1_starts": 0,
         "dcs_taken": 0,
         "closes": 0,
-        "w1_starts": 0,
         "close_rate": 0.0
       },
       "wtd": {
         "leads": 0,
+        "w1_starts": 0,
         "dcs_taken": 0,
         "closes": 0,
-        "w1_starts": 0,
         "close_rate": 0.0
       },
       "mtd": {
         "leads": 0,
+        "w1_starts": 0,
         "dcs_taken": 0,
         "closes": 0,
-        "w1_starts": 0,
         "close_rate": 0.0
       }
     }
   ],
   "meta_ads": {
     "today": {
-      "spend": 63.91,
+      "spend": 65.77,
       "booked_calls": 2,
-      "cpbc": 31.95
+      "cpbc": 32.88
     },
     "wtd": {
-      "spend": 810.98,
+      "spend": 812.89,
       "booked_calls": 28,
-      "cpbc": 28.96
+      "cpbc": 29.03
     },
     "mtd": {
-      "spend": 4042.41,
+      "spend": 4044.05,
       "booked_calls": 166,
-      "cpbc": 24.35
+      "cpbc": 24.36
     }
   },
   "stripe": {
@@ -2193,759 +2193,538 @@
   "retention": {
     "session_7_plus": [
       {
-        "name": "Lucy Pink",
-        "session_count": "19",
-        "payment_reset_date": null
-      },
-      {
         "name": "Ebony Jackson",
         "session_count": "25",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Kate Alchin",
         "session_count": "46",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Kate Pascoe",
-        "session_count": "24",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Tanya Zaffino",
-        "session_count": "7",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Monica Verboon",
-        "session_count": "8",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Vanessa Beattie",
-        "session_count": "19",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Jessica Ball",
-        "session_count": "25",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Leeanne JACKSON",
         "session_count": "38",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Holly Walters",
-        "session_count": "27",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Sarah Baker",
-        "session_count": "7",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Bianka Black",
-        "session_count": "21",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Allison Lamont",
-        "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Crystal  Alexander",
         "session_count": "33",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Shannyn Stevens",
-        "session_count": "9",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Clinton Curtis",
-        "session_count": "18",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Colleen Zwolsman",
-        "session_count": "19",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Anita Lee",
-        "session_count": "19",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Susan Rowe",
-        "session_count": "15",
-        "payment_reset_date": null
-      },
-      {
-        "name": "KAREN CORKSIE - FINBAR WILSON",
-        "session_count": "10",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Lorinda McDermott",
         "session_count": "7",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Kelly Hardy",
         "session_count": "22",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Amber Loxton",
-        "session_count": "17",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Amy Staib",
-        "session_count": "7",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Mark Rayner",
         "session_count": "20",
-        "payment_reset_date": "2026-07-22"
+        "payment_reset_date": "2026-07-22",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Sylvia Rogowska",
         "session_count": "28",
-        "payment_reset_date": "2026-04-07"
-      },
-      {
-        "name": "Anna Gray",
-        "session_count": "7",
-        "payment_reset_date": null
+        "payment_reset_date": "2026-04-07",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Jo Flanagan",
         "session_count": "20",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Catherine Homes",
-        "session_count": "19",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Meagan Van Anen",
         "session_count": "32",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Alicia Verso",
         "session_count": "8",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Elena Marchetti",
-        "session_count": "12",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Sue McIness",
         "session_count": "27",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Bec Cossio",
-        "session_count": "12",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "SARAH MORRIS",
         "session_count": "19",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Shaye Medlicott",
-        "session_count": "10",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Tammy Green",
-        "session_count": "12",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Keera Mitrokli",
-        "session_count": "13",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Abbie n Taylor",
-        "session_count": "19",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Kaara A Bradley",
-        "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Brooke Beveridge",
         "session_count": "19",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Natalie Massey",
-        "session_count": "11",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Stephanie Mckeown",
         "session_count": "17",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Amy Parsons",
         "session_count": "27",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Tracey Bunyan",
         "session_count": "26",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Rachel Hawyes",
         "session_count": "15",
-        "payment_reset_date": "2026-04-09"
+        "payment_reset_date": "2026-04-09",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Victoria Holahan",
         "session_count": "18",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Natalie Giallourakis",
-        "session_count": "12",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Kate Barrow",
         "session_count": "11",
-        "payment_reset_date": "2026-07-10"
+        "payment_reset_date": "2026-07-10",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Anna Neve",
         "session_count": "35",
-        "payment_reset_date": "2026-07-27"
-      },
-      {
-        "name": "Elizabeth Pender",
-        "session_count": "10",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Samantha Wallace",
-        "session_count": "15",
-        "payment_reset_date": null
+        "payment_reset_date": "2026-07-27",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Anastasia Georgiou",
         "session_count": "27",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Anita Stewart",
-        "session_count": "9",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Liz Atkins",
-        "session_count": "7",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Simant Singh",
-        "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Cara Santangelo",
         "session_count": "23",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Kate O'Sullivan",
         "session_count": "19",
-        "payment_reset_date": "2026-07-12"
+        "payment_reset_date": "2026-07-12",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Nicolette Karaman",
         "session_count": "30",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Lisa james",
         "session_count": "22",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Kimberley Davies",
         "session_count": "22",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Fallon Glossop",
         "session_count": "28",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Jamie Nugent",
-        "session_count": "9",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Renee Venville",
-        "session_count": "19",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Luisa Peters",
         "session_count": "11",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Ronnie Toohey",
         "session_count": "17",
-        "payment_reset_date": "2026-07-12"
-      },
-      {
-        "name": "Lisa Caton",
-        "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": "2026-07-12",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Melissa Eades",
         "session_count": "20",
-        "payment_reset_date": null
-      },
-      {
-        "name": "melanie brodhurst",
-        "session_count": "13",
-        "payment_reset_date": null
-      },
-      {
-        "name": "AMANDA RASMUSSEN",
-        "session_count": "7",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Colin Miller",
         "session_count": "26",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Kylie Summers",
         "session_count": "24",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Louise Thornton",
-        "session_count": "12",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Gabrielle Munro",
-        "session_count": "8",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Liz Peck",
-        "session_count": "8",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Joanna Vlachos",
         "session_count": "21",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Mel Angell",
         "session_count": "18",
-        "payment_reset_date": "2026-03-27"
-      },
-      {
-        "name": "Sara Anza",
-        "session_count": "8",
-        "payment_reset_date": null
+        "payment_reset_date": "2026-03-27",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Elizabeth Tanti",
         "session_count": "22",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Keira Cooper",
-        "session_count": "11",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Chelsea Beckers",
         "session_count": "11",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Kristen Birkett",
         "session_count": "13",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Jodine farkas",
         "session_count": "10",
-        "payment_reset_date": "2026-05-26"
+        "payment_reset_date": "2026-05-26",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Natalie Holmes",
         "session_count": "15",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Gina Kaney",
         "session_count": "17",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Laine Mills",
-        "session_count": "14",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Melanie Heskin",
         "session_count": "22",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Bethany Hill",
         "session_count": "15",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Noella Hextall",
-        "session_count": "7",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Milena Fratini",
         "session_count": "18",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Gaby Welton",
         "session_count": "7",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Tamara Grant",
-        "session_count": "7",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Tanya Major",
         "session_count": "15",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Elke RYAN",
         "session_count": "7",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Amanda Lewis",
-        "session_count": "17",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Rebecca Newman",
-        "session_count": "8",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Angela Volcic",
         "session_count": "16",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Ishil Sterling-Levis",
         "session_count": "17",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Amy Pakinga",
         "session_count": "12",
-        "payment_reset_date": "2026-05-09"
+        "payment_reset_date": "2026-05-09",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Anna Triffett",
         "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Rachel LEAH",
         "session_count": "11",
-        "payment_reset_date": "2026-03-09"
-      },
-      {
-        "name": "Em Guest",
-        "session_count": "11",
-        "payment_reset_date": null
-      },
-      {
-        "name": "DEBORAH GRAHAM",
-        "session_count": "7",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Lisa Jones",
-        "session_count": "15",
-        "payment_reset_date": null
+        "payment_reset_date": "2026-03-09",
+        "member_status": "Active Sessions"
       },
       {
         "name": "None None",
         "session_count": "10",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": null
       },
       {
         "name": "Diahann Marsh",
         "session_count": "19",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Rannvijay Guron",
-        "session_count": "13",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Natalie Oberman",
         "session_count": "16",
-        "payment_reset_date": "2026-03-28"
+        "payment_reset_date": "2026-03-28",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Vanessa Koina",
         "session_count": "17",
-        "payment_reset_date": "2026-03-13"
+        "payment_reset_date": "2026-03-13",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Naomi Marr",
         "session_count": "11",
-        "payment_reset_date": null
-      },
-      {
-        "name": "T Summerfield",
-        "session_count": "7",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Catherine Homes",
-        "session_count": "16",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Jess Steadman",
         "session_count": "28",
-        "payment_reset_date": "2026-07-15"
+        "payment_reset_date": "2026-07-15",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Alysha Nation",
         "session_count": "16",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Selena Fletcher",
         "session_count": "32",
-        "payment_reset_date": "2026-07-16"
+        "payment_reset_date": "2026-07-16",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Simon Duffy",
         "session_count": "8",
-        "payment_reset_date": "2026-01-19"
+        "payment_reset_date": "2026-01-19",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Lucia Ciccollitto",
         "session_count": "41",
-        "payment_reset_date": "2026-06-16"
-      },
-      {
-        "name": "Sarah Curtis",
-        "session_count": "23",
-        "payment_reset_date": null
+        "payment_reset_date": "2026-06-16",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Marlene Harris",
         "session_count": "13",
-        "payment_reset_date": "2026-01-24"
+        "payment_reset_date": "2026-01-24",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Nia Mavridis",
         "session_count": "10",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Leeanne Jackson",
         "session_count": "29",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Jennifer McCafferty",
-        "session_count": "18",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Booked Call"
       },
       {
         "name": "Tiffany Thomas",
         "session_count": "14",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Taya & Mitch Wear",
         "session_count": "14",
-        "payment_reset_date": "2026-05-18"
+        "payment_reset_date": "2026-05-18",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Maria Cristina Duarte",
         "session_count": "11",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Cyra frost",
         "session_count": "8",
-        "payment_reset_date": "2026-02-24"
-      },
-      {
-        "name": "Bianca Hurle",
-        "session_count": "8",
-        "payment_reset_date": null
+        "payment_reset_date": "2026-02-24",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Kym Baillie",
         "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Julie-Anne Jacotine",
         "session_count": "15",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Emily Greaves",
         "session_count": "8",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Tess Jarman",
-        "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Jordan Carlson",
         "session_count": "8",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Karen Corksie",
-        "session_count": "11",
-        "payment_reset_date": null
-      },
-      {
-        "name": "Jessica Schoultz",
-        "session_count": "11",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Lauren Blake",
         "session_count": "11",
-        "payment_reset_date": "2026-04-26"
+        "payment_reset_date": "2026-04-26",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Toni Tighe",
         "session_count": "10",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Jen Murray",
         "session_count": "9",
-        "payment_reset_date": "2026-03-16"
-      },
-      {
-        "name": "Lorin Bridgman",
-        "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": "2026-03-16",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Troy Speed",
         "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Val Najdovska",
         "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Tanya Andrijich",
         "session_count": "7",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Lynne PARKER",
         "session_count": "8",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Edith  Shardlow",
         "session_count": "8",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Celeste Paull",
         "session_count": "8",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Lisa Kerin",
         "session_count": "7",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Jodhi Mcgrath",
         "session_count": "8",
-        "payment_reset_date": "2026-03-17"
+        "payment_reset_date": "2026-03-17",
+        "member_status": "Active Sessions"
       },
       {
         "name": "KAREN LOUWRENS",
         "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Gemma Garner",
         "session_count": "8",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "Janine Wright",
         "session_count": "9",
-        "payment_reset_date": null
+        "payment_reset_date": null,
+        "member_status": "Active Sessions"
       },
       {
         "name": "JORDAN CARLSON",
         "session_count": "7",
-        "payment_reset_date": "2026-04-19"
+        "payment_reset_date": "2026-04-19",
+        "member_status": "Active Sessions"
       },
       {
         "name": "Anna - use Josiahs contact card Neve",
         "session_count": "32",
-        "payment_reset_date": "2026-07-27"
+        "payment_reset_date": "2026-07-27",
+        "member_status": "Active Sessions"
       }
     ],
     "payment_resets_30d": [
@@ -3005,106 +2784,234 @@
     "_notes": []
   },
   "mentors": {
-    "active_count": 24,
+    "active_count": 32,
     "members_per_mentor": [
       {
-        "mentor": "Anthony Audino",
-        "count": 11
-      },
-      {
-        "mentor": "Bailey Kiefer",
-        "count": 7
-      },
-      {
-        "mentor": "Ben Cantwell",
-        "count": 7
-      },
-      {
-        "mentor": "Ben Phillips",
-        "count": 1
+        "mentor": "Brodie Paull",
+        "count": 10,
+        "status": "At Capacity",
+        "avg_consistency": 98,
+        "flagged_count": 0
       },
       {
         "mentor": "Blair Huggins",
-        "count": 7
-      },
-      {
-        "mentor": "Brodie Paul",
-        "count": 12
-      },
-      {
-        "mentor": "Callum Sargentson",
-        "count": 1
-      },
-      {
-        "mentor": "Charlie Bolmat",
-        "count": 3
-      },
-      {
-        "mentor": "Connor Savil",
-        "count": 4
-      },
-      {
-        "mentor": "Cristian Milograd",
-        "count": 8
-      },
-      {
-        "mentor": "Elliot Mahoney",
-        "count": 4
-      },
-      {
-        "mentor": "Fletcher Gauci",
-        "count": 1
-      },
-      {
-        "mentor": "George Sullivan",
-        "count": 5
-      },
-      {
-        "mentor": "Harper Montgomery",
-        "count": 4
-      },
-      {
-        "mentor": "Hayden Sampson",
-        "count": 11
-      },
-      {
-        "mentor": "Jack Petruccelle",
-        "count": 1
-      },
-      {
-        "mentor": "Jed Woods",
-        "count": 5
-      },
-      {
-        "mentor": "Koltyn Tholstrup",
-        "count": 1
-      },
-      {
-        "mentor": "Luke Dixon",
-        "count": 1
-      },
-      {
-        "mentor": "Marcus Lazzara",
-        "count": 1
-      },
-      {
-        "mentor": "Mark O'Mahony",
-        "count": 1
-      },
-      {
-        "mentor": "Shane Clough",
-        "count": 3
-      },
-      {
-        "mentor": "Taj Schofield",
-        "count": 3
+        "count": 9,
+        "status": "At Capacity",
+        "avg_consistency": 99,
+        "flagged_count": 0
       },
       {
         "mentor": "Xavier Lewis",
-        "count": 8
+        "count": 9,
+        "status": "Wants More",
+        "avg_consistency": 97,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Bailey Kiefer",
+        "count": 8,
+        "status": "At Capacity",
+        "avg_consistency": 94,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Taj Schofield",
+        "count": 7,
+        "status": "At Capacity",
+        "avg_consistency": 99,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Harper Montgomery",
+        "count": 7,
+        "status": "Wants More",
+        "avg_consistency": 97,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Aidan Cole",
+        "count": 7,
+        "status": "Wants More",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Hayden Sampson",
+        "count": 6,
+        "status": "",
+        "avg_consistency": 96,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Anthony Audino",
+        "count": 6,
+        "status": "At Capacity",
+        "avg_consistency": 99,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Elliot Mahoney",
+        "count": 5,
+        "status": "Wants More",
+        "avg_consistency": 95,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Cristian Milograd",
+        "count": 5,
+        "status": "Wants More",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Jack Petruccelle",
+        "count": 5,
+        "status": "At Capacity",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Ben Cantwell",
+        "count": 5,
+        "status": "At Capacity",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Jed Woods",
+        "count": 5,
+        "status": "",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Jett Cara",
+        "count": 5,
+        "status": "At Capacity",
+        "avg_consistency": 93,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Benjamin Philip",
+        "count": 4,
+        "status": "At Capacity",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Tom Hermans",
+        "count": 4,
+        "status": "Wants More",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Rye Penny",
+        "count": 3,
+        "status": "",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Shane Clouugh",
+        "count": 3,
+        "status": "At Capacity",
+        "avg_consistency": 87,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Luke Vella",
+        "count": 3,
+        "status": "",
+        "avg_consistency": 88,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Noah Cockerell",
+        "count": 3,
+        "status": "Wants More",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Fletcher Gauci",
+        "count": 2,
+        "status": "",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Charlie Bolmat",
+        "count": 2,
+        "status": "",
+        "avg_consistency": 95,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Miles Dalgliesh",
+        "count": 2,
+        "status": "",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Amin Naim",
+        "count": 2,
+        "status": "At Capacity",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "josh gould",
+        "count": 2,
+        "status": "At Capacity",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Aidan Librio",
+        "count": 2,
+        "status": "",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Jonti Crisp",
+        "count": 2,
+        "status": "",
+        "avg_consistency": 100,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Lachlan Hall",
+        "count": 1,
+        "status": "Wants More",
+        "avg_consistency": 67,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Declan Kenny",
+        "count": 0,
+        "status": "",
+        "avg_consistency": 0,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Sam Bearder",
+        "count": 0,
+        "status": "",
+        "avg_consistency": 0,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Riv Robbins",
+        "count": 0,
+        "status": "",
+        "avg_consistency": 0,
+        "flagged_count": 0
       }
     ],
-    "at_capacity": 3,
+    "at_capacity": 12,
     "_notes": [],
     "leaderboard": [
       {
@@ -3112,7 +3019,7 @@
         "tier": "gold",
         "active_members": 5,
         "sessions_week": 2,
-        "sessions_month": 9,
+        "sessions_month": 10,
         "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 10,
@@ -3136,7 +3043,7 @@
         "tier": "gold",
         "active_members": 7,
         "sessions_week": 4,
-        "sessions_month": 11,
+        "sessions_month": 12,
         "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 5,
@@ -3208,7 +3115,7 @@
         "tier": "gold",
         "active_members": 9,
         "sessions_week": 8,
-        "sessions_month": 27,
+        "sessions_month": 28,
         "wins_week": 10,
         "retention_pct": 0,
         "avg_parent_nps": 10,
@@ -3220,7 +3127,7 @@
         "tier": "gold",
         "active_members": 3,
         "sessions_week": 1,
-        "sessions_month": 6,
+        "sessions_month": 7,
         "wins_week": 1,
         "retention_pct": 0,
         "avg_parent_nps": 10,
@@ -3328,7 +3235,7 @@
         "tier": "standard",
         "active_members": 8,
         "sessions_week": 7,
-        "sessions_month": 23,
+        "sessions_month": 24,
         "wins_week": 5,
         "retention_pct": 0,
         "avg_parent_nps": 8,
@@ -3727,7 +3634,7 @@
     {
       "name": "Fiona Merrin",
       "close_date": "2026-03-12",
-      "rep": "Harry",
+      "rep": "",
       "status": "Active Sessions"
     },
     {
@@ -3833,12 +3740,6 @@
       "status": "Deposit Paid"
     },
     {
-      "name": "Teah Loccisano",
-      "close_date": "2026-03-06",
-      "rep": "Harry Quayle",
-      "status": "Active Sessions"
-    },
-    {
       "name": "Amy Greensword",
       "close_date": "2026-03-06",
       "rep": "Harry Quayle",
@@ -3908,15 +3809,27 @@
     },
     {
       "type": "overdue_session",
+      "detail": "35 days since last session",
+      "mentor": "Toby",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
       "detail": "24 days since last session",
       "mentor": "Michael Anastassiou",
       "severity": "high"
     },
     {
       "type": "overdue_session",
-      "detail": "35 days since last session",
-      "mentor": "Toby",
-      "severity": "high"
+      "detail": "16 days since last session",
+      "mentor": "Derrick",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "16 days since last session",
+      "mentor": "Luca",
+      "severity": "medium"
     },
     {
       "type": "overdue_session",
@@ -3935,18 +3848,6 @@
       "detail": "61 days since last session",
       "mentor": "Billy",
       "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "16 days since last session",
-      "mentor": "Derrick",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "16 days since last session",
-      "mentor": "Luca",
-      "severity": "medium"
     },
     {
       "type": "overdue_session",
@@ -3974,30 +3875,6 @@
     },
     {
       "type": "overdue_session",
-      "detail": "17 days since last session",
-      "mentor": "Ari",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "18 days since last session",
-      "mentor": "George",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "15 days since last session",
-      "mentor": "Elwyn Vesey",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "30 days since last session",
-      "mentor": "Val Duffy",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
       "detail": "19 days since last session",
       "mentor": "Jacob",
       "severity": "medium"
@@ -4018,6 +3895,30 @@
       "type": "overdue_session",
       "detail": "16 days since last session",
       "mentor": "Max",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "17 days since last session",
+      "mentor": "Ari",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "15 days since last session",
+      "mentor": "Elwyn Vesey",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "30 days since last session",
+      "mentor": "Val Duffy",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "18 days since last session",
+      "mentor": "George",
       "severity": "medium"
     }
   ],
@@ -4243,6 +4144,12 @@
       "status": ""
     },
     {
+      "name": "Michelle Destefanis",
+      "son_name": "Josh",
+      "program": "Lighthouse",
+      "status": "matching"
+    },
+    {
       "name": "Kate Van der Schaaf",
       "son_name": "Oliver",
       "program": "Big Brother",
@@ -4255,14 +4162,8 @@
       "status": "matching"
     },
     {
-      "name": "Michelle Destefanis",
-      "son_name": "Josh",
-      "program": "Lighthouse",
-      "status": "matching"
-    },
-    {
-      "name": "Bridget Jones",
-      "son_name": "Lachlan ",
+      "name": "Seri Qoon",
+      "son_name": "Eli ",
       "program": null,
       "status": "matching"
     },
@@ -4285,8 +4186,8 @@
       "status": "matching"
     },
     {
-      "name": "Seri Qoon",
-      "son_name": "Eli ",
+      "name": "Bridget Jones",
+      "son_name": "Lachlan ",
       "program": null,
       "status": "matching"
     },
@@ -4315,15 +4216,15 @@
       "status": "matching"
     },
     {
-      "name": "Renee Connolly",
-      "son_name": "Hayden",
-      "program": null,
-      "status": "matching"
-    },
-    {
       "name": "Carrianne Blanchard",
       "son_name": "Emannuel",
       "program": "Mentor",
+      "status": "matching"
+    },
+    {
+      "name": "Renee Connolly",
+      "son_name": "Hayden",
+      "program": null,
       "status": "matching"
     },
     {
@@ -4335,6 +4236,12 @@
     {
       "name": "Sandy Madden",
       "son_name": "Lucas",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Brigid Faust",
+      "son_name": "Harper Badcock",
       "program": "Big Brother",
       "status": "matching"
     },
@@ -4351,9 +4258,9 @@
       "status": "matching"
     },
     {
-      "name": "Brigid Faust",
-      "son_name": "Harper Badcock",
-      "program": "Big Brother",
+      "name": "Christine Howden",
+      "son_name": "Kobi",
+      "program": "The Lighthouse",
       "status": "matching"
     },
     {
@@ -4363,32 +4270,8 @@
       "status": "matching"
     },
     {
-      "name": "Christine Howden",
-      "son_name": "Kobi",
-      "program": "The Lighthouse",
-      "status": "matching"
-    },
-    {
       "name": "Tricia Lee",
       "son_name": "Ryan",
-      "program": "The Big Brother",
-      "status": "matching"
-    },
-    {
-      "name": "Sarah-leigh Kent",
-      "son_name": "Koby",
-      "program": "The Big Brother",
-      "status": "matching"
-    },
-    {
-      "name": "Megan Harker",
-      "son_name": "Tate",
-      "program": null,
-      "status": "matching"
-    },
-    {
-      "name": "Mel Mannix",
-      "son_name": "Benny",
       "program": "The Big Brother",
       "status": "matching"
     },
@@ -4399,26 +4282,32 @@
       "status": "matching"
     },
     {
+      "name": "Mel Mannix",
+      "son_name": "Benny",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Megan Harker",
+      "son_name": "Tate",
+      "program": null,
+      "status": "matching"
+    },
+    {
+      "name": "Sarah-leigh Kent",
+      "son_name": "Koby",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
       "name": "Alison Ratcliffe",
       "son_name": "Archer",
       "program": null,
       "status": "matching"
     },
     {
-      "name": "Trooptti None",
-      "son_name": "Vivaan",
-      "program": "The Big Brother",
-      "status": "matching"
-    },
-    {
       "name": "Kirsty Madigan",
       "son_name": "Jake",
-      "program": "The Big Brother",
-      "status": "matching"
-    },
-    {
-      "name": "Carrie Fildes",
-      "son_name": "George Fildes",
       "program": "The Big Brother",
       "status": "matching"
     },
@@ -4429,8 +4318,20 @@
       "status": "matching"
     },
     {
-      "name": "Pet Goh",
-      "son_name": "Aiden",
+      "name": "Carrie Fildes",
+      "son_name": "George Fildes",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Trooptti None",
+      "son_name": "Vivaan",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Hania  Trzaskowski",
+      "son_name": "Dacian",
       "program": "The Big Brother",
       "status": "matching"
     },
@@ -4441,8 +4342,8 @@
       "status": "matching"
     },
     {
-      "name": "Hania  Trzaskowski",
-      "son_name": "Dacian",
+      "name": "Pet Goh",
+      "son_name": "Aiden",
       "program": "The Big Brother",
       "status": "matching"
     }
