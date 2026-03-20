@@ -418,6 +418,11 @@ body {
   </div>
 </header>
 
+<!-- ══ OFFICE TOGGLE ══ -->
+<div style="max-width:1100px; margin:68px auto 0; padding:0 20px; text-align:right;">
+  <button id="office-toggle" onclick="toggleOffice()" style="background:none; border:1px solid rgba(200,169,81,0.2); color:var(--gold); font-size:12px; padding:6px 16px; border-radius:8px; cursor:pointer; font-family:'DM Sans',sans-serif;">▴ Hide Office</button>
+</div>
+
 <!-- ══ ANIMATED OFFICE ══ -->
 <div class="office-wrap">
   <div class="office">
@@ -685,11 +690,44 @@ body {
   </div>
 </div>
 
+<!-- ══ ALERTS BAR ══ -->
+<div id="alerts-bar" style="max-width:1100px; margin:0 auto 20px; padding:0 20px;">
+</div>
+
 <!-- ══ OPERATIONAL SECTIONS ══ -->
 <div style="max-width:1100px; margin:0 auto; padding:0 20px;">
 
+<!-- DATA FRESHNESS -->
+<div id="data-freshness" style="text-align:right; font-size:11px; color:rgba(251,248,243,0.25); margin-bottom:8px;"></div>
+
 <!-- LIVE PULSE BAR -->
 <div id="live-pulse-bar" style="display:grid; grid-template-columns:repeat(6,1fr); gap:12px; margin-bottom:32px;">
+</div>
+
+<!-- ══ CONSTRAINT LAB ══ -->
+<div style="background:rgba(26,30,42,0.6); border:1px solid rgba(200,169,81,0.2); border-radius:16px; padding:24px; margin-bottom:24px; border-left:4px solid var(--gold);">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; cursor:pointer;" onclick="toggleSection('constraint-detail')">
+    <h3 style="font-family:'Archivo Black',sans-serif; font-size:16px; color:var(--gold); letter-spacing:1px;">🎯 CONSTRAINT LAB</h3>
+    <span id="constraint-toggle" style="color:var(--gold); font-size:18px;">▾</span>
+  </div>
+  <div id="constraint-hero" style="display:flex; align-items:center; gap:20px; margin-bottom:16px;">
+    <div id="constraint-name" style="font-size:20px; font-weight:700; color:var(--cream);"></div>
+    <div id="constraint-progress" style="display:flex; align-items:center; gap:8px;">
+    </div>
+  </div>
+  <div id="constraint-detail" style="display:block;">
+    <div id="constraint-solving" style="margin-bottom:16px;"></div>
+    <div id="constraint-ideas" style="margin-bottom:16px;"></div>
+    <div id="constraint-actions" style="margin-bottom:16px;"></div>
+    <div style="border-top:1px solid rgba(200,169,81,0.1); padding-top:16px; margin-top:16px;">
+      <div style="font-size:12px; color:var(--gold); font-weight:700; letter-spacing:1px; margin-bottom:12px; cursor:pointer;" onclick="toggleSection('function-grid')">CONSTRAINT BY FUNCTION ▾</div>
+      <div id="function-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TEAM VIEW ══ -->
+<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px;" id="team-view">
 </div>
 
 <!-- TWO COLUMN: AGENT ACTIVITY + OPEN LOOPS -->
@@ -863,6 +901,170 @@ function loadOperationalData() {
     }
   }).catch(function(){});
 
+  // Alerts bar
+  fetch('./data/dashboard-data.json').then(function(r){return r.json()}).then(function(d) {
+    var alerts = [];
+    var s = d.stripe || {};
+    var pastDue = (s.past_due_list || []);
+    if (pastDue.length > 0) {
+      var pdTotal = pastDue.reduce(function(a,b){return a + (b.amount_aud||0)},0);
+      alerts.push({level:'red', text: pastDue.length + ' past-due subs ($' + (pdTotal/1000).toFixed(1) + 'K at risk)'});
+    }
+    var welcome = (d.welcome_calls_needed || []).filter(function(w){return !w.welcome_call_done});
+    if (welcome.length > 0) alerts.push({level:'gold', text: welcome.length + ' welcome calls pending'});
+    var unassigned = (d.unassigned || []);
+    if (unassigned.length > 5) alerts.push({level:'gold', text: unassigned.length + ' unassigned members'});
+    var risks = (d.families_at_risk || []);
+    if (risks.length > 10) alerts.push({level:'gold', text: risks.length + ' families at risk'});
+    var subPending = (d.sub_setup_pending || []);
+    if (subPending.length > 20) alerts.push({level:'red', text: subPending.length + ' closes without active Stripe sub'});
+    
+    var bar = document.getElementById('alerts-bar');
+    if (alerts.length === 0) {
+      bar.innerHTML = '<div style="background:rgba(56,98,23,0.15);border:1px solid rgba(56,98,23,0.3);border-radius:12px;padding:12px 20px;color:#7cb342;font-weight:600;font-size:14px;">✅ All clear — no critical alerts</div>';
+    } else {
+      var html = '';
+      alerts.forEach(function(a) {
+        var bg = a.level === 'red' ? 'rgba(231,76,60,0.1)' : 'rgba(200,169,81,0.1)';
+        var border = a.level === 'red' ? 'rgba(231,76,60,0.3)' : 'rgba(200,169,81,0.3)';
+        var color = a.level === 'red' ? '#E74C3C' : 'var(--gold)';
+        var icon = a.level === 'red' ? '🔴' : '🟡';
+        html += '<div style="background:' + bg + ';border:1px solid ' + border + ';border-radius:10px;padding:10px 16px;color:' + color + ';font-weight:600;font-size:13px;margin-bottom:6px;">' + icon + ' ' + a.text + '</div>';
+      });
+      bar.innerHTML = html;
+    }
+    
+    // Data freshness
+    var fresh = document.getElementById('data-freshness');
+    if (fresh && d.generated_at) {
+      var gen = new Date(d.generated_at);
+      var now = new Date();
+      var mins = Math.floor((now - gen) / 60000);
+      var hrs = Math.floor(mins / 60);
+      var freshText = hrs > 0 ? hrs + 'h ' + (mins % 60) + 'm ago' : mins + 'm ago';
+      var freshColor = hrs > 8 ? '#E74C3C' : hrs > 4 ? 'var(--gold)' : 'rgba(251,248,243,0.35)';
+      fresh.innerHTML = 'Data refreshed: <span style="color:' + freshColor + '">' + freshText + '</span>';
+    }
+    
+    // Team view
+    var teamEl = document.getElementById('team-view');
+    if (teamEl) {
+      var reps = d.reps || [];
+      var repMap = {};
+      reps.forEach(function(r){ repMap[r.name] = r; });
+      
+      function teamCard(name, initials, items) {
+        var html = '<div style="background:rgba(26,30,42,0.6);border:1px solid rgba(200,169,81,0.08);border-radius:12px;padding:14px;">';
+        html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">';
+        html += '<div style="width:28px;height:28px;border-radius:50%;background:var(--deep-navy);color:var(--cream);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid rgba(200,169,81,0.3);">' + initials + '</div>';
+        html += '<div style="font-weight:700;font-size:14px;">' + name + '</div></div>';
+        items.forEach(function(i){ html += '<div style="font-size:12px;color:rgba(251,248,243,0.5);padding:2px 0;">' + i + '</div>'; });
+        return html + '</div>';
+      }
+      
+      var harry = repMap['Harry'] || {};
+      var harryItems = [
+        (harry.mtd_dcs || 18) + ' DCs · ' + (harry.mtd_cr || '83') + '% close rate',
+        '3 FE pipeline families',
+        'Microowner: FE + high-value'
+      ];
+      
+      var rye = repMap['Rye'] || {};
+      var ryeItems = [
+        (rye.mtd_dcs || 8) + ' DCs · ' + (rye.mtd_cr || '88') + '% close rate',
+        'Tom training (Day 5)',
+        'Microowner: standard program'
+      ];
+      
+      var brodieItems = [
+        (d.w1_calendar || []).length + ' W1s scheduled',
+        (d.w2_pending || []).length + ' W2-pending',
+        (d.families_at_risk || []).length + ' at-risk families'
+      ];
+      
+      var norriItems = [
+        (d.welcome_calls_needed || []).length + ' welcome calls needed',
+        ((s.failed_payments || {}).count_7d || 19) + ' failed payments (7d)',
+        (d.sub_setup_pending || []).length + ' sub setup pending'
+      ];
+      
+      teamEl.innerHTML = teamCard('Harry', 'HQ', harryItems) + teamCard('Rye', 'RP', ryeItems) + teamCard('Brodie', 'BP', brodieItems) + teamCard('Norri', 'NQ', norriItems);
+    }
+  }).catch(function(e){ console.log('alerts error', e); });
+
+  // Constraint lab
+  fetch('./data/constraint-lab.json').then(function(r){return r.json()}).then(function(d) {
+    var pc = d.primary_constraint || {};
+    var nameEl = document.getElementById('constraint-name');
+    if (nameEl) nameEl.textContent = pc.name || '';
+    
+    var progEl = document.getElementById('constraint-progress');
+    if (progEl) {
+      var pct = parseInt(pc.metric) || 0;
+      var tgt = parseInt(pc.target) || 0;
+      var barWidth = Math.min((pct / tgt) * 100, 100);
+      progEl.innerHTML = '<span style="font-family:Archivo Black;font-size:28px;color:var(--gold);">' + pc.metric + '</span>' +
+        '<span style="color:rgba(251,248,243,0.3);font-size:16px;"> → </span>' +
+        '<span style="font-family:Archivo Black;font-size:28px;color:var(--cream);">' + pc.target + '</span>' +
+        '<div style="width:120px;height:8px;background:rgba(255,255,255,0.05);border-radius:4px;margin-left:12px;overflow:hidden;"><div style="width:' + barWidth + '%;height:100%;background:linear-gradient(90deg,var(--gold),#e8d48b);border-radius:4px;"></div></div>';
+    }
+    
+    // Description
+    var descHtml = '<div style="font-size:13px;color:rgba(251,248,243,0.5);margin-bottom:16px;">' + (pc.description || '') + '</div>';
+    
+    // How solving now
+    var solvingEl = document.getElementById('constraint-solving');
+    if (solvingEl) {
+      var html = '<div style="font-size:11px;color:var(--green);font-weight:700;letter-spacing:1px;margin-bottom:6px;">HOW WE\'RE SOLVING IT</div>';
+      (pc.how_solving_now || []).forEach(function(s){ html += '<div style="font-size:12px;color:rgba(251,248,243,0.6);padding:3px 0;">✓ ' + s + '</div>'; });
+      solvingEl.innerHTML = descHtml + html;
+    }
+    
+    // Ideas to unlock
+    var ideasEl = document.getElementById('constraint-ideas');
+    if (ideasEl) {
+      var html = '<div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:6px;">IDEAS TO UNLOCK</div>';
+      (pc.ideas_to_unlock || []).forEach(function(i){ html += '<div style="font-size:12px;color:rgba(251,248,243,0.5);padding:3px 0;">💡 ' + i + '</div>'; });
+      ideasEl.innerHTML = html;
+    }
+    
+    // Next actions
+    var actionsEl = document.getElementById('constraint-actions');
+    if (actionsEl) {
+      var html = '<div style="font-size:11px;color:#E74C3C;font-weight:700;letter-spacing:1px;margin-bottom:6px;">NEXT ACTIONS</div>';
+      (pc.next_actions || []).forEach(function(a){
+        var icon = a.status === 'done' ? '✅' : '○';
+        html += '<div style="font-size:12px;color:rgba(251,248,243,0.6);padding:3px 0;">' + icon + ' ' + a.action + ' <span style="font-size:10px;color:rgba(251,248,243,0.3);">— ' + a.owner + '</span></div>';
+      });
+      actionsEl.innerHTML = html;
+    }
+    
+    // Function grid
+    var grid = document.getElementById('function-grid');
+    if (grid) {
+      var html = '';
+      (d.functions || []).forEach(function(f) {
+        html += '<div style="background:rgba(16,19,24,0.5);border:1px solid rgba(200,169,81,0.08);border-radius:10px;padding:14px;">';
+        html += '<div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px;">' + f.name + '</div>';
+        html += '<div style="font-size:11px;color:var(--cream);margin-bottom:4px;">Constraint: ' + f.current_constraint + '</div>';
+        html += '<div style="font-size:11px;color:rgba(251,248,243,0.4);margin-bottom:4px;">' + f.how_unlocking + '</div>';
+        html += '<div style="display:flex;justify-content:space-between;margin-top:8px;">';
+        html += '<span style="font-size:10px;color:rgba(251,248,243,0.3);">Now: ' + f.current + '</span>';
+        html += '<span style="font-size:10px;color:var(--gold);">Target: ' + f.target + '</span>';
+        html += '</div>';
+        if (f.future_experiments && f.future_experiments.length > 0) {
+          html += '<div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.03);">';
+          html += '<div style="font-size:9px;color:rgba(251,248,243,0.25);margin-bottom:3px;">FUTURE EXPERIMENTS</div>';
+          f.future_experiments.slice(0,2).forEach(function(e){ html += '<div style="font-size:10px;color:rgba(251,248,243,0.35);padding:1px 0;">→ ' + e + '</div>'; });
+          if (f.future_experiments.length > 2) html += '<div style="font-size:10px;color:rgba(251,248,243,0.2);">+' + (f.future_experiments.length - 2) + ' more</div>';
+          html += '</div>';
+        }
+        html += '</div>';
+      });
+      grid.innerHTML = html;
+    }
+  }).catch(function(e){ console.log('constraint error', e); });
+
   // Agent activity
   fetch('./data/agent-activity.json').then(function(r){return r.json()}).then(function(d) {
     var el = document.getElementById('agent-feed');
@@ -942,6 +1144,28 @@ function loadOperationalData() {
     if (html === '') html = '<div style="color:rgba(251,248,243,0.3);">React to items in your daily brief and they\'ll appear here</div>';
     el.innerHTML = html;
   }).catch(function(){});
+}
+
+// ── Toggle sections ──
+function toggleSection(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  if (id === 'function-grid') el.style.display = el.style.display === 'none' ? 'none' : 'grid';
+}
+
+// ── Collapse office ──
+function toggleOffice() {
+  var o = document.querySelector('.office-wrap');
+  var btn = document.getElementById('office-toggle');
+  if (!o) return;
+  if (o.style.display === 'none') {
+    o.style.display = 'flex';
+    if (btn) btn.textContent = '▴ Hide Office';
+  } else {
+    o.style.display = 'none';
+    if (btn) btn.textContent = '▾ Show Office';
+  }
 }
 
 function pulseTile(label, value, color) {
