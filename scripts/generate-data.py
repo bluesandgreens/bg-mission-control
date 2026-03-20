@@ -980,7 +980,8 @@ def fetch_dc_closes(supabase_url: str, supabase_key: str, hubspot_key: str = Non
                 }]
             }],
             "properties": ["firstname", "lastname", "onboarding_call_scheduled",
-                           "discovery_call_taken_by", "discovery_call_outcome", "member_status"],
+                           "discovery_call_taken_by", "discovery_call_outcome", "member_status",
+                           "hubspot_owner_id"],
             "limit": 100
         }
         headers = {"Authorization": f"Bearer {hubspot_key}", "Content-Type": "application/json"}
@@ -993,10 +994,16 @@ def fetch_dc_closes(supabase_url: str, supabase_key: str, hubspot_key: str = Non
             p = r.get("properties", {})
             name = f"{p.get('firstname', '')} {p.get('lastname', '')}".strip() or "Unknown"
             close_date = str(p.get("onboarding_call_scheduled", ""))[:10]
+            rep = p.get("discovery_call_taken_by", "")
+            if not rep:
+                # Fallback to hubspot_owner_id → name mapping
+                owner_id = p.get("hubspot_owner_id", "")
+                owner_map = {v: k for k, v in HUBSPOT_OWNERS.items()}
+                rep = HUBSPOT_OWNERS.get(owner_id, "")
             closes.append({
                 "name": name,
                 "close_date": close_date,
-                "rep": p.get("discovery_call_taken_by", ""),
+                "rep": rep,
                 "status": p.get("member_status", p.get("discovery_call_outcome", "")),
             })
         closes.sort(key=lambda x: x.get("close_date", ""), reverse=True)

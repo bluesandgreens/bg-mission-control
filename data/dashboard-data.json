@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T01:54:34.407413Z",
+  "generated_at": "2026-03-20T01:57:23.010596Z",
   "period": {
     "today": "2026-03-20",
     "week_start": "2026-03-16",
@@ -195,7 +195,7 @@
       "cpbc": 28.96
     },
     "mtd": {
-      "spend": 4042.14,
+      "spend": 4042.41,
       "booked_calls": 166,
       "cpbc": 24.35
     }
@@ -3637,7 +3637,7 @@
     {
       "name": "Emma Hargreaves",
       "close_date": "2026-03-18",
-      "rep": null,
+      "rep": "Bailey",
       "status": "Deposit Paid"
     },
     {
@@ -3655,13 +3655,13 @@
     {
       "name": "Wayde Mainard",
       "close_date": "2026-03-17",
-      "rep": null,
+      "rep": "Harry",
       "status": "Deposit Paid"
     },
     {
       "name": "Belinda Mackie",
       "close_date": "2026-03-17",
-      "rep": null,
+      "rep": "Bailey",
       "status": "Deposit Paid"
     },
     {
@@ -3673,13 +3673,13 @@
     {
       "name": "Lacey Jurd",
       "close_date": "2026-03-16",
-      "rep": null,
+      "rep": "",
       "status": "Deposit Paid"
     },
     {
       "name": "Rebecca Maggiora",
       "close_date": "2026-03-16",
-      "rep": null,
+      "rep": "Anthony",
       "status": "Deposit Paid"
     },
     {
@@ -3697,13 +3697,13 @@
     {
       "name": "Eileen Kamp",
       "close_date": "2026-03-13",
-      "rep": null,
+      "rep": "Harry",
       "status": "Deposit Paid"
     },
     {
       "name": "Sarah Anwar",
       "close_date": "2026-03-13",
-      "rep": null,
+      "rep": "",
       "status": "Active Sessions"
     },
     {
@@ -3715,19 +3715,19 @@
     {
       "name": "Michelle Stephenson",
       "close_date": "2026-03-12",
-      "rep": null,
+      "rep": "Anthony",
       "status": "Active Sessions"
     },
     {
       "name": "Hayley  Kirk",
       "close_date": "2026-03-12",
-      "rep": null,
+      "rep": "",
       "status": "Active Sessions"
     },
     {
       "name": "Fiona Merrin",
       "close_date": "2026-03-12",
-      "rep": null,
+      "rep": "Harry",
       "status": "Active Sessions"
     },
     {
@@ -3763,7 +3763,7 @@
     {
       "name": "Tenniel Harman-York",
       "close_date": "2026-03-10",
-      "rep": null,
+      "rep": "",
       "status": "Active Sessions"
     },
     {
@@ -3775,7 +3775,7 @@
     {
       "name": "Javed Anwar",
       "close_date": "2026-03-10",
-      "rep": null,
+      "rep": "Bailey",
       "status": "Deposit Paid"
     },
     {
@@ -3793,13 +3793,13 @@
     {
       "name": "Mel Colles",
       "close_date": "2026-03-09",
-      "rep": null,
+      "rep": "Harry",
       "status": "Deposit Paid"
     },
     {
       "name": "Kelly Steele",
       "close_date": "2026-03-09",
-      "rep": null,
+      "rep": "Harry",
       "status": "Deposit Paid"
     },
     {
