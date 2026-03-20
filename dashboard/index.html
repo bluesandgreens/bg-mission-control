@@ -604,6 +604,11 @@ tbody tr.pending-row { opacity: 0.35; }
 
   <!-- DAILY PULSE -->
   <div class="section-header">DAILY PULSE</div>
+  <div class="tab-row" id="pulse-tab-row">
+    <button class="tab-btn" onclick="switchPulseTab('today', this)">Today</button>
+    <button class="tab-btn active" onclick="switchPulseTab('wtd', this)">Week-to-Date</button>
+    <button class="tab-btn" onclick="switchPulseTab('mtd', this)">Month-to-Date</button>
+  </div>
   <div id="daily-pulse" class="pulse-grid"></div>
 
   <!-- 14-DAY TREND -->
@@ -856,6 +861,196 @@ function noData() {
   return '<div style="padding: 24px; text-align: center; color: rgba(255,255,255,0.4); font-size: 13px; background: var(--card-bg); border: var(--card-border); border-radius: 16px;">No data available &mdash; data source pending</div>';
 }
 
+function emptyMsg(msg) {
+  return '<div style="padding:16px;text-align:center;color:rgba(255,255,255,0.4);font-size:13px;">' + msg + '</div>';
+}
+
+function renderObjections(data) {
+  var el = document.getElementById('rye-objections');
+  var obj = data.objections_mtd || {};
+  var breakdown = obj.breakdown || [];
+  if (breakdown.length === 0) { el.innerHTML = emptyMsg('No objection data this month'); return; }
+  var html = '<table><thead><tr><th>Objection</th><th>Count</th><th>%</th></tr></thead><tbody>';
+  var total = 0;
+  breakdown.forEach(function(b) { total += b.count; });
+  breakdown.forEach(function(b) {
+    var pct = total > 0 ? Math.round((b.count / total) * 100) : 0;
+    html += '<tr><td>' + safeVal(b.outcome) + '</td><td><strong>' + safeVal(b.count) + '</strong></td><td>' + pct + '%</td></tr>';
+  });
+  html += '<tr class="total-row"><td>TOTAL</td><td>' + total + '</td><td>100%</td></tr>';
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderNoShows(data) {
+  var el = document.getElementById('rye-noshows');
+  var noshows = data.dc_noshows_week || [];
+  if (noshows.length === 0) { el.innerHTML = emptyMsg('No DC no-shows this week'); return; }
+  var html = '<table><thead><tr><th>Name</th><th>Date</th><th>Rep</th></tr></thead><tbody>';
+  noshows.forEach(function(n) {
+    html += '<tr><td><strong>' + safeVal(n.name) + '</strong></td><td>' + formatShortDate(n.date) + '</td><td>' + safeVal(n.rep) + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderBrodieInputs(data) {
+  var el = document.getElementById('brodie-inputs');
+  var inputs = data.brodie_inputs || [];
+  if (inputs.length === 0) { el.innerHTML = emptyMsg('No calls logged in last 48 hours'); return; }
+  var html = '<table><thead><tr><th>Call</th><th>Date</th><th>Disposition</th><th>Direction</th></tr></thead><tbody>';
+  inputs.forEach(function(c) {
+    html += '<tr><td><strong>' + safeVal(c.title, 'Untitled') + '</strong></td><td>' + formatShortDate(c.date) + '</td><td>' + safeVal(c.disposition, '--') + '</td><td>' + safeVal(c.direction, '--') + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderW1Calendar(data) {
+  var el = document.getElementById('brodie-calendar');
+  var cal = data.w1_calendar || [];
+  if (cal.length === 0) { el.innerHTML = emptyMsg('No W1 sessions scheduled in next 14 days'); return; }
+  var html = '<table><thead><tr><th>Name</th><th>W1 Date</th><th>Mentor</th><th>Status</th></tr></thead><tbody>';
+  cal.forEach(function(c) {
+    var today = new Date().toISOString().slice(0,10);
+    var rowStyle = c.w1_date === today ? ' style="background:rgba(200,169,81,0.15);"' : '';
+    html += '<tr' + rowStyle + '><td><strong>' + safeVal(c.name) + '</strong></td><td>' + formatShortDate(c.w1_date) + '</td><td>' + safeVal(c.mentor, '--') + '</td><td>' + safeVal(c.status, '--') + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderFamiliesAtRisk(data) {
+  var el = document.getElementById('brodie-risk');
+  var risk = data.families_at_risk || [];
+  if (risk.length === 0) { el.innerHTML = emptyMsg('No families flagged as at risk'); return; }
+  var html = '<table><thead><tr><th>Name</th><th>Risk Signal</th><th>Source</th></tr></thead><tbody>';
+  risk.forEach(function(r) {
+    html += '<tr><td><strong>' + safeVal(r.name) + '</strong></td><td><span class="badge badge-red" style="white-space:normal;">' + safeVal(r.risk_signal) + '</span></td><td>' + safeVal(r.source) + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderW2Pending(data) {
+  var el = document.getElementById('brodie-w2pending');
+  var pending = data.w2_pending || [];
+  if (pending.length === 0) { el.innerHTML = emptyMsg('No W2-pending contacts found'); return; }
+  var html = '<table><thead><tr><th>Name</th><th>W1 Date</th><th>Mentor</th><th>Days Since W1</th></tr></thead><tbody>';
+  var now = new Date();
+  pending.forEach(function(p) {
+    var daysSince = '--';
+    if (p.w1_date) { var w1 = new Date(p.w1_date); daysSince = Math.floor((now - w1) / 86400000); }
+    var daysClass = daysSince > 7 ? 'badge-red' : 'badge-gold';
+    html += '<tr><td><strong>' + safeVal(p.name) + '</strong></td><td>' + formatShortDate(p.w1_date) + '</td><td>' + safeVal(p.mentor, '--') + '</td><td><span class="badge ' + daysClass + '">' + daysSince + 'd</span></td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderWelcomeCalls(data) {
+  var el = document.getElementById('norri-welcome');
+  var calls = data.welcome_calls_needed || [];
+  if (calls.length === 0) { el.innerHTML = emptyMsg('No recent W1s in last 48 hours'); return; }
+  var html = '<table><thead><tr><th>Name</th><th>W1 Date</th><th>Mentor</th><th>Welcome Call</th></tr></thead><tbody>';
+  calls.forEach(function(c) {
+    var wcBadge = c.welcome_call_done ? '<span class="badge badge-green">Done ' + formatShortDate(c.welcome_call_date) + '</span>' : '<span class="badge badge-red">PENDING</span>';
+    html += '<tr><td><strong>' + safeVal(c.name) + '</strong></td><td>' + formatShortDate(c.w1_date) + '</td><td>' + safeVal(c.mentor, '--') + '</td><td>' + wcBadge + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderW1Payment(data) {
+  var el = document.getElementById('norri-w1payment');
+  var checks = data.w1_payment_check || [];
+  if (checks.length === 0) { el.innerHTML = emptyMsg('No W1 starts in last 14 days'); return; }
+  var html = '<table><thead><tr><th>Name</th><th>W1 Date</th><th>Payment Status</th></tr></thead><tbody>';
+  checks.forEach(function(c) {
+    var s = c.payment_status;
+    var statusBadge;
+    if (s === 'active') statusBadge = '<span class="badge badge-green">Active</span>';
+    else if (s === 'past_due') statusBadge = '<span class="badge badge-red">Past Due</span>';
+    else if (s === 'trialing') statusBadge = '<span class="badge badge-gold">Trial</span>';
+    else if (s === 'no_subscription' || s === 'no_customer' || s === 'no_email') statusBadge = '<span class="badge badge-red">Missing</span>';
+    else statusBadge = '<span class="badge badge-warning">' + safeVal(s, 'Unknown') + '</span>';
+    html += '<tr><td><strong>' + safeVal(c.name) + '</strong></td><td>' + formatShortDate(c.w1_date) + '</td><td>' + statusBadge + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderPayFlags(data) {
+  var el = document.getElementById('norri-payflags');
+  var stripe = data.stripe || {};
+  var pastDue = stripe.past_due_list || [];
+  var failed = stripe.failed_payments_7d_list || [];
+  if (pastDue.length === 0 && failed.length === 0) { el.innerHTML = emptyMsg('No payment flags'); return; }
+  var html = '<table><thead><tr><th>Name</th><th>Amount</th><th>Issue</th></tr></thead><tbody>';
+  pastDue.forEach(function(p) {
+    html += '<tr><td><strong>' + safeVal(p.name) + '</strong></td><td>' + formatCurrency(p.amount_aud) + '</td><td><span class="badge badge-red">Past Due</span></td></tr>';
+  });
+  failed.forEach(function(f) {
+    html += '<tr><td><strong>' + safeVal(f.name, f.email || 'Unknown') + '</strong></td><td>' + formatCurrency(f.amount_aud) + '</td><td><span class="badge badge-warning">Failed (7d)</span></td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderSubPending(data) {
+  var el = document.getElementById('norri-subpending');
+  var pending = data.sub_setup_pending || [];
+  if (pending.length === 0) { el.innerHTML = emptyMsg('All recent closes have active subscriptions'); return; }
+  var html = '<table><thead><tr><th>Name</th><th>Close Date</th><th>Status</th><th>Subscription</th></tr></thead><tbody>';
+  pending.forEach(function(p) {
+    var statusBadge;
+    if (p.sub_status === 'no_customer') statusBadge = '<span class="badge badge-red">No Stripe Customer</span>';
+    else if (p.sub_status === 'missing' || p.sub_status === 'no_subscription') statusBadge = '<span class="badge badge-red">No Active Sub</span>';
+    else if (p.sub_status === 'past_due') statusBadge = '<span class="badge badge-warning">Past Due</span>';
+    else statusBadge = '<span class="badge badge-warning">' + safeVal(p.sub_status) + '</span>';
+    html += '<tr><td><strong>' + safeVal(p.name) + '</strong></td><td>' + formatShortDate(p.close_date) + '</td><td>' + safeVal(p.member_status, '--') + '</td><td>' + statusBadge + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderNPS(data) {
+  var el = document.getElementById('norri-nps');
+  var nps = data.recent_nps || [];
+  if (nps.length === 0) {
+    var ps = data.portal_stats || {};
+    if (ps.parent_nps_score) {
+      el.innerHTML = '<div style="padding:16px;text-align:center;"><div class="metric-value" style="font-size:36px;">' + ps.parent_nps_score + '</div><div style="color:rgba(255,255,255,0.5);font-size:13px;">Overall Parent NPS Score (no individual responses available)</div></div>';
+    } else {
+      el.innerHTML = emptyMsg('No NPS data available');
+    }
+    return;
+  }
+  var html = '<table><thead><tr><th>Name</th><th>Score</th><th>Date</th><th>Mentor</th></tr></thead><tbody>';
+  nps.forEach(function(n) {
+    var s = Number(n.score);
+    var scoreBadge;
+    if (s >= 9) scoreBadge = '<span class="badge badge-green">' + s + '</span>';
+    else if (s >= 7) scoreBadge = '<span class="badge badge-gold">' + s + '</span>';
+    else scoreBadge = '<span class="badge badge-red">' + s + '</span>';
+    html += '<tr><td><strong>' + safeVal(n.name) + '</strong></td><td>' + scoreBadge + '</td><td>' + formatShortDate(n.date) + '</td><td>' + safeVal(n.mentor, '--') + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderMentorPipeline(data) {
+  var el = document.getElementById('mentor-pipeline-section');
+  var pipeline = data.mentor_pipeline || [];
+  if (pipeline.length === 0) { el.innerHTML = emptyMsg('No mentor pipeline data available'); return; }
+  var html = '<table><thead><tr><th>Name</th><th>Stage</th><th>Status</th></tr></thead><tbody>';
+  pipeline.forEach(function(p) {
+    html += '<tr><td><strong>' + safeVal(p.name, p.mentorName || 'Unknown') + '</strong></td><td>' + safeVal(p.stage, p.status || '--') + '</td><td>' + safeVal(p.notes, p.details || '--') + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
 function safeVal(v, def) { return (v !== null && v !== undefined) ? v : (def !== undefined ? def : '--'); }
 
 function pulseCard(label, value, colorClass, onclick) {
@@ -936,9 +1131,21 @@ function renderPerfFlags(data) {
   el.innerHTML = html;
 }
 
+var _currentPulseTab = 'wtd';
+var _dashData = null;
+
+function switchPulseTab(tab, btn) {
+  _currentPulseTab = tab;
+  btn.parentElement.querySelectorAll('.tab-btn').forEach(function(el) { el.classList.remove('active'); });
+  btn.classList.add('active');
+  if (_dashData) renderDailyPulse(_dashData);
+}
+
 function renderDailyPulse(data) {
+  _dashData = data;
   var el = document.getElementById('daily-pulse');
-  var p = data.pulse && data.pulse.today ? data.pulse.today : {};
+  var periodKey = _currentPulseTab === 'today' ? 'today' : (_currentPulseTab === 'mtd' ? 'mtd' : 'wtd');
+  var p = data.pulse && data.pulse[periodKey] ? data.pulse[periodKey] : {};
   el.innerHTML =
     pulseCard('New Leads', safeVal(p.new_leads, 0), '', 'showDrillDown(\"leads\")') +
     pulseCard('Booked Calls', safeVal(p.booked_calls, 0), '', 'showDrillDown(\"booked\")') +
@@ -1225,7 +1432,11 @@ function renderRyeScorecards(data) {
     totCloses += closes;
     totW1 += w1;
 
-    html += '<tr><td><strong>' + rep.name + '</strong></td><td>' + taken + '</td><td>' + closeRateBadge(cr) + '</td><td>' + w1 + '</td><td>' + callsToW1 + '</td></tr>';
+    var takenLabel = '' + taken;
+    if (rep.total_calls_mtd && rep.total_calls_mtd > taken) {
+      takenLabel = taken + ' <span style="font-size:11px;color:rgba(255,255,255,0.4);">(' + rep.total_calls_mtd + ' total calls)</span>';
+    }
+    html += '<tr><td><strong>' + rep.name + '</strong></td><td>' + takenLabel + '</td><td>' + closeRateBadge(cr) + '</td><td>' + w1 + '</td><td>' + callsToW1 + '</td></tr>';
   });
 
   var totalCR = totTaken > 0 ? Math.round((totCloses / totTaken) * 100) + '%' : '--';
@@ -1237,14 +1448,14 @@ function renderRyeScorecards(data) {
 
 function renderRyeTab(data) {
   renderRyeScorecards(data);
-  document.getElementById('rye-objections').innerHTML = noData();
-  document.getElementById('rye-noshows').innerHTML = noData();
+  renderObjections(data);
+  renderNoShows(data);
 }
 
 // ===== DC -> W1 TAB =====
 function renderBrodieTab(data) {
-  document.getElementById('brodie-inputs').innerHTML = noData();
-  document.getElementById('brodie-calendar').innerHTML = noData();
+  renderBrodieInputs(data);
+  renderW1Calendar(data);
 
   // Live activation pipeline
   var pipeline = data.activation_pipeline || {};
@@ -1261,8 +1472,8 @@ function renderBrodieTab(data) {
     el.innerHTML = html;
   }
 
-  document.getElementById('brodie-risk').innerHTML = noData();
-  document.getElementById('brodie-w2pending').innerHTML = noData();
+  renderFamiliesAtRisk(data);
+  renderW2Pending(data);
 }
 
 // ===== MENTORS TAB =====
@@ -1378,7 +1589,7 @@ function renderMentorTab(data) {
   }
 
   // Mentor pipeline
-  document.getElementById('mentor-pipeline-section').innerHTML = noData();
+  renderMentorPipeline(data);
 }
 
 // ===== PROGRAM TAB =====
@@ -1398,11 +1609,11 @@ function renderNorriTab(data) {
     portalEl.innerHTML = '';
   }
 
-  document.getElementById('norri-welcome').innerHTML = noData();
-  document.getElementById('norri-w1payment').innerHTML = noData();
-  document.getElementById('norri-payflags').innerHTML = noData();
-  document.getElementById('norri-subpending').innerHTML = noData();
-  document.getElementById('norri-nps').innerHTML = noData();
+  renderWelcomeCalls(data);
+  renderW1Payment(data);
+  renderPayFlags(data);
+  renderSubPending(data);
+  renderNPS(data);
 
   // Upcoming renewals
   var renewalsEl = document.getElementById('norri-renewals');

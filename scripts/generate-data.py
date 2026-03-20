@@ -262,6 +262,62 @@ def hubspot_not_has_property(prop: str) -> dict:
     return {"propertyName": prop, "operator": "NOT_HAS_PROPERTY"}
 
 
+def hubspot_search_objects(api_key: str, object_type: str, filters: list,
+                           properties: list, max_results: int = 100) -> list:
+    """Search any HubSpot CRM object type (calls, emails, etc.)."""
+    if not api_key:
+        return []
+    url = f"https://api.hubapi.com/crm/v3/objects/{object_type}/search"
+    results = []
+    after = None
+    while True:
+        body = {
+            "filterGroups": [{"filters": filters}],
+            "properties": properties,
+            "limit": 100,
+        }
+        if after:
+            body["after"] = after
+        try:
+            resp = requests.post(url, headers=hubspot_headers(api_key),
+                                 json=body, timeout=30)
+            resp.raise_for_status()
+            data = resp.json()
+            results.extend(data.get("results", []))
+            paging = data.get("paging", {})
+            after = paging.get("next", {}).get("after")
+            if not after or len(results) >= max_results:
+                break
+        except Exception as e:
+            log(f"HubSpot {object_type} search error: {e}")
+            break
+    return results[:max_results]
+
+
+def get_stripe_sub_emails(stripe_key: str) -> dict:
+    """Get email → subscription status for all non-canceled Stripe subscriptions."""
+    if not stripe_key:
+        return {}
+    email_status = {}
+    for status in ("active", "past_due", "trialing"):
+        params = {"status": status, "limit": 100, "expand[]": "data.customer"}
+        has_more = True
+        while has_more:
+            data = stripe_get(stripe_key, "/subscriptions", params)
+            for sub in data.get("data", []):
+                cust = sub.get("customer", {})
+                email = cust.get("email", "") if isinstance(cust, dict) else ""
+                if email:
+                    email_status[email.lower()] = status
+            has_more = data.get("has_more", False)
+            items = data.get("data", [])
+            if has_more and items:
+                params["starting_after"] = items[-1]["id"]
+            else:
+                break
+    return email_status
+
+
 # ---------------------------------------------------------------------------
 # Section A: Pulse Metrics
 # ---------------------------------------------------------------------------
@@ -1378,6 +1434,347 @@ def enrich_activation_from_supabase(supabase_url: str, supabase_key: str,
 
 
 # ---------------------------------------------------------------------------
+# Section I: New Dashboard Section Data
+# ---------------------------------------------------------------------------
+
+def fetch_brodie_inputs(api_key: str, target: datetime) -> list:
+    """Fetch Brodie's recent call activity (last 48 hours)."""
+    log("Fetching Brodie's daily inputs...")
+    if not api_key:
+        return []
+    two_days_ago = date_to_ms(target - timedelta(days=2))
+    day_end = end_of_day_ms(target)
+    filters = [
+        {"propertyName": "hs_timestamp", "operator": "GTE", "value": str(two_days_ago)},
+        {"propertyName": "hs_timestamp", "operator": "LTE", "value": str(day_end)},
+        {"propertyName": "hubspot_owner_id", "operator": "EQ", "value": "86750401"},
+    ]
+    properties = ["hs_timestamp", "hs_call_title", "hs_call_disposition",
+                   "hs_call_direction", "hs_call_duration", "hubspot_owner_id"]
+    calls = hubspot_search_objects(api_key, "calls", filters, properties, max_results=50)
+    result = []
+    for call in calls:
+        p = call.get("properties", {})
+        result.append({
+            "title": p.get("hs_call_title", ""),
+            "date": p.get("hs_timestamp", "")[:16] if p.get("hs_timestamp") else "",
+            "disposition": p.get("hs_call_disposition", ""),
+            "direction": p.get("hs_call_direction", ""),
+            "duration": p.get("hs_call_duration", ""),
+        })
+    result.sort(key=lambda x: x.get("date", ""), reverse=True)
+    log(f"  Brodie inputs: {len(result)} calls")
+    return result
+
+
+def fetch_w1_calendar(api_key: str, target: datetime) -> list:
+    """Fetch W1 sessions scheduled in the next 14 days."""
+    log("Fetching W1 calendar...")
+    if not api_key:
+        return []
+    start = date_to_ms(target)
+    end = date_to_ms(target + timedelta(days=14))
+    filters = hubspot_date_filter("week_1_scheduled_for", start, end) + [
+        hubspot_not_has_property("week_1_complete"),
+    ]
+    properties = ["firstname", "lastname", "week_1_scheduled_for", "mentor_name1", "member_status"]
+    contacts = hubspot_search_contacts(api_key, filters, properties, max_results=100)
+    result = []
+    for c in contacts:
+        p = c.get("properties", {})
+        name = f"{p.get('firstname', '')} {p.get('lastname', '')}".strip() or "Unknown"
+        result.append({
+            "name": name,
+            "w1_date": str(p.get("week_1_scheduled_for", ""))[:10],
+            "mentor": p.get("mentor_name1", ""),
+            "status": p.get("member_status", ""),
+        })
+    result.sort(key=lambda x: x.get("w1_date", ""))
+    log(f"  W1 calendar: {len(result)} sessions")
+    return result
+
+
+def fetch_w2_pending(api_key: str) -> list:
+    """Fetch contacts who completed W1 but haven't had W2 yet (session_number = 1)."""
+    log("Fetching W2 pending...")
+    if not api_key:
+        return []
+    filters = [
+        hubspot_has_property("week_1_complete"),
+        {"propertyName": "mentor_session_number", "operator": "EQ", "value": "1"},
+    ]
+    properties = ["firstname", "lastname", "week_1_complete", "mentor_name1", "member_status"]
+    contacts = hubspot_search_contacts(api_key, filters, properties, max_results=100)
+    result = []
+    for c in contacts:
+        p = c.get("properties", {})
+        status = (p.get("member_status") or "").lower()
+        if status in ("inactive", "churned", "churn", "cancelled", "canceled", "withdrawn"):
+            continue
+        name = f"{p.get('firstname', '')} {p.get('lastname', '')}".strip() or "Unknown"
+        result.append({
+            "name": name,
+            "w1_date": str(p.get("week_1_complete", ""))[:10],
+            "mentor": p.get("mentor_name1", ""),
+            "status": p.get("member_status", ""),
+        })
+    result.sort(key=lambda x: x.get("w1_date", ""))
+    log(f"  W2 pending: {len(result)} contacts")
+    return result
+
+
+def fetch_welcome_calls_needed(api_key: str, target: datetime) -> list:
+    """Fetch families who had W1 in last 48hrs needing welcome call."""
+    log("Fetching welcome calls needed...")
+    if not api_key:
+        return []
+    two_days_ago = date_to_ms(target - timedelta(days=2))
+    day_end = end_of_day_ms(target)
+    filters = hubspot_date_filter("week_1_complete", two_days_ago, day_end)
+    properties = ["firstname", "lastname", "week_1_complete", "mentor_name1",
+                   "parent_intro_call_date_time"]
+    contacts = hubspot_search_contacts(api_key, filters, properties, max_results=50)
+    result = []
+    for c in contacts:
+        p = c.get("properties", {})
+        name = f"{p.get('firstname', '')} {p.get('lastname', '')}".strip() or "Unknown"
+        result.append({
+            "name": name,
+            "w1_date": str(p.get("week_1_complete", ""))[:10],
+            "mentor": p.get("mentor_name1", ""),
+            "welcome_call_done": bool(p.get("parent_intro_call_date_time")),
+            "welcome_call_date": str(p.get("parent_intro_call_date_time", ""))[:10]
+                if p.get("parent_intro_call_date_time") else "",
+        })
+    result.sort(key=lambda x: x.get("w1_date", ""), reverse=True)
+    log(f"  Welcome calls needed: {len(result)} ({sum(1 for r in result if not r['welcome_call_done'])} pending)")
+    return result
+
+
+def fetch_w1_payment_check(api_key: str, stripe_sub_emails: dict,
+                            target: datetime) -> list:
+    """Fetch W1 starts in last 14 days with Stripe payment status."""
+    log("Fetching W1 payment check...")
+    if not api_key:
+        return []
+    fourteen_days_ago = date_to_ms(target - timedelta(days=14))
+    day_end = end_of_day_ms(target)
+    filters = hubspot_date_filter("week_1_complete", fourteen_days_ago, day_end)
+    properties = ["firstname", "lastname", "week_1_complete", "email"]
+    contacts = hubspot_search_contacts(api_key, filters, properties, max_results=50)
+    result = []
+    for c in contacts:
+        p = c.get("properties", {})
+        name = f"{p.get('firstname', '')} {p.get('lastname', '')}".strip() or "Unknown"
+        email = (p.get("email") or "").lower()
+        payment = stripe_sub_emails.get(email, "no_subscription") if email else "no_email"
+        result.append({
+            "name": name,
+            "w1_date": str(p.get("week_1_complete", ""))[:10],
+            "email": email,
+            "payment_status": payment,
+        })
+    result.sort(key=lambda x: x.get("w1_date", ""), reverse=True)
+    log(f"  W1 payment check: {len(result)} contacts")
+    return result
+
+
+def fetch_sub_setup_pending(api_key: str, stripe_sub_emails: dict,
+                             target: datetime) -> list:
+    """Fetch contacts who closed but don't have active Stripe subscription."""
+    log("Fetching subscription setup pending...")
+    if not api_key:
+        return []
+    thirty_days_ago = date_to_ms(target - timedelta(days=30))
+    day_end = end_of_day_ms(target)
+    filters = hubspot_date_filter("onboarding_call_scheduled", thirty_days_ago, day_end)
+    properties = ["firstname", "lastname", "onboarding_call_scheduled", "email", "member_status"]
+    contacts = hubspot_search_contacts(api_key, filters, properties, max_results=100)
+    result = []
+    for c in contacts:
+        p = c.get("properties", {})
+        email = (p.get("email") or "").lower()
+        name = f"{p.get('firstname', '')} {p.get('lastname', '')}".strip() or "Unknown"
+        sub_status = stripe_sub_emails.get(email, "no_subscription") if email else "no_email"
+        if sub_status not in ("active", "trialing"):
+            result.append({
+                "name": name,
+                "close_date": str(p.get("onboarding_call_scheduled", ""))[:10],
+                "email": email,
+                "sub_status": sub_status,
+                "member_status": p.get("member_status", ""),
+            })
+    log(f"  Sub setup pending: {len(result)} contacts without active sub")
+    return result
+
+
+def fetch_objections_mtd(api_key: str, target: datetime) -> dict:
+    """Fetch DC objection breakdown for the month."""
+    log("Fetching objections MTD...")
+    if not api_key:
+        return {"breakdown": [], "details": []}
+    month_start = date_to_ms(target.replace(day=1))
+    day_end = end_of_day_ms(target)
+    filters = hubspot_date_filter("discovery_call_completed_on", month_start, day_end) + [
+        {"propertyName": "discovery_call_outcome", "operator": "NEQ", "value": "Onboarding Booked"},
+        hubspot_has_property("discovery_call_outcome"),
+    ]
+    properties = ["firstname", "lastname", "discovery_call_outcome",
+                   "discovery_call_user", "discovery_call_completed_on"]
+    contacts = hubspot_search_contacts(api_key, filters, properties, max_results=200)
+    outcome_counts = {}
+    details = []
+    for c in contacts:
+        p = c.get("properties", {})
+        outcome = p.get("discovery_call_outcome", "Unknown") or "Unknown"
+        outcome_counts[outcome] = outcome_counts.get(outcome, 0) + 1
+        name = f"{p.get('firstname', '')} {p.get('lastname', '')}".strip() or "Unknown"
+        dc_user_id = p.get("discovery_call_user", "")
+        rep_name = HUBSPOT_OWNERS.get(dc_user_id, dc_user_id)
+        details.append({
+            "name": name, "outcome": outcome, "rep": rep_name,
+            "date": str(p.get("discovery_call_completed_on", ""))[:10],
+        })
+    breakdown = [{"outcome": k, "count": v}
+                 for k, v in sorted(outcome_counts.items(), key=lambda x: -x[1])]
+    details.sort(key=lambda x: x.get("date", ""), reverse=True)
+    log(f"  Objections MTD: {len(contacts)} non-close outcomes")
+    return {"breakdown": breakdown, "details": details}
+
+
+def fetch_dc_noshows_week(api_key: str, target: datetime) -> list:
+    """Fetch DC no-shows this week."""
+    log("Fetching DC no-shows this week...")
+    if not api_key:
+        return []
+    week_start = date_to_ms(monday_of(target))
+    day_end = end_of_day_ms(target)
+    filters = hubspot_date_filter("discovery_call_completed_on", week_start, day_end) + [
+        {"propertyName": "discovery_call_outcome", "operator": "EQ", "value": "No Show"},
+    ]
+    properties = ["firstname", "lastname", "discovery_call_completed_on", "discovery_call_user"]
+    contacts = hubspot_search_contacts(api_key, filters, properties, max_results=50)
+    result = []
+    for c in contacts:
+        p = c.get("properties", {})
+        name = f"{p.get('firstname', '')} {p.get('lastname', '')}".strip() or "Unknown"
+        dc_user_id = p.get("discovery_call_user", "")
+        rep_name = HUBSPOT_OWNERS.get(dc_user_id, dc_user_id)
+        result.append({
+            "name": name,
+            "date": str(p.get("discovery_call_completed_on", ""))[:10],
+            "rep": rep_name,
+        })
+    result.sort(key=lambda x: x.get("date", ""), reverse=True)
+    log(f"  DC no-shows this week: {len(result)}")
+    return result
+
+
+def fetch_recent_nps(supabase_url: str, supabase_key: str) -> list:
+    """Fetch recent NPS scores from Supabase."""
+    log("Fetching recent NPS scores...")
+    for cache_key in ("parent_nps", "nps_responses", "nps_scores"):
+        try:
+            data = fetch_supabase_cache(supabase_url, supabase_key, cache_key)
+            if not data:
+                continue
+            scores = data if isinstance(data, list) else data.get("scores",
+                data.get("responses", []))
+            if not isinstance(scores, list) or not scores:
+                continue
+            result = []
+            for s in scores:
+                result.append({
+                    "name": s.get("name", s.get("parent_name", "Unknown")),
+                    "score": s.get("score", s.get("nps_score", "")),
+                    "date": s.get("date", s.get("submitted_at", "")),
+                    "mentor": s.get("mentor", s.get("mentor_name", "")),
+                    "comment": s.get("comment", s.get("feedback", "")),
+                })
+            log(f"  Recent NPS: {len(result)} scores from {cache_key} cache")
+            return result
+        except Exception as e:
+            log(f"  NPS cache {cache_key} error: {e}")
+    log("  No NPS data found in Supabase cache")
+    return []
+
+
+def fetch_mentor_pipeline(supabase_url: str, supabase_key: str) -> list:
+    """Fetch mentor pipeline/hiring data from Supabase."""
+    log("Fetching mentor pipeline...")
+    for cache_key in ("mentor_pipeline", "mentor_recruitment"):
+        try:
+            data = fetch_supabase_cache(supabase_url, supabase_key, cache_key)
+            if not data:
+                continue
+            pipeline = data if isinstance(data, list) else data.get("pipeline",
+                data.get("mentors", []))
+            if isinstance(pipeline, list) and pipeline:
+                log(f"  Mentor pipeline: {len(pipeline)} entries from {cache_key}")
+                return pipeline
+        except Exception as e:
+            log(f"  Mentor pipeline {cache_key} error: {e}")
+    log("  No mentor pipeline data found in Supabase cache")
+    return []
+
+
+def fetch_rep_total_calls(api_key: str, target: datetime) -> dict:
+    """Fetch total CALL objects per rep for the month (for context)."""
+    log("Fetching rep total calls MTD...")
+    if not api_key:
+        return {}
+    month_start = date_to_ms(target.replace(day=1))
+    day_end = end_of_day_ms(target)
+    result = {}
+    for owner_id, name in HUBSPOT_OWNERS.items():
+        filters = [
+            {"propertyName": "hs_timestamp", "operator": "GTE", "value": str(month_start)},
+            {"propertyName": "hs_timestamp", "operator": "LTE", "value": str(day_end)},
+            {"propertyName": "hubspot_owner_id", "operator": "EQ", "value": owner_id},
+        ]
+        try:
+            url = "https://api.hubapi.com/crm/v3/objects/calls/search"
+            body = {"filterGroups": [{"filters": filters}], "limit": 1}
+            resp = requests.post(url, headers=hubspot_headers(api_key), json=body, timeout=30)
+            resp.raise_for_status()
+            count = resp.json().get("total", 0)
+            result[owner_id] = count
+            log(f"  {name}: {count} calls MTD")
+        except Exception as e:
+            log(f"  {name} calls error: {e}")
+            result[owner_id] = 0
+    return result
+
+
+def build_families_at_risk(surround_sound: list, perf_flags: list) -> list:
+    """Build families-at-risk list from surround sound and performance flags."""
+    result = []
+    for m in surround_sound:
+        missing = []
+        if (m.get("mentor_touch") or "").lower() in ("no", ""):
+            missing.append("Mentor")
+        if (m.get("norri_touch") or "").lower() in ("no", ""):
+            missing.append("Program")
+        if (m.get("brodie_touch") or "").lower() in ("no", ""):
+            missing.append("Activation")
+        if (m.get("dcrep_touch") or "").lower() in ("no", ""):
+            missing.append("DC Rep")
+        result.append({
+            "name": m.get("name", "Unknown"),
+            "risk_signal": f"Missing touches: {', '.join(missing)}" if missing else "Low engagement",
+            "source": "surround_sound",
+        })
+    for f in perf_flags:
+        if f.get("type") in ("low_consistency", "overdue_session"):
+            result.append({
+                "name": f.get("mentor", "Unknown"),
+                "risk_signal": f.get("detail", ""),
+                "source": "perf_flags",
+            })
+    return result
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -1466,6 +1863,31 @@ def main():
     # Add leaderboard to mentors
     mentors["leaderboard"] = mentor_leaderboard
 
+    # Pre-fetch Stripe subscription emails for cross-referencing
+    log("Pre-fetching Stripe subscription emails...")
+    stripe_sub_emails = get_stripe_sub_emails(stripe_key)
+    log(f"  Stripe sub emails: {len(stripe_sub_emails)}")
+
+    # New dashboard section data
+    log("Fetching new dashboard section data...")
+    brodie_inputs = fetch_brodie_inputs(hubspot_key, target)
+    w1_calendar = fetch_w1_calendar(hubspot_key, target)
+    w2_pending = fetch_w2_pending(hubspot_key)
+    welcome_calls = fetch_welcome_calls_needed(hubspot_key, target)
+    w1_payment = fetch_w1_payment_check(hubspot_key, stripe_sub_emails, target)
+    sub_pending = fetch_sub_setup_pending(hubspot_key, stripe_sub_emails, target)
+    objections = fetch_objections_mtd(hubspot_key, target)
+    noshows = fetch_dc_noshows_week(hubspot_key, target)
+    nps_data = fetch_recent_nps(supabase_url, supabase_key)
+    mentor_pipe = fetch_mentor_pipeline(supabase_url, supabase_key)
+    families_at_risk = build_families_at_risk(surround_sound, perf_flags)
+    log(f"  Families at risk: {len(families_at_risk)}")
+
+    # Rep total calls (for Bailey context)
+    rep_total_calls = fetch_rep_total_calls(hubspot_key, target)
+    for rep in reps:
+        rep["total_calls_mtd"] = rep_total_calls.get(rep.get("owner_id", ""), 0)
+
     # Assemble output
     output = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
@@ -1488,6 +1910,17 @@ def main():
         "portal_stats": portal_stats,
         "surround_sound": surround_sound,
         "unassigned": unassigned,
+        "brodie_inputs": brodie_inputs,
+        "w1_calendar": w1_calendar,
+        "w2_pending": w2_pending,
+        "welcome_calls_needed": welcome_calls,
+        "w1_payment_check": w1_payment,
+        "sub_setup_pending": sub_pending,
+        "objections_mtd": objections,
+        "dc_noshows_week": noshows,
+        "recent_nps": nps_data,
+        "mentor_pipeline": mentor_pipe,
+        "families_at_risk": families_at_risk,
     }
 
     # Write output
