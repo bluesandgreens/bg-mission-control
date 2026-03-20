@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-03-19T23:42:55.156398Z",
+  "generated_at": "2026-03-20T01:01:25.567348Z",
   "period": {
-    "today": "2026-03-19",
+    "today": "2026-03-20",
     "week_start": "2026-03-16",
     "month_start": "2026-03-01"
   },
   "pulse": {
     "today": {
-      "new_leads": 33,
-      "booked_calls": 4,
-      "dcs_completed": 1,
-      "closes": 1,
-      "w1_starts": 1,
+      "new_leads": 0,
+      "booked_calls": 0,
+      "dcs_completed": 0,
+      "closes": 0,
+      "w1_starts": 0,
       "agreement_forms": 0
     },
     "wtd": {
@@ -36,21 +36,21 @@
       "name": "Harry",
       "owner_id": "75967744",
       "today": {
-        "leads": 25,
-        "dcs_taken": 1,
-        "closes": 1,
+        "leads": 0,
+        "dcs_taken": 0,
+        "closes": 0,
         "w1_starts": 0,
-        "close_rate": 1.0
+        "close_rate": 0.0
       },
       "wtd": {
-        "leads": 84,
+        "leads": 85,
         "dcs_taken": 10,
         "closes": 4,
         "w1_starts": 2,
         "close_rate": 0.4
       },
       "mtd": {
-        "leads": 435,
+        "leads": 436,
         "dcs_taken": 42,
         "closes": 27,
         "w1_starts": 6,
@@ -86,7 +86,7 @@
       "name": "Anthony",
       "owner_id": "87029276",
       "today": {
-        "leads": 1,
+        "leads": 0,
         "dcs_taken": 0,
         "closes": 0,
         "w1_starts": 0,
@@ -111,7 +111,7 @@
       "name": "Bailey",
       "owner_id": "88035516",
       "today": {
-        "leads": 1,
+        "leads": 0,
         "dcs_taken": 0,
         "closes": 0,
         "w1_starts": 0,
@@ -139,7 +139,7 @@
         "leads": 0,
         "dcs_taken": 0,
         "closes": 0,
-        "w1_starts": 1,
+        "w1_starts": 0,
         "close_rate": 0.0
       },
       "wtd": {
@@ -185,26 +185,26 @@
   ],
   "meta_ads": {
     "today": {
-      "spend": 183.63,
-      "booked_calls": 5,
-      "cpbc": 36.73
+      "spend": 59.42,
+      "booked_calls": 2,
+      "cpbc": 29.71
     },
     "wtd": {
-      "spend": 747.03,
-      "booked_calls": 26,
-      "cpbc": 28.73
+      "spend": 806.48,
+      "booked_calls": 28,
+      "cpbc": 28.8
     },
     "mtd": {
-      "spend": 3978.19,
-      "booked_calls": 164,
-      "cpbc": 24.26
+      "spend": 4037.64,
+      "booked_calls": 166,
+      "cpbc": 24.32
     }
   },
   "stripe": {
     "active_subscriptions": 90,
     "mrr": 66206.5,
-    "failed_payments": 2,
-    "new_subscriptions": 2,
+    "failed_payments": 0,
+    "new_subscriptions": 0,
     "recent_cancellations": [
       {
         "id": "sub_1TCWOI2mA5zLxyK8YfkaaIYn",
@@ -2848,12 +2848,20 @@
         "payment_reset_date": "2026-04-02"
       },
       {
+        "name": "Natalie Brennan",
+        "payment_reset_date": "2026-04-19"
+      },
+      {
         "name": "Kylie Sutherland",
         "payment_reset_date": "2026-04-06"
       },
       {
         "name": "Robyn Marchesi",
         "payment_reset_date": "2026-04-05"
+      },
+      {
+        "name": "JORDAN CARLSON",
+        "payment_reset_date": "2026-04-19"
       },
       {
         "name": "Nicki Poole",
@@ -2866,6 +2874,10 @@
       {
         "name": "Tenniel Harman-York",
         "payment_reset_date": "2026-04-18"
+      },
+      {
+        "name": "Fiona Merrin",
+        "payment_reset_date": "2026-04-19"
       }
     ],
     "_notes": []
@@ -2978,7 +2990,7 @@
         "tier": "gold",
         "active_members": 5,
         "sessions_week": 2,
-        "sessions_month": 9,
+        "sessions_month": 10,
         "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 10,
@@ -3074,7 +3086,7 @@
         "tier": "gold",
         "active_members": 9,
         "sessions_week": 8,
-        "sessions_month": 27,
+        "sessions_month": 28,
         "wins_week": 10,
         "retention_pct": 0,
         "avg_parent_nps": 10,
@@ -3086,7 +3098,7 @@
         "tier": "gold",
         "active_members": 3,
         "sessions_week": 1,
-        "sessions_month": 6,
+        "sessions_month": 7,
         "wins_week": 1,
         "retention_pct": 0,
         "avg_parent_nps": 10,
@@ -3122,7 +3134,7 @@
         "tier": "standard",
         "active_members": 3,
         "sessions_week": 0,
-        "sessions_month": 8,
+        "sessions_month": 9,
         "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": null,
@@ -3266,7 +3278,7 @@
         "tier": "standard",
         "active_members": 4,
         "sessions_week": 3,
-        "sessions_month": 8,
+        "sessions_month": 9,
         "wins_week": 3,
         "retention_pct": 0,
         "avg_parent_nps": 8,
@@ -3447,37 +3459,44 @@
     {
       "name": "Lachlan",
       "w1_scheduled_date": "2026-03-06",
-      "days_overdue": 13,
+      "days_overdue": 14,
       "activation_stage": "Intro Call Complete",
       "mentor": "Jed Woods"
     },
     {
       "name": "Aden",
       "w1_scheduled_date": "2026-03-14",
-      "days_overdue": 5,
+      "days_overdue": 6,
       "activation_stage": "Stage 3: Cold Call",
       "mentor": "Jett Cara"
     },
     {
       "name": "Elijah",
       "w1_scheduled_date": "2026-03-07",
-      "days_overdue": 12,
+      "days_overdue": 13,
       "activation_stage": "Stage 3: Cold Call",
       "mentor": "Lachlan Hall"
     },
     {
       "name": "Jake",
       "w1_scheduled_date": "2026-03-04",
-      "days_overdue": 15,
+      "days_overdue": 16,
       "activation_stage": "Hesitant",
       "mentor": ""
     },
     {
       "name": "Londyn ",
       "w1_scheduled_date": "2026-03-11",
-      "days_overdue": 8,
+      "days_overdue": 9,
       "activation_stage": "Awaiting First Message",
       "mentor": "Xavier Lewis"
+    },
+    {
+      "name": "Eric ",
+      "w1_scheduled_date": "2026-03-19",
+      "days_overdue": 1,
+      "activation_stage": null,
+      "mentor": "Tom Hermans"
     }
   ],
   "dc_closes": [
@@ -3671,49 +3690,67 @@
     },
     {
       "type": "overdue_session",
-      "detail": "17 days since last session",
+      "detail": "18 days since last session",
       "mentor": "Alexander",
       "severity": "medium"
     },
     {
       "type": "overdue_session",
-      "detail": "15 days since last session",
+      "detail": "16 days since last session",
       "mentor": "Thomas",
       "severity": "medium"
     },
     {
       "type": "overdue_session",
-      "detail": "21 days since last session",
+      "detail": "22 days since last session",
       "mentor": "Rylan",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "34 days since last session",
-      "mentor": "Toby",
       "severity": "high"
     },
     {
       "type": "overdue_session",
-      "detail": "15 days since last session",
-      "mentor": "Derrick",
-      "severity": "medium"
+      "detail": "44 days since last session",
+      "mentor": "Rudy",
+      "severity": "high"
     },
     {
       "type": "overdue_session",
-      "detail": "15 days since last session",
-      "mentor": "Luca",
-      "severity": "medium"
+      "detail": "29 days since last session",
+      "mentor": "Darcy",
+      "severity": "high"
     },
     {
       "type": "overdue_session",
-      "detail": "23 days since last session",
+      "detail": "26 days since last session",
+      "mentor": "Kellen",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "24 days since last session",
       "mentor": "Michael Anastassiou",
       "severity": "high"
     },
     {
       "type": "overdue_session",
-      "detail": "17 days since last session",
+      "detail": "35 days since last session",
+      "mentor": "Toby",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "16 days since last session",
+      "mentor": "Derrick",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "16 days since last session",
+      "mentor": "Luca",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "18 days since last session",
       "mentor": "Ryan",
       "severity": "medium"
     },
@@ -3731,37 +3768,19 @@
     },
     {
       "type": "overdue_session",
-      "detail": "44 days since last session",
-      "mentor": "Rudy",
-      "severity": "high"
+      "detail": "17 days since last session",
+      "mentor": "Ari",
+      "severity": "medium"
     },
     {
       "type": "overdue_session",
-      "detail": "28 days since last session",
-      "mentor": "Darcy",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "25 days since last session",
-      "mentor": "Kellen",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "29 days since last session",
-      "mentor": "Val Duffy",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "18 days since last session",
+      "detail": "19 days since last session",
       "mentor": "Jacob",
       "severity": "medium"
     },
     {
       "type": "overdue_session",
-      "detail": "27 days since last session",
+      "detail": "28 days since last session",
       "mentor": "Michael ",
       "severity": "high"
     },
@@ -3773,32 +3792,38 @@
     },
     {
       "type": "overdue_session",
-      "detail": "15 days since last session",
+      "detail": "16 days since last session",
       "mentor": "Max",
       "severity": "medium"
     },
     {
       "type": "overdue_session",
       "detail": "18 days since last session",
-      "mentor": "Max ",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "16 days since last session",
-      "mentor": "Ari",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "17 days since last session",
       "mentor": "George",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "15 days since last session",
+      "mentor": "Elwyn Vesey",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "30 days since last session",
+      "mentor": "Val Duffy",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "19 days since last session",
+      "mentor": "Max ",
       "severity": "medium"
     }
   ],
   "trend_14d": [
     {
-      "date": "2026-03-19",
+      "date": "2026-03-20",
       "active_users": 144,
       "active_mentors": 39,
       "activation_pipeline_total": 34,
