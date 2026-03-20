@@ -98,8 +98,13 @@ def monday_of(dt: datetime) -> datetime:
 
 
 def parse_period(period_str: str) -> datetime:
-    """Parse a --period value into a date."""
-    today = datetime.utcnow().date()
+    """Parse a --period value into a date. Uses AEDT (UTC+11) for 'today'."""
+    import zoneinfo
+    try:
+        aedt = zoneinfo.ZoneInfo("Australia/Melbourne")
+        today = datetime.now(aedt).date()
+    except Exception:
+        today = datetime.utcnow().date()
     if period_str == "today":
         return datetime(today.year, today.month, today.day)
     elif period_str == "yesterday":
@@ -553,7 +558,52 @@ def fetch_stripe(api_key: str, target: datetime) -> dict:
         else:
             break
     result["failed_payments"] = len(failed_charges)
-    log(f"  Failed payments: {result['failed_payments']}")
+    log(f"  Failed payments (today): {result['failed_payments']}")
+
+    # Failed payments in last 7 days
+    log("  Counting failed payments (7d)...")
+    seven_days_ago_unix = date_to_unix(target - timedelta(days=7))
+    failed_7d = []
+    params_7d = {"created[gte]": seven_days_ago_unix, "created[lte]": day_end_unix, "limit": 100}
+    has_more = True
+    while has_more:
+        data = stripe_get(api_key, "/charges", params_7d)
+        for charge in data.get("data", []):
+            if charge.get("status") == "failed":
+                failed_7d.append({
+                    "name": (charge.get("billing_details") or {}).get("name", ""),
+                    "email": charge.get("receipt_email", ""),
+                    "amount_aud": round(charge.get("amount", 0) / 100, 2),
+                })
+        has_more = data.get("has_more", False)
+        items = data.get("data", [])
+        if has_more and items:
+            params_7d["starting_after"] = items[-1]["id"]
+        else:
+            break
+    result["failed_payments_7d"] = len(failed_7d)
+    result["failed_payments_7d_total"] = round(sum(f["amount_aud"] for f in failed_7d), 2)
+    result["failed_payments_7d_list"] = failed_7d[:20]
+    log(f"  Failed payments (7d): {result['failed_payments_7d']} (${result['failed_payments_7d_total']})")
+
+    # Past due subscriptions
+    log("  Fetching past due subscriptions...")
+    past_due_subs = []
+    pd_params = {"status": "past_due", "limit": 100, "expand[]": "data.customer"}
+    pd_data = stripe_get(api_key, "/subscriptions", pd_params)
+    for sub in pd_data.get("data", []):
+        cust = sub.get("customer", {})
+        items_data = sub.get("items", {}).get("data", [])
+        amt = items_data[0].get("price", {}).get("unit_amount", 0) if items_data else 0
+        interval = items_data[0].get("price", {}).get("recurring", {}).get("interval", "?") if items_data else "?"
+        past_due_subs.append({
+            "name": cust.get("name", cust.get("email", "Unknown")),
+            "amount_aud": round(amt / 100, 2),
+            "interval": interval,
+        })
+    result["past_due_count"] = len(past_due_subs)
+    result["past_due_list"] = past_due_subs
+    log(f"  Past due: {result['past_due_count']}")
 
     # New subscriptions in period
     log("  Counting new subscriptions...")

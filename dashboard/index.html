@@ -1461,8 +1461,9 @@ function renderStripeOverview(data) {
   el.innerHTML =
     pulseCard('Active Subscriptions', safeVal(s.active_subscriptions, 0), '', '') +
     pulseCard('MRR', formatCurrency(s.mrr), '', '') +
-    pulseCard('Failed Payments', safeVal(s.failed_payments, 0), s.failed_payments > 0 ? 'red' : '', '') +
-    pulseCard('New Subscriptions', safeVal(s.new_subscriptions, 0), 'green', '');
+    pulseCard('Failed (7d)', safeVal(s.failed_payments_7d, s.failed_payments, 0), (s.failed_payments_7d || s.failed_payments) > 0 ? 'red' : '', s.failed_payments_7d_total ? '$' + s.failed_payments_7d_total.toLocaleString() : '') +
+    pulseCard('Past Due', safeVal(s.past_due_count, 0), s.past_due_count > 0 ? 'red' : '', '') +
+    pulseCard('New Subs', safeVal(s.new_subscriptions, 0), s.new_subscriptions > 0 ? 'green' : '', '');
 }
 
 function renderWithdrawals(data) {

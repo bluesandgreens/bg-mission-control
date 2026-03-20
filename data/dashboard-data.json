@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T01:01:25.567348Z",
+  "generated_at": "2026-03-20T01:15:10.335552Z",
   "period": {
     "today": "2026-03-20",
     "week_start": "2026-03-16",
@@ -185,19 +185,19 @@
   ],
   "meta_ads": {
     "today": {
-      "spend": 59.42,
+      "spend": 60.52,
       "booked_calls": 2,
-      "cpbc": 29.71
+      "cpbc": 30.26
     },
     "wtd": {
-      "spend": 806.48,
+      "spend": 807.58,
       "booked_calls": 28,
-      "cpbc": 28.8
+      "cpbc": 28.84
     },
     "mtd": {
-      "spend": 4037.64,
+      "spend": 4038.74,
       "booked_calls": 166,
-      "cpbc": 24.32
+      "cpbc": 24.33
     }
   },
   "stripe": {
@@ -245,6 +245,128 @@
         "id": "sub_1T7QUV2mA5zLxyK8grgbRCeA",
         "canceled_at": 1773054431,
         "customer": "cus_TKMmHFXrHYV6et"
+      }
+    ],
+    "failed_payments_7d": 19,
+    "failed_payments_7d_total": 12859.11,
+    "failed_payments_7d_list": [
+      {
+        "name": "Jordan Carlson",
+        "email": null,
+        "amount_aud": 3616.0
+      },
+      {
+        "name": "Alicia Davies",
+        "email": null,
+        "amount_aud": 232.0
+      },
+      {
+        "name": null,
+        "email": null,
+        "amount_aud": 119.0
+      },
+      {
+        "name": "Marlene Harris",
+        "email": null,
+        "amount_aud": 940.0
+      },
+      {
+        "name": null,
+        "email": null,
+        "amount_aud": 119.0
+      },
+      {
+        "name": "MR W R MAINARD",
+        "email": null,
+        "amount_aud": 111.11
+      },
+      {
+        "name": "Leeanne jackson",
+        "email": null,
+        "amount_aud": 222.0
+      },
+      {
+        "name": null,
+        "email": null,
+        "amount_aud": 235.0
+      },
+      {
+        "name": "Leah West",
+        "email": null,
+        "amount_aud": 235.0
+      },
+      {
+        "name": "Karen Vargas",
+        "email": null,
+        "amount_aud": 940.0
+      },
+      {
+        "name": null,
+        "email": null,
+        "amount_aud": 165.0
+      },
+      {
+        "name": "Karen Vargas",
+        "email": null,
+        "amount_aud": 940.0
+      },
+      {
+        "name": "Tanya Andrijich",
+        "email": null,
+        "amount_aud": 904.0
+      },
+      {
+        "name": "Jodhi Mcgrath",
+        "email": null,
+        "amount_aud": 1808.0
+      },
+      {
+        "name": "Tanisha Wakefield",
+        "email": null,
+        "amount_aud": 235.0
+      },
+      {
+        "name": "Leah West",
+        "email": null,
+        "amount_aud": 235.0
+      },
+      {
+        "name": "Leah West",
+        "email": null,
+        "amount_aud": 904.0
+      },
+      {
+        "name": null,
+        "email": null,
+        "amount_aud": 235.0
+      },
+      {
+        "name": "Mardi E Moore ",
+        "email": null,
+        "amount_aud": 664.0
+      }
+    ],
+    "past_due_count": 4,
+    "past_due_list": [
+      {
+        "name": "Milena Fratini",
+        "amount_aud": 119.0,
+        "interval": "week"
+      },
+      {
+        "name": "ELKE RYAN",
+        "amount_aud": 119.0,
+        "interval": "week"
+      },
+      {
+        "name": "Leeanne Jackson",
+        "amount_aud": 222.0,
+        "interval": "week"
+      },
+      {
+        "name": "MEGHAN COCKBURN",
+        "amount_aud": 244.0,
+        "interval": "week"
       }
     ],
     "upcoming_renewals": [
