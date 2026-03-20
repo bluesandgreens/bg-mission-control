@@ -1,0 +1,149 @@
+{
+  "updated_at": "2026-03-20T18:00:00+11:00",
+  "loops": [
+    {
+      "id": "loop-001",
+      "item": "Build HubSpot structured handoff fields (7 fields: parent story, about son, parent type, son engagement, starting energy, objections raised, brand affinity)",
+      "owner": "Leo",
+      "created": "2026-03-20",
+      "source": "Onboarding v2 — post Harry+Rye session",
+      "priority": "high",
+      "status": "open"
+    },
+    {
+      "id": "loop-002",
+      "item": "Build post-close email template (auto-triggered on agreement signed, pre-announces mentor call, payment date, portal link)",
+      "owner": "Leo",
+      "created": "2026-03-20",
+      "source": "Onboarding v2 — build checklist #1",
+      "priority": "high",
+      "status": "open"
+    },
+    {
+      "id": "loop-003",
+      "item": "HubSpot microowner dropdown field",
+      "owner": "Leo",
+      "created": "2026-03-20",
+      "source": "Onboarding v2 — build checklist #2",
+      "priority": "high",
+      "status": "open"
+    },
+    {
+      "id": "loop-004",
+      "item": "HubSpot workflows — agreement signed → auto-email + Brodie task + microowner task",
+      "owner": "Leo",
+      "created": "2026-03-20",
+      "source": "Onboarding v2 — build checklist",
+      "priority": "medium",
+      "status": "open"
+    },
+    {
+      "id": "loop-005",
+      "item": "Portal AI-powered chat box — instant answers from B&G knowledge base + human review layer",
+      "owner": "Leo",
+      "created": "2026-03-20",
+      "source": "Onboarding v2 — Harry+Rye session",
+      "priority": "medium",
+      "status": "open"
+    },
+    {
+      "id": "loop-006",
+      "item": "Portal Meet the Team section — Harry, Brodie, Norri, Rye with photos, bios, videos, booking",
+      "owner": "Leo",
+      "created": "2026-03-20",
+      "source": "Onboarding v2 — Harry+Rye session",
+      "priority": "medium",
+      "status": "open"
+    },
+    {
+      "id": "loop-007",
+      "item": "Portal failed payment filter — show only failures without successful retry, filtered by microowner",
+      "owner": "Leo",
+      "created": "2026-03-20",
+      "source": "Onboarding v2 — Harry confirmed",
+      "priority": "medium",
+      "status": "open"
+    },
+    {
+      "id": "loop-008",
+      "item": "Review Onboarding Ops Manual v2 in Notion — confirm or edit before building",
+      "owner": "Harry",
+      "created": "2026-03-20",
+      "source": "Post Rye meeting",
+      "priority": "high",
+      "status": "open"
+    },
+    {
+      "id": "loop-009",
+      "item": "DC rep training — how to fill structured handoff notes properly",
+      "owner": "Rye",
+      "created": "2026-03-20",
+      "source": "Onboarding v2 — build checklist",
+      "priority": "medium",
+      "status": "open"
+    },
+    {
+      "id": "loop-010",
+      "item": "Norri trains Harry + Rye on payment confirmation calls",
+      "owner": "Norri",
+      "created": "2026-03-20",
+      "source": "Onboarding v2 — build checklist",
+      "priority": "low",
+      "status": "open"
+    },
+    {
+      "id": "loop-011",
+      "item": "Fix Zapier HubSpot auth — 4 broken zaps",
+      "owner": "Leo",
+      "created": "2026-03-20",
+      "source": "Dashboard audit",
+      "priority": "medium",
+      "status": "open"
+    },
+    {
+      "id": "loop-012",
+      "item": "HubSpot 98% marketing contacts — needs upgrade or cleanup",
+      "owner": "Harry",
+      "created": "2026-03-20",
+      "source": "Dashboard audit",
+      "priority": "medium",
+      "status": "open"
+    },
+    {
+      "id": "loop-013",
+      "item": "14 DC closes without discovery_call_taken_by set — data hygiene issue",
+      "owner": "Rye",
+      "created": "2026-03-20",
+      "source": "Dashboard data audit",
+      "priority": "low",
+      "status": "open"
+    },
+    {
+      "id": "loop-014",
+      "item": "Mentor hiring pipeline — TestGorilla screening → interviews → onboarding automation",
+      "owner": "Harry",
+      "created": "2026-03-19",
+      "source": "Bookmarked for weekend",
+      "priority": "medium",
+      "status": "open"
+    },
+    {
+      "id": "loop-015",
+      "item": "Family ownership split — assign existing families to microowners",
+      "owner": "Harry",
+      "created": "2026-03-19",
+      "source": "Team meeting decision",
+      "priority": "high",
+      "status": "open"
+    },
+    {
+      "id": "loop-016",
+      "item": "Mission Control homepage — level up visual + wire live data + agent activity feed",
+      "owner": "Leo",
+      "created": "2026-03-20",
+      "source": "Harry feedback on v1",
+      "priority": "high",
+      "status": "open"
+    }
+  ]
+}

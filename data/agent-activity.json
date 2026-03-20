@@ -1,0 +1,19 @@
+{
+  "updated_at": "2026-03-20T18:00:00+11:00",
+  "today": [
+    {"time": "06:00", "agent": "World Scanner", "status": "completed", "detail": "Morning intel delivered"},
+    {"time": "06:00", "agent": "Daily Dashboard", "status": "completed", "detail": "Dashboard email sent to team"},
+    {"time": "06:30", "agent": "Morning Data Pull", "status": "error", "detail": "Timed out (300s)"},
+    {"time": "07:30", "agent": "Daily Brief v3", "status": "completed", "detail": "PDF + iMessage + Notion delivered"},
+    {"time": "08:00", "agent": "Norri W1 Tracker", "status": "error", "detail": "Timed out (300s)"},
+    {"time": "12:00", "agent": "Dashboard Refresh", "status": "completed", "detail": "Midday data refresh"},
+    {"time": "14:00", "agent": "Meta Ads Check", "status": "completed", "detail": "Ads report delivered"}
+  ],
+  "upcoming": [
+    {"time": "22:00", "agent": "DC Scoring Pipeline", "status": "scheduled", "detail": "SIEL scoring — first run"},
+    {"time": "23:00", "agent": "Data Miner", "status": "scheduled", "detail": "Overnight BI report"},
+    {"time": "23:15", "agent": "AI Scout", "status": "scheduled", "detail": "AI tools research"},
+    {"time": "23:30", "agent": "Marketing Lab", "status": "scheduled", "detail": "Competitor + content research"},
+    {"time": "23:45", "agent": "Deep Dive", "status": "scheduled", "detail": "School partnerships (Friday topic)"}
+  ]
+}

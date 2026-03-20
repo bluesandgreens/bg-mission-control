@@ -685,6 +685,66 @@ body {
   </div>
 </div>
 
+<!-- ══ OPERATIONAL SECTIONS ══ -->
+<div style="max-width:1100px; margin:0 auto; padding:0 20px;">
+
+<!-- LIVE PULSE BAR -->
+<div id="live-pulse-bar" style="display:grid; grid-template-columns:repeat(6,1fr); gap:12px; margin-bottom:32px;">
+</div>
+
+<!-- TWO COLUMN: AGENT ACTIVITY + OPEN LOOPS -->
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px;">
+
+<!-- AGENT ACTIVITY -->
+<div style="background:rgba(26,30,42,0.6); border:1px solid rgba(200,169,81,0.1); border-radius:16px; padding:20px;">
+  <h3 style="font-family:'Archivo Black',sans-serif; font-size:14px; color:var(--gold); margin-bottom:16px; letter-spacing:1px;">⚡ AGENT ACTIVITY</h3>
+  <div id="agent-feed" style="font-size:13px; line-height:2;"></div>
+</div>
+
+<!-- OPEN LOOPS -->
+<div style="background:rgba(26,30,42,0.6); border:1px solid rgba(200,169,81,0.1); border-radius:16px; padding:20px;">
+  <h3 style="font-family:'Archivo Black',sans-serif; font-size:14px; color:var(--gold); margin-bottom:16px; letter-spacing:1px;">🔁 OPEN LOOPS <span id="loop-count" style="font-family:'DM Sans'; font-weight:400; font-size:12px; color:rgba(251,248,243,0.4);"></span></h3>
+  <div id="loops-feed" style="font-size:13px; line-height:1.8;"></div>
+</div>
+</div>
+
+<!-- TWO COLUMN: IDEAS + BRIEF HIGHLIGHTS -->
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:40px;">
+
+<!-- IDEAS VAULT -->
+<div style="background:rgba(26,30,42,0.6); border:1px solid rgba(56,98,23,0.15); border-radius:16px; padding:20px;">
+  <h3 style="font-family:'Archivo Black',sans-serif; font-size:14px; color:#7cb342; margin-bottom:16px; letter-spacing:1px;">💡 IDEAS VAULT <span id="idea-count" style="font-family:'DM Sans'; font-weight:400; font-size:12px; color:rgba(251,248,243,0.4);"></span></h3>
+  <div id="ideas-feed" style="font-size:13px; line-height:1.8;"></div>
+</div>
+
+<!-- BRIEF HIGHLIGHTS -->
+<div style="background:rgba(26,30,42,0.6); border:1px solid rgba(16,71,145,0.15); border-radius:16px; padding:20px;">
+  <h3 style="font-family:'Archivo Black',sans-serif; font-size:14px; color:#5a9fd4; margin-bottom:16px; letter-spacing:1px;">⭐ BRIEF HIGHLIGHTS</h3>
+  <div id="highlights-feed" style="font-size:13px; line-height:1.8;"></div>
+</div>
+</div>
+
+<!-- DASHBOARDS HUB -->
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:40px;">
+  <a href="./dashboard/" style="text-decoration:none; background:rgba(26,30,42,0.6); border:1px solid rgba(16,71,145,0.2); border-radius:16px; padding:20px; transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--gold)';this.style.boxShadow='0 0 20px rgba(200,169,81,0.15)'" onmouseout="this.style.borderColor='rgba(16,71,145,0.2)';this.style.boxShadow='none'">
+    <div style="font-family:'Archivo Black',sans-serif; font-size:13px; color:var(--gold); margin-bottom:8px;">📊 DAILY DASHBOARD</div>
+    <div id="dash-preview" style="font-size:12px; color:rgba(251,248,243,0.5);">Loading...</div>
+    <div style="font-size:11px; color:var(--gold); margin-top:8px; font-weight:600;">LIVE →</div>
+  </a>
+  <div style="background:rgba(26,30,42,0.6); border:1px solid rgba(56,98,23,0.1); border-radius:16px; padding:20px; opacity:0.6;">
+    <div style="font-family:'Archivo Black',sans-serif; font-size:13px; color:rgba(251,248,243,0.4); margin-bottom:8px;">🎯 DC SCORECARDS</div>
+    <div style="font-size:12px; color:rgba(251,248,243,0.3);">First SIEL run tonight 10pm</div>
+    <div style="font-size:11px; color:rgba(251,248,243,0.3); margin-top:8px;">COMING SOON</div>
+  </div>
+  <div style="background:rgba(26,30,42,0.6); border:1px solid rgba(200,169,81,0.1); border-radius:16px; padding:20px; opacity:0.6;">
+    <div style="font-family:'Archivo Black',sans-serif; font-size:13px; color:rgba(251,248,243,0.4); margin-bottom:8px;">📈 ADS DASHBOARD</div>
+    <div id="ads-preview" style="font-size:12px; color:rgba(251,248,243,0.3);">Loading...</div>
+    <div style="font-size:11px; color:rgba(251,248,243,0.3); margin-top:8px;">COMING SOON</div>
+  </div>
+</div>
+
+</div>
+
 <!-- ══ THINKING WALL ══ -->
 <div class="thinking-wall">
   <div class="thinking-q">"How do we make the first 7 days feel like magic for every new family?"</div>
@@ -756,7 +816,138 @@ document.addEventListener('DOMContentLoaded', function() {
   stations.forEach(function(s, i) {
     s.style.animationDelay = (0.2 + i * 0.3) + 's';
   });
+  loadOperationalData();
 });
+
+// ── Load all operational data ──
+function loadOperationalData() {
+  // Live pulse from dashboard data
+  fetch('./data/dashboard-data.json').then(function(r){return r.json()}).then(function(d) {
+    var s = d.stripe || {};
+    var p = d.pulse || {};
+    var mtd = p.mtd || {};
+    var meta = d.meta_ads || {};
+    var metaMtd = meta.mtd || {};
+    
+    var activeEl = document.querySelector('.pulse-stat .val');
+    // Update command desk pulse stats
+    var pulseStats = document.querySelectorAll('.pulse-stat .val');
+    if (pulseStats[0]) pulseStats[0].textContent = s.active_subscriptions || '—';
+    if (pulseStats[2]) pulseStats[2].textContent = '$' + ((s.mrr||0)/1000).toFixed(1) + 'K';
+    
+    // Live pulse bar
+    var bar = document.getElementById('live-pulse-bar');
+    if (bar) {
+      var failed = s.failed_payments || {};
+      bar.innerHTML = 
+        pulseTile('Active Members', s.active_subscriptions || '—', '') +
+        pulseTile('MRR', '$' + ((s.mrr||0)/1000).toFixed(1) + 'K', '') +
+        pulseTile('Failed (7d)', (failed.count_7d || 0) + ' / $' + ((failed.amount_7d||0)/1000).toFixed(1) + 'K', failed.count_7d > 10 ? 'red' : '') +
+        pulseTile('DCs MTD', mtd.dcs_completed || '—', '') +
+        pulseTile('Closes MTD', mtd.closes || '—', '') +
+        pulseTile('CPBC MTD', metaMtd.cpbc ? '$' + Number(metaMtd.cpbc).toFixed(0) : '—', metaMtd.cpbc > 35 ? 'red' : '');
+    }
+    
+    // Dashboard preview
+    var dp = document.getElementById('dash-preview');
+    if (dp) {
+      var risks = (d.families_at_risk||[]).length;
+      var pending = (d.sub_setup_pending||[]).length;
+      dp.textContent = risks + ' at-risk families · ' + pending + ' sub setup pending';
+    }
+    
+    // Ads preview
+    var ap = document.getElementById('ads-preview');
+    if (ap && metaMtd.cpbc) {
+      ap.textContent = 'CPBC $' + Number(metaMtd.cpbc).toFixed(2) + ' · Spend $' + Number(metaMtd.spend||0).toFixed(0) + ' MTD';
+    }
+  }).catch(function(){});
+
+  // Agent activity
+  fetch('./data/agent-activity.json').then(function(r){return r.json()}).then(function(d) {
+    var el = document.getElementById('agent-feed');
+    if (!el) return;
+    var html = '';
+    (d.today || []).forEach(function(a) {
+      var icon = a.status === 'completed' ? '✅' : a.status === 'error' ? '❌' : '⏳';
+      var color = a.status === 'error' ? 'color:#E74C3C;' : '';
+      html += '<div style="' + color + '"><span style="color:rgba(251,248,243,0.3);font-size:11px;">' + a.time + '</span> ' + icon + ' <strong>' + a.agent + '</strong> — <span style="color:rgba(251,248,243,0.5);">' + a.detail + '</span></div>';
+    });
+    if (d.upcoming && d.upcoming.length > 0) {
+      html += '<div style="margin-top:12px;padding-top:8px;border-top:1px solid rgba(200,169,81,0.1);font-size:11px;color:rgba(251,248,243,0.3);margin-bottom:6px;">UPCOMING</div>';
+      (d.upcoming || []).forEach(function(a) {
+        html += '<div style="color:rgba(251,248,243,0.4);"><span style="font-size:11px;">' + a.time + '</span> ⏳ ' + a.agent + ' — ' + a.detail + '</div>';
+      });
+    }
+    el.innerHTML = html;
+  }).catch(function(){});
+
+  // Open loops
+  fetch('./data/open-loops.json').then(function(r){return r.json()}).then(function(d) {
+    var el = document.getElementById('loops-feed');
+    var countEl = document.getElementById('loop-count');
+    if (!el) return;
+    var open = (d.loops || []).filter(function(l){return l.status === 'open'});
+    if (countEl) countEl.textContent = '(' + open.length + ' open)';
+    
+    // Group by priority
+    var high = open.filter(function(l){return l.priority === 'high'});
+    var medium = open.filter(function(l){return l.priority === 'medium'});
+    var low = open.filter(function(l){return l.priority === 'low'});
+    
+    var html = '';
+    function renderLoop(l) {
+      var ownerColor = l.owner === 'Leo' ? 'var(--green)' : l.owner === 'Harry' ? 'var(--gold)' : 'var(--navy)';
+      return '<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.03);"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:' + ownerColor + ';margin-right:8px;"></span>' + l.item + ' <span style="font-size:10px;color:rgba(251,248,243,0.3);">— ' + l.owner + '</span></div>';
+    }
+    if (high.length) {
+      html += '<div style="font-size:10px;color:#E74C3C;font-weight:700;margin-bottom:4px;letter-spacing:1px;">HIGH</div>';
+      high.forEach(function(l){html += renderLoop(l)});
+    }
+    if (medium.length) {
+      html += '<div style="font-size:10px;color:var(--gold);font-weight:700;margin:8px 0 4px;letter-spacing:1px;">MEDIUM</div>';
+      medium.forEach(function(l){html += renderLoop(l)});
+    }
+    if (low.length) {
+      html += '<div style="font-size:10px;color:rgba(251,248,243,0.3);font-weight:700;margin:8px 0 4px;letter-spacing:1px;">LOW</div>';
+      low.forEach(function(l){html += renderLoop(l)});
+    }
+    el.innerHTML = html;
+  }).catch(function(){});
+
+  // Ideas
+  fetch('./data/ideas.json').then(function(r){return r.json()}).then(function(d) {
+    var el = document.getElementById('ideas-feed');
+    var countEl = document.getElementById('idea-count');
+    if (!el) return;
+    var ideas = d.ideas || [];
+    if (countEl) countEl.textContent = '(' + ideas.length + ')';
+    var html = '';
+    ideas.forEach(function(i) {
+      var statusColor = i.status === 'decided' ? 'var(--green)' : i.status === 'active' ? 'var(--gold)' : 'rgba(251,248,243,0.3)';
+      var statusLabel = i.status === 'decided' ? '✅' : i.status === 'active' ? '🔥' : i.status === 'future' ? '🔮' : '💭';
+      html += '<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.03);">' + statusLabel + ' <strong>' + i.idea + '</strong><br><span style="font-size:11px;color:rgba(251,248,243,0.35);">' + i.context.substring(0,80) + (i.context.length > 80 ? '...' : '') + '</span></div>';
+    });
+    el.innerHTML = html;
+  }).catch(function(){});
+
+  // Brief highlights
+  fetch('./data/brief-highlights.json').then(function(r){return r.json()}).then(function(d) {
+    var el = document.getElementById('highlights-feed');
+    if (!el) return;
+    var html = '';
+    (d.highlights || []).forEach(function(h) {
+      html += '<div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.03);"><span style="font-size:11px;color:rgba(251,248,243,0.3);">' + h.date + ' · ' + h.section + '</span><br>' + h.insight + '</div>';
+    });
+    if (html === '') html = '<div style="color:rgba(251,248,243,0.3);">React to items in your daily brief and they\'ll appear here</div>';
+    el.innerHTML = html;
+  }).catch(function(){});
+}
+
+function pulseTile(label, value, color) {
+  var c = color === 'red' ? 'color:#E74C3C;' : '';
+  return '<div style="background:rgba(26,30,42,0.6);border:1px solid rgba(200,169,81,0.08);border-radius:12px;padding:14px 10px;text-align:center;"><div style="font-family:Archivo Black,sans-serif;font-size:20px;' + c + '">' + value + '</div><div style="font-size:10px;color:rgba(251,248,243,0.4);text-transform:uppercase;letter-spacing:1px;margin-top:4px;">' + label + '</div></div>';
+}
 </script>
 </body>
 </html>

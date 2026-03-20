@@ -1,0 +1,85 @@
+{
+  "updated_at": "2026-03-20T18:00:00+11:00",
+  "ideas": [
+    {
+      "id": "idea-001",
+      "idea": "Portal AI chat box for parents",
+      "date": "2026-03-20",
+      "context": "Onboarding v2 — parents ask any question, get instant AI answer from B&G knowledge base + human team can see and respond. Every unanswered question becomes a new KB entry.",
+      "status": "parked",
+      "tags": ["portal", "parent-experience", "AI"]
+    },
+    {
+      "id": "idea-002",
+      "idea": "Meet the Team videos on portal",
+      "date": "2026-03-20",
+      "context": "Harry, Brodie, Norri, Rye — photo, short bio, personal video + optional 'book a call' button. Makes B&G feel like a team, not a faceless service.",
+      "status": "parked",
+      "tags": ["portal", "parent-experience", "content"]
+    },
+    {
+      "id": "idea-003",
+      "idea": "Mentor intro call replaces Brodie's activation text",
+      "date": "2026-03-20",
+      "context": "Harry+Rye session — mentor is the first relationship the parent experiences post-close. More impactful than an operational text from Brodie.",
+      "status": "decided",
+      "tags": ["onboarding", "activation"]
+    },
+    {
+      "id": "idea-004",
+      "idea": "Structured DC handoff notes drive onboarding speed",
+      "date": "2026-03-20",
+      "context": "Multiple objections + sceptical = FAST TRACK activation. No objections + all in = standard pace. Price objection + cold = highest churn risk.",
+      "status": "decided",
+      "tags": ["onboarding", "DC", "retention"]
+    },
+    {
+      "id": "idea-005",
+      "idea": "Greys & Greens — preserve family memories (recordings + keepsakes)",
+      "date": "2026-03-19",
+      "context": "Moved from Exploring to Active in team meeting. Sibling brand to B&G.",
+      "status": "active",
+      "tags": ["brand", "product", "greys-greens"]
+    },
+    {
+      "id": "idea-006",
+      "idea": "Weekly mentor community call — voluntary, flexible attendance",
+      "date": "2026-03-19",
+      "context": "Team meeting decision. Build mentor belonging without making it feel mandatory.",
+      "status": "parked",
+      "tags": ["mentor", "culture"]
+    },
+    {
+      "id": "idea-007",
+      "idea": "NDIS provider registration — families use plans to pay for sessions",
+      "date": "2026-03-20",
+      "context": "Discussed re: gov funding. More realistic revenue path than grants. Already have NDIS families.",
+      "status": "parked",
+      "tags": ["revenue", "NDIS", "growth"]
+    },
+    {
+      "id": "idea-008",
+      "idea": "Research partnership with uni to study B&G mentoring outcomes",
+      "date": "2026-03-20",
+      "context": "Discussed re: gov funding. Uni applies for grant, B&G provides program + data. Credibility + funding pipeline.",
+      "status": "parked",
+      "tags": ["research", "credibility", "growth"]
+    },
+    {
+      "id": "idea-009",
+      "idea": "Ad queue dashboard — Harry drops Drive link + ad set + copy, Leo executes",
+      "date": "2026-03-19",
+      "context": "Streamline ad upload process. Harry shouldn't have to explain each ad — just submit batch.",
+      "status": "parked",
+      "tags": ["ads", "automation", "workflow"]
+    },
+    {
+      "id": "idea-010",
+      "idea": "Hire a 'community mum' as 4th microowner when hitting 20+ closes/week",
+      "date": "2026-03-20",
+      "context": "Capacity ceiling for microowner model. Systematise first, delegate later.",
+      "status": "future",
+      "tags": ["hiring", "scaling", "onboarding"]
+    }
+  ]
+}

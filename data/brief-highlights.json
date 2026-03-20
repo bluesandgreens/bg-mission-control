@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-03-20T18:00:00+11:00",
+  "highlights": [
+    {
+      "date": "2026-03-20",
+      "section": "Constraint Focus Card",
+      "insight": "Close→W1 Start is the #1 constraint. Currently 62%, target 80%. 71 mentor-allocated families without W1.",
+      "reaction": "active-focus"
+    },
+    {
+      "date": "2026-03-20",
+      "section": "Internal Research",
+      "insight": "Bailey has 11 completed DCs but 50 total call objects — 39 calls not logged as completed. HubSpot data logging gap.",
+      "reaction": "flagged"
+    },
+    {
+      "date": "2026-03-20",
+      "section": "Business Pulse",
+      "insight": "MRR $65.8K from 90 active subs. 19 failed payments ($12.8K) in 7 days. 4 past-due subs.",
+      "reaction": "noted"
+    }
+  ]
+}
