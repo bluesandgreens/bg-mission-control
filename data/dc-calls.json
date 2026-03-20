@@ -1,0 +1,114 @@
+{
+  "last_updated": "2026-03-20T23:04:00+11:00",
+  "total_calls": 1,
+  "avg_score": 5.3,
+  "calls_today": 1,
+  "unscoreable_today": 1,
+  "calls": [
+    {
+      "call_id": "106667667622",
+      "call_date": "2026-03-20",
+      "duration": 2657,
+      "duration_min": 44,
+      "rep_name": "Anthony",
+      "contact_name": "Tayla Colman",
+      "contact_hubspot_id": "210265656976",
+      "son_name": "Johnny",
+      "siel_scores": {
+        "S": 3,
+        "I": 3,
+        "E": 2,
+        "L": 3,
+        "Opening": 2,
+        "Objection_Handling": 3
+      },
+      "overall_score": 5.3,
+      "score_grade": "C",
+      "ai_predicted_outcome": "Follow Up Scheduled",
+      "true_outcome": "Follow Up Scheduled",
+      "prediction_match": true,
+      "flags": [],
+      "false_positive": false,
+      "lucky_close": false,
+      "prediction_mismatch": false,
+      "conversion_predictor": 43,
+      "key_strengths": [
+        "Strong rapport \u2014 natural small talk, name coincidence, relaxed opener",
+        "Rich family context surfaced \u2014 blended family, birth mum story, ADHD/ODD, husband away",
+        "Decent program pivot \u2014 linked 'not carrying it all on your own' to her stated pain",
+        "Good objection isolation \u2014 tested 'if Anthony said no, would you still go?' \u2192 got YES",
+        "Tayla mentioned potentially enrolling second son Chase too"
+      ],
+      "critical_misses": [
+        "EMOTIONAL BOMBS WALKED PAST: Birth mum abandonment, resentment, brick wall \u2014 zero cycling",
+        "Program mention too early \u2014 in first 90 seconds of frame-setting",
+        "No $111 close on the day \u2014 Tayla asked 'if I don't do the 111 today, what does that look like?' and Anthony let her off",
+        "Partner objection accepted too passively \u2014 no attempt to bridge the 4-day delay",
+        "No GREEN labels \u2014 all labels were generic, never used her exact words back"
+      ],
+      "model_pain_stack": {
+        "surface": "Johnny cried all day at school, ADHD/ODD diagnosis, strangled little brother, codependent girlfriend at 12",
+        "impact": "Communication completely broken \u2014 'brick wall 90% of the time.' All hats worn alone when husband works away. No consistent male role model outside dad.",
+        "emotional": "'I'm starting to resent him and I hate that.' Fears he'll fill the void with drugs or wrong crowd. Feels like she's failing him.",
+        "deepest_fear": "He already doesn't have his actual mum. The birth mum abandonment runs through everything. Never named by Anthony."
+      },
+      "one_drill": "EMOTIONAL BOMB CYCLING DRILL: Pull this transcript. Find the 5 bombs (birth mum, resentment, brick wall, strangulation, 'failing him'). PAUSE. 'Tell me more.' 'When you feel that, what does it bring up for you?' Label with her exact words. Don't move on until 2+ mins.",
+      "one_line": "The hardest part wasn't what she said \u2014 it was what she dropped and you walked past. The birth mum story wasn't background. That WAS the whole call.",
+      "label_quality": "RED",
+      "objections_detected": [
+        "price",
+        "partner"
+      ],
+      "longitudinal": {
+        "w1_completed": false,
+        "days_to_w1": null,
+        "still_active": false,
+        "session_count": 0,
+        "mentor_name": null,
+        "nps_score": null
+      },
+      "notion_page_id": "3298322e-6bdc-81eb-b93f-d2c882a95686"
+    },
+    {
+      "call_id": "106667824281",
+      "call_date": "2026-03-20",
+      "duration": 2476,
+      "duration_min": 41,
+      "rep_name": "Anthony",
+      "contact_name": "Hollie A",
+      "contact_hubspot_id": "210030935564",
+      "son_name": "Levi",
+      "siel_scores": null,
+      "overall_score": null,
+      "score_grade": "N/A",
+      "ai_predicted_outcome": "Follow Up Scheduled",
+      "true_outcome": "Pending",
+      "prediction_match": null,
+      "flags": [
+        "NO_RECORDING"
+      ],
+      "false_positive": false,
+      "lucky_close": false,
+      "prediction_mismatch": false,
+      "conversion_predictor": null,
+      "key_strengths": [],
+      "critical_misses": [
+        "No recording available \u2014 call cannot be scored"
+      ],
+      "model_pain_stack": {},
+      "one_drill": null,
+      "one_line": null,
+      "label_quality": null,
+      "objections_detected": [],
+      "longitudinal": {
+        "w1_completed": false,
+        "days_to_w1": null,
+        "still_active": false,
+        "session_count": 0,
+        "mentor_name": null,
+        "nps_score": null
+      },
+      "notion_page_id": null
+    }
+  ]
+}

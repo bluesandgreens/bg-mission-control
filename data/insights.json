@@ -1,0 +1,22 @@
+{
+  "last_updated": "2026-03-20T23:04:00+11:00",
+  "nightly_summary": {
+    "date": "2026-03-20",
+    "calls_total": 21,
+    "calls_scoreable": 2,
+    "calls_scored": 1,
+    "calls_unscoreable": 1,
+    "reason_unscoreable": "No recording available (Hollie A, 106667824281)",
+    "avg_score_today": 5.3
+  },
+  "scoring_note": "First ever SIEL scoring run. Bootstrap mode (< 50 calls). Conversion predictor is heuristic-only until 50 scored calls accumulated.",
+  "top_coaching_opportunity": {
+    "rep": "Anthony",
+    "dimension": "E (Emotional)",
+    "score": 2,
+    "insight": "Anthony walked past 3 major emotional bombs in today's call (birth mum abandonment, resentment, brick wall). The Emotional dimension is the #1 predictor of retention per spec. This is the coaching priority.",
+    "drill": "Emotional Bomb Cycling \u2014 see call entry for drill details"
+  },
+  "flags_today": [],
+  "conversion_predictor_note": "43/100 for Tayla Colman (estimated). Partner objection is the key variable. Monday follow-up scheduled. If Anthony opens with mentor framing on Monday, close probability rises."
+}

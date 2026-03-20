@@ -1,29 +1,40 @@
 {
-  "updated_at": "2026-03-20T18:00:00+11:00",
+  "updated_at": "2026-03-20T18:43:00+11:00",
   "ideas": [
     {
       "id": "idea-001",
       "idea": "Portal AI chat box for parents",
       "date": "2026-03-20",
-      "context": "Onboarding v2 — parents ask any question, get instant AI answer from B&G knowledge base + human team can see and respond. Every unanswered question becomes a new KB entry.",
+      "context": "Onboarding v2 \u2014 parents ask any question, get instant AI answer from B&G knowledge base + human team can see and respond. Every unanswered question becomes a new KB entry.",
       "status": "parked",
-      "tags": ["portal", "parent-experience", "AI"]
+      "tags": [
+        "portal",
+        "parent-experience",
+        "AI"
+      ]
     },
     {
       "id": "idea-002",
       "idea": "Meet the Team videos on portal",
       "date": "2026-03-20",
-      "context": "Harry, Brodie, Norri, Rye — photo, short bio, personal video + optional 'book a call' button. Makes B&G feel like a team, not a faceless service.",
+      "context": "Harry, Brodie, Norri, Rye \u2014 photo, short bio, personal video + optional 'book a call' button. Makes B&G feel like a team, not a faceless service.",
       "status": "parked",
-      "tags": ["portal", "parent-experience", "content"]
+      "tags": [
+        "portal",
+        "parent-experience",
+        "content"
+      ]
     },
     {
       "id": "idea-003",
       "idea": "Mentor intro call replaces Brodie's activation text",
       "date": "2026-03-20",
-      "context": "Harry+Rye session — mentor is the first relationship the parent experiences post-close. More impactful than an operational text from Brodie.",
+      "context": "Harry+Rye session \u2014 mentor is the first relationship the parent experiences post-close. More impactful than an operational text from Brodie.",
       "status": "decided",
-      "tags": ["onboarding", "activation"]
+      "tags": [
+        "onboarding",
+        "activation"
+      ]
     },
     {
       "id": "idea-004",
@@ -31,31 +42,46 @@
       "date": "2026-03-20",
       "context": "Multiple objections + sceptical = FAST TRACK activation. No objections + all in = standard pace. Price objection + cold = highest churn risk.",
       "status": "decided",
-      "tags": ["onboarding", "DC", "retention"]
+      "tags": [
+        "onboarding",
+        "DC",
+        "retention"
+      ]
     },
     {
       "id": "idea-005",
-      "idea": "Greys & Greens — preserve family memories (recordings + keepsakes)",
+      "idea": "Greys & Greens \u2014 preserve family memories (recordings + keepsakes)",
       "date": "2026-03-19",
       "context": "Moved from Exploring to Active in team meeting. Sibling brand to B&G.",
       "status": "active",
-      "tags": ["brand", "product", "greys-greens"]
+      "tags": [
+        "brand",
+        "product",
+        "greys-greens"
+      ]
     },
     {
       "id": "idea-006",
-      "idea": "Weekly mentor community call — voluntary, flexible attendance",
+      "idea": "Weekly mentor community call \u2014 voluntary, flexible attendance",
       "date": "2026-03-19",
       "context": "Team meeting decision. Build mentor belonging without making it feel mandatory.",
       "status": "parked",
-      "tags": ["mentor", "culture"]
+      "tags": [
+        "mentor",
+        "culture"
+      ]
     },
     {
       "id": "idea-007",
-      "idea": "NDIS provider registration — families use plans to pay for sessions",
+      "idea": "NDIS provider registration \u2014 families use plans to pay for sessions",
       "date": "2026-03-20",
       "context": "Discussed re: gov funding. More realistic revenue path than grants. Already have NDIS families.",
       "status": "parked",
-      "tags": ["revenue", "NDIS", "growth"]
+      "tags": [
+        "revenue",
+        "NDIS",
+        "growth"
+      ]
     },
     {
       "id": "idea-008",
@@ -63,15 +89,23 @@
       "date": "2026-03-20",
       "context": "Discussed re: gov funding. Uni applies for grant, B&G provides program + data. Credibility + funding pipeline.",
       "status": "parked",
-      "tags": ["research", "credibility", "growth"]
+      "tags": [
+        "research",
+        "credibility",
+        "growth"
+      ]
     },
     {
       "id": "idea-009",
-      "idea": "Ad queue dashboard — Harry drops Drive link + ad set + copy, Leo executes",
+      "idea": "Ad queue dashboard \u2014 Harry drops Drive link + ad set + copy, Leo executes",
       "date": "2026-03-19",
-      "context": "Streamline ad upload process. Harry shouldn't have to explain each ad — just submit batch.",
+      "context": "Streamline ad upload process. Harry shouldn't have to explain each ad \u2014 just submit batch.",
       "status": "parked",
-      "tags": ["ads", "automation", "workflow"]
+      "tags": [
+        "ads",
+        "automation",
+        "workflow"
+      ]
     },
     {
       "id": "idea-010",
@@ -79,7 +113,25 @@
       "date": "2026-03-20",
       "context": "Capacity ceiling for microowner model. Systematise first, delegate later.",
       "status": "future",
-      "tags": ["hiring", "scaling", "onboarding"]
+      "tags": [
+        "hiring",
+        "scaling",
+        "onboarding"
+      ]
+    },
+    {
+      "id": "idea-011",
+      "idea": "B&G Family Bible \u2014 personalised physical journal for each family",
+      "date": "2026-03-20",
+      "context": "Physical book given at end of journey. B&G mission/values, mum-son communication chapters, memorable quotes from both, growth milestones, portal login for video/voice assets. Merges Greys & Greens vision into B&G vehicle.",
+      "status": "researching",
+      "tags": [
+        "product",
+        "retention",
+        "greys-greens",
+        "physical",
+        "premium"
+      ]
     }
   ]
 }
