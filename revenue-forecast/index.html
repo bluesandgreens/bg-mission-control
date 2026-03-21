@@ -6,7 +6,7 @@
 <title>Revenue Forecast — B&G Mission Control</title>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;}
+:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;--coral:#E8795A;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;-webkit-font-smoothing:antialiased;}
 .header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold);}
@@ -115,10 +115,11 @@ svg.mrr-chart{width:100%;overflow:visible;}
 .week-card.expanded .week-card-body{max-height:600px;}
 .week-card-inner{padding:0 16px 16px;background:#12161E;}
 .day-rows{display:flex;flex-direction:column;gap:2px;padding-top:12px;}
-.day-row{display:grid;grid-template-columns:90px 36px 1fr auto;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;transition:background 0.15s;}
+.day-row{display:grid;grid-template-columns:90px 36px 1fr auto 24px;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;transition:background 0.15s,box-shadow 0.15s;cursor:pointer;}
 .day-row:nth-child(odd){background:rgba(255,255,255,0.025);}
 .day-row:nth-child(even){background:rgba(255,255,255,0.015);}
-.day-row:hover{background:rgba(200,169,81,0.07);}
+.day-row:hover{background:rgba(200,169,81,0.1)!important;}
+.day-row.day-expanded{background:rgba(200,169,81,0.08)!important;box-shadow:inset 3px 0 0 var(--gold);}
 .day-date{font-size:12px;font-weight:700;color:var(--cream);}
 .day-name{font-size:11px;color:rgba(251,248,243,0.35);text-align:center;}
 .day-bar-wrap{display:flex;align-items:center;gap:8px;}
@@ -128,32 +129,22 @@ svg.mrr-chart{width:100%;overflow:visible;}
 .day-amount{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);text-align:right;white-space:nowrap;}
 .charge-pill{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;background:rgba(200,169,81,0.12);color:rgba(200,169,81,0.8);border:1px solid rgba(200,169,81,0.2);text-align:center;}
 .click-hint{font-size:10px;color:rgba(251,248,243,0.25);text-align:center;margin-top:10px;font-style:italic;}
+.day-chevron{font-size:12px;color:rgba(200,169,81,0.5);transition:transform 0.3s;text-align:center;flex-shrink:0;}
+.day-row.day-expanded .day-chevron{transform:rotate(180deg);}
 
 /* SVG bar click style */
 .bar-clickable{cursor:pointer;}
 .bar-clickable:hover .bar-rect{opacity:1!important;filter:drop-shadow(0 0 6px rgba(200,169,81,0.5));}
 .bar-clickable .bar-rect{transition:opacity 0.2s,filter 0.2s;}
 
-/* Daily table clickable rows */
-.daily-table tbody tr{cursor:pointer;transition:background 0.15s,box-shadow 0.15s;}
-.daily-table tbody tr.row-selected td{background:rgba(200,169,81,0.07)!important;box-shadow:inset 3px 0 0 var(--gold);}
-.row-detail-cell{padding:0 12px!important;background:rgba(18,22,30,0.95)!important;}
-.row-detail-inner{max-height:0;overflow:hidden;transition:max-height 0.3s cubic-bezier(0.4,0,0.2,1);font-size:11px;color:rgba(251,248,243,0.5);line-height:1.5;}
-.row-detail-inner.open{max-height:60px;padding:6px 0;}
-
-
-/* DAY ROW — CLICKABLE (level 2) */
-.day-row{cursor:pointer;}
-.day-row:hover{background:rgba(200,169,81,0.1)!important;}
-.day-row.day-expanded{background:rgba(200,169,81,0.08)!important;box-shadow:inset 3px 0 0 var(--gold);}
-.day-chevron{font-size:12px;color:rgba(200,169,81,0.5);transition:transform 0.3s;text-align:center;flex-shrink:0;}
-.day-row.day-expanded .day-chevron{transform:rotate(180deg);}
-.day-row{display:grid;grid-template-columns:90px 36px 1fr auto 24px;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;transition:background 0.15s,box-shadow 0.15s;}
-
-/* SUBSCRIBER LIST (level 3) */
+/* SUBSCRIBER LIST (level 3) — SCROLL FIX */
 .sub-list{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1);}
 .sub-list.open{max-height:3000px;}
-.sub-list-inner{padding:8px 10px 12px;background:#161B24;border-radius:0 0 8px 8px;display:flex;flex-direction:column;gap:6px;border-top:1px solid rgba(200,169,81,0.1);}
+.sub-list-inner{padding:8px 10px 12px;background:#161B24;border-radius:0 0 8px 8px;display:flex;flex-direction:column;gap:6px;border-top:1px solid rgba(200,169,81,0.1);max-height:400px;overflow-y:auto;scroll-behavior:smooth;}
+.sub-list-inner::-webkit-scrollbar{width:6px;}
+.sub-list-inner::-webkit-scrollbar-track{background:rgba(255,255,255,0.03);border-radius:3px;}
+.sub-list-inner::-webkit-scrollbar-thumb{background:rgba(200,169,81,0.3);border-radius:3px;}
+.sub-list-inner::-webkit-scrollbar-thumb:hover{background:rgba(200,169,81,0.5);}
 
 /* SUBSCRIBER CARD */
 .sub-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
@@ -168,24 +159,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
 .btn-stripe:hover{background:#1a5cb0;}
 .btn-hubspot{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#ff7a59;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background 0.15s;}
 .btn-hubspot:hover{background:#e86040;}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .hero-grid{grid-template-columns:repeat(2,1fr);}
-  .unit-grid{grid-template-columns:repeat(2,1fr);}
-  .hero-val{font-size:22px;}
-}
-@media(max-width:600px){
-  .sub-card{flex-direction:column;align-items:flex-start;}
-  .sub-card-right{justify-content:flex-start;}
-  .day-row{grid-template-columns:76px 30px 1fr auto 20px;gap:6px;padding:9px 8px;}
-}
-@media(max-width:480px){
-  .container{padding:20px 12px 60px;}
-  .section{padding:18px 14px;}
-  .unit-grid{grid-template-columns:1fr 1fr;}
-  .week-card-total{font-size:15px;}
-}
 
 /* ═══ CASH COLLECTED FORECAST ═══ */
 .ccf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
@@ -239,8 +212,76 @@ svg.mrr-chart{width:100%;overflow:visible;}
 .ccf-net-row{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:rgba(76,175,80,0.08);border:1px solid rgba(76,175,80,0.2);border-radius:10px;}
 .ccf-net-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.6);}
 .ccf-net-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:#4CAF50;}
-@media(max-width:768px){.ccf-cards{grid-template-columns:1fr 1fr;}.ccf-sliders{grid-template-columns:1fr;}.ccf-grand-val{font-size:34px;}}
-@media(max-width:500px){.ccf-cards{grid-template-columns:1fr;}.ccf-pill-label{width:130px;}.ccf-grand-val{font-size:28px;}}
+
+/* ═══ RETENTION FUNNEL ═══ */
+.ret-sliders-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px;}
+.ret-slider-group{background:rgba(255,255,255,0.03);border-radius:10px;padding:14px 16px;}
+.ret-slider-group.full-width{grid-column:1/-1;}
+.ret-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+.ret-slider-name{font-size:12px;font-weight:600;color:rgba(251,248,243,0.7);}
+.ret-slider-val{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);}
+.funnel-wrap{margin-bottom:24px;}
+.funnel-stage{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+.funnel-bar{height:36px;border-radius:6px;display:flex;align-items:center;padding:0 12px;transition:width 0.5s ease;min-width:60px;position:relative;}
+.funnel-bar-label{font-size:11px;font-weight:700;color:rgba(255,255,255,0.95);white-space:nowrap;z-index:1;}
+.funnel-stage-info{flex-shrink:0;width:180px;text-align:right;}
+.funnel-stage-name{font-size:11px;font-weight:600;color:rgba(251,248,243,0.6);}
+.funnel-stage-val{font-size:12px;font-weight:700;color:var(--gold);}
+
+/* ═══ LTV CALCULATOR ═══ */
+.ltv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.ltv-card{background:rgba(255,255,255,0.03);border-radius:12px;padding:18px 16px;text-align:center;}
+.ltv-card-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:6px;}
+.ltv-card-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--gold);}
+.ltv-card-note{font-size:11px;color:rgba(251,248,243,0.35);margin-top:4px;}
+.ltv-delta{display:inline-block;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;margin-top:16px;}
+.ltv-delta.positive{background:rgba(76,175,80,0.15);color:#4CAF50;border:1px solid rgba(76,175,80,0.3);}
+.ltv-delta.negative{background:rgba(224,82,82,0.15);color:var(--red);border:1px solid rgba(224,82,82,0.3);}
+
+/* ═══ INVOICE CARDS ═══ */
+.inv-group{margin-bottom:20px;}
+.inv-group-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);}
+.inv-group-title{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(251,248,243,0.6);}
+.inv-group-total{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);}
+.inv-card{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:8px;gap:12px;flex-wrap:wrap;}
+.inv-card-name{font-weight:600;font-size:13px;color:var(--cream);}
+.inv-card-due{font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;}
+.inv-card-amount{font-family:'Archivo Black',sans-serif;font-size:16px;color:var(--gold);white-space:nowrap;}
+.inv-card-actions{display:flex;gap:6px;align-items:center;}
+.inv-type-pill{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(232,121,90,0.15);color:var(--coral);border:1px solid rgba(232,121,90,0.3);}
+.inv-draft-pill{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(232,160,48,0.15);color:var(--amber);border:1px solid rgba(232,160,48,0.3);}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:repeat(2,1fr);}
+  .unit-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-val{font-size:22px;}
+  .ccf-cards{grid-template-columns:1fr 1fr;}
+  .ccf-sliders{grid-template-columns:1fr;}
+  .ccf-grand-val{font-size:34px;}
+  .ret-sliders-grid{grid-template-columns:1fr;}
+  .ltv-grid{grid-template-columns:1fr;}
+  .funnel-stage-info{width:120px;}
+}
+@media(max-width:600px){
+  .sub-card{flex-direction:column;align-items:flex-start;}
+  .sub-card-right{justify-content:flex-start;}
+  .day-row{grid-template-columns:76px 30px 1fr auto 20px;gap:6px;padding:9px 8px;}
+  .sub-list-inner{max-height:60vh;}
+}
+@media(max-width:500px){
+  .ccf-cards{grid-template-columns:1fr;}
+  .ccf-pill-label{width:130px;}
+  .ccf-grand-val{font-size:28px;}
+  .funnel-stage{flex-direction:column;align-items:stretch;}
+  .funnel-stage-info{width:100%;text-align:left;display:flex;justify-content:space-between;}
+}
+@media(max-width:480px){
+  .container{padding:20px 12px 60px;}
+  .section{padding:18px 14px;}
+  .unit-grid{grid-template-columns:1fr 1fr;}
+  .week-card-total{font-size:15px;}
+}
 </style>
 </head>
 <body>
@@ -309,24 +350,28 @@ svg.mrr-chart{width:100%;overflow:visible;}
 
   <!-- Grand Total -->
   <div class="ccf-grand-total">
-    <div class="ccf-grand-label">Total 4-Week Forecast</div>
-    <div class="ccf-grand-val" id="ccf-grand-total">$69,669</div>
+    <div class="ccf-grand-label">Total 4-Week Forecast (incl. Open Invoices)</div>
+    <div class="ccf-grand-val" id="ccf-grand-total">$79,803</div>
   </div>
 
   <!-- Scenario Quick-Picks -->
   <div style="margin-bottom:10px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);">Quick Scenarios</div>
   <div class="ccf-scenarios">
-    <button onclick="setCCFScenario(4,500)" class="ccf-btn" id="ccf-btn-0">
+    <button onclick="setCCFScenario('conservative')" class="ccf-btn" id="ccf-btn-0">
       Conservative
-      <span class="btn-total" id="ccf-btn-total-0">$58,097</span>
+      <span class="btn-total" id="ccf-btn-total-0"></span>
     </button>
-    <button onclick="setCCFScenario(7,699)" class="ccf-btn active" id="ccf-btn-1">
+    <button onclick="setCCFScenario('current')" class="ccf-btn active" id="ccf-btn-1">
       Current Pace
-      <span class="btn-total" id="ccf-btn-total-1">$69,669</span>
+      <span class="btn-total" id="ccf-btn-total-1"></span>
     </button>
-    <button onclick="setCCFScenario(12,800)" class="ccf-btn" id="ccf-btn-2">
+    <button onclick="setCCFScenario('aggressive')" class="ccf-btn" id="ccf-btn-2">
       Aggressive
-      <span class="btn-total" id="ccf-btn-total-2">$88,497</span>
+      <span class="btn-total" id="ccf-btn-total-2"></span>
+    </button>
+    <button onclick="setCCFScenario('dream')" class="ccf-btn" id="ccf-btn-3">
+      Dream
+      <span class="btn-total" id="ccf-btn-total-3"></span>
     </button>
   </div>
 
@@ -357,6 +402,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
       <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#104791;"></div>Existing Subs (Stripe)</div>
       <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#C8A951;"></div>NDIS (Xero)</div>
       <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#386217;"></div>Projected New Closes</div>
+      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#E8795A;"></div>Open Invoices</div>
     </div>
   </div>
 
@@ -399,33 +445,26 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <div class="ccf-trend-section">
     <div class="ccf-dist-title" style="margin-bottom:12px;">📅 New Sub Revenue — Last 4 Months</div>
     <svg viewBox="0 0 460 165" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:500px;display:block;">
-      <!-- Grid -->
       <line x1="50" y1="20" x2="450" y2="20" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
       <line x1="50" y1="57" x2="450" y2="57" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
       <line x1="50" y1="94" x2="450" y2="94" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-      <!-- Y axis labels: 0–40K, plotH=100, baseline=125 -->
       <text x="46" y="24" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$40K</text>
       <text x="46" y="61" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$27K</text>
       <text x="46" y="98" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$13K</text>
       <text x="46" y="128" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$0</text>
-      <!-- Baseline -->
       <line x1="50" y1="125" x2="450" y2="125" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <!-- Dec 2025: $3,440 → h=3440/40000*105=9, top=116 -->
       <rect x="65" y="116" width="65" height="9" rx="3" fill="#104791" opacity="0.75"/>
       <text x="97" y="111" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">$3.4K</text>
       <text x="97" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Dec</text>
       <text x="97" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">6 subs</text>
-      <!-- Jan 2026: $18,054 → h=47, top=78 -->
       <rect x="165" y="78" width="65" height="47" rx="3" fill="#386217" opacity="0.75"/>
       <text x="197" y="73" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">$18K</text>
       <text x="197" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Jan</text>
       <text x="197" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">36 subs</text>
-      <!-- Feb 2026: $4,594 → h=12, top=113 -->
       <rect x="265" y="113" width="65" height="12" rx="3" fill="#104791" opacity="0.75"/>
       <text x="297" y="108" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">$4.6K</text>
       <text x="297" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Feb</text>
       <text x="297" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">8 subs</text>
-      <!-- Mar 2026: $36,798 → h=96.6, top=28.4 -->
       <rect x="365" y="29" width="65" height="96" rx="3" fill="#C8A951" opacity="0.9"/>
       <text x="397" y="23" text-anchor="middle" font-family="Archivo Black" font-size="10" fill="#C8A951">$36.8K</text>
       <text x="397" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Mar</text>
@@ -470,6 +509,94 @@ svg.mrr-chart{width:100%;overflow:visible;}
   </div>
 </div>
 
+<!-- ═══ RETENTION FUNNEL ═══ -->
+<div class="section" id="retention-section">
+  <div class="section-title">🔄 RETENTION FUNNEL — DROP-OFF MODEL</div>
+
+  <!-- Retention Sliders -->
+  <div class="ret-sliders-grid">
+    <div class="ret-slider-group">
+      <div class="ret-slider-header">
+        <span class="ret-slider-name">Close → W1 %</span>
+        <span class="ret-slider-val" id="ret-w1-val">62%</span>
+      </div>
+      <input type="range" min="30" max="100" step="1" value="62" id="ret-w1-slider" class="ccf-range" oninput="updateRetention()">
+      <div class="ccf-slider-hints"><span>30%</span><span>100%</span></div>
+    </div>
+    <div class="ret-slider-group">
+      <div class="ret-slider-header">
+        <span class="ret-slider-name">W1 → W2 %</span>
+        <span class="ret-slider-val" id="ret-w2-val">85%</span>
+      </div>
+      <input type="range" min="50" max="100" step="1" value="85" id="ret-w2-slider" class="ccf-range" oninput="updateRetention()">
+      <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
+    </div>
+    <div class="ret-slider-group">
+      <div class="ret-slider-header">
+        <span class="ret-slider-name">W2 → 30 days</span>
+        <span class="ret-slider-val" id="ret-30d-val">78%</span>
+      </div>
+      <input type="range" min="50" max="100" step="1" value="78" id="ret-30d-slider" class="ccf-range" oninput="updateRetention()">
+      <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
+    </div>
+    <div class="ret-slider-group">
+      <div class="ret-slider-header">
+        <span class="ret-slider-name">30 → 60 days</span>
+        <span class="ret-slider-val" id="ret-60d-val">72%</span>
+      </div>
+      <input type="range" min="50" max="100" step="1" value="72" id="ret-60d-slider" class="ccf-range" oninput="updateRetention()">
+      <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
+    </div>
+    <div class="ret-slider-group">
+      <div class="ret-slider-header">
+        <span class="ret-slider-name">60 → 90 days</span>
+        <span class="ret-slider-val" id="ret-90d-val">68%</span>
+      </div>
+      <input type="range" min="50" max="100" step="1" value="68" id="ret-90d-slider" class="ccf-range" oninput="updateRetention()">
+      <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
+    </div>
+    <div class="ret-slider-group">
+      <div class="ret-slider-header">
+        <span class="ret-slider-name">90+ days</span>
+        <span class="ret-slider-val" id="ret-90p-val">90%</span>
+      </div>
+      <input type="range" min="50" max="100" step="1" value="90" id="ret-90p-slider" class="ccf-range" oninput="updateRetention()">
+      <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
+    </div>
+  </div>
+
+  <!-- Funnel Visualization -->
+  <div class="funnel-wrap" id="funnel-viz"></div>
+
+  <p class="note">Based on analysis of 358 cancelled Stripe subscriptions. Avg lifetime = 2.8 months. Avg revenue per sub = $731/mo.</p>
+</div>
+
+<!-- ═══ 12-MONTH REVENUE PROJECTION ═══ -->
+<div class="section" id="projection-section">
+  <div class="section-title">📈 12-MONTH REVENUE PROJECTION</div>
+  <div style="overflow-x:auto;">
+    <svg id="projection-chart" viewBox="0 0 900 300" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:960px;display:block;"></svg>
+  </div>
+  <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;">
+    <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#C8A951;"></div>Current Retention</div>
+    <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#4CAF50;"></div>Target Retention (+10%)</div>
+  </div>
+  <div id="projection-table" style="margin-top:16px;"></div>
+</div>
+
+<!-- ═══ LTV IMPACT CALCULATOR ═══ -->
+<div class="section" id="ltv-section">
+  <div class="section-title">💎 LTV IMPACT CALCULATOR</div>
+  <div class="ltv-grid" id="ltv-cards"></div>
+  <div id="ltv-delta-row" style="text-align:center;margin-top:16px;"></div>
+</div>
+
+<!-- ═══ OPEN INVOICES & FE PAYMENTS ═══ -->
+<div class="section" id="invoices-section">
+  <div class="section-title">📋 OPEN INVOICES & FE PAYMENTS</div>
+  <div id="invoices-content"></div>
+</div>
+
 <!-- ═══ CASH FLOW FORECAST (HERO FEATURE) ═══ -->
 <div class="section">
   <div class="section-title">💸 CASH FLOW FORECAST — NEXT 4 WEEKS</div>
@@ -477,18 +604,14 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <!-- SVG Bar Chart -->
   <div class="chart-wrap">
     <svg viewBox="0 0 520 200" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:600px;display:block;margin:0 auto;">
-      <!-- Background grid lines -->
       <line x1="60" y1="20" x2="500" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
       <line x1="60" y1="60" x2="500" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
       <line x1="60" y1="100" x2="500" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
       <line x1="60" y1="140" x2="500" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-      <!-- Y axis labels -->
       <text x="55" y="24" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$15K</text>
       <text x="55" y="64" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$10K</text>
       <text x="55" y="104" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$5K</text>
       <text x="55" y="144" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$0</text>
-
-      <!-- WEEK 1: $14,267 → 14267/15000 * 120 = 114px from bottom (y=140) → top at y=26 -->
       <g class="bar-clickable" onclick="toggleWeek(0)" id="svgbar-0">
         <rect x="75" y="26" width="80" height="114" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
         <rect x="75" y="26" width="80" height="114" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
@@ -497,8 +620,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
         <text x="115" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 1</text>
         <text x="115" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
       </g>
-
-      <!-- WEEK 2: $3,358 → 3358/15000 * 120 = 26.9px → top at y=113 -->
       <g class="bar-clickable" onclick="toggleWeek(1)" id="svgbar-1">
         <rect x="185" y="113" width="80" height="27" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
         <rect x="185" y="113" width="80" height="27" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
@@ -507,8 +628,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
         <text x="225" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 2</text>
         <text x="225" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
       </g>
-
-      <!-- WEEK 3: $10,660 → 10660/15000 * 120 = 85.3px → top at y=55 -->
       <g class="bar-clickable" onclick="toggleWeek(2)" id="svgbar-2">
         <rect x="295" y="55" width="80" height="85" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
         <rect x="295" y="55" width="80" height="85" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
@@ -517,8 +636,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
         <text x="335" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 3</text>
         <text x="335" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
       </g>
-
-      <!-- WEEK 4: $10,563 → 10563/15000 * 120 = 84.5px → top at y=56 -->
       <g class="bar-clickable" onclick="toggleWeek(3)" id="svgbar-3">
         <rect x="405" y="56" width="80" height="84" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
         <rect x="405" y="56" width="80" height="84" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
@@ -527,8 +644,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
         <text x="445" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 4</text>
         <text x="445" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
       </g>
-
-      <!-- Baseline -->
       <line x1="60" y1="140" x2="500" y2="140" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
     </svg>
   </div>
@@ -544,11 +659,22 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <p class="note">✅ Based on actual subscription billing cycles from Stripe — real upcoming charges, not estimates.</p>
 
   <!-- WEEK ACCORDION -->
-  <div class="week-accordion" id="weekAccordion">
-    <!-- Injected by JS -->
-  </div>
+  <div class="week-accordion" id="weekAccordion"></div>
   <p class="click-hint">Click a bar above or a week card to see the daily breakdown</p>
+</div>
 
+<!-- ═══ STACKED WEEKLY CHART ═══ -->
+<div class="section" id="stacked-chart-section">
+  <div class="section-title">📊 WEEKLY REVENUE BREAKDOWN</div>
+  <div class="ccf-chart-wrap">
+    <svg id="stacked-weekly-chart" viewBox="0 0 560 240" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:640px;display:block;"></svg>
+    <div class="ccf-chart-legend">
+      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#104791;"></div>Existing Subs</div>
+      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#C8A951;"></div>NDIS</div>
+      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#386217;"></div>New Closes</div>
+      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#E8795A;"></div>Invoices</div>
+    </div>
+  </div>
 </div>
 
 <!-- ═══ MRR TRAJECTORY ═══ -->
@@ -556,64 +682,34 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <div class="section-title">📈 MRR TRAJECTORY — NEXT 12 WEEKS</div>
 
   <svg class="mrr-chart" viewBox="0 0 900 220" preserveAspectRatio="xMidYMid meet" style="height:220px;">
-    <!-- Grid lines -->
     <line x1="70" y1="20" x2="880" y2="20" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
     <line x1="70" y1="57" x2="880" y2="57" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
     <line x1="70" y1="94" x2="880" y2="94" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
     <line x1="70" y1="131" x2="880" y2="131" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
     <line x1="70" y1="168" x2="880" y2="168" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-
-    <!-- Y-axis labels: range 60K–110K, plotH=148 (y20 to y168) -->
     <text x="65" y="24" text-anchor="end" class="chart-label">$110K</text>
     <text x="65" y="61" text-anchor="end" class="chart-label">$100K</text>
     <text x="65" y="98" text-anchor="end" class="chart-label">$90K</text>
     <text x="65" y="135" text-anchor="end" class="chart-label">$80K</text>
     <text x="65" y="172" text-anchor="end" class="chart-label">$70K</text>
-
-    <!-- $80K target line (gold dashed): y = 131 -->
     <line x1="70" y1="131" x2="880" y2="131" stroke="#C8A951" stroke-width="1.5" stroke-dasharray="8,5" opacity="0.7"/>
     <text x="884" y="135" font-family="DM Sans" font-size="10" fill="#C8A951">$80K</text>
-
-    <!-- $100K target line (green dashed): y = 57 -->
     <line x1="70" y1="57" x2="880" y2="57" stroke="#4CAF50" stroke-width="1.5" stroke-dasharray="8,5" opacity="0.7"/>
     <text x="884" y="61" font-family="DM Sans" font-size="10" fill="#4CAF50">$100K</text>
-
-    <!-- MRR = $67,287: range 60K–110K, plotH=148
-         y_offset = (110000 - mrr) / 50000 * 148 = (110000-67287)/50000*148 = 42713/50000*148 = 126.5 → y = 20+126.5 = 146.5
-         week growth = 1700, so each week moves up 1700/50000*148 = 5.03px
-         Week 0: y=146.5, Week 1: y=141.5, ..., Week 12: y=146.5-12*5.03=85.1
-    -->
-    <!-- Area fill under projection line -->
     <path d="M 70 147 L 140 142 L 210 137 L 280 132 L 350 127 L 420 122 L 490 117 L 560 112 L 630 107 L 700 101 L 770 96 L 840 91 L 880 89 L 880 168 L 70 168 Z" fill="rgba(16,71,145,0.12)"/>
-
-    <!-- Projection line (weeks 0-12): first point is REAL (solid), rest projected (dashed) -->
-    <!-- Real portion: just the current point -->
-    <!-- Projected polyline (dashed) -->
     <polyline points="70,147 140,142 210,137 280,132 350,127 420,122 490,117 560,112 630,107 700,101 770,96 840,91 880,89"
-      fill="none" stroke="rgba(16,71,145,0.9)" stroke-width="2.5" stroke-linejoin="round"
-      stroke-dasharray="12,6"/>
-
-    <!-- Real current dot (week 0) -->
+      fill="none" stroke="rgba(16,71,145,0.9)" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="12,6"/>
     <circle cx="70" cy="147" r="6" fill="var(--cream)" stroke="#104791" stroke-width="2.5"/>
     <text x="70" y="164" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.7)">Now</text>
-
-    <!-- $80K intersection: (80000-67287)/1700 = 7.48 weeks → x = 70 + 7.48*70 = 594 → y=131 -->
     <circle cx="594" cy="131" r="5" fill="#C8A951" stroke="rgba(10,14,20,0.8)" stroke-width="2"/>
     <text x="594" y="124" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#C8A951">May 9</text>
-
-    <!-- $100K intersection: (100000-67287)/1700 = 19.24 weeks → only shown if ≤12 weeks else outside chart -->
-    <!-- 19 weeks is outside our 12-week window, so we show the arrow -->
     <text x="862" y="50" text-anchor="end" font-family="DM Sans" font-size="10" fill="#4CAF50">→ Aug 1</text>
-
-    <!-- X-axis labels -->
     <text x="70" y="190" text-anchor="middle" class="chart-label">21 Mar</text>
     <text x="210" y="190" text-anchor="middle" class="chart-label">4 Apr</text>
     <text x="350" y="190" text-anchor="middle" class="chart-label">18 Apr</text>
     <text x="490" y="190" text-anchor="middle" class="chart-label">2 May</text>
     <text x="630" y="190" text-anchor="middle" class="chart-label">16 May</text>
     <text x="770" y="190" text-anchor="middle" class="chart-label">30 May</text>
-
-    <!-- REAL vs PROJECTED label -->
     <rect x="80" y="26" width="70" height="18" rx="4" fill="rgba(76,175,80,0.15)" stroke="rgba(76,175,80,0.3)" stroke-width="1"/>
     <text x="115" y="39" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#4CAF50">✅ REAL</text>
     <rect x="165" y="26" width="110" height="18" rx="4" fill="rgba(232,160,48,0.1)" stroke="rgba(232,160,48,0.3)" stroke-width="1"/>
@@ -648,12 +744,10 @@ svg.mrr-chart{width:100%;overflow:visible;}
 <!-- ═══ REVENUE BY SOURCE ═══ -->
 <div class="section">
   <div class="section-title">🥧 REVENUE BY SOURCE ✅</div>
-
   <div class="pie-wrap">
     <svg id="donut-svg" width="180" height="180" viewBox="0 0 180 180" style="flex-shrink:0;"></svg>
     <div class="pie-legend" id="donut-legend"></div>
   </div>
-
   <div style="margin-top:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
     <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 14px;">
       <div style="font-size:10px;color:rgba(251,248,243,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Total Active Subs</div>
@@ -665,13 +759,12 @@ svg.mrr-chart{width:100%;overflow:visible;}
       <div style="font-size:10px;color:rgba(251,248,243,0.3);">$67,287 ÷ 92</div>
     </div>
   </div>
-  <p class="note">✅ Subscription count and intervals direct from Stripe API. Groupings: Weekly = week×1 + week×9 + week×2 + week×35 + week×18 + week×14 = 54 subs. Monthly = month×1 + month×2 = 19 subs.</p>
+  <p class="note">✅ Subscription count and intervals direct from Stripe API.</p>
 </div>
 
 <!-- ═══ UNIT ECONOMICS ═══ -->
 <div class="section">
   <div class="section-title">📐 UNIT ECONOMICS</div>
-
   <div class="unit-grid">
     <div class="unit-card">
       <div class="uc-lbl">LTV ✅</div>
@@ -694,7 +787,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
       <div class="uc-note">CAC $127 ÷ weekly rev $169<br>Exceptional</div>
     </div>
   </div>
-
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;">
     <div class="unit-card">
       <div class="uc-lbl">CAC:LTV ✅</div>
@@ -712,7 +804,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
       <div class="uc-note">Supabase invoices: $7,806 Mar<br>÷ 92 active families</div>
     </div>
   </div>
-
   <div style="margin-top:16px;padding:12px 16px;background:rgba(76,175,80,0.06);border:1px solid rgba(76,175,80,0.15);border-radius:10px;font-size:11px;color:rgba(251,248,243,0.5);line-height:1.6;">
     ✅ All unit economics sourced from real data: LTV from 358 cancelled Stripe subscriptions, CAC from Meta Ads API ($4,201 spend), mentor costs from Supabase invoices ($7,806 March actual). No estimates.
   </div>
@@ -721,148 +812,69 @@ svg.mrr-chart{width:100%;overflow:visible;}
 <!-- ═══ MONTHLY P&L ═══ -->
 <div class="section">
   <div class="section-title">💰 MONTHLY P&L — MARCH 2026</div>
-
   <div class="pnl-row">
-    <div>
-      <div class="pnl-name">Revenue (MRR) ✅</div>
-      <div class="pnl-note">92 active subscriptions · real-time from Stripe</div>
-    </div>
+    <div><div class="pnl-name">Revenue (MRR) ✅</div><div class="pnl-note">92 active subscriptions · real-time from Stripe</div></div>
     <div class="pnl-amount green">$67,287</div>
   </div>
   <div class="pnl-row">
-    <div>
-      <div class="pnl-name">Mentor Costs ✅</div>
-      <div class="pnl-note">Supabase invoices · March MTD · 26 mentors</div>
-    </div>
+    <div><div class="pnl-name">Mentor Costs ✅</div><div class="pnl-note">Supabase invoices · March MTD · 26 mentors</div></div>
     <div class="pnl-amount red">−$7,806</div>
   </div>
   <div class="pnl-row">
-    <div>
-      <div class="pnl-name">Team Payroll ✅</div>
-      <div class="pnl-note">Brodie $1,925 + Elliot $1,450 + Anthony $1,191 + bookkeeper ~$829</div>
-    </div>
+    <div><div class="pnl-name">Team Payroll ✅</div><div class="pnl-note">Brodie $1,925 + Elliot $1,450 + Anthony $1,191 + bookkeeper ~$829</div></div>
     <div class="pnl-amount red">−$5,395</div>
   </div>
   <div class="pnl-row">
-    <div>
-      <div class="pnl-name">Software ✅</div>
-      <div class="pnl-note">HubSpot $2,079 + Lovable $85</div>
-    </div>
+    <div><div class="pnl-name">Software ✅</div><div class="pnl-note">HubSpot $2,079 + Lovable $85</div></div>
     <div class="pnl-amount red">−$2,164</div>
   </div>
   <div class="pnl-row">
-    <div>
-      <div class="pnl-name">Ad Spend ✅</div>
-      <div class="pnl-note">Meta Ads API · March MTD actual</div>
-    </div>
+    <div><div class="pnl-name">Ad Spend ✅</div><div class="pnl-note">Meta Ads API · March MTD actual</div></div>
     <div class="pnl-amount red">−$4,201</div>
   </div>
   <div class="pnl-row" style="background:rgba(224,82,82,0.05);border:1px solid rgba(224,82,82,0.12);">
-    <div>
-      <div class="pnl-name">Known Expenses Total</div>
-    </div>
+    <div><div class="pnl-name">Known Expenses Total</div></div>
     <div class="pnl-amount red">−$19,566</div>
   </div>
   <div class="pnl-row total-row">
-    <div>
-      <div class="pnl-name" style="font-weight:700;color:var(--cream);">Gross Profit (Known) ✅</div>
-      <div class="pnl-note">MRR $67,287 − known costs $19,566</div>
-    </div>
+    <div><div class="pnl-name" style="font-weight:700;color:var(--cream);">Gross Profit (Known) ✅</div><div class="pnl-note">MRR $67,287 − known costs $19,566</div></div>
     <div class="pnl-amount gold">$47,721</div>
   </div>
-
   <div style="margin-top:16px;padding:12px 16px;background:rgba(232,160,48,0.06);border:1px solid rgba(232,160,48,0.15);border-radius:10px;font-size:12px;color:rgba(251,248,243,0.5);line-height:1.7;">
-    ⚠️ <strong style="color:var(--amber);">Partial P&L.</strong> Full picture requires payroll for Rye, Norri &amp; Harry + rent + misc from Xero. Gross profit shown above excludes founder/senior payroll and fixed overhead.
+    ⚠️ <strong style="color:var(--amber);">Partial P&L.</strong> Full picture requires payroll for Rye, Norri &amp; Harry + rent + misc from Xero.
   </div>
 </div>
 
 <!-- ═══ FAILED PAYMENTS ═══ -->
 <div class="section">
   <div class="section-title">⚠️ FAILED PAYMENTS — LAST 7 DAYS ✅</div>
-
   <table class="failed-table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Amount</th>
-        <th>Date</th>
-        <th>Risk</th>
-      </tr>
-    </thead>
+    <thead><tr><th>Name</th><th>Amount</th><th>Date</th><th>Risk</th></tr></thead>
     <tbody>
-      <tr>
-        <td style="font-weight:600;">Jordan Carlson</td>
-        <td style="color:var(--red);font-weight:700;">$3,616</td>
-        <td style="color:rgba(251,248,243,0.5);">17 Mar</td>
-        <td><span class="badge badge-red">High Risk</span></td>
-      </tr>
-      <tr>
-        <td style="font-weight:600;">Karen Vargas</td>
-        <td style="color:var(--red);font-weight:700;">$940 ×2</td>
-        <td style="color:rgba(251,248,243,0.5);">12–14 Mar</td>
-        <td><span class="badge badge-red">High Risk</span></td>
-      </tr>
-      <tr>
-        <td style="font-weight:600;">Marlene Harris</td>
-        <td style="color:var(--red);font-weight:700;">$940</td>
-        <td style="color:rgba(251,248,243,0.5);">15 Mar</td>
-        <td><span class="badge badge-red">High Risk</span></td>
-      </tr>
-      <tr>
-        <td style="font-weight:600;">Leah West</td>
-        <td style="color:var(--red);font-weight:700;">$235</td>
-        <td style="color:rgba(251,248,243,0.5);">13 Mar</td>
-        <td><span class="badge badge-amber">Monitor</span></td>
-      </tr>
-      <tr>
-        <td style="font-weight:600;">Unknown × 4</td>
-        <td style="color:var(--red);font-weight:700;">$754</td>
-        <td style="color:rgba(251,248,243,0.5);">This week</td>
-        <td><span class="badge badge-amber">Monitor</span></td>
-      </tr>
-      <tr>
-        <td style="font-weight:600;">Alicia Davies</td>
-        <td style="color:var(--red);font-weight:700;">$232</td>
-        <td style="color:rgba(251,248,243,0.5);">16 Mar</td>
-        <td><span class="badge badge-amber">Monitor</span></td>
-      </tr>
-      <tr>
-        <td style="font-weight:600;">Leeanne Jackson</td>
-        <td style="color:var(--red);font-weight:700;">$222</td>
-        <td style="color:rgba(251,248,243,0.5);">14 Mar</td>
-        <td><span class="badge badge-amber">Monitor</span></td>
-      </tr>
-      <tr>
-        <td style="font-weight:600;">MR W R MAINARD</td>
-        <td style="color:var(--red);font-weight:700;">$111</td>
-        <td style="color:rgba(251,248,243,0.5);">14 Mar</td>
-        <td><span class="badge badge-amber">Monitor</span></td>
-      </tr>
+      <tr><td style="font-weight:600;">Jordan Carlson</td><td style="color:var(--red);font-weight:700;">$3,616</td><td style="color:rgba(251,248,243,0.5);">17 Mar</td><td><span class="badge badge-red">High Risk</span></td></tr>
+      <tr><td style="font-weight:600;">Karen Vargas</td><td style="color:var(--red);font-weight:700;">$940 ×2</td><td style="color:rgba(251,248,243,0.5);">12–14 Mar</td><td><span class="badge badge-red">High Risk</span></td></tr>
+      <tr><td style="font-weight:600;">Marlene Harris</td><td style="color:var(--red);font-weight:700;">$940</td><td style="color:rgba(251,248,243,0.5);">15 Mar</td><td><span class="badge badge-red">High Risk</span></td></tr>
+      <tr><td style="font-weight:600;">Leah West</td><td style="color:var(--red);font-weight:700;">$235</td><td style="color:rgba(251,248,243,0.5);">13 Mar</td><td><span class="badge badge-amber">Monitor</span></td></tr>
+      <tr><td style="font-weight:600;">Unknown × 4</td><td style="color:var(--red);font-weight:700;">$754</td><td style="color:rgba(251,248,243,0.5);">This week</td><td><span class="badge badge-amber">Monitor</span></td></tr>
+      <tr><td style="font-weight:600;">Alicia Davies</td><td style="color:var(--red);font-weight:700;">$232</td><td style="color:rgba(251,248,243,0.5);">16 Mar</td><td><span class="badge badge-amber">Monitor</span></td></tr>
+      <tr><td style="font-weight:600;">Leeanne Jackson</td><td style="color:var(--red);font-weight:700;">$222</td><td style="color:rgba(251,248,243,0.5);">14 Mar</td><td><span class="badge badge-amber">Monitor</span></td></tr>
+      <tr><td style="font-weight:600;">MR W R MAINARD</td><td style="color:var(--red);font-weight:700;">$111</td><td style="color:rgba(251,248,243,0.5);">14 Mar</td><td><span class="badge badge-amber">Monitor</span></td></tr>
     </tbody>
   </table>
-
   <div class="total-risk-row">
-    <div>
-      <div style="font-weight:700;font-size:14px;">Total Failed ✅</div>
-      <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">13 failed charges from Stripe</div>
-    </div>
+    <div><div style="font-weight:700;font-size:14px;">Total Failed ✅</div><div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">13 failed charges from Stripe</div></div>
     <div style="font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--red);">$8,109</div>
   </div>
-
-  <!-- Past Due -->
   <div style="margin-top:16px;padding:12px 16px;background:rgba(232,160,48,0.06);border:1px solid rgba(232,160,48,0.2);border-radius:10px;">
     <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Past Due Subscriptions ✅</div>
     <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
-      <span style="font-size:13px;">Milena Fratini</span>
-      <span style="color:var(--amber);font-weight:700;">$119/wk</span>
+      <span style="font-size:13px;">Milena Fratini</span><span style="color:var(--amber);font-weight:700;">$119/wk</span>
     </div>
     <div style="display:flex;justify-content:space-between;padding:6px 0;">
-      <span style="font-size:13px;">Meghan Cockburn</span>
-      <span style="color:var(--amber);font-weight:700;">$244/wk</span>
+      <span style="font-size:13px;">Meghan Cockburn</span><span style="color:var(--amber);font-weight:700;">$244/wk</span>
     </div>
     <div style="font-size:11px;color:rgba(251,248,243,0.3);margin-top:8px;">$363/wk leaking = ~$1,452/month if unresolved</div>
   </div>
-
   <div style="margin-top:12px;padding:12px 16px;background:rgba(76,175,80,0.06);border:1px solid rgba(76,175,80,0.15);border-radius:10px;font-size:12px;color:#4CAF50;">
     ✅ 82% of failed payments recover within 1 day of contact — chase these today!
   </div>
@@ -872,33 +884,53 @@ svg.mrr-chart{width:100%;overflow:visible;}
 <div class="section" style="border-color:rgba(200,169,81,0.1);">
   <div class="section-title" style="color:rgba(251,248,243,0.5);">🔧 WHAT WOULD MAKE THIS BETTER</div>
   <ul class="connect-list">
-    <li class="connect-item">
-      <span class="connect-icon">🔗</span>
-      <div>
-        <div style="font-weight:600;">Connect Xero for full P&L</div>
-        <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Payroll, software, rent, tax — complete picture of real profitability</div>
-      </div>
-    </li>
-    <li class="connect-item">
-      <span class="connect-icon">🔗</span>
-      <div>
-        <div style="font-weight:600;">Connect bank feed for real-time cash position</div>
-        <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Live bank balance beyond Stripe — full cash visibility</div>
-      </div>
-    </li>
-    <li class="connect-item">
-      <span class="connect-icon">📊</span>
-      <div>
-        <div style="font-weight:600;">Historical revenue chart</div>
-        <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Requires storing weekly MRR snapshots — start collecting now for future trend view</div>
-      </div>
-    </li>
+    <li class="connect-item"><span class="connect-icon">🔗</span><div><div style="font-weight:600;">Connect Xero for full P&L</div><div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Payroll, software, rent, tax — complete picture of real profitability</div></div></li>
+    <li class="connect-item"><span class="connect-icon">🔗</span><div><div style="font-weight:600;">Connect bank feed for real-time cash position</div><div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Live bank balance beyond Stripe — full cash visibility</div></div></li>
+    <li class="connect-item"><span class="connect-icon">📊</span><div><div style="font-weight:600;">Historical revenue chart</div><div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Requires storing weekly MRR snapshots — start collecting now for future trend view</div></div></li>
   </ul>
 </div>
 
 </div>
 
 <script>
+// ═══ GLOBAL STATE ═══
+var STATE = {
+  closesPerWeek: 7,
+  avgPayment: 699,
+  closeToW1: 62,
+  w1ToW2: 85,
+  retW2to30: 78,
+  ret30to60: 72,
+  ret60to90: 68,
+  ret90plus: 90,
+  avgMonthlyRev: 731,
+  invoiceData: null
+};
+
+var LOCKED_IN = 38848;
+var NDIS_TOTAL = 11249;
+var NDIS_PER_WEEK = 2812;
+var EXISTING_SUBS = [14267, 3358, 10660, 10563];
+var WEEK_LABELS = ['Mar 21–27', 'Mar 28–Apr 3', 'Apr 4–10', 'Apr 11–17'];
+var MONTHLY_COSTS = 19566;
+var INVOICE_OPEN_TOTAL = 10134;
+
+var SCENARIOS = {
+  conservative: {closes:4, payment:500, w1:55, w2:80, r30:70, r60:65, r90:60, r90p:85},
+  current:      {closes:7, payment:699, w1:62, w2:85, r30:78, r60:72, r90:68, r90p:90},
+  aggressive:   {closes:12, payment:800, w1:75, w2:90, r30:85, r60:80, r90:78, r90p:92},
+  dream:        {closes:15, payment:800, w1:80, w2:95, r30:90, r60:85, r90:82, r90p:95}
+};
+
+function fmtNum(n){ return '$'+Math.round(n).toLocaleString('en-AU'); }
+function fmt(n){ return '$'+n.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function fmtDate(d){
+  var p=d.split('-');
+  var months=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return p[2]+' '+months[parseInt(p[1])];
+}
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
 // ═══ DONUT CHART ═══
 (function(){
   var segments=[
@@ -925,40 +957,23 @@ svg.mrr-chart{width:100%;overflow:visible;}
   svg+='<text x="'+cx+'" y="'+(cy-5)+'" text-anchor="middle" font-family="Archivo Black" font-size="18" fill="#FBF8F3">92</text>';
   svg+='<text x="'+cx+'" y="'+(cy+10)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">ACTIVE</text>';
   document.getElementById('donut-svg').innerHTML=svg;
-
   var legend='';
   segments.forEach(function(seg){
     var pct=Math.round(seg.count/total*100);
-    legend+='<div class="legend-row">';
-    legend+='<div class="legend-dot" style="background:'+seg.color+';"></div>';
-    legend+='<div style="flex:1;font-weight:600;">'+seg.label+'</div>';
-    legend+='<div style="color:rgba(251,248,243,0.5);">'+seg.count+' ('+pct+'%)</div>';
-    legend+='</div>';
+    legend+='<div class="legend-row"><div class="legend-dot" style="background:'+seg.color+';"></div><div style="flex:1;font-weight:600;">'+seg.label+'</div><div style="color:rgba(251,248,243,0.5);">'+seg.count+' ('+pct+'%)</div></div>';
     legend+='<div class="legend-sub" style="padding-left:18px;margin-bottom:8px;">'+seg.note+'</div>';
   });
   document.getElementById('donut-legend').innerHTML=legend;
 })();
 
-// ═══ CASH FLOW ACCORDION — THREE-LEVEL DRILL-DOWN ═══
+// ═══ CASH FLOW ACCORDION ═══
 (function(){
   var cashflowData=null;
   var openWeekIdx=-1;
-  // Track open day per week: { weekIdx: dayId }
   var openDayId={};
-
-  function fmt(n){return '$'+n.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});}
-  function fmtDate(d){
-    var p=d.split('-');
-    var months=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    return p[2]+' '+months[parseInt(p[1])];
-  }
-  function esc(s){
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
 
   function buildSubscriberCards(subs){
     if(!subs||!subs.length){return '<div style="font-size:12px;color:rgba(251,248,243,0.3);padding:8px 4px;">No subscriber data for this day.</div>';}
-    // Sort by amount descending
     var sorted=[].concat(subs).sort(function(a,b){return b.amount-a.amount;});
     return sorted.map(function(sub){
       return '<div class="sub-card">'
@@ -1027,8 +1042,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
     var subsEl=document.getElementById(dayId+'-subs');
     if(!dayEl||!subsEl){return;}
     var isOpen=dayEl.classList.contains('day-expanded');
-
-    // Collapse previously open day in this week
     var prevDayId=openDayId[weekIdx];
     if(prevDayId&&prevDayId!==dayId){
       var prevDay=document.getElementById(prevDayId);
@@ -1036,7 +1049,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
       if(prevDay){prevDay.classList.remove('day-expanded');}
       if(prevSubs){prevSubs.classList.remove('open');}
     }
-
     if(isOpen){
       dayEl.classList.remove('day-expanded');
       subsEl.classList.remove('open');
@@ -1045,17 +1057,12 @@ svg.mrr-chart{width:100%;overflow:visible;}
       dayEl.classList.add('day-expanded');
       subsEl.classList.add('open');
       openDayId[weekIdx]=dayId;
-      // Scroll sub list into view
       setTimeout(function(){dayEl.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
     }
   };
 
   window.toggleWeek=function(idx){
-    if(!cashflowData){
-      console.warn('[CashFlow] Data not loaded yet — cannot toggle week');
-      return;
-    }
-    // Collapse previously open week
+    if(!cashflowData){return;}
     if(openWeekIdx>=0&&openWeekIdx!==idx){
       var prev=document.getElementById('wcard-'+openWeekIdx);
       if(prev){prev.classList.remove('expanded');}
@@ -1073,175 +1080,487 @@ svg.mrr-chart{width:100%;overflow:visible;}
     }else{
       card.classList.add('expanded');
       openWeekIdx=idx;
-      // Animate mini progress bars
       setTimeout(function(){
         var fills=card.querySelectorAll('.day-bar-fill');
         fills.forEach(function(f){f.style.width=f.getAttribute('data-pct');});
       },60);
-      // Highlight SVG bar
       var svgBar2=document.getElementById('svgbar-'+idx);
       if(svgBar2){var r3=svgBar2.querySelector('.bar-rect');if(r3){r3.setAttribute('opacity','1');r3.setAttribute('filter','drop-shadow(0 0 6px rgba(200,169,81,0.7))');}}
-      // Scroll into view
       setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'nearest'});},100);
     }
   };
 
-  // Fetch real data from JSON
   fetch('../data/cashflow-detail.json')
-    .then(function(r){
-      if(!r.ok){throw new Error('HTTP '+r.status);}
-      return r.json();
-    })
-    .then(function(data){
-      cashflowData=data;
-      console.log('[CashFlow] Loaded '+data.weeks.length+' weeks of subscriber data');
-      renderAccordion(data);
-    })
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+    .then(function(data){cashflowData=data;renderAccordion(data);})
     .catch(function(err){
-      console.error('[CashFlow] Failed to load cashflow-detail.json:',err);
-      var container=document.getElementById('weekAccordion');
-      if(container){container.innerHTML='<div style="padding:16px;color:rgba(251,248,243,0.4);font-size:12px;">⚠️ Could not load cash flow data. Check console for details.</div>';}
+      console.error('[CashFlow] Failed:',err);
+      var c=document.getElementById('weekAccordion');
+      if(c)c.innerHTML='<div style="padding:16px;color:rgba(251,248,243,0.4);font-size:12px;">⚠️ Could not load cash flow data.</div>';
     });
 })();
 
-// ═══ CASH COLLECTED FORECAST — INTERACTIVE MODEL ═══
+// ═══ INVOICE SECTION ═══
 (function(){
-  var LOCKED_IN=38848;
-  var NDIS_TOTAL=11249;
-  var NDIS_PER_WEEK=2812;
-  var EXISTING_SUBS=[14267,3358,10660,10563];
-  var WEEK_LABELS=['Mar 21–27','Mar 28–Apr 3','Apr 4–10','Apr 11–17'];
-  var MONTHLY_COSTS=19566;
-  var SCENARIOS=[{closes:4,payment:500},{closes:7,payment:699},{closes:12,payment:800}];
-  var closesPerWeek=7;
-  var avgPayment=699;
-
-  function fmtNum(n){
-    return '$'+Math.round(n).toLocaleString('en-AU');
-  }
-
-  function calcNewWeekly(){return closesPerWeek*avgPayment;}
-  function calcNewTotal(){return calcNewWeekly()*4;}
-  function calcGrandTotal(){return LOCKED_IN+NDIS_TOTAL+calcNewTotal();}
-  function calcMonthlyNet(){return (calcGrandTotal()/4)*4.33-MONTHLY_COSTS;}
-
-  function updateSliderTrack(id,val,min,max){
-    var el=document.getElementById(id);
-    if(!el)return;
-    var pct=Math.max(0,Math.min(100,(val-min)/(max-min)*100)).toFixed(1);
-    el.style.background='linear-gradient(to right,#104791 0%,#104791 '+pct+'%,rgba(255,255,255,0.1) '+pct+'%)';
-  }
-
-  function updateScenarioBtns(){
-    SCENARIOS.forEach(function(s,i){
-      var btn=document.getElementById('ccf-btn-'+i);
-      var totalEl=document.getElementById('ccf-btn-total-'+i);
-      var total=LOCKED_IN+NDIS_TOTAL+s.closes*s.payment*4;
-      if(totalEl)totalEl.textContent=fmtNum(total);
-      if(btn){
-        var active=(closesPerWeek===s.closes&&avgPayment===s.payment);
-        btn.classList.toggle('active',active);
-      }
+  fetch('../data/cashflow-forecast.json')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      STATE.invoiceData=data.manual_invoices;
+      renderInvoices(data.manual_invoices);
+      renderStackedWeeklyChart(data.manual_invoices);
     });
+
+  function renderInvoices(inv){
+    if(!inv)return;
+    var html='';
+    // Open invoices
+    html+='<div class="inv-group">';
+    html+='<div class="inv-group-header"><div class="inv-group-title">📬 Open Invoices (Due This Week)</div><div class="inv-group-total">'+fmtNum(inv.total_open)+'</div></div>';
+    inv.open.forEach(function(i){
+      html+='<div class="inv-card">';
+      html+='<div style="flex:1;min-width:140px;"><div class="inv-card-name">'+esc(i.name)+'</div><div class="inv-card-due">Due '+fmtDate(i.due)+'</div></div>';
+      html+='<div class="inv-card-actions">';
+      html+='<span class="inv-card-amount">'+fmtNum(i.amount)+'</span>';
+      if(i.stripe_url) html+='<a href="'+esc(i.stripe_url)+'" target="_blank" class="btn-stripe">💳 View</a>';
+      html+='</div></div>';
+    });
+    html+='</div>';
+
+    // Draft FE
+    html+='<div class="inv-group">';
+    html+='<div class="inv-group-header"><div class="inv-group-title">📝 Draft FE Invoices (Ready to Send)</div><div class="inv-group-total">'+fmtNum(inv.total_draft_fe)+'</div></div>';
+    inv.draft_fe.forEach(function(i){
+      html+='<div class="inv-card">';
+      html+='<div style="flex:1;min-width:140px;"><div class="inv-card-name">'+esc(i.name)+'</div><div class="inv-card-due">'+(i.type==='FE'?'<span class="inv-type-pill">FE</span> ':'')+'<span class="inv-draft-pill">Draft</span></div></div>';
+      html+='<div class="inv-card-actions">';
+      html+='<span class="inv-card-amount">'+fmtNum(i.amount)+'</span>';
+      if(i.stripe_url) html+='<a href="'+esc(i.stripe_url)+'" target="_blank" class="btn-stripe">💳 View</a>';
+      html+='</div></div>';
+    });
+    html+='</div>';
+
+    // Scheduled
+    html+='<div class="inv-group">';
+    html+='<div class="inv-group-header"><div class="inv-group-title">📅 Scheduled Future</div><div class="inv-group-total">'+fmtNum(inv.total_scheduled)+'</div></div>';
+    inv.scheduled.forEach(function(i){
+      html+='<div class="inv-card">';
+      html+='<div style="flex:1;min-width:140px;"><div class="inv-card-name">'+esc(i.name)+'</div><div class="inv-card-due">Due '+fmtDate(i.due)+'</div></div>';
+      html+='<div class="inv-card-actions">';
+      html+='<span class="inv-card-amount">'+fmtNum(i.amount)+'</span>';
+      if(i.stripe_url) html+='<a href="'+esc(i.stripe_url)+'" target="_blank" class="btn-stripe">💳 View</a>';
+      html+='</div></div>';
+    });
+    html+='</div>';
+
+    // Grand total
+    var grandInv=inv.total_open+inv.total_draft_fe+inv.total_scheduled;
+    html+='<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(232,121,90,0.08);border:1px solid rgba(232,121,90,0.25);border-radius:10px;margin-top:8px;">';
+    html+='<div><div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.5);">Total Invoice Pipeline</div></div>';
+    html+='<div style="font-family:\'Archivo Black\',sans-serif;font-size:24px;color:var(--coral);">'+fmtNum(grandInv)+'</div>';
+    html+='</div>';
+
+    document.getElementById('invoices-content').innerHTML=html;
   }
 
-  function renderStackedChart(){
-    var svg=document.getElementById('ccf-bar-chart');
+  window.renderStackedWeeklyChart=function(inv){
+    var svg=document.getElementById('stacked-weekly-chart');
     if(!svg)return;
-    var vW=560,vH=220,mL=56,mR=24,mT=34,mB=60;
+    // Calculate invoice amounts per week
+    var invPerWeek=[0,0,0,0];
+    if(inv&&inv.open){
+      inv.open.forEach(function(i){
+        // All open invoices are week 1 (Mar 21-27)
+        var d=new Date(i.due);
+        if(d<new Date('2026-03-28')) invPerWeek[0]+=i.amount;
+        else if(d<new Date('2026-04-04')) invPerWeek[1]+=i.amount;
+        else if(d<new Date('2026-04-11')) invPerWeek[2]+=i.amount;
+        else invPerWeek[3]+=i.amount;
+      });
+    }
+    var vW=560,vH=240,mL=56,mR=24,mT=34,mB=60;
     var plotW=vW-mL-mR,plotH=vH-mT-mB;
     var barW=76;
-    var bars=EXISTING_SUBS.map(function(sub){
-      var nw=calcNewWeekly();
-      return{stripe:sub,ndis:NDIS_PER_WEEK,newc:nw,total:sub+NDIS_PER_WEEK+nw};
+    var newWeekly=STATE.closesPerWeek*STATE.avgPayment;
+    var bars=EXISTING_SUBS.map(function(sub,i){
+      return{stripe:sub,ndis:NDIS_PER_WEEK,newc:newWeekly,inv:invPerWeek[i],total:sub+NDIS_PER_WEEK+newWeekly+invPerWeek[i]};
     });
     var maxTotal=Math.max.apply(null,bars.map(function(b){return b.total;}));
     var scaleMax=maxTotal*1.18;
     var scale=scaleMax>0?plotH/scaleMax:1;
     var gap=(plotW-4*barW)/5;
+    var html='';
     // Y ticks
     var yTickStep=scaleMax>40000?10000:scaleMax>20000?5000:2500;
-    var html='';
     for(var t=0;t<=scaleMax;t+=yTickStep){
-      var ty=(mT+plotH-t*scale);
+      var ty=mT+plotH-t*scale;
       if(ty<mT-2)break;
       html+='<line x1="'+mL+'" y1="'+ty.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+ty.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
       html+='<text x="'+(mL-5)+'" y="'+(ty+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(t/1000).toFixed(0)+'K</text>';
     }
-    // Baseline
     var baseY=mT+plotH;
     html+='<line x1="'+mL+'" y1="'+baseY+'" x2="'+(vW-mR)+'" y2="'+baseY+'" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>';
     bars.forEach(function(bar,i){
       var bx=mL+gap+i*(barW+gap);
-      // Stripe (navy bottom)
-      var h1=Math.max(0,bar.stripe*scale);
-      var y1=baseY-h1;
+      var h1=Math.max(0,bar.stripe*scale), y1=baseY-h1;
       html+='<rect x="'+bx.toFixed(0)+'" y="'+y1.toFixed(0)+'" width="'+barW+'" height="'+h1.toFixed(0)+'" fill="#104791" opacity="0.9"/>';
-      // NDIS (gold middle)
-      var h2=Math.max(0,bar.ndis*scale);
-      var y2=y1-h2;
+      var h2=Math.max(0,bar.ndis*scale), y2=y1-h2;
       html+='<rect x="'+bx.toFixed(0)+'" y="'+y2.toFixed(0)+'" width="'+barW+'" height="'+h2.toFixed(0)+'" fill="#C8A951" opacity="0.9"/>';
-      // New closes (green top, rounded corners only if height > 0)
-      var h3=Math.max(0,bar.newc*scale);
-      var y3=y2-h3;
-      if(h3>0){
-        html+='<rect x="'+bx.toFixed(0)+'" y="'+y3.toFixed(0)+'" width="'+barW+'" height="'+h3.toFixed(0)+'" rx="4" fill="#386217" opacity="0.9"/>';
-      }
-      // Total label above bar
-      var topY=h3>0?y3:y2;
+      var h3=Math.max(0,bar.newc*scale), y3=y2-h3;
+      if(h3>0) html+='<rect x="'+bx.toFixed(0)+'" y="'+y3.toFixed(0)+'" width="'+barW+'" height="'+h3.toFixed(0)+'" fill="#386217" opacity="0.9"/>';
+      var h4=Math.max(0,bar.inv*scale), y4=y3-h4;
+      if(h4>0) html+='<rect x="'+bx.toFixed(0)+'" y="'+y4.toFixed(0)+'" width="'+barW+'" height="'+h4.toFixed(0)+'" rx="4" fill="#E8795A" opacity="0.9"/>';
+      var topY=h4>0?y4:(h3>0?y3:y2);
       html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(topY-6).toFixed(0)+'" text-anchor="middle" font-family="Archivo Black" font-size="10" fill="rgba(251,248,243,0.9)">'+fmtNum(bar.total)+'</text>';
-      // Week labels below
       html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(baseY+14).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.55)">'+WEEK_LABELS[i]+'</text>';
       html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(baseY+26).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.28)">Week '+(i+1)+'</text>';
     });
     svg.innerHTML=html;
-  }
-
-  function updateUI(){
-    var el;
-    el=document.getElementById('ccf-new-total');
-    if(el)el.textContent=fmtNum(calcNewTotal());
-    el=document.getElementById('ccf-new-note');
-    if(el)el.textContent=closesPerWeek+'/wk × $'+avgPayment.toLocaleString('en-AU')+' × 4 weeks';
-    el=document.getElementById('ccf-grand-total');
-    if(el)el.textContent=fmtNum(calcGrandTotal());
-    el=document.getElementById('ccf-monthly-net');
-    if(el)el.textContent=fmtNum(calcMonthlyNet());
-    el=document.getElementById('ccf-closes-val');
-    if(el)el.textContent=closesPerWeek;
-    el=document.getElementById('ccf-payment-val');
-    if(el)el.textContent='$'+avgPayment.toLocaleString('en-AU');
-    updateSliderTrack('ccf-closes-slider',closesPerWeek,0,15);
-    updateSliderTrack('ccf-payment-slider',avgPayment,200,1500);
-    updateScenarioBtns();
-    renderStackedChart();
-  }
-
-  window.setCCFScenario=function(closes,payment){
-    closesPerWeek=closes;
-    avgPayment=payment;
-    var s1=document.getElementById('ccf-closes-slider');
-    var s2=document.getElementById('ccf-payment-slider');
-    if(s1)s1.value=closes;
-    if(s2)s2.value=payment;
-    updateUI();
   };
-
-  function init(){
-    var s1=document.getElementById('ccf-closes-slider');
-    var s2=document.getElementById('ccf-payment-slider');
-    if(s1){s1.addEventListener('input',function(){closesPerWeek=parseInt(this.value)||0;updateUI();});}
-    if(s2){s2.addEventListener('input',function(){avgPayment=parseInt(this.value)||200;updateUI();});}
-    updateUI();
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init);
-  }else{
-    init();
-    setTimeout(updateUI,60);
-  }
 })();
+
+// ═══ RETENTION FUNNEL ═══
+function calcRetentionFunnel(){
+  var closes=STATE.closesPerWeek;
+  var stages=[
+    {name:'Closes',count:closes,pct:100},
+    {name:'Start W1',count:closes*(STATE.closeToW1/100),pct:STATE.closeToW1},
+    {name:'Start W2',count:closes*(STATE.closeToW1/100)*(STATE.w1ToW2/100),pct:STATE.w1ToW2},
+    {name:'Active 30d',count:closes*(STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100),pct:STATE.retW2to30},
+    {name:'Active 60d',count:closes*(STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100),pct:STATE.ret30to60},
+    {name:'Active 90d',count:closes*(STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100)*(STATE.ret60to90/100),pct:STATE.ret60to90},
+    {name:'90d+ Long-term',count:closes*(STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100)*(STATE.ret60to90/100)*(STATE.ret90plus/100),pct:STATE.ret90plus}
+  ];
+  return stages;
+}
+
+function renderFunnel(){
+  var stages=calcRetentionFunnel();
+  var maxCount=stages[0].count||1;
+  var container=document.getElementById('funnel-viz');
+  var html='';
+  stages.forEach(function(s,i){
+    var widthPct=Math.max(8,Math.round(s.count/maxCount*100));
+    var monthlyRev=s.count*STATE.avgMonthlyRev;
+    var color=s.pct>=80?'#386217':(s.pct>=70?'#C8A951':'#E05252');
+    if(i===0) color='#104791';
+    html+='<div class="funnel-stage">';
+    html+='<div class="funnel-stage-info"><div class="funnel-stage-name">'+s.name+'</div><div class="funnel-stage-val">'+s.count.toFixed(1)+' families · '+fmtNum(monthlyRev)+'/mo</div></div>';
+    html+='<div class="funnel-bar" style="width:'+widthPct+'%;background:'+color+';"><span class="funnel-bar-label">'+(i>0?s.pct+'%':s.count.toFixed(0))+'</span></div>';
+    html+='</div>';
+  });
+  container.innerHTML=html;
+}
+
+// ═══ LTV CALCULATOR ═══
+function calcLTV(){
+  // Calculate average lifetime in months based on retention rates
+  // Simplified: each stage represents ~1 month of survival
+  var survivalChain=[
+    STATE.closeToW1/100,
+    (STATE.closeToW1/100)*(STATE.w1ToW2/100),
+    (STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100),
+    (STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100),
+    (STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100)*(STATE.ret60to90/100)
+  ];
+  // Sum of survival probabilities ≈ expected months
+  var avgMonths=0;
+  for(var i=0;i<survivalChain.length;i++){avgMonths+=survivalChain[i];}
+  // Add long-term contribution (90d+ retention creates geometric series)
+  var longTermSurv=survivalChain[survivalChain.length-1]*(STATE.ret90plus/100);
+  if(STATE.ret90plus<100){
+    // Geometric series: a/(1-r) for months beyond 90d
+    var monthlyChurn=1-(STATE.ret90plus/100);
+    avgMonths+=longTermSurv/monthlyChurn;
+  }else{
+    avgMonths+=longTermSurv*12; // Cap at 12 extra months
+  }
+  var ltv=avgMonths*STATE.avgMonthlyRev;
+  return{avgMonths:avgMonths,ltv:ltv};
+}
+
+function renderLTV(){
+  var current=calcLTV();
+  var baseline={avgMonths:2.8,ltv:2041}; // Real baseline
+  var delta=current.ltv-baseline.ltv;
+  var deltaPct=baseline.ltv>0?Math.round(delta/baseline.ltv*100):0;
+
+  var html='';
+  html+='<div class="ltv-card"><div class="ltv-card-label">Baseline LTV</div><div class="ltv-card-val" style="color:rgba(251,248,243,0.5);">$2,041</div><div class="ltv-card-note">2.8 months avg at $731/mo</div></div>';
+  html+='<div class="ltv-card"><div class="ltv-card-label">Projected LTV</div><div class="ltv-card-val">'+fmtNum(current.ltv)+'</div><div class="ltv-card-note">'+current.avgMonths.toFixed(1)+' months avg</div></div>';
+  html+='<div class="ltv-card"><div class="ltv-card-label">Avg Lifetime</div><div class="ltv-card-val" style="color:'+(current.avgMonths>2.8?'#4CAF50':'var(--red)')+';">'+current.avgMonths.toFixed(1)+' mo</div><div class="ltv-card-note">'+(current.avgMonths>2.8?'↑':'↓')+' from 2.8 months</div></div>';
+  document.getElementById('ltv-cards').innerHTML=html;
+
+  var deltaHtml='';
+  if(delta>=0){
+    deltaHtml='<span class="ltv-delta positive">+'+fmtNum(delta)+' per family (+'+deltaPct+'%)</span>';
+  }else{
+    deltaHtml='<span class="ltv-delta negative">'+fmtNum(delta)+' per family ('+deltaPct+'%)</span>';
+  }
+  if(Math.abs(delta)>10){
+    deltaHtml+='<div style="font-size:12px;color:rgba(251,248,243,0.4);margin-top:8px;">Moving from 2.8 to '+current.avgMonths.toFixed(1)+' months = '+(delta>=0?'+':'')+fmtNum(delta)+'/family</div>';
+  }
+  document.getElementById('ltv-delta-row').innerHTML=deltaHtml;
+}
+
+// ═══ 12-MONTH REVENUE PROJECTION ═══
+function calcProjection(){
+  var months=[];
+  var activeFamilies=92; // Current
+  var rev=STATE.avgMonthlyRev;
+  // Monthly churn rate from retention model
+  var monthlyRetention=(STATE.retW2to30/100)*(STATE.ret30to60/100);
+  monthlyRetention=Math.pow(monthlyRetention,0.5); // Geometric mean per month
+  var newPerMonth=STATE.closesPerWeek*4.33*(STATE.closeToW1/100)*(STATE.w1ToW2/100);
+  // Target retention: +10% on each rate
+  var targetRetention=Math.pow(Math.min(1,(STATE.retW2to30+10)/100)*Math.min(1,(STATE.ret30to60+10)/100),0.5);
+  var activeCurrent=activeFamilies;
+  var activeTarget=activeFamilies;
+  for(var m=1;m<=12;m++){
+    // Current trajectory
+    var churned=activeCurrent*(1-monthlyRetention);
+    activeCurrent=activeCurrent-churned+newPerMonth;
+    var revCurrent=activeCurrent*rev;
+    // Target trajectory
+    var churnedTarget=activeTarget*(1-targetRetention);
+    activeTarget=activeTarget-churnedTarget+newPerMonth;
+    var revTarget=activeTarget*rev;
+    months.push({month:m,activeCurrent:activeCurrent,revCurrent:revCurrent,activeTarget:activeTarget,revTarget:revTarget,newAdded:newPerMonth,churned:churned});
+  }
+  return months;
+}
+
+function renderProjection(){
+  var months=calcProjection();
+  var svg=document.getElementById('projection-chart');
+  var vW=900,vH=300,mL=70,mR=30,mT=30,mB=50;
+  var plotW=vW-mL-mR,plotH=vH-mT-mB;
+  var maxRev=Math.max.apply(null,months.map(function(m){return Math.max(m.revCurrent,m.revTarget);}));
+  maxRev=Math.max(maxRev,80000);
+  var scaleMax=maxRev*1.15;
+  var scale=plotH/scaleMax;
+  var stepX=plotW/11;
+  var html='';
+  // Grid
+  var tickStep=scaleMax>300000?50000:(scaleMax>150000?25000:20000);
+  for(var t=0;t<=scaleMax;t+=tickStep){
+    var ty=mT+plotH-t*scale;
+    if(ty<mT-2)break;
+    html+='<line x1="'+mL+'" y1="'+ty.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+ty.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
+    html+='<text x="'+(mL-8)+'" y="'+(ty+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(t/1000).toFixed(0)+'K</text>';
+  }
+  // Baseline
+  html+='<line x1="'+mL+'" y1="'+(mT+plotH)+'" x2="'+(vW-mR)+'" y2="'+(mT+plotH)+'" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>';
+  // Current trajectory line
+  var currentPoints=months.map(function(m,i){return (mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revCurrent*scale).toFixed(0);}).join(' ');
+  // Area under current
+  html+='<polygon points="'+mL+','+(mT+plotH)+' '+currentPoints+' '+(mL+11*stepX).toFixed(0)+','+(mT+plotH)+'" fill="rgba(200,169,81,0.08)"/>';
+  html+='<polyline points="'+currentPoints+'" fill="none" stroke="#C8A951" stroke-width="2.5" stroke-linejoin="round"/>';
+  // Target trajectory line
+  var targetPoints=months.map(function(m,i){return (mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revTarget*scale).toFixed(0);}).join(' ');
+  html+='<polyline points="'+targetPoints+'" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="8,4" stroke-linejoin="round" opacity="0.8"/>';
+  // Dots and labels for current
+  months.forEach(function(m,i){
+    var x=mL+i*stepX;
+    var y=mT+plotH-m.revCurrent*scale;
+    html+='<circle cx="'+x.toFixed(0)+'" cy="'+y.toFixed(0)+'" r="4" fill="#C8A951" stroke="rgba(10,14,20,0.8)" stroke-width="1.5"/>';
+    if(i%3===0||i===11){
+      html+='<text x="'+x.toFixed(0)+'" y="'+(y-10).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(200,169,81,0.8)">'+fmtNum(m.revCurrent)+'</text>';
+    }
+    html+='<text x="'+x.toFixed(0)+'" y="'+(mT+plotH+16).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.4)">M'+m.month+'</text>';
+  });
+
+  svg.innerHTML=html;
+
+  // Table summary
+  var tableHtml='<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:11px;">';
+  tableHtml+='<thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">';
+  tableHtml+='<th style="padding:6px 8px;text-align:left;color:rgba(251,248,243,0.4);font-size:10px;letter-spacing:1px;">MONTH</th>';
+  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">ACTIVE</th>';
+  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">NEW</th>';
+  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">REVENUE</th>';
+  tableHtml+='</tr></thead><tbody>';
+  months.forEach(function(m){
+    tableHtml+='<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">';
+    tableHtml+='<td style="padding:5px 8px;color:rgba(251,248,243,0.6);">Month '+m.month+'</td>';
+    tableHtml+='<td style="padding:5px 8px;text-align:right;font-weight:600;">'+Math.round(m.activeCurrent)+'</td>';
+    tableHtml+='<td style="padding:5px 8px;text-align:right;color:#386217;">+'+Math.round(m.newAdded)+'</td>';
+    tableHtml+='<td style="padding:5px 8px;text-align:right;color:var(--gold);font-weight:700;">'+fmtNum(m.revCurrent)+'</td>';
+    tableHtml+='</tr>';
+  });
+  tableHtml+='</tbody></table></div>';
+  document.getElementById('projection-table').innerHTML=tableHtml;
+}
+
+// ═══ CCF MODEL (Updated with retention) ═══
+function updateSliderTrack(id,val,min,max){
+  var el=document.getElementById(id);
+  if(!el)return;
+  var pct=Math.max(0,Math.min(100,(val-min)/(max-min)*100)).toFixed(1);
+  el.style.background='linear-gradient(to right,#104791 0%,#104791 '+pct+'%,rgba(255,255,255,0.1) '+pct+'%)';
+}
+
+function updateCCF(){
+  var newWeekly=STATE.closesPerWeek*STATE.avgPayment;
+  var newTotal=newWeekly*4;
+  var grandTotal=LOCKED_IN+NDIS_TOTAL+newTotal+INVOICE_OPEN_TOTAL;
+  var monthlyNet=(grandTotal/4)*4.33-MONTHLY_COSTS;
+
+  var el;
+  el=document.getElementById('ccf-new-total');if(el)el.textContent=fmtNum(newTotal);
+  el=document.getElementById('ccf-new-note');if(el)el.textContent=STATE.closesPerWeek+'/wk × $'+STATE.avgPayment.toLocaleString('en-AU')+' × 4 weeks';
+  el=document.getElementById('ccf-grand-total');if(el)el.textContent=fmtNum(grandTotal);
+  el=document.getElementById('ccf-monthly-net');if(el)el.textContent=fmtNum(monthlyNet);
+  el=document.getElementById('ccf-closes-val');if(el)el.textContent=STATE.closesPerWeek;
+  el=document.getElementById('ccf-payment-val');if(el)el.textContent='$'+STATE.avgPayment.toLocaleString('en-AU');
+
+  updateSliderTrack('ccf-closes-slider',STATE.closesPerWeek,0,15);
+  updateSliderTrack('ccf-payment-slider',STATE.avgPayment,200,1500);
+
+  // Update scenario buttons
+  Object.keys(SCENARIOS).forEach(function(key,i){
+    var s=SCENARIOS[key];
+    var btn=document.getElementById('ccf-btn-'+i);
+    var totalEl=document.getElementById('ccf-btn-total-'+i);
+    var total=LOCKED_IN+NDIS_TOTAL+s.closes*s.payment*4+INVOICE_OPEN_TOTAL;
+    if(totalEl)totalEl.textContent=fmtNum(total);
+    if(btn){
+      var active=(STATE.closesPerWeek===s.closes&&STATE.avgPayment===s.payment);
+      btn.classList.toggle('active',active);
+    }
+  });
+
+  // Render CCF stacked chart
+  renderCCFStackedChart();
+}
+
+function renderCCFStackedChart(){
+  var svg=document.getElementById('ccf-bar-chart');
+  if(!svg)return;
+  var invPerWeek=[0,0,0,0];
+  if(STATE.invoiceData&&STATE.invoiceData.open){
+    STATE.invoiceData.open.forEach(function(i){
+      var d=new Date(i.due);
+      if(d<new Date('2026-03-28')) invPerWeek[0]+=i.amount;
+      else if(d<new Date('2026-04-04')) invPerWeek[1]+=i.amount;
+      else if(d<new Date('2026-04-11')) invPerWeek[2]+=i.amount;
+      else invPerWeek[3]+=i.amount;
+    });
+  }
+  var vW=560,vH=220,mL=56,mR=24,mT=34,mB=60;
+  var plotW=vW-mL-mR,plotH=vH-mT-mB;
+  var barW=76;
+  var newWeekly=STATE.closesPerWeek*STATE.avgPayment;
+  var bars=EXISTING_SUBS.map(function(sub,i){
+    return{stripe:sub,ndis:NDIS_PER_WEEK,newc:newWeekly,inv:invPerWeek[i],total:sub+NDIS_PER_WEEK+newWeekly+invPerWeek[i]};
+  });
+  var maxTotal=Math.max.apply(null,bars.map(function(b){return b.total;}));
+  var scaleMax=maxTotal*1.18;
+  var scale=scaleMax>0?plotH/scaleMax:1;
+  var gap=(plotW-4*barW)/5;
+  var html='';
+  var yTickStep=scaleMax>40000?10000:scaleMax>20000?5000:2500;
+  for(var t=0;t<=scaleMax;t+=yTickStep){
+    var ty=(mT+plotH-t*scale);
+    if(ty<mT-2)break;
+    html+='<line x1="'+mL+'" y1="'+ty.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+ty.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
+    html+='<text x="'+(mL-5)+'" y="'+(ty+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(t/1000).toFixed(0)+'K</text>';
+  }
+  var baseY=mT+plotH;
+  html+='<line x1="'+mL+'" y1="'+baseY+'" x2="'+(vW-mR)+'" y2="'+baseY+'" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>';
+  bars.forEach(function(bar,i){
+    var bx=mL+gap+i*(barW+gap);
+    var h1=Math.max(0,bar.stripe*scale),y1=baseY-h1;
+    html+='<rect x="'+bx.toFixed(0)+'" y="'+y1.toFixed(0)+'" width="'+barW+'" height="'+h1.toFixed(0)+'" fill="#104791" opacity="0.9"/>';
+    var h2=Math.max(0,bar.ndis*scale),y2=y1-h2;
+    html+='<rect x="'+bx.toFixed(0)+'" y="'+y2.toFixed(0)+'" width="'+barW+'" height="'+h2.toFixed(0)+'" fill="#C8A951" opacity="0.9"/>';
+    var h3=Math.max(0,bar.newc*scale),y3=y2-h3;
+    if(h3>0)html+='<rect x="'+bx.toFixed(0)+'" y="'+y3.toFixed(0)+'" width="'+barW+'" height="'+h3.toFixed(0)+'" fill="#386217" opacity="0.9"/>';
+    var h4=Math.max(0,bar.inv*scale),y4=y3-h4;
+    if(h4>0)html+='<rect x="'+bx.toFixed(0)+'" y="'+y4.toFixed(0)+'" width="'+barW+'" height="'+h4.toFixed(0)+'" rx="4" fill="#E8795A" opacity="0.9"/>';
+    var topY=h4>0?y4:(h3>0?y3:y2);
+    html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(topY-6).toFixed(0)+'" text-anchor="middle" font-family="Archivo Black" font-size="10" fill="rgba(251,248,243,0.9)">'+fmtNum(bar.total)+'</text>';
+    html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(baseY+14).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.55)">'+WEEK_LABELS[i]+'</text>';
+    html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(baseY+26).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.28)">Week '+(i+1)+'</text>';
+  });
+  svg.innerHTML=html;
+}
+
+// ═══ SCENARIO QUICK-PICKS ═══
+window.setCCFScenario=function(key){
+  var s=SCENARIOS[key];
+  if(!s)return;
+  STATE.closesPerWeek=s.closes;
+  STATE.avgPayment=s.payment;
+  STATE.closeToW1=s.w1;
+  STATE.w1ToW2=s.w2;
+  STATE.retW2to30=s.r30;
+  STATE.ret30to60=s.r60;
+  STATE.ret60to90=s.r90;
+  STATE.ret90plus=s.r90p;
+  // Update all slider values
+  var map={
+    'ccf-closes-slider':s.closes,'ccf-payment-slider':s.payment,
+    'ret-w1-slider':s.w1,'ret-w2-slider':s.w2,
+    'ret-30d-slider':s.r30,'ret-60d-slider':s.r60,
+    'ret-90d-slider':s.r90,'ret-90p-slider':s.r90p
+  };
+  Object.keys(map).forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.value=map[id];
+  });
+  updateAll();
+};
+
+// ═══ RETENTION SLIDER HANDLER ═══
+window.updateRetention=function(){
+  STATE.closeToW1=parseInt(document.getElementById('ret-w1-slider').value)||62;
+  STATE.w1ToW2=parseInt(document.getElementById('ret-w2-slider').value)||85;
+  STATE.retW2to30=parseInt(document.getElementById('ret-30d-slider').value)||78;
+  STATE.ret30to60=parseInt(document.getElementById('ret-60d-slider').value)||72;
+  STATE.ret60to90=parseInt(document.getElementById('ret-90d-slider').value)||68;
+  STATE.ret90plus=parseInt(document.getElementById('ret-90p-slider').value)||90;
+  updateAll();
+};
+
+// ═══ MASTER UPDATE ═══
+function updateAll(){
+  // Update retention slider displays
+  document.getElementById('ret-w1-val').textContent=STATE.closeToW1+'%';
+  document.getElementById('ret-w2-val').textContent=STATE.w1ToW2+'%';
+  document.getElementById('ret-30d-val').textContent=STATE.retW2to30+'%';
+  document.getElementById('ret-60d-val').textContent=STATE.ret30to60+'%';
+  document.getElementById('ret-90d-val').textContent=STATE.ret60to90+'%';
+  document.getElementById('ret-90p-val').textContent=STATE.ret90plus+'%';
+  // Slider tracks
+  updateSliderTrack('ret-w1-slider',STATE.closeToW1,30,100);
+  updateSliderTrack('ret-w2-slider',STATE.w1ToW2,50,100);
+  updateSliderTrack('ret-30d-slider',STATE.retW2to30,50,100);
+  updateSliderTrack('ret-60d-slider',STATE.ret30to60,50,100);
+  updateSliderTrack('ret-90d-slider',STATE.ret60to90,50,100);
+  updateSliderTrack('ret-90p-slider',STATE.ret90plus,50,100);
+
+  updateCCF();
+  renderFunnel();
+  renderLTV();
+  renderProjection();
+  if(STATE.invoiceData) renderStackedWeeklyChart(STATE.invoiceData);
+}
+
+// ═══ INIT ═══
+function init(){
+  var s1=document.getElementById('ccf-closes-slider');
+  var s2=document.getElementById('ccf-payment-slider');
+  if(s1)s1.addEventListener('input',function(){STATE.closesPerWeek=parseInt(this.value)||0;updateAll();});
+  if(s2)s2.addEventListener('input',function(){STATE.avgPayment=parseInt(this.value)||200;updateAll();});
+  updateAll();
+}
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',init);
+}else{
+  init();
+  setTimeout(updateAll,60);
+}
 </script>
 </body>
 </html>

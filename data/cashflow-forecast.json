@@ -225,5 +225,137 @@
     "pending": 9805.38,
     "total": 22543.97,
     "verified": true
+  },
+  "manual_invoices": {
+    "source": "stripe",
+    "verified": true,
+    "open": [
+      {
+        "name": "Mardi Moore",
+        "amount": 1899,
+        "due": "2026-03-23",
+        "status": "open",
+        "type": "FE/Manual",
+        "invoice_id": "in_1TBOm62mA5zLxyK86inwhKtk",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1TBOm62mA5zLxyK86inwhKtk"
+      },
+      {
+        "name": "Valentina Najdovska",
+        "amount": 1808,
+        "due": "2026-03-22",
+        "status": "open",
+        "invoice_id": "in_1TB51H2mA5zLxyK8wg0YfuBt",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1TB51H2mA5zLxyK8wg0YfuBt"
+      },
+      {
+        "name": "Lucia Ciccollitto",
+        "amount": 1808,
+        "due": "2026-03-24",
+        "status": "open",
+        "invoice_id": "in_1TBsdy2mA5zLxyK8m89g9xX4",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1TBsdy2mA5zLxyK8m89g9xX4"
+      },
+      {
+        "name": "Selena Fletcher",
+        "amount": 2730,
+        "due": "2026-03-25",
+        "status": "open",
+        "invoice_id": "in_1TCEBV2mA5zLxyK8hfm25PsL",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCEBV2mA5zLxyK8hfm25PsL"
+      },
+      {
+        "name": "Rachel Hawyes",
+        "amount": 1899,
+        "due": "2026-03-27",
+        "status": "open",
+        "invoice_id": "in_1TCt0Z2mA5zLxyK8hMnalPDt",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCt0Z2mA5zLxyK8hMnalPDt"
+      }
+    ],
+    "draft_fe": [
+      {
+        "name": "Alysha M Nation",
+        "amount": 4990,
+        "status": "draft",
+        "type": "FE",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCU512mA5zLxyK8CStk0TT7"
+      },
+      {
+        "name": "Kathryn P Alchin",
+        "amount": 4990,
+        "status": "draft",
+        "type": "FE",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCU1p2mA5zLxyK8htaVGvjd"
+      },
+      {
+        "name": "Vanessa Koina",
+        "amount": 4990,
+        "status": "draft",
+        "type": "FE",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCTzc2mA5zLxyK8iFMHzJls"
+      },
+      {
+        "name": "Marlene Harris",
+        "amount": 1773,
+        "status": "draft",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCSkH2mA5zLxyK8wrEN4H4v"
+      },
+      {
+        "name": "KAREN LOUWRENS",
+        "amount": 904,
+        "status": "draft",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCqrK2mA5zLxyK88X9lvJ1m"
+      }
+    ],
+    "scheduled": [
+      {
+        "name": "Helen Shorthouse",
+        "amount": 940,
+        "due": "2026-04-06",
+        "status": "draft",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1T6oL52mA5zLxyK8YJ2RSQhE"
+      },
+      {
+        "name": "Helen Shorthouse",
+        "amount": 940,
+        "due": "2026-05-04",
+        "status": "draft",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1T6oOU2mA5zLxyK8b3zhWywB"
+      },
+      {
+        "name": "SHARON ARTHUR",
+        "amount": 930,
+        "due": "2026-04-22",
+        "status": "draft",
+        "stripe_url": "https://dashboard.stripe.com/invoices/in_1T7E2K2mA5zLxyK8XfAfZA8B"
+      }
+    ],
+    "total_open": 10134,
+    "total_draft_fe": 17647,
+    "total_scheduled": 2810
+  },
+  "retention_model": {
+    "source": "stripe_calculated",
+    "note": "Based on 358 cancelled subs analysis",
+    "defaults": {
+      "closes_per_week": 7,
+      "close_to_w1_pct": 62,
+      "w1_to_w2_pct": 85,
+      "retention_w2_to_30d": 78,
+      "retention_30d_to_60d": 72,
+      "retention_60d_to_90d": 68,
+      "retention_90d_plus": 90
+    },
+    "churn_data": {
+      "total_cancelled": 358,
+      "under_30d": 38,
+      "d30_to_60": 17,
+      "d60_to_90": 16,
+      "d90_to_180": 6,
+      "d180_plus": 0,
+      "avg_lifetime_days": 85,
+      "avg_lifetime_months": 2.8
+    },
+    "avg_monthly_revenue_per_sub": 731
   }
 }
