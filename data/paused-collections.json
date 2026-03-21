@@ -1,129 +1,78 @@
 {
-  "generated": "2026-03-21T14:00:00+11:00",
+  "generated": "2026-03-21T15:28:29.601311",
   "paused_subs": [
     {
       "name": "Kristy Nash",
       "email": "kristy.nash@education.wa.edu.au",
       "amount": 232.0,
-      "interval": "1 week",
-      "sub_id": "sub_1Supje2mA5zLxyK887V7W9V3",
-      "customer_id": "cus_To3g20MpzeqQLs",
-      "pause_behavior": "keep_as_draft",
       "resumes_at": "2026-04-09",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Supje2mA5zLxyK887V7W9V3",
-      "hs_last_session": "not set",
-      "hs_contact_id": "193691440807",
-      "hs_member_status": "Active Sessions",
-      "hs_url": "https://app.hubspot.com/contacts/48782903/record/0-1/193691440807"
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
     },
     {
       "name": "Jo Flanagan",
       "email": "joflanagan@hotmail.com",
       "amount": 222.0,
-      "interval": "2 week",
-      "sub_id": "sub_1Su1ef2mA5zLxyK8nl7FlIn8",
-      "customer_id": "cus_SYsBvLwTYGCVko",
-      "pause_behavior": "keep_as_draft",
       "resumes_at": "2026-04-09",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Su1ef2mA5zLxyK8nl7FlIn8",
-      "hs_last_session": "not set",
-      "hs_contact_id": "125053854729",
-      "hs_member_status": "Active Sessions",
-      "hs_url": "https://app.hubspot.com/contacts/48782903/record/0-1/125053854729"
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
     },
     {
       "name": "Alysha M Nation",
       "email": "alysha_nation@outlook.com",
       "amount": 1808.0,
-      "interval": "9 week",
-      "sub_id": "sub_1Sqp092mA5zLxyK834krAn3L",
-      "customer_id": "cus_TPE8cDN2aHcwov",
-      "pause_behavior": "keep_as_draft",
       "resumes_at": "indefinite",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sqp092mA5zLxyK834krAn3L",
-      "hs_last_session": "not set",
-      "hs_contact_id": "173285792010",
-      "hs_member_status": "Active Sessions",
-      "hs_url": "https://app.hubspot.com/contacts/48782903/record/0-1/173285792010"
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
     },
     {
       "name": "Taya Wear",
       "email": "mitchlovestaya@gmail.com",
       "amount": 1808.0,
-      "interval": "9 week",
-      "sub_id": "sub_1SdNL92mA5zLxyK8v58BTnyP",
-      "customer_id": "cus_TXH3qEIWfjjtcr",
-      "pause_behavior": "keep_as_draft",
       "resumes_at": "2026-05-18",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SdNL92mA5zLxyK8v58BTnyP",
-      "hs_last_session": "not set",
-      "hs_contact_id": "180740122775",
-      "hs_member_status": "Active Sessions",
-      "hs_url": "https://app.hubspot.com/contacts/48782903/record/0-1/180740122775"
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
     },
     {
       "name": "Sylvia Rogowska",
       "email": "sylwiarogowska@yahoo.co.uk",
       "amount": 1808.0,
-      "interval": "14 week",
-      "sub_id": "sub_1STDqs2mA5zLxyK8aEUdrY7S",
-      "customer_id": "cus_SSEe1v5XnJwbqF",
-      "pause_behavior": "keep_as_draft",
       "resumes_at": "2026-04-07",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1STDqs2mA5zLxyK8aEUdrY7S",
-      "hs_last_session": "not set",
-      "hs_contact_id": "123409897536",
-      "hs_member_status": "Active Sessions",
-      "hs_url": "https://app.hubspot.com/contacts/48782903/record/0-1/123409897536"
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
     },
     {
       "name": "Gaby Welton",
       "email": "gabys.kiddos@gmail.com",
       "amount": 66.0,
-      "interval": "1 week",
-      "sub_id": "sub_1SS5pV2mA5zLxyK8Dci5AwnS",
-      "customer_id": "cus_TE4q6FSbmYGxKn",
-      "pause_behavior": "keep_as_draft",
       "resumes_at": "indefinite",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SS5pV2mA5zLxyK8Dci5AwnS",
-      "hs_last_session": "not set",
-      "hs_contact_id": "160356915895",
-      "hs_member_status": "Active Sessions",
-      "hs_url": "https://app.hubspot.com/contacts/48782903/record/0-1/160356915895"
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
     },
     {
       "name": "Kristen Birkett",
       "email": "kristen_hooson@yahoo.com.au",
       "amount": 2001.32,
-      "interval": "9 week",
-      "sub_id": "sub_1SDwQZ2mA5zLxyK83rtIfcJP",
-      "customer_id": "cus_T5mezYIqIyIFq0",
-      "pause_behavior": "keep_as_draft",
       "resumes_at": "indefinite",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SDwQZ2mA5zLxyK83rtIfcJP",
-      "hs_last_session": "not set",
-      "hs_contact_id": "156118065665",
-      "hs_member_status": "Active Sessions",
-      "hs_url": "https://app.hubspot.com/contacts/48782903/record/0-1/156118065665"
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
     },
     {
       "name": "Kate O'Sullivan",
       "email": "kateos9785@gmail.com",
       "amount": 2001.32,
-      "interval": "60 day",
-      "sub_id": "sub_1Rt6Je2mA5zLxyK8ylzWu3ce",
-      "customer_id": "cus_Snxbx96s2Jqenl",
-      "pause_behavior": "keep_as_draft",
       "resumes_at": "indefinite",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Rt6Je2mA5zLxyK8ylzWu3ce",
-      "hs_last_session": "not set",
-      "hs_contact_id": "140300668088",
-      "hs_member_status": "Active Sessions",
-      "hs_url": "https://app.hubspot.com/contacts/48782903/record/0-1/140300668088"
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
     }
   ],
-  "total_count": 8,
-  "total_weekly_equiv": 4830,
-  "total_monthly_equiv": 20912,
-  "churn_count": 0
+  "total_count": 8
 }

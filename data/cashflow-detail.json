@@ -1,44 +1,16 @@
 {
-  "generated": "2026-03-21T13:00:26.698916",
+  "generated": "2026-03-21T15:28:29.601311",
   "weeks": [
     {
       "label": "Week 1 (Mar 21 - Mar 27)",
-      "total": 35842.0,
+      "total": 16387.0,
       "days": [
-        {
-          "date": "2026-03-22",
-          "day": "Sat",
-          "charges": 1,
-          "amount": 1808,
-          "subscribers": [
-            {
-              "name": "Valentina Najdovska",
-              "email": "",
-              "amount": 1808,
-              "interval": "OPEN",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TB51H2mA5zLxyK8wg0YfuBt",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "open"
-            }
-          ]
-        },
         {
           "date": "2026-03-23",
           "day": "Mon",
           "charges": 8,
           "amount": 3005.0,
           "subscribers": [
-            {
-              "name": "Mardi Moore",
-              "email": "",
-              "amount": 1899,
-              "interval": "OPEN",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TBOm62mA5zLxyK86inwhKtk",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "open"
-            },
             {
               "name": "Emily Greaves",
               "email": "em-greaves@hotmail.com",
@@ -108,65 +80,25 @@
               "customer_id": "cus_SlAtiZ57NoLRxZ",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SjsFT2mA5zLxyK89g1HKCjx",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/135810870042"
+            },
+            {
+              "name": "Mardi Moore",
+              "email": "",
+              "amount": 1899.0,
+              "interval": "OPEN",
+              "type": "invoice",
+              "status": "open",
+              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TBOm62mA5zLxyK86inwhKtk",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
         },
         {
           "date": "2026-03-24",
           "day": "Tue",
-          "charges": 12,
-          "amount": 21329.0,
+          "charges": 7,
+          "amount": 3682.0,
           "subscribers": [
-            {
-              "name": "Alysha M Nation",
-              "email": "",
-              "amount": 4990,
-              "interval": "DRAFT FE",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCU512mA5zLxyK8CStk0TT7",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "draft_fe"
-            },
-            {
-              "name": "Kathryn P Alchin",
-              "email": "",
-              "amount": 4990,
-              "interval": "DRAFT FE",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCU1p2mA5zLxyK8htaVGvjd",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "draft_fe"
-            },
-            {
-              "name": "Vanessa Koina",
-              "email": "",
-              "amount": 4990,
-              "interval": "DRAFT FE",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCTzc2mA5zLxyK8iFMHzJls",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "draft_fe"
-            },
-            {
-              "name": "Lucia Ciccollitto",
-              "email": "",
-              "amount": 1808,
-              "interval": "OPEN",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TBsdy2mA5zLxyK8m89g9xX4",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "open"
-            },
-            {
-              "name": "Marlene Harris",
-              "email": "",
-              "amount": 1773,
-              "interval": "DRAFT",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCSkH2mA5zLxyK8wrEN4H4v",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "draft"
-            },
             {
               "name": "GEMMA GARNER",
               "email": "gemmagarner04@yahoo.co.uk",
@@ -176,16 +108,6 @@
               "customer_id": "cus_TpZ21yOB2eDdbV",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Ssf0y2mA5zLxyK8tdUuSWcA",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/194544421931"
-            },
-            {
-              "name": "KAREN LOUWRENS",
-              "email": "",
-              "amount": 904,
-              "interval": "DRAFT",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCqrK2mA5zLxyK88X9lvJ1m",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "draft"
             },
             {
               "name": "Melissa Eades",
@@ -236,6 +158,16 @@
               "customer_id": "cus_TX8HPESpKeuMnt",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1ShPOL2mA5zLxyK8QFhH4ozx",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/180422169868"
+            },
+            {
+              "name": "Lucia Ciccollitto",
+              "email": "",
+              "amount": 1808.0,
+              "interval": "OPEN",
+              "type": "invoice",
+              "status": "open",
+              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TBsdy2mA5zLxyK8m89g9xX4",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
         },
@@ -245,16 +177,6 @@
           "charges": 7,
           "amount": 3705.0,
           "subscribers": [
-            {
-              "name": "Selena Fletcher",
-              "email": "",
-              "amount": 2730,
-              "interval": "OPEN",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCEBV2mA5zLxyK8hfm25PsL",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "open"
-            },
             {
               "name": "Annie Stazak",
               "email": "stazak24@gmail.com",
@@ -314,6 +236,16 @@
               "customer_id": "cus_S7XS1cWfAPUrO1",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RDINj2mA5zLxyK8z55icErH",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/115998356243"
+            },
+            {
+              "name": "Selena Fletcher",
+              "email": "",
+              "amount": 2730.0,
+              "interval": "OPEN",
+              "type": "invoice",
+              "status": "open",
+              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCEBV2mA5zLxyK8hfm25PsL",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
         },
@@ -362,16 +294,6 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/154944680027"
             },
             {
-              "name": "Rachel Hawyes",
-              "email": "",
-              "amount": 1899,
-              "interval": "OPEN",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCt0Z2mA5zLxyK8hMnalPDt",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "open"
-            },
-            {
               "name": "Whitney Trigwell",
               "email": "whitneytrigwell@gmail.com",
               "amount": 235.0,
@@ -410,6 +332,16 @@
               "customer_id": "cus_Tmte86JNLCfNSm",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SpfOO2mA5zLxyK8lzQDKrks",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/145164842544"
+            },
+            {
+              "name": "Rachel Hawyes",
+              "email": "",
+              "amount": 1899.0,
+              "interval": "OPEN",
+              "type": "invoice",
+              "status": "open",
+              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCt0Z2mA5zLxyK8hMnalPDt",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
         }
@@ -497,7 +429,7 @@
     },
     {
       "label": "Week 3 (Apr 04 - Apr 10)",
-      "total": 5596.0,
+      "total": 4656.0,
       "days": [
         {
           "date": "2026-04-04",
@@ -588,19 +520,9 @@
         {
           "date": "2026-04-06",
           "day": "Mon",
-          "charges": 3,
-          "amount": 1318.0,
+          "charges": 2,
+          "amount": 378.0,
           "subscribers": [
-            {
-              "name": "Helen Shorthouse",
-              "email": "",
-              "amount": 940,
-              "interval": "SCHEDULED",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1T6oL52mA5zLxyK8YJ2RSQhE",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903",
-              "type": "invoice",
-              "status": "scheduled"
-            },
             {
               "name": "Anastasia  Georgiou ",
               "email": "georgiou.oralmed@gmail.com",
@@ -624,13 +546,6 @@
           ]
         },
         {
-          "date": "2026-04-08",
-          "day": "Wed",
-          "charges": 0,
-          "amount": 0,
-          "subscribers": []
-        },
-        {
           "date": "2026-04-09",
           "day": "Thu",
           "charges": 1,
@@ -647,13 +562,6 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/132301268801"
             }
           ]
-        },
-        {
-          "date": "2026-04-10",
-          "day": "Fri",
-          "charges": 0,
-          "amount": 0,
-          "subscribers": []
         }
       ]
     },
@@ -688,13 +596,6 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/198845395067"
             }
           ]
-        },
-        {
-          "date": "2026-04-15",
-          "day": "Wed",
-          "charges": 0,
-          "amount": 0,
-          "subscribers": []
         },
         {
           "date": "2026-04-16",
