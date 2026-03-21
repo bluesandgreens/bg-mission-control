@@ -6,7 +6,7 @@
 <title>Revenue Forecast — B&G Mission Control</title>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;--coral:#E8795A;}
+:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--dark-sandbox:#0C1018;--red:#E05252;--amber:#E8A030;--coral:#E8795A;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;-webkit-font-smoothing:antialiased;}
 .header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold);}
@@ -17,7 +17,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 .container{max-width:1100px;margin:0 auto;padding:32px 20px 60px;}
 
 /* HERO CARDS */
-.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
+.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px;}
 .hero-card{background:rgba(16,21,32,0.8);border:1px solid rgba(200,169,81,0.15);border-radius:16px;padding:20px;border-top:3px solid var(--gold);}
 .hero-card.risk{border-top-color:var(--red);}
 .hero-card.green-top{border-top-color:#4CAF50;}
@@ -28,26 +28,191 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 .hero-sub2{font-size:10px;color:rgba(251,248,243,0.25);margin-top:2px;}
 
 /* SECTIONS */
-.section{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px;margin-bottom:24px;}
-.section-title{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.section{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:28px;margin-bottom:48px;}
+.section.sandbox{background:rgba(12,16,24,0.95);border-color:rgba(200,169,81,0.12);}
+.section-title{font-family:'Archivo Black',sans-serif;font-size:16px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.section-divider{height:1px;background:linear-gradient(to right,rgba(200,169,81,0.3),transparent);margin-bottom:24px;}
 .note{font-size:11px;color:rgba(251,248,243,0.3);margin-top:12px;font-style:italic;line-height:1.5;}
 .data-badge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:4px;font-weight:700;margin-left:4px;vertical-align:middle;}
 .badge-real{background:rgba(76,175,80,0.2);color:#4CAF50;border:1px solid rgba(76,175,80,0.3);}
 .badge-est{background:rgba(232,160,48,0.2);color:var(--amber);border:1px solid rgba(232,160,48,0.3);}
 
-/* CASH FLOW CHART */
+/* CHART WRAP */
 .chart-wrap{width:100%;overflow-x:auto;}
-.chart-note{font-size:11px;color:rgba(251,248,243,0.4);margin-top:8px;text-align:center;}
 
-/* DAILY BREAKDOWN TABLE */
-.daily-table{width:100%;border-collapse:collapse;margin-top:16px;}
-.daily-table th{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.06);text-align:left;}
-.daily-table td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;}
-.daily-table tr:last-child td{border-bottom:none;}
-.daily-table tr:hover td{background:rgba(255,255,255,0.02);}
-.day-total{font-weight:700;color:var(--gold);}
-.day-charges{color:rgba(251,248,243,0.5);font-size:12px;}
-.day-week-badge{display:inline-block;font-size:9px;padding:1px 6px;border-radius:4px;background:rgba(200,169,81,0.12);color:var(--gold);margin-left:6px;vertical-align:middle;}
+/* WEEK ACCORDION */
+.week-accordion{margin-top:20px;display:flex;flex-direction:column;gap:10px;}
+.week-card{border-radius:12px;border:1px solid rgba(200,169,81,0.15);overflow:hidden;transition:border-color 0.2s;}
+.week-card.expanded{border-color:rgba(200,169,81,0.45);}
+.week-card-header{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;background:rgba(16,21,32,0.9);cursor:pointer;user-select:none;transition:background 0.2s;gap:12px;}
+.week-card-header:hover{background:rgba(22,28,42,0.95);}
+.week-card.expanded .week-card-header{background:rgba(20,26,40,0.98);}
+.week-card-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0;}
+.week-card-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,169,81,0.6);flex-shrink:0;}
+.week-card-label{font-size:13px;font-weight:600;color:var(--cream);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.week-card-total{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);flex-shrink:0;}
+.week-card-chevron{font-size:14px;color:rgba(200,169,81,0.5);transition:transform 0.3s;flex-shrink:0;}
+.week-card.expanded .week-card-chevron{transform:rotate(180deg);}
+.week-card-body{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1);}
+.week-card.expanded .week-card-body{max-height:600px;}
+.week-card-inner{padding:0 16px 16px;background:#12161E;}
+.day-rows{display:flex;flex-direction:column;gap:2px;padding-top:12px;}
+.day-row{display:grid;grid-template-columns:90px 36px 1fr auto 24px;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;transition:background 0.15s,box-shadow 0.15s;cursor:pointer;}
+.day-row:nth-child(odd){background:rgba(255,255,255,0.025);}
+.day-row:nth-child(even){background:rgba(255,255,255,0.015);}
+.day-row:hover{background:rgba(200,169,81,0.1)!important;}
+.day-row.day-expanded{background:rgba(200,169,81,0.08)!important;box-shadow:inset 3px 0 0 var(--gold);}
+.day-date{font-size:12px;font-weight:700;color:var(--cream);}
+.day-name{font-size:11px;color:rgba(251,248,243,0.35);text-align:center;}
+.day-bar-wrap{display:flex;align-items:center;gap:8px;}
+.day-bar-track{flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden;}
+.day-bar-fill{height:100%;background:var(--gold);border-radius:3px;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);}
+.day-amount{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);text-align:right;white-space:nowrap;}
+.charge-pill{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;background:rgba(200,169,81,0.12);color:rgba(200,169,81,0.8);border:1px solid rgba(200,169,81,0.2);text-align:center;}
+.click-hint{font-size:10px;color:rgba(251,248,243,0.25);text-align:center;margin-top:10px;font-style:italic;}
+.day-chevron{font-size:12px;color:rgba(200,169,81,0.5);transition:transform 0.3s;text-align:center;flex-shrink:0;}
+.day-row.day-expanded .day-chevron{transform:rotate(180deg);}
+
+/* SVG bar click style */
+.bar-clickable{cursor:pointer;}
+.bar-clickable:hover .bar-rect{opacity:1!important;filter:drop-shadow(0 0 6px rgba(200,169,81,0.5));}
+.bar-clickable .bar-rect{transition:opacity 0.2s,filter 0.2s;}
+
+/* SUBSCRIBER LIST (level 3) — SCROLL FIX */
+.sub-list{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1);}
+.sub-list.open{max-height:3000px;}
+.sub-list-inner{padding:8px 10px 12px;background:#161B24;border-radius:0 0 8px 8px;display:flex;flex-direction:column;gap:6px;border-top:1px solid rgba(200,169,81,0.1);max-height:400px;overflow-y:auto;scroll-behavior:smooth;}
+.sub-list-inner::-webkit-scrollbar{width:6px;}
+.sub-list-inner::-webkit-scrollbar-track{background:rgba(255,255,255,0.03);border-radius:3px;}
+.sub-list-inner::-webkit-scrollbar-thumb{background:rgba(200,169,81,0.3);border-radius:3px;}
+.sub-list-inner::-webkit-scrollbar-thumb:hover{background:rgba(200,169,81,0.5);}
+
+/* SUBSCRIBER CARD */
+.sub-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.sub-card-left{flex:1;min-width:130px;}
+.sub-name{font-weight:700;font-size:13px;color:var(--cream);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.sub-email{font-size:11px;color:rgba(251,248,243,0.35);margin-top:2px;}
+.sub-card-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+.sub-amount{font-family:'Archivo Black',sans-serif;font-size:15px;color:var(--gold);white-space:nowrap;}
+.interval-pill{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(200,169,81,0.12);color:rgba(200,169,81,0.8);border:1px solid rgba(200,169,81,0.2);white-space:nowrap;}
+.sub-links{display:flex;gap:6px;}
+.btn-stripe{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#104791;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background 0.15s;}
+.btn-stripe:hover{background:#1a5cb0;}
+.btn-hubspot{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#ff7a59;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background 0.15s;}
+.btn-hubspot:hover{background:#e86040;}
+
+/* TYPE PILLS for invoices */
+.type-pill{font-size:9px;font-weight:800;padding:2px 8px;border-radius:10px;white-space:nowrap;letter-spacing:0.5px;}
+.type-pill-invoice{background:rgba(232,121,90,0.2);color:#E8795A;border:1px solid rgba(232,121,90,0.4);}
+.type-pill-fe-draft{background:rgba(200,169,81,0.2);color:#C8A951;border:1px solid rgba(200,169,81,0.4);}
+.type-pill-draft{background:rgba(255,255,255,0.1);color:rgba(251,248,243,0.5);border:1px solid rgba(255,255,255,0.15);}
+.type-pill-scheduled{background:rgba(16,71,145,0.2);color:#5a9fd4;border:1px solid rgba(16,71,145,0.4);}
+.type-pill-sub{background:rgba(56,98,23,0.15);color:rgba(56,98,23,0.7);border:1px solid rgba(56,98,23,0.2);}
+
+/* ═══ CASH COLLECTED FORECAST ═══ */
+.ccf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.ccf-card{background:rgba(16,21,32,0.9);border-radius:14px;padding:18px 16px;}
+.ccf-card.locked{border:1px solid rgba(76,175,80,0.3);border-top:3px solid #4CAF50;}
+.ccf-card.ndis{border:1px solid rgba(16,71,145,0.3);border-top:3px solid var(--navy);}
+.ccf-card.projected{border:1px solid rgba(232,160,48,0.3);border-top:3px solid var(--amber);}
+.ccf-card-emoji{font-size:16px;margin-bottom:6px;}
+.ccf-card-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.5);margin-bottom:4px;}
+.ccf-card-val{font-family:'Archivo Black',sans-serif;font-size:26px;color:var(--cream);margin-bottom:4px;}
+.ccf-card.projected .ccf-card-val{color:var(--amber);}
+.ccf-card-note{font-size:10px;color:rgba(251,248,243,0.3);}
+.ccf-grand-total{text-align:center;padding:20px 16px;background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.25);border-radius:12px;margin-bottom:22px;}
+.ccf-grand-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(251,248,243,0.5);margin-bottom:8px;}
+.ccf-grand-val{font-family:'Archivo Black',sans-serif;font-size:44px;color:var(--gold);}
+
+/* SLIDERS & INPUTS */
+.ccf-sliders{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+.ccf-slider-group{background:rgba(255,255,255,0.03);border-radius:12px;padding:16px;}
+.ccf-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+.ccf-slider-name{font-size:12px;font-weight:600;color:rgba(251,248,243,0.7);}
+.ccf-slider-val{font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--gold);}
+.ccf-range{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:rgba(255,255,255,0.1);outline:none;margin:4px 0;cursor:pointer;}
+.ccf-range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(200,169,81,0.2);transition:box-shadow 0.2s;}
+.ccf-range::-webkit-slider-thumb:hover{box-shadow:0 0 0 6px rgba(200,169,81,0.25);}
+.ccf-range::-moz-range-thumb{width:22px;height:22px;border:none;border-radius:50%;background:var(--gold);cursor:pointer;}
+.ccf-slider-hints{display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:rgba(251,248,243,0.25);}
+
+/* SCENARIO BUTTONS */
+.ccf-scenarios{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+.ccf-btn{padding:14px 14px;border-radius:12px;border:1px solid rgba(200,169,81,0.2);background:rgba(255,255,255,0.02);color:rgba(251,248,243,0.6);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s;text-align:center;line-height:1.4;}
+.ccf-btn:hover,.ccf-btn.active{background:rgba(200,169,81,0.12);border-color:var(--gold);color:var(--cream);}
+.ccf-btn .btn-total{display:block;font-size:11px;color:rgba(200,169,81,0.6);margin-top:4px;font-weight:400;}
+.ccf-btn.active .btn-total{color:var(--gold);}
+
+/* TIER INPUT GRID */
+.tier-input-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+.tier-input-section{background:rgba(255,255,255,0.025);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04);}
+.tier-input-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:14px;}
+.tier-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.tier-row:last-child{margin-bottom:0;}
+.tier-label{font-size:12px;color:rgba(251,248,243,0.6);width:100px;flex-shrink:0;}
+.tier-range{flex:1;-webkit-appearance:none;appearance:none;height:5px;border-radius:3px;background:rgba(255,255,255,0.1);outline:none;cursor:pointer;}
+.tier-range::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 2px rgba(200,169,81,0.2);}
+.tier-range::-moz-range-thumb{width:18px;height:18px;border:none;border-radius:50%;background:var(--gold);cursor:pointer;}
+.tier-pct{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);width:40px;text-align:right;flex-shrink:0;}
+.tier-total-row{margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:rgba(251,248,243,0.4);}
+.tier-total-val{color:var(--gold);}
+.tier-total-val.error{color:var(--red);}
+.avg-payment-display{text-align:center;padding:18px;background:rgba(200,169,81,0.06);border:1px solid rgba(200,169,81,0.2);border-radius:12px;margin-bottom:20px;}
+.avg-payment-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:6px;}
+.avg-payment-val{font-family:'Archivo Black',sans-serif;font-size:32px;color:var(--gold);}
+.avg-payment-note{font-size:11px;color:rgba(251,248,243,0.35);margin-top:4px;}
+
+/* CHART LEGEND */
+.ccf-chart-legend{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;}
+.ccf-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(251,248,243,0.5);}
+.ccf-legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+
+/* DISTRIBUTION */
+.ccf-dist-section{margin-bottom:24px;padding:16px;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid rgba(255,255,255,0.04);}
+.ccf-dist-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:14px;}
+
+/* COSTS */
+.ccf-costs-rows{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
+.ccf-cost-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border-radius:8px;}
+.ccf-cost-name{font-size:13px;color:rgba(251,248,243,0.7);}
+.ccf-cost-note{font-size:10px;color:rgba(251,248,243,0.3);margin-top:2px;}
+.ccf-cost-amt{font-weight:700;color:var(--red);font-size:14px;white-space:nowrap;}
+.ccf-net-row{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:rgba(76,175,80,0.08);border:1px solid rgba(76,175,80,0.2);border-radius:10px;}
+.ccf-net-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.6);}
+.ccf-net-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:#4CAF50;}
+
+/* RETENTION */
+.ret-toggle{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;cursor:pointer;user-select:none;margin-bottom:16px;transition:background 0.15s;}
+.ret-toggle:hover{background:rgba(255,255,255,0.05);}
+.ret-toggle-label{font-size:13px;font-weight:600;color:rgba(251,248,243,0.6);}
+.ret-toggle-chevron{font-size:12px;color:rgba(200,169,81,0.5);transition:transform 0.3s;}
+.ret-toggle.open .ret-toggle-chevron{transform:rotate(180deg);}
+.ret-sliders-wrap{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1);}
+.ret-sliders-wrap.open{max-height:600px;}
+.ret-sliders-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px;}
+.ret-slider-group{background:rgba(255,255,255,0.03);border-radius:10px;padding:14px 16px;}
+.ret-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+.ret-slider-name{font-size:12px;font-weight:600;color:rgba(251,248,243,0.7);}
+.ret-slider-val{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);}
+
+/* FUNNEL */
+.funnel-wrap{margin-bottom:24px;}
+.funnel-stage{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+.funnel-bar{height:36px;border-radius:6px;display:flex;align-items:center;padding:0 12px;transition:width 0.5s ease;min-width:60px;position:relative;}
+.funnel-bar-label{font-size:11px;font-weight:700;color:rgba(255,255,255,0.95);white-space:nowrap;z-index:1;}
+.funnel-stage-info{flex-shrink:0;width:180px;text-align:right;}
+.funnel-stage-name{font-size:11px;font-weight:600;color:rgba(251,248,243,0.6);}
+.funnel-stage-val{font-size:12px;font-weight:700;color:var(--gold);}
+
+/* LTV */
+.ltv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.ltv-card{background:rgba(255,255,255,0.03);border-radius:12px;padding:18px 16px;text-align:center;}
+.ltv-card-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:6px;}
+.ltv-card-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--gold);}
+.ltv-card-note{font-size:11px;color:rgba(251,248,243,0.35);margin-top:4px;}
+.ltv-delta{display:inline-block;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;margin-top:16px;}
+.ltv-delta.positive{background:rgba(76,175,80,0.15);color:#4CAF50;border:1px solid rgba(76,175,80,0.3);}
+.ltv-delta.negative{background:rgba(224,82,82,0.15);color:var(--red);border:1px solid rgba(224,82,82,0.3);}
 
 /* MRR CHART */
 svg.mrr-chart{width:100%;overflow:visible;}
@@ -59,7 +224,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
 .pace-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
 .pace-val{font-size:18px;font-weight:700;}
 
-/* DONUT CHART */
+/* DONUT */
 .pie-wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
 .pie-legend{flex:1;min-width:180px;}
 .legend-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px;}
@@ -93,163 +258,10 @@ svg.mrr-chart{width:100%;overflow:visible;}
 .badge-amber{background:rgba(232,160,48,0.2);color:var(--amber);}
 .total-risk-row{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:rgba(224,82,82,0.08);border:1px solid rgba(224,82,82,0.2);border-radius:10px;margin-top:16px;}
 
-/* CONNECT SECTION */
+/* CONNECT */
 .connect-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
 .connect-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:10px;border:1px solid rgba(255,255,255,0.05);font-size:13px;}
 .connect-icon{font-size:18px;flex-shrink:0;}
-
-/* WEEK ACCORDION */
-.week-accordion{margin-top:20px;display:flex;flex-direction:column;gap:10px;}
-.week-card{border-radius:12px;border:1px solid rgba(200,169,81,0.15);overflow:hidden;transition:border-color 0.2s;}
-.week-card.expanded{border-color:rgba(200,169,81,0.45);}
-.week-card-header{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;background:rgba(16,21,32,0.9);cursor:pointer;user-select:none;transition:background 0.2s;gap:12px;}
-.week-card-header:hover{background:rgba(22,28,42,0.95);}
-.week-card.expanded .week-card-header{background:rgba(20,26,40,0.98);}
-.week-card-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0;}
-.week-card-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,169,81,0.6);flex-shrink:0;}
-.week-card-label{font-size:13px;font-weight:600;color:var(--cream);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.week-card-total{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);flex-shrink:0;}
-.week-card-chevron{font-size:14px;color:rgba(200,169,81,0.5);transition:transform 0.3s;flex-shrink:0;}
-.week-card.expanded .week-card-chevron{transform:rotate(180deg);}
-.week-card-body{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1);}
-.week-card.expanded .week-card-body{max-height:600px;}
-.week-card-inner{padding:0 16px 16px;background:#12161E;}
-.day-rows{display:flex;flex-direction:column;gap:2px;padding-top:12px;}
-.day-row{display:grid;grid-template-columns:90px 36px 1fr auto 24px;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;transition:background 0.15s,box-shadow 0.15s;cursor:pointer;}
-.day-row:nth-child(odd){background:rgba(255,255,255,0.025);}
-.day-row:nth-child(even){background:rgba(255,255,255,0.015);}
-.day-row:hover{background:rgba(200,169,81,0.1)!important;}
-.day-row.day-expanded{background:rgba(200,169,81,0.08)!important;box-shadow:inset 3px 0 0 var(--gold);}
-.day-date{font-size:12px;font-weight:700;color:var(--cream);}
-.day-name{font-size:11px;color:rgba(251,248,243,0.35);text-align:center;}
-.day-bar-wrap{display:flex;align-items:center;gap:8px;}
-.day-bar-track{flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden;}
-.day-bar-fill{height:100%;background:var(--gold);border-radius:3px;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);}
-.day-details-text{font-size:10px;color:rgba(251,248,243,0.3);margin-top:2px;}
-.day-amount{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);text-align:right;white-space:nowrap;}
-.charge-pill{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;background:rgba(200,169,81,0.12);color:rgba(200,169,81,0.8);border:1px solid rgba(200,169,81,0.2);text-align:center;}
-.click-hint{font-size:10px;color:rgba(251,248,243,0.25);text-align:center;margin-top:10px;font-style:italic;}
-.day-chevron{font-size:12px;color:rgba(200,169,81,0.5);transition:transform 0.3s;text-align:center;flex-shrink:0;}
-.day-row.day-expanded .day-chevron{transform:rotate(180deg);}
-
-/* SVG bar click style */
-.bar-clickable{cursor:pointer;}
-.bar-clickable:hover .bar-rect{opacity:1!important;filter:drop-shadow(0 0 6px rgba(200,169,81,0.5));}
-.bar-clickable .bar-rect{transition:opacity 0.2s,filter 0.2s;}
-
-/* SUBSCRIBER LIST (level 3) — SCROLL FIX */
-.sub-list{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1);}
-.sub-list.open{max-height:3000px;}
-.sub-list-inner{padding:8px 10px 12px;background:#161B24;border-radius:0 0 8px 8px;display:flex;flex-direction:column;gap:6px;border-top:1px solid rgba(200,169,81,0.1);max-height:400px;overflow-y:auto;scroll-behavior:smooth;}
-.sub-list-inner::-webkit-scrollbar{width:6px;}
-.sub-list-inner::-webkit-scrollbar-track{background:rgba(255,255,255,0.03);border-radius:3px;}
-.sub-list-inner::-webkit-scrollbar-thumb{background:rgba(200,169,81,0.3);border-radius:3px;}
-.sub-list-inner::-webkit-scrollbar-thumb:hover{background:rgba(200,169,81,0.5);}
-
-/* SUBSCRIBER CARD */
-.sub-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
-.sub-card-left{flex:1;min-width:130px;}
-.sub-name{font-weight:700;font-size:13px;color:var(--cream);}
-.sub-email{font-size:11px;color:rgba(251,248,243,0.35);margin-top:2px;}
-.sub-card-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
-.sub-amount{font-family:'Archivo Black',sans-serif;font-size:15px;color:var(--gold);white-space:nowrap;}
-.interval-pill{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(200,169,81,0.12);color:rgba(200,169,81,0.8);border:1px solid rgba(200,169,81,0.2);white-space:nowrap;}
-.sub-links{display:flex;gap:6px;}
-.btn-stripe{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#104791;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background 0.15s;}
-.btn-stripe:hover{background:#1a5cb0;}
-.btn-hubspot{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#ff7a59;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background 0.15s;}
-.btn-hubspot:hover{background:#e86040;}
-
-/* ═══ CASH COLLECTED FORECAST ═══ */
-.ccf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
-.ccf-card{background:rgba(16,21,32,0.9);border-radius:14px;padding:18px 16px;}
-.ccf-card.locked{border:1px solid rgba(76,175,80,0.3);border-top:3px solid #4CAF50;}
-.ccf-card.ndis{border:1px solid rgba(16,71,145,0.3);border-top:3px solid var(--navy);}
-.ccf-card.projected{border:1px solid rgba(232,160,48,0.3);border-top:3px solid var(--amber);}
-.ccf-card-emoji{font-size:16px;margin-bottom:6px;}
-.ccf-card-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.5);margin-bottom:4px;}
-.ccf-card-val{font-family:'Archivo Black',sans-serif;font-size:26px;color:var(--cream);margin-bottom:4px;}
-.ccf-card.projected .ccf-card-val{color:var(--amber);}
-.ccf-card-note{font-size:10px;color:rgba(251,248,243,0.3);}
-.ccf-grand-total{text-align:center;padding:20px 16px;background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.25);border-radius:12px;margin-bottom:22px;}
-.ccf-grand-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(251,248,243,0.5);margin-bottom:8px;}
-.ccf-grand-val{font-family:'Archivo Black',sans-serif;font-size:44px;color:var(--gold);}
-.ccf-sliders{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
-.ccf-slider-group{background:rgba(255,255,255,0.03);border-radius:12px;padding:16px;}
-.ccf-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
-.ccf-slider-name{font-size:12px;font-weight:600;color:rgba(251,248,243,0.7);}
-.ccf-slider-val{font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--gold);}
-.ccf-range{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:rgba(255,255,255,0.1);outline:none;margin:4px 0;cursor:pointer;}
-.ccf-range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(200,169,81,0.2);transition:box-shadow 0.2s;}
-.ccf-range::-webkit-slider-thumb:hover{box-shadow:0 0 0 6px rgba(200,169,81,0.25);}
-.ccf-range::-moz-range-thumb{width:22px;height:22px;border:none;border-radius:50%;background:var(--gold);cursor:pointer;}
-.ccf-slider-hints{display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:rgba(251,248,243,0.25);}
-.ccf-scenarios{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap;}
-.ccf-btn{flex:1;min-width:100px;padding:10px 14px;border-radius:10px;border:1px solid rgba(200,169,81,0.3);background:transparent;color:rgba(251,248,243,0.6);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;text-align:center;line-height:1.4;}
-.ccf-btn:hover,.ccf-btn.active{background:rgba(200,169,81,0.12);border-color:var(--gold);color:var(--cream);}
-.ccf-btn .btn-total{display:block;font-size:11px;color:rgba(200,169,81,0.6);margin-top:3px;font-weight:400;}
-.ccf-btn.active .btn-total{color:var(--gold);}
-.ccf-chart-wrap{margin-bottom:20px;}
-.ccf-chart-legend{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;}
-.ccf-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(251,248,243,0.5);}
-.ccf-legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
-.ccf-dist-section{margin-bottom:24px;padding:16px;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid rgba(255,255,255,0.04);}
-.ccf-dist-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:14px;}
-.ccf-pill-bars{display:flex;flex-direction:column;gap:9px;}
-.ccf-pill-row{display:flex;align-items:center;gap:10px;}
-.ccf-pill-label{font-size:11px;color:rgba(251,248,243,0.6);width:190px;flex-shrink:0;}
-.ccf-pill-track{flex:1;height:8px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden;}
-.ccf-pill-fill{height:100%;border-radius:4px;}
-.ccf-pill-pct{font-size:11px;color:rgba(251,248,243,0.4);width:32px;text-align:right;flex-shrink:0;}
-.ccf-tier-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
-.ccf-tier-pill{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;}
-.ccf-trend-section{margin-bottom:24px;}
-.ccf-costs-rows{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
-.ccf-cost-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border-radius:8px;}
-.ccf-cost-name{font-size:13px;color:rgba(251,248,243,0.7);}
-.ccf-cost-note{font-size:10px;color:rgba(251,248,243,0.3);margin-top:2px;}
-.ccf-cost-amt{font-weight:700;color:var(--red);font-size:14px;white-space:nowrap;}
-.ccf-net-row{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:rgba(76,175,80,0.08);border:1px solid rgba(76,175,80,0.2);border-radius:10px;}
-.ccf-net-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.6);}
-.ccf-net-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:#4CAF50;}
-
-/* ═══ RETENTION FUNNEL ═══ */
-.ret-sliders-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px;}
-.ret-slider-group{background:rgba(255,255,255,0.03);border-radius:10px;padding:14px 16px;}
-.ret-slider-group.full-width{grid-column:1/-1;}
-.ret-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
-.ret-slider-name{font-size:12px;font-weight:600;color:rgba(251,248,243,0.7);}
-.ret-slider-val{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);}
-.funnel-wrap{margin-bottom:24px;}
-.funnel-stage{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
-.funnel-bar{height:36px;border-radius:6px;display:flex;align-items:center;padding:0 12px;transition:width 0.5s ease;min-width:60px;position:relative;}
-.funnel-bar-label{font-size:11px;font-weight:700;color:rgba(255,255,255,0.95);white-space:nowrap;z-index:1;}
-.funnel-stage-info{flex-shrink:0;width:180px;text-align:right;}
-.funnel-stage-name{font-size:11px;font-weight:600;color:rgba(251,248,243,0.6);}
-.funnel-stage-val{font-size:12px;font-weight:700;color:var(--gold);}
-
-/* ═══ LTV CALCULATOR ═══ */
-.ltv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.ltv-card{background:rgba(255,255,255,0.03);border-radius:12px;padding:18px 16px;text-align:center;}
-.ltv-card-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:6px;}
-.ltv-card-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--gold);}
-.ltv-card-note{font-size:11px;color:rgba(251,248,243,0.35);margin-top:4px;}
-.ltv-delta{display:inline-block;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;margin-top:16px;}
-.ltv-delta.positive{background:rgba(76,175,80,0.15);color:#4CAF50;border:1px solid rgba(76,175,80,0.3);}
-.ltv-delta.negative{background:rgba(224,82,82,0.15);color:var(--red);border:1px solid rgba(224,82,82,0.3);}
-
-/* ═══ INVOICE CARDS ═══ */
-.inv-group{margin-bottom:20px;}
-.inv-group-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);}
-.inv-group-title{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(251,248,243,0.6);}
-.inv-group-total{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);}
-.inv-card{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:8px;gap:12px;flex-wrap:wrap;}
-.inv-card-name{font-weight:600;font-size:13px;color:var(--cream);}
-.inv-card-due{font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;}
-.inv-card-amount{font-family:'Archivo Black',sans-serif;font-size:16px;color:var(--gold);white-space:nowrap;}
-.inv-card-actions{display:flex;gap:6px;align-items:center;}
-.inv-type-pill{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(232,121,90,0.15);color:var(--coral);border:1px solid rgba(232,121,90,0.3);}
-.inv-draft-pill{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(232,160,48,0.15);color:var(--amber);border:1px solid rgba(232,160,48,0.3);}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -258,10 +270,12 @@ svg.mrr-chart{width:100%;overflow:visible;}
   .hero-val{font-size:22px;}
   .ccf-cards{grid-template-columns:1fr 1fr;}
   .ccf-sliders{grid-template-columns:1fr;}
+  .ccf-scenarios{grid-template-columns:repeat(2,1fr);}
   .ccf-grand-val{font-size:34px;}
   .ret-sliders-grid{grid-template-columns:1fr;}
   .ltv-grid{grid-template-columns:1fr;}
   .funnel-stage-info{width:120px;}
+  .tier-input-grid{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
   .sub-card{flex-direction:column;align-items:flex-start;}
@@ -271,10 +285,10 @@ svg.mrr-chart{width:100%;overflow:visible;}
 }
 @media(max-width:500px){
   .ccf-cards{grid-template-columns:1fr;}
-  .ccf-pill-label{width:130px;}
   .ccf-grand-val{font-size:28px;}
   .funnel-stage{flex-direction:column;align-items:stretch;}
   .funnel-stage-info{width:100%;text-align:left;display:flex;justify-content:space-between;}
+  .ccf-scenarios{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:480px){
   .container{padding:20px 12px 60px;}
@@ -295,7 +309,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
 
 <div class="container">
 
-<!-- ═══ HERO CARDS ═══ -->
+<!-- ═══ 1. HERO CARDS ═══ -->
 <div class="hero-grid">
   <div class="hero-card navy-top">
     <div class="hero-lbl">Stripe Balance ✅</div>
@@ -322,9 +336,74 @@ svg.mrr-chart{width:100%;overflow:visible;}
   </div>
 </div>
 
-<!-- ═══ CASH COLLECTED FORECAST — INTERACTIVE MODEL ═══ -->
-<div class="section" id="ccf-section">
-  <div class="section-title">🎯 CASH COLLECTED FORECAST — NEXT 4 WEEKS</div>
+<!-- ═══ 2. CASH FLOW FORECAST — REAL DATA (FIRST) ═══ -->
+<div class="section">
+  <div class="section-title">💸 CASH FLOW FORECAST — NEXT 4 WEEKS</div>
+  <div class="section-divider"></div>
+
+  <!-- SVG Bar Chart -->
+  <div class="chart-wrap">
+    <svg viewBox="0 0 520 200" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:600px;display:block;margin:0 auto;">
+      <line x1="60" y1="20" x2="500" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="60" y1="60" x2="500" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="60" y1="100" x2="500" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="60" y1="140" x2="500" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <text x="55" y="24" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$50K</text>
+      <text x="55" y="64" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$33K</text>
+      <text x="55" y="104" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$17K</text>
+      <text x="55" y="144" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$0</text>
+      <g class="bar-clickable" onclick="toggleWeek(0)" id="svgbar-0">
+        <rect x="75" y="39" width="80" height="101" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
+        <text x="115" y="33" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$42,058</text>
+        <text x="115" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Mar 21–27</text>
+        <text x="115" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 1</text>
+        <text x="115" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
+      </g>
+      <g class="bar-clickable" onclick="toggleWeek(1)" id="svgbar-1">
+        <rect x="185" y="131" width="80" height="9" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
+        <text x="225" y="125" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$3,358</text>
+        <text x="225" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Mar 28–Apr 3</text>
+        <text x="225" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 2</text>
+        <text x="225" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
+      </g>
+      <g class="bar-clickable" onclick="toggleWeek(2)" id="svgbar-2">
+        <rect x="295" y="112" width="80" height="28" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
+        <text x="335" y="106" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$11,600</text>
+        <text x="335" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Apr 4–10</text>
+        <text x="335" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 3</text>
+        <text x="335" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
+      </g>
+      <g class="bar-clickable" onclick="toggleWeek(3)" id="svgbar-3">
+        <rect x="405" y="114" width="80" height="26" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
+        <text x="445" y="108" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$10,563</text>
+        <text x="445" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Apr 11–17</text>
+        <text x="445" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 4</text>
+        <text x="445" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
+      </g>
+      <line x1="60" y1="140" x2="500" y2="140" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <!-- Total row -->
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.2);border-radius:10px;margin-top:12px;">
+    <div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.5);">4-Week Total (Subs + Invoices)</div>
+      <div style="font-size:11px;color:rgba(251,248,243,0.3);margin-top:2px;">Includes open, draft &amp; scheduled invoices mixed into days</div>
+    </div>
+    <div style="font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--gold);" id="cashflow-grand-total">$67,579</div>
+  </div>
+  <p class="note">✅ Based on actual Stripe subscription billing cycles + invoices (open, draft, FE, scheduled). Invoices are tagged in each day's drill-down.</p>
+
+  <!-- WEEK ACCORDION -->
+  <div class="week-accordion" id="weekAccordion"></div>
+  <p class="click-hint">Click a bar above or a week card to see the daily breakdown with invoice tags</p>
+</div>
+
+<!-- ═══ 3. FORECAST MODEL (Sandbox) ═══ -->
+<div class="section sandbox" id="ccf-section">
+  <div class="section-title">🎯 FORECAST MODEL — SANDBOX</div>
+  <div class="section-divider"></div>
+  <p style="font-size:12px;color:rgba(251,248,243,0.4);margin-bottom:24px;">Adjust inputs below to model different scenarios. Real data is above — this is your playground.</p>
 
   <!-- Summary Cards -->
   <div class="ccf-cards">
@@ -354,49 +433,101 @@ svg.mrr-chart{width:100%;overflow:visible;}
     <div class="ccf-grand-val" id="ccf-grand-total">$79,803</div>
   </div>
 
-  <!-- Scenario Quick-Picks -->
-  <div style="margin-bottom:10px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);">Quick Scenarios</div>
+  <!-- Scenario Quick-Picks (MORE PROMINENT) -->
+  <div style="margin-bottom:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);">Quick Scenarios</div>
   <div class="ccf-scenarios">
     <button onclick="setCCFScenario('conservative')" class="ccf-btn" id="ccf-btn-0">
-      Conservative
+      🐢 Conservative
       <span class="btn-total" id="ccf-btn-total-0"></span>
     </button>
     <button onclick="setCCFScenario('current')" class="ccf-btn active" id="ccf-btn-1">
-      Current Pace
+      📊 Current Pace
       <span class="btn-total" id="ccf-btn-total-1"></span>
     </button>
     <button onclick="setCCFScenario('aggressive')" class="ccf-btn" id="ccf-btn-2">
-      Aggressive
+      🚀 Aggressive
       <span class="btn-total" id="ccf-btn-total-2"></span>
     </button>
     <button onclick="setCCFScenario('dream')" class="ccf-btn" id="ccf-btn-3">
-      Dream
+      🌟 Dream
       <span class="btn-total" id="ccf-btn-total-3"></span>
     </button>
   </div>
 
-  <!-- Sliders -->
-  <div class="ccf-sliders">
+  <!-- Closes Slider (max 30) -->
+  <div class="ccf-sliders" style="grid-template-columns:1fr;">
     <div class="ccf-slider-group">
       <div class="ccf-slider-header">
         <span class="ccf-slider-name">Closes per week</span>
         <span class="ccf-slider-val" id="ccf-closes-val">7</span>
       </div>
-      <input type="range" min="0" max="15" step="1" value="7" id="ccf-closes-slider" class="ccf-range">
-      <div class="ccf-slider-hints"><span>0</span><span>15</span></div>
-    </div>
-    <div class="ccf-slider-group">
-      <div class="ccf-slider-header">
-        <span class="ccf-slider-name">Avg first payment</span>
-        <span class="ccf-slider-val" id="ccf-payment-val">$699</span>
-      </div>
-      <input type="range" min="200" max="1500" step="50" value="699" id="ccf-payment-slider" class="ccf-range">
-      <div class="ccf-slider-hints"><span>$200</span><span>$1,500</span></div>
+      <input type="range" min="0" max="30" step="1" value="7" id="ccf-closes-slider" class="ccf-range">
+      <div class="ccf-slider-hints"><span>0</span><span>30</span></div>
     </div>
   </div>
 
+  <!-- Tier Split + Payment Type Inputs -->
+  <div class="tier-input-grid">
+    <div class="tier-input-section">
+      <div class="tier-input-title">🎯 Program Tier Split</div>
+      <div class="tier-row">
+        <span class="tier-label">Big Brother</span>
+        <input type="range" min="0" max="100" step="1" value="56" id="tier-bb" class="tier-range" oninput="updateTierSplit()">
+        <span class="tier-pct" id="tier-bb-val">56%</span>
+      </div>
+      <div class="tier-row">
+        <span class="tier-label">Lighthouse</span>
+        <input type="range" min="0" max="100" step="1" value="37" id="tier-lh" class="tier-range" oninput="updateTierSplit()">
+        <span class="tier-pct" id="tier-lh-val">37%</span>
+      </div>
+      <div class="tier-row">
+        <span class="tier-label">Other</span>
+        <input type="range" min="0" max="100" step="1" value="7" id="tier-other" class="tier-range" disabled style="opacity:0.5;">
+        <span class="tier-pct" id="tier-other-val">7%</span>
+      </div>
+      <div class="tier-total-row">
+        <span>Total</span>
+        <span class="tier-total-val" id="tier-total">100%</span>
+      </div>
+    </div>
+    <div class="tier-input-section">
+      <div class="tier-input-title">💳 Payment Type Split</div>
+      <div class="tier-row">
+        <span class="tier-label">Upfront</span>
+        <input type="range" min="0" max="100" step="1" value="16" id="pay-upfront" class="tier-range" oninput="updatePaySplit()">
+        <span class="tier-pct" id="pay-upfront-val">16%</span>
+      </div>
+      <div class="tier-row">
+        <span class="tier-label">Weekly</span>
+        <input type="range" min="0" max="100" step="1" value="47" id="pay-weekly" class="tier-range" oninput="updatePaySplit()">
+        <span class="tier-pct" id="pay-weekly-val">47%</span>
+      </div>
+      <div class="tier-row">
+        <span class="tier-label">Monthly</span>
+        <input type="range" min="0" max="100" step="1" value="23" id="pay-monthly" class="tier-range" oninput="updatePaySplit()">
+        <span class="tier-pct" id="pay-monthly-val">23%</span>
+      </div>
+      <div class="tier-row">
+        <span class="tier-label">Other</span>
+        <input type="range" min="0" max="100" step="1" value="14" id="pay-other" class="tier-range" disabled style="opacity:0.5;">
+        <span class="tier-pct" id="pay-other-val">14%</span>
+      </div>
+      <div class="tier-total-row">
+        <span>Total</span>
+        <span class="tier-total-val" id="pay-total">100%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calculated Average First Payment -->
+  <div class="avg-payment-display">
+    <div class="avg-payment-label">Average First Payment</div>
+    <div class="avg-payment-val" id="avg-payment-display">$699</div>
+    <div class="avg-payment-note" id="avg-payment-note">Calculated from tier mix: 56% BB × $947 + 37% LH × $425 + 7% Other × $211</div>
+  </div>
+
   <!-- Stacked Bar Chart -->
-  <div class="ccf-chart-wrap">
+  <div class="ccf-chart-wrap" style="margin-bottom:20px;">
     <svg id="ccf-bar-chart" viewBox="0 0 560 220" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:640px;display:block;"></svg>
     <div class="ccf-chart-legend">
       <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#104791;"></div>Existing Subs (Stripe)</div>
@@ -406,43 +537,76 @@ svg.mrr-chart{width:100%;overflow:visible;}
     </div>
   </div>
 
-  <!-- How New Closes Distribute -->
-  <div class="ccf-dist-section">
-    <div class="ccf-dist-title">💡 How New Closes Distribute — 90 Days of Real Sign-Up Data</div>
-    <div class="ccf-pill-bars">
-      <div class="ccf-pill-row">
-        <div class="ccf-pill-label">Weekly ($119–$249/wk)</div>
-        <div class="ccf-pill-track"><div class="ccf-pill-fill" style="width:47%;background:#104791;"></div></div>
-        <div class="ccf-pill-pct">47%</div>
-      </div>
-      <div class="ccf-pill-row">
-        <div class="ccf-pill-label">Monthly ($189–$940)</div>
-        <div class="ccf-pill-track"><div class="ccf-pill-fill" style="width:23%;background:#5a9fd4;"></div></div>
-        <div class="ccf-pill-pct">23%</div>
-      </div>
-      <div class="ccf-pill-row">
-        <div class="ccf-pill-label">Upfront 60–90 day ($930–$2,001)</div>
-        <div class="ccf-pill-track"><div class="ccf-pill-fill" style="width:16%;background:#C8A951;"></div></div>
-        <div class="ccf-pill-pct">16%</div>
-      </div>
-      <div class="ccf-pill-row">
-        <div class="ccf-pill-label">Other patterns</div>
-        <div class="ccf-pill-track"><div class="ccf-pill-fill" style="width:14%;background:rgba(255,255,255,0.2);"></div></div>
-        <div class="ccf-pill-pct">14%</div>
-      </div>
+  <!-- Retention Funnel -->
+  <div style="margin-top:24px;">
+    <div class="section-title" style="font-size:14px;">🔄 RETENTION FUNNEL</div>
+    <div class="section-divider"></div>
+
+    <!-- Funnel Viz (always visible) -->
+    <div class="funnel-wrap" id="funnel-viz"></div>
+    <p class="note" style="margin-bottom:16px;">Based on analysis of 358 cancelled Stripe subscriptions. Avg lifetime = 2.8 months. Avg revenue per sub = $731/mo.</p>
+
+    <!-- Collapsible Retention Sliders -->
+    <div class="ret-toggle" id="ret-toggle" onclick="toggleRetSliders()">
+      <span class="ret-toggle-label">Adjust Retention Rates</span>
+      <span class="ret-toggle-chevron">▾</span>
     </div>
-    <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.05);">
-      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.35);margin-bottom:8px;">Program Tier Split</div>
-      <div class="ccf-tier-pills">
-        <div class="ccf-tier-pill" style="background:rgba(16,71,145,0.2);border:1px solid rgba(16,71,145,0.4);color:rgba(251,248,243,0.8);">🎯 Big Brother · 56% · avg $947 first payment</div>
-        <div class="ccf-tier-pill" style="background:rgba(56,98,23,0.2);border:1px solid rgba(56,98,23,0.4);color:rgba(251,248,243,0.8);">🏠 Lighthouse · 37% · avg $425 first payment</div>
-        <div class="ccf-tier-pill" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(251,248,243,0.45);">Other · 8% · avg $211</div>
+    <div class="ret-sliders-wrap" id="ret-sliders-wrap">
+      <div class="ret-sliders-grid">
+        <div class="ret-slider-group">
+          <div class="ret-slider-header">
+            <span class="ret-slider-name">Close → W1 %</span>
+            <span class="ret-slider-val" id="ret-w1-val">62%</span>
+          </div>
+          <input type="range" min="30" max="100" step="1" value="62" id="ret-w1-slider" class="ccf-range" oninput="updateRetention()">
+          <div class="ccf-slider-hints"><span>30%</span><span>100%</span></div>
+        </div>
+        <div class="ret-slider-group">
+          <div class="ret-slider-header">
+            <span class="ret-slider-name">W1 → W2 %</span>
+            <span class="ret-slider-val" id="ret-w2-val">85%</span>
+          </div>
+          <input type="range" min="50" max="100" step="1" value="85" id="ret-w2-slider" class="ccf-range" oninput="updateRetention()">
+          <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
+        </div>
+        <div class="ret-slider-group">
+          <div class="ret-slider-header">
+            <span class="ret-slider-name">W2 → 30 days</span>
+            <span class="ret-slider-val" id="ret-30d-val">78%</span>
+          </div>
+          <input type="range" min="50" max="100" step="1" value="78" id="ret-30d-slider" class="ccf-range" oninput="updateRetention()">
+          <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
+        </div>
+        <div class="ret-slider-group">
+          <div class="ret-slider-header">
+            <span class="ret-slider-name">30 → 60 days</span>
+            <span class="ret-slider-val" id="ret-60d-val">72%</span>
+          </div>
+          <input type="range" min="50" max="100" step="1" value="72" id="ret-60d-slider" class="ccf-range" oninput="updateRetention()">
+          <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
+        </div>
+        <div class="ret-slider-group">
+          <div class="ret-slider-header">
+            <span class="ret-slider-name">60 → 90 days</span>
+            <span class="ret-slider-val" id="ret-90d-val">68%</span>
+          </div>
+          <input type="range" min="50" max="100" step="1" value="68" id="ret-90d-slider" class="ccf-range" oninput="updateRetention()">
+          <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
+        </div>
+        <div class="ret-slider-group">
+          <div class="ret-slider-header">
+            <span class="ret-slider-name">90+ days</span>
+            <span class="ret-slider-val" id="ret-90p-val">90%</span>
+          </div>
+          <input type="range" min="50" max="100" step="1" value="90" id="ret-90p-slider" class="ccf-range" oninput="updateRetention()">
+          <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Monthly Trend -->
-  <div class="ccf-trend-section">
+  <div style="margin-top:24px;">
     <div class="ccf-dist-title" style="margin-bottom:12px;">📅 New Sub Revenue — Last 4 Months</div>
     <svg viewBox="0 0 460 165" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:500px;display:block;">
       <line x1="50" y1="20" x2="450" y2="20" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
@@ -470,11 +634,10 @@ svg.mrr-chart{width:100%;overflow:visible;}
       <text x="397" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Mar</text>
       <text x="397" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">40 subs</text>
     </svg>
-    <p class="note" style="margin-top:8px;">March 2026 showing strong momentum — 5× January revenue from new sign-ups.</p>
   </div>
 
   <!-- Known Monthly Costs & Net -->
-  <div>
+  <div style="margin-top:24px;">
     <div class="ccf-dist-title" style="margin-bottom:12px;">💼 Known Monthly Costs vs Projected Net</div>
     <div class="ccf-costs-rows">
       <div class="ccf-cost-row">
@@ -509,71 +672,10 @@ svg.mrr-chart{width:100%;overflow:visible;}
   </div>
 </div>
 
-<!-- ═══ RETENTION FUNNEL ═══ -->
-<div class="section" id="retention-section">
-  <div class="section-title">🔄 RETENTION FUNNEL — DROP-OFF MODEL</div>
-
-  <!-- Retention Sliders -->
-  <div class="ret-sliders-grid">
-    <div class="ret-slider-group">
-      <div class="ret-slider-header">
-        <span class="ret-slider-name">Close → W1 %</span>
-        <span class="ret-slider-val" id="ret-w1-val">62%</span>
-      </div>
-      <input type="range" min="30" max="100" step="1" value="62" id="ret-w1-slider" class="ccf-range" oninput="updateRetention()">
-      <div class="ccf-slider-hints"><span>30%</span><span>100%</span></div>
-    </div>
-    <div class="ret-slider-group">
-      <div class="ret-slider-header">
-        <span class="ret-slider-name">W1 → W2 %</span>
-        <span class="ret-slider-val" id="ret-w2-val">85%</span>
-      </div>
-      <input type="range" min="50" max="100" step="1" value="85" id="ret-w2-slider" class="ccf-range" oninput="updateRetention()">
-      <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
-    </div>
-    <div class="ret-slider-group">
-      <div class="ret-slider-header">
-        <span class="ret-slider-name">W2 → 30 days</span>
-        <span class="ret-slider-val" id="ret-30d-val">78%</span>
-      </div>
-      <input type="range" min="50" max="100" step="1" value="78" id="ret-30d-slider" class="ccf-range" oninput="updateRetention()">
-      <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
-    </div>
-    <div class="ret-slider-group">
-      <div class="ret-slider-header">
-        <span class="ret-slider-name">30 → 60 days</span>
-        <span class="ret-slider-val" id="ret-60d-val">72%</span>
-      </div>
-      <input type="range" min="50" max="100" step="1" value="72" id="ret-60d-slider" class="ccf-range" oninput="updateRetention()">
-      <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
-    </div>
-    <div class="ret-slider-group">
-      <div class="ret-slider-header">
-        <span class="ret-slider-name">60 → 90 days</span>
-        <span class="ret-slider-val" id="ret-90d-val">68%</span>
-      </div>
-      <input type="range" min="50" max="100" step="1" value="68" id="ret-90d-slider" class="ccf-range" oninput="updateRetention()">
-      <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
-    </div>
-    <div class="ret-slider-group">
-      <div class="ret-slider-header">
-        <span class="ret-slider-name">90+ days</span>
-        <span class="ret-slider-val" id="ret-90p-val">90%</span>
-      </div>
-      <input type="range" min="50" max="100" step="1" value="90" id="ret-90p-slider" class="ccf-range" oninput="updateRetention()">
-      <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
-    </div>
-  </div>
-
-  <!-- Funnel Visualization -->
-  <div class="funnel-wrap" id="funnel-viz"></div>
-
-  <p class="note">Based on analysis of 358 cancelled Stripe subscriptions. Avg lifetime = 2.8 months. Avg revenue per sub = $731/mo.</p>
-</div>
-
-<!-- ═══ 12-MONTH REVENUE PROJECTION ═══ -->
+<!-- ═══ 4. 12-MONTH REVENUE PROJECTION ═══ -->
 <div class="section" id="projection-section">
   <div class="section-title">📈 12-MONTH REVENUE PROJECTION</div>
+  <div class="section-divider"></div>
   <div style="overflow-x:auto;">
     <svg id="projection-chart" viewBox="0 0 900 300" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:960px;display:block;"></svg>
   </div>
@@ -584,102 +686,18 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <div id="projection-table" style="margin-top:16px;"></div>
 </div>
 
-<!-- ═══ LTV IMPACT CALCULATOR ═══ -->
+<!-- ═══ 5. LTV IMPACT CALCULATOR ═══ -->
 <div class="section" id="ltv-section">
   <div class="section-title">💎 LTV IMPACT CALCULATOR</div>
+  <div class="section-divider"></div>
   <div class="ltv-grid" id="ltv-cards"></div>
   <div id="ltv-delta-row" style="text-align:center;margin-top:16px;"></div>
 </div>
 
-<!-- ═══ OPEN INVOICES & FE PAYMENTS ═══ -->
-<div class="section" id="invoices-section">
-  <div class="section-title">📋 OPEN INVOICES & FE PAYMENTS</div>
-  <div id="invoices-content"></div>
-</div>
-
-<!-- ═══ CASH FLOW FORECAST (HERO FEATURE) ═══ -->
-<div class="section">
-  <div class="section-title">💸 CASH FLOW FORECAST — NEXT 4 WEEKS</div>
-
-  <!-- SVG Bar Chart -->
-  <div class="chart-wrap">
-    <svg viewBox="0 0 520 200" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:600px;display:block;margin:0 auto;">
-      <line x1="60" y1="20" x2="500" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-      <line x1="60" y1="60" x2="500" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-      <line x1="60" y1="100" x2="500" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-      <line x1="60" y1="140" x2="500" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-      <text x="55" y="24" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$15K</text>
-      <text x="55" y="64" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$10K</text>
-      <text x="55" y="104" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$5K</text>
-      <text x="55" y="144" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$0</text>
-      <g class="bar-clickable" onclick="toggleWeek(0)" id="svgbar-0">
-        <rect x="75" y="26" width="80" height="114" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
-        <rect x="75" y="26" width="80" height="114" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
-        <text x="115" y="20" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$14,267</text>
-        <text x="115" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Mar 21–27</text>
-        <text x="115" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 1</text>
-        <text x="115" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
-      </g>
-      <g class="bar-clickable" onclick="toggleWeek(1)" id="svgbar-1">
-        <rect x="185" y="113" width="80" height="27" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
-        <rect x="185" y="113" width="80" height="27" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
-        <text x="225" y="107" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$3,358</text>
-        <text x="225" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Mar 28–Apr 3</text>
-        <text x="225" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 2</text>
-        <text x="225" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
-      </g>
-      <g class="bar-clickable" onclick="toggleWeek(2)" id="svgbar-2">
-        <rect x="295" y="55" width="80" height="85" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
-        <rect x="295" y="55" width="80" height="85" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
-        <text x="335" y="49" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$10,660</text>
-        <text x="335" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Apr 4–10</text>
-        <text x="335" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 3</text>
-        <text x="335" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
-      </g>
-      <g class="bar-clickable" onclick="toggleWeek(3)" id="svgbar-3">
-        <rect x="405" y="56" width="80" height="84" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
-        <rect x="405" y="56" width="80" height="84" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
-        <text x="445" y="50" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$10,563</text>
-        <text x="445" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Apr 11–17</text>
-        <text x="445" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 4</text>
-        <text x="445" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
-      </g>
-      <line x1="60" y1="140" x2="500" y2="140" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-    </svg>
-  </div>
-
-  <!-- Total row -->
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.2);border-radius:10px;margin-top:12px;">
-    <div>
-      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.5);">4-Week Total Forecast</div>
-      <div style="font-size:11px;color:rgba(251,248,243,0.3);margin-top:2px;">Week 1 + 2 + 3 + 4</div>
-    </div>
-    <div style="font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--gold);">$38,848</div>
-  </div>
-  <p class="note">✅ Based on actual subscription billing cycles from Stripe — real upcoming charges, not estimates.</p>
-
-  <!-- WEEK ACCORDION -->
-  <div class="week-accordion" id="weekAccordion"></div>
-  <p class="click-hint">Click a bar above or a week card to see the daily breakdown</p>
-</div>
-
-<!-- ═══ STACKED WEEKLY CHART ═══ -->
-<div class="section" id="stacked-chart-section">
-  <div class="section-title">📊 WEEKLY REVENUE BREAKDOWN</div>
-  <div class="ccf-chart-wrap">
-    <svg id="stacked-weekly-chart" viewBox="0 0 560 240" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:640px;display:block;"></svg>
-    <div class="ccf-chart-legend">
-      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#104791;"></div>Existing Subs</div>
-      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#C8A951;"></div>NDIS</div>
-      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#386217;"></div>New Closes</div>
-      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#E8795A;"></div>Invoices</div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ MRR TRAJECTORY ═══ -->
+<!-- ═══ 6. MRR TRAJECTORY ═══ -->
 <div class="section">
   <div class="section-title">📈 MRR TRAJECTORY — NEXT 12 WEEKS</div>
+  <div class="section-divider"></div>
 
   <svg class="mrr-chart" viewBox="0 0 900 220" preserveAspectRatio="xMidYMid meet" style="height:220px;">
     <line x1="70" y1="20" x2="880" y2="20" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
@@ -738,12 +756,12 @@ svg.mrr-chart{width:100%;overflow:visible;}
       <div style="font-size:11px;color:rgba(251,248,243,0.35);margin-top:2px;">Based on recent trend (estimated)</div>
     </div>
   </div>
-  <p class="note">⚠️ Projected based on recent $1.7K/week net growth trend. Projection assumes constant growth rate — actual may vary.</p>
 </div>
 
-<!-- ═══ REVENUE BY SOURCE ═══ -->
+<!-- ═══ 7. REVENUE BY SOURCE ═══ -->
 <div class="section">
   <div class="section-title">🥧 REVENUE BY SOURCE ✅</div>
+  <div class="section-divider"></div>
   <div class="pie-wrap">
     <svg id="donut-svg" width="180" height="180" viewBox="0 0 180 180" style="flex-shrink:0;"></svg>
     <div class="pie-legend" id="donut-legend"></div>
@@ -759,12 +777,12 @@ svg.mrr-chart{width:100%;overflow:visible;}
       <div style="font-size:10px;color:rgba(251,248,243,0.3);">$67,287 ÷ 92</div>
     </div>
   </div>
-  <p class="note">✅ Subscription count and intervals direct from Stripe API.</p>
 </div>
 
-<!-- ═══ UNIT ECONOMICS ═══ -->
+<!-- ═══ 8. UNIT ECONOMICS ═══ -->
 <div class="section">
   <div class="section-title">📐 UNIT ECONOMICS</div>
+  <div class="section-divider"></div>
   <div class="unit-grid">
     <div class="unit-card">
       <div class="uc-lbl">LTV ✅</div>
@@ -804,14 +822,12 @@ svg.mrr-chart{width:100%;overflow:visible;}
       <div class="uc-note">Supabase invoices: $7,806 Mar<br>÷ 92 active families</div>
     </div>
   </div>
-  <div style="margin-top:16px;padding:12px 16px;background:rgba(76,175,80,0.06);border:1px solid rgba(76,175,80,0.15);border-radius:10px;font-size:11px;color:rgba(251,248,243,0.5);line-height:1.6;">
-    ✅ All unit economics sourced from real data: LTV from 358 cancelled Stripe subscriptions, CAC from Meta Ads API ($4,201 spend), mentor costs from Supabase invoices ($7,806 March actual). No estimates.
-  </div>
 </div>
 
-<!-- ═══ MONTHLY P&L ═══ -->
+<!-- ═══ 9. MONTHLY P&L ═══ -->
 <div class="section">
   <div class="section-title">💰 MONTHLY P&L — MARCH 2026</div>
+  <div class="section-divider"></div>
   <div class="pnl-row">
     <div><div class="pnl-name">Revenue (MRR) ✅</div><div class="pnl-note">92 active subscriptions · real-time from Stripe</div></div>
     <div class="pnl-amount green">$67,287</div>
@@ -845,9 +861,10 @@ svg.mrr-chart{width:100%;overflow:visible;}
   </div>
 </div>
 
-<!-- ═══ FAILED PAYMENTS ═══ -->
+<!-- ═══ 10. FAILED PAYMENTS ═══ -->
 <div class="section">
   <div class="section-title">⚠️ FAILED PAYMENTS — LAST 7 DAYS ✅</div>
+  <div class="section-divider"></div>
   <table class="failed-table">
     <thead><tr><th>Name</th><th>Amount</th><th>Date</th><th>Risk</th></tr></thead>
     <tbody>
@@ -883,6 +900,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
 <!-- ═══ WHAT WOULD MAKE THIS BETTER ═══ -->
 <div class="section" style="border-color:rgba(200,169,81,0.1);">
   <div class="section-title" style="color:rgba(251,248,243,0.5);">🔧 WHAT WOULD MAKE THIS BETTER</div>
+  <div class="section-divider"></div>
   <ul class="connect-list">
     <li class="connect-item"><span class="connect-icon">🔗</span><div><div style="font-weight:600;">Connect Xero for full P&L</div><div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Payroll, software, rent, tax — complete picture of real profitability</div></div></li>
     <li class="connect-item"><span class="connect-icon">🔗</span><div><div style="font-weight:600;">Connect bank feed for real-time cash position</div><div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Live bank balance beyond Stripe — full cash visibility</div></div></li>
@@ -897,15 +915,19 @@ svg.mrr-chart{width:100%;overflow:visible;}
 var STATE = {
   closesPerWeek: 7,
   avgPayment: 699,
-  closeToW1: 62,
-  w1ToW2: 85,
-  retW2to30: 78,
-  ret30to60: 72,
-  ret60to90: 68,
-  ret90plus: 90,
+  // Tier split
+  tierBB: 56, tierLH: 37, tierOther: 7,
+  // Payment split
+  payUpfront: 16, payWeekly: 47, payMonthly: 23, payOther: 14,
+  // Retention
+  closeToW1: 62, w1ToW2: 85,
+  retW2to30: 78, ret30to60: 72, ret60to90: 68, ret90plus: 90,
   avgMonthlyRev: 731,
   invoiceData: null
 };
+
+// Tier avg first payments
+var TIER_AVG = {bb: 947, lh: 425, other: 211};
 
 var LOCKED_IN = 38848;
 var NDIS_TOTAL = 11249;
@@ -916,10 +938,10 @@ var MONTHLY_COSTS = 19566;
 var INVOICE_OPEN_TOTAL = 10134;
 
 var SCENARIOS = {
-  conservative: {closes:4, payment:500, w1:55, w2:80, r30:70, r60:65, r90:60, r90p:85},
-  current:      {closes:7, payment:699, w1:62, w2:85, r30:78, r60:72, r90:68, r90p:90},
-  aggressive:   {closes:12, payment:800, w1:75, w2:90, r30:85, r60:80, r90:78, r90p:92},
-  dream:        {closes:15, payment:800, w1:80, w2:95, r30:90, r60:85, r90:82, r90p:95}
+  conservative: {closes:4, bb:40, lh:50, other:10, upfront:10, weekly:55, monthly:25, payother:10, w1:55, w2:80, r30:70, r60:65, r90:60, r90p:85},
+  current:      {closes:7, bb:56, lh:37, other:7, upfront:16, weekly:47, monthly:23, payother:14, w1:62, w2:85, r30:78, r60:72, r90:68, r90p:90},
+  aggressive:   {closes:15, bb:60, lh:35, other:5, upfront:20, weekly:45, monthly:25, payother:10, w1:75, w2:90, r30:85, r60:80, r90:78, r90p:92},
+  dream:        {closes:25, bb:65, lh:30, other:5, upfront:25, weekly:40, monthly:25, payother:10, w1:80, w2:95, r30:90, r60:85, r90:82, r90p:95}
 };
 
 function fmtNum(n){ return '$'+Math.round(n).toLocaleString('en-AU'); }
@@ -930,6 +952,57 @@ function fmtDate(d){
   return p[2]+' '+months[parseInt(p[1])];
 }
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ═══ TIER & PAYMENT SPLIT HANDLERS ═══
+function calcAvgPayment(){
+  return Math.round((STATE.tierBB/100)*TIER_AVG.bb + (STATE.tierLH/100)*TIER_AVG.lh + (STATE.tierOther/100)*TIER_AVG.other);
+}
+
+window.updateTierSplit = function(){
+  var bb = parseInt(document.getElementById('tier-bb').value) || 0;
+  var lh = parseInt(document.getElementById('tier-lh').value) || 0;
+  // Enforce: if bb+lh > 100, clamp lh
+  if(bb + lh > 100) { lh = 100 - bb; document.getElementById('tier-lh').value = lh; }
+  var other = 100 - bb - lh;
+  STATE.tierBB = bb; STATE.tierLH = lh; STATE.tierOther = other;
+  document.getElementById('tier-bb-val').textContent = bb + '%';
+  document.getElementById('tier-lh-val').textContent = lh + '%';
+  document.getElementById('tier-other-val').textContent = other + '%';
+  document.getElementById('tier-other').value = other;
+  var total = bb + lh + other;
+  var totalEl = document.getElementById('tier-total');
+  totalEl.textContent = total + '%';
+  totalEl.classList.toggle('error', total !== 100);
+  STATE.avgPayment = calcAvgPayment();
+  updateAll();
+};
+
+window.updatePaySplit = function(){
+  var up = parseInt(document.getElementById('pay-upfront').value) || 0;
+  var wk = parseInt(document.getElementById('pay-weekly').value) || 0;
+  var mo = parseInt(document.getElementById('pay-monthly').value) || 0;
+  if(up + wk + mo > 100) { mo = 100 - up - wk; if(mo<0){wk=100-up;mo=0;} document.getElementById('pay-monthly').value = mo; }
+  var oth = 100 - up - wk - mo;
+  STATE.payUpfront = up; STATE.payWeekly = wk; STATE.payMonthly = mo; STATE.payOther = oth;
+  document.getElementById('pay-upfront-val').textContent = up + '%';
+  document.getElementById('pay-weekly-val').textContent = wk + '%';
+  document.getElementById('pay-monthly-val').textContent = mo + '%';
+  document.getElementById('pay-other-val').textContent = oth + '%';
+  document.getElementById('pay-other').value = oth;
+  var total = up + wk + mo + oth;
+  var totalEl = document.getElementById('pay-total');
+  totalEl.textContent = total + '%';
+  totalEl.classList.toggle('error', total !== 100);
+  updateAll();
+};
+
+// ═══ RETENTION TOGGLE ═══
+window.toggleRetSliders = function(){
+  var toggle = document.getElementById('ret-toggle');
+  var wrap = document.getElementById('ret-sliders-wrap');
+  toggle.classList.toggle('open');
+  wrap.classList.toggle('open');
+};
 
 // ═══ DONUT CHART ═══
 (function(){
@@ -947,8 +1020,8 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
   segments.forEach(function(seg){
     var sweep=(seg.count/total)*Math.PI*2;
     var end=angle+sweep;
-    var x1=cx+r*Math.cos(angle), y1=cy+r*Math.sin(angle);
-    var x2=cx+r*Math.cos(end), y2=cy+r*Math.sin(end);
+    var x1=cx+r*Math.cos(angle),y1=cy+r*Math.sin(angle);
+    var x2=cx+r*Math.cos(end),y2=cy+r*Math.sin(end);
     var large=sweep>Math.PI?1:0;
     svg+='<path d="M '+cx+' '+cy+' L '+x1.toFixed(1)+' '+y1.toFixed(1)+' A '+r+' '+r+' 0 '+large+' 1 '+x2.toFixed(1)+' '+y2.toFixed(1)+' Z" fill="'+seg.color+'" opacity="0.85" stroke="rgba(10,14,20,0.8)" stroke-width="2"/>';
     angle=end;
@@ -972,21 +1045,33 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
   var openWeekIdx=-1;
   var openDayId={};
 
+  function getTypePill(sub){
+    if(!sub.type || sub.type !== 'invoice') return '';
+    var status = sub.status || '';
+    if(status === 'open') return '<span class="type-pill type-pill-invoice">INVOICE</span>';
+    if(status === 'draft_fe') return '<span class="type-pill type-pill-fe-draft">FE DRAFT</span>';
+    if(status === 'draft') return '<span class="type-pill type-pill-draft">DRAFT</span>';
+    if(status === 'scheduled') return '<span class="type-pill type-pill-scheduled">SCHEDULED</span>';
+    return '<span class="type-pill type-pill-invoice">INVOICE</span>';
+  }
+
   function buildSubscriberCards(subs){
-    if(!subs||!subs.length){return '<div style="font-size:12px;color:rgba(251,248,243,0.3);padding:8px 4px;">No subscriber data for this day.</div>';}
+    if(!subs||!subs.length) return '<div style="font-size:12px;color:rgba(251,248,243,0.3);padding:8px 4px;">No subscriber data for this day.</div>';
     var sorted=[].concat(subs).sort(function(a,b){return b.amount-a.amount;});
     return sorted.map(function(sub){
+      var pill = getTypePill(sub);
+      var intervalPill = sub.type === 'invoice' ? '' : '<span class="interval-pill">'+esc(sub.interval)+'</span>';
       return '<div class="sub-card">'
         +'<div class="sub-card-left">'
-          +'<div class="sub-name">'+esc(sub.name)+'</div>'
-          +'<div class="sub-email">'+esc(sub.email)+'</div>'
+          +'<div class="sub-name">'+esc(sub.name)+' '+pill+'</div>'
+          +'<div class="sub-email">'+(sub.email ? esc(sub.email) : (sub.type==='invoice' ? 'Invoice' : ''))+'</div>'
         +'</div>'
         +'<div class="sub-card-right">'
           +'<span class="sub-amount">'+fmt(sub.amount)+'</span>'
-          +'<span class="interval-pill">'+esc(sub.interval)+'</span>'
+          +intervalPill
           +'<div class="sub-links">'
             +'<a href="'+esc(sub.stripe_url)+'" target="_blank" rel="noopener" class="btn-stripe">💳 Stripe</a>'
-            +'<a href="'+esc(sub.hubspot_url)+'" target="_blank" rel="noopener" class="btn-hubspot">📋 HubSpot</a>'
+            +(sub.hubspot_url ? '<a href="'+esc(sub.hubspot_url)+'" target="_blank" rel="noopener" class="btn-hubspot">📋 HubSpot</a>' : '')
           +'</div>'
         +'</div>'
       +'</div>';
@@ -996,6 +1081,12 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
   function renderAccordion(data){
     var container=document.getElementById('weekAccordion');
     var html='';
+    // Calculate grand total
+    var grandTotal = 0;
+    data.weeks.forEach(function(week){ grandTotal += week.total; });
+    var gtEl = document.getElementById('cashflow-grand-total');
+    if(gtEl) gtEl.textContent = fmtNum(grandTotal);
+
     data.weeks.forEach(function(week,i){
       var maxDay=week.days.length>0?Math.max.apply(null,week.days.map(function(d){return d.amount;})):1;
       var daysHtml='';
@@ -1003,6 +1094,12 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
         var pct=maxDay>0?Math.round(day.amount/maxDay*100):0;
         var dayId='day-'+i+'-'+j;
         var subCards=buildSubscriberCards(day.subscribers);
+        // Count invoice vs sub
+        var invCount = 0, subCount = 0;
+        if(day.subscribers) day.subscribers.forEach(function(s){ if(s.type==='invoice') invCount++; else subCount++; });
+        var chargeLabel = day.charges + ' charge' + (day.charges!==1?'s':'');
+        if(invCount > 0) chargeLabel = subCount + ' sub' + (subCount!==1?'s':'') + ' + ' + invCount + ' inv';
+
         daysHtml+='<div class="day-row-wrap">'
           +'<div class="day-row" id="'+dayId+'" onclick="toggleDay(\''+dayId+'\','+i+')">'
             +'<div><div class="day-date">'+fmtDate(day.date)+'</div><div style="font-size:10px;color:rgba(251,248,243,0.3);">'+day.day+'</div></div>'
@@ -1010,7 +1107,7 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
             +'<div class="day-bar-wrap"><div class="day-bar-track"><div class="day-bar-fill" style="width:0%" data-pct="'+pct+'%"></div></div></div>'
             +'<div style="text-align:right">'
               +'<div class="day-amount">'+fmt(day.amount)+'</div>'
-              +'<div><span class="charge-pill">'+day.charges+' charge'+(day.charges!==1?'s':'')+'</span></div>'
+              +'<div><span class="charge-pill">'+chargeLabel+'</span></div>'
             +'</div>'
             +'<div class="day-chevron">▾</div>'
           +'</div>'
@@ -1040,14 +1137,14 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
   window.toggleDay=function(dayId,weekIdx){
     var dayEl=document.getElementById(dayId);
     var subsEl=document.getElementById(dayId+'-subs');
-    if(!dayEl||!subsEl){return;}
+    if(!dayEl||!subsEl) return;
     var isOpen=dayEl.classList.contains('day-expanded');
     var prevDayId=openDayId[weekIdx];
     if(prevDayId&&prevDayId!==dayId){
       var prevDay=document.getElementById(prevDayId);
       var prevSubs=document.getElementById(prevDayId+'-subs');
-      if(prevDay){prevDay.classList.remove('day-expanded');}
-      if(prevSubs){prevSubs.classList.remove('open');}
+      if(prevDay) prevDay.classList.remove('day-expanded');
+      if(prevSubs) prevSubs.classList.remove('open');
     }
     if(isOpen){
       dayEl.classList.remove('day-expanded');
@@ -1062,15 +1159,15 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
   };
 
   window.toggleWeek=function(idx){
-    if(!cashflowData){return;}
+    if(!cashflowData) return;
     if(openWeekIdx>=0&&openWeekIdx!==idx){
       var prev=document.getElementById('wcard-'+openWeekIdx);
-      if(prev){prev.classList.remove('expanded');}
+      if(prev) prev.classList.remove('expanded');
       var prevBar=document.getElementById('svgbar-'+openWeekIdx);
       if(prevBar){var rb=prevBar.querySelector('.bar-rect');if(rb){rb.setAttribute('opacity','0.9');rb.setAttribute('filter','');}}
     }
     var card=document.getElementById('wcard-'+idx);
-    if(!card){return;}
+    if(!card) return;
     var isOpen=card.classList.contains('expanded');
     if(isOpen){
       card.classList.remove('expanded');
@@ -1100,122 +1197,13 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
     });
 })();
 
-// ═══ INVOICE SECTION ═══
+// ═══ LOAD FORECAST DATA ═══
 (function(){
   fetch('../data/cashflow-forecast.json')
     .then(function(r){return r.json();})
     .then(function(data){
       STATE.invoiceData=data.manual_invoices;
-      renderInvoices(data.manual_invoices);
-      renderStackedWeeklyChart(data.manual_invoices);
     });
-
-  function renderInvoices(inv){
-    if(!inv)return;
-    var html='';
-    // Open invoices
-    html+='<div class="inv-group">';
-    html+='<div class="inv-group-header"><div class="inv-group-title">📬 Open Invoices (Due This Week)</div><div class="inv-group-total">'+fmtNum(inv.total_open)+'</div></div>';
-    inv.open.forEach(function(i){
-      html+='<div class="inv-card">';
-      html+='<div style="flex:1;min-width:140px;"><div class="inv-card-name">'+esc(i.name)+'</div><div class="inv-card-due">Due '+fmtDate(i.due)+'</div></div>';
-      html+='<div class="inv-card-actions">';
-      html+='<span class="inv-card-amount">'+fmtNum(i.amount)+'</span>';
-      if(i.stripe_url) html+='<a href="'+esc(i.stripe_url)+'" target="_blank" class="btn-stripe">💳 View</a>';
-      html+='</div></div>';
-    });
-    html+='</div>';
-
-    // Draft FE
-    html+='<div class="inv-group">';
-    html+='<div class="inv-group-header"><div class="inv-group-title">📝 Draft FE Invoices (Ready to Send)</div><div class="inv-group-total">'+fmtNum(inv.total_draft_fe)+'</div></div>';
-    inv.draft_fe.forEach(function(i){
-      html+='<div class="inv-card">';
-      html+='<div style="flex:1;min-width:140px;"><div class="inv-card-name">'+esc(i.name)+'</div><div class="inv-card-due">'+(i.type==='FE'?'<span class="inv-type-pill">FE</span> ':'')+'<span class="inv-draft-pill">Draft</span></div></div>';
-      html+='<div class="inv-card-actions">';
-      html+='<span class="inv-card-amount">'+fmtNum(i.amount)+'</span>';
-      if(i.stripe_url) html+='<a href="'+esc(i.stripe_url)+'" target="_blank" class="btn-stripe">💳 View</a>';
-      html+='</div></div>';
-    });
-    html+='</div>';
-
-    // Scheduled
-    html+='<div class="inv-group">';
-    html+='<div class="inv-group-header"><div class="inv-group-title">📅 Scheduled Future</div><div class="inv-group-total">'+fmtNum(inv.total_scheduled)+'</div></div>';
-    inv.scheduled.forEach(function(i){
-      html+='<div class="inv-card">';
-      html+='<div style="flex:1;min-width:140px;"><div class="inv-card-name">'+esc(i.name)+'</div><div class="inv-card-due">Due '+fmtDate(i.due)+'</div></div>';
-      html+='<div class="inv-card-actions">';
-      html+='<span class="inv-card-amount">'+fmtNum(i.amount)+'</span>';
-      if(i.stripe_url) html+='<a href="'+esc(i.stripe_url)+'" target="_blank" class="btn-stripe">💳 View</a>';
-      html+='</div></div>';
-    });
-    html+='</div>';
-
-    // Grand total
-    var grandInv=inv.total_open+inv.total_draft_fe+inv.total_scheduled;
-    html+='<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(232,121,90,0.08);border:1px solid rgba(232,121,90,0.25);border-radius:10px;margin-top:8px;">';
-    html+='<div><div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.5);">Total Invoice Pipeline</div></div>';
-    html+='<div style="font-family:\'Archivo Black\',sans-serif;font-size:24px;color:var(--coral);">'+fmtNum(grandInv)+'</div>';
-    html+='</div>';
-
-    document.getElementById('invoices-content').innerHTML=html;
-  }
-
-  window.renderStackedWeeklyChart=function(inv){
-    var svg=document.getElementById('stacked-weekly-chart');
-    if(!svg)return;
-    // Calculate invoice amounts per week
-    var invPerWeek=[0,0,0,0];
-    if(inv&&inv.open){
-      inv.open.forEach(function(i){
-        // All open invoices are week 1 (Mar 21-27)
-        var d=new Date(i.due);
-        if(d<new Date('2026-03-28')) invPerWeek[0]+=i.amount;
-        else if(d<new Date('2026-04-04')) invPerWeek[1]+=i.amount;
-        else if(d<new Date('2026-04-11')) invPerWeek[2]+=i.amount;
-        else invPerWeek[3]+=i.amount;
-      });
-    }
-    var vW=560,vH=240,mL=56,mR=24,mT=34,mB=60;
-    var plotW=vW-mL-mR,plotH=vH-mT-mB;
-    var barW=76;
-    var newWeekly=STATE.closesPerWeek*STATE.avgPayment;
-    var bars=EXISTING_SUBS.map(function(sub,i){
-      return{stripe:sub,ndis:NDIS_PER_WEEK,newc:newWeekly,inv:invPerWeek[i],total:sub+NDIS_PER_WEEK+newWeekly+invPerWeek[i]};
-    });
-    var maxTotal=Math.max.apply(null,bars.map(function(b){return b.total;}));
-    var scaleMax=maxTotal*1.18;
-    var scale=scaleMax>0?plotH/scaleMax:1;
-    var gap=(plotW-4*barW)/5;
-    var html='';
-    // Y ticks
-    var yTickStep=scaleMax>40000?10000:scaleMax>20000?5000:2500;
-    for(var t=0;t<=scaleMax;t+=yTickStep){
-      var ty=mT+plotH-t*scale;
-      if(ty<mT-2)break;
-      html+='<line x1="'+mL+'" y1="'+ty.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+ty.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
-      html+='<text x="'+(mL-5)+'" y="'+(ty+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(t/1000).toFixed(0)+'K</text>';
-    }
-    var baseY=mT+plotH;
-    html+='<line x1="'+mL+'" y1="'+baseY+'" x2="'+(vW-mR)+'" y2="'+baseY+'" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>';
-    bars.forEach(function(bar,i){
-      var bx=mL+gap+i*(barW+gap);
-      var h1=Math.max(0,bar.stripe*scale), y1=baseY-h1;
-      html+='<rect x="'+bx.toFixed(0)+'" y="'+y1.toFixed(0)+'" width="'+barW+'" height="'+h1.toFixed(0)+'" fill="#104791" opacity="0.9"/>';
-      var h2=Math.max(0,bar.ndis*scale), y2=y1-h2;
-      html+='<rect x="'+bx.toFixed(0)+'" y="'+y2.toFixed(0)+'" width="'+barW+'" height="'+h2.toFixed(0)+'" fill="#C8A951" opacity="0.9"/>';
-      var h3=Math.max(0,bar.newc*scale), y3=y2-h3;
-      if(h3>0) html+='<rect x="'+bx.toFixed(0)+'" y="'+y3.toFixed(0)+'" width="'+barW+'" height="'+h3.toFixed(0)+'" fill="#386217" opacity="0.9"/>';
-      var h4=Math.max(0,bar.inv*scale), y4=y3-h4;
-      if(h4>0) html+='<rect x="'+bx.toFixed(0)+'" y="'+y4.toFixed(0)+'" width="'+barW+'" height="'+h4.toFixed(0)+'" rx="4" fill="#E8795A" opacity="0.9"/>';
-      var topY=h4>0?y4:(h3>0?y3:y2);
-      html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(topY-6).toFixed(0)+'" text-anchor="middle" font-family="Archivo Black" font-size="10" fill="rgba(251,248,243,0.9)">'+fmtNum(bar.total)+'</text>';
-      html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(baseY+14).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.55)">'+WEEK_LABELS[i]+'</text>';
-      html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(baseY+26).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.28)">Week '+(i+1)+'</text>';
-    });
-    svg.innerHTML=html;
-  };
 })();
 
 // ═══ RETENTION FUNNEL ═══
@@ -1253,8 +1241,6 @@ function renderFunnel(){
 
 // ═══ LTV CALCULATOR ═══
 function calcLTV(){
-  // Calculate average lifetime in months based on retention rates
-  // Simplified: each stage represents ~1 month of survival
   var survivalChain=[
     STATE.closeToW1/100,
     (STATE.closeToW1/100)*(STATE.w1ToW2/100),
@@ -1262,17 +1248,14 @@ function calcLTV(){
     (STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100),
     (STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100)*(STATE.ret60to90/100)
   ];
-  // Sum of survival probabilities ≈ expected months
   var avgMonths=0;
-  for(var i=0;i<survivalChain.length;i++){avgMonths+=survivalChain[i];}
-  // Add long-term contribution (90d+ retention creates geometric series)
+  for(var i=0;i<survivalChain.length;i++) avgMonths+=survivalChain[i];
   var longTermSurv=survivalChain[survivalChain.length-1]*(STATE.ret90plus/100);
   if(STATE.ret90plus<100){
-    // Geometric series: a/(1-r) for months beyond 90d
     var monthlyChurn=1-(STATE.ret90plus/100);
     avgMonths+=longTermSurv/monthlyChurn;
   }else{
-    avgMonths+=longTermSurv*12; // Cap at 12 extra months
+    avgMonths+=longTermSurv*12;
   }
   var ltv=avgMonths*STATE.avgMonthlyRev;
   return{avgMonths:avgMonths,ltv:ltv};
@@ -1280,47 +1263,35 @@ function calcLTV(){
 
 function renderLTV(){
   var current=calcLTV();
-  var baseline={avgMonths:2.8,ltv:2041}; // Real baseline
+  var baseline={avgMonths:2.8,ltv:2041};
   var delta=current.ltv-baseline.ltv;
   var deltaPct=baseline.ltv>0?Math.round(delta/baseline.ltv*100):0;
-
   var html='';
   html+='<div class="ltv-card"><div class="ltv-card-label">Baseline LTV</div><div class="ltv-card-val" style="color:rgba(251,248,243,0.5);">$2,041</div><div class="ltv-card-note">2.8 months avg at $731/mo</div></div>';
   html+='<div class="ltv-card"><div class="ltv-card-label">Projected LTV</div><div class="ltv-card-val">'+fmtNum(current.ltv)+'</div><div class="ltv-card-note">'+current.avgMonths.toFixed(1)+' months avg</div></div>';
   html+='<div class="ltv-card"><div class="ltv-card-label">Avg Lifetime</div><div class="ltv-card-val" style="color:'+(current.avgMonths>2.8?'#4CAF50':'var(--red)')+';">'+current.avgMonths.toFixed(1)+' mo</div><div class="ltv-card-note">'+(current.avgMonths>2.8?'↑':'↓')+' from 2.8 months</div></div>';
   document.getElementById('ltv-cards').innerHTML=html;
-
   var deltaHtml='';
-  if(delta>=0){
-    deltaHtml='<span class="ltv-delta positive">+'+fmtNum(delta)+' per family (+'+deltaPct+'%)</span>';
-  }else{
-    deltaHtml='<span class="ltv-delta negative">'+fmtNum(delta)+' per family ('+deltaPct+'%)</span>';
-  }
-  if(Math.abs(delta)>10){
-    deltaHtml+='<div style="font-size:12px;color:rgba(251,248,243,0.4);margin-top:8px;">Moving from 2.8 to '+current.avgMonths.toFixed(1)+' months = '+(delta>=0?'+':'')+fmtNum(delta)+'/family</div>';
-  }
+  if(delta>=0) deltaHtml='<span class="ltv-delta positive">+'+fmtNum(delta)+' per family (+'+deltaPct+'%)</span>';
+  else deltaHtml='<span class="ltv-delta negative">'+fmtNum(delta)+' per family ('+deltaPct+'%)</span>';
+  if(Math.abs(delta)>10) deltaHtml+='<div style="font-size:12px;color:rgba(251,248,243,0.4);margin-top:8px;">Moving from 2.8 to '+current.avgMonths.toFixed(1)+' months = '+(delta>=0?'+':'')+fmtNum(delta)+'/family</div>';
   document.getElementById('ltv-delta-row').innerHTML=deltaHtml;
 }
 
-// ═══ 12-MONTH REVENUE PROJECTION ═══
+// ═══ 12-MONTH PROJECTION ═══
 function calcProjection(){
   var months=[];
-  var activeFamilies=92; // Current
+  var activeFamilies=92;
   var rev=STATE.avgMonthlyRev;
-  // Monthly churn rate from retention model
-  var monthlyRetention=(STATE.retW2to30/100)*(STATE.ret30to60/100);
-  monthlyRetention=Math.pow(monthlyRetention,0.5); // Geometric mean per month
+  var monthlyRetention=Math.pow((STATE.retW2to30/100)*(STATE.ret30to60/100),0.5);
   var newPerMonth=STATE.closesPerWeek*4.33*(STATE.closeToW1/100)*(STATE.w1ToW2/100);
-  // Target retention: +10% on each rate
   var targetRetention=Math.pow(Math.min(1,(STATE.retW2to30+10)/100)*Math.min(1,(STATE.ret30to60+10)/100),0.5);
   var activeCurrent=activeFamilies;
   var activeTarget=activeFamilies;
   for(var m=1;m<=12;m++){
-    // Current trajectory
     var churned=activeCurrent*(1-monthlyRetention);
     activeCurrent=activeCurrent-churned+newPerMonth;
     var revCurrent=activeCurrent*rev;
-    // Target trajectory
     var churnedTarget=activeTarget*(1-targetRetention);
     activeTarget=activeTarget-churnedTarget+newPerMonth;
     var revTarget=activeTarget*rev;
@@ -1340,7 +1311,6 @@ function renderProjection(){
   var scale=plotH/scaleMax;
   var stepX=plotW/11;
   var html='';
-  // Grid
   var tickStep=scaleMax>300000?50000:(scaleMax>150000?25000:20000);
   for(var t=0;t<=scaleMax;t+=tickStep){
     var ty=mT+plotH-t*scale;
@@ -1348,30 +1318,21 @@ function renderProjection(){
     html+='<line x1="'+mL+'" y1="'+ty.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+ty.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
     html+='<text x="'+(mL-8)+'" y="'+(ty+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(t/1000).toFixed(0)+'K</text>';
   }
-  // Baseline
   html+='<line x1="'+mL+'" y1="'+(mT+plotH)+'" x2="'+(vW-mR)+'" y2="'+(mT+plotH)+'" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>';
-  // Current trajectory line
   var currentPoints=months.map(function(m,i){return (mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revCurrent*scale).toFixed(0);}).join(' ');
-  // Area under current
   html+='<polygon points="'+mL+','+(mT+plotH)+' '+currentPoints+' '+(mL+11*stepX).toFixed(0)+','+(mT+plotH)+'" fill="rgba(200,169,81,0.08)"/>';
   html+='<polyline points="'+currentPoints+'" fill="none" stroke="#C8A951" stroke-width="2.5" stroke-linejoin="round"/>';
-  // Target trajectory line
   var targetPoints=months.map(function(m,i){return (mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revTarget*scale).toFixed(0);}).join(' ');
   html+='<polyline points="'+targetPoints+'" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="8,4" stroke-linejoin="round" opacity="0.8"/>';
-  // Dots and labels for current
   months.forEach(function(m,i){
     var x=mL+i*stepX;
     var y=mT+plotH-m.revCurrent*scale;
     html+='<circle cx="'+x.toFixed(0)+'" cy="'+y.toFixed(0)+'" r="4" fill="#C8A951" stroke="rgba(10,14,20,0.8)" stroke-width="1.5"/>';
-    if(i%3===0||i===11){
-      html+='<text x="'+x.toFixed(0)+'" y="'+(y-10).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(200,169,81,0.8)">'+fmtNum(m.revCurrent)+'</text>';
-    }
+    if(i%3===0||i===11) html+='<text x="'+x.toFixed(0)+'" y="'+(y-10).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(200,169,81,0.8)">'+fmtNum(m.revCurrent)+'</text>';
     html+='<text x="'+x.toFixed(0)+'" y="'+(mT+plotH+16).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.4)">M'+m.month+'</text>';
   });
-
   svg.innerHTML=html;
 
-  // Table summary
   var tableHtml='<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:11px;">';
   tableHtml+='<thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">';
   tableHtml+='<th style="padding:6px 8px;text-align:left;color:rgba(251,248,243,0.4);font-size:10px;letter-spacing:1px;">MONTH</th>';
@@ -1391,7 +1352,7 @@ function renderProjection(){
   document.getElementById('projection-table').innerHTML=tableHtml;
 }
 
-// ═══ CCF MODEL (Updated with retention) ═══
+// ═══ CCF MODEL ═══
 function updateSliderTrack(id,val,min,max){
   var el=document.getElementById(id);
   if(!el)return;
@@ -1411,25 +1372,29 @@ function updateCCF(){
   el=document.getElementById('ccf-grand-total');if(el)el.textContent=fmtNum(grandTotal);
   el=document.getElementById('ccf-monthly-net');if(el)el.textContent=fmtNum(monthlyNet);
   el=document.getElementById('ccf-closes-val');if(el)el.textContent=STATE.closesPerWeek;
-  el=document.getElementById('ccf-payment-val');if(el)el.textContent='$'+STATE.avgPayment.toLocaleString('en-AU');
 
-  updateSliderTrack('ccf-closes-slider',STATE.closesPerWeek,0,15);
-  updateSliderTrack('ccf-payment-slider',STATE.avgPayment,200,1500);
+  // Update avg payment display
+  el=document.getElementById('avg-payment-display');if(el)el.textContent=fmtNum(STATE.avgPayment);
+  el=document.getElementById('avg-payment-note');
+  if(el) el.textContent='Calculated from tier mix: '+STATE.tierBB+'% BB × $'+TIER_AVG.bb+' + '+STATE.tierLH+'% LH × $'+TIER_AVG.lh+' + '+STATE.tierOther+'% Other × $'+TIER_AVG.other;
+
+  updateSliderTrack('ccf-closes-slider',STATE.closesPerWeek,0,30);
 
   // Update scenario buttons
-  Object.keys(SCENARIOS).forEach(function(key,i){
+  var scenarioKeys=['conservative','current','aggressive','dream'];
+  scenarioKeys.forEach(function(key,i){
     var s=SCENARIOS[key];
     var btn=document.getElementById('ccf-btn-'+i);
     var totalEl=document.getElementById('ccf-btn-total-'+i);
-    var total=LOCKED_IN+NDIS_TOTAL+s.closes*s.payment*4+INVOICE_OPEN_TOTAL;
-    if(totalEl)totalEl.textContent=fmtNum(total);
+    var avgPay=Math.round((s.bb/100)*TIER_AVG.bb+(s.lh/100)*TIER_AVG.lh+(s.other/100)*TIER_AVG.other);
+    var total=LOCKED_IN+NDIS_TOTAL+s.closes*avgPay*4+INVOICE_OPEN_TOTAL;
+    if(totalEl) totalEl.textContent=fmtNum(total);
     if(btn){
-      var active=(STATE.closesPerWeek===s.closes&&STATE.avgPayment===s.payment);
+      var active=(STATE.closesPerWeek===s.closes&&STATE.tierBB===s.bb&&STATE.tierLH===s.lh);
       btn.classList.toggle('active',active);
     }
   });
 
-  // Render CCF stacked chart
   renderCCFStackedChart();
 }
 
@@ -1490,28 +1455,39 @@ window.setCCFScenario=function(key){
   var s=SCENARIOS[key];
   if(!s)return;
   STATE.closesPerWeek=s.closes;
-  STATE.avgPayment=s.payment;
-  STATE.closeToW1=s.w1;
-  STATE.w1ToW2=s.w2;
-  STATE.retW2to30=s.r30;
-  STATE.ret30to60=s.r60;
-  STATE.ret60to90=s.r90;
-  STATE.ret90plus=s.r90p;
-  // Update all slider values
-  var map={
-    'ccf-closes-slider':s.closes,'ccf-payment-slider':s.payment,
-    'ret-w1-slider':s.w1,'ret-w2-slider':s.w2,
-    'ret-30d-slider':s.r30,'ret-60d-slider':s.r60,
-    'ret-90d-slider':s.r90,'ret-90p-slider':s.r90p
-  };
-  Object.keys(map).forEach(function(id){
-    var el=document.getElementById(id);
-    if(el)el.value=map[id];
-  });
+  STATE.tierBB=s.bb; STATE.tierLH=s.lh; STATE.tierOther=s.other;
+  STATE.payUpfront=s.upfront; STATE.payWeekly=s.weekly; STATE.payMonthly=s.monthly; STATE.payOther=s.payother;
+  STATE.closeToW1=s.w1; STATE.w1ToW2=s.w2;
+  STATE.retW2to30=s.r30; STATE.ret30to60=s.r60; STATE.ret60to90=s.r90; STATE.ret90plus=s.r90p;
+  STATE.avgPayment=calcAvgPayment();
+
+  // Update all slider/input values
+  document.getElementById('ccf-closes-slider').value=s.closes;
+  document.getElementById('tier-bb').value=s.bb;
+  document.getElementById('tier-lh').value=s.lh;
+  document.getElementById('tier-other').value=s.other;
+  document.getElementById('tier-bb-val').textContent=s.bb+'%';
+  document.getElementById('tier-lh-val').textContent=s.lh+'%';
+  document.getElementById('tier-other-val').textContent=s.other+'%';
+  document.getElementById('tier-total').textContent='100%';
+  document.getElementById('tier-total').classList.remove('error');
+  document.getElementById('pay-upfront').value=s.upfront;
+  document.getElementById('pay-weekly').value=s.weekly;
+  document.getElementById('pay-monthly').value=s.monthly;
+  document.getElementById('pay-other').value=s.payother;
+  document.getElementById('pay-upfront-val').textContent=s.upfront+'%';
+  document.getElementById('pay-weekly-val').textContent=s.weekly+'%';
+  document.getElementById('pay-monthly-val').textContent=s.monthly+'%';
+  document.getElementById('pay-other-val').textContent=s.payother+'%';
+  document.getElementById('pay-total').textContent='100%';
+  document.getElementById('pay-total').classList.remove('error');
+
+  var retMap={'ret-w1-slider':s.w1,'ret-w2-slider':s.w2,'ret-30d-slider':s.r30,'ret-60d-slider':s.r60,'ret-90d-slider':s.r90,'ret-90p-slider':s.r90p};
+  Object.keys(retMap).forEach(function(id){var el=document.getElementById(id);if(el)el.value=retMap[id];});
   updateAll();
 };
 
-// ═══ RETENTION SLIDER HANDLER ═══
+// ═══ RETENTION HANDLER ═══
 window.updateRetention=function(){
   STATE.closeToW1=parseInt(document.getElementById('ret-w1-slider').value)||62;
   STATE.w1ToW2=parseInt(document.getElementById('ret-w2-slider').value)||85;
@@ -1524,7 +1500,7 @@ window.updateRetention=function(){
 
 // ═══ MASTER UPDATE ═══
 function updateAll(){
-  // Update retention slider displays
+  // Retention slider displays
   document.getElementById('ret-w1-val').textContent=STATE.closeToW1+'%';
   document.getElementById('ret-w2-val').textContent=STATE.w1ToW2+'%';
   document.getElementById('ret-30d-val').textContent=STATE.retW2to30+'%';
@@ -1543,15 +1519,12 @@ function updateAll(){
   renderFunnel();
   renderLTV();
   renderProjection();
-  if(STATE.invoiceData) renderStackedWeeklyChart(STATE.invoiceData);
 }
 
 // ═══ INIT ═══
 function init(){
   var s1=document.getElementById('ccf-closes-slider');
-  var s2=document.getElementById('ccf-payment-slider');
-  if(s1)s1.addEventListener('input',function(){STATE.closesPerWeek=parseInt(this.value)||0;updateAll();});
-  if(s2)s2.addEventListener('input',function(){STATE.avgPayment=parseInt(this.value)||200;updateAll();});
+  if(s1) s1.addEventListener('input',function(){STATE.closesPerWeek=parseInt(this.value)||0;updateAll();});
   updateAll();
 }
 
