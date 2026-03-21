@@ -1,9 +1,9 @@
 {
-  "generated": "2026-03-21T18:00:04.216177",
+  "generated": "2026-03-22T06:38:03.540249",
   "weeks": [
     {
-      "label": "Week 1 (Mar 21 - Mar 27)",
-      "total": 16387.0,
+      "label": "Week 1 (Mar 22 - Mar 28)",
+      "total": 18427.0,
       "days": [
         {
           "date": "2026-03-23",
@@ -344,13 +344,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 2 (Mar 28 - Apr 03)",
-      "total": 3358.0,
-      "days": [
+        },
         {
           "date": "2026-03-28",
           "day": "Sat",
@@ -378,7 +372,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/126700344428"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 2 (Mar 29 - Apr 04)",
+      "total": 2248.0,
+      "days": [
         {
           "date": "2026-04-01",
           "day": "Wed",
@@ -424,13 +424,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/203852094603"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 3 (Apr 04 - Apr 10)",
-      "total": 4656.0,
-      "days": [
+        },
         {
           "date": "2026-04-04",
           "day": "Sat",
@@ -448,7 +442,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/136145383448"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 3 (Apr 05 - Apr 11)",
+      "total": 3726.0,
+      "days": [
         {
           "date": "2026-04-05",
           "day": "Sun",
@@ -566,8 +566,8 @@
       ]
     },
     {
-      "label": "Week 4 (Apr 11 - Apr 17)",
-      "total": 4628.0,
+      "label": "Week 4 (Apr 12 - Apr 18)",
+      "total": 6436.0,
       "days": [
         {
           "date": "2026-04-13",
@@ -640,6 +640,24 @@
               "customer_id": "cus_U7YyherkyqBW58",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TBV7g2mA5zLxyK8UZmrxQze",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207777789452"
+            }
+          ]
+        },
+        {
+          "date": "2026-04-18",
+          "day": "Sat",
+          "charges": 1,
+          "amount": 1808.0,
+          "subscribers": [
+            {
+              "name": "Cyra Frost",
+              "email": "cyrafrost13@gmail.com",
+              "amount": 1808.0,
+              "interval": "Every 9 weeks",
+              "sub_id": "sub_1SdiWj2mA5zLxyK8vhn8C74N",
+              "customer_id": "cus_TX6mLeSxIx6p1X",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SdiWj2mA5zLxyK8vhn8C74N",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/181238625886"
             }
           ]
         }
