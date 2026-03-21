@@ -142,16 +142,49 @@ svg.mrr-chart{width:100%;overflow:visible;}
 .row-detail-inner.open{max-height:60px;padding:6px 0;}
 
 
+/* DAY ROW — CLICKABLE (level 2) */
+.day-row{cursor:pointer;}
+.day-row:hover{background:rgba(200,169,81,0.1)!important;}
+.day-row.day-expanded{background:rgba(200,169,81,0.08)!important;box-shadow:inset 3px 0 0 var(--gold);}
+.day-chevron{font-size:12px;color:rgba(200,169,81,0.5);transition:transform 0.3s;text-align:center;flex-shrink:0;}
+.day-row.day-expanded .day-chevron{transform:rotate(180deg);}
+.day-row{display:grid;grid-template-columns:90px 36px 1fr auto 24px;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;transition:background 0.15s,box-shadow 0.15s;}
+
+/* SUBSCRIBER LIST (level 3) */
+.sub-list{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1);}
+.sub-list.open{max-height:3000px;}
+.sub-list-inner{padding:8px 10px 12px;background:#161B24;border-radius:0 0 8px 8px;display:flex;flex-direction:column;gap:6px;border-top:1px solid rgba(200,169,81,0.1);}
+
+/* SUBSCRIBER CARD */
+.sub-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.sub-card-left{flex:1;min-width:130px;}
+.sub-name{font-weight:700;font-size:13px;color:var(--cream);}
+.sub-email{font-size:11px;color:rgba(251,248,243,0.35);margin-top:2px;}
+.sub-card-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+.sub-amount{font-family:'Archivo Black',sans-serif;font-size:15px;color:var(--gold);white-space:nowrap;}
+.interval-pill{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(200,169,81,0.12);color:rgba(200,169,81,0.8);border:1px solid rgba(200,169,81,0.2);white-space:nowrap;}
+.sub-links{display:flex;gap:6px;}
+.btn-stripe{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#104791;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background 0.15s;}
+.btn-stripe:hover{background:#1a5cb0;}
+.btn-hubspot{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#ff7a59;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background 0.15s;}
+.btn-hubspot:hover{background:#e86040;}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero-grid{grid-template-columns:repeat(2,1fr);}
   .unit-grid{grid-template-columns:repeat(2,1fr);}
   .hero-val{font-size:22px;}
 }
+@media(max-width:600px){
+  .sub-card{flex-direction:column;align-items:flex-start;}
+  .sub-card-right{justify-content:flex-start;}
+  .day-row{grid-template-columns:76px 30px 1fr auto 20px;gap:6px;padding:9px 8px;}
+}
 @media(max-width:480px){
   .container{padding:20px 12px 60px;}
   .section{padding:18px 14px;}
   .unit-grid{grid-template-columns:1fr 1fr;}
+  .week-card-total{font-size:15px;}
 }
 </style>
 </head>
@@ -272,50 +305,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
   </div>
   <p class="click-hint">Click a bar above or a week card to see the daily breakdown</p>
 
-  <!-- DAILY BREAKDOWN -->
-  <div style="margin-top:24px;">
-    <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:12px;">📅 Daily Breakdown — Next 14 Days</div>
-    <table class="daily-table">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Charges</th>
-          <th>Amount</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="dailyTableBody">
-        <tr class="daily-data-row" data-detail="11 subscription renewals"><td>Sun 23 Mar</td><td class="day-charges">11 charges</td><td class="day-total">$1,994</td><td><span class="day-week-badge">Wk 1</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">11 subscription renewals</div></td></tr>
-        <tr class="daily-data-row" data-detail="9 subscription renewals — heaviest day this week"><td>Mon 24 Mar</td><td class="day-charges">9 charges</td><td class="day-total">$3,992</td><td><span class="day-week-badge">Wk 1</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">9 subscription renewals — heaviest day this week</div></td></tr>
-        <tr class="daily-data-row" data-detail="6 subscription renewals"><td>Tue 25 Mar</td><td class="day-charges">6 charges</td><td class="day-total">$975</td><td><span class="day-week-badge">Wk 1</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">6 subscription renewals</div></td></tr>
-        <tr class="daily-data-row" data-detail="8 subscription renewals"><td>Wed 26 Mar</td><td class="day-charges">8 charges</td><td class="day-total">$1,718</td><td><span class="day-week-badge">Wk 1</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">8 subscription renewals</div></td></tr>
-        <tr class="daily-data-row" data-detail="7 subscription renewals — includes larger 90-day and multi-week subs"><td>Thu 27 Mar</td><td class="day-charges">7 charges</td><td class="day-total">$5,588</td><td><span class="day-week-badge">Wk 1</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">7 subscription renewals — includes larger 90-day and multi-week subs</div></td></tr>
-        <tr class="daily-data-row" data-detail="2 subscription renewals" style="background:rgba(255,255,255,0.01);"><td>Fri 28 Mar</td><td class="day-charges">2 charges</td><td class="day-total">$2,040</td><td><span class="day-week-badge">Wk 2</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">2 subscription renewals</div></td></tr>
-        <tr class="daily-data-row" data-detail="2 subscription renewals"><td>Tue 1 Apr</td><td class="day-charges">2 charges</td><td class="day-total">$378</td><td><span class="day-week-badge">Wk 2</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">2 subscription renewals</div></td></tr>
-        <tr class="daily-data-row" data-detail="1 subscription renewal"><td>Wed 2 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$940</td><td><span class="day-week-badge">Wk 2</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">1 subscription renewal</div></td></tr>
-        <tr class="daily-data-row" data-detail="1 subscription renewal" style="background:rgba(255,255,255,0.01);"><td>Fri 4 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$930</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">1 subscription renewal</div></td></tr>
-        <tr class="daily-data-row" data-detail="7 subscription renewals — bulk renewal day"><td>Sat 5 Apr</td><td class="day-charges">7 charges</td><td class="day-total">$5,118</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">7 subscription renewals — bulk renewal day</div></td></tr>
-        <tr class="daily-data-row" data-detail="2 subscription renewals"><td>Sun 6 Apr</td><td class="day-charges">2 charges</td><td class="day-total">$378</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">2 subscription renewals</div></td></tr>
-        <tr class="daily-data-row" data-detail="1 large subscription renewal"><td>Tue 8 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$2,001</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">1 large subscription renewal</div></td></tr>
-        <tr class="daily-data-row" data-detail="1 subscription renewal"><td>Wed 9 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$231</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">1 subscription renewal</div></td></tr>
-        <tr class="daily-data-row" data-detail="1 large subscription renewal"><td>Thu 10 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$2,001</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">1 large subscription renewal</div></td></tr>
-      </tbody>
-    </table>
-  </div>
 </div>
 
 <!-- ═══ MRR TRAJECTORY ═══ -->
@@ -686,119 +675,169 @@ svg.mrr-chart{width:100%;overflow:visible;}
   document.getElementById('donut-legend').innerHTML=legend;
 })();
 
-// ═══ CASH FLOW ACCORDION ═══
+// ═══ CASH FLOW ACCORDION — THREE-LEVEL DRILL-DOWN ═══
 (function(){
   var cashflowData=null;
-  var openIndex=-1;
+  var openWeekIdx=-1;
+  // Track open day per week: { weekIdx: dayId }
+  var openDayId={};
 
   function fmt(n){return '$'+n.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});}
-  function fmtDate(d){var p=d.split('-');var months=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return p[2]+' '+months[parseInt(p[1])];}
+  function fmtDate(d){
+    var p=d.split('-');
+    var months=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return p[2]+' '+months[parseInt(p[1])];
+  }
+  function esc(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function buildSubscriberCards(subs){
+    if(!subs||!subs.length){return '<div style="font-size:12px;color:rgba(251,248,243,0.3);padding:8px 4px;">No subscriber data for this day.</div>';}
+    // Sort by amount descending
+    var sorted=[].concat(subs).sort(function(a,b){return b.amount-a.amount;});
+    return sorted.map(function(sub){
+      return '<div class="sub-card">'
+        +'<div class="sub-card-left">'
+          +'<div class="sub-name">'+esc(sub.name)+'</div>'
+          +'<div class="sub-email">'+esc(sub.email)+'</div>'
+        +'</div>'
+        +'<div class="sub-card-right">'
+          +'<span class="sub-amount">'+fmt(sub.amount)+'</span>'
+          +'<span class="interval-pill">'+esc(sub.interval)+'</span>'
+          +'<div class="sub-links">'
+            +'<a href="'+esc(sub.stripe_url)+'" target="_blank" rel="noopener" class="btn-stripe">💳 Stripe</a>'
+            +'<a href="'+esc(sub.hubspot_url)+'" target="_blank" rel="noopener" class="btn-hubspot">📋 HubSpot</a>'
+          +'</div>'
+        +'</div>'
+      +'</div>';
+    }).join('');
+  }
 
   function renderAccordion(data){
     var container=document.getElementById('weekAccordion');
     var html='';
     data.weeks.forEach(function(week,i){
-      var maxDay=Math.max.apply(null,week.days.map(function(d){return d.amount;}));
+      var maxDay=week.days.length>0?Math.max.apply(null,week.days.map(function(d){return d.amount;})):1;
       var daysHtml='';
       week.days.forEach(function(day,j){
         var pct=maxDay>0?Math.round(day.amount/maxDay*100):0;
-        daysHtml+='<div class="day-row">';
-        daysHtml+='<div><div class="day-date">'+fmtDate(day.date)+'</div></div>';
-        daysHtml+='<div class="day-name">'+day.day+'</div>';
-        daysHtml+='<div class="day-bar-wrap"><div class="day-bar-track"><div class="day-bar-fill" style="width:0%" data-pct="'+pct+'%"></div></div></div>';
-        daysHtml+='<div style="text-align:right">';
-        daysHtml+='<div class="day-amount">'+fmt(day.amount)+'</div>';
-        daysHtml+='<div><span class="charge-pill">'+day.charges+' charge'+(day.charges!==1?'s':'')+'</span></div>';
-        daysHtml+='</div>';
-        daysHtml+='</div>';
+        var dayId='day-'+i+'-'+j;
+        var subCards=buildSubscriberCards(day.subscribers);
+        daysHtml+='<div class="day-row-wrap">'
+          +'<div class="day-row" id="'+dayId+'" onclick="toggleDay(\''+dayId+'\','+i+')">'
+            +'<div><div class="day-date">'+fmtDate(day.date)+'</div><div style="font-size:10px;color:rgba(251,248,243,0.3);">'+day.day+'</div></div>'
+            +'<div class="day-name"></div>'
+            +'<div class="day-bar-wrap"><div class="day-bar-track"><div class="day-bar-fill" style="width:0%" data-pct="'+pct+'%"></div></div></div>'
+            +'<div style="text-align:right">'
+              +'<div class="day-amount">'+fmt(day.amount)+'</div>'
+              +'<div><span class="charge-pill">'+day.charges+' charge'+(day.charges!==1?'s':'')+'</span></div>'
+            +'</div>'
+            +'<div class="day-chevron">▾</div>'
+          +'</div>'
+          +'<div class="sub-list" id="'+dayId+'-subs">'
+            +'<div class="sub-list-inner">'+subCards+'</div>'
+          +'</div>'
+        +'</div>';
       });
-      html+='<div class="week-card" id="wcard-'+i+'" data-week="'+i+'">';
-      html+='<div class="week-card-header" onclick="toggleWeek('+i+')">';
-      html+='<div class="week-card-left">';
-      html+='<span class="week-card-num">WK '+(i+1)+'</span>';
-      html+='<span class="week-card-label">'+week.label+'</span>';
-      html+='</div>';
-      html+='<span class="week-card-total">'+fmt(week.total)+'</span>';
-      html+='<span class="week-card-chevron">▾</span>';
-      html+='</div>';
-      html+='<div class="week-card-body" id="wbody-'+i+'">';
-      html+='<div class="week-card-inner"><div class="day-rows">'+daysHtml+'</div></div>';
-      html+='</div>';
-      html+='</div>';
+      html+='<div class="week-card" id="wcard-'+i+'" data-week="'+i+'">'
+        +'<div class="week-card-header" onclick="toggleWeek('+i+')">'
+          +'<div class="week-card-left">'
+            +'<span class="week-card-num">WK '+(i+1)+'</span>'
+            +'<span class="week-card-label">'+esc(week.label)+'</span>'
+          +'</div>'
+          +'<span class="week-card-total">'+fmt(week.total)+'</span>'
+          +'<span style="font-size:10px;color:rgba(200,169,81,0.4);flex-shrink:0;">▼ expand</span>'
+          +'<span class="week-card-chevron">▾</span>'
+        +'</div>'
+        +'<div class="week-card-body" id="wbody-'+i+'">'
+          +'<div class="week-card-inner"><div class="day-rows">'+daysHtml+'</div></div>'
+        +'</div>'
+      +'</div>';
     });
     container.innerHTML=html;
   }
 
+  window.toggleDay=function(dayId,weekIdx){
+    var dayEl=document.getElementById(dayId);
+    var subsEl=document.getElementById(dayId+'-subs');
+    if(!dayEl||!subsEl){return;}
+    var isOpen=dayEl.classList.contains('day-expanded');
+
+    // Collapse previously open day in this week
+    var prevDayId=openDayId[weekIdx];
+    if(prevDayId&&prevDayId!==dayId){
+      var prevDay=document.getElementById(prevDayId);
+      var prevSubs=document.getElementById(prevDayId+'-subs');
+      if(prevDay){prevDay.classList.remove('day-expanded');}
+      if(prevSubs){prevSubs.classList.remove('open');}
+    }
+
+    if(isOpen){
+      dayEl.classList.remove('day-expanded');
+      subsEl.classList.remove('open');
+      delete openDayId[weekIdx];
+    }else{
+      dayEl.classList.add('day-expanded');
+      subsEl.classList.add('open');
+      openDayId[weekIdx]=dayId;
+      // Scroll sub list into view
+      setTimeout(function(){dayEl.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  };
+
   window.toggleWeek=function(idx){
-    if(!cashflowData){return;}
-    // Collapse previously open
-    if(openIndex>=0 && openIndex!==idx){
-      var prev=document.getElementById('wcard-'+openIndex);
+    if(!cashflowData){
+      console.warn('[CashFlow] Data not loaded yet — cannot toggle week');
+      return;
+    }
+    // Collapse previously open week
+    if(openWeekIdx>=0&&openWeekIdx!==idx){
+      var prev=document.getElementById('wcard-'+openWeekIdx);
       if(prev){prev.classList.remove('expanded');}
-      // reset bar highlight
-      var prevBar=document.getElementById('svgbar-'+openIndex);
-      if(prevBar){
-        var r=prevBar.querySelector('.bar-rect');
-        if(r){r.setAttribute('opacity','0.9');r.setAttribute('filter','');}
-      }
+      var prevBar=document.getElementById('svgbar-'+openWeekIdx);
+      if(prevBar){var rb=prevBar.querySelector('.bar-rect');if(rb){rb.setAttribute('opacity','0.9');rb.setAttribute('filter','');}}
     }
     var card=document.getElementById('wcard-'+idx);
     if(!card){return;}
     var isOpen=card.classList.contains('expanded');
     if(isOpen){
       card.classList.remove('expanded');
-      openIndex=-1;
+      openWeekIdx=-1;
       var svgBar=document.getElementById('svgbar-'+idx);
       if(svgBar){var r2=svgBar.querySelector('.bar-rect');if(r2){r2.setAttribute('opacity','0.9');r2.setAttribute('filter','');}}
     }else{
       card.classList.add('expanded');
-      openIndex=idx;
-      // Animate mini bars after expand starts
+      openWeekIdx=idx;
+      // Animate mini progress bars
       setTimeout(function(){
         var fills=card.querySelectorAll('.day-bar-fill');
         fills.forEach(function(f){f.style.width=f.getAttribute('data-pct');});
-      },50);
+      },60);
       // Highlight SVG bar
       var svgBar2=document.getElementById('svgbar-'+idx);
       if(svgBar2){var r3=svgBar2.querySelector('.bar-rect');if(r3){r3.setAttribute('opacity','1');r3.setAttribute('filter','drop-shadow(0 0 6px rgba(200,169,81,0.7))');}}
-      // Scroll card into view
+      // Scroll into view
       setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'nearest'});},100);
     }
   };
 
-  // Fetch data
+  // Fetch real data from JSON
   fetch('../data/cashflow-detail.json')
-    .then(function(r){return r.json();})
+    .then(function(r){
+      if(!r.ok){throw new Error('HTTP '+r.status);}
+      return r.json();
+    })
     .then(function(data){
       cashflowData=data;
+      console.log('[CashFlow] Loaded '+data.weeks.length+' weeks of subscriber data');
       renderAccordion(data);
     })
-    .catch(function(){
-      // fallback: hide accordion hint
-      var hint=document.querySelector('.click-hint');
-      if(hint){hint.style.display='none';}
+    .catch(function(err){
+      console.error('[CashFlow] Failed to load cashflow-detail.json:',err);
+      var container=document.getElementById('weekAccordion');
+      if(container){container.innerHTML='<div style="padding:16px;color:rgba(251,248,243,0.4);font-size:12px;">⚠️ Could not load cash flow data. Check console for details.</div>';}
     });
-
-  // ═══ DAILY TABLE — clickable rows ═══
-  document.addEventListener('DOMContentLoaded',function(){
-    var rows=document.querySelectorAll('.daily-data-row');
-    rows.forEach(function(row){
-      row.addEventListener('click',function(){
-        var isSelected=row.classList.contains('row-selected');
-        // Collapse all
-        document.querySelectorAll('.daily-data-row').forEach(function(r){r.classList.remove('row-selected');});
-        document.querySelectorAll('.row-detail-inner').forEach(function(d){d.classList.remove('open');});
-        if(!isSelected){
-          row.classList.add('row-selected');
-          var next=row.nextElementSibling;
-          if(next && next.classList.contains('daily-detail-row')){
-            var inner=next.querySelector('.row-detail-inner');
-            if(inner){inner.classList.add('open');}
-          }
-        }
-      });
-    });
-  });
 })();
 </script>
 </body>
