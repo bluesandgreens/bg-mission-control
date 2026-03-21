@@ -1,0 +1,229 @@
+{
+  "generated": "2026-03-21T13:12:48.440231",
+  "existing_subs": {
+    "source": "stripe",
+    "verified": true,
+    "weekly_forecast": [
+      {
+        "label": "Week 1 (Mar 21-27)",
+        "amount": 14267.4,
+        "charges": 41
+      },
+      {
+        "label": "Week 2 (Mar 28 - Apr 3)",
+        "amount": 3358.0,
+        "charges": 5
+      },
+      {
+        "label": "Week 3 (Apr 4-10)",
+        "amount": 10659.96,
+        "charges": 13
+      },
+      {
+        "label": "Week 4 (Apr 11-17)",
+        "amount": 10562.63,
+        "charges": 9
+      }
+    ],
+    "total_4_week": 38847.99
+  },
+  "ndis_receivables": {
+    "source": "xero",
+    "verified": true,
+    "outstanding": [
+      {
+        "contact": "Jacob Summers c/o My Integra",
+        "amount": 888.0,
+        "status": "AUTHORISED",
+        "note": "4x $222 weekly invoices"
+      },
+      {
+        "contact": "Lavender Plan Management - Derrick Obazee",
+        "amount": 119.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "Josh Johnstone",
+        "amount": 470.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "Declan Tighe",
+        "amount": 232.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "Hugo Tory",
+        "amount": 470.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "THOMAS BALTRAN",
+        "amount": 470.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "Riley Miller",
+        "amount": 232.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "Sebastian Voce",
+        "amount": 472.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "Daniel Stirling-Levis",
+        "amount": 464.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "MARLEY DAVIES",
+        "amount": 498.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "Angela Volvic",
+        "amount": 464.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "JOBIE BEVERIDGE",
+        "amount": 5220.0,
+        "status": "AUTHORISED",
+        "note": "Includes $4,988 FE"
+      },
+      {
+        "contact": "OSCAR WILLIAM NOYCE",
+        "amount": 235.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "DAWSON KIRK",
+        "amount": 235.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "Cohan Bradshaw",
+        "amount": 928.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "Connor Jurd",
+        "amount": 232.0,
+        "status": "AUTHORISED"
+      },
+      {
+        "contact": "Dylan Thomas Jackson",
+        "amount": 120.0,
+        "status": "AUTHORISED"
+      }
+    ],
+    "total_outstanding": 11249.0
+  },
+  "new_close_model": {
+    "source": "stripe_historical",
+    "verified": false,
+    "note": "Based on 90 new subs in last 90 days",
+    "defaults": {
+      "closes_per_week": 7,
+      "avg_first_payment": 699,
+      "weekly_new_revenue": 4893
+    },
+    "payment_distribution": {
+      "weekly": {
+        "pct": 47,
+        "avg_amount": 186,
+        "label": "Weekly ($119-$249)"
+      },
+      "monthly": {
+        "pct": 23,
+        "avg_amount": 499,
+        "label": "Monthly ($189-$940)"
+      },
+      "upfront_90d": {
+        "pct": 9,
+        "avg_amount": 1869,
+        "label": "90-day upfront ($1,808-$2,001)"
+      },
+      "upfront_60d": {
+        "pct": 7,
+        "avg_amount": 1155,
+        "label": "60-day upfront ($930-$1,195)"
+      },
+      "other": {
+        "pct": 14,
+        "avg_amount": 350,
+        "label": "Other (fortnightly, bimonthly)"
+      }
+    },
+    "tier_distribution": {
+      "big_brother": {
+        "pct": 56,
+        "avg_first": 947,
+        "label": "Big Brother ($2,730/90d)"
+      },
+      "lighthouse": {
+        "pct": 37,
+        "avg_first": 425,
+        "label": "Lighthouse ($1,899/90d)"
+      },
+      "other": {
+        "pct": 8,
+        "avg_first": 211,
+        "label": "Other"
+      }
+    },
+    "monthly_trend": {
+      "2025-12": {
+        "new_subs": 6,
+        "first_payments": 3440
+      },
+      "2026-01": {
+        "new_subs": 36,
+        "first_payments": 18054
+      },
+      "2026-02": {
+        "new_subs": 8,
+        "first_payments": 4594
+      },
+      "2026-03": {
+        "new_subs": 40,
+        "first_payments": 36798
+      }
+    }
+  },
+  "costs": {
+    "source": "xero_and_supabase",
+    "verified": true,
+    "monthly": {
+      "mentor_costs": {
+        "amount": 7806,
+        "source": "supabase",
+        "note": "March MTD, 26 mentors"
+      },
+      "payroll_estimate": {
+        "amount": 5395,
+        "source": "xero",
+        "note": "Brodie $1925 + Elliot $1450 + Anthony $1191 + bookkeeper"
+      },
+      "software": {
+        "amount": 2164,
+        "source": "xero",
+        "note": "HubSpot $2079 + Lovable $85"
+      },
+      "ads": {
+        "amount": 4201,
+        "source": "meta_api",
+        "note": "March MTD"
+      }
+    },
+    "total_monthly_known": 19566
+  },
+  "stripe_balance": {
+    "available": 12738.59,
+    "pending": 9805.38,
+    "total": 22543.97,
+    "verified": true
+  }
+}

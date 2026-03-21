@@ -186,6 +186,61 @@ svg.mrr-chart{width:100%;overflow:visible;}
   .unit-grid{grid-template-columns:1fr 1fr;}
   .week-card-total{font-size:15px;}
 }
+
+/* ═══ CASH COLLECTED FORECAST ═══ */
+.ccf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.ccf-card{background:rgba(16,21,32,0.9);border-radius:14px;padding:18px 16px;}
+.ccf-card.locked{border:1px solid rgba(76,175,80,0.3);border-top:3px solid #4CAF50;}
+.ccf-card.ndis{border:1px solid rgba(16,71,145,0.3);border-top:3px solid var(--navy);}
+.ccf-card.projected{border:1px solid rgba(232,160,48,0.3);border-top:3px solid var(--amber);}
+.ccf-card-emoji{font-size:16px;margin-bottom:6px;}
+.ccf-card-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.5);margin-bottom:4px;}
+.ccf-card-val{font-family:'Archivo Black',sans-serif;font-size:26px;color:var(--cream);margin-bottom:4px;}
+.ccf-card.projected .ccf-card-val{color:var(--amber);}
+.ccf-card-note{font-size:10px;color:rgba(251,248,243,0.3);}
+.ccf-grand-total{text-align:center;padding:20px 16px;background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.25);border-radius:12px;margin-bottom:22px;}
+.ccf-grand-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(251,248,243,0.5);margin-bottom:8px;}
+.ccf-grand-val{font-family:'Archivo Black',sans-serif;font-size:44px;color:var(--gold);}
+.ccf-sliders{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+.ccf-slider-group{background:rgba(255,255,255,0.03);border-radius:12px;padding:16px;}
+.ccf-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+.ccf-slider-name{font-size:12px;font-weight:600;color:rgba(251,248,243,0.7);}
+.ccf-slider-val{font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--gold);}
+.ccf-range{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:rgba(255,255,255,0.1);outline:none;margin:4px 0;cursor:pointer;}
+.ccf-range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(200,169,81,0.2);transition:box-shadow 0.2s;}
+.ccf-range::-webkit-slider-thumb:hover{box-shadow:0 0 0 6px rgba(200,169,81,0.25);}
+.ccf-range::-moz-range-thumb{width:22px;height:22px;border:none;border-radius:50%;background:var(--gold);cursor:pointer;}
+.ccf-slider-hints{display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:rgba(251,248,243,0.25);}
+.ccf-scenarios{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap;}
+.ccf-btn{flex:1;min-width:100px;padding:10px 14px;border-radius:10px;border:1px solid rgba(200,169,81,0.3);background:transparent;color:rgba(251,248,243,0.6);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;text-align:center;line-height:1.4;}
+.ccf-btn:hover,.ccf-btn.active{background:rgba(200,169,81,0.12);border-color:var(--gold);color:var(--cream);}
+.ccf-btn .btn-total{display:block;font-size:11px;color:rgba(200,169,81,0.6);margin-top:3px;font-weight:400;}
+.ccf-btn.active .btn-total{color:var(--gold);}
+.ccf-chart-wrap{margin-bottom:20px;}
+.ccf-chart-legend{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;}
+.ccf-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(251,248,243,0.5);}
+.ccf-legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+.ccf-dist-section{margin-bottom:24px;padding:16px;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid rgba(255,255,255,0.04);}
+.ccf-dist-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:14px;}
+.ccf-pill-bars{display:flex;flex-direction:column;gap:9px;}
+.ccf-pill-row{display:flex;align-items:center;gap:10px;}
+.ccf-pill-label{font-size:11px;color:rgba(251,248,243,0.6);width:190px;flex-shrink:0;}
+.ccf-pill-track{flex:1;height:8px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden;}
+.ccf-pill-fill{height:100%;border-radius:4px;}
+.ccf-pill-pct{font-size:11px;color:rgba(251,248,243,0.4);width:32px;text-align:right;flex-shrink:0;}
+.ccf-tier-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.ccf-tier-pill{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;}
+.ccf-trend-section{margin-bottom:24px;}
+.ccf-costs-rows{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
+.ccf-cost-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border-radius:8px;}
+.ccf-cost-name{font-size:13px;color:rgba(251,248,243,0.7);}
+.ccf-cost-note{font-size:10px;color:rgba(251,248,243,0.3);margin-top:2px;}
+.ccf-cost-amt{font-weight:700;color:var(--red);font-size:14px;white-space:nowrap;}
+.ccf-net-row{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:rgba(76,175,80,0.08);border:1px solid rgba(76,175,80,0.2);border-radius:10px;}
+.ccf-net-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.6);}
+.ccf-net-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:#4CAF50;}
+@media(max-width:768px){.ccf-cards{grid-template-columns:1fr 1fr;}.ccf-sliders{grid-template-columns:1fr;}.ccf-grand-val{font-size:34px;}}
+@media(max-width:500px){.ccf-cards{grid-template-columns:1fr;}.ccf-pill-label{width:130px;}.ccf-grand-val{font-size:28px;}}
 </style>
 </head>
 <body>
@@ -223,6 +278,195 @@ svg.mrr-chart{width:100%;overflow:visible;}
     <div class="hero-val" style="color:var(--red);">$8,472</div>
     <div class="hero-sub">$8,109 failed + $363 past due</div>
     <div class="hero-sub2">From Stripe failed charges</div>
+  </div>
+</div>
+
+<!-- ═══ CASH COLLECTED FORECAST — INTERACTIVE MODEL ═══ -->
+<div class="section" id="ccf-section">
+  <div class="section-title">🎯 CASH COLLECTED FORECAST — NEXT 4 WEEKS</div>
+
+  <!-- Summary Cards -->
+  <div class="ccf-cards">
+    <div class="ccf-card locked">
+      <div class="ccf-card-emoji">✅</div>
+      <div class="ccf-card-label">Locked In</div>
+      <div class="ccf-card-val">$38,848</div>
+      <div class="ccf-card-note">Existing Stripe billing cycles · 4 weeks</div>
+    </div>
+    <div class="ccf-card ndis">
+      <div class="ccf-card-emoji">✅</div>
+      <div class="ccf-card-label">NDIS Outstanding</div>
+      <div class="ccf-card-val">$11,249</div>
+      <div class="ccf-card-note">Xero authorised invoices · 17 families</div>
+    </div>
+    <div class="ccf-card projected">
+      <div class="ccf-card-emoji">⚠️</div>
+      <div class="ccf-card-label">New Closes (Projected)</div>
+      <div class="ccf-card-val" id="ccf-new-total">$19,572</div>
+      <div class="ccf-card-note" id="ccf-new-note">7/wk × $699 × 4 weeks</div>
+    </div>
+  </div>
+
+  <!-- Grand Total -->
+  <div class="ccf-grand-total">
+    <div class="ccf-grand-label">Total 4-Week Forecast</div>
+    <div class="ccf-grand-val" id="ccf-grand-total">$69,669</div>
+  </div>
+
+  <!-- Scenario Quick-Picks -->
+  <div style="margin-bottom:10px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);">Quick Scenarios</div>
+  <div class="ccf-scenarios">
+    <button onclick="setCCFScenario(4,500)" class="ccf-btn" id="ccf-btn-0">
+      Conservative
+      <span class="btn-total" id="ccf-btn-total-0">$58,097</span>
+    </button>
+    <button onclick="setCCFScenario(7,699)" class="ccf-btn active" id="ccf-btn-1">
+      Current Pace
+      <span class="btn-total" id="ccf-btn-total-1">$69,669</span>
+    </button>
+    <button onclick="setCCFScenario(12,800)" class="ccf-btn" id="ccf-btn-2">
+      Aggressive
+      <span class="btn-total" id="ccf-btn-total-2">$88,497</span>
+    </button>
+  </div>
+
+  <!-- Sliders -->
+  <div class="ccf-sliders">
+    <div class="ccf-slider-group">
+      <div class="ccf-slider-header">
+        <span class="ccf-slider-name">Closes per week</span>
+        <span class="ccf-slider-val" id="ccf-closes-val">7</span>
+      </div>
+      <input type="range" min="0" max="15" step="1" value="7" id="ccf-closes-slider" class="ccf-range">
+      <div class="ccf-slider-hints"><span>0</span><span>15</span></div>
+    </div>
+    <div class="ccf-slider-group">
+      <div class="ccf-slider-header">
+        <span class="ccf-slider-name">Avg first payment</span>
+        <span class="ccf-slider-val" id="ccf-payment-val">$699</span>
+      </div>
+      <input type="range" min="200" max="1500" step="50" value="699" id="ccf-payment-slider" class="ccf-range">
+      <div class="ccf-slider-hints"><span>$200</span><span>$1,500</span></div>
+    </div>
+  </div>
+
+  <!-- Stacked Bar Chart -->
+  <div class="ccf-chart-wrap">
+    <svg id="ccf-bar-chart" viewBox="0 0 560 220" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:640px;display:block;"></svg>
+    <div class="ccf-chart-legend">
+      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#104791;"></div>Existing Subs (Stripe)</div>
+      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#C8A951;"></div>NDIS (Xero)</div>
+      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#386217;"></div>Projected New Closes</div>
+    </div>
+  </div>
+
+  <!-- How New Closes Distribute -->
+  <div class="ccf-dist-section">
+    <div class="ccf-dist-title">💡 How New Closes Distribute — 90 Days of Real Sign-Up Data</div>
+    <div class="ccf-pill-bars">
+      <div class="ccf-pill-row">
+        <div class="ccf-pill-label">Weekly ($119–$249/wk)</div>
+        <div class="ccf-pill-track"><div class="ccf-pill-fill" style="width:47%;background:#104791;"></div></div>
+        <div class="ccf-pill-pct">47%</div>
+      </div>
+      <div class="ccf-pill-row">
+        <div class="ccf-pill-label">Monthly ($189–$940)</div>
+        <div class="ccf-pill-track"><div class="ccf-pill-fill" style="width:23%;background:#5a9fd4;"></div></div>
+        <div class="ccf-pill-pct">23%</div>
+      </div>
+      <div class="ccf-pill-row">
+        <div class="ccf-pill-label">Upfront 60–90 day ($930–$2,001)</div>
+        <div class="ccf-pill-track"><div class="ccf-pill-fill" style="width:16%;background:#C8A951;"></div></div>
+        <div class="ccf-pill-pct">16%</div>
+      </div>
+      <div class="ccf-pill-row">
+        <div class="ccf-pill-label">Other patterns</div>
+        <div class="ccf-pill-track"><div class="ccf-pill-fill" style="width:14%;background:rgba(255,255,255,0.2);"></div></div>
+        <div class="ccf-pill-pct">14%</div>
+      </div>
+    </div>
+    <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.05);">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.35);margin-bottom:8px;">Program Tier Split</div>
+      <div class="ccf-tier-pills">
+        <div class="ccf-tier-pill" style="background:rgba(16,71,145,0.2);border:1px solid rgba(16,71,145,0.4);color:rgba(251,248,243,0.8);">🎯 Big Brother · 56% · avg $947 first payment</div>
+        <div class="ccf-tier-pill" style="background:rgba(56,98,23,0.2);border:1px solid rgba(56,98,23,0.4);color:rgba(251,248,243,0.8);">🏠 Lighthouse · 37% · avg $425 first payment</div>
+        <div class="ccf-tier-pill" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(251,248,243,0.45);">Other · 8% · avg $211</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Monthly Trend -->
+  <div class="ccf-trend-section">
+    <div class="ccf-dist-title" style="margin-bottom:12px;">📅 New Sub Revenue — Last 4 Months</div>
+    <svg viewBox="0 0 460 165" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:500px;display:block;">
+      <!-- Grid -->
+      <line x1="50" y1="20" x2="450" y2="20" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+      <line x1="50" y1="57" x2="450" y2="57" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+      <line x1="50" y1="94" x2="450" y2="94" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+      <!-- Y axis labels: 0–40K, plotH=100, baseline=125 -->
+      <text x="46" y="24" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$40K</text>
+      <text x="46" y="61" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$27K</text>
+      <text x="46" y="98" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$13K</text>
+      <text x="46" y="128" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$0</text>
+      <!-- Baseline -->
+      <line x1="50" y1="125" x2="450" y2="125" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <!-- Dec 2025: $3,440 → h=3440/40000*105=9, top=116 -->
+      <rect x="65" y="116" width="65" height="9" rx="3" fill="#104791" opacity="0.75"/>
+      <text x="97" y="111" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">$3.4K</text>
+      <text x="97" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Dec</text>
+      <text x="97" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">6 subs</text>
+      <!-- Jan 2026: $18,054 → h=47, top=78 -->
+      <rect x="165" y="78" width="65" height="47" rx="3" fill="#386217" opacity="0.75"/>
+      <text x="197" y="73" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">$18K</text>
+      <text x="197" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Jan</text>
+      <text x="197" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">36 subs</text>
+      <!-- Feb 2026: $4,594 → h=12, top=113 -->
+      <rect x="265" y="113" width="65" height="12" rx="3" fill="#104791" opacity="0.75"/>
+      <text x="297" y="108" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">$4.6K</text>
+      <text x="297" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Feb</text>
+      <text x="297" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">8 subs</text>
+      <!-- Mar 2026: $36,798 → h=96.6, top=28.4 -->
+      <rect x="365" y="29" width="65" height="96" rx="3" fill="#C8A951" opacity="0.9"/>
+      <text x="397" y="23" text-anchor="middle" font-family="Archivo Black" font-size="10" fill="#C8A951">$36.8K</text>
+      <text x="397" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Mar</text>
+      <text x="397" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">40 subs</text>
+    </svg>
+    <p class="note" style="margin-top:8px;">March 2026 showing strong momentum — 5× January revenue from new sign-ups.</p>
+  </div>
+
+  <!-- Known Monthly Costs & Net -->
+  <div>
+    <div class="ccf-dist-title" style="margin-bottom:12px;">💼 Known Monthly Costs vs Projected Net</div>
+    <div class="ccf-costs-rows">
+      <div class="ccf-cost-row">
+        <div><div class="ccf-cost-name">Mentor costs ✅</div><div class="ccf-cost-note">Supabase invoices · March MTD · 26 mentors</div></div>
+        <div class="ccf-cost-amt">−$7,806</div>
+      </div>
+      <div class="ccf-cost-row">
+        <div><div class="ccf-cost-name">Team payroll ✅</div><div class="ccf-cost-note">Brodie $1,925 + Elliot $1,450 + Anthony $1,191 + bookkeeper ~$829</div></div>
+        <div class="ccf-cost-amt">−$5,395</div>
+      </div>
+      <div class="ccf-cost-row">
+        <div><div class="ccf-cost-name">Software ✅</div><div class="ccf-cost-note">HubSpot $2,079 + Lovable $85</div></div>
+        <div class="ccf-cost-amt">−$2,164</div>
+      </div>
+      <div class="ccf-cost-row">
+        <div><div class="ccf-cost-name">Ad spend ✅</div><div class="ccf-cost-note">Meta Ads API · March MTD</div></div>
+        <div class="ccf-cost-amt">−$4,201</div>
+      </div>
+      <div class="ccf-cost-row" style="background:rgba(224,82,82,0.05);border:1px solid rgba(224,82,82,0.12);border-radius:8px;">
+        <div><div class="ccf-cost-name" style="font-weight:700;">Total known costs / month</div></div>
+        <div class="ccf-cost-amt" style="font-size:15px;">−$19,566</div>
+      </div>
+    </div>
+    <div class="ccf-net-row">
+      <div>
+        <div class="ccf-net-label">Projected Monthly Net</div>
+        <div style="font-size:10px;color:rgba(251,248,243,0.3);margin-top:3px;">Based on 4-week forecast pace · known costs only</div>
+      </div>
+      <div class="ccf-net-val" id="ccf-monthly-net">$55,912</div>
+    </div>
+    <p class="note">⚠️ Full P&amp;L requires payroll (Rye, Norri, Harry) + rent + misc from Xero. Known costs only shown above.</p>
   </div>
 </div>
 
@@ -480,35 +724,55 @@ svg.mrr-chart{width:100%;overflow:visible;}
 
   <div class="pnl-row">
     <div>
-      <div class="pnl-name">Gross Revenue (March est.) ⚠️</div>
-      <div class="pnl-note">Full month at current MRR $67,287</div>
+      <div class="pnl-name">Revenue (MRR) ✅</div>
+      <div class="pnl-note">92 active subscriptions · real-time from Stripe</div>
     </div>
-    <div class="pnl-amount green">~$67,287</div>
+    <div class="pnl-amount green">$67,287</div>
   </div>
   <div class="pnl-row">
     <div>
-      <div class="pnl-name">Mentor Costs (March actual) ✅</div>
-      <div class="pnl-note">From Supabase invoices — actual spend</div>
+      <div class="pnl-name">Mentor Costs ✅</div>
+      <div class="pnl-note">Supabase invoices · March MTD · 26 mentors</div>
     </div>
     <div class="pnl-amount red">−$7,806</div>
   </div>
   <div class="pnl-row">
     <div>
-      <div class="pnl-name">Ad Spend MTD (March actual) ✅</div>
-      <div class="pnl-note">Meta Ads API — actual spend</div>
+      <div class="pnl-name">Team Payroll ✅</div>
+      <div class="pnl-note">Brodie $1,925 + Elliot $1,450 + Anthony $1,191 + bookkeeper ~$829</div>
+    </div>
+    <div class="pnl-amount red">−$5,395</div>
+  </div>
+  <div class="pnl-row">
+    <div>
+      <div class="pnl-name">Software ✅</div>
+      <div class="pnl-note">HubSpot $2,079 + Lovable $85</div>
+    </div>
+    <div class="pnl-amount red">−$2,164</div>
+  </div>
+  <div class="pnl-row">
+    <div>
+      <div class="pnl-name">Ad Spend ✅</div>
+      <div class="pnl-note">Meta Ads API · March MTD actual</div>
     </div>
     <div class="pnl-amount red">−$4,201</div>
   </div>
+  <div class="pnl-row" style="background:rgba(224,82,82,0.05);border:1px solid rgba(224,82,82,0.12);">
+    <div>
+      <div class="pnl-name">Known Expenses Total</div>
+    </div>
+    <div class="pnl-amount red">−$19,566</div>
+  </div>
   <div class="pnl-row total-row">
     <div>
-      <div class="pnl-name" style="font-weight:700;color:var(--cream);">Gross Profit (est.) ⚠️</div>
-      <div class="pnl-note">Revenue − Mentor Costs − Ad Spend</div>
+      <div class="pnl-name" style="font-weight:700;color:var(--cream);">Gross Profit (Known) ✅</div>
+      <div class="pnl-note">MRR $67,287 − known costs $19,566</div>
     </div>
-    <div class="pnl-amount gold">~$55,280</div>
+    <div class="pnl-amount gold">$47,721</div>
   </div>
 
   <div style="margin-top:16px;padding:12px 16px;background:rgba(232,160,48,0.06);border:1px solid rgba(232,160,48,0.15);border-radius:10px;font-size:12px;color:rgba(251,248,243,0.5);line-height:1.7;">
-    ⚠️ <strong style="color:var(--amber);">Partial P&L only.</strong> Other operating costs (payroll, software, rent, tax) require Xero access — not yet connected. Revenue is estimated as full-month MRR; actual may differ due to mid-cycle starts/cancels.
+    ⚠️ <strong style="color:var(--amber);">Partial P&L.</strong> Full picture requires payroll for Rye, Norri &amp; Harry + rent + misc from Xero. Gross profit shown above excludes founder/senior payroll and fixed overhead.
   </div>
 </div>
 
@@ -838,6 +1102,145 @@ svg.mrr-chart{width:100%;overflow:visible;}
       var container=document.getElementById('weekAccordion');
       if(container){container.innerHTML='<div style="padding:16px;color:rgba(251,248,243,0.4);font-size:12px;">⚠️ Could not load cash flow data. Check console for details.</div>';}
     });
+})();
+
+// ═══ CASH COLLECTED FORECAST — INTERACTIVE MODEL ═══
+(function(){
+  var LOCKED_IN=38848;
+  var NDIS_TOTAL=11249;
+  var NDIS_PER_WEEK=2812;
+  var EXISTING_SUBS=[14267,3358,10660,10563];
+  var WEEK_LABELS=['Mar 21–27','Mar 28–Apr 3','Apr 4–10','Apr 11–17'];
+  var MONTHLY_COSTS=19566;
+  var SCENARIOS=[{closes:4,payment:500},{closes:7,payment:699},{closes:12,payment:800}];
+  var closesPerWeek=7;
+  var avgPayment=699;
+
+  function fmtNum(n){
+    return '$'+Math.round(n).toLocaleString('en-AU');
+  }
+
+  function calcNewWeekly(){return closesPerWeek*avgPayment;}
+  function calcNewTotal(){return calcNewWeekly()*4;}
+  function calcGrandTotal(){return LOCKED_IN+NDIS_TOTAL+calcNewTotal();}
+  function calcMonthlyNet(){return (calcGrandTotal()/4)*4.33-MONTHLY_COSTS;}
+
+  function updateSliderTrack(id,val,min,max){
+    var el=document.getElementById(id);
+    if(!el)return;
+    var pct=Math.max(0,Math.min(100,(val-min)/(max-min)*100)).toFixed(1);
+    el.style.background='linear-gradient(to right,#104791 0%,#104791 '+pct+'%,rgba(255,255,255,0.1) '+pct+'%)';
+  }
+
+  function updateScenarioBtns(){
+    SCENARIOS.forEach(function(s,i){
+      var btn=document.getElementById('ccf-btn-'+i);
+      var totalEl=document.getElementById('ccf-btn-total-'+i);
+      var total=LOCKED_IN+NDIS_TOTAL+s.closes*s.payment*4;
+      if(totalEl)totalEl.textContent=fmtNum(total);
+      if(btn){
+        var active=(closesPerWeek===s.closes&&avgPayment===s.payment);
+        btn.classList.toggle('active',active);
+      }
+    });
+  }
+
+  function renderStackedChart(){
+    var svg=document.getElementById('ccf-bar-chart');
+    if(!svg)return;
+    var vW=560,vH=220,mL=56,mR=24,mT=34,mB=60;
+    var plotW=vW-mL-mR,plotH=vH-mT-mB;
+    var barW=76;
+    var bars=EXISTING_SUBS.map(function(sub){
+      var nw=calcNewWeekly();
+      return{stripe:sub,ndis:NDIS_PER_WEEK,newc:nw,total:sub+NDIS_PER_WEEK+nw};
+    });
+    var maxTotal=Math.max.apply(null,bars.map(function(b){return b.total;}));
+    var scaleMax=maxTotal*1.18;
+    var scale=scaleMax>0?plotH/scaleMax:1;
+    var gap=(plotW-4*barW)/5;
+    // Y ticks
+    var yTickStep=scaleMax>40000?10000:scaleMax>20000?5000:2500;
+    var html='';
+    for(var t=0;t<=scaleMax;t+=yTickStep){
+      var ty=(mT+plotH-t*scale);
+      if(ty<mT-2)break;
+      html+='<line x1="'+mL+'" y1="'+ty.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+ty.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
+      html+='<text x="'+(mL-5)+'" y="'+(ty+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(t/1000).toFixed(0)+'K</text>';
+    }
+    // Baseline
+    var baseY=mT+plotH;
+    html+='<line x1="'+mL+'" y1="'+baseY+'" x2="'+(vW-mR)+'" y2="'+baseY+'" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>';
+    bars.forEach(function(bar,i){
+      var bx=mL+gap+i*(barW+gap);
+      // Stripe (navy bottom)
+      var h1=Math.max(0,bar.stripe*scale);
+      var y1=baseY-h1;
+      html+='<rect x="'+bx.toFixed(0)+'" y="'+y1.toFixed(0)+'" width="'+barW+'" height="'+h1.toFixed(0)+'" fill="#104791" opacity="0.9"/>';
+      // NDIS (gold middle)
+      var h2=Math.max(0,bar.ndis*scale);
+      var y2=y1-h2;
+      html+='<rect x="'+bx.toFixed(0)+'" y="'+y2.toFixed(0)+'" width="'+barW+'" height="'+h2.toFixed(0)+'" fill="#C8A951" opacity="0.9"/>';
+      // New closes (green top, rounded corners only if height > 0)
+      var h3=Math.max(0,bar.newc*scale);
+      var y3=y2-h3;
+      if(h3>0){
+        html+='<rect x="'+bx.toFixed(0)+'" y="'+y3.toFixed(0)+'" width="'+barW+'" height="'+h3.toFixed(0)+'" rx="4" fill="#386217" opacity="0.9"/>';
+      }
+      // Total label above bar
+      var topY=h3>0?y3:y2;
+      html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(topY-6).toFixed(0)+'" text-anchor="middle" font-family="Archivo Black" font-size="10" fill="rgba(251,248,243,0.9)">'+fmtNum(bar.total)+'</text>';
+      // Week labels below
+      html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(baseY+14).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.55)">'+WEEK_LABELS[i]+'</text>';
+      html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(baseY+26).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.28)">Week '+(i+1)+'</text>';
+    });
+    svg.innerHTML=html;
+  }
+
+  function updateUI(){
+    var el;
+    el=document.getElementById('ccf-new-total');
+    if(el)el.textContent=fmtNum(calcNewTotal());
+    el=document.getElementById('ccf-new-note');
+    if(el)el.textContent=closesPerWeek+'/wk × $'+avgPayment.toLocaleString('en-AU')+' × 4 weeks';
+    el=document.getElementById('ccf-grand-total');
+    if(el)el.textContent=fmtNum(calcGrandTotal());
+    el=document.getElementById('ccf-monthly-net');
+    if(el)el.textContent=fmtNum(calcMonthlyNet());
+    el=document.getElementById('ccf-closes-val');
+    if(el)el.textContent=closesPerWeek;
+    el=document.getElementById('ccf-payment-val');
+    if(el)el.textContent='$'+avgPayment.toLocaleString('en-AU');
+    updateSliderTrack('ccf-closes-slider',closesPerWeek,0,15);
+    updateSliderTrack('ccf-payment-slider',avgPayment,200,1500);
+    updateScenarioBtns();
+    renderStackedChart();
+  }
+
+  window.setCCFScenario=function(closes,payment){
+    closesPerWeek=closes;
+    avgPayment=payment;
+    var s1=document.getElementById('ccf-closes-slider');
+    var s2=document.getElementById('ccf-payment-slider');
+    if(s1)s1.value=closes;
+    if(s2)s2.value=payment;
+    updateUI();
+  };
+
+  function init(){
+    var s1=document.getElementById('ccf-closes-slider');
+    var s2=document.getElementById('ccf-payment-slider');
+    if(s1){s1.addEventListener('input',function(){closesPerWeek=parseInt(this.value)||0;updateUI();});}
+    if(s2){s2.addEventListener('input',function(){avgPayment=parseInt(this.value)||200;updateUI();});}
+    updateUI();
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',init);
+  }else{
+    init();
+    setTimeout(updateUI,60);
+  }
 })();
 </script>
 </body>
