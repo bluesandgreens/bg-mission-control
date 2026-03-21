@@ -322,6 +322,37 @@ svg.mrr-chart{width:100%;overflow:visible;}
 .fm-lever-name{font-size:11px;font-weight:600;color:rgba(255,255,255,0.9);white-space:nowrap;}
 .fm-lever-impact{font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0;margin-left:auto;white-space:nowrap;}
 
+/* ═══ 12-MONTH FINANCIAL MODEL ═══ */
+.fin-inputs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+.fin-input-group{background:rgba(255,255,255,0.03);border-radius:10px;padding:10px 12px;}
+.fin-input-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:4px;}
+.fin-input-field{display:flex;align-items:center;gap:4px;}
+.fin-input-field input{background:rgba(255,255,255,0.06);border:1px solid rgba(200,169,81,0.2);border-radius:6px;color:var(--gold);font-family:'Archivo Black',sans-serif;font-size:16px;padding:6px 8px;width:100%;outline:none;transition:border-color 0.2s;}
+.fin-input-field input:focus{border-color:var(--gold);}
+.fin-input-prefix{font-size:14px;color:rgba(251,248,243,0.4);flex-shrink:0;}
+.cohort-table-wrap{overflow-x:auto;margin-bottom:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);}
+.cohort-table{width:100%;border-collapse:collapse;min-width:900px;font-size:11px;}
+.cohort-table th{padding:8px 10px;text-align:right;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(251,248,243,0.4);border-bottom:1px solid rgba(255,255,255,0.08);white-space:nowrap;position:sticky;top:0;background:#0C1018;}
+.cohort-table th:first-child{text-align:left;min-width:160px;position:sticky;left:0;z-index:2;}
+.cohort-table td{padding:6px 10px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.03);white-space:nowrap;}
+.cohort-table td:first-child{text-align:left;font-weight:600;color:rgba(251,248,243,0.6);position:sticky;left:0;background:#0C1018;z-index:1;}
+.cohort-table .section-header-row td{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,169,81,0.6);padding-top:12px;border-bottom:1px solid rgba(200,169,81,0.15);background:rgba(200,169,81,0.03);}
+.cohort-table .section-header-row td:first-child{background:rgba(200,169,81,0.03);}
+.cohort-table .total-row td{font-family:'Archivo Black',sans-serif;font-size:13px;color:var(--gold);border-top:2px solid rgba(200,169,81,0.3);border-bottom:2px solid rgba(200,169,81,0.3);background:rgba(200,169,81,0.04);padding:8px 10px;}
+.cohort-table .total-row td:first-child{background:rgba(200,169,81,0.04);}
+.cohort-table .profit-positive{color:#4CAF50;font-weight:700;}
+.cohort-table .profit-negative{color:var(--red);font-weight:700;}
+.cohort-table .cash-row td{font-family:'Archivo Black',sans-serif;color:#5a9fd4;font-size:13px;background:rgba(16,71,145,0.05);}
+.cohort-table .cash-row td:first-child{background:rgba(16,71,145,0.05);}
+.cohort-detail-row{cursor:pointer;transition:background 0.15s;}
+.cohort-detail-row:hover{background:rgba(200,169,81,0.05)!important;}
+.cohort-toggle-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:8px;border:1px solid rgba(200,169,81,0.2);background:rgba(200,169,81,0.06);color:rgba(251,248,243,0.6);font-size:11px;font-weight:600;cursor:pointer;transition:all 0.2s;margin-bottom:12px;}
+.cohort-toggle-btn:hover{background:rgba(200,169,81,0.12);border-color:var(--gold);color:var(--cream);}
+.cohort-hidden{display:none;}
+.milestone-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:8px;font-size:11px;font-weight:700;margin-right:8px;margin-bottom:6px;}
+.milestone-badge.gold-m{background:rgba(200,169,81,0.12);color:var(--gold);border:1px solid rgba(200,169,81,0.3);}
+.milestone-badge.green-m{background:rgba(76,175,80,0.12);color:#4CAF50;border:1px solid rgba(76,175,80,0.3);}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero-grid{grid-template-columns:repeat(2,1fr);}
@@ -334,6 +365,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
   .funnel-stage-info{width:120px;}
   .fm-summary-strip{grid-template-columns:repeat(2,1fr);}
   .fm-slider-grid{grid-template-columns:1fr;}
+  .fin-inputs-grid{grid-template-columns:repeat(2,1fr);}
 }
 @media(max-width:600px){
   .sub-card{flex-direction:column;align-items:flex-start;}
@@ -348,6 +380,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
   .funnel-stage-info{width:100%;text-align:left;display:flex;justify-content:space-between;}
   .ccf-scenarios{grid-template-columns:1fr 1fr;}
   .fm-summary-strip{grid-template-columns:1fr 1fr;}
+  .fin-inputs-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:480px){
   .container{padding:20px 12px 60px;}
@@ -690,22 +723,80 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <div style="margin-top:24px;">
     <div class="section-title" style="font-size:14px;">🎯 HIGHEST IMPACT LEVERS</div>
     <div class="section-divider"></div>
-    <p style="font-size:11px;color:rgba(251,248,243,0.4);margin-bottom:14px;">Which input improvement adds the most monthly revenue?</p>
+    <p style="font-size:11px;color:rgba(251,248,243,0.4);margin-bottom:14px;">Which input improvement adds the most revenue over 12 months? (compounds through cohort retention)</p>
     <div id="fm-sensitivity"></div>
   </div>
 
-  <!-- ═══ 12-MONTH PROJECTION ═══ -->
+  <!-- ═══ 12-MONTH FINANCIAL MODEL ═══ -->
   <div style="margin-top:36px;">
-    <div class="section-title" style="font-size:14px;">📈 12-MONTH REVENUE PROJECTION</div>
+    <div class="section-title" style="font-size:14px;">📈 12-MONTH FINANCIAL FORECAST — <span id="fm-forecast-range">March 2026 to February 2027</span></div>
     <div class="section-divider"></div>
-    <div style="overflow-x:auto;">
-      <svg id="projection-chart" viewBox="0 0 900 300" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:960px;display:block;"></svg>
+
+    <!-- Financial Model Inputs -->
+    <div style="margin-bottom:8px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.35);">Financial Model Inputs</div>
+    <div class="fin-inputs-grid">
+      <div class="fin-input-group">
+        <div class="fin-input-label">Starting Families</div>
+        <div class="fin-input-field"><input type="number" id="fm-start-families" value="67" min="0" max="500" onchange="updateFunnel()"></div>
+      </div>
+      <div class="fin-input-group">
+        <div class="fin-input-label">Starting Cash</div>
+        <div class="fin-input-field"><span class="fin-input-prefix">$</span><input type="number" id="fm-start-cash" value="22544" min="0" onchange="updateFunnel()"></div>
+      </div>
+      <div class="fin-input-group">
+        <div class="fin-input-label">Monthly OPEX Baseline</div>
+        <div class="fin-input-field"><span class="fin-input-prefix">$</span><input type="number" id="fm-opex-baseline" value="7560" min="0" onchange="updateFunnel()"></div>
+      </div>
+      <div class="fin-input-group">
+        <div class="fin-input-label">Mentor Cost / Family</div>
+        <div class="fin-input-field"><span class="fin-input-prefix">$</span><input type="number" id="fm-mentor-cost" value="84.85" min="0" step="0.01" onchange="updateFunnel()"></div>
+      </div>
+      <div class="fin-input-group">
+        <div class="fin-input-label">Avg Revenue / Family</div>
+        <div class="fin-input-field"><span class="fin-input-prefix">$</span><input type="number" id="fm-rev-per-family" value="731" min="0" onchange="updateFunnel()"></div>
+      </div>
+      <div class="fin-input-group">
+        <div class="fin-input-label">Hire Threshold (families)</div>
+        <div class="fin-input-field"><input type="number" id="fm-hire-threshold" value="30" min="1" onchange="updateFunnel()"> <span style="font-size:10px;color:rgba(251,248,243,0.3);white-space:nowrap;">+$<input type="number" id="fm-hire-cost" value="2000" min="0" style="width:60px;background:rgba(255,255,255,0.06);border:1px solid rgba(200,169,81,0.2);border-radius:4px;color:var(--gold);font-size:12px;padding:2px 4px;" onchange="updateFunnel()">/mo</span></div>
+      </div>
     </div>
-    <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;">
-      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#C8A951;"></div>Current Settings</div>
-      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#4CAF50;"></div>+10% Retention</div>
+
+    <!-- Milestones -->
+    <div id="fm-milestones" style="margin-bottom:16px;"></div>
+
+    <!-- Cohort Table -->
+    <button class="cohort-toggle-btn" id="cohort-toggle-btn" onclick="toggleCohortDetail()">
+      <span id="cohort-toggle-icon">▶</span> Show Cohort Detail
+    </button>
+    <div class="cohort-table-wrap">
+      <table class="cohort-table" id="cohort-table"></table>
     </div>
-    <div id="projection-table" style="margin-top:16px;"></div>
+
+    <!-- Revenue & Families Chart -->
+    <div style="margin-top:24px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.35);margin-bottom:10px;">Revenue & Growth Trajectory</div>
+      <div style="overflow-x:auto;">
+        <svg id="projection-chart" viewBox="0 0 940 320" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:960px;display:block;"></svg>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;">
+        <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#C8A951;"></div>Total Active Families</div>
+        <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#4CAF50;"></div>Monthly Revenue</div>
+        <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#104791;"></div>Monthly Net Profit</div>
+        <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:rgba(200,169,81,0.4);border:1px dashed var(--gold);"></div>$80K MRR</div>
+        <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:rgba(76,175,80,0.4);border:1px dashed #4CAF50;"></div>$100K MRR</div>
+      </div>
+    </div>
+
+    <!-- Cash in Bank Chart -->
+    <div style="margin-top:24px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.35);margin-bottom:10px;">Cumulative Cash Position</div>
+      <div style="overflow-x:auto;">
+        <svg id="cash-chart" viewBox="0 0 940 220" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:960px;display:block;"></svg>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;">
+        <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:rgba(76,175,80,0.3);border:1px solid #4CAF50;"></div>Cash in Bank</div>
+      </div>
+    </div>
   </div>
 
   <!-- Known Monthly Costs & Net -->
@@ -983,17 +1074,29 @@ var FM = {
   ret60to90: 68,
   ret90plus: 90,
   avgMonthlyRev: 731,
-  mentorCostPerMonth: 84.85
+  mentorCostPerMonth: 84.85,
+  // Financial model inputs
+  startingFamilies: 67,
+  startingCash: 22544,
+  opexBaseline: 7560,
+  mentorCostPerFamily: 84.85,
+  hireThreshold: 30,
+  hireCost: 2000
 };
 
 var FM_SCENARIOS = {
-  conservative: {adSpendPerDay:100,cpbc:35,showRate:40,closeRate:30,closeToW1:55,w1ToW2:80,w2To30d:70,ret30to60:65,ret60to90:60,ret90plus:85},
-  current:      {adSpendPerDay:140,cpbc:25,showRate:45,closeRate:37,closeToW1:62,w1ToW2:85,w2To30d:78,ret30to60:72,ret60to90:68,ret90plus:90},
-  aggressive:   {adSpendPerDay:200,cpbc:22,showRate:50,closeRate:42,closeToW1:75,w1ToW2:90,w2To30d:82,ret30to60:78,ret60to90:78,ret90plus:92},
-  dream:        {adSpendPerDay:300,cpbc:20,showRate:55,closeRate:48,closeToW1:80,w1ToW2:95,w2To30d:88,ret30to60:85,ret60to90:85,ret90plus:95}
+  conservative: {adSpendPerDay:100,cpbc:35,showRate:40,closeRate:30,closeToW1:55,w1ToW2:80,w2To30d:70,ret30to60:65,ret60to90:60,ret90plus:85,startingFamilies:67,startingCash:22544,opexBaseline:7560,mentorCostPerFamily:84.85,hireThreshold:30,hireCost:2000},
+  current:      {adSpendPerDay:140,cpbc:25,showRate:45,closeRate:37,closeToW1:62,w1ToW2:85,w2To30d:78,ret30to60:72,ret60to90:68,ret90plus:90,startingFamilies:67,startingCash:22544,opexBaseline:7560,mentorCostPerFamily:84.85,hireThreshold:30,hireCost:2000},
+  aggressive:   {adSpendPerDay:200,cpbc:22,showRate:50,closeRate:42,closeToW1:75,w1ToW2:90,w2To30d:82,ret30to60:78,ret60to90:78,ret90plus:92,startingFamilies:67,startingCash:22544,opexBaseline:8560,mentorCostPerFamily:84.85,hireThreshold:30,hireCost:2000},
+  dream:        {adSpendPerDay:300,cpbc:20,showRate:55,closeRate:48,closeToW1:80,w1ToW2:95,w2To30d:88,ret30to60:85,ret60to90:85,ret90plus:95,startingFamilies:67,startingCash:22544,opexBaseline:8560,mentorCostPerFamily:84.85,hireThreshold:25,hireCost:2000}
 };
 
 var MONTHLY_COSTS_BASE = 15365; // mentor + payroll + software (excl ads)
+var cohortDetailVisible = false;
+
+// Month names for 12-month forecast starting March 2026
+var FORECAST_MONTHS = ['Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb'];
+var FORECAST_MONTHS_FULL = ['Mar 26','Apr 26','May 26','Jun 26','Jul 26','Aug 26','Sep 26','Oct 26','Nov 26','Dec 26','Jan 27','Feb 27'];
 
 function fmtNum(n){return '$'+Math.round(n).toLocaleString('en-AU');}
 function fmt(n){return '$'+n.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});}
@@ -1063,6 +1166,14 @@ function readSliders(){
   FM.ret30to60=parseInt(document.getElementById('fm-r60').value)||72;
   FM.ret60to90=parseInt(document.getElementById('fm-r90').value)||68;
   FM.ret90plus=parseInt(document.getElementById('fm-r90p').value)||90;
+  // Financial model inputs
+  FM.startingFamilies=parseInt(document.getElementById('fm-start-families').value)||67;
+  FM.startingCash=parseFloat(document.getElementById('fm-start-cash').value)||22544;
+  FM.opexBaseline=parseFloat(document.getElementById('fm-opex-baseline').value)||7560;
+  FM.mentorCostPerFamily=parseFloat(document.getElementById('fm-mentor-cost').value)||84.85;
+  FM.avgMonthlyRev=parseFloat(document.getElementById('fm-rev-per-family').value)||731;
+  FM.hireThreshold=parseInt(document.getElementById('fm-hire-threshold').value)||30;
+  FM.hireCost=parseFloat(document.getElementById('fm-hire-cost').value)||2000;
 }
 
 // ═══ MASTER UPDATE ═══
@@ -1218,124 +1329,394 @@ function renderFunnelViz(f){
   document.getElementById('funnel-viz').innerHTML = html;
 }
 
-// ═══ SENSITIVITY ANALYSIS ═══
+// ═══ COHORT-BASED 12-MONTH MODEL ═══
+function cohortSurvival(size, age, rates) {
+  if (age === 0) return size;
+  if (age === 1) return size * rates.w1w2 * rates.w2_30;
+  if (age === 2) return size * rates.w1w2 * rates.w2_30 * rates.r30_60;
+  if (age === 3) return size * rates.w1w2 * rates.w2_30 * rates.r30_60 * rates.r60_90;
+  return size * rates.w1w2 * rates.w2_30 * rates.r30_60 * rates.r60_90 * Math.pow(rates.r90p, age - 3);
+}
+
+function runCohortModel(params) {
+  var p = params || FM;
+  var monthlySpend = p.adSpendPerDay * 30;
+  var bookedCalls = p.cpbc > 0 ? monthlySpend / p.cpbc : 0;
+  var dcsTaken = bookedCalls * (p.showRate / 100);
+  var closes = dcsTaken * (p.closeRate / 100);
+  var w1Starts = closes * (p.closeToW1 / 100);
+
+  var rates = {
+    w1w2: p.w1ToW2 / 100,
+    w2_30: p.w2To30d / 100,
+    r30_60: p.ret30to60 / 100,
+    r60_90: p.ret60to90 / 100,
+    r90p: p.ret90plus / 100
+  };
+
+  var startFam = p.startingFamilies || 67;
+  var startCash = p.startingCash || 22544;
+  var opexBase = p.opexBaseline || 7560;
+  var mentorCost = p.mentorCostPerFamily || 84.85;
+  var revPerFam = p.avgMonthlyRev || 731;
+  var hireThresh = p.hireThreshold || 30;
+  var hireCostVal = p.hireCost || 2000;
+
+  var result = [];
+  var cumCash = startCash;
+
+  for (var m = 0; m < 12; m++) {
+    var existingBase = startFam * Math.pow(rates.r90p, m);
+    var cohortSurvivors = [];
+    var totalNewSurvivors = 0;
+
+    for (var c = 0; c <= m; c++) {
+      var age = m - c;
+      var survivors = cohortSurvival(w1Starts, age, rates);
+      cohortSurvivors.push(survivors);
+      totalNewSurvivors += survivors;
+    }
+
+    var totalActive = existingBase + totalNewSurvivors;
+    var revenue = totalActive * revPerFam;
+    var mentorCosts = totalActive * mentorCost;
+    var adSpend = monthlySpend;
+    var additionalFam = Math.max(0, totalActive - startFam);
+    var additionalHires = Math.floor(additionalFam / hireThresh);
+    var scalingOpex = additionalHires * hireCostVal;
+    var totalOpex = opexBase + scalingOpex;
+    var totalCosts = mentorCosts + adSpend + totalOpex;
+    var netProfit = revenue - totalCosts;
+    cumCash += netProfit;
+
+    result.push({
+      month: m,
+      monthName: FORECAST_MONTHS[m],
+      monthFull: FORECAST_MONTHS_FULL[m],
+      newCloses: closes,
+      w1Starts: w1Starts,
+      existingBase: existingBase,
+      cohortSurvivors: cohortSurvivors,
+      totalNewSurvivors: totalNewSurvivors,
+      totalActive: totalActive,
+      revenue: revenue,
+      mentorCosts: mentorCosts,
+      adSpend: adSpend,
+      teamOpex: totalOpex,
+      totalCosts: totalCosts,
+      netProfit: netProfit,
+      cashInBank: cumCash
+    });
+  }
+  return {months: result, closes: closes, w1Starts: w1Starts, totalRevenue: result.reduce(function(s,m){return s+m.revenue;},0)};
+}
+
+window.toggleCohortDetail = function() {
+  cohortDetailVisible = !cohortDetailVisible;
+  var rows = document.querySelectorAll('.cohort-detail-row');
+  rows.forEach(function(r) { r.style.display = cohortDetailVisible ? '' : 'none'; });
+  document.getElementById('cohort-toggle-icon').textContent = cohortDetailVisible ? '▼' : '▶';
+  document.getElementById('cohort-toggle-btn').innerHTML = '<span id="cohort-toggle-icon">' + (cohortDetailVisible ? '▼' : '▶') + '</span> ' + (cohortDetailVisible ? 'Hide' : 'Show') + ' Cohort Detail';
+};
+
+// ═══ SENSITIVITY ANALYSIS (ANNUAL IMPACT) ═══
 function renderSensitivity(f){
-  // Calculate impact of improving each input by 5pp (or $20 for dollar amounts)
   var levers = [
-    {name:'Ad Spend +$20/day',key:'adSpendPerDay',delta:20,type:'dollar'},
-    {name:'CPBC −$5',key:'cpbc',delta:-5,type:'dollar'},
-    {name:'Show Rate +5%',key:'showRate',delta:5,type:'pct'},
-    {name:'Close Rate +5%',key:'closeRate',delta:5,type:'pct'},
-    {name:'Close→W1 +5%',key:'closeToW1',delta:5,type:'pct'},
-    {name:'W1→W2 +5%',key:'w1ToW2',delta:5,type:'pct'},
-    {name:'W2→30d +5%',key:'w2To30d',delta:5,type:'pct'},
-    {name:'30→60d +5%',key:'ret30to60',delta:5,type:'pct'},
-    {name:'60→90d +5%',key:'ret60to90',delta:5,type:'pct'},
-    {name:'90d+ +5%',key:'ret90plus',delta:5,type:'pct'}
+    {name:'Ad Spend +$20/day',key:'adSpendPerDay',delta:20},
+    {name:'CPBC −$5',key:'cpbc',delta:-5},
+    {name:'Show Rate +5%',key:'showRate',delta:5,pct:true},
+    {name:'Close Rate +5%',key:'closeRate',delta:5,pct:true},
+    {name:'Close→W1 +5%',key:'closeToW1',delta:5,pct:true},
+    {name:'W1→W2 +5%',key:'w1ToW2',delta:5,pct:true},
+    {name:'W2→30d +5%',key:'w2To30d',delta:5,pct:true},
+    {name:'30→60d +5%',key:'ret30to60',delta:5,pct:true},
+    {name:'60→90d +5%',key:'ret60to90',delta:5,pct:true},
+    {name:'90d+ +5%',key:'ret90plus',delta:5,pct:true}
   ];
 
-  var baseNewRev = f.monthlyNewRevenue;
+  // Base 12-month total revenue
+  var baseModel = runCohortModel(FM);
+  var baseTotal = baseModel.totalRevenue;
   var results = [];
 
   levers.forEach(function(lever){
     var saved = FM[lever.key];
     FM[lever.key] = saved + lever.delta;
-    // Clamp percentage values
-    if(lever.type === 'pct') FM[lever.key] = Math.min(100, FM[lever.key]);
-    var improved = calcFunnel();
-    var impact = improved.monthlyNewRevenue - baseNewRev;
-    // Also consider LTV impact (long-term revenue improvement)
-    var ltvImpact = improved.ltv - f.ltv;
-    results.push({name:lever.name, impact:impact, ltvImpact:ltvImpact, totalImpact:impact});
+    if(lever.pct) FM[lever.key] = Math.min(100, Math.max(0, FM[lever.key]));
+    var improved = runCohortModel(FM);
+    var impact = improved.totalRevenue - baseTotal;
+    results.push({name:lever.name, impact:impact});
     FM[lever.key] = saved;
   });
 
-  results.sort(function(a,b){return Math.abs(b.totalImpact) - Math.abs(a.totalImpact);});
-  var maxImpact = Math.abs(results[0].totalImpact) || 1;
+  results.sort(function(a,b){return Math.abs(b.impact) - Math.abs(a.impact);});
+  var maxImpact = Math.abs(results[0].impact) || 1;
 
   var html = '';
-  var shown = Math.min(results.length, 6);
-  for(var i = 0; i < shown; i++){
+  for(var i = 0; i < results.length; i++){
     var r = results[i];
-    var widthPct = Math.max(8, Math.round(Math.abs(r.totalImpact) / maxImpact * 100));
-    var opacity = 1 - (i * 0.12);
-    var color = i === 0 ? '#C8A951' : (i < 3 ? 'rgba(200,169,81,'+opacity+')' : 'rgba(251,248,243,'+(0.2)+')');
-    var sign = r.totalImpact >= 0 ? '+' : '';
+    if(Math.abs(r.impact) < 1) continue;
+    var widthPct = Math.max(8, Math.round(Math.abs(r.impact) / maxImpact * 100));
+    var opacity = 1 - (i * 0.08);
+    var color = i === 0 ? '#C8A951' : (i < 3 ? 'rgba(200,169,81,'+opacity+')' : 'rgba(251,248,243,0.2)');
+    var sign = r.impact >= 0 ? '+' : '';
     html += '<div class="fm-lever-row">';
     html += '<div class="fm-lever-rank">'+(i+1)+'</div>';
     html += '<div class="fm-lever-bar" style="width:'+widthPct+'%;background:'+color+';"><span class="fm-lever-name">'+r.name+'</span></div>';
-    html += '<div class="fm-lever-impact">'+sign+fmtNum(r.totalImpact)+'/mo</div>';
+    html += '<div class="fm-lever-impact">'+sign+fmtNum(r.impact)+' /yr</div>';
     html += '</div>';
   }
   document.getElementById('fm-sensitivity').innerHTML = html;
 }
 
-// ═══ 12-MONTH PROJECTION ═══
+// ═══ 12-MONTH FINANCIAL MODEL RENDERING ═══
 function renderProjection(f){
-  var months = [];
-  var activeFamilies = 92;
-  var rev = FM.avgMonthlyRev;
-  var monthlyRetention = Math.pow((FM.w2To30d/100)*(FM.ret30to60/100),0.5);
-  var newPerMonth = f.w1Starts * (FM.w1ToW2/100);
-  var targetRetention = Math.pow(Math.min(1,(FM.w2To30d+10)/100)*Math.min(1,(FM.ret30to60+10)/100),0.5);
-  var activeCurrent = activeFamilies;
-  var activeTarget = activeFamilies;
-  for(var m=1;m<=12;m++){
-    var churned=activeCurrent*(1-monthlyRetention);
-    activeCurrent=activeCurrent-churned+newPerMonth;
-    var revCurrent=activeCurrent*rev;
-    var churnedTarget=activeTarget*(1-targetRetention);
-    activeTarget=activeTarget-churnedTarget+newPerMonth;
-    var revTarget=activeTarget*rev;
-    months.push({month:m,activeCurrent:activeCurrent,revCurrent:revCurrent,activeTarget:activeTarget,revTarget:revTarget,newAdded:newPerMonth,churned:churned});
-  }
+  var model = runCohortModel(FM);
+  var months = model.months;
 
-  var svg=document.getElementById('projection-chart');
-  var vW=900,vH=300,mL=70,mR=30,mT=30,mB=50;
-  var plotW=vW-mL-mR,plotH=vH-mT-mB;
-  var maxRev=Math.max.apply(null,months.map(function(m){return Math.max(m.revCurrent,m.revTarget);}));
-  maxRev=Math.max(maxRev,80000);
-  var scaleMax=maxRev*1.15;
-  var scale=plotH/scaleMax;
-  var stepX=plotW/11;
-  var html='';
-  var tickStep=scaleMax>300000?50000:(scaleMax>150000?25000:20000);
-  for(var t=0;t<=scaleMax;t+=tickStep){
-    var ty=mT+plotH-t*scale;if(ty<mT-2)break;
-    html+='<line x1="'+mL+'" y1="'+ty.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+ty.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
-    html+='<text x="'+(mL-8)+'" y="'+(ty+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(t/1000).toFixed(0)+'K</text>';
-  }
-  html+='<line x1="'+mL+'" y1="'+(mT+plotH)+'" x2="'+(vW-mR)+'" y2="'+(mT+plotH)+'" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>';
-  var currentPoints=months.map(function(m,i){return(mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revCurrent*scale).toFixed(0);}).join(' ');
-  html+='<polygon points="'+mL+','+(mT+plotH)+' '+currentPoints+' '+(mL+11*stepX).toFixed(0)+','+(mT+plotH)+'" fill="rgba(200,169,81,0.08)"/>';
-  html+='<polyline points="'+currentPoints+'" fill="none" stroke="#C8A951" stroke-width="2.5" stroke-linejoin="round"/>';
-  var targetPoints=months.map(function(m,i){return(mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revTarget*scale).toFixed(0);}).join(' ');
-  html+='<polyline points="'+targetPoints+'" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="8,4" stroke-linejoin="round" opacity="0.8"/>';
-  months.forEach(function(m,i){
-    var x=mL+i*stepX;var y=mT+plotH-m.revCurrent*scale;
-    html+='<circle cx="'+x.toFixed(0)+'" cy="'+y.toFixed(0)+'" r="4" fill="#C8A951" stroke="rgba(10,14,20,0.8)" stroke-width="1.5"/>';
-    if(i%3===0||i===11) html+='<text x="'+x.toFixed(0)+'" y="'+(y-10).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(200,169,81,0.8)">'+fmtNum(m.revCurrent)+'</text>';
-    html+='<text x="'+x.toFixed(0)+'" y="'+(mT+plotH+16).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.4)">M'+m.month+'</text>';
+  // ── MILESTONES ──
+  var milestonesHtml = '';
+  var hit80k = -1, hit100k = -1;
+  months.forEach(function(m, i) {
+    if (hit80k < 0 && m.revenue >= 80000) hit80k = i;
+    if (hit100k < 0 && m.revenue >= 100000) hit100k = i;
   });
-  svg.innerHTML=html;
+  if (hit80k >= 0) milestonesHtml += '<span class="milestone-badge gold-m">🎯 $80K MRR → '+months[hit80k].monthFull+'</span>';
+  else milestonesHtml += '<span class="milestone-badge gold-m">🎯 $80K MRR → beyond forecast</span>';
+  if (hit100k >= 0) milestonesHtml += '<span class="milestone-badge green-m">🚀 $100K MRR → '+months[hit100k].monthFull+'</span>';
+  else milestonesHtml += '<span class="milestone-badge green-m">🚀 $100K MRR → beyond forecast</span>';
+  var yr1Rev = months.reduce(function(s,m){return s+m.revenue;},0);
+  var yr1Profit = months.reduce(function(s,m){return s+m.netProfit;},0);
+  milestonesHtml += '<span class="milestone-badge gold-m">💰 12-Mo Revenue: '+fmtNum(yr1Rev)+'</span>';
+  milestonesHtml += '<span class="milestone-badge green-m">📊 12-Mo Net Profit: '+fmtNum(yr1Profit)+'</span>';
+  document.getElementById('fm-milestones').innerHTML = milestonesHtml;
 
-  var tableHtml='<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:11px;">';
-  tableHtml+='<thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">';
-  tableHtml+='<th style="padding:6px 8px;text-align:left;color:rgba(251,248,243,0.4);font-size:10px;letter-spacing:1px;">MONTH</th>';
-  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">ACTIVE</th>';
-  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">NEW</th>';
-  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">REVENUE</th>';
-  tableHtml+='</tr></thead><tbody>';
+  // ── COHORT TABLE ──
+  var th = '<thead><tr><th></th>';
+  months.forEach(function(m){ th += '<th>'+m.monthName+'</th>'; });
+  th += '</tr></thead>';
+
+  var tb = '<tbody>';
+  // ACQUISITION section
+  tb += '<tr class="section-header-row"><td>ACQUISITION</td>';
+  for(var i=0;i<12;i++) tb += '<td></td>';
+  tb += '</tr>';
+  tb += '<tr><td>New Closes</td>';
+  months.forEach(function(m){ tb += '<td>'+Math.round(m.newCloses)+'</td>'; });
+  tb += '</tr>';
+  tb += '<tr><td>W1 Starts</td>';
+  months.forEach(function(m){ tb += '<td>'+Math.round(m.w1Starts)+'</td>'; });
+  tb += '</tr>';
+
+  // ACTIVE FAMILIES section
+  tb += '<tr class="section-header-row"><td>ACTIVE FAMILIES</td>';
+  for(var i=0;i<12;i++) tb += '<td></td>';
+  tb += '</tr>';
+  tb += '<tr><td>Existing base (surviving)</td>';
+  months.forEach(function(m){ tb += '<td>'+Math.round(m.existingBase)+'</td>'; });
+  tb += '</tr>';
+
+  // Cohort detail rows (hidden by default)
+  for (var c = 0; c < 12; c++) {
+    var display = cohortDetailVisible ? '' : 'display:none;';
+    tb += '<tr class="cohort-detail-row" style="'+display+'"><td style="padding-left:20px;color:rgba(251,248,243,0.35);font-weight:400;font-size:10px;">'+FORECAST_MONTHS[c]+' cohort</td>';
+    for (var m = 0; m < 12; m++) {
+      if (m < c) {
+        tb += '<td style="color:rgba(251,248,243,0.15);">—</td>';
+      } else {
+        var survivors = months[m].cohortSurvivors[c];
+        tb += '<td style="color:rgba(251,248,243,0.4);font-size:10px;">'+Math.round(survivors)+'</td>';
+      }
+    }
+    tb += '</tr>';
+  }
+
+  // New cohort survivors total
+  tb += '<tr><td>New cohort survivors (total)</td>';
+  months.forEach(function(m){ tb += '<td>'+Math.round(m.totalNewSurvivors)+'</td>'; });
+  tb += '</tr>';
+
+  // Total Active (highlight row)
+  tb += '<tr class="total-row"><td>Total Active</td>';
+  months.forEach(function(m){ tb += '<td>'+Math.round(m.totalActive)+'</td>'; });
+  tb += '</tr>';
+
+  // REVENUE section
+  tb += '<tr class="section-header-row"><td>REVENUE</td>';
+  for(var i=0;i<12;i++) tb += '<td></td>';
+  tb += '</tr>';
+  tb += '<tr><td>Monthly Revenue</td>';
+  months.forEach(function(m){ tb += '<td style="color:var(--gold);font-weight:700;">'+fmtNum(m.revenue)+'</td>'; });
+  tb += '</tr>';
+
+  // COSTS section
+  tb += '<tr class="section-header-row"><td>COSTS</td>';
+  for(var i=0;i<12;i++) tb += '<td></td>';
+  tb += '</tr>';
+  tb += '<tr><td>Mentor Costs</td>';
+  months.forEach(function(m){ tb += '<td style="color:rgba(224,82,82,0.7);">'+fmtNum(m.mentorCosts)+'</td>'; });
+  tb += '</tr>';
+  tb += '<tr><td>Ad Spend</td>';
+  months.forEach(function(m){ tb += '<td style="color:rgba(224,82,82,0.7);">'+fmtNum(m.adSpend)+'</td>'; });
+  tb += '</tr>';
+  tb += '<tr><td>Team/OPEX</td>';
+  months.forEach(function(m){ tb += '<td style="color:rgba(224,82,82,0.7);">'+fmtNum(m.teamOpex)+'</td>'; });
+  tb += '</tr>';
+  tb += '<tr><td style="font-weight:700;">Total Costs</td>';
+  months.forEach(function(m){ tb += '<td style="color:var(--red);font-weight:700;">'+fmtNum(m.totalCosts)+'</td>'; });
+  tb += '</tr>';
+
+  // NET PROFIT
+  tb += '<tr class="total-row"><td>Net Profit</td>';
   months.forEach(function(m){
-    tableHtml+='<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">';
-    tableHtml+='<td style="padding:5px 8px;color:rgba(251,248,243,0.6);">Month '+m.month+'</td>';
-    tableHtml+='<td style="padding:5px 8px;text-align:right;font-weight:600;">'+Math.round(m.activeCurrent)+'</td>';
-    tableHtml+='<td style="padding:5px 8px;text-align:right;color:#386217;">+'+Math.round(m.newAdded)+'</td>';
-    tableHtml+='<td style="padding:5px 8px;text-align:right;color:var(--gold);font-weight:700;">'+fmtNum(m.revCurrent)+'</td>';
-    tableHtml+='</tr>';
+    var cls = m.netProfit >= 0 ? 'profit-positive' : 'profit-negative';
+    var sign = m.netProfit >= 0 ? '+' : '';
+    tb += '<td class="'+cls+'">'+sign+fmtNum(m.netProfit)+'</td>';
   });
-  tableHtml+='</tbody></table></div>';
-  document.getElementById('projection-table').innerHTML=tableHtml;
+  tb += '</tr>';
+
+  // CASH IN BANK
+  tb += '<tr class="cash-row"><td>💰 Cash in Bank</td>';
+  months.forEach(function(m){ tb += '<td>'+fmtNum(m.cashInBank)+'</td>'; });
+  tb += '</tr>';
+
+  tb += '</tbody>';
+  document.getElementById('cohort-table').innerHTML = th + tb;
+
+  // ── REVENUE & FAMILIES CHART (dual axis) ──
+  var svg = document.getElementById('projection-chart');
+  var vW=940,vH=320,mL=60,mR=70,mT=30,mB=45;
+  var plotW=vW-mL-mR, plotH=vH-mT-mB;
+  var stepX = plotW / 11;
+
+  var maxFam = Math.max.apply(null, months.map(function(m){return m.totalActive;}));
+  var maxDollars = Math.max.apply(null, months.map(function(m){return Math.max(m.revenue, 100000);}));
+  maxFam = Math.ceil(maxFam / 10) * 10 + 10;
+  maxDollars = Math.ceil(maxDollars / 10000) * 10000 + 10000;
+
+  var scaleFam = plotH / maxFam;
+  var scaleDol = plotH / maxDollars;
+
+  var html = '';
+
+  // Grid lines
+  for (var g = 0; g <= 5; g++) {
+    var gy = mT + plotH - (g/5) * plotH;
+    html += '<line x1="'+mL+'" y1="'+gy.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+gy.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
+    // Left axis (families)
+    var famVal = Math.round((g/5) * maxFam);
+    html += '<text x="'+(mL-8)+'" y="'+(gy+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(200,169,81,0.5)">'+famVal+'</text>';
+    // Right axis (dollars)
+    var dolVal = (g/5) * maxDollars;
+    html += '<text x="'+(vW-mR+8)+'" y="'+(gy+4).toFixed(0)+'" text-anchor="start" font-family="DM Sans" font-size="9" fill="rgba(76,175,80,0.5)">$'+(dolVal/1000).toFixed(0)+'K</text>';
+  }
+
+  // Baseline
+  html += '<line x1="'+mL+'" y1="'+(mT+plotH)+'" x2="'+(vW-mR)+'" y2="'+(mT+plotH)+'" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>';
+
+  // $80K MRR milestone line
+  var y80k = mT + plotH - 80000 * scaleDol;
+  html += '<line x1="'+mL+'" y1="'+y80k.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+y80k.toFixed(0)+'" stroke="rgba(200,169,81,0.4)" stroke-width="1.5" stroke-dasharray="8,5"/>';
+  html += '<text x="'+(vW-mR-4)+'" y="'+(y80k-4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(200,169,81,0.6)">$80K MRR</text>';
+
+  // $100K MRR milestone line
+  if (100000 <= maxDollars) {
+    var y100k = mT + plotH - 100000 * scaleDol;
+    html += '<line x1="'+mL+'" y1="'+y100k.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+y100k.toFixed(0)+'" stroke="rgba(76,175,80,0.4)" stroke-width="1.5" stroke-dasharray="8,5"/>';
+    html += '<text x="'+(vW-mR-4)+'" y="'+(y100k-4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(76,175,80,0.6)">$100K MRR</text>';
+  }
+
+  // Total Active Families line (gold, bold) — LEFT AXIS
+  var famPoints = months.map(function(m,i){ return (mL+i*stepX).toFixed(0)+','+(mT+plotH-m.totalActive*scaleFam).toFixed(0); }).join(' ');
+  html += '<polyline points="'+famPoints+'" fill="none" stroke="#C8A951" stroke-width="3" stroke-linejoin="round"/>';
+  months.forEach(function(m,i){
+    var x=mL+i*stepX, y=mT+plotH-m.totalActive*scaleFam;
+    html += '<circle cx="'+x.toFixed(0)+'" cy="'+y.toFixed(0)+'" r="4" fill="#C8A951" stroke="rgba(10,14,20,0.8)" stroke-width="1.5"/>';
+    if(i%3===0||i===11) html += '<text x="'+x.toFixed(0)+'" y="'+(y-10).toFixed(0)+'" text-anchor="middle" font-family="Archivo Black" font-size="9" fill="#C8A951">'+Math.round(m.totalActive)+'</text>';
+  });
+
+  // Monthly Revenue line (green) — RIGHT AXIS
+  var revPoints = months.map(function(m,i){ return (mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revenue*scaleDol).toFixed(0); }).join(' ');
+  html += '<polygon points="'+mL+','+(mT+plotH)+' '+revPoints+' '+(mL+11*stepX).toFixed(0)+','+(mT+plotH)+'" fill="rgba(76,175,80,0.06)"/>';
+  html += '<polyline points="'+revPoints+'" fill="none" stroke="#4CAF50" stroke-width="2.5" stroke-linejoin="round"/>';
+  months.forEach(function(m,i){
+    var x=mL+i*stepX, y=mT+plotH-m.revenue*scaleDol;
+    html += '<circle cx="'+x.toFixed(0)+'" cy="'+y.toFixed(0)+'" r="3" fill="#4CAF50" stroke="rgba(10,14,20,0.8)" stroke-width="1.5"/>';
+    if(i%4===0||i===11) html += '<text x="'+x.toFixed(0)+'" y="'+(y-8).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(76,175,80,0.8)">'+fmtNum(m.revenue)+'</text>';
+  });
+
+  // Monthly Net Profit line (navy) — RIGHT AXIS
+  var profitPoints = months.map(function(m,i){ return (mL+i*stepX).toFixed(0)+','+(mT+plotH-Math.max(0,m.netProfit)*scaleDol).toFixed(0); }).join(' ');
+  html += '<polyline points="'+profitPoints+'" fill="none" stroke="#104791" stroke-width="2" stroke-linejoin="round"/>';
+  months.forEach(function(m,i){
+    var x=mL+i*stepX, y=mT+plotH-Math.max(0,m.netProfit)*scaleDol;
+    html += '<circle cx="'+x.toFixed(0)+'" cy="'+y.toFixed(0)+'" r="2.5" fill="#104791" stroke="rgba(10,14,20,0.8)" stroke-width="1"/>';
+  });
+
+  // X-axis labels
+  months.forEach(function(m,i){
+    var x = mL + i * stepX;
+    html += '<text x="'+x.toFixed(0)+'" y="'+(mT+plotH+16).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.4)">'+m.monthName+'</text>';
+  });
+
+  // Axis labels
+  html += '<text x="'+(mL-4)+'" y="'+(mT-8)+'" text-anchor="start" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">← Families</text>';
+  html += '<text x="'+(vW-mR+4)+'" y="'+(mT-8)+'" text-anchor="end" font-family="DM Sans" font-size="8" fill="rgba(76,175,80,0.5)">Dollars →</text>';
+
+  svg.innerHTML = html;
+
+  // ── CASH IN BANK AREA CHART ──
+  var cashSvg = document.getElementById('cash-chart');
+  var cW=940,cH=220,cML=70,cMR=30,cMT=25,cMB=40;
+  var cPlotW=cW-cML-cMR, cPlotH=cH-cMT-cMB;
+  var cStepX = cPlotW / 11;
+
+  var allCash = months.map(function(m){return m.cashInBank;});
+  var minCash = Math.min.apply(null, allCash.concat([0]));
+  var maxCash = Math.max.apply(null, allCash);
+  var cashRange = maxCash - Math.min(0, minCash);
+  if (cashRange < 1000) cashRange = 1000;
+  var cashScale = cPlotH / (cashRange * 1.1);
+  var cashZeroY = cMT + cPlotH - (0 - Math.min(0, minCash)) * cashScale;
+
+  var cHtml = '';
+
+  // Grid
+  var cashTick = cashRange > 500000 ? 100000 : (cashRange > 200000 ? 50000 : 25000);
+  var cashStart = Math.floor(Math.min(0, minCash) / cashTick) * cashTick;
+  for (var ct = cashStart; ct <= maxCash * 1.1; ct += cashTick) {
+    var cy = cMT + cPlotH - (ct - Math.min(0, minCash)) * cashScale;
+    if (cy < cMT - 5 || cy > cMT + cPlotH + 5) continue;
+    cHtml += '<line x1="'+cML+'" y1="'+cy.toFixed(0)+'" x2="'+(cW-cMR)+'" y2="'+cy.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
+    cHtml += '<text x="'+(cML-8)+'" y="'+(cy+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(ct/1000).toFixed(0)+'K</text>';
+  }
+  cHtml += '<line x1="'+cML+'" y1="'+cashZeroY.toFixed(0)+'" x2="'+(cW-cMR)+'" y2="'+cashZeroY.toFixed(0)+'" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>';
+
+  // Area fill
+  var cashPoints = months.map(function(m,i){
+    var x = cML + i * cStepX;
+    var y = cMT + cPlotH - (m.cashInBank - Math.min(0, minCash)) * cashScale;
+    return x.toFixed(0)+','+y.toFixed(0);
+  }).join(' ');
+  var isAllPositive = allCash.every(function(c){return c >= 0;});
+  var fillColor = isAllPositive ? 'rgba(76,175,80,0.15)' : 'rgba(224,82,82,0.15)';
+  cHtml += '<polygon points="'+cML+','+cashZeroY.toFixed(0)+' '+cashPoints+' '+(cML+11*cStepX).toFixed(0)+','+cashZeroY.toFixed(0)+'" fill="'+fillColor+'"/>';
+  var strokeColor = isAllPositive ? '#4CAF50' : '#E05252';
+  cHtml += '<polyline points="'+cashPoints+'" fill="none" stroke="'+strokeColor+'" stroke-width="2.5" stroke-linejoin="round"/>';
+
+  // Data points and labels
+  months.forEach(function(m,i){
+    var x = cML + i * cStepX;
+    var y = cMT + cPlotH - (m.cashInBank - Math.min(0, minCash)) * cashScale;
+    var dotColor = m.cashInBank >= 0 ? '#4CAF50' : '#E05252';
+    cHtml += '<circle cx="'+x.toFixed(0)+'" cy="'+y.toFixed(0)+'" r="4" fill="'+dotColor+'" stroke="rgba(10,14,20,0.8)" stroke-width="1.5"/>';
+    if(i%2===0||i===11){
+      cHtml += '<text x="'+x.toFixed(0)+'" y="'+(y-10).toFixed(0)+'" text-anchor="middle" font-family="Archivo Black" font-size="9" fill="'+dotColor+'">'+fmtNum(m.cashInBank)+'</text>';
+    }
+    cHtml += '<text x="'+x.toFixed(0)+'" y="'+(cMT+cPlotH+16).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.4)">'+m.monthName+'</text>';
+  });
+
+  cashSvg.innerHTML = cHtml;
 }
 
 // ═══ TOGGLE FUNCTIONS ═══
@@ -1368,6 +1749,15 @@ window.setFunnelScenario = function(key){
   document.getElementById('fm-r60').value = FM.ret30to60;
   document.getElementById('fm-r90').value = FM.ret60to90;
   document.getElementById('fm-r90p').value = FM.ret90plus;
+
+  // Set financial model inputs
+  document.getElementById('fm-start-families').value = FM.startingFamilies;
+  document.getElementById('fm-start-cash').value = FM.startingCash;
+  document.getElementById('fm-opex-baseline').value = FM.opexBaseline;
+  document.getElementById('fm-mentor-cost').value = FM.mentorCostPerFamily;
+  document.getElementById('fm-rev-per-family').value = FM.avgMonthlyRev;
+  document.getElementById('fm-hire-threshold').value = FM.hireThreshold;
+  document.getElementById('fm-hire-cost').value = FM.hireCost;
 
   updateFunnel();
 };
