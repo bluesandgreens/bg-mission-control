@@ -3,7 +3,7 @@
   "weeks": [
     {
       "label": "Week 1 (Mar 21 - Mar 27)",
-      "total": 42058.4,
+      "total": 35842.0,
       "days": [
         {
           "date": "2026-03-22",
@@ -26,8 +26,8 @@
         {
           "date": "2026-03-23",
           "day": "Mon",
-          "charges": 12,
-          "amount": 3893.0,
+          "charges": 8,
+          "amount": 3005.0,
           "subscribers": [
             {
               "name": "Mardi Moore",
@@ -57,46 +57,6 @@
               "sub_id": "sub_1SeV2A2mA5zLxyK84qi8FFPd",
               "customer_id": "cus_TZtvr9Yg97CuOI",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SeV2A2mA5zLxyK84qi8FFPd",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "Jo Flanagan",
-              "email": "joflanagan@hotmail.com",
-              "amount": 222.0,
-              "interval": "Every 2 weeks",
-              "sub_id": "sub_1Su1ef2mA5zLxyK8nl7FlIn8",
-              "customer_id": "cus_SYsBvLwTYGCVko",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Su1ef2mA5zLxyK8nl7FlIn8",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "Lisa Caton",
-              "email": "lisacoundon@gmail.com",
-              "amount": 222.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1Rzras2mA5zLxyK85Anw73vY",
-              "customer_id": "cus_SsoqUN2QEqqR4P",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Rzras2mA5zLxyK85Anw73vY",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "Deidre Eastick",
-              "email": "dee.eastick@bigpond.com",
-              "amount": 222.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1Rgaql2mA5zLxyK8kVHFYt7I",
-              "customer_id": "cus_SZaHH2qNa9DUjN",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Rgaql2mA5zLxyK8kVHFYt7I",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "Anna Gray",
-              "email": "jones_annamarie@yahoo.co.uk",
-              "amount": 222.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1RW6lP2mA5zLxyK8HzrtrAPT",
-              "customer_id": "cus_SNfu33zNkykCPD",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RW6lP2mA5zLxyK8HzrtrAPT",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             },
             {
@@ -154,8 +114,8 @@
         {
           "date": "2026-03-24",
           "day": "Tue",
-          "charges": 15,
-          "amount": 23447.0,
+          "charges": 12,
+          "amount": 21329.0,
           "subscribers": [
             {
               "name": "Alysha M Nation",
@@ -186,16 +146,6 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903",
               "type": "invoice",
               "status": "draft_fe"
-            },
-            {
-              "name": "Alysha M Nation",
-              "email": "alysha_nation@outlook.com",
-              "amount": 1808.0,
-              "interval": "Every 9 weeks",
-              "sub_id": "sub_1Sqp092mA5zLxyK834krAn3L",
-              "customer_id": "cus_TPE8cDN2aHcwov",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sqp092mA5zLxyK834krAn3L",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             },
             {
               "name": "Lucia Ciccollitto",
@@ -248,16 +198,6 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             },
             {
-              "name": "Dannielle  Craig",
-              "email": "danniellecraig@me.com",
-              "amount": 244.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1R9hg32mA5zLxyK88T7l8Lnp",
-              "customer_id": "cus_S2mW1NsBPLQRfK",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1R9hg32mA5zLxyK88T7l8Lnp",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
               "name": "Leanne Scott",
               "email": "85leanne@gmail.com",
               "amount": 235.0,
@@ -295,16 +235,6 @@
               "sub_id": "sub_1ShPOL2mA5zLxyK8QFhH4ozx",
               "customer_id": "cus_TX8HPESpKeuMnt",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1ShPOL2mA5zLxyK8QFhH4ozx",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "Gaby Welton",
-              "email": "gabys.kiddos@gmail.com",
-              "amount": 66.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1SS5pV2mA5zLxyK8Dci5AwnS",
-              "customer_id": "cus_TE4q6FSbmYGxKn",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SS5pV2mA5zLxyK8Dci5AwnS",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
@@ -390,8 +320,8 @@
         {
           "date": "2026-03-26",
           "day": "Thu",
-          "charges": 8,
-          "amount": 1718.0,
+          "charges": 2,
+          "amount": 532.0,
           "subscribers": [
             {
               "name": "Kelly Hardy",
@@ -404,36 +334,6 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             },
             {
-              "name": "AMANDA RASMUSSEN",
-              "email": "amanda@ajrproperty.com.au",
-              "amount": 249.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1S0zgO2mA5zLxyK8trMMpUZu",
-              "customer_id": "cus_SufDCqOpB5KfYc",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1S0zgO2mA5zLxyK8trMMpUZu",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "laurengray3@me.com",
-              "email": "laurengray3@me.com",
-              "amount": 249.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1Rgb7A2mA5zLxyK8pvq2Zonk",
-              "customer_id": "cus_SYEjRHFpVkrjWG",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Rgb7A2mA5zLxyK8pvq2Zonk",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "Kristy Nash",
-              "email": "kristy.nash@education.wa.edu.au",
-              "amount": 232.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1Supje2mA5zLxyK887V7W9V3",
-              "customer_id": "cus_To3g20MpzeqQLs",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Supje2mA5zLxyK887V7W9V3",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
               "name": "Tanya Major",
               "email": "major.t@bigpond.com",
               "amount": 222.0,
@@ -442,44 +342,14 @@
               "customer_id": "cus_TCDVkq9NsYj47n",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SlGrN2mA5zLxyK87uOZu1Tw",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "mlozevski@seven.com.au",
-              "email": "mlozevski@seven.com.au",
-              "amount": 186.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1R9jCS2mA5zLxyK8XSN9d9GY",
-              "customer_id": "cus_RbFjJlz3sSFv9l",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1R9jCS2mA5zLxyK8XSN9d9GY",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "Sally Mann",
-              "email": "sallymann73@gmail.com",
-              "amount": 155.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1RDIvB2mA5zLxyK8QCPT2jKv",
-              "customer_id": "cus_S6qceT28OjaZno",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RDIvB2mA5zLxyK8QCPT2jKv",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "Elizabeth Pender",
-              "email": "beth_pender@outlook.com",
-              "amount": 115.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1RoG922mA5zLxyK8mE0kQQwO",
-              "customer_id": "cus_ShBl6xFPjxbXEV",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RoG922mA5zLxyK8mE0kQQwO",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
         },
         {
           "date": "2026-03-27",
           "day": "Fri",
-          "charges": 8,
-          "amount": 7487.4,
+          "charges": 6,
+          "amount": 5463.0,
           "subscribers": [
             {
               "name": "Melissa Angell",
@@ -502,16 +372,6 @@
               "status": "open"
             },
             {
-              "name": "Liz Atkins",
-              "email": "lizatkins@ymail.com",
-              "amount": 1802.4,
-              "interval": "Every 60 days",
-              "sub_id": "sub_1RqYc02mA5zLxyK8TZYTxjHX",
-              "customer_id": "cus_SiZgYeQOaFMnKs",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RqYc02mA5zLxyK8TZYTxjHX",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
               "name": "Whitney Trigwell",
               "email": "whitneytrigwell@gmail.com",
               "amount": 235.0,
@@ -529,16 +389,6 @@
               "sub_id": "sub_1T7pyw2mA5zLxyK8AAvbkFXW",
               "customer_id": "cus_U0l4g3hj2DQZqa",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T7pyw2mA5zLxyK8AAvbkFXW",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
-            {
-              "name": "Kirsty  Wright ",
-              "email": "wrightk_1990@outlook.com",
-              "amount": 222.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1Rztpy2mA5zLxyK8mygC9f7X",
-              "customer_id": "cus_Sta162dPUupj1z",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Rztpy2mA5zLxyK8mygC9f7X",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             },
             {
@@ -647,7 +497,7 @@
     },
     {
       "label": "Week 3 (Apr 04 - Apr 10)",
-      "total": 11599.96,
+      "total": 5596.0,
       "days": [
         {
           "date": "2026-04-04",
@@ -670,19 +520,9 @@
         {
           "date": "2026-04-05",
           "day": "Sun",
-          "charges": 7,
-          "amount": 5118.32,
+          "charges": 6,
+          "amount": 3117.0,
           "subscribers": [
-            {
-              "name": "Sarahjane  Fitzsimmons ",
-              "email": "saritafitzs@yahoo.com.au",
-              "amount": 2001.32,
-              "interval": "Every 60 days",
-              "sub_id": "sub_1RtiYM2mA5zLxyK8P7WBn0F1",
-              "customer_id": "cus_ScHJ9JEi4FIGGI",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RtiYM2mA5zLxyK8P7WBn0F1",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
             {
               "name": "Robyn Marchesi",
               "email": "Robynski@hotmail.com",
@@ -786,20 +626,9 @@
         {
           "date": "2026-04-08",
           "day": "Wed",
-          "charges": 1,
-          "amount": 2001.32,
-          "subscribers": [
-            {
-              "name": "Kate O'Sullivan",
-              "email": "kateos9785@gmail.com",
-              "amount": 2001.32,
-              "interval": "Every 60 days",
-              "sub_id": "sub_1Rt6Je2mA5zLxyK8ylzWu3ce",
-              "customer_id": "cus_Snxbx96s2Jqenl",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Rt6Je2mA5zLxyK8ylzWu3ce",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            }
-          ]
+          "charges": 0,
+          "amount": 0,
+          "subscribers": []
         },
         {
           "date": "2026-04-09",
@@ -822,43 +651,22 @@
         {
           "date": "2026-04-10",
           "day": "Fri",
-          "charges": 1,
-          "amount": 2001.32,
-          "subscribers": [
-            {
-              "name": "Kristen Birkett",
-              "email": "kristen_hooson@yahoo.com.au",
-              "amount": 2001.32,
-              "interval": "Every 9 weeks",
-              "sub_id": "sub_1SDwQZ2mA5zLxyK83rtIfcJP",
-              "customer_id": "cus_T5mezYIqIyIFq0",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SDwQZ2mA5zLxyK83rtIfcJP",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            }
-          ]
+          "charges": 0,
+          "amount": 0,
+          "subscribers": []
         }
       ]
     },
     {
       "label": "Week 4 (Apr 11 - Apr 17)",
-      "total": 10562.63,
+      "total": 4628.0,
       "days": [
         {
           "date": "2026-04-13",
           "day": "Mon",
-          "charges": 3,
-          "amount": 2738.0,
+          "charges": 2,
+          "amount": 1808.0,
           "subscribers": [
-            {
-              "name": "Noella Hextall",
-              "email": "misscrafftea@gmail.com",
-              "amount": 930.0,
-              "interval": "Every 60 days",
-              "sub_id": "sub_1Sbtbx2mA5zLxyK8cv9KYFrA",
-              "customer_id": "cus_TAIOXHg4hJ6Jyg",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sbtbx2mA5zLxyK8cv9KYFrA",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
             {
               "name": "Aeshlie Wheeler",
               "email": "Operations@tastalent.com",
@@ -884,37 +692,16 @@
         {
           "date": "2026-04-15",
           "day": "Wed",
-          "charges": 1,
-          "amount": 1195.31,
-          "subscribers": [
-            {
-              "name": "Bree Hall",
-              "email": "blubre@yahoo.com.au",
-              "amount": 1195.31,
-              "interval": "Every 60 days",
-              "sub_id": "sub_1RvdcD2mA5zLxyK8vm6KGnox",
-              "customer_id": "cus_SlC50EJLUehBM7",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RvdcD2mA5zLxyK8vm6KGnox",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            }
-          ]
+          "charges": 0,
+          "amount": 0,
+          "subscribers": []
         },
         {
           "date": "2026-04-16",
           "day": "Thu",
-          "charges": 2,
-          "amount": 2941.3199999999997,
+          "charges": 1,
+          "amount": 940.0,
           "subscribers": [
-            {
-              "name": "Emma Bain-Smith",
-              "email": "emma.bainsmith@gmail.com",
-              "amount": 2001.32,
-              "interval": "Every 60 days",
-              "sub_id": "sub_1RvdfV2mA5zLxyK8e7RybzGF",
-              "customer_id": "cus_SpkweeemffFDBr",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RvdfV2mA5zLxyK8e7RybzGF",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
             {
               "name": "Sarah Anwar",
               "email": "sarah.anw4r@gmail.com",
@@ -930,19 +717,9 @@
         {
           "date": "2026-04-17",
           "day": "Fri",
-          "charges": 3,
-          "amount": 3688.0,
+          "charges": 2,
+          "amount": 1880.0,
           "subscribers": [
-            {
-              "name": "Taya Wear",
-              "email": "mitchlovestaya@gmail.com",
-              "amount": 1808.0,
-              "interval": "Every 9 weeks",
-              "sub_id": "sub_1SdNL92mA5zLxyK8v58BTnyP",
-              "customer_id": "cus_TXH3qEIWfjjtcr",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SdNL92mA5zLxyK8v58BTnyP",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            },
             {
               "name": "Michelle Stephenson",
               "email": "mste8096@gmail.com",
