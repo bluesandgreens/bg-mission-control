@@ -179,6 +179,68 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 @media(min-width:900px){
   .metric-strip.biz{grid-template-columns:repeat(6,1fr);}
 }
+
+/* ═══ MODAL ═══ */
+.mc-modal-backdrop{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);z-index:500;display:flex;align-items:center;justify-content:center;padding:16px;animation:fadeIn 0.15s ease;}
+.mc-modal{background:#141924;border:1px solid rgba(200,169,81,0.25);border-radius:16px;padding:24px;width:100%;max-width:440px;max-height:90vh;overflow-y:auto;}
+.mc-modal h3{font-family:'Archivo Black',sans-serif;font-size:16px;color:var(--gold);margin-bottom:12px;}
+.mc-modal p{font-size:13px;color:rgba(251,248,243,0.6);margin-bottom:12px;}
+.mc-modal textarea{width:100%;min-height:80px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;resize:vertical;outline:none;}
+.mc-modal textarea:focus{border-color:var(--gold);}
+.mc-modal input[type="text"]{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;margin-bottom:8px;}
+.mc-modal input[type="text"]:focus{border-color:var(--gold);}
+.mc-modal select{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;margin-bottom:8px;}
+.mc-modal select option{background:#141924;}
+.mc-modal-actions{display:flex;gap:8px;margin-top:16px;justify-content:flex-end;}
+.mc-modal label{font-size:11px;font-weight:600;color:rgba(251,248,243,0.5);display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;}
+
+/* ═══ OPEN LOOPS ═══ */
+.loops-section,.ideas-section{margin-bottom:20px;}
+.collapsible-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:8px 0;user-select:none;}
+.collapsible-header .chevron{transition:transform 0.2s;font-size:14px;color:rgba(251,248,243,0.4);}
+.collapsible-header.open .chevron{transform:rotate(180deg);}
+.collapsible-body{overflow:hidden;transition:max-height 0.3s ease;}
+.loop-card,.idea-card{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:14px 16px;margin-bottom:8px;cursor:pointer;transition:border-color 0.2s;}
+.loop-card:hover,.idea-card:hover{border-color:rgba(200,169,81,0.25);}
+.loop-card.done-card{opacity:0.4;}
+.loop-top,.idea-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.priority-pill{font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;white-space:nowrap;}
+.priority-high{background:rgba(224,82,82,0.15);color:var(--red);}
+.priority-medium{background:rgba(232,160,48,0.15);color:var(--amber);}
+.priority-low{background:rgba(76,175,80,0.15);color:#4CAF50;}
+.owner-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:6px;background:rgba(16,71,145,0.2);color:#5a9fd4;}
+.status-pill{font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(255,255,255,0.06);color:rgba(251,248,243,0.5);}
+.status-pill.open{background:rgba(200,169,81,0.15);color:var(--gold);}
+.status-pill.in_progress{background:rgba(16,71,145,0.2);color:#5a9fd4;}
+.status-pill.parked{background:rgba(255,255,255,0.06);color:rgba(251,248,243,0.4);}
+.status-pill.done,.status-pill.decided{background:rgba(76,175,80,0.15);color:#4CAF50;}
+.status-pill.active{background:rgba(200,169,81,0.2);color:var(--gold);}
+.status-pill.researching{background:rgba(155,89,182,0.2);color:#bb86fc;}
+.status-pill.future{background:rgba(255,255,255,0.04);color:rgba(251,248,243,0.3);}
+.loop-title,.idea-title-text{font-size:14px;font-weight:700;flex:1;}
+.loop-expanded,.idea-expanded{display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);}
+.loop-expanded.show,.idea-expanded.show{display:block;}
+.loop-desc,.idea-context{font-size:12px;color:rgba(251,248,243,0.5);margin-bottom:8px;line-height:1.5;}
+.loop-meta,.idea-meta{font-size:10px;color:rgba(251,248,243,0.3);margin-bottom:8px;}
+.loop-comments{margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.04);}
+.loop-comment{font-size:11px;color:rgba(251,248,243,0.4);padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.03);}
+.urgency-sel{display:flex;gap:4px;margin-top:8px;}
+.urgency-btn{font-size:10px;padding:3px 8px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(251,248,243,0.5);cursor:pointer;}
+.urgency-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(200,169,81,0.1);}
+.filter-tabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap;}
+.filter-tab{font-size:11px;font-weight:600;padding:4px 12px;border-radius:6px;cursor:pointer;border:1px solid rgba(255,255,255,0.08);background:none;color:rgba(251,248,243,0.5);transition:all 0.15s;}
+.filter-tab.active{background:var(--gold);color:var(--dark);border-color:var(--gold);}
+
+/* ═══ SPRINT ENHANCED ═══ */
+.sprint-status{display:inline-flex;align-items:center;gap:4px;cursor:pointer;font-size:12px;margin-right:8px;user-select:none;}
+.sprint-status:hover{opacity:0.8;}
+.notes-indicator{font-size:10px;color:var(--gold);cursor:pointer;}
+.completed-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(76,175,80,0.06);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;pointer-events:none;}
+.snooze-options{display:flex;gap:4px;flex-wrap:wrap;}
+.snooze-opt{font-size:11px;padding:6px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(251,248,243,0.6);cursor:pointer;transition:all 0.15s;}
+.snooze-opt:hover{border-color:var(--gold);color:var(--gold);}
+.idea-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px;}
+.idea-tag{font-size:9px;padding:2px 6px;border-radius:4px;background:rgba(255,255,255,0.06);color:rgba(251,248,243,0.4);}
 </style>
 </head>
 <body>
@@ -318,7 +380,51 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
   <div id="leo-feed"></div>
 </div>
 
+<!-- OPEN LOOPS -->
+<div class="section loops-section" id="loops-section">
+  <div class="collapsible-header open" onclick="toggleCollapsible(this)">
+    <div class="section-header" style="margin-bottom:0;">🔄 Open Loops (<span id="loops-count">0</span> active)</div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="collapsible-body" id="loops-body" style="max-height:9999px;">
+    <div id="loops-cards"></div>
+    <div class="collapsible-header" onclick="toggleCollapsible(this)" style="margin-top:12px;">
+      <div style="font-size:12px;font-weight:600;color:rgba(251,248,243,0.3);">✅ Done (<span id="loops-done-count">0</span>)</div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="collapsible-body" id="loops-done-body" style="max-height:0;overflow:hidden;">
+      <div id="loops-done-cards"></div>
+    </div>
+  </div>
+</div>
+
+<!-- IDEAS VAULT -->
+<div class="section ideas-section" id="ideas-section">
+  <div class="collapsible-header open" onclick="toggleCollapsible(this)">
+    <div class="section-header" style="margin-bottom:0;">💡 Ideas (<span id="ideas-count">0</span> active)</div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="collapsible-body" id="ideas-body" style="max-height:9999px;">
+    <div class="filter-tabs" id="ideas-filters">
+      <button class="filter-tab active" data-filter="all" onclick="setIdeaFilter('all',this)">All</button>
+      <button class="filter-tab" data-filter="active" onclick="setIdeaFilter('active',this)">Active</button>
+      <button class="filter-tab" data-filter="parked" onclick="setIdeaFilter('parked',this)">Parked</button>
+      <button class="filter-tab" data-filter="decided" onclick="setIdeaFilter('decided',this)">Decided</button>
+      <button class="filter-tab" data-filter="researching" onclick="setIdeaFilter('researching',this)">Researching</button>
+      <button class="filter-tab" data-filter="captured" onclick="setIdeaFilter('captured',this)">🧠 Research</button>
+    </div>
+    <div style="margin-bottom:12px;">
+      <button class="btn btn-gold" onclick="openNewIdeaModal()">➕ New Idea</button>
+      <button class="btn btn-ghost" onclick="openCaptureModal()" style="margin-left:4px;">🧠 Capture Research</button>
+    </div>
+    <div id="ideas-cards"></div>
+  </div>
+</div>
+
 </div><!-- /main -->
+
+<!-- GLOBAL MODAL CONTAINER -->
+<div id="mc-modal-container"></div>
 
 <!-- COMMAND PALETTE -->
 <div class="cmd-overlay" id="cmd-overlay" onclick="if(event.target===this)closeCmd()">
@@ -469,30 +575,125 @@ function renderTimeSection() {
 /* ═══════════════════════════════════════
    SPRINT / DO THIS NOW
    ═══════════════════════════════════════ */
+/* ═══ SPRINT STATE ═══ */
+const sprintState = JSON.parse(localStorage.getItem('mc_sprint_state') || '{}');
+function saveSprintState(){ localStorage.setItem('mc_sprint_state', JSON.stringify(sprintState)); }
+
 function renderSprint() {
   const el = document.getElementById('sprint-cards');
   if(!sprintData || !sprintData.actions) { el.innerHTML='<div style="font-size:12px;color:rgba(251,248,243,0.3);">No sprint loaded</div>'; return; }
   
   const isMission = currentView === 'mission';
-  el.innerHTML = sprintData.actions.map((a, i) => {
-    if(dismissed['sprint-'+i]) return '';
+  // Sort: completed at bottom
+  const indexed = sprintData.actions.map((a,i) => ({...a, idx:i}));
+  const active = indexed.filter(a => (sprintState['sprint-'+a.idx]||{}).status !== 'complete');
+  const completed = indexed.filter(a => (sprintState['sprint-'+a.idx]||{}).status === 'complete');
+  
+  const renderCard = (a) => {
+    const key = 'sprint-'+a.idx;
+    if(dismissed[key]) return '';
     const now = Date.now();
-    const snz = snoozed['sprint-'+i];
+    const snz = snoozed[key];
     if(snz && now < snz) return '';
     
-    return `<div class="action-card ${a.priority}">
+    const st = sprintState[key] || {};
+    const status = st.status || 'not_started';
+    const statusIcon = status==='complete'?'✅':status==='in_progress'?'🔄':'⬜';
+    const notes = st.notes || [];
+    const isComplete = status === 'complete';
+    const completedAt = st.completedAt ? new Date(st.completedAt).toLocaleString('en-AU',{timeZone:'Australia/Melbourne',hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'}) : '';
+    
+    return `<div class="action-card ${a.priority}${isComplete?' done':''}" style="position:relative;">
+      ${isComplete?'<div class="completed-overlay">✅</div>':''}
       <div class="ac-top">
+        <span class="sprint-status" onclick="cycleSprintStatus(${a.idx})" title="Click to change status">${statusIcon}</span>
         <div class="ac-title">${a.title}</div>
         <span class="ac-badge ${a.type}">${a.type}</span>
+        ${notes.length?`<span class="notes-indicator" onclick="event.stopPropagation();openSprintNoteModal(${a.idx})" title="${notes.length} note(s)">💬${notes.length}</span>`:''}
       </div>
-      <div class="ac-why">${a.why}</div>
+      <div class="ac-why">${a.why}${completedAt?' · Completed '+completedAt:''}</div>
       <div class="ac-actions">
-        <button class="btn btn-gold" onclick="doAction('${a.title}')">Leo: execute</button>
-        <button class="btn btn-ghost" onclick="snoozeItem('sprint-${i}')">Snooze 24h</button>
-        <button class="btn btn-ghost" onclick="dismissItem('sprint-${i}',this)">Dismiss</button>
+        <button class="btn btn-gold" onclick="openSprintLeoModal(${a.idx})">🤖 Leo: execute</button>
+        <button class="btn btn-ghost" onclick="openSprintCompleteModal(${a.idx})">✅ Complete</button>
+        <button class="btn btn-ghost" onclick="openSprintNoteModal(${a.idx})">💬 Note</button>
+        <button class="btn btn-ghost" onclick="openSprintSnoozeModal(${a.idx})">⏰ Snooze</button>
       </div>
     </div>`;
-  }).join('');
+  };
+  
+  el.innerHTML = active.map(renderCard).join('') + completed.map(renderCard).join('');
+}
+
+function cycleSprintStatus(idx){
+  const key = 'sprint-'+idx;
+  const st = sprintState[key] || {};
+  const cur = st.status || 'not_started';
+  const next = cur==='not_started'?'in_progress':cur==='in_progress'?'complete':'not_started';
+  st.status = next;
+  if(next==='complete') st.completedAt = new Date().toISOString();
+  else delete st.completedAt;
+  sprintState[key] = st;
+  saveSprintState();
+  renderSprint();
+  showToast(next==='complete'?'Marked complete':next==='in_progress'?'In progress':'Reset to not started');
+}
+
+function openSprintLeoModal(idx){
+  const a = sprintData.actions[idx];
+  openModal(`<h3>🤖 Leo: Execute</h3><p>Leo will work on: <strong>${a.title}</strong></p>
+    <label>Instructions for Leo:</label>
+    <textarea id="modal-leo-text">${a.why||a.title}</textarea>`,
+    [{label:'Execute',gold:true,action:()=>{
+      const txt=document.getElementById('modal-leo-text').value;
+      doAction(a.title+' — '+txt);closeModal();
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openSprintCompleteModal(idx){
+  const a = sprintData.actions[idx];
+  const key = 'sprint-'+idx;
+  openModal(`<h3>✅ Complete</h3><p>Mark as complete: <strong>${a.title}</strong></p>
+    <label>Notes / outcome:</label>
+    <textarea id="modal-complete-text"></textarea>`,
+    [{label:'Complete',gold:true,action:()=>{
+      const txt=document.getElementById('modal-complete-text').value;
+      const st = sprintState[key]||{};
+      st.status='complete';st.completedAt=new Date().toISOString();
+      if(txt){if(!st.notes)st.notes=[];st.notes.push({text:txt,time:new Date().toISOString()});}
+      sprintState[key]=st;saveSprintState();closeModal();renderSprint();showToast('Marked complete');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openSprintNoteModal(idx){
+  const a = sprintData.actions[idx];
+  const key = 'sprint-'+idx;
+  const st = sprintState[key]||{};
+  const notes = st.notes||[];
+  const existing = notes.map(n=>`<div class="loop-comment">${n.text} <span style="color:rgba(251,248,243,0.2)">${new Date(n.time).toLocaleString('en-AU',{timeZone:'Australia/Melbourne',hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'})}</span></div>`).join('');
+  openModal(`<h3>💬 Add Note</h3><p>${a.title}</p>
+    ${existing?'<div style="margin-bottom:12px;max-height:150px;overflow-y:auto;">'+existing+'</div>':''}
+    <textarea id="modal-note-text" placeholder="Add a note..."></textarea>`,
+    [{label:'Save',gold:true,action:()=>{
+      const txt=document.getElementById('modal-note-text').value;
+      if(txt){if(!st.notes)st.notes=[];st.notes.push({text:txt,time:new Date().toISOString()});sprintState[key]=st;saveSprintState();}
+      closeModal();renderSprint();showToast('Note saved');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openSprintSnoozeModal(idx){
+  openModal(`<h3>⏰ Snooze</h3><p>Snooze for:</p>
+    <div class="snooze-options">
+      <button class="snooze-opt" onclick="doSnooze(${idx},3600000)">1 hour</button>
+      <button class="snooze-opt" onclick="doSnooze(${idx},14400000)">4 hours</button>
+      <button class="snooze-opt" onclick="doSnooze(${idx},86400000)">Tomorrow</button>
+    </div>`,
+    [{label:'Cancel',action:closeModal}]);
+}
+
+function doSnooze(idx,ms){
+  snoozed['sprint-'+idx]=Date.now()+ms;
+  localStorage.setItem('mc_snoozed',JSON.stringify(snoozed));
+  closeModal();renderSprint();showToast('Snoozed');
 }
 
 /* ═══════════════════════════════════════
@@ -823,9 +1024,381 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ═══════════════════════════════════════
+   MODAL SYSTEM
+   ═══════════════════════════════════════ */
+function openModal(html, buttons) {
+  const c = document.getElementById('mc-modal-container');
+  const btnsHtml = (buttons||[]).map(b => 
+    `<button class="btn ${b.gold?'btn-gold':'btn-ghost'}" onclick="(${b.action.toString()})()">${b.label}</button>`
+  ).join('');
+  c.innerHTML = `<div class="mc-modal-backdrop" onclick="if(event.target===this)closeModal()">
+    <div class="mc-modal">${html}<div class="mc-modal-actions">${btnsHtml}</div></div></div>`;
+  document.addEventListener('keydown', modalEscHandler);
+}
+function closeModal() {
+  document.getElementById('mc-modal-container').innerHTML = '';
+  document.removeEventListener('keydown', modalEscHandler);
+}
+function modalEscHandler(e) { if(e.key==='Escape') closeModal(); }
+
+/* ═══════════════════════════════════════
+   COLLAPSIBLE
+   ═══════════════════════════════════════ */
+function toggleCollapsible(header) {
+  header.classList.toggle('open');
+  const body = header.nextElementSibling;
+  if(!body) return;
+  if(header.classList.contains('open')) {
+    body.style.maxHeight = body.scrollHeight + 'px';
+    setTimeout(()=> body.style.maxHeight = '9999px', 300);
+  } else {
+    body.style.maxHeight = body.scrollHeight + 'px';
+    requestAnimationFrame(()=> body.style.maxHeight = '0');
+  }
+}
+
+/* ═══════════════════════════════════════
+   OPEN LOOPS
+   ═══════════════════════════════════════ */
+let loopsData = null;
+const loopsState = JSON.parse(localStorage.getItem('mc_loops_state') || '{}');
+function saveLoopsState(){ localStorage.setItem('mc_loops_state', JSON.stringify(loopsState)); }
+
+async function loadLoops() {
+  try {
+    const r = await fetch('data/open-loops.json');
+    loopsData = await r.json();
+    renderLoops();
+  } catch(e) { console.warn('No loops data'); }
+}
+
+function getLoopState(id) {
+  return loopsState[id] || {};
+}
+
+function renderLoops() {
+  if(!loopsData || !loopsData.loops) return;
+  const loops = loopsData.loops.map(l => {
+    const st = getLoopState(l.id);
+    return {...l, status: st.status || l.status, priority: st.priority || l.priority, urgency: st.urgency || 'normal'};
+  });
+  
+  const priorityOrder = {high:0, medium:1, low:2};
+  const statusOrder = {open:0, in_progress:1, parked:2, planned:3, done:4};
+  
+  const active = loops.filter(l => l.status !== 'done').sort((a,b) => 
+    (priorityOrder[a.priority]||9) - (priorityOrder[b.priority]||9) || (statusOrder[a.status]||9) - (statusOrder[b.status]||9)
+  );
+  const done = loops.filter(l => l.status === 'done');
+  
+  document.getElementById('loops-count').textContent = active.length;
+  document.getElementById('loops-done-count').textContent = done.length;
+  
+  document.getElementById('loops-cards').innerHTML = active.map(l => renderLoopCard(l)).join('');
+  document.getElementById('loops-done-cards').innerHTML = done.map(l => renderLoopCard(l, true)).join('');
+}
+
+function renderLoopCard(l, isDone) {
+  const st = getLoopState(l.id);
+  const comments = st.comments || [];
+  const urgencyMap = {urgent:'🔥', normal:'⚡', can_wait:'🕐'};
+  const priorityEmoji = l.priority==='high'?'🔴':l.priority==='medium'?'🟡':'🟢';
+  
+  return `<div class="loop-card${isDone?' done-card':''}" onclick="toggleLoopExpand('${l.id}')">
+    <div class="loop-top">
+      <span class="priority-pill priority-${l.priority}">${priorityEmoji} ${l.priority}</span>
+      <span class="loop-title">${l.title}</span>
+      <span class="owner-badge">${l.owner}</span>
+      <span class="status-pill ${l.status}">${l.status.replace('_',' ')}</span>
+    </div>
+    <div class="loop-expanded" id="loop-exp-${l.id}">
+      <div class="loop-desc">${l.description||''}</div>
+      <div class="loop-meta">Created: ${l.created_date||'—'} · Due: ${l.due_date||'None'} · Source: ${l.source||'—'}</div>
+      <div class="urgency-sel">
+        <button class="urgency-btn ${l.urgency==='urgent'?'active':''}" onclick="event.stopPropagation();setLoopUrgency('${l.id}','urgent')">🔥 Urgent</button>
+        <button class="urgency-btn ${l.urgency==='normal'?'active':''}" onclick="event.stopPropagation();setLoopUrgency('${l.id}','normal')">⚡ Normal</button>
+        <button class="urgency-btn ${l.urgency==='can_wait'?'active':''}" onclick="event.stopPropagation();setLoopUrgency('${l.id}','can_wait')">🕐 Can Wait</button>
+      </div>
+      ${comments.length?'<div class="loop-comments">'+comments.map(c=>`<div class="loop-comment">${c.text} <span style="color:rgba(251,248,243,0.2)">${new Date(c.time).toLocaleDateString('en-AU')}</span></div>`).join('')+'</div>':''}
+      <div class="ac-actions" style="margin-top:10px;">
+        ${!isDone?`<button class="btn btn-gold" onclick="event.stopPropagation();openLoopCompleteModal('${l.id}')">✅ Complete</button>
+        <button class="btn btn-ghost" onclick="event.stopPropagation();openLoopParkModal('${l.id}')">⏸ Park</button>
+        <button class="btn btn-ghost" onclick="event.stopPropagation();changeLoopPriority('${l.id}','up')">🔼</button>
+        <button class="btn btn-ghost" onclick="event.stopPropagation();changeLoopPriority('${l.id}','down')">🔽</button>`:''}
+        <button class="btn btn-ghost" onclick="event.stopPropagation();openLoopCommentModal('${l.id}')">💬 Comment</button>
+        <button class="btn btn-ghost" onclick="event.stopPropagation();openLoopLeoModal('${l.id}','${l.title.replace(/'/g,"\\'")}')">🤖 Leo</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function toggleLoopExpand(id) {
+  const el = document.getElementById('loop-exp-'+id);
+  if(el) el.classList.toggle('show');
+}
+
+function setLoopUrgency(id, val) {
+  const st = loopsState[id] || {};
+  st.urgency = val;
+  loopsState[id] = st;
+  saveLoopsState();
+  renderLoops();
+}
+
+function changeLoopPriority(id, dir) {
+  const order = ['low','medium','high'];
+  const st = loopsState[id] || {};
+  const loop = loopsData.loops.find(l=>l.id===id);
+  const cur = st.priority || (loop?loop.priority:'medium');
+  const idx = order.indexOf(cur);
+  const newIdx = dir==='up'?Math.min(idx+1,2):Math.max(idx-1,0);
+  st.priority = order[newIdx];
+  loopsState[id] = st;
+  saveLoopsState();
+  renderLoops();
+  showToast('Priority: '+order[newIdx]);
+}
+
+function openLoopCompleteModal(id) {
+  openModal(`<h3>✅ Complete this loop?</h3>
+    <label>Comment:</label><textarea id="modal-loop-text"></textarea>`,
+    [{label:'Confirm',gold:true,action:()=>{
+      const st=loopsState[id]||{};st.status='done';
+      const txt=document.getElementById('modal-loop-text').value;
+      if(txt){if(!st.comments)st.comments=[];st.comments.push({text:txt,time:new Date().toISOString()});}
+      loopsState[id]=st;saveLoopsState();closeModal();renderLoops();showToast('Loop completed');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openLoopParkModal(id) {
+  openModal(`<h3>⏸ Park this loop?</h3>
+    <label>Add a note:</label><textarea id="modal-loop-text"></textarea>`,
+    [{label:'Park',gold:true,action:()=>{
+      const st=loopsState[id]||{};st.status='parked';
+      const txt=document.getElementById('modal-loop-text').value;
+      if(txt){if(!st.comments)st.comments=[];st.comments.push({text:'[Parked] '+txt,time:new Date().toISOString()});}
+      loopsState[id]=st;saveLoopsState();closeModal();renderLoops();showToast('Loop parked');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openLoopCommentModal(id) {
+  const st = loopsState[id]||{};
+  const comments = st.comments||[];
+  const existing = comments.map(c=>`<div class="loop-comment">${c.text} <span style="color:rgba(251,248,243,0.2)">${new Date(c.time).toLocaleDateString('en-AU')}</span></div>`).join('');
+  openModal(`<h3>💬 Comment</h3>
+    ${existing?'<div style="margin-bottom:12px;max-height:150px;overflow-y:auto;">'+existing+'</div>':''}
+    <textarea id="modal-loop-text" placeholder="Add comment..."></textarea>`,
+    [{label:'Save',gold:true,action:()=>{
+      const txt=document.getElementById('modal-loop-text').value;
+      if(txt){if(!st.comments)st.comments=[];st.comments.push({text:txt,time:new Date().toISOString()});loopsState[id]=st;saveLoopsState();}
+      closeModal();renderLoops();showToast('Comment saved');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openLoopLeoModal(id, title) {
+  openModal(`<h3>🤖 Ask Leo to work on this?</h3><p>${title}</p>
+    <label>Instructions for Leo:</label><textarea id="modal-loop-text"></textarea>`,
+    [{label:'Execute',gold:true,action:()=>{
+      const txt=document.getElementById('modal-loop-text').value;
+      doAction('Loop: '+title+' — '+txt);closeModal();
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+/* ═══════════════════════════════════════
+   IDEAS VAULT
+   ═══════════════════════════════════════ */
+let ideasData = null;
+let currentIdeaFilter = 'all';
+const ideasState = JSON.parse(localStorage.getItem('mc_ideas_state') || '{}');
+const capturedIdeas = JSON.parse(localStorage.getItem('mc_ideas_captured') || '[]');
+function saveIdeasState(){ localStorage.setItem('mc_ideas_state', JSON.stringify(ideasState)); }
+function saveCapturedIdeas(){ localStorage.setItem('mc_ideas_captured', JSON.stringify(capturedIdeas)); }
+
+async function loadIdeas() {
+  try {
+    const r = await fetch('data/ideas.json');
+    ideasData = await r.json();
+    renderIdeas();
+  } catch(e) { console.warn('No ideas data'); }
+}
+
+function setIdeaFilter(filter, btn) {
+  currentIdeaFilter = filter;
+  document.querySelectorAll('#ideas-filters .filter-tab').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  renderIdeas();
+}
+
+function renderIdeas() {
+  if(!ideasData || !ideasData.ideas) return;
+  
+  let allIdeas = ideasData.ideas.map(idea => {
+    const st = ideasState[idea.id] || {};
+    return {...idea, status: st.status || idea.status};
+  });
+  
+  // Merge captured ideas (from localStorage)
+  capturedIdeas.forEach(ci => {
+    allIdeas.push({...ci, status: ci.status || 'captured'});
+  });
+  
+  const active = allIdeas.filter(i => !['decided','future'].includes(i.status));
+  document.getElementById('ideas-count').textContent = active.length;
+  
+  let filtered = allIdeas;
+  if(currentIdeaFilter === 'captured') {
+    filtered = allIdeas.filter(i => i.status === 'captured' || i.source === 'research' || i.source === 'external');
+  } else if(currentIdeaFilter !== 'all') {
+    filtered = allIdeas.filter(i => i.status === currentIdeaFilter);
+  }
+  
+  document.getElementById('ideas-cards').innerHTML = filtered.length ? filtered.map(renderIdeaCard).join('') : '<div style="font-size:12px;color:rgba(251,248,243,0.3);padding:12px;">No ideas in this filter</div>';
+}
+
+function renderIdeaCard(idea) {
+  const st = ideasState[idea.id] || {};
+  const comments = st.comments || [];
+  const tags = idea.tags || [];
+  const priorityLabel = idea.priority==='hot'?'🔥 Hot':idea.priority==='backlog'?'📋 Backlog':'⚡ Normal';
+  
+  return `<div class="idea-card" onclick="toggleIdeaExpand('${idea.id}')">
+    <div class="idea-top">
+      <span class="idea-title-text">${idea.idea || idea.title || ''}</span>
+      <span class="status-pill ${idea.status}">${idea.status}</span>
+      ${idea.source?`<span style="font-size:10px;color:rgba(251,248,243,0.3);">${idea.source}</span>`:''}
+    </div>
+    <div style="font-size:10px;color:rgba(251,248,243,0.25);margin-top:4px;">${idea.date||''}</div>
+    <div class="idea-expanded" id="idea-exp-${idea.id}">
+      <div class="idea-context">${idea.context || idea.text || ''}</div>
+      ${idea.priority?`<div style="font-size:10px;color:rgba(251,248,243,0.4);margin-bottom:6px;">Priority: ${priorityLabel}</div>`:''}
+      ${tags.length?`<div class="idea-tags">${tags.map(t=>`<span class="idea-tag">${t}</span>`).join('')}</div>`:''}
+      ${comments.length?'<div class="loop-comments">'+comments.map(c=>`<div class="loop-comment">${c.text} <span style="color:rgba(251,248,243,0.2)">${new Date(c.time).toLocaleDateString('en-AU')}</span></div>`).join('')+'</div>':''}
+      <div class="ac-actions" style="margin-top:10px;">
+        <button class="btn btn-gold" onclick="event.stopPropagation();openIdeaActivateModal('${idea.id}')">🚀 Activate</button>
+        <button class="btn btn-ghost" onclick="event.stopPropagation();openIdeaParkModal('${idea.id}')">⏸ Park</button>
+        <button class="btn btn-ghost" onclick="event.stopPropagation();openIdeaDecidedModal('${idea.id}')">✅ Decided</button>
+        <button class="btn btn-ghost" onclick="event.stopPropagation();openIdeaCommentModal('${idea.id}')">💬 Comment</button>
+        <button class="btn btn-ghost" onclick="event.stopPropagation();openIdeaLeoModal('${idea.id}','${(idea.idea||idea.title||'').replace(/'/g,"\\'")}')">🤖 Leo: Research</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function toggleIdeaExpand(id) {
+  const el = document.getElementById('idea-exp-'+id);
+  if(el) el.classList.toggle('show');
+}
+
+function openIdeaActivateModal(id) {
+  openModal(`<h3>🚀 Move to active?</h3><label>Add context:</label><textarea id="modal-idea-text"></textarea>`,
+    [{label:'Activate',gold:true,action:()=>{
+      const st=ideasState[id]||{};st.status='active';
+      const txt=document.getElementById('modal-idea-text').value;
+      if(txt){if(!st.comments)st.comments=[];st.comments.push({text:'[Activated] '+txt,time:new Date().toISOString()});}
+      ideasState[id]=st;saveIdeasState();closeModal();renderIdeas();showToast('Idea activated');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openIdeaParkModal(id) {
+  openModal(`<h3>⏸ Park this idea?</h3><label>Note:</label><textarea id="modal-idea-text"></textarea>`,
+    [{label:'Park',gold:true,action:()=>{
+      const st=ideasState[id]||{};st.status='parked';
+      const txt=document.getElementById('modal-idea-text').value;
+      if(txt){if(!st.comments)st.comments=[];st.comments.push({text:'[Parked] '+txt,time:new Date().toISOString()});}
+      ideasState[id]=st;saveIdeasState();closeModal();renderIdeas();showToast('Idea parked');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openIdeaDecidedModal(id) {
+  openModal(`<h3>✅ What was decided?</h3><textarea id="modal-idea-text"></textarea>`,
+    [{label:'Save',gold:true,action:()=>{
+      const st=ideasState[id]||{};st.status='decided';
+      const txt=document.getElementById('modal-idea-text').value;
+      if(txt){if(!st.comments)st.comments=[];st.comments.push({text:'[Decided] '+txt,time:new Date().toISOString()});}
+      ideasState[id]=st;saveIdeasState();closeModal();renderIdeas();showToast('Decision saved');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openIdeaCommentModal(id) {
+  const st = ideasState[id]||{};
+  const comments = st.comments||[];
+  const existing = comments.map(c=>`<div class="loop-comment">${c.text}</div>`).join('');
+  openModal(`<h3>💬 Comment</h3>${existing?'<div style="margin-bottom:12px;">'+existing+'</div>':''}
+    <textarea id="modal-idea-text" placeholder="Add comment..."></textarea>`,
+    [{label:'Save',gold:true,action:()=>{
+      const txt=document.getElementById('modal-idea-text').value;
+      if(txt){if(!st.comments)st.comments=[];st.comments.push({text:txt,time:new Date().toISOString()});ideasState[id]=st;saveIdeasState();}
+      closeModal();renderIdeas();showToast('Comment saved');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openIdeaLeoModal(id, title) {
+  openModal(`<h3>🤖 What should Leo research?</h3><p>${title}</p>
+    <textarea id="modal-idea-text"></textarea>`,
+    [{label:'Research',gold:true,action:()=>{
+      const txt=document.getElementById('modal-idea-text').value;
+      const st=ideasState[id]||{};st.status='researching';ideasState[id]=st;saveIdeasState();
+      doAction('Research: '+title+' — '+txt);closeModal();renderIdeas();
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openNewIdeaModal() {
+  openModal(`<h3>➕ New Idea</h3>
+    <label>Title</label><input type="text" id="modal-idea-title" placeholder="Idea title...">
+    <label>Context</label><textarea id="modal-idea-context" placeholder="Full context..."></textarea>
+    <label>Source</label>
+    <select id="modal-idea-source"><option>Conversation</option><option>Research</option><option>External</option><option>Reading</option></select>
+    <label>Tags (comma separated)</label><input type="text" id="modal-idea-tags" placeholder="portal, retention, growth">`,
+    [{label:'Save',gold:true,action:()=>{
+      const title=document.getElementById('modal-idea-title').value;
+      if(!title){showToast('Title required');return;}
+      const idea={
+        id:'captured-'+Date.now(),
+        idea:title,title:title,
+        context:document.getElementById('modal-idea-context').value,
+        text:document.getElementById('modal-idea-context').value,
+        source:document.getElementById('modal-idea-source').value.toLowerCase(),
+        tags:document.getElementById('modal-idea-tags').value.split(',').map(t=>t.trim()).filter(Boolean),
+        date:new Date().toISOString().split('T')[0],
+        status:'active'
+      };
+      capturedIdeas.push(idea);saveCapturedIdeas();closeModal();renderIdeas();showToast('Idea saved');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+function openCaptureModal() {
+  openModal(`<h3>🧠 Capture Research / Big Idea</h3>
+    <label>Title</label><input type="text" id="modal-cap-title" placeholder="What's the insight?">
+    <label>Full text</label><textarea id="modal-cap-text" placeholder="Full context, findings, insights..." style="min-height:120px;"></textarea>
+    <label>Source</label>
+    <select id="modal-cap-source"><option value="conversation">Conversation</option><option value="research">Research</option><option value="external">External</option><option value="reading">Reading</option></select>
+    <label>Tags (comma separated)</label><input type="text" id="modal-cap-tags" placeholder="strategy, growth, retention">
+    <label>Priority</label>
+    <select id="modal-cap-priority"><option value="hot">🔥 Hot</option><option value="normal" selected>⚡ Normal</option><option value="backlog">📋 Backlog</option></select>`,
+    [{label:'Capture',gold:true,action:()=>{
+      const title=document.getElementById('modal-cap-title').value;
+      if(!title){showToast('Title required');return;}
+      const idea={
+        id:'captured-'+Date.now(),
+        idea:title,title:title,
+        text:document.getElementById('modal-cap-text').value,
+        context:document.getElementById('modal-cap-text').value,
+        source:document.getElementById('modal-cap-source').value,
+        tags:document.getElementById('modal-cap-tags').value.split(',').map(t=>t.trim()).filter(Boolean),
+        priority:document.getElementById('modal-cap-priority').value,
+        date:new Date().toISOString().split('T')[0],
+        status:'captured'
+      };
+      capturedIdeas.push(idea);saveCapturedIdeas();closeModal();renderIdeas();showToast('Research captured');
+    }},{label:'Cancel',action:closeModal}]);
+}
+
+/* ═══════════════════════════════════════
    BOOT
    ═══════════════════════════════════════ */
 init();
+loadLoops();
+loadIdeas();
 </script>
 </body>
 </html>
