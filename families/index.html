@@ -6,300 +6,247 @@
 <title>Family Command — B&G Mission Control</title>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;}
+:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;--blue:#3B82F6;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;}
-.header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,169,81,0.3);}
-.header-logo{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--navy);}
-.header-title{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
-.back-link{color:rgba(251,248,243,0.5);font-size:13px;text-decoration:none;}
-.back-link:hover{color:var(--gold);}
-.container{max-width:1400px;margin:0 auto;padding:20px 16px;}
-
-/* STATS HEADER */
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;}
-.stat-card{background:rgba(16,21,32,0.8);border:1px solid rgba(200,169,81,0.12);border-radius:12px;padding:14px;border-top:3px solid var(--gold);text-align:center;}
-.stat-card.bottleneck{border-top-color:var(--red);}
-.stat-val{font-family:'Archivo Black',sans-serif;font-size:24px;margin:4px 0 2px;}
-.stat-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
-.stat-sub{font-size:10px;color:rgba(251,248,243,0.35);}
-
-/* PIPELINE */
-.pipeline{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:24px;}
-.pipeline-col{background:rgba(16,21,32,0.5);border:1px solid rgba(255,255,255,0.04);border-radius:14px;padding:12px;min-height:200px;}
-.col-header{font-family:'Archivo Black',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;}
-.col-count{background:rgba(200,169,81,0.15);color:var(--gold);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;}
-.col-count.red{background:rgba(224,82,82,0.15);color:var(--red);}
-
-/* FAMILY CARD */
-.fam-card{background:rgba(16,21,32,0.9);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:border-color 0.15s;position:relative;}
-.fam-card:hover{border-color:rgba(200,169,81,0.25);}
-.fam-name{font-size:13px;font-weight:700;margin-bottom:2px;}
-.fam-son{font-size:11px;color:rgba(251,248,243,0.5);}
-.fam-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;align-items:center;}
-.fam-tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;}
-.fam-tag.mentor{background:rgba(56,98,23,0.2);color:#6db33f;}
-.fam-tag.days{background:rgba(232,160,48,0.1);color:var(--amber);}
-.fam-tag.days.overdue{background:rgba(224,82,82,0.15);color:var(--red);}
-.fam-tag.payment{background:rgba(76,175,80,0.1);color:#4CAF50;}
-.fam-tag.payment.issue{background:rgba(224,82,82,0.1);color:var(--red);}
-.fam-tag.stage{background:rgba(200,169,81,0.1);color:var(--gold);}
-.fam-links{display:flex;gap:4px;position:absolute;top:8px;right:8px;}
-.fam-link{font-size:10px;text-decoration:none;opacity:0.4;transition:opacity 0.15s;}
-.fam-link:hover{opacity:1;}
-.fam-health{height:4px;background:rgba(255,255,255,0.06);border-radius:2px;margin-top:6px;overflow:hidden;}
-.fam-health-bar{height:100%;border-radius:2px;transition:width 0.3s;}
-.fam-actions{display:none;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.04);}
-.fam-card.expanded .fam-actions{display:flex;gap:4px;flex-wrap:wrap;}
-.btn{border:none;border-radius:8px;padding:5px 10px;font-size:10px;font-weight:600;cursor:pointer;transition:all 0.15s;}
-.btn-gold{background:var(--gold);color:var(--dark);}
-.btn-ghost{background:rgba(255,255,255,0.06);color:rgba(251,248,243,0.6);}
-.btn-ghost:hover{background:rgba(255,255,255,0.1);}
-
-/* MODAL */
-.mc-modal-backdrop{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);z-index:500;display:flex;align-items:center;justify-content:center;padding:16px;}
-.mc-modal{background:#141924;border:1px solid rgba(200,169,81,0.25);border-radius:16px;padding:24px;width:100%;max-width:440px;max-height:90vh;overflow-y:auto;}
-.mc-modal h3{font-family:'Archivo Black',sans-serif;font-size:16px;color:var(--gold);margin-bottom:12px;}
-.mc-modal p{font-size:13px;color:rgba(251,248,243,0.6);margin-bottom:12px;}
-.mc-modal textarea{width:100%;min-height:80px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;resize:vertical;outline:none;}
-.mc-modal textarea:focus{border-color:var(--gold);}
-.mc-modal select{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;margin-bottom:8px;}
-.mc-modal select option{background:#141924;}
-.mc-modal label{font-size:11px;font-weight:600;color:rgba(251,248,243,0.5);display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;}
-.mc-modal-actions{display:flex;gap:8px;margin-top:16px;justify-content:flex-end;}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--gold);color:var(--dark);padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:600;transition:transform 0.3s ease;pointer-events:none;}
-.toast.show{transform:translateX(-50%) translateY(0);}
-
-/* RESPONSIVE */
-@media(max-width:1200px){.pipeline{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:768px){.pipeline{grid-template-columns:1fr;}.stats-bar{grid-template-columns:repeat(2,1fr);}}
+a{color:inherit;text-decoration:none;}
+.hdr{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(10,14,20,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,169,81,0.25);}
+.hdr-logo{font-family:'Archivo Black',sans-serif;font-size:16px;color:var(--navy);}
+.hdr-title{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.back{color:rgba(251,248,243,0.45);font-size:13px;}
+.back:hover{color:var(--gold);}
+.wrap{max-width:1400px;margin:0 auto;padding:16px;}
+.live-badge{font-size:10px;color:rgba(251,248,243,0.4);text-align:right;margin-bottom:12px;}
+.hero{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;}
+@media(max-width:640px){.hero{grid-template-columns:repeat(2,1fr);}}
+.hcard{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:14px;text-align:center;}
+.hcard.green{border-top:3px solid #4CAF50;}
+.hcard.red{border-top:3px solid var(--red);}
+.hcard.amber{border-top:3px solid var(--amber);}
+.hcard.blue{border-top:3px solid var(--blue);}
+.hval{font-family:'Archivo Black',sans-serif;font-size:28px;margin:4px 0 2px;}
+.hval.green{color:#4CAF50;}
+.hval.red{color:var(--red);}
+.hval.amber{color:var(--amber);}
+.hval.blue{color:var(--blue);}
+.hlbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+.hsub{font-size:10px;color:rgba(251,248,243,0.35);margin-top:2px;}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+.search-box{flex:1;min-width:180px;background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 12px;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif;}
+.search-box:focus{outline:none;border-color:rgba(200,169,81,0.4);}
+.search-box::placeholder{color:rgba(251,248,243,0.3);}
+select.filter{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:7px 10px;color:var(--cream);font-size:12px;font-family:'DM Sans',sans-serif;cursor:pointer;}
+select.filter:focus{outline:none;border-color:rgba(200,169,81,0.4);}
+select.filter option{background:#101520;}
+.count-badge{font-size:11px;color:rgba(251,248,243,0.45);white-space:nowrap;}
+.tbl-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+thead th{text-align:left;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.35);padding:8px 10px;border-bottom:1px solid rgba(255,255,255,0.06);cursor:pointer;user-select:none;white-space:nowrap;}
+thead th:hover{color:var(--gold);}
+thead th.sorted{color:var(--gold);}
+tbody tr{border-bottom:1px solid rgba(255,255,255,0.04);transition:background 0.1s;}
+tbody tr:hover{background:rgba(200,169,81,0.04);}
+td{padding:9px 10px;vertical-align:middle;}
+.row-indicator{width:4px;min-width:4px;border-radius:2px;}
+.nm{font-weight:600;font-size:13px;}
+.em{font-size:10px;color:rgba(251,248,243,0.35);}
+.badge{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:0.5px;white-space:nowrap;}
+.badge.active-w1{background:rgba(76,175,80,0.15);color:#4CAF50;}
+.badge.active-no-w1{background:rgba(232,160,48,0.15);color:var(--amber);}
+.badge.past-due{background:rgba(224,82,82,0.15);color:var(--red);}
+.badge.deposit{background:rgba(59,130,246,0.15);color:var(--blue);}
+.tier-badge{font-size:9px;color:rgba(251,248,243,0.5);white-space:nowrap;}
+.mentor-name{font-size:11px;color:rgba(251,248,243,0.65);}
+.date-val{font-size:11px;color:rgba(251,248,243,0.6);}
+.date-val.none{color:rgba(251,248,243,0.25);font-style:italic;}
+.owner-badge{font-size:10px;font-weight:600;}
+.hs-link{display:inline-block;font-size:10px;color:rgba(200,169,81,0.6);padding:3px 8px;border:1px solid rgba(200,169,81,0.2);border-radius:6px;transition:all 0.15s;}
+.hs-link:hover{color:var(--gold);border-color:var(--gold);}
+@media(max-width:768px){.hide-mobile{display:none;}}
+.loading{text-align:center;padding:60px;color:rgba(251,248,243,0.4);}
 </style>
 </head>
 <body>
-<div class="header">
-  <div style="display:flex;align-items:center;gap:16px;">
-    <div class="header-logo">B&G</div>
-    <div class="header-title">Family Command</div>
+<div class="hdr">
+  <a class="hdr-logo" href="../index.html">B&G</a>
+  <span class="hdr-title">Family Command</span>
+  <a class="back" href="../index.html">← MC</a>
+</div>
+<div class="wrap">
+  <div class="live-badge" id="live-badge">📡 Live · loading...</div>
+
+  <div class="hero" id="hero">
+    <div class="hcard green"><div class="hval green" id="h-active">—</div><div class="hlbl">Active Families</div><div class="hsub">Boys being mentored</div></div>
+    <div class="hcard red"><div class="hval red" id="h-pastdue">—</div><div class="hlbl">Families at Risk</div><div class="hsub">Payment past due</div></div>
+    <div class="hcard amber"><div class="hval amber" id="h-nw1">—</div><div class="hlbl">Awaiting W1</div><div class="hsub">Active, not started yet</div></div>
+    <div class="hcard blue"><div class="hval blue" id="h-deposit">—</div><div class="hlbl">New Deposits</div><div class="hsub">Families waiting to start</div></div>
   </div>
-  <a class="back-link" href="../">← Mission Control</a>
+
+  <div class="controls">
+    <input class="search-box" id="search" type="text" placeholder="🔍 Search family or email…" oninput="renderTable()">
+    <select class="filter" id="f-status" onchange="renderTable()">
+      <option value="">All statuses</option>
+      <option value="active">Active</option>
+      <option value="past_due">Past Due</option>
+      <option value="deposit">New Deposit</option>
+    </select>
+    <select class="filter" id="f-tier" onchange="renderTable()">
+      <option value="">All tiers</option>
+      <option value="Big Brother">Big Brother</option>
+      <option value="Lighthouse">Lighthouse</option>
+    </select>
+    <select class="filter" id="f-owner" onchange="renderTable()">
+      <option value="">All owners</option>
+      <option value="Harry">Harry</option>
+      <option value="Rye">Rye</option>
+      <option value="Brodie">Brodie</option>
+      <option value="Norri">Norri</option>
+      <option value="Elliot">Elliot</option>
+    </select>
+    <span class="count-badge" id="count-badge"></span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table id="fam-table">
+      <thead>
+        <tr>
+          <th style="width:4px"></th>
+          <th onclick="sortBy('name')">Name / Email</th>
+          <th onclick="sortBy('status')">Status</th>
+          <th class="hide-mobile" onclick="sortBy('tier')">Tier</th>
+          <th class="hide-mobile" onclick="sortBy('mentor')">Mentor</th>
+          <th onclick="sortBy('w1_date')">W1 Date</th>
+          <th class="hide-mobile" onclick="sortBy('amount')">Payment</th>
+          <th class="hide-mobile" onclick="sortBy('owner')">Owner</th>
+          <th>HubSpot</th>
+        </tr>
+      </thead>
+      <tbody id="fam-tbody">
+        <tr><td colspan="9" class="loading">Loading families…</td></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<div class="container">
-  <div class="stats-bar" id="stats-bar"></div>
-  <div class="pipeline" id="pipeline"></div>
-</div>
-
-<div id="modal-container"></div>
-<div class="toast" id="toast"></div>
-
 <script>
-let dashData = null;
-const famState = JSON.parse(localStorage.getItem('mc_families_state') || '{}');
+let allFamilies = [];
+let sortKey = 'name';
+let sortDir = 1;
 
-async function init() {
-  try {
-    const r = await fetch('../data/dashboard-data.json');
-    dashData = await r.json();
-  } catch(e) { console.error('Failed to load data'); }
-  renderStats();
-  renderPipeline();
+function rowColor(f) {
+  if (f.stripe_status === 'past_due') return '#E05252';
+  if (f.stripe_status === 'active' && f.w1_date) return '#4CAF50';
+  if (f.stripe_status === 'active' && !f.w1_date) return '#E8A030';
+  return '#3B82F6';
 }
 
-function renderStats() {
-  if(!dashData) return;
-  const ap = dashData.activation_pipeline || {};
-  const depCount = (ap.deposit_paid||[]).length;
-  const agrCount = (ap.agreement_signed||[]).length;
-  const allocCount = (ap.mentor_allocated||[]).length;
-  const w1sCount = (ap.w1_scheduled||[]).length;
-  const preW1 = depCount + agrCount + w1sCount;
-  
-  // Find bottleneck
-  const stages = [
-    {name:'Deposit Paid',count:depCount},
-    {name:'Agreement Signed',count:agrCount},
-    {name:'Mentor Allocated',count:allocCount},
-    {name:'W1 Scheduled',count:w1sCount}
-  ];
-  const bottleneck = stages.reduce((max,s) => s.count > max.count ? s : max, stages[0]);
-  
-  // Avg days
-  const now = new Date();
-  let totalDays = 0, dayCount = 0;
-  (ap.deposit_paid||[]).forEach(f => {
-    if(f.date) { totalDays += Math.floor((now - new Date(f.date))/(86400000)); dayCount++; }
+function rowBadge(f) {
+  if (f.stripe_status === 'past_due') return '<span class="badge past-due">⚠️ At Risk</span>';
+  if (f.stripe_status === 'active' && f.w1_date) return '<span class="badge active-w1">✅ Active</span>';
+  if (f.stripe_status === 'active' && !f.w1_date) return '<span class="badge active-no-w1">⏳ Awaiting W1</span>';
+  return '<span class="badge deposit">💰 New Deposit</span>';
+}
+
+function fmtDate(d) {
+  if (!d) return '<span class="date-val none">—</span>';
+  const dt = new Date(d);
+  return `<span class="date-val">${dt.toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'2-digit'})}</span>`;
+}
+
+function tierShort(t) {
+  if (!t) return '';
+  if (t.toLowerCase().includes('big')) return 'Big Bro';
+  if (t.toLowerCase().includes('light')) return 'Lighthouse';
+  return t.slice(0, 12);
+}
+
+function renderTable() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const fStatus = document.getElementById('f-status').value;
+  const fTier = document.getElementById('f-tier').value;
+  const fOwner = document.getElementById('f-owner').value;
+
+  let rows = allFamilies.filter(f => {
+    if (q && !f.name.toLowerCase().includes(q) && !(f.email||'').toLowerCase().includes(q)) return false;
+    if (fStatus === 'active' && f.stripe_status !== 'active') return false;
+    if (fStatus === 'past_due' && f.stripe_status !== 'past_due') return false;
+    if (fStatus === 'deposit' && f.stripe_status !== null) return false;
+    if (fTier && !(f.tier||'').toLowerCase().includes(fTier.toLowerCase())) return false;
+    if (fOwner && f.owner !== fOwner) return false;
+    return true;
   });
-  const avgDays = dayCount ? Math.round(totalDays/dayCount) : 0;
-  
-  document.getElementById('stats-bar').innerHTML = `
-    <div class="stat-card"><div class="stat-lbl">Pre-W1 Pipeline</div><div class="stat-val">${preW1}</div><div class="stat-sub">Deposit → W1 scheduled</div></div>
-    <div class="stat-card"><div class="stat-lbl">Avg Days Close→W1</div><div class="stat-val">${avgDays}</div><div class="stat-sub">From deposit paid</div></div>
-    <div class="stat-card"><div class="stat-lbl">Mentor Allocated</div><div class="stat-val">${allocCount}</div><div class="stat-sub">${allocCount} boys with mentors</div></div>
-    <div class="stat-card bottleneck"><div class="stat-lbl">⚠️ Bottleneck</div><div class="stat-val" style="font-size:16px;color:var(--red);">${bottleneck.name}</div><div class="stat-sub">${bottleneck.count} families stuck</div></div>
-  `;
-}
 
-function renderPipeline() {
-  if(!dashData) return;
-  const ap = dashData.activation_pipeline || {};
-  const unassigned = dashData.unassigned || [];
-  const overdueW1s = dashData.overdue_w1s || [];
-  const w1Complete = ap.w1_complete || [];
-  const retention = dashData.retention?.session_7_plus || [];
-  const now = new Date();
-  
-  const columns = [
-    {id:'unallocated', title:'Unallocated', families: unassigned.map(f => ({
-      name:f.name, son:f.son_name, program:f.program, status:f.status,
-      days: null, mentor:null, payment: f.status==='matching'?'matching':'—'
-    }))},
-    {id:'allocated', title:'Allocated', families: (ap.mentor_allocated||[]).map(f => ({
-      name:f.name, son:null, mentor:f.mentor, days:null,
-      payment:'—', stage:f.w1_activation_stage
-    }))},
-    {id:'pending_w1', title:'Pending W1', families: overdueW1s.map(f => ({
-      name:f.name, son:null, mentor:f.mentor, days:f.days_overdue,
-      payment:'—', stage:f.activation_stage, overdue:true
-    }))},
-    {id:'w1_scheduled', title:'W1 Scheduled', families: (ap.w1_scheduled||[]).map(f => ({
-      name:f.name, son:null, mentor:null, 
-      days: f.date ? Math.max(0,Math.floor((new Date(f.date)-now)/86400000)) : null,
-      payment:'—', stage:f.w1_activation_stage,
-      dateLabel: f.date ? new Date(f.date).toLocaleDateString('en-AU',{day:'numeric',month:'short'}) : null
-    }))},
-    {id:'w1_complete', title:'W1 Complete', families: w1Complete.slice(0,20).map(f => ({
-      name:f.name, son:null, mentor:null,
-      days: f.date ? Math.floor((now-new Date(f.date))/86400000) : null,
-      payment:'—', stage:f.w1_activation_stage
-    }))},
-    {id:'active', title:'Active', families: retention.slice(0,15).map(f => ({
-      name:f.name, son:null, mentor:null,
-      sessions: f.session_count,
-      payment: f.payment_reset_date ? 'reset '+f.payment_reset_date : 'active',
-      paymentIssue: !!f.payment_reset_date
-    }))}
-  ];
-  
-  document.getElementById('pipeline').innerHTML = columns.map(col => {
-    const isOverdue = col.id === 'pending_w1';
-    return `<div class="pipeline-col">
-      <div class="col-header">
-        <span>${col.title}</span>
-        <span class="col-count${isOverdue?' red':''}">${col.families.length}</span>
-      </div>
-      ${col.families.map((f,i) => renderFamCard(f, col.id, i)).join('')}
-    </div>`;
+  rows.sort((a, b) => {
+    let av = a[sortKey] || '';
+    let bv = b[sortKey] || '';
+    if (sortKey === 'amount') { av = parseFloat(av)||0; bv = parseFloat(bv)||0; }
+    else { av = String(av).toLowerCase(); bv = String(bv).toLowerCase(); }
+    return av < bv ? -sortDir : av > bv ? sortDir : 0;
+  });
+
+  document.getElementById('count-badge').textContent = `${rows.length} of ${allFamilies.length} families`;
+
+  const tbody = document.getElementById('fam-tbody');
+  if (!rows.length) {
+    tbody.innerHTML = '<tr><td colspan="9" class="loading">No families match filters</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = rows.map(f => {
+    const color = rowColor(f);
+    const badge = rowBadge(f);
+    const tier = tierShort(f.tier);
+    const mentor = f.mentor ? `<span class="mentor-name">${f.mentor}</span>` : '<span class="date-val none">—</span>';
+    const amount = f.amount ? `$${parseFloat(f.amount).toLocaleString()}` : '—';
+    const owner = f.owner || '—';
+    return `<tr>
+      <td><div class="row-indicator" style="background:${color};height:32px;"></div></td>
+      <td><div class="nm">${escHtml(f.name)}</div><div class="em">${escHtml(f.email||'')}</div></td>
+      <td>${badge}</td>
+      <td class="hide-mobile"><span class="tier-badge">${escHtml(tier)}</span></td>
+      <td class="hide-mobile">${mentor}</td>
+      <td>${fmtDate(f.w1_date)}</td>
+      <td class="hide-mobile">${escHtml(amount)}</td>
+      <td class="hide-mobile"><span class="owner-badge">${escHtml(owner)}</span></td>
+      <td>${f.hs_url ? `<a class="hs-link" href="${f.hs_url}" target="_blank" rel="noopener">Open →</a>` : '—'}</td>
+    </tr>`;
   }).join('');
 }
 
-function renderFamCard(f, colId, idx) {
-  const cardId = colId+'-'+idx;
-  const daysLabel = f.days !== null && f.days !== undefined ? f.days+'d' : '';
-  const healthScore = Math.min(100, Math.max(10, 100 - (f.days||0)*2));
-  const healthColor = healthScore > 70 ? '#4CAF50' : healthScore > 40 ? 'var(--amber)' : 'var(--red)';
-  
-  return `<div class="fam-card" id="fam-${cardId}" onclick="toggleFamExpand('${cardId}')">
-    <div class="fam-links">
-      <a class="fam-link" href="https://bluesandgreens.lovable.app" target="_blank" onclick="event.stopPropagation()" title="Portal">🔗</a>
-      <a class="fam-link" href="https://app.hubspot.com/contacts/48782903" target="_blank" onclick="event.stopPropagation()" title="HubSpot">🏢</a>
-    </div>
-    <div class="fam-name">${f.name}</div>
-    ${f.son?`<div class="fam-son">Son: ${f.son}</div>`:''}
-    <div class="fam-meta">
-      ${f.mentor?`<span class="fam-tag mentor">${f.mentor}</span>`:''}
-      ${daysLabel?`<span class="fam-tag days${f.overdue?' overdue':''}">${f.overdue?'⚠️ ':''}${daysLabel}${f.overdue?' overdue':''}</span>`:''}
-      ${f.dateLabel?`<span class="fam-tag stage">📅 ${f.dateLabel}</span>`:''}
-      ${f.sessions?`<span class="fam-tag stage">📊 ${f.sessions} sessions</span>`:''}
-      ${f.stage?`<span class="fam-tag stage">${f.stage}</span>`:''}
-      ${f.paymentIssue?`<span class="fam-tag payment issue">⚠️ ${f.payment}</span>`:`<span class="fam-tag payment">${f.payment||''}</span>`}
-    </div>
-    ${daysLabel?`<div class="fam-health"><div class="fam-health-bar" style="width:${healthScore}%;background:${healthColor};"></div></div>`:''}
-    <div class="fam-actions">
-      <button class="btn btn-gold" onclick="event.stopPropagation();openSendBrodieModal('${f.name.replace(/'/g,"\\'")}')">📩 Brodie</button>
-      <button class="btn btn-ghost" onclick="event.stopPropagation();openSendNorriModal('${f.name.replace(/'/g,"\\'")}')">📩 Norri</button>
-      <button class="btn btn-ghost" onclick="event.stopPropagation();openRetentionModal('${f.name.replace(/'/g,"\\'")}')">🚩 Retention</button>
-      <button class="btn btn-ghost" onclick="event.stopPropagation();openScheduleCallModal('${f.name.replace(/'/g,"\\'")}')">📞 Call</button>
-    </div>
-  </div>`;
+function sortBy(key) {
+  if (sortKey === key) sortDir *= -1;
+  else { sortKey = key; sortDir = 1; }
+  document.querySelectorAll('thead th').forEach(th => th.classList.remove('sorted'));
+  renderTable();
 }
 
-function toggleFamExpand(id) {
-  const el = document.getElementById('fam-'+id);
-  if(el) el.classList.toggle('expanded');
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-/* ═══ MODALS ═══ */
-function openModal(html, buttons) {
-  const c = document.getElementById('modal-container');
-  const btns = (buttons||[]).map(b => 
-    `<button class="btn ${b.gold?'btn-gold':'btn-ghost'}" onclick="(${b.action.toString()})()">${b.label}</button>`
-  ).join('');
-  c.innerHTML = `<div class="mc-modal-backdrop" onclick="if(event.target===this)closeModal()">
-    <div class="mc-modal">${html}<div class="mc-modal-actions">${btns}</div></div></div>`;
-  document.addEventListener('keydown', escHandler);
-}
-function closeModal() {
-  document.getElementById('modal-container').innerHTML = '';
-  document.removeEventListener('keydown', escHandler);
-}
-function escHandler(e) { if(e.key==='Escape') closeModal(); }
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'), 2500);
-}
-function saveAction(type, data) {
-  const actions = JSON.parse(localStorage.getItem('mc_actions_queue')||'[]');
-  actions.push({type, data, time:new Date().toISOString()});
-  localStorage.setItem('mc_actions_queue', JSON.stringify(actions));
-}
+async function init() {
+  try {
+    const r = await fetch('../data/families.json');
+    const data = await r.json();
+    allFamilies = data.families || [];
 
-function openSendBrodieModal(name) {
-  const msg = `Hey Brodie, can you follow up with ${name}? They're waiting in the pipeline and need activation support.`;
-  openModal(`<h3>📩 Send to Brodie Paull</h3>
-    <label>Message:</label><textarea id="modal-msg">${msg}</textarea>`,
-    [{label:'Send',gold:true,action:()=>{
-      const txt=document.getElementById('modal-msg').value;
-      saveAction('send_brodie',{family:name,message:txt});
-      closeModal();showToast('Message queued — Leo will send on next sync');
-    }},{label:'Cancel',action:closeModal}]);
-}
+    // Hero counts
+    const active = allFamilies.filter(f => f.stripe_status === 'active');
+    const pastDue = allFamilies.filter(f => f.stripe_status === 'past_due');
+    const awaitingW1 = active.filter(f => !f.w1_date);
+    const deposits = allFamilies.filter(f => !f.stripe_status);
 
-function openSendNorriModal(name) {
-  const msg = `Hey Norri, can you check in with ${name}? They may need a welcome call or program support.`;
-  openModal(`<h3>📩 Send to Norri</h3>
-    <label>Message:</label><textarea id="modal-msg">${msg}</textarea>`,
-    [{label:'Send',gold:true,action:()=>{
-      const txt=document.getElementById('modal-msg').value;
-      saveAction('send_norri',{family:name,message:txt});
-      closeModal();showToast('Message queued — Leo will send on next sync');
-    }},{label:'Cancel',action:closeModal}]);
-}
+    document.getElementById('h-active').textContent = active.length;
+    document.getElementById('h-pastdue').textContent = pastDue.length;
+    document.getElementById('h-nw1').textContent = awaitingW1.length;
+    document.getElementById('h-deposit').textContent = deposits.length;
 
-function openRetentionModal(name) {
-  openModal(`<h3>🚩 Flag for Retention</h3><p>Flag <strong>${name}</strong> for retention review</p>
-    <label>Reason</label>
-    <select id="modal-reason"><option>Payment issues</option><option>Low engagement</option><option>At risk</option><option>Other</option></select>
-    <label>Notes</label><textarea id="modal-notes" placeholder="Additional context..."></textarea>`,
-    [{label:'Flag',gold:true,action:()=>{
-      const reason=document.getElementById('modal-reason').value;
-      const notes=document.getElementById('modal-notes').value;
-      saveAction('flag_retention',{family:name,reason,notes});
-      closeModal();showToast('Flagged for retention review');
-    }},{label:'Cancel',action:closeModal}]);
-}
+    const gen = new Date(data.generated);
+    document.getElementById('live-badge').textContent = `📡 Live · ${gen.toLocaleString('en-AU',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'})}`;
 
-function openScheduleCallModal(name) {
-  openModal(`<h3>📞 Schedule Call</h3><p>Schedule call with <strong>${name}</strong></p>
-    <label>When</label>
-    <select id="modal-when"><option>Tomorrow morning</option><option>This week</option><option>Custom</option></select>
-    <label>Notes</label><textarea id="modal-notes" placeholder="What to discuss..."></textarea>`,
-    [{label:'Schedule',gold:true,action:()=>{
-      const when=document.getElementById('modal-when').value;
-      const notes=document.getElementById('modal-notes').value;
-      saveAction('schedule_call',{family:name,when,notes});
-      closeModal();showToast('Call scheduled — Leo will add to calendar');
-    }},{label:'Cancel',action:closeModal}]);
+    renderTable();
+  } catch(e) {
+    document.getElementById('fam-tbody').innerHTML = `<tr><td colspan="9" class="loading">Error loading data: ${e.message}</td></tr>`;
+  }
 }
 
 init();

@@ -1,0 +1,4813 @@
+{
+  "generated": "2026-03-21T15:43:39.424600",
+  "mentor_stats": {
+    "Luke Dixon": {
+      "total_invoiced": 90.0,
+      "invoice_count": 2,
+      "statuses": {
+        "submitted": 2
+      },
+      "email": "luke@bluesandgreens.com.au"
+    },
+    "Jett Cara": {
+      "total_invoiced": 630.0,
+      "invoice_count": 13,
+      "statuses": {
+        "submitted": 3,
+        "approved": 10
+      },
+      "email": "jett@bluesandgreens.com.au"
+    },
+    "Jonti Crisp": {
+      "total_invoiced": 135.0,
+      "invoice_count": 2,
+      "statuses": {
+        "submitted": 1,
+        "approved": 1
+      },
+      "email": "jonti@bluesandgreens.com.au"
+    },
+    "Jed Woods": {
+      "total_invoiced": 1968.0,
+      "invoice_count": 5,
+      "statuses": {
+        "submitted": 1,
+        "approved": 2,
+        "paid": 2
+      },
+      "email": "jed@bluesandgreens.com.au"
+    },
+    "Fletcher Gauci": {
+      "total_invoiced": 390.0,
+      "invoice_count": 4,
+      "statuses": {
+        "submitted": 1,
+        "approved": 3
+      },
+      "email": "fletcher@bluesandgreens.com.au"
+    },
+    "josh gould": {
+      "total_invoiced": 156.0,
+      "invoice_count": 3,
+      "statuses": {
+        "submitted": 1,
+        "approved": 2
+      },
+      "email": "josh@bluesandgreens.com.au"
+    },
+    "Aidan Cole": {
+      "total_invoiced": 426.0,
+      "invoice_count": 7,
+      "statuses": {
+        "submitted": 1,
+        "approved": 6
+      },
+      "email": "aidan@bluesandgreens.com.au"
+    },
+    "Lachlan Hall": {
+      "total_invoiced": 90.0,
+      "invoice_count": 2,
+      "statuses": {
+        "approved": 2
+      },
+      "email": "lachlan@bluesandgreens.com.au"
+    },
+    "Charlie Bolmat": {
+      "total_invoiced": 1029.0,
+      "invoice_count": 3,
+      "statuses": {
+        "approved": 2,
+        "paid": 1
+      },
+      "email": "charlie@bluesandgreens.com.au"
+    },
+    "Hayden Sampson": {
+      "total_invoiced": 639.0,
+      "invoice_count": 4,
+      "statuses": {
+        "paid": 1,
+        "approved": 3
+      },
+      "email": "hayden@bluesandgreens.com.au"
+    },
+    "Aidan Librio": {
+      "total_invoiced": 45.0,
+      "invoice_count": 1,
+      "statuses": {
+        "approved": 1
+      },
+      "email": "aidanl@bluesandgreens.com.au"
+    },
+    "Benjamin Philip": {
+      "total_invoiced": 2292.0,
+      "invoice_count": 3,
+      "statuses": {
+        "approved": 2,
+        "paid": 1
+      },
+      "email": "ben@bluesandgreens.com.au"
+    },
+    "Harper Montgomery": {
+      "total_invoiced": 4776.0,
+      "invoice_count": 3,
+      "statuses": {
+        "approved": 2,
+        "paid": 1
+      },
+      "email": "harper@bluesandgreens.com.au"
+    },
+    "Luke Vella": {
+      "total_invoiced": 370.0,
+      "invoice_count": 3,
+      "statuses": {
+        "approved": 3
+      },
+      "email": "luke.v@bluesandgreens.com.au"
+    },
+    "Noah Cockerell": {
+      "total_invoiced": 225.0,
+      "invoice_count": 3,
+      "statuses": {
+        "approved": 3
+      },
+      "email": "noah@bluesandgreens.com.au"
+    },
+    "Ben Kaipau": {
+      "total_invoiced": 234.0,
+      "invoice_count": 4,
+      "statuses": {
+        "approved": 4
+      },
+      "email": "benkaipau@bluesandgreens.com.au"
+    },
+    "Amin Naim": {
+      "total_invoiced": 45.0,
+      "invoice_count": 1,
+      "statuses": {
+        "approved": 1
+      },
+      "email": "amin@bluesandgreens.com.au"
+    },
+    "Tom Hermans": {
+      "total_invoiced": 303.0,
+      "invoice_count": 2,
+      "statuses": {
+        "approved": 2
+      },
+      "email": "tom@bluesandgreens.com.au"
+    },
+    "Taj Schofield": {
+      "total_invoiced": 626.0,
+      "invoice_count": 3,
+      "statuses": {
+        "approved": 3
+      },
+      "email": "taj@bluesandgreens.com.au"
+    },
+    "Cristian Milograd": {
+      "total_invoiced": 4100.0,
+      "invoice_count": 5,
+      "statuses": {
+        "approved": 3,
+        "paid": 2
+      },
+      "email": "cristian@bluesandgreens.com.au"
+    },
+    "Xavier Lewis": {
+      "total_invoiced": 3171.0,
+      "invoice_count": 4,
+      "statuses": {
+        "approved": 2,
+        "paid": 2
+      },
+      "email": "xavier@bluesandgreens.com.au"
+    },
+    "Ben Cantwell": {
+      "total_invoiced": 459.0,
+      "invoice_count": 2,
+      "statuses": {
+        "approved": 2
+      },
+      "email": "ben.c@bluesandgreens.com.au"
+    },
+    "Blair Huggins": {
+      "total_invoiced": 5890.0,
+      "invoice_count": 5,
+      "statuses": {
+        "approved": 4,
+        "paid": 1
+      },
+      "email": "blair@bluesandgreens.com.au"
+    },
+    "Bailey Kiefer": {
+      "total_invoiced": 3246.0,
+      "invoice_count": 4,
+      "statuses": {
+        "approved": 2,
+        "paid": 2
+      },
+      "email": "bailey@bluesandgreens.com.au"
+    },
+    "Connor Savill": {
+      "total_invoiced": 315.0,
+      "invoice_count": 2,
+      "statuses": {
+        "approved": 2
+      },
+      "email": "connor@bluesandgreens.com.au"
+    },
+    "Miles Dalgliesh": {
+      "total_invoiced": 111.0,
+      "invoice_count": 1,
+      "statuses": {
+        "approved": 1
+      },
+      "email": "miles@bluesandgreens.com.au"
+    },
+    "Callum Sargentson": {
+      "total_invoiced": 438.0,
+      "invoice_count": 2,
+      "statuses": {
+        "approved": 1,
+        "paid": 1
+      },
+      "email": "callum@bluesandgreens.com.au"
+    },
+    "Jack Petruccelle": {
+      "total_invoiced": 331.0,
+      "invoice_count": 2,
+      "statuses": {
+        "approved": 2
+      },
+      "email": "jack@bluesandgreens.com.au"
+    },
+    "Harry Quayle": {
+      "total_invoiced": 465.0,
+      "invoice_count": 3,
+      "statuses": {
+        "paid": 2,
+        "approved": 1
+      },
+      "email": "harry@bluesandgreens.com.au"
+    },
+    "Anthony Audino": {
+      "total_invoiced": 726.0,
+      "invoice_count": 1,
+      "statuses": {
+        "paid": 1
+      },
+      "email": "anthony@bluesandgreens.com.au"
+    },
+    "Brodie Paull": {
+      "total_invoiced": 530.0,
+      "invoice_count": 1,
+      "statuses": {
+        "paid": 1
+      },
+      "email": "brodie@bluesandgreens.com.au"
+    }
+  },
+  "recent_invoices": [
+    {
+      "id": "da8483e6-c1cc-4163-9062-dc10c4a3e5c4",
+      "mentor_id": "cfdf18f0-97fa-4666-a338-d789159ae1c2",
+      "week_start": "2026-03-19",
+      "week_end": "2026-03-19",
+      "status": "submitted",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-19T01:03:56.777+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-19T01:03:56.932849+00:00",
+      "updated_at": "2026-03-19T01:03:56.932849+00:00",
+      "mentor_name": "Luke Dixon",
+      "mentor_email": "luke@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0115"
+    },
+    {
+      "id": "609c9814-5bd6-4c97-90c4-d34267819853",
+      "mentor_id": "ee49bf02-8a6b-4be5-957f-9dcac4bfe265",
+      "week_start": "2026-03-19",
+      "week_end": "2026-03-19",
+      "status": "submitted",
+      "total_amount": 90.0,
+      "submitted_at": "2026-03-19T11:04:05.023+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-19T11:04:18.099331+00:00",
+      "updated_at": "2026-03-19T11:04:18.099331+00:00",
+      "mentor_name": "Jett Cara",
+      "mentor_email": "jett@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0118"
+    },
+    {
+      "id": "f5d973cc-01bc-41f1-94cf-1e73dbbb3aec",
+      "mentor_id": "ee49bf02-8a6b-4be5-957f-9dcac4bfe265",
+      "week_start": "2026-03-18",
+      "week_end": "2026-03-18",
+      "status": "submitted",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-18T07:12:25.49+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-18T07:12:25.541523+00:00",
+      "updated_at": "2026-03-18T07:12:25.541523+00:00",
+      "mentor_name": "Jett Cara",
+      "mentor_email": "jett@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0113"
+    },
+    {
+      "id": "6e6a3e97-a125-43e1-9766-e406f3c267d3",
+      "mentor_id": "79315f16-c701-47df-8f15-7c9fb706bd35",
+      "week_start": "2026-03-17",
+      "week_end": "2026-03-17",
+      "status": "submitted",
+      "total_amount": 90.0,
+      "submitted_at": "2026-03-20T03:05:57.804+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-20T03:05:58.35867+00:00",
+      "updated_at": "2026-03-20T03:05:58.35867+00:00",
+      "mentor_name": "Jonti Crisp",
+      "mentor_email": "jonti@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0119"
+    },
+    {
+      "id": "a5eaf52e-dca0-4c70-9e6f-85fffd28be4f",
+      "mentor_id": "07ee7e03-c144-47a3-804d-4ace642ece8a",
+      "week_start": "2026-03-17",
+      "week_end": "2026-03-19",
+      "status": "submitted",
+      "total_amount": 111.0,
+      "submitted_at": "2026-03-19T09:33:37.65+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-19T09:33:37.732067+00:00",
+      "updated_at": "2026-03-19T09:33:37.732067+00:00",
+      "mentor_name": "Jed Woods",
+      "mentor_email": "jed@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0117"
+    },
+    {
+      "id": "357421aa-0c63-4340-bb9e-4bf32f68ae7f",
+      "mentor_id": "0f5270b0-f18b-4757-bfe9-20ca105e0c85",
+      "week_start": "2026-03-17",
+      "week_end": "2026-03-20",
+      "status": "submitted",
+      "total_amount": 78.0,
+      "submitted_at": "2026-03-20T06:40:12.007+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-20T06:40:09.477145+00:00",
+      "updated_at": "2026-03-20T06:40:09.477145+00:00",
+      "mentor_name": "Fletcher Gauci",
+      "mentor_email": "fletcher@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0120"
+    },
+    {
+      "id": "d87fb4c6-327a-4e54-885d-619e2971ac1b",
+      "mentor_id": "5ddc419b-43d4-463d-aeae-70e907249d14",
+      "week_start": "2026-03-16",
+      "week_end": "2026-03-18",
+      "status": "submitted",
+      "total_amount": 78.0,
+      "submitted_at": "2026-03-18T04:56:05.097+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-18T04:56:05.219515+00:00",
+      "updated_at": "2026-03-18T04:56:05.219515+00:00",
+      "mentor_name": "josh gould",
+      "mentor_email": "josh@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0112"
+    },
+    {
+      "id": "12d26105-1cf5-4529-a880-f03f43ec3ab1",
+      "mentor_id": "ee49bf02-8a6b-4be5-957f-9dcac4bfe265",
+      "week_start": "2026-03-16",
+      "week_end": "2026-03-16",
+      "status": "submitted",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-16T08:07:31.655+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-16T08:07:38.914168+00:00",
+      "updated_at": "2026-03-16T08:07:38.914168+00:00",
+      "mentor_name": "Jett Cara",
+      "mentor_email": "jett@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0110"
+    },
+    {
+      "id": "2fd43655-bedb-43bc-881d-6540c8dc6e83",
+      "mentor_id": "d83cf3c8-fdd5-4e3c-a2c9-d284f8a7b052",
+      "week_start": "2026-03-16",
+      "week_end": "2026-03-18",
+      "status": "submitted",
+      "total_amount": 168.0,
+      "submitted_at": "2026-03-19T02:23:18.425+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-19T02:23:18.589624+00:00",
+      "updated_at": "2026-03-19T02:23:18.589624+00:00",
+      "mentor_name": "Aidan Cole",
+      "mentor_email": "aidan@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0116"
+    },
+    {
+      "id": "2c168566-0075-4b4c-ae37-fa93febaf822",
+      "mentor_id": "a514f83d-6fee-4e3d-8dfe-e759d549c8bb",
+      "week_start": "2026-03-15",
+      "week_end": "2026-03-15",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-15T05:49:56.489+00:00",
+      "approved_at": "2026-03-15T07:54:23.093+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T05:49:56.760094+00:00",
+      "updated_at": "2026-03-15T07:54:23.182742+00:00",
+      "mentor_name": "Lachlan Hall",
+      "mentor_email": "lachlan@bluesandgreens.com.au",
+      "xero_bill_id": "b7bdef17-a730-4b1f-babd-b1c6713cdd23",
+      "xero_pushed_at": "2026-03-15T07:54:23.093+00:00",
+      "reference_number": "BG-0094"
+    },
+    {
+      "id": "444f6028-d511-4043-a362-4284d60f9c9f",
+      "mentor_id": "ee49bf02-8a6b-4be5-957f-9dcac4bfe265",
+      "week_start": "2026-03-15",
+      "week_end": "2026-03-15",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-15T01:13:56.19+00:00",
+      "approved_at": "2026-03-15T02:46:45.302+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T01:14:01.168592+00:00",
+      "updated_at": "2026-03-15T02:46:45.334466+00:00",
+      "mentor_name": "Jett Cara",
+      "mentor_email": "jett@bluesandgreens.com.au",
+      "xero_bill_id": "d61053e5-5e0a-43d9-82fc-4522bf987e34",
+      "xero_pushed_at": "2026-03-15T02:46:45.302+00:00",
+      "reference_number": "BG-0093"
+    },
+    {
+      "id": "33933436-d928-4ad7-95af-3eb700c08ee8",
+      "mentor_id": "e6325a4c-2c42-4dc2-909e-17820055ff23",
+      "week_start": "2026-03-15",
+      "week_end": "2026-03-15",
+      "status": "approved",
+      "total_amount": 78.0,
+      "submitted_at": "2026-03-15T07:02:29.282+00:00",
+      "approved_at": "2026-03-15T07:43:24.989+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T07:02:29.438625+00:00",
+      "updated_at": "2026-03-15T07:43:25.115148+00:00",
+      "mentor_name": "Charlie Bolmat",
+      "mentor_email": "charlie@bluesandgreens.com.au",
+      "xero_bill_id": "a5dc6d84-9e78-453a-9a9c-cd1ac5337189",
+      "xero_pushed_at": "2026-03-15T07:43:24.989+00:00",
+      "reference_number": "BG-0096"
+    },
+    {
+      "id": "4eec8f0a-ae3d-4ee9-9e34-329a756db279",
+      "mentor_id": "7d8bf48e-01bd-4a74-b67f-1d5475e21a1c",
+      "week_start": "2026-03-15",
+      "week_end": "2026-03-22",
+      "status": "paid",
+      "total_amount": 60.0,
+      "submitted_at": "2026-03-16T00:42:40.197+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": "2026-03-16T02:52:43.791+00:00",
+      "admin_notes": "double up Circle paid on invoice 105 submitted",
+      "created_at": "2026-03-16T00:42:40.800788+00:00",
+      "updated_at": "2026-03-16T02:52:44.345664+00:00",
+      "mentor_name": "Hayden Sampson",
+      "mentor_email": "hayden@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0106"
+    },
+    {
+      "id": "07cd20fe-4eb9-40bb-a290-707a5954683c",
+      "mentor_id": "6858b879-9b77-4ab1-af44-ad4e3f120a06",
+      "week_start": "2026-03-12",
+      "week_end": "2026-03-12",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-12T05:21:48.75+00:00",
+      "approved_at": "2026-03-15T03:20:59.556+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-12T05:21:48.854469+00:00",
+      "updated_at": "2026-03-15T03:20:59.65474+00:00",
+      "mentor_name": "Aidan Librio",
+      "mentor_email": "aidanl@bluesandgreens.com.au",
+      "xero_bill_id": "f4cfbb9b-929f-442c-beef-ee3d91244f58",
+      "xero_pushed_at": "2026-03-15T03:20:59.556+00:00",
+      "reference_number": "BG-0084"
+    },
+    {
+      "id": "d3c59ac3-3583-4089-9373-5df5e0f16d0b",
+      "mentor_id": "bd09ce9e-16ba-4e33-aafe-412937a55ee5",
+      "week_start": "2026-03-12",
+      "week_end": "2026-03-14",
+      "status": "approved",
+      "total_amount": 130.0,
+      "submitted_at": "2026-03-16T13:01:37.322+00:00",
+      "approved_at": "2026-03-16T13:05:40.68+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-16T13:01:37.502454+00:00",
+      "updated_at": "2026-03-16T13:05:40.737754+00:00",
+      "mentor_name": "Benjamin Philip",
+      "mentor_email": "ben@bluesandgreens.com.au",
+      "xero_bill_id": "1ef384f9-d015-4edf-8139-186a342a1c31",
+      "xero_pushed_at": "2026-03-16T13:05:40.68+00:00",
+      "reference_number": "BG-0111"
+    },
+    {
+      "id": "c9d09307-64bf-4485-92a6-74774cd0e94d",
+      "mentor_id": "d83cf3c8-fdd5-4e3c-a2c9-d284f8a7b052",
+      "week_start": "2026-03-12",
+      "week_end": "2026-03-12",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-16T07:12:42.939+00:00",
+      "approved_at": "2026-03-16T07:56:24.699+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-16T07:12:43.154515+00:00",
+      "updated_at": "2026-03-16T07:56:24.737592+00:00",
+      "mentor_name": "Aidan Cole",
+      "mentor_email": "aidan@bluesandgreens.com.au",
+      "xero_bill_id": "0020ec06-0313-4579-bf32-5733722cd06c",
+      "xero_pushed_at": "2026-03-16T07:56:24.699+00:00",
+      "reference_number": "BG-0109"
+    },
+    {
+      "id": "df0c3aa0-2ea8-4e54-81f6-e667f8fba7d3",
+      "mentor_id": "7d8bf48e-01bd-4a74-b67f-1d5475e21a1c",
+      "week_start": "2026-03-12",
+      "week_end": "2026-03-12",
+      "status": "approved",
+      "total_amount": 105.0,
+      "submitted_at": "2026-03-16T00:42:35.016+00:00",
+      "approved_at": "2026-03-16T02:52:22.481+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-16T00:42:35.685921+00:00",
+      "updated_at": "2026-03-16T02:52:22.535554+00:00",
+      "mentor_name": "Hayden Sampson",
+      "mentor_email": "hayden@bluesandgreens.com.au",
+      "xero_bill_id": "74772011-5d1d-4d55-b5a1-c3ace3e3b7ca",
+      "xero_pushed_at": "2026-03-16T02:52:22.481+00:00",
+      "reference_number": "BG-0105"
+    },
+    {
+      "id": "5c9d814a-b09b-40c3-8326-4198dcfcf7a9",
+      "mentor_id": "8b94e122-0745-4248-b190-38e55157e716",
+      "week_start": "2026-03-12",
+      "week_end": "2026-03-15",
+      "status": "approved",
+      "total_amount": 246.0,
+      "submitted_at": "2026-03-16T02:38:40.477+00:00",
+      "approved_at": "2026-03-16T02:51:48.625+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-16T02:38:40.607625+00:00",
+      "updated_at": "2026-03-16T02:51:48.708928+00:00",
+      "mentor_name": "Harper Montgomery",
+      "mentor_email": "harper@bluesandgreens.com.au",
+      "xero_bill_id": "9fef4779-be67-4dd5-9cd5-3f6feeb5ab9b",
+      "xero_pushed_at": "2026-03-16T02:51:48.625+00:00",
+      "reference_number": "BG-0108"
+    },
+    {
+      "id": "9defa28b-ba10-4d0b-9cc3-e3cd5e4a1c1e",
+      "mentor_id": "02ac0f00-48be-4256-ac4d-fb7d83746162",
+      "week_start": "2026-03-12",
+      "week_end": "2026-03-13",
+      "status": "approved",
+      "total_amount": 120.0,
+      "submitted_at": "2026-03-13T07:52:28.85+00:00",
+      "approved_at": "2026-03-15T03:01:29.051+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-13T07:52:28.919871+00:00",
+      "updated_at": "2026-03-15T03:01:29.161371+00:00",
+      "mentor_name": "Luke Vella",
+      "mentor_email": "luke.v@bluesandgreens.com.au",
+      "xero_bill_id": "f0caf842-4dd0-47bf-b1dc-fd4349d516a0",
+      "xero_pushed_at": "2026-03-15T03:01:29.051+00:00",
+      "reference_number": "BG-0089"
+    },
+    {
+      "id": "27020037-90d9-4874-8348-ebf461780bce",
+      "mentor_id": "ee49bf02-8a6b-4be5-957f-9dcac4bfe265",
+      "week_start": "2026-03-12",
+      "week_end": "2026-03-12",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-12T03:38:30.782+00:00",
+      "approved_at": "2026-03-15T02:47:59.839+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-12T03:38:30.820154+00:00",
+      "updated_at": "2026-03-15T02:47:59.886809+00:00",
+      "mentor_name": "Jett Cara",
+      "mentor_email": "jett@bluesandgreens.com.au",
+      "xero_bill_id": "14ac2c57-c736-48c0-811e-17377d826671",
+      "xero_pushed_at": "2026-03-15T02:47:59.839+00:00",
+      "reference_number": "BG-0083"
+    },
+    {
+      "id": "1cc62189-16a6-4613-a25e-3810053792e9",
+      "mentor_id": "ee49bf02-8a6b-4be5-957f-9dcac4bfe265",
+      "week_start": "2026-03-12",
+      "week_end": "2026-03-12",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-12T11:16:43.974+00:00",
+      "approved_at": "2026-03-15T02:47:49.332+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-12T11:16:44.031672+00:00",
+      "updated_at": "2026-03-15T02:47:49.381962+00:00",
+      "mentor_name": "Jett Cara",
+      "mentor_email": "jett@bluesandgreens.com.au",
+      "xero_bill_id": "23c996cc-eb97-4256-b11e-dea52a81ae43",
+      "xero_pushed_at": "2026-03-15T02:47:49.332+00:00",
+      "reference_number": "BG-0086"
+    },
+    {
+      "id": "d255d023-378a-4b2d-bce2-86449eaa811f",
+      "mentor_id": "45101605-fb88-4ca9-8125-f98d66269be4",
+      "week_start": "2026-03-11",
+      "week_end": "2026-03-13",
+      "status": "approved",
+      "total_amount": 135.0,
+      "submitted_at": "2026-03-13T08:12:46.78+00:00",
+      "approved_at": "2026-03-15T03:01:16.762+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-13T08:12:46.843366+00:00",
+      "updated_at": "2026-03-15T03:01:16.804991+00:00",
+      "mentor_name": "Noah Cockerell",
+      "mentor_email": "noah@bluesandgreens.com.au",
+      "xero_bill_id": "7349569a-c3eb-4a72-a8f5-e09cb10d29b1",
+      "xero_pushed_at": "2026-03-15T03:01:16.762+00:00",
+      "reference_number": "BG-0090"
+    },
+    {
+      "id": "db263585-0a30-4177-b80c-fd991f6dbfaf",
+      "mentor_id": "b0a51a45-c55c-4a45-b085-d12517d34000",
+      "week_start": "2026-03-11",
+      "week_end": "2026-03-15",
+      "status": "approved",
+      "total_amount": 78.0,
+      "submitted_at": "2026-03-15T11:13:59.729+00:00",
+      "approved_at": "2026-03-15T21:44:57.819+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T11:13:59.746946+00:00",
+      "updated_at": "2026-03-15T21:44:57.84986+00:00",
+      "mentor_name": "Ben Kaipau",
+      "mentor_email": "benkaipau@bluesandgreens.com.au",
+      "xero_bill_id": "ad878212-43c1-48ae-897f-6a24044211db",
+      "xero_pushed_at": "2026-03-15T21:44:57.819+00:00",
+      "reference_number": "BG-0101"
+    },
+    {
+      "id": "d8de24bf-7305-4c74-9a6d-96112be6faf5",
+      "mentor_id": "5ddc419b-43d4-463d-aeae-70e907249d14",
+      "week_start": "2026-03-11",
+      "week_end": "2026-03-11",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-12T00:26:47.211+00:00",
+      "approved_at": "2026-03-15T03:21:52.473+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-12T00:26:47.414378+00:00",
+      "updated_at": "2026-03-15T03:21:52.56326+00:00",
+      "mentor_name": "josh gould",
+      "mentor_email": "josh@bluesandgreens.com.au",
+      "xero_bill_id": "15a945ee-8257-406a-87c6-d2b3fc0aba98",
+      "xero_pushed_at": "2026-03-15T03:21:52.473+00:00",
+      "reference_number": "BG-0081"
+    },
+    {
+      "id": "2a531089-cd2f-4068-81bb-5333be277260",
+      "mentor_id": "79315f16-c701-47df-8f15-7c9fb706bd35",
+      "week_start": "2026-03-11",
+      "week_end": "2026-03-11",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-13T05:59:06.65+00:00",
+      "approved_at": "2026-03-15T03:01:38.976+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-13T05:59:06.859765+00:00",
+      "updated_at": "2026-03-15T03:01:39.066668+00:00",
+      "mentor_name": "Jonti Crisp",
+      "mentor_email": "jonti@bluesandgreens.com.au",
+      "xero_bill_id": "482165ec-c521-48f8-a63d-e4d835c5570f",
+      "xero_pushed_at": "2026-03-15T03:01:38.976+00:00",
+      "reference_number": "BG-0088"
+    },
+    {
+      "id": "3da67f69-c829-4a66-86d9-92b67a23c9cb",
+      "mentor_id": "d83cf3c8-fdd5-4e3c-a2c9-d284f8a7b052",
+      "week_start": "2026-03-11",
+      "week_end": "2026-03-11",
+      "status": "approved",
+      "total_amount": 33.0,
+      "submitted_at": "2026-03-11T23:17:30.139+00:00",
+      "approved_at": "2026-03-15T03:26:30.714+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-11T23:17:30.176616+00:00",
+      "updated_at": "2026-03-15T03:26:30.770399+00:00",
+      "mentor_name": "Aidan Cole",
+      "mentor_email": "aidan@bluesandgreens.com.au",
+      "xero_bill_id": "dd29f1bd-e905-4657-a3b7-2dbb66fc42aa",
+      "xero_pushed_at": "2026-03-15T03:26:30.714+00:00",
+      "reference_number": "BG-0080"
+    },
+    {
+      "id": "adc7716d-9a59-4409-99c5-2fd4a3f53adf",
+      "mentor_id": "1c096cdd-4da2-426c-b163-219e485e73a5",
+      "week_start": "2026-03-10",
+      "week_end": "2026-03-10",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-15T06:01:41.87+00:00",
+      "approved_at": "2026-03-15T07:54:29.911+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T06:01:42.538822+00:00",
+      "updated_at": "2026-03-15T07:54:29.984663+00:00",
+      "mentor_name": "Amin Naim",
+      "mentor_email": "amin@bluesandgreens.com.au",
+      "xero_bill_id": "39b6cd7f-6f9f-4815-b739-a3627a21b9cd",
+      "xero_pushed_at": "2026-03-15T07:54:29.911+00:00",
+      "reference_number": "BG-0095"
+    },
+    {
+      "id": "7feaa9d3-8717-4cfd-80bf-9ddfa3c2941f",
+      "mentor_id": "b5f680a5-d323-4e73-9862-d4bf982dab6a",
+      "week_start": "2026-03-10",
+      "week_end": "2026-03-14",
+      "status": "approved",
+      "total_amount": 168.0,
+      "submitted_at": "2026-03-14T06:14:49.17+00:00",
+      "approved_at": "2026-03-15T02:50:01.291+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-14T06:14:49.252793+00:00",
+      "updated_at": "2026-03-15T02:50:01.335498+00:00",
+      "mentor_name": "Tom Hermans",
+      "mentor_email": "tom@bluesandgreens.com.au",
+      "xero_bill_id": "37896654-b58f-4e78-8309-9ef155f449ad",
+      "xero_pushed_at": "2026-03-15T02:50:01.291+00:00",
+      "reference_number": "BG-0092"
+    },
+    {
+      "id": "d77c2c5c-765f-424f-bdc5-92d74e724bb5",
+      "mentor_id": "0f5270b0-f18b-4757-bfe9-20ca105e0c85",
+      "week_start": "2026-03-10",
+      "week_end": "2026-03-13",
+      "status": "approved",
+      "total_amount": 78.0,
+      "submitted_at": "2026-03-15T09:32:55.106+00:00",
+      "approved_at": "2026-03-15T21:46:55.587+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T09:32:55.112+00:00",
+      "updated_at": "2026-03-15T21:46:55.604374+00:00",
+      "mentor_name": "Fletcher Gauci",
+      "mentor_email": "fletcher@bluesandgreens.com.au",
+      "xero_bill_id": "2b7e9b05-dbf8-4c52-b01e-9f38a3b880b4",
+      "xero_pushed_at": "2026-03-15T21:46:55.587+00:00",
+      "reference_number": "BG-0100"
+    },
+    {
+      "id": "01c4f12f-cbf6-4e66-9274-b2b31cf20d20",
+      "mentor_id": "ee49bf02-8a6b-4be5-957f-9dcac4bfe265",
+      "week_start": "2026-03-10",
+      "week_end": "2026-03-10",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-12T03:34:42.357+00:00",
+      "approved_at": "2026-03-15T02:48:10.704+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-12T03:34:42.429946+00:00",
+      "updated_at": "2026-03-15T02:48:10.750564+00:00",
+      "mentor_name": "Jett Cara",
+      "mentor_email": "jett@bluesandgreens.com.au",
+      "xero_bill_id": "269cfe57-25b8-4088-9524-297723c6e069",
+      "xero_pushed_at": "2026-03-15T02:48:10.704+00:00",
+      "reference_number": "BG-0082"
+    },
+    {
+      "id": "6c7c50a3-dd75-47e6-933c-d678406088f2",
+      "mentor_id": "e06864fb-908f-4798-a55e-417088c428ee",
+      "week_start": "2026-03-10",
+      "week_end": "2026-03-12",
+      "status": "approved",
+      "total_amount": 190.0,
+      "submitted_at": "2026-03-16T01:24:24.115+00:00",
+      "approved_at": "2026-03-16T02:52:09.054+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-16T01:24:24.35435+00:00",
+      "updated_at": "2026-03-16T02:52:09.107502+00:00",
+      "mentor_name": "Taj Schofield",
+      "mentor_email": "taj@bluesandgreens.com.au",
+      "xero_bill_id": "3dcf599f-29dc-41f2-b725-01c2d598f15c",
+      "xero_pushed_at": "2026-03-16T02:52:09.054+00:00",
+      "reference_number": "BG-0107"
+    },
+    {
+      "id": "ac37834d-70fe-407f-8b02-af9059f73abe",
+      "mentor_id": "d83cf3c8-fdd5-4e3c-a2c9-d284f8a7b052",
+      "week_start": "2026-03-10",
+      "week_end": "2026-03-10",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-11T09:27:54.577+00:00",
+      "approved_at": "2026-03-11T13:25:19.268+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-11T09:27:54.671468+00:00",
+      "updated_at": "2026-03-11T13:25:19.485346+00:00",
+      "mentor_name": "Aidan Cole",
+      "mentor_email": "aidan@bluesandgreens.com.au",
+      "xero_bill_id": "e1cf47f2-545b-435e-a3cf-b865417e8e52",
+      "xero_pushed_at": "2026-03-11T13:25:19.268+00:00",
+      "reference_number": "BG-0078"
+    },
+    {
+      "id": "9e79b34d-278a-4405-b5fa-07118ed3fbf5",
+      "mentor_id": "07ee7e03-c144-47a3-804d-4ace642ece8a",
+      "week_start": "2026-03-10",
+      "week_end": "2026-03-12",
+      "status": "approved",
+      "total_amount": 201.0,
+      "submitted_at": "2026-03-12T10:00:18.105+00:00",
+      "approved_at": "2026-03-15T03:19:24.383+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-12T10:00:18.209311+00:00",
+      "updated_at": "2026-03-15T03:19:24.462771+00:00",
+      "mentor_name": "Jed Woods",
+      "mentor_email": "jed@bluesandgreens.com.au",
+      "xero_bill_id": "e9bec1a6-a8a4-4934-94a8-8bf8abb2f3c6",
+      "xero_pushed_at": "2026-03-15T03:19:24.383+00:00",
+      "reference_number": "BG-0085"
+    },
+    {
+      "id": "fff27bd3-ceac-48fb-80a8-a9f3e6602a2f",
+      "mentor_id": "43f76762-a08a-4ca6-8dcf-ccf24a2518fe",
+      "week_start": "2026-03-10",
+      "week_end": "2026-03-13",
+      "status": "approved",
+      "total_amount": 200.0,
+      "submitted_at": "2026-03-15T23:38:00.165+00:00",
+      "approved_at": "2026-03-16T02:53:02.765+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T23:38:00.250295+00:00",
+      "updated_at": "2026-03-16T02:53:02.819625+00:00",
+      "mentor_name": "Cristian Milograd",
+      "mentor_email": "cristian@bluesandgreens.com.au",
+      "xero_bill_id": "1e7a1ae3-0e98-4bbd-ba57-b45523d1c403",
+      "xero_pushed_at": "2026-03-16T02:53:02.765+00:00",
+      "reference_number": "BG-0104"
+    },
+    {
+      "id": "3903fae1-8850-4184-87b2-5b3d2a15b916",
+      "mentor_id": "786cbde9-bc3f-4f0e-a276-a6e041cae931",
+      "week_start": "2026-03-09",
+      "week_end": "2026-03-15",
+      "status": "approved",
+      "total_amount": 303.0,
+      "submitted_at": "2026-03-15T09:25:46.741+00:00",
+      "approved_at": "2026-03-15T21:46:50.829+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T09:25:46.681769+00:00",
+      "updated_at": "2026-03-15T21:46:50.847308+00:00",
+      "mentor_name": "Xavier Lewis",
+      "mentor_email": "xavier@bluesandgreens.com.au",
+      "xero_bill_id": "29957fd0-eed4-4e12-9f1a-5efdfe26b779",
+      "xero_pushed_at": "2026-03-15T21:46:50.829+00:00",
+      "reference_number": "BG-0099"
+    },
+    {
+      "id": "82116112-0107-445c-bc1f-9c78dae08f94",
+      "mentor_id": "847d7f72-9c3d-4b94-9345-fbda9a6b6302",
+      "week_start": "2026-03-09",
+      "week_end": "2026-03-10",
+      "status": "approved",
+      "total_amount": 90.0,
+      "submitted_at": "2026-03-15T12:26:11.914+00:00",
+      "approved_at": "2026-03-15T21:44:47.886+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T12:26:12.071329+00:00",
+      "updated_at": "2026-03-15T21:44:47.92241+00:00",
+      "mentor_name": "Ben Cantwell",
+      "mentor_email": "ben.c@bluesandgreens.com.au",
+      "xero_bill_id": "e9a214a9-61ce-40b3-ac85-332a7059f47d",
+      "xero_pushed_at": "2026-03-15T21:44:47.886+00:00",
+      "reference_number": "BG-0102"
+    },
+    {
+      "id": "c326c1fc-2364-4ea0-8218-9ae85b806d12",
+      "mentor_id": "92099ad3-35de-4f95-bc80-98721c93ddf4",
+      "week_start": "2026-03-09",
+      "week_end": "2026-03-14",
+      "status": "approved",
+      "total_amount": 610.0,
+      "submitted_at": "2026-03-15T07:05:22.287+00:00",
+      "approved_at": "2026-03-15T07:39:21.798+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T07:05:22.62614+00:00",
+      "updated_at": "2026-03-15T07:39:21.84206+00:00",
+      "mentor_name": "Blair Huggins",
+      "mentor_email": "blair@bluesandgreens.com.au",
+      "xero_bill_id": "731ddce9-b191-480b-a4c5-a4c3290ba73c",
+      "xero_pushed_at": "2026-03-15T07:39:21.798+00:00",
+      "reference_number": "BG-0097"
+    },
+    {
+      "id": "19464833-c603-4b41-af2a-cf16670398ae",
+      "mentor_id": "ee49bf02-8a6b-4be5-957f-9dcac4bfe265",
+      "week_start": "2026-03-09",
+      "week_end": "2026-03-09",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-09T07:41:14.25+00:00",
+      "approved_at": "2026-03-11T07:06:38.804+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-09T07:42:23.358124+00:00",
+      "updated_at": "2026-03-11T07:06:38.851956+00:00",
+      "mentor_name": "Jett Cara",
+      "mentor_email": "jett@bluesandgreens.com.au",
+      "xero_bill_id": "cfef7175-e6c2-4ead-aa53-0528ac60259d",
+      "xero_pushed_at": "2026-03-11T07:06:38.804+00:00",
+      "reference_number": "BG-0074"
+    },
+    {
+      "id": "fa2010fe-cc35-44f5-bcd7-a94992a3b027",
+      "mentor_id": "4ebaf7d0-d308-4fc3-ab68-6e46bade4c0e",
+      "week_start": "2026-03-09",
+      "week_end": "2026-03-13",
+      "status": "approved",
+      "total_amount": 348.0,
+      "submitted_at": "2026-03-13T04:25:48.804+00:00",
+      "approved_at": "2026-03-15T03:18:25.932+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-13T04:25:48.949009+00:00",
+      "updated_at": "2026-03-15T03:18:25.96822+00:00",
+      "mentor_name": "Bailey Kiefer",
+      "mentor_email": "bailey@bluesandgreens.com.au",
+      "xero_bill_id": "850abc05-0c95-42bf-87ed-e4ff5a6635f9",
+      "xero_pushed_at": "2026-03-15T03:18:25.932+00:00",
+      "reference_number": "BG-0087"
+    },
+    {
+      "id": "83442e9f-ac25-4bac-a457-4b2809798ac6",
+      "mentor_id": "73fc82ba-bc62-41e0-b4fe-45adb28c178e",
+      "week_start": "2026-03-09",
+      "week_end": "2026-03-13",
+      "status": "approved",
+      "total_amount": 135.0,
+      "submitted_at": "2026-03-13T08:33:43.349+00:00",
+      "approved_at": "2026-03-15T02:52:23.414+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-13T08:30:39.278203+00:00",
+      "updated_at": "2026-03-15T02:52:23.469569+00:00",
+      "mentor_name": "Connor Savill",
+      "mentor_email": "connor@bluesandgreens.com.au",
+      "xero_bill_id": "a7a832dc-a4fd-4a85-a49e-6a11d1b00bba",
+      "xero_pushed_at": "2026-03-15T02:52:23.414+00:00",
+      "reference_number": "BG-0091"
+    },
+    {
+      "id": "6799b876-0e4c-49b6-8d7f-c9bddea5f769",
+      "mentor_id": "43f76762-a08a-4ca6-8dcf-ccf24a2518fe",
+      "week_start": "2026-03-08",
+      "week_end": "2026-03-15",
+      "status": "paid",
+      "total_amount": 60.0,
+      "submitted_at": "2026-03-09T00:38:58.213+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": "2026-03-09T02:01:12.372+00:00",
+      "admin_notes": "",
+      "created_at": "2026-03-09T00:38:58.325962+00:00",
+      "updated_at": "2026-03-09T02:01:12.812484+00:00",
+      "mentor_name": "Cristian Milograd",
+      "mentor_email": "cristian@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0071"
+    },
+    {
+      "id": "56321f5d-5a81-4c40-a75b-9c31332edc16",
+      "mentor_id": "92099ad3-35de-4f95-bc80-98721c93ddf4",
+      "week_start": "2026-03-08",
+      "week_end": "2026-03-15",
+      "status": "approved",
+      "total_amount": 200.0,
+      "submitted_at": "2026-03-15T07:05:35.813+00:00",
+      "approved_at": "2026-03-15T07:37:21.416+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T07:05:36.123502+00:00",
+      "updated_at": "2026-03-15T07:37:21.471182+00:00",
+      "mentor_name": "Blair Huggins",
+      "mentor_email": "blair@bluesandgreens.com.au",
+      "xero_bill_id": "07da207e-a84e-4eb0-bf56-6e918edb1390",
+      "xero_pushed_at": "2026-03-15T07:37:21.416+00:00",
+      "reference_number": "BG-0098"
+    },
+    {
+      "id": "b9259a90-b393-4daf-b235-1dd01861ab1a",
+      "mentor_id": "b0a51a45-c55c-4a45-b085-d12517d34000",
+      "week_start": "2026-03-08",
+      "week_end": "2026-03-08",
+      "status": "approved",
+      "total_amount": 33.0,
+      "submitted_at": "2026-03-08T10:54:44.551+00:00",
+      "approved_at": "2026-03-08T11:00:09.508+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-08T10:54:44.685466+00:00",
+      "updated_at": "2026-03-08T11:00:09.54711+00:00",
+      "mentor_name": "Ben Kaipau",
+      "mentor_email": "benkaipau@bluesandgreens.com.au",
+      "xero_bill_id": "dead6e9d-ff76-46c0-bbf9-4224a9ece464",
+      "xero_pushed_at": "2026-03-08T11:00:09.508+00:00",
+      "reference_number": "BG-0065"
+    },
+    {
+      "id": "d304bbd2-a330-4208-bc33-f56d3d28857f",
+      "mentor_id": "ee49bf02-8a6b-4be5-957f-9dcac4bfe265",
+      "week_start": "2026-03-07",
+      "week_end": "2026-03-07",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-07T08:51:26.941+00:00",
+      "approved_at": "2026-03-08T04:29:05.392+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-07T08:51:26.997626+00:00",
+      "updated_at": "2026-03-08T04:29:05.443102+00:00",
+      "mentor_name": "Jett Cara",
+      "mentor_email": "jett@bluesandgreens.com.au",
+      "xero_bill_id": "39d261db-265a-4329-b003-a9271647231f",
+      "xero_pushed_at": "2026-03-08T04:29:05.392+00:00",
+      "reference_number": "BG-0060"
+    },
+    {
+      "id": "e52f772b-c25d-45fa-8814-da8406d9ee90",
+      "mentor_id": "d83cf3c8-fdd5-4e3c-a2c9-d284f8a7b052",
+      "week_start": "2026-03-06",
+      "week_end": "2026-03-06",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-06T07:13:32.803+00:00",
+      "approved_at": "2026-03-07T04:01:31.577+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-06T07:13:32.981883+00:00",
+      "updated_at": "2026-03-07T04:01:31.626005+00:00",
+      "mentor_name": "Aidan Cole",
+      "mentor_email": "aidan@bluesandgreens.com.au",
+      "xero_bill_id": "6ba11128-9195-4a31-8ca2-7edc619bc184",
+      "xero_pushed_at": "2026-03-07T04:01:31.577+00:00",
+      "reference_number": "BG-0059"
+    },
+    {
+      "id": "f7d56fd1-7016-4392-8a4a-4f44333cc69c",
+      "mentor_id": "b2cfaccf-e649-4b76-96e0-13366c33d561",
+      "week_start": "2026-03-06",
+      "week_end": "2026-03-12",
+      "status": "approved",
+      "total_amount": 111.0,
+      "submitted_at": "2026-03-15T21:45:50.767+00:00",
+      "approved_at": "2026-03-15T23:31:39.694+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-15T21:45:50.981337+00:00",
+      "updated_at": "2026-03-15T23:31:39.72087+00:00",
+      "mentor_name": "Miles Dalgliesh",
+      "mentor_email": "miles@bluesandgreens.com.au",
+      "xero_bill_id": "2a87b3ed-d710-4f8a-807b-f7703ce42173",
+      "xero_pushed_at": "2026-03-15T23:31:39.694+00:00",
+      "reference_number": "BG-0103"
+    },
+    {
+      "id": "56a3f85a-3928-4731-bc8b-c405d87ff968",
+      "mentor_id": "45101605-fb88-4ca9-8125-f98d66269be4",
+      "week_start": "2026-03-05",
+      "week_end": "2026-03-05",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-06T06:10:03.938+00:00",
+      "approved_at": "2026-03-07T04:02:58.163+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-06T06:10:04.041742+00:00",
+      "updated_at": "2026-03-07T04:02:58.214189+00:00",
+      "mentor_name": "Noah Cockerell",
+      "mentor_email": "noah@bluesandgreens.com.au",
+      "xero_bill_id": "1bb24993-3008-4bb4-b69e-84ed5eae41ce",
+      "xero_pushed_at": "2026-03-07T04:02:58.163+00:00",
+      "reference_number": "BG-0058"
+    },
+    {
+      "id": "41b05004-bf11-41b6-b34c-34362981ea30",
+      "mentor_id": "ee49bf02-8a6b-4be5-957f-9dcac4bfe265",
+      "week_start": "2026-03-05",
+      "week_end": "2026-03-05",
+      "status": "approved",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-05T09:21:54.575+00:00",
+      "approved_at": "2026-03-07T04:10:04.446+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-05T09:21:54.6393+00:00",
+      "updated_at": "2026-03-07T04:10:04.482591+00:00",
+      "mentor_name": "Jett Cara",
+      "mentor_email": "jett@bluesandgreens.com.au",
+      "xero_bill_id": "7db63061-51be-4dd0-b973-fdf99cc98063",
+      "xero_pushed_at": "2026-03-07T04:10:04.446+00:00",
+      "reference_number": "BG-0055"
+    },
+    {
+      "id": "6c618757-c5ee-49c5-8ac0-f4d4423838e2",
+      "mentor_id": "cfdf18f0-97fa-4666-a338-d789159ae1c2",
+      "week_start": "2026-03-05",
+      "week_end": "2026-03-05",
+      "status": "submitted",
+      "total_amount": 45.0,
+      "submitted_at": "2026-03-18T09:35:56.838+00:00",
+      "approved_at": null,
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-18T09:35:56.928288+00:00",
+      "updated_at": "2026-03-18T09:35:56.928288+00:00",
+      "mentor_name": "Luke Dixon",
+      "mentor_email": "luke@bluesandgreens.com.au",
+      "xero_bill_id": null,
+      "xero_pushed_at": null,
+      "reference_number": "BG-0114"
+    },
+    {
+      "id": "7497cd7a-d6b0-4df3-ae06-d79f547fe432",
+      "mentor_id": "02ac0f00-48be-4256-ac4d-fb7d83746162",
+      "week_start": "2026-03-04",
+      "week_end": "2026-03-06",
+      "status": "approved",
+      "total_amount": 130.0,
+      "submitted_at": "2026-03-06T00:55:16.954+00:00",
+      "approved_at": "2026-03-07T04:05:03.268+00:00",
+      "approved_by": null,
+      "paid_at": null,
+      "admin_notes": null,
+      "created_at": "2026-03-06T00:55:17.042073+00:00",
+      "updated_at": "2026-03-07T04:05:03.3253+00:00",
+      "mentor_name": "Luke Vella",
+      "mentor_email": "luke.v@bluesandgreens.com.au",
+      "xero_bill_id": "adf02a7e-00ee-49ba-8956-13aa7b77cb4f",
+      "xero_pushed_at": "2026-03-07T04:05:03.268+00:00",
+      "reference_number": "BG-0057"
+    }
+  ],
+  "recent_sessions": [],
+  "team_health": {
+    "members": [
+      {
+        "id": "175456338534",
+        "name": "Xavier",
+        "sonAge": 13,
+        "streak": 6,
+        "metrics": {
+          "winsLogged": 10,
+          "parentCallRate": 29,
+          "heroLetterProgress": 33,
+          "playbookActivities": 5,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Harris",
+        "mentorId": "132738976812",
+        "mentorName": "Fletcher Gauci",
+        "sessionNumber": "14",
+        "nextSessionDate": "2026-03-27",
+        "daysSinceSession": 1,
+        "daysSinceParentCall": 8
+      },
+      {
+        "id": "136145383448",
+        "name": "Fred",
+        "sonAge": 9,
+        "streak": 7,
+        "metrics": {
+          "winsLogged": 8,
+          "parentCallRate": 31,
+          "heroLetterProgress": 33,
+          "playbookActivities": 2,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Parsons",
+        "mentorId": "132738976812",
+        "mentorName": "Fletcher Gauci",
+        "sessionNumber": "27",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "156118065665",
+        "name": "Caleb",
+        "sonAge": 18,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 82
+        },
+        "program": "Big Brother",
+        "lastName": "Birkett",
+        "mentorId": "132750386548",
+        "mentorName": "Luke Dixon",
+        "sessionNumber": "13",
+        "nextSessionDate": "2026-03-26",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": null
+      },
+      {
+        "id": "123409897536",
+        "name": "George ",
+        "sonAge": 12,
+        "streak": 6,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 7,
+          "heroLetterProgress": 25,
+          "playbookActivities": 3,
+          "sessionConsistency": 93
+        },
+        "program": "Big Brother",
+        "lastName": "Rogowska",
+        "mentorId": "128132247082",
+        "mentorName": "Taj Schofield",
+        "sessionNumber": "28",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "122592028066",
+        "name": "Braxton",
+        "sonAge": 13,
+        "streak": 10,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 18,
+          "heroLetterProgress": 25,
+          "playbookActivities": 2,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Hardy",
+        "mentorId": "128132247082",
+        "mentorName": "Taj Schofield",
+        "sessionNumber": "22",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "193691440807",
+        "name": "Rylan",
+        "sonAge": 14,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 60,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Nash",
+        "mentorId": "128132247082",
+        "mentorName": "Taj Schofield",
+        "sessionNumber": "5",
+        "nextSessionDate": "2026-03-05",
+        "daysSinceSession": 23,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "126337212475",
+        "name": "Harper",
+        "sonAge": 15,
+        "streak": 3,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 13,
+          "heroLetterProgress": 25,
+          "playbookActivities": 3,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Van Anen",
+        "mentorId": "128132247082",
+        "mentorName": "Taj Schofield",
+        "sessionNumber": "32",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 18
+      },
+      {
+        "id": "112243441288",
+        "name": "Dylan",
+        "sonAge": 16,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 14,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "The Lighthouse",
+        "lastName": "Jackson ",
+        "mentorId": "128132247082",
+        "mentorName": "Taj Schofield",
+        "sessionNumber": "25",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "132301268801",
+        "name": "Tom",
+        "sonAge": 13,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 13,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "Mentor",
+        "lastName": "MORRIS",
+        "mentorId": "128132247082",
+        "mentorName": "Taj Schofield",
+        "sessionNumber": "19",
+        "nextSessionDate": "2026-03-26",
+        "daysSinceSession": 9,
+        "daysSinceParentCall": 26
+      },
+      {
+        "id": "125053854729",
+        "name": "Thomas",
+        "sonAge": 15,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 38,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Flanagan",
+        "mentorId": "128132247082",
+        "mentorName": "Taj Schofield",
+        "sessionNumber": "20",
+        "nextSessionDate": "2026-03-18",
+        "daysSinceSession": 17,
+        "daysSinceParentCall": 17
+      },
+      {
+        "id": "122991561266",
+        "name": "Finn",
+        "sonAge": 13,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 22,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 78
+        },
+        "program": "Lighthouse",
+        "lastName": "Rayner",
+        "mentorId": "124807236276",
+        "mentorName": "Shane Clouugh",
+        "sessionNumber": "20",
+        "nextSessionDate": "2026-03-11",
+        "daysSinceSession": 10,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "176176158263",
+        "name": "Alexander",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 30,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 90
+        },
+        "program": "Big Brother",
+        "lastName": "Mavridis",
+        "mentorId": "124807236276",
+        "mentorName": "Shane Clouugh",
+        "sessionNumber": "10",
+        "nextSessionDate": "2026-03-08",
+        "daysSinceSession": 19,
+        "daysSinceParentCall": 18
+      },
+      {
+        "id": "172473981458",
+        "name": "Nate",
+        "sonAge": 13,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 25,
+          "heroLetterProgress": 33,
+          "playbookActivities": 3,
+          "sessionConsistency": 92
+        },
+        "program": "Mentor Connect Plus",
+        "lastName": "Marr",
+        "mentorId": "124807236276",
+        "mentorName": "Shane Clouugh",
+        "sessionNumber": "11",
+        "nextSessionDate": "2026-04-01",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 2
+      },
+      {
+        "id": "204086657203",
+        "name": "ROMAN",
+        "sonAge": null,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 100,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "CARLSON",
+        "mentorId": "132757583123",
+        "mentorName": "Rye Penny",
+        "sessionNumber": "7",
+        "nextSessionDate": "2026-03-11",
+        "daysSinceSession": 9,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "136549360048",
+        "name": "Nathaniel",
+        "sonAge": 15,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 4,
+          "parentCallRate": 22,
+          "heroLetterProgress": 25,
+          "playbookActivities": 2,
+          "sessionConsistency": 100
+        },
+        "program": "Mentor Connect Lite",
+        "lastName": "Bunyan",
+        "mentorId": "132757583123",
+        "mentorName": "Rye Penny",
+        "sessionNumber": "27",
+        "nextSessionDate": "2026-03-19",
+        "daysSinceSession": 1,
+        "daysSinceParentCall": 2
+      },
+      {
+        "id": "140066485524",
+        "name": "Hudson",
+        "sonAge": 9,
+        "streak": 5,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 20,
+          "heroLetterProgress": 25,
+          "playbookActivities": 6,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Santangelo",
+        "mentorId": "132757583123",
+        "mentorName": "Rye Penny",
+        "sessionNumber": "24",
+        "nextSessionDate": "2026-03-19",
+        "daysSinceSession": 1,
+        "daysSinceParentCall": 18
+      },
+      {
+        "id": "161592595362",
+        "name": "Jake",
+        "sonAge": 16,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 8,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Major",
+        "mentorId": "129527490093",
+        "mentorName": "Benjamin Philip",
+        "sessionNumber": "15",
+        "nextSessionDate": "2026-03-14",
+        "daysSinceSession": 14,
+        "daysSinceParentCall": 30
+      },
+      {
+        "id": "203501919511",
+        "name": "Taj",
+        "sonAge": 15,
+        "streak": 4,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 50,
+          "heroLetterProgress": 25,
+          "playbookActivities": 7,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "MacCallum",
+        "mentorId": "129527490093",
+        "mentorName": "Benjamin Philip",
+        "sessionNumber": "4",
+        "nextSessionDate": "2026-03-18",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 15
+      },
+      {
+        "id": "137301511750",
+        "name": "Josiah ",
+        "sonAge": 12,
+        "streak": 20,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 6,
+          "heroLetterProgress": 25,
+          "playbookActivities": 13,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Neve",
+        "mentorId": "129527490093",
+        "mentorName": "Benjamin Philip",
+        "sessionNumber": "35",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 33
+      },
+      {
+        "id": "204239780219",
+        "name": "Malachi",
+        "sonAge": null,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 25,
+          "heroLetterProgress": 25,
+          "playbookActivities": 9,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Neve",
+        "mentorId": "129527490093",
+        "mentorName": "Benjamin Philip",
+        "sessionNumber": "32",
+        "nextSessionDate": "2026-03-19",
+        "daysSinceSession": 9,
+        "daysSinceParentCall": 33
+      },
+      {
+        "id": "202375127639",
+        "name": "Josh",
+        "sonAge": 13,
+        "streak": 5,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 60,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Johnstone",
+        "mentorId": "121602484051",
+        "mentorName": "Elliot Mahoney",
+        "sessionNumber": "5",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 2
+      },
+      {
+        "id": "207947485189",
+        "name": "Jackson",
+        "sonAge": 12,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 50,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "WEST",
+        "mentorId": "121602484051",
+        "mentorName": "Elliot Mahoney",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-27",
+        "daysSinceSession": 1,
+        "daysSinceParentCall": 11
+      },
+      {
+        "id": "183941947155",
+        "name": "Haro",
+        "sonAge": null,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 42,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Carlson",
+        "mentorId": "121602484051",
+        "mentorName": "Elliot Mahoney",
+        "sessionNumber": "8",
+        "nextSessionDate": "2026-03-18",
+        "daysSinceSession": 10,
+        "daysSinceParentCall": 11
+      },
+      {
+        "id": "114162757489",
+        "name": "Oscar",
+        "sonAge": 15,
+        "streak": 4,
+        "metrics": {
+          "winsLogged": 6,
+          "parentCallRate": 21,
+          "heroLetterProgress": 33,
+          "playbookActivities": 6,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "JACKSON",
+        "mentorId": "121602484051",
+        "mentorName": "Elliot Mahoney",
+        "sessionNumber": "38",
+        "nextSessionDate": "2026-03-26",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 2
+      },
+      {
+        "id": "154944680027",
+        "name": "Matthew",
+        "sonAge": 17,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 9,
+          "heroLetterProgress": 33,
+          "playbookActivities": 3,
+          "sessionConsistency": 73
+        },
+        "program": "Big Brother",
+        "lastName": "Angell",
+        "mentorId": "121602484051",
+        "mentorName": "Elliot Mahoney",
+        "sessionNumber": "18",
+        "nextSessionDate": "2026-03-17",
+        "daysSinceSession": 11,
+        "daysSinceParentCall": 2
+      },
+      {
+        "id": "155827791738",
+        "name": "Campbell",
+        "sonAge": 17,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Beckers",
+        "mentorId": "155318828413",
+        "mentorName": "Connor Savill",
+        "sessionNumber": "11",
+        "nextSessionDate": null,
+        "daysSinceSession": 9,
+        "daysSinceParentCall": null
+      },
+      {
+        "id": "147655717776",
+        "name": "Daniel",
+        "sonAge": 17,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Eades",
+        "mentorId": "155318828413",
+        "mentorName": "Connor Savill",
+        "sessionNumber": "21",
+        "nextSessionDate": null,
+        "daysSinceSession": 1,
+        "daysSinceParentCall": 8
+      },
+      {
+        "id": "160356915895",
+        "name": "Toby",
+        "sonAge": 15,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Mentor",
+        "lastName": "Welton",
+        "mentorId": "155318828413",
+        "mentorName": "Connor Savill",
+        "sessionNumber": "7",
+        "nextSessionDate": null,
+        "daysSinceSession": 36,
+        "daysSinceParentCall": 36
+      },
+      {
+        "id": "168923252353",
+        "name": "Michael Anastassiou",
+        "sonAge": 16,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 0,
+          "heroLetterProgress": 0,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Mentor Connect Lite",
+        "lastName": "LEAH",
+        "mentorId": "155295265843",
+        "mentorName": "Callum Sargentson",
+        "sessionNumber": "11",
+        "nextSessionDate": null,
+        "daysSinceSession": 25,
+        "daysSinceParentCall": 43
+      },
+      {
+        "id": "141185768804",
+        "name": "Marley",
+        "sonAge": 15,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Davies",
+        "mentorId": "155295048490",
+        "mentorName": "Brodie Paull",
+        "sessionNumber": "22",
+        "nextSessionDate": null,
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 8
+      },
+      {
+        "id": "172399953580",
+        "name": "Mitchell",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Oberman",
+        "mentorId": "155295048490",
+        "mentorName": "Brodie Paull",
+        "sessionNumber": "16",
+        "nextSessionDate": null,
+        "daysSinceSession": 7,
+        "daysSinceParentCall": 8
+      },
+      {
+        "id": "173285792010",
+        "name": "Lincoln",
+        "sonAge": null,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 33,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 93
+        },
+        "program": "Founders Experience",
+        "lastName": "Nation",
+        "mentorId": "155295048490",
+        "mentorName": "Brodie Paull",
+        "sessionNumber": "16",
+        "nextSessionDate": "2026-03-13",
+        "daysSinceSession": 15,
+        "daysSinceParentCall": 16
+      },
+      {
+        "id": "155735032423",
+        "name": "Ryan",
+        "sonAge": 19,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Tanti",
+        "mentorId": "155295048490",
+        "mentorName": "Brodie Paull",
+        "sessionNumber": "22",
+        "nextSessionDate": null,
+        "daysSinceSession": 19,
+        "daysSinceParentCall": null
+      },
+      {
+        "id": "112276992556",
+        "name": "James",
+        "sonAge": 16,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Alchin",
+        "mentorId": "155295048490",
+        "mentorName": "Brodie Paull",
+        "sessionNumber": "46",
+        "nextSessionDate": null,
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 8
+      },
+      {
+        "id": "115727356526",
+        "name": "Billy",
+        "sonAge": 17,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 0,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Quayle",
+        "mentorId": "155295048490",
+        "mentorName": "Brodie Paull",
+        "sessionNumber": "6",
+        "nextSessionDate": null,
+        "daysSinceSession": 62,
+        "daysSinceParentCall": null
+      },
+      {
+        "id": "135675291824",
+        "name": "Jobie",
+        "sonAge": 14,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Beveridge",
+        "mentorId": "155295048490",
+        "mentorName": "Brodie Paull",
+        "sessionNumber": "19",
+        "nextSessionDate": null,
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 7
+      },
+      {
+        "id": "196584711797",
+        "name": "Cohan",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Cooper",
+        "mentorId": "155295048490",
+        "mentorName": "Brodie Paull",
+        "sessionNumber": "4",
+        "nextSessionDate": null,
+        "daysSinceSession": 13,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "137227090542",
+        "name": "Archie",
+        "sonAge": 15,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 0,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Barrow",
+        "mentorId": "155295048490",
+        "mentorName": "Brodie Paull",
+        "sessionNumber": "11",
+        "nextSessionDate": null,
+        "daysSinceSession": 107,
+        "daysSinceParentCall": null
+      },
+      {
+        "id": "186715470737",
+        "name": "Tyler",
+        "sonAge": 15,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Speed",
+        "mentorId": "155295048490",
+        "mentorName": "Brodie Paull",
+        "sessionNumber": "9",
+        "nextSessionDate": null,
+        "daysSinceSession": 10,
+        "daysSinceParentCall": 12
+      },
+      {
+        "id": "161592595362",
+        "name": "Jake",
+        "sonAge": 16,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 8,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Major",
+        "mentorId": "140468121735",
+        "mentorName": "Jack Petruccelle",
+        "sessionNumber": "15",
+        "nextSessionDate": "2026-03-14",
+        "daysSinceSession": 14,
+        "daysSinceParentCall": 30
+      },
+      {
+        "id": "168712204959",
+        "name": "Rudy",
+        "sonAge": null,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 0,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Triffett",
+        "mentorId": "140468121735",
+        "mentorName": "Jack Petruccelle",
+        "sessionNumber": "9",
+        "nextSessionDate": null,
+        "daysSinceSession": 45,
+        "daysSinceParentCall": 29
+      },
+      {
+        "id": "140300668088",
+        "name": "Darcy",
+        "sonAge": 16,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 0,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "O'Sullivan",
+        "mentorId": "140468121735",
+        "mentorName": "Jack Petruccelle",
+        "sessionNumber": "19",
+        "nextSessionDate": null,
+        "daysSinceSession": 30,
+        "daysSinceParentCall": 37
+      },
+      {
+        "id": "141769433122",
+        "name": "Quade",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Glossop",
+        "mentorId": "140468121735",
+        "mentorName": "Jack Petruccelle",
+        "sessionNumber": "28",
+        "nextSessionDate": null,
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "140747141419",
+        "name": "Kellen",
+        "sonAge": 16,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 8,
+          "heroLetterProgress": 0,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Mentor Connect Lite",
+        "lastName": "james",
+        "mentorId": "140468121735",
+        "mentorName": "Jack Petruccelle",
+        "sessionNumber": "22",
+        "nextSessionDate": "2026-02-22",
+        "daysSinceSession": 27,
+        "daysSinceParentCall": 29
+      },
+      {
+        "id": "136941751630",
+        "name": "Lawson",
+        "sonAge": 14,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 11,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Holahan",
+        "mentorId": "155319099953",
+        "mentorName": "Cristian Milograd",
+        "sessionNumber": "18",
+        "nextSessionDate": null,
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "158936761902",
+        "name": "Lachie Samuel",
+        "sonAge": 15,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 9,
+          "heroLetterProgress": 33,
+          "playbookActivities": 7,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Hill",
+        "mentorId": "155319099953",
+        "mentorName": "Cristian Milograd",
+        "sessionNumber": "15",
+        "nextSessionDate": "2026-03-13",
+        "daysSinceSession": 8,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "157090521916",
+        "name": "Derrick",
+        "sonAge": 12,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 2,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Kaney",
+        "mentorId": "155319099953",
+        "mentorName": "Cristian Milograd",
+        "sessionNumber": "17",
+        "nextSessionDate": null,
+        "daysSinceSession": 17,
+        "daysSinceParentCall": 17
+      },
+      {
+        "id": "159644740707",
+        "name": "Luca",
+        "sonAge": 14,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 6,
+          "heroLetterProgress": 25,
+          "playbookActivities": 7,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Fratini",
+        "mentorId": "155319099953",
+        "mentorName": "Cristian Milograd",
+        "sessionNumber": "18",
+        "nextSessionDate": "2026-03-11",
+        "daysSinceSession": 17,
+        "daysSinceParentCall": 26
+      },
+      {
+        "id": "181238625886",
+        "name": "Tayte",
+        "sonAge": null,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 6,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "frost",
+        "mentorId": "155319099953",
+        "mentorName": "Cristian Milograd",
+        "sessionNumber": "8",
+        "nextSessionDate": null,
+        "daysSinceSession": 10,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "146321016380",
+        "name": "Finn",
+        "sonAge": 14,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 8,
+          "parentCallRate": 0,
+          "heroLetterProgress": 33,
+          "playbookActivities": 3,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Toohey",
+        "mentorId": "133010618680",
+        "mentorName": "Luke Vella",
+        "sessionNumber": "17",
+        "nextSessionDate": null,
+        "daysSinceSession": 8,
+        "daysSinceParentCall": 15
+      },
+      {
+        "id": "136595860269",
+        "name": "Oliver",
+        "sonAge": 14,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 8,
+          "parentCallRate": 0,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "The Lighthouse",
+        "lastName": "Hawyes",
+        "mentorId": "133010618680",
+        "mentorName": "Luke Vella",
+        "sessionNumber": "15",
+        "nextSessionDate": null,
+        "daysSinceSession": 9,
+        "daysSinceParentCall": 8
+      },
+      {
+        "id": "135810870042",
+        "name": "Sam",
+        "sonAge": 14,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 10,
+          "parentCallRate": 0,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Mckeown",
+        "mentorId": "133010618680",
+        "mentorName": "Luke Vella",
+        "sessionNumber": "17",
+        "nextSessionDate": null,
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "173421404938",
+        "name": "Zach",
+        "sonAge": 15,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Fletcher",
+        "mentorId": "145421967204",
+        "mentorName": "Harper Montgomery",
+        "sessionNumber": "32",
+        "nextSessionDate": null,
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 7
+      },
+      {
+        "id": "171374299217",
+        "name": "Wil Marsh",
+        "sonAge": 15,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Marsh",
+        "mentorId": "145421967204",
+        "mentorName": "Harper Montgomery",
+        "sessionNumber": "19",
+        "nextSessionDate": null,
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 1
+      },
+      {
+        "id": "172993595404",
+        "name": "Eli",
+        "sonAge": null,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Steadman",
+        "mentorId": "145421967204",
+        "mentorName": "Harper Montgomery",
+        "sessionNumber": "28",
+        "nextSessionDate": null,
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "207510887200",
+        "name": "Riley",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Miller",
+        "mentorId": "145421967204",
+        "mentorName": "Harper Montgomery",
+        "sessionNumber": "26",
+        "nextSessionDate": null,
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 7
+      },
+      {
+        "id": "154423486980",
+        "name": "Zachary",
+        "sonAge": 12,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Vlachos",
+        "mentorId": "145421967204",
+        "mentorName": "Harper Montgomery",
+        "sessionNumber": "21",
+        "nextSessionDate": null,
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "207777789452",
+        "name": "Dakin",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "The Big Brother",
+        "lastName": "Harman-York",
+        "mentorId": "145421967204",
+        "mentorName": "Harper Montgomery",
+        "sessionNumber": "1",
+        "nextSessionDate": null,
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "137233584714",
+        "name": "Felix",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Georgiou",
+        "mentorId": "145421967204",
+        "mentorName": "Harper Montgomery",
+        "sessionNumber": "27",
+        "nextSessionDate": null,
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "198252600707",
+        "name": "Jeremy ",
+        "sonAge": 19,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "clowry",
+        "mentorId": "133002781859",
+        "mentorName": "Blair Huggins",
+        "sessionNumber": "6",
+        "nextSessionDate": null,
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "199511503689",
+        "name": "Lawson Rayward",
+        "sonAge": 15,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 100,
+          "heroLetterProgress": 50,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Hood",
+        "mentorId": "133002781859",
+        "mentorName": "Blair Huggins",
+        "sessionNumber": "5",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "138140352114",
+        "name": "Ethan",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 0
+        },
+        "program": "Lighthouse",
+        "lastName": "Karaman",
+        "mentorId": "133002781859",
+        "mentorName": "Blair Huggins",
+        "sessionNumber": "30",
+        "nextSessionDate": null,
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 12
+      },
+      {
+        "id": "157035555609",
+        "name": "Chayce",
+        "sonAge": 9,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 4,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 0
+        },
+        "program": "Mentor",
+        "lastName": "Holmes",
+        "mentorId": "133002781859",
+        "mentorName": "Blair Huggins",
+        "sessionNumber": "15",
+        "nextSessionDate": null,
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "158931135104",
+        "name": "Levi",
+        "sonAge": 15,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 4,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 5,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Heskin",
+        "mentorId": "133002781859",
+        "mentorName": "Blair Huggins",
+        "sessionNumber": "22",
+        "nextSessionDate": null,
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "172418396732",
+        "name": "Mitchell",
+        "sonAge": 14,
+        "streak": 11,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 35,
+          "heroLetterProgress": 25,
+          "playbookActivities": 3,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Koina",
+        "mentorId": "133002781859",
+        "mentorName": "Blair Huggins",
+        "sessionNumber": "17",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "122557302076",
+        "name": "Saxon",
+        "sonAge": 16,
+        "streak": 7,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 57,
+          "heroLetterProgress": 25,
+          "playbookActivities": 2,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "McDermott",
+        "mentorId": "133002781859",
+        "mentorName": "Blair Huggins",
+        "sessionNumber": "7",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 17
+      },
+      {
+        "id": "166376477192",
+        "name": "Jesse",
+        "sonAge": 15,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 7,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Volcic",
+        "mentorId": "133002781859",
+        "mentorName": "Blair Huggins",
+        "sessionNumber": "16",
+        "nextSessionDate": null,
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "200268113285",
+        "name": "Ashton",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 6,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 5,
+          "sessionConsistency": 0
+        },
+        "program": "Big Brother",
+        "lastName": "Davies",
+        "mentorId": "133002781859",
+        "mentorName": "Blair Huggins",
+        "sessionNumber": "6",
+        "nextSessionDate": null,
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "183682873004",
+        "name": "Ari",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 67,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Greaves",
+        "mentorId": "180825267541",
+        "mentorName": "Charlie Bolmat",
+        "sessionNumber": "8",
+        "nextSessionDate": "2026-03-10",
+        "daysSinceSession": 18,
+        "daysSinceParentCall": 18
+      },
+      {
+        "id": "187834659491",
+        "name": "Josh",
+        "sonAge": 13,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 44,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 89
+        },
+        "program": "Big Brother",
+        "lastName": "PARKER",
+        "mentorId": "180825267541",
+        "mentorName": "Charlie Bolmat",
+        "sessionNumber": "8",
+        "nextSessionDate": "2026-03-18",
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 20
+      },
+      {
+        "id": "181216963768",
+        "name": "Xavier",
+        "sonAge": 14,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 27,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Mentor Connect Lite",
+        "lastName": "Duarte",
+        "mentorId": "174965171509",
+        "mentorName": "Jed Woods",
+        "sessionNumber": "11",
+        "nextSessionDate": "2026-04-15",
+        "daysSinceSession": 10,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "186564580356",
+        "name": "Charlie",
+        "sonAge": 11,
+        "streak": 9,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 56,
+          "heroLetterProgress": 25,
+          "playbookActivities": 4,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Murray",
+        "mentorId": "174965171509",
+        "mentorName": "Jed Woods",
+        "sessionNumber": "9",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "194544421931",
+        "name": "Xavier",
+        "sonAge": 16,
+        "streak": 8,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 25,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Garner",
+        "mentorId": "174965171509",
+        "mentorName": "Jed Woods",
+        "sessionNumber": "8",
+        "nextSessionDate": "2026-03-26",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 2
+      },
+      {
+        "id": "188644928560",
+        "name": "Noah",
+        "sonAge": 14,
+        "streak": 8,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 13,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Paull",
+        "mentorId": "174965171509",
+        "mentorName": "Jed Woods",
+        "sessionNumber": "8",
+        "nextSessionDate": "2026-03-26",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 11
+      },
+      {
+        "id": "180422169868",
+        "name": "Hunter",
+        "sonAge": null,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 43,
+          "heroLetterProgress": 41,
+          "playbookActivities": 1,
+          "sessionConsistency": 93
+        },
+        "program": "Lighthouse",
+        "lastName": "Thomas",
+        "mentorId": "173683465393",
+        "mentorName": "Anthony Audino",
+        "sessionNumber": "14",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "197091903091",
+        "name": "Hayden",
+        "sonAge": 13,
+        "streak": 6,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 100,
+          "heroLetterProgress": 50,
+          "playbookActivities": 10,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Marchesi",
+        "mentorId": "173683465393",
+        "mentorName": "Anthony Audino",
+        "sessionNumber": "6",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "191863680526",
+        "name": "Jake",
+        "sonAge": 16,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 6,
+          "parentCallRate": 63,
+          "heroLetterProgress": 50,
+          "playbookActivities": 7,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Mcgrath",
+        "mentorId": "173683465393",
+        "mentorName": "Anthony Audino",
+        "sessionNumber": "8",
+        "nextSessionDate": "2026-03-11",
+        "daysSinceSession": 10,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "198601085021",
+        "name": "Jared ",
+        "sonAge": 11,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 100,
+          "heroLetterProgress": 50,
+          "playbookActivities": 12,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Emerson Forsyth",
+        "mentorId": "173683465393",
+        "mentorName": "Anthony Audino",
+        "sessionNumber": "5",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "189928674323",
+        "name": "George",
+        "sonAge": 17,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 57,
+          "heroLetterProgress": 41,
+          "playbookActivities": 3,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Kerin",
+        "mentorId": "173683465393",
+        "mentorName": "Anthony Audino",
+        "sessionNumber": "7",
+        "nextSessionDate": "2026-03-09",
+        "daysSinceSession": 19,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "185746142904",
+        "name": "Ethan",
+        "sonAge": 13,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 45,
+          "heroLetterProgress": 41,
+          "playbookActivities": 8,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Blake",
+        "mentorId": "173683465393",
+        "mentorName": "Anthony Audino",
+        "sessionNumber": "11",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "131022302883",
+        "name": "Jett",
+        "sonAge": 13,
+        "streak": 6,
+        "metrics": {
+          "winsLogged": 6,
+          "parentCallRate": 23,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 85
+        },
+        "program": "Big Brother",
+        "lastName": "McIness",
+        "mentorId": "174964216401",
+        "mentorName": "Hayden Sampson",
+        "sessionNumber": "27",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "193133622129",
+        "name": "Jacob",
+        "sonAge": 14,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 6,
+          "parentCallRate": 0,
+          "heroLetterProgress": 0,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Campbell",
+        "mentorId": "174964216401",
+        "mentorName": "Hayden Sampson",
+        "sessionNumber": "6",
+        "nextSessionDate": "2026-03-07",
+        "daysSinceSession": 20,
+        "daysSinceParentCall": 19
+      },
+      {
+        "id": "189754878632",
+        "name": "Michael ",
+        "sonAge": 15,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 75,
+          "heroLetterProgress": 0,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Amiet",
+        "mentorId": "174964216401",
+        "mentorName": "Hayden Sampson",
+        "sessionNumber": "4",
+        "nextSessionDate": "2026-02-25",
+        "daysSinceSession": 29,
+        "daysSinceParentCall": 29
+      },
+      {
+        "id": "116892389939",
+        "name": "Jasper",
+        "sonAge": 13,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 18,
+          "heroLetterProgress": 0,
+          "playbookActivities": 0,
+          "sessionConsistency": 91
+        },
+        "program": "Big Brother",
+        "lastName": "Alexander ",
+        "mentorId": "174964216401",
+        "mentorName": "Hayden Sampson",
+        "sessionNumber": "33",
+        "nextSessionDate": null,
+        "daysSinceSession": 33,
+        "daysSinceParentCall": 34
+      },
+      {
+        "id": "126700344428",
+        "name": "Max",
+        "sonAge": 16,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 7,
+          "parentCallRate": 67,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Caruso",
+        "mentorId": "174964216401",
+        "mentorName": "Hayden Sampson",
+        "sessionNumber": "6",
+        "nextSessionDate": "2026-03-11",
+        "daysSinceSession": 17,
+        "daysSinceParentCall": 19
+      },
+      {
+        "id": "196616513442",
+        "name": "Noah",
+        "sonAge": 15,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 75,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Sutherland",
+        "mentorId": "174964216401",
+        "mentorName": "Hayden Sampson",
+        "sessionNumber": "4",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 19
+      },
+      {
+        "id": "187074096201",
+        "name": "Samuel ",
+        "sonAge": 12,
+        "streak": 9,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 10,
+          "heroLetterProgress": 41,
+          "playbookActivities": 0,
+          "sessionConsistency": 90
+        },
+        "program": "Big Brother",
+        "lastName": "Najdovska",
+        "mentorId": "173689159814",
+        "mentorName": "Bailey Kiefer",
+        "sessionNumber": "9",
+        "nextSessionDate": "2026-04-06",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "187214657448",
+        "name": "Odin",
+        "sonAge": 12,
+        "streak": 3,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 0,
+          "heroLetterProgress": 41,
+          "playbookActivities": 0,
+          "sessionConsistency": 91
+        },
+        "program": "Big Brother",
+        "lastName": "Andrijich",
+        "mentorId": "173689159814",
+        "mentorName": "Bailey Kiefer",
+        "sessionNumber": "7",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": null
+      },
+      {
+        "id": "173662000448",
+        "name": "Luke Hall",
+        "sonAge": 15,
+        "streak": 10,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 29,
+          "heroLetterProgress": 41,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Ciccollitto",
+        "mentorId": "173689159814",
+        "mentorName": "Bailey Kiefer",
+        "sessionNumber": "41",
+        "nextSessionDate": "2026-04-09",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "201516369929",
+        "name": "Roman",
+        "sonAge": 14,
+        "streak": 5,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 100,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Golden Bridge",
+        "lastName": "Karageorge",
+        "mentorId": "173689159814",
+        "mentorName": "Bailey Kiefer",
+        "sessionNumber": "5",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "192531640371",
+        "name": "Ruan",
+        "sonAge": 17,
+        "streak": 7,
+        "metrics": {
+          "winsLogged": 6,
+          "parentCallRate": 22,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 89
+        },
+        "program": "Big Brother",
+        "lastName": "LOUWRENS",
+        "mentorId": "173689159814",
+        "mentorName": "Bailey Kiefer",
+        "sessionNumber": "9",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 32
+      },
+      {
+        "id": "190513840925",
+        "name": "Luke",
+        "sonAge": 13,
+        "streak": 5,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 33,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 83
+        },
+        "program": "Lighthouse",
+        "lastName": "Arthur",
+        "mentorId": "173689159814",
+        "mentorName": "Bailey Kiefer",
+        "sessionNumber": "6",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "167814307652",
+        "name": "Daniel",
+        "sonAge": 14,
+        "streak": 5,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 5,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Sterling-Levis",
+        "mentorId": "173689159814",
+        "mentorName": "Bailey Kiefer",
+        "sessionNumber": "17",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "188210854687",
+        "name": "Connor ",
+        "sonAge": 17,
+        "streak": 7,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 41,
+          "playbookActivities": 0,
+          "sessionConsistency": 89
+        },
+        "program": "Lighthouse",
+        "lastName": "Shardlow",
+        "mentorId": "173689159814",
+        "mentorName": "Bailey Kiefer",
+        "sessionNumber": "9",
+        "nextSessionDate": "2026-04-19",
+        "daysSinceSession": 0,
+        "daysSinceParentCall": null
+      },
+      {
+        "id": "180740122775",
+        "name": "Harri",
+        "sonAge": 11,
+        "streak": 14,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 40,
+          "heroLetterProgress": 41,
+          "playbookActivities": 2,
+          "sessionConsistency": 93
+        },
+        "program": "Big Brother",
+        "lastName": "Wear",
+        "mentorId": "178705905674",
+        "mentorName": "Tom Pierce",
+        "sessionNumber": "14",
+        "nextSessionDate": "2026-03-22",
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 6
+      },
+      {
+        "id": "145164842544",
+        "name": "Hunter",
+        "sonAge": 14,
+        "streak": 7,
+        "metrics": {
+          "winsLogged": 4,
+          "parentCallRate": 60,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Peters",
+        "mentorId": "174964230435",
+        "mentorName": "Xavier Lewis",
+        "sessionNumber": "11",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "198415135505",
+        "name": "Coupah Lodding",
+        "sonAge": 15,
+        "streak": 3,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 20,
+          "heroLetterProgress": 41,
+          "playbookActivities": 0,
+          "sessionConsistency": 80
+        },
+        "program": "Big Brother",
+        "lastName": "Weatherall",
+        "mentorId": "174964230435",
+        "mentorName": "Xavier Lewis",
+        "sessionNumber": "4",
+        "nextSessionDate": "2026-03-18",
+        "daysSinceSession": 9,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "127088735835",
+        "name": "Max ",
+        "sonAge": 15,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 44,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Verso",
+        "mentorId": "174964230435",
+        "mentorName": "Xavier Lewis",
+        "sessionNumber": "9",
+        "nextSessionDate": "2026-04-12",
+        "daysSinceSession": 1,
+        "daysSinceParentCall": 1
+      },
+      {
+        "id": "156312293686",
+        "name": "Jesse",
+        "sonAge": 14,
+        "streak": 6,
+        "metrics": {
+          "winsLogged": 7,
+          "parentCallRate": 36,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "farkas",
+        "mentorId": "174964230435",
+        "mentorName": "Xavier Lewis",
+        "sessionNumber": "10",
+        "nextSessionDate": "2026-03-18",
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 6
+      },
+      {
+        "id": "183231550491",
+        "name": "Kade",
+        "sonAge": 13,
+        "streak": 6,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 40,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Jacotine",
+        "mentorId": "174964230435",
+        "mentorName": "Xavier Lewis",
+        "sessionNumber": "15",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "201978582902",
+        "name": "Kingston",
+        "sonAge": 14,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "",
+        "mentorId": "174964230435",
+        "mentorName": "Xavier Lewis",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-16",
+        "daysSinceSession": 12,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "186403716232",
+        "name": "Declan",
+        "sonAge": 15,
+        "streak": 5,
+        "metrics": {
+          "winsLogged": 6,
+          "parentCallRate": 40,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 90
+        },
+        "program": "Big Brother",
+        "lastName": "Tighe",
+        "mentorId": "174964230435",
+        "mentorName": "Xavier Lewis",
+        "sessionNumber": "10",
+        "nextSessionDate": "2026-03-22",
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 6
+      },
+      {
+        "id": "194776451184",
+        "name": "Finley",
+        "sonAge": 15,
+        "streak": 6,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 33,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Wright",
+        "mentorId": "174964230435",
+        "mentorName": "Xavier Lewis",
+        "sessionNumber": "9",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "208659433730",
+        "name": "Leonardos",
+        "sonAge": 16,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Anwar",
+        "mentorId": "174964230435",
+        "mentorName": "Xavier Lewis",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 7
+      },
+      {
+        "id": "168469422633",
+        "name": "Tahi",
+        "sonAge": 12,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 10,
+          "parentCallRate": 40,
+          "heroLetterProgress": 25,
+          "playbookActivities": 3,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Pakinga",
+        "mentorId": "155319163947",
+        "mentorName": "Ben Cantwell",
+        "sessionNumber": "10",
+        "nextSessionDate": "2026-03-16",
+        "daysSinceSession": 12,
+        "daysSinceParentCall": 12
+      },
+      {
+        "id": "150068829456",
+        "name": "Jacob ",
+        "sonAge": 9,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 6,
+          "heroLetterProgress": 33,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "Summers",
+        "mentorId": "155319163947",
+        "mentorName": "Ben Cantwell",
+        "sessionNumber": "24",
+        "nextSessionDate": "2026-03-11",
+        "daysSinceSession": 15,
+        "daysSinceParentCall": 15
+      },
+      {
+        "id": "192566321995",
+        "name": "Ewan",
+        "sonAge": 14,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 8,
+          "parentCallRate": 80,
+          "heroLetterProgress": 25,
+          "playbookActivities": 6,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Brennan",
+        "mentorId": "155319163947",
+        "mentorName": "Ben Cantwell",
+        "sessionNumber": "5",
+        "nextSessionDate": "2026-03-17",
+        "daysSinceSession": 11,
+        "daysSinceParentCall": 15
+      },
+      {
+        "id": "162645741726",
+        "name": "Elwyn Vesey",
+        "sonAge": 12,
+        "streak": 0,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 13,
+          "heroLetterProgress": 25,
+          "playbookActivities": 3,
+          "sessionConsistency": 100
+        },
+        "program": "Lighthouse",
+        "lastName": "RYAN",
+        "mentorId": "155319163947",
+        "mentorName": "Ben Cantwell",
+        "sessionNumber": "7",
+        "nextSessionDate": "2026-03-12",
+        "daysSinceSession": 16,
+        "daysSinceParentCall": 47
+      },
+      {
+        "id": "206515238247",
+        "name": "Izak",
+        "sonAge": null,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 100,
+          "heroLetterProgress": 33,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "BUCKLAND",
+        "mentorId": "204035147844",
+        "mentorName": "josh gould",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 2
+      },
+      {
+        "id": "204452331309",
+        "name": "Diego ",
+        "sonAge": 16,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 50,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Lighthouse",
+        "lastName": "Ward",
+        "mentorId": "204035147844",
+        "mentorName": "josh gould",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "205477601299",
+        "name": "Luca",
+        "sonAge": 12,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 50,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Lighthouse",
+        "lastName": "Poole",
+        "mentorId": "204471473971",
+        "mentorName": "Miles Dalgliesh",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-19",
+        "daysSinceSession": 9,
+        "daysSinceParentCall": 15
+      },
+      {
+        "id": "205359510576",
+        "name": "Thomas",
+        "sonAge": 19,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 50,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "BELTRAN",
+        "mentorId": "204471473971",
+        "mentorName": "Miles Dalgliesh",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 12
+      },
+      {
+        "id": "203226633903",
+        "name": "Thomas",
+        "sonAge": 14,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 67
+        },
+        "program": "The Big Brother",
+        "lastName": "Simpson",
+        "mentorId": "204462375469",
+        "mentorName": "Lachlan Hall",
+        "sessionNumber": "3",
+        "nextSessionDate": "2026-03-22",
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 6
+      },
+      {
+        "id": "159059981129",
+        "name": "Hugo Tory",
+        "sonAge": 15,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 100,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Cowell (Grandma)",
+        "mentorId": "204473259871",
+        "mentorName": "Amin Naim",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-17",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "205989322767",
+        "name": "Mobi / Modhi ",
+        "sonAge": 13,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Scott",
+        "mentorId": "204473259871",
+        "mentorName": "Amin Naim",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-19",
+        "daysSinceSession": 6,
+        "daysSinceParentCall": null
+      },
+      {
+        "id": "206412600887",
+        "name": "Oscar",
+        "sonAge": 16,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Noyce",
+        "mentorId": "204471482474",
+        "mentorName": "Noah Cockerell",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-20",
+        "daysSinceSession": 8,
+        "daysSinceParentCall": 2
+      },
+      {
+        "id": "199517252947",
+        "name": "Lachy",
+        "sonAge": 16,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 100,
+          "heroLetterProgress": 41,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Dalton ",
+        "mentorId": "204471482474",
+        "mentorName": "Noah Cockerell",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "200326318387",
+        "name": "Lucas",
+        "sonAge": 17,
+        "streak": 4,
+        "metrics": {
+          "winsLogged": 4,
+          "parentCallRate": 100,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Belfiore",
+        "mentorId": "204471482474",
+        "mentorName": "Noah Cockerell",
+        "sessionNumber": "4",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "185725914690",
+        "name": "Keegan",
+        "sonAge": 15,
+        "streak": 3,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 100,
+          "heroLetterProgress": 30,
+          "playbookActivities": 13,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "SHORTHOUSE",
+        "mentorId": "204401497426",
+        "mentorName": "Jett Cara",
+        "sessionNumber": "3",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "204223725428",
+        "name": "Cameron",
+        "sonAge": 12,
+        "streak": 3,
+        "metrics": {
+          "winsLogged": 4,
+          "parentCallRate": 33,
+          "heroLetterProgress": 38,
+          "playbookActivities": 10,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Murphy",
+        "mentorId": "204401497426",
+        "mentorName": "Jett Cara",
+        "sessionNumber": "3",
+        "nextSessionDate": "2026-03-26",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "117088410730",
+        "name": "Alex Dolman",
+        "sonAge": 14,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 33,
+          "heroLetterProgress": 25,
+          "playbookActivities": 8,
+          "sessionConsistency": 83
+        },
+        "program": "Big Brother",
+        "lastName": "Rivett",
+        "mentorId": "204401497426",
+        "mentorName": "Jett Cara",
+        "sessionNumber": "5",
+        "nextSessionDate": "2026-03-22",
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "206622649421",
+        "name": "Dylan ",
+        "sonAge": 11,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 50,
+          "heroLetterProgress": 30,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Bullied",
+        "mentorId": "204401497426",
+        "mentorName": "Jett Cara",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-26",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "203693591400",
+        "name": "Kye",
+        "sonAge": 13,
+        "streak": 4,
+        "metrics": {
+          "winsLogged": 6,
+          "parentCallRate": 80,
+          "heroLetterProgress": 55,
+          "playbookActivities": 25,
+          "sessionConsistency": 80
+        },
+        "program": "The Big Brother",
+        "lastName": "Foster",
+        "mentorId": "204401497426",
+        "mentorName": "Jett Cara",
+        "sessionNumber": "4",
+        "nextSessionDate": "2026-03-16",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 5
+      },
+      {
+        "id": "205684605732",
+        "name": "Olli",
+        "sonAge": 16,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Lighthouse",
+        "lastName": "Jackson",
+        "mentorId": "204348580405",
+        "mentorName": "Aidan Cole",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-23",
+        "daysSinceSession": 5,
+        "daysSinceParentCall": 1
+      },
+      {
+        "id": "204536799543",
+        "name": "Giovanni (Gio)",
+        "sonAge": 15,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Wheeler",
+        "mentorId": "204348580405",
+        "mentorName": "Aidan Cole",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-18",
+        "daysSinceSession": 9,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "208379429794",
+        "name": "Tristan",
+        "sonAge": null,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Merrin",
+        "mentorId": "204348580405",
+        "mentorName": "Aidan Cole",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "207396388373",
+        "name": "Joe",
+        "sonAge": 11,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Lighthouse",
+        "lastName": "Moore",
+        "mentorId": "204348580405",
+        "mentorName": "Aidan Cole",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-22",
+        "daysSinceSession": 10,
+        "daysSinceParentCall": 10
+      },
+      {
+        "id": "207617838171",
+        "name": "Koby",
+        "sonAge": 17,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 0,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Stephenson",
+        "mentorId": "204348580405",
+        "mentorName": "Aidan Cole",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "205198138142",
+        "name": "Adam",
+        "sonAge": 15,
+        "streak": 3,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Wilson - Son Adam",
+        "mentorId": "204348580405",
+        "mentorName": "Aidan Cole",
+        "sessionNumber": "3",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "194010862702",
+        "name": "Tallon",
+        "sonAge": 16,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Miranda",
+        "mentorId": "204348580405",
+        "mentorName": "Aidan Cole",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-19",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 2
+      },
+      {
+        "id": "198845395067",
+        "name": "Jacob",
+        "sonAge": 15,
+        "streak": 3,
+        "metrics": {
+          "winsLogged": 2,
+          "parentCallRate": 50,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "Big Brother",
+        "lastName": "Ellis",
+        "mentorId": "199527763814",
+        "mentorName": "Tom Hermans",
+        "sessionNumber": "3",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "205299517205",
+        "name": "Cohen",
+        "sonAge": 14,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 5,
+          "parentCallRate": 50,
+          "heroLetterProgress": 33,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Forward",
+        "mentorId": "199527763814",
+        "mentorName": "Tom Hermans",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 11
+      },
+      {
+        "id": "205944919131",
+        "name": "Salvador",
+        "sonAge": 16,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 50,
+          "heroLetterProgress": 25,
+          "playbookActivities": 3,
+          "sessionConsistency": 100
+        },
+        "program": "The Lighthouse",
+        "lastName": "Quintero",
+        "mentorId": "199527763814",
+        "mentorName": "Tom Hermans",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 2,
+        "daysSinceParentCall": 7
+      },
+      {
+        "id": "207329867626",
+        "name": "Jesse Compton",
+        "sonAge": 13,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 1,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Loccisano",
+        "mentorId": "199527763814",
+        "mentorName": "Tom Hermans",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-19",
+        "daysSinceSession": 9,
+        "daysSinceParentCall": 9
+      },
+      {
+        "id": "207706998883",
+        "name": "Dawson Kirk ",
+        "sonAge": 16,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Kirk",
+        "mentorId": "206522908271",
+        "mentorName": "Aidan Librio",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "208088136978",
+        "name": "Seb Voce",
+        "sonAge": 14,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 0,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Ziebell",
+        "mentorId": "206522908271",
+        "mentorName": "Aidan Librio",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 4
+      },
+      {
+        "id": "207559251551",
+        "name": "Tyler ",
+        "sonAge": 14,
+        "streak": 1,
+        "metrics": {
+          "winsLogged": 1,
+          "parentCallRate": 100,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Stazak",
+        "mentorId": "207788929539",
+        "mentorName": "Jonti Crisp",
+        "sessionNumber": "1",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "207642859110",
+        "name": "Ozzi",
+        "sonAge": 19,
+        "streak": 2,
+        "metrics": {
+          "winsLogged": 3,
+          "parentCallRate": 50,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Trigwell",
+        "mentorId": "207788929539",
+        "mentorName": "Jonti Crisp",
+        "sessionNumber": "2",
+        "nextSessionDate": "2026-03-24",
+        "daysSinceSession": 4,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "203852094603",
+        "name": "Patrick",
+        "sonAge": 13,
+        "streak": 4,
+        "metrics": {
+          "winsLogged": 4,
+          "parentCallRate": 100,
+          "heroLetterProgress": 50,
+          "playbookActivities": 0,
+          "sessionConsistency": 100
+        },
+        "program": "The Big Brother",
+        "lastName": "Thorburn",
+        "mentorId": "204490582580",
+        "mentorName": "Ben Kaipau",
+        "sessionNumber": "4",
+        "nextSessionDate": "2026-03-25",
+        "daysSinceSession": 3,
+        "daysSinceParentCall": 3
+      },
+      {
+        "id": "197535773075",
+        "name": "Jye",
+        "sonAge": 14,
+        "streak": 3,
+        "metrics": {
+          "winsLogged": 4,
+          "parentCallRate": 75,
+          "heroLetterProgress": 25,
+          "playbookActivities": 0,
+          "sessionConsistency": 75
+        },
+        "program": "Lighthouse",
+        "lastName": "Gradisen",
+        "mentorId": "204490582580",
+        "mentorName": "Ben Kaipau",
+        "sessionNumber": "4",
+        "nextSessionDate": "2026-03-22",
+        "daysSinceSession": 6,
+        "daysSinceParentCall": 6
+      }
+    ],
+    "mentors": [
+      {
+        "mentorId": "132738976812",
+        "avgStreak": 6.5,
+        "mentorName": "Fletcher Gauci",
+        "memberCount": 2,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "132750386548",
+        "avgStreak": 1,
+        "mentorName": "Luke Dixon",
+        "memberCount": 1,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Flagged By B&G",
+        "avgSessionConsistency": 82
+      },
+      {
+        "mentorId": "128132247082",
+        "avgStreak": 3,
+        "mentorName": "Taj Schofield",
+        "memberCount": 7,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 99
+      },
+      {
+        "mentorId": "124807236276",
+        "avgStreak": 0.7,
+        "mentorName": "Shane Clouugh",
+        "memberCount": 3,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 87
+      },
+      {
+        "mentorId": "132757583123",
+        "avgStreak": 2.7,
+        "mentorName": "Rye Penny",
+        "memberCount": 3,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "129527490093",
+        "avgStreak": 6.5,
+        "mentorName": "Benjamin Philip",
+        "memberCount": 4,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "121602484051",
+        "avgStreak": 2.4,
+        "mentorName": "Elliot Mahoney",
+        "memberCount": 5,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Wants More",
+        "avgSessionConsistency": 95
+      },
+      {
+        "mentorId": "155318828413",
+        "avgStreak": 0,
+        "mentorName": "Connor Savill",
+        "memberCount": 3,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Flagged By B&G",
+        "avgSessionConsistency": 0
+      },
+      {
+        "mentorId": "155295265843",
+        "avgStreak": 0,
+        "mentorName": "Callum Sargentson",
+        "memberCount": 1,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Flagged By B&G",
+        "avgSessionConsistency": 0
+      },
+      {
+        "mentorId": "155295048490",
+        "avgStreak": 0,
+        "mentorName": "Brodie Paull",
+        "memberCount": 10,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 9
+      },
+      {
+        "mentorId": "140468121735",
+        "avgStreak": 0,
+        "mentorName": "Jack Petruccelle",
+        "memberCount": 5,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 40
+      },
+      {
+        "mentorId": "155319099953",
+        "avgStreak": 0.2,
+        "mentorName": "Cristian Milograd",
+        "memberCount": 5,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Wants More",
+        "avgSessionConsistency": 40
+      },
+      {
+        "mentorId": "133010618680",
+        "avgStreak": 0,
+        "mentorName": "Luke Vella",
+        "memberCount": 3,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 0
+      },
+      {
+        "mentorId": "145421967204",
+        "avgStreak": 0,
+        "mentorName": "Harper Montgomery",
+        "memberCount": 7,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Wants More",
+        "avgSessionConsistency": 0
+      },
+      {
+        "mentorId": "133002781859",
+        "avgStreak": 2.2,
+        "mentorName": "Blair Huggins",
+        "memberCount": 9,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 33
+      },
+      {
+        "mentorId": "180825267541",
+        "avgStreak": 0.5,
+        "mentorName": "Charlie Bolmat",
+        "memberCount": 2,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 95
+      },
+      {
+        "mentorId": "174965171509",
+        "avgStreak": 6.5,
+        "mentorName": "Jed Woods",
+        "memberCount": 4,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "173683465393",
+        "avgStreak": 1.5,
+        "mentorName": "Anthony Audino",
+        "memberCount": 6,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 99
+      },
+      {
+        "mentorId": "174964216401",
+        "avgStreak": 1.2,
+        "mentorName": "Hayden Sampson",
+        "memberCount": 6,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 96
+      },
+      {
+        "mentorId": "173689159814",
+        "avgStreak": 6.4,
+        "mentorName": "Bailey Kiefer",
+        "memberCount": 8,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 93
+      },
+      {
+        "mentorId": "178705905674",
+        "avgStreak": 14,
+        "mentorName": "Tom Pierce",
+        "memberCount": 1,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Flagged By B&G",
+        "avgSessionConsistency": 93
+      },
+      {
+        "mentorId": "174964230435",
+        "avgStreak": 4.1,
+        "mentorName": "Xavier Lewis",
+        "memberCount": 9,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Wants More",
+        "avgSessionConsistency": 97
+      },
+      {
+        "mentorId": "155319163947",
+        "avgStreak": 0.5,
+        "mentorName": "Ben Cantwell",
+        "memberCount": 4,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "204035147844",
+        "avgStreak": 1.5,
+        "mentorName": "josh gould",
+        "memberCount": 2,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "204471473971",
+        "avgStreak": 2,
+        "mentorName": "Miles Dalgliesh",
+        "memberCount": 2,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "204462375469",
+        "avgStreak": 1,
+        "mentorName": "Lachlan Hall",
+        "memberCount": 1,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Wants More",
+        "avgSessionConsistency": 67
+      },
+      {
+        "mentorId": "204473259871",
+        "avgStreak": 1.5,
+        "mentorName": "Amin Naim",
+        "memberCount": 2,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "204471482474",
+        "avgStreak": 2.3,
+        "mentorName": "Noah Cockerell",
+        "memberCount": 3,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Wants More",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "204401497426",
+        "avgStreak": 2.8,
+        "mentorName": "Jett Cara",
+        "memberCount": 5,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "At Capacity",
+        "avgSessionConsistency": 93
+      },
+      {
+        "mentorId": "204348580405",
+        "avgStreak": 1.3,
+        "mentorName": "Aidan Cole",
+        "memberCount": 7,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Wants More",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "199527763814",
+        "avgStreak": 2.3,
+        "mentorName": "Tom Hermans",
+        "memberCount": 4,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Wants More",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "206536710446",
+        "avgStreak": 0,
+        "mentorName": "Declan Kenny",
+        "memberCount": 0,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 0
+      },
+      {
+        "mentorId": "209456189553",
+        "avgStreak": 0,
+        "mentorName": "Sam Bearder",
+        "memberCount": 0,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 0
+      },
+      {
+        "mentorId": "207942916514",
+        "avgStreak": 0,
+        "mentorName": "Riv Robbins",
+        "memberCount": 0,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 0
+      },
+      {
+        "mentorId": "206522908271",
+        "avgStreak": 1.5,
+        "mentorName": "Aidan Librio",
+        "memberCount": 2,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "207788929539",
+        "avgStreak": 1.5,
+        "mentorName": "Jonti Crisp",
+        "memberCount": 2,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "",
+        "avgSessionConsistency": 100
+      },
+      {
+        "mentorId": "204490582580",
+        "avgStreak": 3.5,
+        "mentorName": "Ben Kaipau",
+        "memberCount": 2,
+        "flaggedCount": 0,
+        "avgHealthScore": 0,
+        "mentorMemberStatus": "Flagged By B&G",
+        "avgSessionConsistency": 88
+      }
+    ],
+    "weeklyTrends": [
+      {
+        "week": "2025-12-29",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 25,
+        "activities": 0,
+        "topActivities": []
+      },
+      {
+        "week": "2026-01-05",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 19,
+        "activities": 0,
+        "topActivities": []
+      },
+      {
+        "week": "2026-01-12",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 39,
+        "activities": 0,
+        "topActivities": []
+      },
+      {
+        "week": "2026-01-19",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 38,
+        "activities": 0,
+        "topActivities": []
+      },
+      {
+        "week": "2026-01-26",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 40,
+        "activities": 0,
+        "topActivities": []
+      },
+      {
+        "week": "2026-02-02",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 44,
+        "activities": 0,
+        "topActivities": []
+      },
+      {
+        "week": "2026-02-09",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 53,
+        "activities": 17,
+        "topActivities": [
+          {
+            "name": "Fitness Planner",
+            "count": 5
+          },
+          {
+            "name": "\ud83c\udfae Contexto",
+            "count": 4
+          },
+          {
+            "name": "Triple H Circle",
+            "count": 3
+          },
+          {
+            "name": "Resume Builder",
+            "count": 1
+          },
+          {
+            "name": "Connection Wheel: Rate each other's music taste (show me your top played)",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "week": "2026-02-16",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 61,
+        "activities": 80,
+        "topActivities": [
+          {
+            "name": "Friend Influence Rater",
+            "count": 7
+          },
+          {
+            "name": "This or That \u2014 Speed Round",
+            "count": 7
+          },
+          {
+            "name": "Fitness Planner",
+            "count": 5
+          },
+          {
+            "name": "Two Truths & One Lie",
+            "count": 5
+          },
+          {
+            "name": "Elon Musk Shopping Spree",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "week": "2026-02-23",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 53,
+        "activities": 49,
+        "topActivities": [
+          {
+            "name": "Screen Time Audit",
+            "count": 4
+          },
+          {
+            "name": "Friend Influence Rater",
+            "count": 4
+          },
+          {
+            "name": "School Check-In",
+            "count": 4
+          },
+          {
+            "name": "\ud83c\udfae Wordle",
+            "count": 3
+          },
+          {
+            "name": "This or That \u2014 Speed Round",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "week": "2026-03-02",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 69,
+        "activities": 84,
+        "topActivities": [
+          {
+            "name": "\ud83c\udfae Wordle",
+            "count": 6
+          },
+          {
+            "name": "Fitness Planner",
+            "count": 5
+          },
+          {
+            "name": "\ud83c\udfae Contexto",
+            "count": 4
+          },
+          {
+            "name": "Friend Influence Rater",
+            "count": 3
+          },
+          {
+            "name": "\ud83c\udfae Would You Rather",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "week": "2026-03-09",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 70,
+        "activities": 43,
+        "topActivities": [
+          {
+            "name": "Two Truths & One Lie",
+            "count": 6
+          },
+          {
+            "name": "\ud83c\udfae Contexto",
+            "count": 5
+          },
+          {
+            "name": "Elon Musk Shopping Spree",
+            "count": 4
+          },
+          {
+            "name": "This or That \u2014 Speed Round",
+            "count": 2
+          },
+          {
+            "name": "\ud83c\udfae Wordle",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "week": "2026-03-16",
+        "wins": 0,
+        "topWins": [],
+        "sessions": 63,
+        "activities": 16,
+        "topActivities": [
+          {
+            "name": "Screen Time Audit",
+            "count": 3
+          },
+          {
+            "name": "\ud83c\udfae Wordle",
+            "count": 3
+          },
+          {
+            "name": "This or That \u2014 Speed Round",
+            "count": 2
+          },
+          {
+            "name": "Elon Musk Shopping Spree",
+            "count": 1
+          },
+          {
+            "name": "\ud83c\udfae Contexto",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  }
+}

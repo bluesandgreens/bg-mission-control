@@ -1,27 +1,132 @@
 {
-  "generated": "2026-03-21T11:00:00+11:00",
-  "days": [
+  "generated": "2026-03-21T15:44:10.456699",
+  "total_events": 10,
+  "events": [
     {
-      "date": "2026-03-21",
-      "label": "Today — Saturday",
-      "events": [
-        {"time": "09:00-11:00", "title": "Boxing @ Docklands", "type": "personal", "status": "done"},
-        {"time": "11:00-13:00", "title": "🔨 FE Offer Refinement", "type": "deep_work", "notes": "Lock pricing + inclusions from week's calls"},
-        {"time": "13:00-15:00", "title": "🔨 Retention Map", "type": "deep_work", "notes": "Decide 10-15 families Harry personally owns"},
-        {"time": "15:00-17:30", "title": "FREE BLOCK", "type": "free"},
-        {"time": "17:30-18:00", "title": "📞 DC — Kelly Wellsmore", "type": "dc_call"},
-        {"time": "19:30-20:00", "title": "📞 DC — Victoria Dimovski", "type": "dc_call"},
-        {"time": "21:00-21:30", "title": "Journal", "type": "personal"}
-      ]
+      "id": "30aplgej0f8cmvqmn69quci7pg",
+      "start": "2026-03-21T09:00:00+11:00",
+      "end": "2026-03-21T11:00:00+11:00",
+      "summary": "Boxing @ Docklands"
     },
     {
-      "date": "2026-03-22",
-      "label": "Tomorrow — Sunday",
-      "events": [
-        {"time": "10:45-12:00", "title": "🔨 Ad Review — Mentor ads 48hr + swap dead hooks", "type": "deep_work"},
-        {"time": "12:00-13:00", "title": "Rahmain Mentor Call", "type": "meeting"},
-        {"time": "14:30-16:00", "title": "🌙 Weekly Reflection + Week 13 Planning", "type": "deep_work"}
-      ]
+      "id": "usm8l46nc8371t4a0eqot9iaps",
+      "start": "2026-03-21T11:00:00+11:00",
+      "end": "2026-03-21T13:00:00+11:00",
+      "summary": "\ud83d\udd28 FE Offer Refinement \u2014 pricing + inclusions from week's calls"
+    },
+    {
+      "id": "050180kk3ukrvhaapm5d7klpun",
+      "start": "2026-03-21T13:00:00+11:00",
+      "end": "2026-03-21T15:00:00+11:00",
+      "summary": "\ud83d\udd28 Retention Map"
+    },
+    {
+      "id": "au4trhhvfi3md3sj78ffvdcb0c",
+      "start": "2026-03-21T17:30:00+11:00",
+      "end": "2026-03-21T20:00:00+11:00",
+      "summary": "\ud83d\udcde DC Available \u2014 Calls / Team"
+    },
+    {
+      "id": "fkf1lfbhlfo7dl7jtnkl5o86gc",
+      "start": "2026-03-21T17:30:00+11:00",
+      "end": "2026-03-21T18:00:00+11:00",
+      "summary": "Blues & Greens Discovery Call - Kelly Wellsmore"
+    },
+    {
+      "id": "9t9q49gsi6hostdopurjq1n544",
+      "start": "2026-03-21T18:45:00+11:00",
+      "end": "2026-03-21T19:15:00+11:00",
+      "summary": "Blues & Greens Discovery Call - Jodie Fairweather"
+    },
+    {
+      "id": "mkc5olk40mmre4clqqdbl5opos",
+      "start": "2026-03-21T19:30:00+11:00",
+      "end": "2026-03-21T20:00:00+11:00",
+      "summary": "Updated - Blues & Greens Discovery Call - Victoria Dimovski"
+    },
+    {
+      "id": "57k6cgvt48nmkrdqbg1265v85v_20260321T100000Z",
+      "start": "2026-03-21T21:00:00+11:00",
+      "end": "2026-03-21T21:30:00+11:00",
+      "summary": "Journal"
+    },
+    {
+      "id": "v60kbs6pdnoss5oejqfvcufjuo",
+      "start": "2026-03-22T10:45:00+11:00",
+      "end": "2026-03-22T12:00:00+11:00",
+      "summary": "\ud83d\udd28 Ad Review \u2014 Mentor ads 48hr + swap dead customer hooks"
+    },
+    {
+      "id": "_8ks38gi664p42b9k8cs4ab9k8cr36ba18l0kab9p6ork6h1j60p32c9m64",
+      "start": "2026-03-22T12:00:00+11:00",
+      "end": "2026-03-22T13:00:00+11:00",
+      "summary": "Rahmain Mentor Call"
     }
-  ]
+  ],
+  "by_day": {
+    "2026-03-21": [
+      {
+        "id": "30aplgej0f8cmvqmn69quci7pg",
+        "start": "2026-03-21T09:00:00+11:00",
+        "end": "2026-03-21T11:00:00+11:00",
+        "summary": "Boxing @ Docklands"
+      },
+      {
+        "id": "usm8l46nc8371t4a0eqot9iaps",
+        "start": "2026-03-21T11:00:00+11:00",
+        "end": "2026-03-21T13:00:00+11:00",
+        "summary": "\ud83d\udd28 FE Offer Refinement \u2014 pricing + inclusions from week's calls"
+      },
+      {
+        "id": "050180kk3ukrvhaapm5d7klpun",
+        "start": "2026-03-21T13:00:00+11:00",
+        "end": "2026-03-21T15:00:00+11:00",
+        "summary": "\ud83d\udd28 Retention Map"
+      },
+      {
+        "id": "au4trhhvfi3md3sj78ffvdcb0c",
+        "start": "2026-03-21T17:30:00+11:00",
+        "end": "2026-03-21T20:00:00+11:00",
+        "summary": "\ud83d\udcde DC Available \u2014 Calls / Team"
+      },
+      {
+        "id": "fkf1lfbhlfo7dl7jtnkl5o86gc",
+        "start": "2026-03-21T17:30:00+11:00",
+        "end": "2026-03-21T18:00:00+11:00",
+        "summary": "Blues & Greens Discovery Call - Kelly Wellsmore"
+      },
+      {
+        "id": "9t9q49gsi6hostdopurjq1n544",
+        "start": "2026-03-21T18:45:00+11:00",
+        "end": "2026-03-21T19:15:00+11:00",
+        "summary": "Blues & Greens Discovery Call - Jodie Fairweather"
+      },
+      {
+        "id": "mkc5olk40mmre4clqqdbl5opos",
+        "start": "2026-03-21T19:30:00+11:00",
+        "end": "2026-03-21T20:00:00+11:00",
+        "summary": "Updated - Blues & Greens Discovery Call - Victoria Dimovski"
+      },
+      {
+        "id": "57k6cgvt48nmkrdqbg1265v85v_20260321T100000Z",
+        "start": "2026-03-21T21:00:00+11:00",
+        "end": "2026-03-21T21:30:00+11:00",
+        "summary": "Journal"
+      }
+    ],
+    "2026-03-22": [
+      {
+        "id": "v60kbs6pdnoss5oejqfvcufjuo",
+        "start": "2026-03-22T10:45:00+11:00",
+        "end": "2026-03-22T12:00:00+11:00",
+        "summary": "\ud83d\udd28 Ad Review \u2014 Mentor ads 48hr + swap dead customer hooks"
+      },
+      {
+        "id": "_8ks38gi664p42b9k8cs4ab9k8cr36ba18l0kab9p6ork6h1j60p32c9m64",
+        "start": "2026-03-22T12:00:00+11:00",
+        "end": "2026-03-22T13:00:00+11:00",
+        "summary": "Rahmain Mentor Call"
+      }
+    ]
+  }
 }
