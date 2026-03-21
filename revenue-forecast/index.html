@@ -98,6 +98,50 @@ svg.mrr-chart{width:100%;overflow:visible;}
 .connect-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:10px;border:1px solid rgba(255,255,255,0.05);font-size:13px;}
 .connect-icon{font-size:18px;flex-shrink:0;}
 
+/* WEEK ACCORDION */
+.week-accordion{margin-top:20px;display:flex;flex-direction:column;gap:10px;}
+.week-card{border-radius:12px;border:1px solid rgba(200,169,81,0.15);overflow:hidden;transition:border-color 0.2s;}
+.week-card.expanded{border-color:rgba(200,169,81,0.45);}
+.week-card-header{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;background:rgba(16,21,32,0.9);cursor:pointer;user-select:none;transition:background 0.2s;gap:12px;}
+.week-card-header:hover{background:rgba(22,28,42,0.95);}
+.week-card.expanded .week-card-header{background:rgba(20,26,40,0.98);}
+.week-card-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0;}
+.week-card-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,169,81,0.6);flex-shrink:0;}
+.week-card-label{font-size:13px;font-weight:600;color:var(--cream);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.week-card-total{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);flex-shrink:0;}
+.week-card-chevron{font-size:14px;color:rgba(200,169,81,0.5);transition:transform 0.3s;flex-shrink:0;}
+.week-card.expanded .week-card-chevron{transform:rotate(180deg);}
+.week-card-body{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1);}
+.week-card.expanded .week-card-body{max-height:600px;}
+.week-card-inner{padding:0 16px 16px;background:#12161E;}
+.day-rows{display:flex;flex-direction:column;gap:2px;padding-top:12px;}
+.day-row{display:grid;grid-template-columns:90px 36px 1fr auto;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;transition:background 0.15s;}
+.day-row:nth-child(odd){background:rgba(255,255,255,0.025);}
+.day-row:nth-child(even){background:rgba(255,255,255,0.015);}
+.day-row:hover{background:rgba(200,169,81,0.07);}
+.day-date{font-size:12px;font-weight:700;color:var(--cream);}
+.day-name{font-size:11px;color:rgba(251,248,243,0.35);text-align:center;}
+.day-bar-wrap{display:flex;align-items:center;gap:8px;}
+.day-bar-track{flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden;}
+.day-bar-fill{height:100%;background:var(--gold);border-radius:3px;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);}
+.day-details-text{font-size:10px;color:rgba(251,248,243,0.3);margin-top:2px;}
+.day-amount{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);text-align:right;white-space:nowrap;}
+.charge-pill{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;background:rgba(200,169,81,0.12);color:rgba(200,169,81,0.8);border:1px solid rgba(200,169,81,0.2);text-align:center;}
+.click-hint{font-size:10px;color:rgba(251,248,243,0.25);text-align:center;margin-top:10px;font-style:italic;}
+
+/* SVG bar click style */
+.bar-clickable{cursor:pointer;}
+.bar-clickable:hover .bar-rect{opacity:1!important;filter:drop-shadow(0 0 6px rgba(200,169,81,0.5));}
+.bar-clickable .bar-rect{transition:opacity 0.2s,filter 0.2s;}
+
+/* Daily table clickable rows */
+.daily-table tbody tr{cursor:pointer;transition:background 0.15s,box-shadow 0.15s;}
+.daily-table tbody tr.row-selected td{background:rgba(200,169,81,0.07)!important;box-shadow:inset 3px 0 0 var(--gold);}
+.row-detail-cell{padding:0 12px!important;background:rgba(18,22,30,0.95)!important;}
+.row-detail-inner{max-height:0;overflow:hidden;transition:max-height 0.3s cubic-bezier(0.4,0,0.2,1);font-size:11px;color:rgba(251,248,243,0.5);line-height:1.5;}
+.row-detail-inner.open{max-height:60px;padding:6px 0;}
+
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero-grid{grid-template-columns:repeat(2,1fr);}
@@ -168,28 +212,44 @@ svg.mrr-chart{width:100%;overflow:visible;}
       <text x="55" y="144" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$0</text>
 
       <!-- WEEK 1: $14,267 → 14267/15000 * 120 = 114px from bottom (y=140) → top at y=26 -->
-      <rect x="75" y="26" width="80" height="114" rx="6" fill="#C8A951" opacity="0.9"/>
-      <text x="115" y="20" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$14,267</text>
-      <text x="115" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Mar 21–27</text>
-      <text x="115" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 1</text>
+      <g class="bar-clickable" onclick="toggleWeek(0)" id="svgbar-0">
+        <rect x="75" y="26" width="80" height="114" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
+        <rect x="75" y="26" width="80" height="114" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
+        <text x="115" y="20" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$14,267</text>
+        <text x="115" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Mar 21–27</text>
+        <text x="115" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 1</text>
+        <text x="115" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
+      </g>
 
       <!-- WEEK 2: $3,358 → 3358/15000 * 120 = 26.9px → top at y=113 -->
-      <rect x="185" y="113" width="80" height="27" rx="6" fill="#C8A951" opacity="0.9"/>
-      <text x="225" y="107" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$3,358</text>
-      <text x="225" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Mar 28–Apr 3</text>
-      <text x="225" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 2</text>
+      <g class="bar-clickable" onclick="toggleWeek(1)" id="svgbar-1">
+        <rect x="185" y="113" width="80" height="27" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
+        <rect x="185" y="113" width="80" height="27" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
+        <text x="225" y="107" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$3,358</text>
+        <text x="225" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Mar 28–Apr 3</text>
+        <text x="225" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 2</text>
+        <text x="225" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
+      </g>
 
       <!-- WEEK 3: $10,660 → 10660/15000 * 120 = 85.3px → top at y=55 -->
-      <rect x="295" y="55" width="80" height="85" rx="6" fill="#C8A951" opacity="0.9"/>
-      <text x="335" y="49" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$10,660</text>
-      <text x="335" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Apr 4–10</text>
-      <text x="335" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 3</text>
+      <g class="bar-clickable" onclick="toggleWeek(2)" id="svgbar-2">
+        <rect x="295" y="55" width="80" height="85" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
+        <rect x="295" y="55" width="80" height="85" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
+        <text x="335" y="49" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$10,660</text>
+        <text x="335" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Apr 4–10</text>
+        <text x="335" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 3</text>
+        <text x="335" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
+      </g>
 
       <!-- WEEK 4: $10,563 → 10563/15000 * 120 = 84.5px → top at y=56 -->
-      <rect x="405" y="56" width="80" height="84" rx="6" fill="#C8A951" opacity="0.9"/>
-      <text x="445" y="50" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$10,563</text>
-      <text x="445" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Apr 11–17</text>
-      <text x="445" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 4</text>
+      <g class="bar-clickable" onclick="toggleWeek(3)" id="svgbar-3">
+        <rect x="405" y="56" width="80" height="84" rx="6" fill="#C8A951" opacity="0.9" class="bar-rect"/>
+        <rect x="405" y="56" width="80" height="84" rx="6" fill="transparent" stroke="transparent" stroke-width="2" class="bar-hover"/>
+        <text x="445" y="50" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$10,563</text>
+        <text x="445" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Apr 11–17</text>
+        <text x="445" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 4</text>
+        <text x="445" y="183" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(200,169,81,0.5)">▼ tap</text>
+      </g>
 
       <!-- Baseline -->
       <line x1="60" y1="140" x2="500" y2="140" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
@@ -206,6 +266,12 @@ svg.mrr-chart{width:100%;overflow:visible;}
   </div>
   <p class="note">✅ Based on actual subscription billing cycles from Stripe — real upcoming charges, not estimates.</p>
 
+  <!-- WEEK ACCORDION -->
+  <div class="week-accordion" id="weekAccordion">
+    <!-- Injected by JS -->
+  </div>
+  <p class="click-hint">Click a bar above or a week card to see the daily breakdown</p>
+
   <!-- DAILY BREAKDOWN -->
   <div style="margin-top:24px;">
     <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:12px;">📅 Daily Breakdown — Next 14 Days</div>
@@ -218,21 +284,35 @@ svg.mrr-chart{width:100%;overflow:visible;}
           <th></th>
         </tr>
       </thead>
-      <tbody>
-        <tr><td>Mon 23 Mar</td><td class="day-charges">11 charges</td><td class="day-total">$1,994</td><td><span class="day-week-badge">Wk 1</span></td></tr>
-        <tr><td>Tue 24 Mar</td><td class="day-charges">9 charges</td><td class="day-total">$3,992</td><td><span class="day-week-badge">Wk 1</span></td></tr>
-        <tr><td>Wed 25 Mar</td><td class="day-charges">6 charges</td><td class="day-total">$975</td><td><span class="day-week-badge">Wk 1</span></td></tr>
-        <tr><td>Thu 26 Mar</td><td class="day-charges">8 charges</td><td class="day-total">$1,718</td><td><span class="day-week-badge">Wk 1</span></td></tr>
-        <tr><td>Fri 27 Mar</td><td class="day-charges">7 charges</td><td class="day-total">$5,588</td><td><span class="day-week-badge">Wk 1</span></td></tr>
-        <tr style="background:rgba(255,255,255,0.01);"><td>Sat 28 Mar</td><td class="day-charges">2 charges</td><td class="day-total">$2,040</td><td><span class="day-week-badge">Wk 2</span></td></tr>
-        <tr><td>Wed 1 Apr</td><td class="day-charges">2 charges</td><td class="day-total">$378</td><td><span class="day-week-badge">Wk 2</span></td></tr>
-        <tr><td>Thu 2 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$940</td><td><span class="day-week-badge">Wk 2</span></td></tr>
-        <tr style="background:rgba(255,255,255,0.01);"><td>Sat 4 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$930</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr><td>Sun 5 Apr</td><td class="day-charges">7 charges</td><td class="day-total">$5,118</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr><td>Mon 6 Apr</td><td class="day-charges">2 charges</td><td class="day-total">$378</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr><td>Wed 8 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$2,001</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr><td>Thu 9 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$231</td><td><span class="day-week-badge">Wk 3</span></td></tr>
-        <tr><td>Fri 10 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$2,001</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+      <tbody id="dailyTableBody">
+        <tr class="daily-data-row" data-detail="11 subscription renewals"><td>Sun 23 Mar</td><td class="day-charges">11 charges</td><td class="day-total">$1,994</td><td><span class="day-week-badge">Wk 1</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">11 subscription renewals</div></td></tr>
+        <tr class="daily-data-row" data-detail="9 subscription renewals — heaviest day this week"><td>Mon 24 Mar</td><td class="day-charges">9 charges</td><td class="day-total">$3,992</td><td><span class="day-week-badge">Wk 1</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">9 subscription renewals — heaviest day this week</div></td></tr>
+        <tr class="daily-data-row" data-detail="6 subscription renewals"><td>Tue 25 Mar</td><td class="day-charges">6 charges</td><td class="day-total">$975</td><td><span class="day-week-badge">Wk 1</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">6 subscription renewals</div></td></tr>
+        <tr class="daily-data-row" data-detail="8 subscription renewals"><td>Wed 26 Mar</td><td class="day-charges">8 charges</td><td class="day-total">$1,718</td><td><span class="day-week-badge">Wk 1</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">8 subscription renewals</div></td></tr>
+        <tr class="daily-data-row" data-detail="7 subscription renewals — includes larger 90-day and multi-week subs"><td>Thu 27 Mar</td><td class="day-charges">7 charges</td><td class="day-total">$5,588</td><td><span class="day-week-badge">Wk 1</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">7 subscription renewals — includes larger 90-day and multi-week subs</div></td></tr>
+        <tr class="daily-data-row" data-detail="2 subscription renewals" style="background:rgba(255,255,255,0.01);"><td>Fri 28 Mar</td><td class="day-charges">2 charges</td><td class="day-total">$2,040</td><td><span class="day-week-badge">Wk 2</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">2 subscription renewals</div></td></tr>
+        <tr class="daily-data-row" data-detail="2 subscription renewals"><td>Tue 1 Apr</td><td class="day-charges">2 charges</td><td class="day-total">$378</td><td><span class="day-week-badge">Wk 2</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">2 subscription renewals</div></td></tr>
+        <tr class="daily-data-row" data-detail="1 subscription renewal"><td>Wed 2 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$940</td><td><span class="day-week-badge">Wk 2</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">1 subscription renewal</div></td></tr>
+        <tr class="daily-data-row" data-detail="1 subscription renewal" style="background:rgba(255,255,255,0.01);"><td>Fri 4 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$930</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">1 subscription renewal</div></td></tr>
+        <tr class="daily-data-row" data-detail="7 subscription renewals — bulk renewal day"><td>Sat 5 Apr</td><td class="day-charges">7 charges</td><td class="day-total">$5,118</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">7 subscription renewals — bulk renewal day</div></td></tr>
+        <tr class="daily-data-row" data-detail="2 subscription renewals"><td>Sun 6 Apr</td><td class="day-charges">2 charges</td><td class="day-total">$378</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">2 subscription renewals</div></td></tr>
+        <tr class="daily-data-row" data-detail="1 large subscription renewal"><td>Tue 8 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$2,001</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">1 large subscription renewal</div></td></tr>
+        <tr class="daily-data-row" data-detail="1 subscription renewal"><td>Wed 9 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$231</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">1 subscription renewal</div></td></tr>
+        <tr class="daily-data-row" data-detail="1 large subscription renewal"><td>Thu 10 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$2,001</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr class="daily-detail-row"><td colspan="4" class="row-detail-cell"><div class="row-detail-inner">1 large subscription renewal</div></td></tr>
       </tbody>
     </table>
   </div>
@@ -604,6 +684,121 @@ svg.mrr-chart{width:100%;overflow:visible;}
     legend+='<div class="legend-sub" style="padding-left:18px;margin-bottom:8px;">'+seg.note+'</div>';
   });
   document.getElementById('donut-legend').innerHTML=legend;
+})();
+
+// ═══ CASH FLOW ACCORDION ═══
+(function(){
+  var cashflowData=null;
+  var openIndex=-1;
+
+  function fmt(n){return '$'+n.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function fmtDate(d){var p=d.split('-');var months=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return p[2]+' '+months[parseInt(p[1])];}
+
+  function renderAccordion(data){
+    var container=document.getElementById('weekAccordion');
+    var html='';
+    data.weeks.forEach(function(week,i){
+      var maxDay=Math.max.apply(null,week.days.map(function(d){return d.amount;}));
+      var daysHtml='';
+      week.days.forEach(function(day,j){
+        var pct=maxDay>0?Math.round(day.amount/maxDay*100):0;
+        daysHtml+='<div class="day-row">';
+        daysHtml+='<div><div class="day-date">'+fmtDate(day.date)+'</div></div>';
+        daysHtml+='<div class="day-name">'+day.day+'</div>';
+        daysHtml+='<div class="day-bar-wrap"><div class="day-bar-track"><div class="day-bar-fill" style="width:0%" data-pct="'+pct+'%"></div></div></div>';
+        daysHtml+='<div style="text-align:right">';
+        daysHtml+='<div class="day-amount">'+fmt(day.amount)+'</div>';
+        daysHtml+='<div><span class="charge-pill">'+day.charges+' charge'+(day.charges!==1?'s':'')+'</span></div>';
+        daysHtml+='</div>';
+        daysHtml+='</div>';
+      });
+      html+='<div class="week-card" id="wcard-'+i+'" data-week="'+i+'">';
+      html+='<div class="week-card-header" onclick="toggleWeek('+i+')">';
+      html+='<div class="week-card-left">';
+      html+='<span class="week-card-num">WK '+(i+1)+'</span>';
+      html+='<span class="week-card-label">'+week.label+'</span>';
+      html+='</div>';
+      html+='<span class="week-card-total">'+fmt(week.total)+'</span>';
+      html+='<span class="week-card-chevron">▾</span>';
+      html+='</div>';
+      html+='<div class="week-card-body" id="wbody-'+i+'">';
+      html+='<div class="week-card-inner"><div class="day-rows">'+daysHtml+'</div></div>';
+      html+='</div>';
+      html+='</div>';
+    });
+    container.innerHTML=html;
+  }
+
+  window.toggleWeek=function(idx){
+    if(!cashflowData){return;}
+    // Collapse previously open
+    if(openIndex>=0 && openIndex!==idx){
+      var prev=document.getElementById('wcard-'+openIndex);
+      if(prev){prev.classList.remove('expanded');}
+      // reset bar highlight
+      var prevBar=document.getElementById('svgbar-'+openIndex);
+      if(prevBar){
+        var r=prevBar.querySelector('.bar-rect');
+        if(r){r.setAttribute('opacity','0.9');r.setAttribute('filter','');}
+      }
+    }
+    var card=document.getElementById('wcard-'+idx);
+    if(!card){return;}
+    var isOpen=card.classList.contains('expanded');
+    if(isOpen){
+      card.classList.remove('expanded');
+      openIndex=-1;
+      var svgBar=document.getElementById('svgbar-'+idx);
+      if(svgBar){var r2=svgBar.querySelector('.bar-rect');if(r2){r2.setAttribute('opacity','0.9');r2.setAttribute('filter','');}}
+    }else{
+      card.classList.add('expanded');
+      openIndex=idx;
+      // Animate mini bars after expand starts
+      setTimeout(function(){
+        var fills=card.querySelectorAll('.day-bar-fill');
+        fills.forEach(function(f){f.style.width=f.getAttribute('data-pct');});
+      },50);
+      // Highlight SVG bar
+      var svgBar2=document.getElementById('svgbar-'+idx);
+      if(svgBar2){var r3=svgBar2.querySelector('.bar-rect');if(r3){r3.setAttribute('opacity','1');r3.setAttribute('filter','drop-shadow(0 0 6px rgba(200,169,81,0.7))');}}
+      // Scroll card into view
+      setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'nearest'});},100);
+    }
+  };
+
+  // Fetch data
+  fetch('../data/cashflow-detail.json')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      cashflowData=data;
+      renderAccordion(data);
+    })
+    .catch(function(){
+      // fallback: hide accordion hint
+      var hint=document.querySelector('.click-hint');
+      if(hint){hint.style.display='none';}
+    });
+
+  // ═══ DAILY TABLE — clickable rows ═══
+  document.addEventListener('DOMContentLoaded',function(){
+    var rows=document.querySelectorAll('.daily-data-row');
+    rows.forEach(function(row){
+      row.addEventListener('click',function(){
+        var isSelected=row.classList.contains('row-selected');
+        // Collapse all
+        document.querySelectorAll('.daily-data-row').forEach(function(r){r.classList.remove('row-selected');});
+        document.querySelectorAll('.row-detail-inner').forEach(function(d){d.classList.remove('open');});
+        if(!isSelected){
+          row.classList.add('row-selected');
+          var next=row.nextElementSibling;
+          if(next && next.classList.contains('daily-detail-row')){
+            var inner=next.querySelector('.row-detail-inner');
+            if(inner){inner.classList.add('open');}
+          }
+        }
+      });
+    });
+  });
 })();
 </script>
 </body>
