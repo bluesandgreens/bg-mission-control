@@ -238,45 +238,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 <!-- FE REVENUE PIPELINE -->
 <div class="section">
   <div class="section-title">⭐ FOUNDERS EXPERIENCE PIPELINE</div>
-  <div class="fe-pipeline">
-    <div class="fe-item">
-      <div>
-        <div class="fe-name">Kate &amp; Craig Alchin</div>
-        <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Session 46 · Long-term member</div>
-      </div>
-      <div style="text-align:right;">
-        <div class="fe-badge fe-signed">✅ Signed</div>
-        <div class="fe-amount" style="margin-top:6px;">$5,000</div>
-      </div>
-    </div>
-    <div class="fe-item">
-      <div>
-        <div class="fe-name">Alicia Nation</div>
-        <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Session 16 · Active member</div>
-      </div>
-      <div style="text-align:right;">
-        <div class="fe-badge fe-pending">⏳ Pending</div>
-        <div class="fe-amount" style="margin-top:6px;color:var(--amber);">$5,000</div>
-      </div>
-    </div>
-    <div class="fe-item">
-      <div>
-        <div class="fe-name">Brooke Beveridge</div>
-        <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Session 19 · Active member</div>
-      </div>
-      <div style="text-align:right;">
-        <div class="fe-badge fe-pending">⏳ Pending</div>
-        <div class="fe-amount" style="margin-top:6px;color:var(--amber);">$5,000</div>
-      </div>
-    </div>
-  </div>
-  <div class="total-potential">
-    <div>
-      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">Total FE Pipeline</div>
-      <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">$5K signed + $10K pending</div>
-    </div>
-    <div style="font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--gold);">$15,000</div>
-  </div>
+  <div class="fe-pipeline" id="fe-pipeline-cards"></div>
+  <div class="total-potential" id="fe-pipeline-total"></div>
   <div style="margin-top:20px;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;">
     <div style="font-size:11px;font-weight:700;letter-spacing:1px;color:rgba(251,248,243,0.4);text-transform:uppercase;margin-bottom:12px;">Payment Resets (Next 30 Days)</div>
     <div id="payment-resets"></div>
@@ -449,6 +412,81 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 
 </div>
 <script>
+// ============ FOUNDERS EXPERIENCE PIPELINE DATA ============
+var fePipeline = [
+  {
+    name: "Kate & Craig Alchin",
+    subtitle: "Session 46 · Long-term member",
+    stage: "accepted",
+    amount: 5000,
+    paid: true
+  },
+  {
+    name: "Alicia Nation",
+    subtitle: "Session 16 · Active member",
+    stage: "offer-sent",
+    amount: 5000,
+    paid: false
+  },
+  {
+    name: "Brooke Beveridge",
+    subtitle: "Session 19 · Active member",
+    stage: "offer-sent",
+    amount: 5000,
+    paid: false
+  },
+  {
+    name: "Rahmain",
+    subtitle: "16yo barber · RB Fadez · First session today",
+    stage: "accepted",
+    amount: 9980,
+    paid: true
+  }
+];
+
+// Render FE pipeline cards
+(function() {
+  var stageConfig = {
+    "accepted":   { label: "✅ Accepted",   cls: "fe-signed",  color: "#4CAF50" },
+    "offer-sent": { label: "📤 Offer Sent", cls: "fe-offer",   color: "#E8A030" },
+    "follow-up":  { label: "🔔 Follow Up",  cls: "fe-followup",color: "#9C27B0" }
+  };
+
+  var cardsHtml = "";
+  fePipeline.forEach(function(p) {
+    var cfg = stageConfig[p.stage] || stageConfig["offer-sent"];
+    var amtColor = p.paid ? "var(--gold)" : "var(--amber)";
+    var amtLabel = p.paid ? "$" + p.amount.toLocaleString() : "$" + p.amount.toLocaleString();
+    cardsHtml += '<div class="fe-item">' +
+      '<div>' +
+        '<div class="fe-name">' + p.name + '</div>' +
+        '<div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">' + p.subtitle + '</div>' +
+      '</div>' +
+      '<div style="text-align:right;">' +
+        '<div class="fe-badge ' + cfg.cls + '" style="background:rgba(0,0,0,0.1);color:' + cfg.color + ';border:1px solid ' + cfg.color + '33;">' + cfg.label + '</div>' +
+        '<div class="fe-amount" style="margin-top:6px;color:' + amtColor + ';">' + amtLabel + '</div>' +
+      '</div>' +
+    '</div>';
+  });
+  document.getElementById("fe-pipeline-cards").innerHTML = cardsHtml;
+
+  // Calculate totals
+  var paidTotal = 0, pendingTotal = 0;
+  fePipeline.forEach(function(p) {
+    if (p.paid) paidTotal += p.amount;
+    else pendingTotal += p.amount;
+  });
+  var grandTotal = paidTotal + pendingTotal;
+  var summaryText = "$" + (paidTotal/1000).toFixed(0) + "K accepted + $" + (pendingTotal/1000).toFixed(0) + "K pending";
+
+  document.getElementById("fe-pipeline-total").innerHTML =
+    '<div>' +
+      '<div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">Total FE Pipeline</div>' +
+      '<div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">' + summaryText + '</div>' +
+    '</div>' +
+    '<div style="font-family:\'Archivo Black\',sans-serif;font-size:28px;color:var(--gold);">$' + grandTotal.toLocaleString() + '</div>';
+})();
+
 // Subscription breakdown pie chart
 var breakdown={
   'Weekly (×1)':35,
