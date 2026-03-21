@@ -1,0 +1,28 @@
+{
+  "generated": "2026-03-21T11:30:00+11:00",
+  "date": "2026-03-21",
+  "one_thing": "Close Alicia Nation + Brooke Beveridge — $10K FE revenue from two calls",
+  "actions": [
+    {
+      "title": "Close Alicia Nation (Lincoln)",
+      "why": "Expressed FE interest, no follow-up. $5K.",
+      "type": "revenue",
+      "priority": "critical",
+      "owner": "Harry"
+    },
+    {
+      "title": "Close Brooke Beveridge (Joby)",
+      "why": "Expressed FE interest, needs close. $5K.",
+      "type": "revenue",
+      "priority": "critical",
+      "owner": "Harry"
+    },
+    {
+      "title": "Message Brodie — 5 boys waiting for W1",
+      "why": "Kirsty (15d), Tania (13d), Karen (12d). This IS the constraint.",
+      "type": "constraint",
+      "priority": "high",
+      "owner": "Harry"
+    }
+  ]
+}

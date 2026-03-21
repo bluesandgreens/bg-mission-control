@@ -1,21 +1,12 @@
-{
-  "updated_at": "2026-03-21T10:45:00+11:00",
-  "today": [
-    {"time": "06:00", "agent": "World Scanner", "status": "completed", "detail": "Scanned Iran/Hormuz, petrol prices, BYO trends. 3 items saved."},
-    {"time": "06:15", "agent": "Trending Scanner", "status": "completed", "detail": "NEW — Scanning X, Product Hunt, Hacker News for trending items."},
-    {"time": "06:30", "agent": "Morning Data Pull", "status": "completed", "detail": "Stripe (92 active, $67.7K MRR), HubSpot (24 new contacts), Meta ($33 CPBC 7d). Saved to daily-pulse.json."},
-    {"time": "07:00", "agent": "Daily Dashboard Email", "status": "completed", "detail": "Sent to Harry, Brodie, Rye, Norri with live metrics."},
-    {"time": "07:30", "agent": "Morning Brief v4", "status": "completed", "detail": "4-page PDF generated. Constraint: Close→W1 62%. ONE THING: Lock onboarding v2."},
-    {"time": "08:00", "agent": "Essay Prompt", "status": "completed", "detail": "Naval on specific knowledge. Sent to admin@ from hello@."},
-    {"time": "08:47", "agent": "Brief Rebuild", "status": "completed", "detail": "Fixed W1 (14, was 68), added COA ($127/W1), Cash Collected ($31.7K/7d)."}
-  ],
-  "upcoming": [
-    {"time": "12:00", "agent": "Dashboard Refresh", "status": "scheduled", "detail": "Midday data refresh — Stripe + HubSpot + Meta pull."},
-    {"time": "14:00", "agent": "Meta Ads Check", "status": "scheduled", "detail": "Mentor ads 48hr review — compare CPBC vs parent ads."},
-    {"time": "22:00", "agent": "DC Scoring Pipeline", "status": "scheduled", "detail": "SIEL scoring — first run with timeout fix."},
-    {"time": "23:00", "agent": "Data Miner", "status": "scheduled", "detail": "Overnight BI report — retention cohorts + churn analysis."},
-    {"time": "23:15", "agent": "AI Scout", "status": "scheduled", "detail": "AI tools research — voice cloning, video gen, portal AI."},
-    {"time": "23:30", "agent": "Marketing Lab", "status": "scheduled", "detail": "Competitor + content research — hook ideas for next week."},
-    {"time": "23:45", "agent": "Deep Dive", "status": "scheduled", "detail": "School partnerships (Friday topic) — counsellor outreach template."}
-  ]
-}
+[
+  {"time": "06:00", "type": "insight", "title": "World Scanner", "detail": "Iran/Hormuz tensions, petrol prices up 3c. No B&G impact.", "action": null},
+  {"time": "06:30", "title": "Data Pull", "type": "insight", "detail": "92 active families (ATH). $31.7K collected. CPBC $33 — approaching threshold.", "action": "Review hooks"},
+  {"time": "07:30", "type": "achievement", "title": "Brief v4 shipped", "detail": "Fixed W1 (14 not 68), added CAC ($127), Cash Collected ($31.7K). Constraint at 62%.", "action": null},
+  {"time": "08:00", "type": "insight", "title": "Essay Prompt", "detail": "Naval on Specific Knowledge → harry@. Reply to start the writing habit.", "action": "Reply to email"},
+  {"time": "10:00", "type": "achievement", "title": "HubSpot patched", "detail": "50 contacts fixed: 16 dup IDs, 8 status mismatches, 26 missing amounts. Stripe/HubSpot sync restored.", "action": null},
+  {"time": "10:55", "type": "achievement", "title": "Mission Control v2", "detail": "Open loops, ideas vault, constraint lab, team cards — all live and interactive.", "action": null},
+  {"time": "11:16", "type": "achievement", "title": "MC v3 Wave 1", "detail": "Revenue Forecast, Family Health, Smart Recs, Scorecard, Money View — 5 new pages.", "action": null},
+  {"time": "11:24", "type": "achievement", "title": "MC v3 Wave 2", "detail": "Family Command, DC War Room, Mentor Dashboard — 3 new pages.", "action": null},
+  {"time": "11:34", "type": "achievement", "title": "MC v3 Wave 3", "detail": "Calendar, Inbox, Content Engine, Notifications, Board Report, Leo Chat — 6 new pages.", "action": null},
+  {"time": "12:04", "type": "insight", "title": "MC v4 building", "detail": "Mission-first redesign. Command palette. Time-aware mode. DC prep cards. This is the big one.", "action": null}
+]
