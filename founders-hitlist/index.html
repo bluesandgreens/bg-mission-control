@@ -197,6 +197,47 @@ select.stage-select { background: var(--surface2); color: var(--text); border: 1
 .hs-empty { padding: 28px 20px; text-align: center; color: var(--text2); font-size: 13px; }
 .hs-token-bar { padding: 10px 20px; font-size: 12px; color: var(--text2); border-top: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
 
+/* Leo's Picks */
+.leos-picks { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 20px; overflow: hidden; }
+.leos-picks-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; cursor: pointer; user-select: none; }
+.leos-picks-header h3 { font-size: 15px; font-weight: 600; margin: 0; }
+.leos-picks-chevron { color: var(--text2); font-size: 14px; transition: transform 0.2s; }
+.leos-picks-chevron.open { transform: rotate(180deg); }
+.leos-picks-body { padding: 0 18px 16px; display: none; }
+.leos-picks-body.open { display: block; }
+.leos-picks-scroll { display: flex; gap: 12px; overflow-x: auto; padding: 4px 0 8px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.leos-picks-scroll::-webkit-scrollbar { height: 6px; }
+.leos-picks-scroll::-webkit-scrollbar-track { background: var(--surface2); border-radius: 3px; }
+.leos-picks-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.pick-card { min-width: 220px; max-width: 260px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px; flex-shrink: 0; scroll-snap-align: start; display: flex; flex-direction: column; gap: 8px; }
+.pick-card-top { display: flex; justify-content: space-between; align-items: center; }
+.pick-card-name { font-weight: 600; font-size: 14px; }
+.pick-card-reason { font-size: 12px; color: var(--text2); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pick-card-paid { font-size: 12px; color: var(--green); font-weight: 600; }
+.pick-card-btn { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 6px 12px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; width: 100%; }
+.pick-card-btn:hover { background: var(--accent2); }
+
+/* Cash Status */
+.cash-status-wrap { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+.cash-select { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; font-size: 11px; color: var(--text); outline: none; cursor: pointer; font-family: inherit; }
+.cash-select:focus { border-color: var(--accent); }
+.cash-select.cash-not-collected { background: var(--red-bg); color: var(--red); border-color: rgba(239,68,68,0.3); }
+.cash-select.cash-deposit { background: var(--yellow-bg); color: var(--yellow); border-color: rgba(234,179,8,0.3); }
+.cash-select.cash-scheduled { background: var(--blue-bg); color: var(--blue); border-color: rgba(59,130,246,0.3); }
+.cash-select.cash-paid { background: var(--green-bg); color: var(--green); border-color: rgba(34,197,94,0.3); }
+.cash-note-input { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; font-size: 11px; color: var(--text); outline: none; margin-top: 4px; font-family: inherit; }
+.cash-note-input:focus { border-color: var(--accent); }
+
+/* Card Notes Preview */
+.card-notes-preview { font-size: 11px; color: var(--text2); margin-top: 6px; font-style: italic; line-height: 1.3; }
+
+/* Mobile Move Dropdown */
+.mobile-move-wrap { display: none; margin-top: 8px; }
+.mobile-move-select { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; font-size: 11px; color: var(--text); outline: none; cursor: pointer; font-family: inherit; }
+
+/* Drag visual */
+.pipeline-col.drag-over { outline: 2px dashed var(--accent); outline-offset: -2px; background: rgba(99,102,241,0.05); }
+
 /* Mobile */
 @media (max-width: 768px) {
   .pipeline { grid-template-columns: 1fr; }
@@ -206,6 +247,9 @@ select.stage-select { background: var(--surface2); color: var(--text); border: 1
   .modal { margin-top: 0; border-radius: 12px; }
   .call-body { grid-template-columns: 1fr; }
   .call-sidebar { border-left: none; border-top: 1px solid var(--border); }
+  .mobile-move-wrap { display: block; }
+  .leos-picks-body { display: none !important; }
+  .leos-picks-body.open { display: block !important; }
 }
 </style>
 </head>
@@ -238,6 +282,16 @@ select.stage-select { background: var(--surface2); color: var(--text); border: 1
   </div>
 
   <div class="summary-bar" id="summaryBar"></div>
+
+  <div class="leos-picks" id="leosPicks" style="display:none">
+    <div class="leos-picks-header" onclick="toggleLeosPicks()">
+      <h3>🤖 Leo's Picks This Week</h3>
+      <span class="leos-picks-chevron" id="leosChevron">▼</span>
+    </div>
+    <div class="leos-picks-body" id="leosBody">
+      <div class="leos-picks-scroll" id="leosScroll"></div>
+    </div>
+  </div>
 
   <div id="pipelineView" class="pipeline"></div>
   <div id="listView" class="list-view"></div>
@@ -1307,6 +1361,16 @@ let currentView = 'board';
 let currentTab = 'pipeline';
 let searchTerm = '';
 
+// New localStorage stores
+function getSuggestionsAdded() { try { return JSON.parse(localStorage.getItem('fe_suggestions_added')) || []; } catch(e) { return []; } }
+function saveSuggestionsAdded(arr) { localStorage.setItem('fe_suggestions_added', JSON.stringify(arr)); }
+function getPipelineStages() { try { return JSON.parse(localStorage.getItem('fe_pipeline_stages')) || {}; } catch(e) { return {}; } }
+function savePipelineStages(obj) { localStorage.setItem('fe_pipeline_stages', JSON.stringify(obj)); }
+function getCashStatus() { try { return JSON.parse(localStorage.getItem('fe_cash_status')) || {}; } catch(e) { return {}; } }
+function saveCashStatus(obj) { localStorage.setItem('fe_cash_status', JSON.stringify(obj)); }
+function getCardNotes() { try { return JSON.parse(localStorage.getItem('fe_card_notes')) || {}; } catch(e) { return {}; } }
+function saveCardNotes(obj) { localStorage.setItem('fe_card_notes', JSON.stringify(obj)); }
+
 // Load saved state
 function loadState() {
   try {
@@ -1326,6 +1390,18 @@ function loadState() {
       });
     }
   } catch(e) {}
+  // Apply pipeline stage overrides from new localStorage key
+  const stageOverrides = getPipelineStages();
+  for (const [cid, stage] of Object.entries(stageOverrides)) {
+    const c = contacts.find(x => x.id === parseInt(cid));
+    if (c && STAGES[stage]) c.stage = stage;
+  }
+  // Apply notes overrides
+  const notesOverrides = getCardNotes();
+  for (const [cid, note] of Object.entries(notesOverrides)) {
+    const c = contacts.find(x => x.id === parseInt(cid));
+    if (c) c.notes = note;
+  }
 }
 
 function saveState() {
@@ -1382,13 +1458,16 @@ function renderStats() {
   const offerSent = contacts.filter(c => c.stage === 'offer-sent').length;
   const pipelineVal = getPipelineValue();
   const acceptedVal = getAcceptedValue();
+  const cashData = getCashStatus();
+  const cashCollected = Object.values(cashData).filter(v => v.status === 'fully-paid').length;
   document.getElementById('headerStats').innerHTML = `
     <div class="stat-pill blue"><span class="num">${total}</span> Total</div>
     <div class="stat-pill yellow"><span class="num">${contacted}</span> Contacted</div>
     <div class="stat-pill" style="border-color:var(--orange)"><span class="num" style="color:var(--orange)">${offerSent}</span> Offers Out</div>
     <div class="stat-pill green"><span class="num">${accepted}</span> Accepted</div>
-    <div class="stat-pill"><span class="num" style="color:var(--orange)">$${(pipelineVal/1000).toFixed(1)}K</span> Weighted Pipeline</div>
     <div class="stat-pill green"><span class="num">$${(acceptedVal/1000).toFixed(1)}K</span> Accepted Rev</div>
+    <div class="stat-pill"><span class="num" style="color:var(--green)">${cashCollected}</span> Cash Collected</div>
+    <div class="stat-pill"><span class="num" style="color:var(--orange)">$${(pipelineVal/1000).toFixed(1)}K</span> Weighted Pipeline</div>
   `;
 }
 
@@ -1419,22 +1498,54 @@ function renderCard(c) {
   if (c.paymentType.includes('weekly')) badges.push('<span class="badge badge-weekly">Weekly</span>');
   if (c.inactive) badges.push('<span class="badge badge-inactive">Re-engage</span>');
   if (c.isMelbourne && !c.inactive) badges.push('<span class="badge badge-irl">IRL Ready</span>');
-  
+
   const flagsHtml = c.flags.slice(0,3).map(f => `<div class="flag"><span class="flag-icon">${f.charAt(0)}</span>${f.substring(2)}</div>`).join('');
-  
+
   const price = c.offerType === 'fe-lite' ? ACCEL_PRICE : FE_PRICE;
-  const likelihoodHtml = c.stage === 'offer-sent' && c.likelihood > 0 
+  const likelihoodHtml = c.stage === 'offer-sent' && c.likelihood > 0
     ? `<div style="margin-top:6px;display:flex;align-items:center;gap:8px;">
         <div style="flex:1;background:var(--border);border-radius:4px;height:6px;overflow:hidden;">
           <div style="width:${c.likelihood}%;height:100%;background:${c.likelihood >= 70 ? 'var(--green)' : c.likelihood >= 40 ? 'var(--yellow)' : 'var(--red)'};border-radius:4px;"></div>
         </div>
         <span style="font-size:11px;font-weight:700;color:${c.likelihood >= 70 ? 'var(--green)' : c.likelihood >= 40 ? 'var(--yellow)' : 'var(--red)'}">${c.likelihood}%</span>
         <span style="font-size:11px;color:var(--text2)">$${(price * c.likelihood / 100).toLocaleString()}</span>
-      </div>` 
-    : c.stage === 'offer-sent' 
-    ? `<div style="font-size:11px;color:var(--text2);margin-top:6px">⚠️ Set likelihood →</div>` 
+      </div>`
+    : c.stage === 'offer-sent'
+    ? `<div style="font-size:11px;color:var(--text2);margin-top:6px">⚠️ Set likelihood →</div>`
     : '';
-  
+
+  // Notes preview (from localStorage or hardcoded)
+  const allNotes = getCardNotes();
+  const noteText = allNotes[c.id] !== undefined ? allNotes[c.id] : c.notes;
+  const notesPreview = noteText ? `<div class="card-notes-preview">${noteText.substring(0, 60)}${noteText.length > 60 ? '…' : ''}</div>` : '';
+
+  // Cash status for accepted cards
+  let cashHtml = '';
+  if (c.stage === 'accepted') {
+    const cashData = getCashStatus();
+    const cs = cashData[c.id] || { status: 'not-collected', note: '' };
+    const cashClassMap = { 'not-collected': 'cash-not-collected', 'deposit': 'cash-deposit', 'scheduled': 'cash-scheduled', 'fully-paid': 'cash-paid' };
+    cashHtml = `
+      <div class="cash-status-wrap" onclick="event.stopPropagation()">
+        <select class="cash-select ${cashClassMap[cs.status] || ''}" onchange="updateCashStatus(${c.id}, this.value)" data-cash-id="${c.id}">
+          <option value="not-collected" ${cs.status==='not-collected'?'selected':''}>💸 Not Collected</option>
+          <option value="deposit" ${cs.status==='deposit'?'selected':''}>🟡 Deposit Received</option>
+          <option value="scheduled" ${cs.status==='scheduled'?'selected':''}>🔵 Payment Scheduled</option>
+          <option value="fully-paid" ${cs.status==='fully-paid'?'selected':''}>✅ Fully Paid</option>
+        </select>
+        <input class="cash-note-input" value="${(cs.note||'').replace(/"/g,'&quot;')}" placeholder="e.g. Paying March 25" onclick="event.stopPropagation()" onblur="updateCashNote(${c.id}, this.value)">
+      </div>`;
+  }
+
+  // Mobile move dropdown
+  const moveHtml = `
+    <div class="mobile-move-wrap" onclick="event.stopPropagation()">
+      <select class="mobile-move-select" onchange="moveCardToStage(${c.id}, this.value)">
+        <option value="">Move to…</option>
+        ${Object.entries(STAGES).filter(([k])=>k!==c.stage).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('')}
+      </select>
+    </div>`;
+
   return `
     <div class="card" onclick="openModal(${c.id})" draggable="true" ondragstart="dragStart(event, ${c.id})">
       <div class="card-header">
@@ -1446,7 +1557,10 @@ function renderCard(c) {
       ${c.totalPaid > 0 ? `<div class="card-revenue">$${c.totalPaid.toLocaleString()} lifetime</div>` : ''}
       ${c.paymentDue && c.paymentDue !== '' ? `<div class="card-detail" style="color:var(--orange);margin-top:4px">⏰ ${c.paymentDue}</div>` : ''}
       ${likelihoodHtml}
+      ${notesPreview}
       ${flagsHtml ? `<div class="card-flags">${flagsHtml}</div>` : ''}
+      ${cashHtml}
+      ${moveHtml}
     </div>
   `;
 }
@@ -1466,7 +1580,7 @@ function renderPipeline() {
       ? `<div style="font-size:11px;color:${stageInfo.color};margin-left:4px">$${stageValue.toLocaleString()}</div>` 
       : '';
     html += `
-      <div class="pipeline-col" ondrop="drop(event, '${stageId}')" ondragover="allowDrop(event)">
+      <div class="pipeline-col" ondrop="drop(event, '${stageId}')" ondragover="allowDrop(event)" ondragleave="dragLeave(event)">
         <div class="pipeline-col-header">
           <div class="pipeline-col-title" style="color:${stageInfo.color}">${stageInfo.label}</div>
           <div style="display:flex;align-items:center;gap:6px">
@@ -1907,10 +2021,10 @@ function openModal(id) {
     
     <div class="modal-section">
       <h3>Notes</h3>
-      <textarea class="modal-notes" id="notesArea" placeholder="Add notes...">${c.notes}</textarea>
+      <textarea class="modal-notes" id="notesArea" placeholder="Add notes..." onblur="saveCardNote(${c.id}, this.value)">${c.notes}</textarea>
     </div>
   `;
-  
+
   document.getElementById('modalFooter').innerHTML = `
     <button class="btn btn-primary" onclick="saveNotes(${c.id})">💾 Save Notes</button>
     <div style="display:flex;gap:8px">
@@ -1929,7 +2043,14 @@ function closeModal() {
 
 function updateStage(id, stage) {
   const c = contacts.find(x => x.id === id);
-  if (c) { c.stage = stage; saveState(); render(); }
+  if (c) {
+    c.stage = stage;
+    const overrides = getPipelineStages();
+    overrides[c.id] = stage;
+    savePipelineStages(overrides);
+    saveState();
+    render();
+  }
 }
 
 function updateScore(id, score) {
@@ -2072,7 +2193,9 @@ function renderModalScript(c) {
 function saveNotes(id) {
   const c = contacts.find(x => x.id === id);
   if (c) {
-    c.notes = document.getElementById('notesArea').value;
+    const note = document.getElementById('notesArea').value;
+    c.notes = note;
+    saveCardNote(id, note);
     saveState();
     closeModal();
     render();
@@ -2081,15 +2204,78 @@ function saveNotes(id) {
 
 // ============ DRAG & DROP ============
 let draggedId = null;
-function dragStart(e, id) { draggedId = id; e.dataTransfer.effectAllowed = 'move'; }
-function allowDrop(e) { e.preventDefault(); }
+function dragStart(e, id) {
+  draggedId = id;
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', id);
+  e.target.style.opacity = '0.5';
+  setTimeout(() => { if (e.target) e.target.style.opacity = ''; }, 0);
+}
+function allowDrop(e) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+  const col = e.target.closest('.pipeline-col');
+  if (col) col.classList.add('drag-over');
+}
+function dragLeave(e) {
+  const col = e.target.closest('.pipeline-col');
+  if (col && !col.contains(e.relatedTarget)) col.classList.remove('drag-over');
+}
 function drop(e, stage) {
   e.preventDefault();
+  document.querySelectorAll('.pipeline-col').forEach(c => c.classList.remove('drag-over'));
   if (draggedId) {
     const c = contacts.find(x => x.id === draggedId);
-    if (c) { c.stage = stage; saveState(); render(); }
+    if (c) {
+      c.stage = stage;
+      // Save to both stores
+      const overrides = getPipelineStages();
+      overrides[c.id] = stage;
+      savePipelineStages(overrides);
+      saveState();
+      render();
+    }
     draggedId = null;
   }
+}
+
+// Mobile move card
+function moveCardToStage(id, stage) {
+  if (!stage) return;
+  const c = contacts.find(x => x.id === id);
+  if (c) {
+    c.stage = stage;
+    const overrides = getPipelineStages();
+    overrides[c.id] = stage;
+    savePipelineStages(overrides);
+    saveState();
+    render();
+  }
+}
+
+// Cash status helpers
+function updateCashStatus(id, status) {
+  const data = getCashStatus();
+  if (!data[id]) data[id] = { status: 'not-collected', note: '' };
+  data[id].status = status;
+  saveCashStatus(data);
+  render();
+}
+function updateCashNote(id, note) {
+  const data = getCashStatus();
+  if (!data[id]) data[id] = { status: 'not-collected', note: '' };
+  data[id].note = note;
+  saveCashStatus(data);
+}
+
+// Card notes helpers
+function saveCardNote(id, note) {
+  const data = getCardNotes();
+  data[id] = note;
+  saveCardNotes(data);
+  // Also update contact object
+  const c = contacts.find(x => x.id === id);
+  if (c) { c.notes = note; saveState(); }
 }
 
 // ============ EVENTS ============
@@ -2247,7 +2433,9 @@ function renderCallSidebar(c) {
 function saveCallNotes(id) {
   const c = contacts.find(x => x.id === id);
   if (c) {
-    c.notes = document.getElementById('callNotes').value;
+    const note = document.getElementById('callNotes').value;
+    c.notes = note;
+    saveCardNote(id, note);
     saveState();
   }
 }
@@ -2507,12 +2695,75 @@ function exitCallMode() {
   render();
 }
 
+// ============ LEO'S PICKS ============
+function getLeosPicks() {
+  const added = getSuggestionsAdded();
+  return contacts
+    .filter(c => c.stage === 'not-contacted' && c.score >= 7 && !added.includes(c.id))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 10);
+}
+
+function renderLeosPicks() {
+  const picks = getLeosPicks();
+  const container = document.getElementById('leosPicks');
+  if (!picks.length || currentTab !== 'pipeline') {
+    container.style.display = 'none';
+    return;
+  }
+  container.style.display = 'block';
+  const scroll = document.getElementById('leosScroll');
+  scroll.innerHTML = picks.map(c => {
+    const scoreClass = c.score >= 8 ? 'score-high' : c.score >= 6 ? 'score-med' : 'score-low';
+    const reason = c.convoPoints.length ? c.convoPoints[0].replace(/^[^\w]*/,'') : 'High-score contact';
+    return `
+      <div class="pick-card">
+        <div class="pick-card-top">
+          <div class="pick-card-name">${c.name}</div>
+          <div class="card-score ${scoreClass}" style="width:28px;height:28px;font-size:12px">${c.score}</div>
+        </div>
+        <div class="pick-card-reason">${reason}</div>
+        ${c.totalPaid > 0 ? `<div class="pick-card-paid">$${c.totalPaid.toLocaleString()} lifetime</div>` : ''}
+        <button class="pick-card-btn" onclick="event.stopPropagation();addToBoard(${c.id})">Add to Board →</button>
+      </div>
+    `;
+  }).join('');
+
+  // Auto-expand on desktop, collapsed on mobile
+  const body = document.getElementById('leosBody');
+  const chevron = document.getElementById('leosChevron');
+  if (window.innerWidth > 768 && !container.dataset.userToggled) {
+    body.classList.add('open');
+    chevron.classList.add('open');
+  }
+}
+
+function toggleLeosPicks() {
+  const body = document.getElementById('leosBody');
+  const chevron = document.getElementById('leosChevron');
+  const container = document.getElementById('leosPicks');
+  container.dataset.userToggled = 'true';
+  body.classList.toggle('open');
+  chevron.classList.toggle('open');
+}
+
+function addToBoard(id) {
+  const added = getSuggestionsAdded();
+  if (!added.includes(id)) {
+    added.push(id);
+    saveSuggestionsAdded(added);
+  }
+  // Card stays at 'not-contacted' stage on the board (already is) — just remove from picks
+  render();
+}
+
 // ============ INIT ============
 function render() {
   renderStats();
   renderSummary();
   renderPipeline();
   renderList();
+  renderLeosPicks();
 }
 
 loadState();
@@ -2625,6 +2876,9 @@ function addContactFromHS(idx) {
   const p = r.properties;
   const name = [p.firstname, p.lastname].filter(Boolean).join(' ') || 'Unknown';
   const newId = Math.max(...contacts.map(c => c.id), 0) + 1;
+  const stgOverrides = getPipelineStages();
+  stgOverrides[newId] = hsCurrentStage;
+  savePipelineStages(stgOverrides);
   contacts.push({
     id: newId, name, sonName: '', stage: hsCurrentStage,
     location: [p.city, p.state].filter(Boolean).join(', ') || 'Unknown',
