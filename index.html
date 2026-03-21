@@ -28,6 +28,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 .nav-cmdk{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:4px 10px;font-size:11px;color:rgba(251,248,243,0.5);cursor:pointer;display:flex;align-items:center;gap:4px;}
 .nav-cmdk:hover{border-color:var(--gold);color:var(--gold);}
 .nav-clock{font-size:12px;color:rgba(251,248,243,0.4);font-variant-numeric:tabular-nums;}
+.data-refresh-indicator{font-size:10px;color:rgba(251,248,243,0.22);white-space:nowrap;display:flex;align-items:center;gap:3px;}
 
 /* TOGGLE */
 .view-toggle{display:flex;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);}
@@ -258,6 +259,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
     </div>
     <div class="nav-cmdk" onclick="openCmd()">⌘K</div>
     <div class="nav-clock" id="clock"></div>
+    <div class="data-refresh-indicator" id="data-refresh-indicator" title="Live pipeline data">📡 —</div>
   </div>
 </nav>
 
@@ -267,21 +269,21 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 <!-- HERO — MISSION VIEW -->
 <div class="hero" id="hero-mission">
   <div class="hero-statement">
-    <span class="gold">92</span> boys mentored this week.<br>
+    <span class="gold" id="hero-active-count">75</span> boys mentored this week.<br>
     <span class="green">14</span> first sessions. <span style="color:rgba(251,248,243,0.4)">2</span> goodbyes.
   </div>
-  <div class="hero-sub">That's 92 families who trusted us with their sons this week.</div>
+  <div class="hero-sub" id="hero-mission-sub">That's 75 families who trusted us with their sons this week.</div>
 </div>
 
 <!-- HERO — BUSINESS VIEW -->
 <div class="hero hidden" id="hero-business">
   <div class="metric-strip biz">
-    <div class="metric-card highlight"><div class="mc-lbl">MRR ✅</div><div class="mc-val">$67,287</div><div class="mc-sub">92 active subs</div></div>
-    <div class="metric-card"><div class="mc-lbl">Cash (7d) ✅</div><div class="mc-val">$31,692</div><div class="mc-sub">64 charges</div></div>
-    <div class="metric-card"><div class="mc-lbl">Stripe Bal ✅</div><div class="mc-val">$22,544</div><div class="mc-sub">$12.7K avail + $9.8K pend</div></div>
-    <div class="metric-card"><div class="mc-lbl">CAC (MTD) ✅</div><div class="mc-val">$127</div><div class="mc-sub">$4,201 ÷ 33 W1s</div></div>
-    <div class="metric-card"><div class="mc-lbl">Active ✅</div><div class="mc-val">92</div><div class="mc-sub">ATH ↑</div></div>
-    <div class="metric-card" style="border-color:rgba(224,82,82,0.2);"><div class="mc-lbl">At Risk ✅</div><div class="mc-val" style="color:var(--red);">$8,472</div><div class="mc-sub">Failed + past due</div></div>
+    <div class="metric-card highlight"><div class="mc-lbl">MRR ✅</div><div class="mc-val" id="biz-mrr">$46,323</div><div class="mc-sub" id="biz-mrr-sub">67 collecting + 8 paused</div></div>
+    <div class="metric-card"><div class="mc-lbl">Cash (7d) ✅</div><div class="mc-val" id="biz-cash7d">$21,389</div><div class="mc-sub">from Stripe</div></div>
+    <div class="metric-card"><div class="mc-lbl">Stripe Bal ✅</div><div class="mc-val" id="biz-stripe-bal">$22,544</div><div class="mc-sub" id="biz-stripe-sub">$12.7K avail + $9.8K pend</div></div>
+    <div class="metric-card"><div class="mc-lbl">CAC (MTD) ✅</div><div class="mc-val">$127</div><div class="mc-sub" id="biz-cac-sub">$4,272 ÷ 33 W1s</div></div>
+    <div class="metric-card"><div class="mc-lbl">Active ✅</div><div class="mc-val" id="biz-active">75</div><div class="mc-sub" id="biz-active-sub">67 collecting + 8 paused</div></div>
+    <div class="metric-card" style="border-color:rgba(224,82,82,0.2);"><div class="mc-lbl">At Risk ✅</div><div class="mc-val" id="biz-at-risk" style="color:var(--red);">$363</div><div class="mc-sub">Past due subs</div></div>
   </div>
 </div>
 
@@ -471,6 +473,65 @@ const snoozed = JSON.parse(localStorage.getItem('mc_snoozed') || '{}');
 const actions = JSON.parse(localStorage.getItem('mc_actions') || '[]');
 
 /* ═══════════════════════════════════════
+   DASHBOARD NUMBERS — LIVE FROM JSON
+   ═══════════════════════════════════════ */
+function updateDashboardNumbers() {
+  if (!dashData) return;
+  const d = dashData;
+  const fmt$ = (v) => '$' + Math.round(v).toLocaleString('en-AU');
+
+  // ── Mission hero ──
+  const activeCountEl = document.getElementById('hero-active-count');
+  if (activeCountEl) activeCountEl.textContent = d.active_total;
+  const missionSubEl = document.getElementById('hero-mission-sub');
+  if (missionSubEl) missionSubEl.textContent = `That's ${d.active_total} families who trusted us with their sons this week.`;
+
+  // ── Business hero ──
+  const mrrEl = document.getElementById('biz-mrr');
+  if (mrrEl) mrrEl.textContent = fmt$(d.mrr);
+  const mrrSubEl = document.getElementById('biz-mrr-sub');
+  if (mrrSubEl) mrrSubEl.textContent = `${d.active_families} collecting + ${d.paused} paused`;
+
+  const cash7dEl = document.getElementById('biz-cash7d');
+  if (cash7dEl) cash7dEl.textContent = fmt$(d.cash_7d);
+
+  const stripeBalEl = document.getElementById('biz-stripe-bal');
+  if (stripeBalEl) stripeBalEl.textContent = fmt$(d.balance_total);
+  const stripeSubEl = document.getElementById('biz-stripe-sub');
+  if (stripeSubEl) {
+    const avail = (d.balance_available / 1000).toFixed(1);
+    const pend = (d.balance_pending / 1000).toFixed(1);
+    stripeSubEl.textContent = `$${avail}K avail + $${pend}K pend`;
+  }
+
+  const cacSubEl = document.getElementById('biz-cac-sub');
+  if (cacSubEl) cacSubEl.textContent = `$${Math.round(d.meta_spend_mtd).toLocaleString('en-AU')} MTD spend`;
+
+  const activeEl = document.getElementById('biz-active');
+  if (activeEl) activeEl.textContent = d.active_total;
+  const activeSubEl = document.getElementById('biz-active-sub');
+  if (activeSubEl) activeSubEl.textContent = `${d.active_families} collecting + ${d.paused} paused`;
+
+  const atRiskEl = document.getElementById('biz-at-risk');
+  if (atRiskEl) atRiskEl.textContent = fmt$(d.revenue_at_risk);
+
+  // ── Last refreshed indicator ──
+  const refreshEl = document.getElementById('data-refresh-indicator');
+  if (refreshEl && d.generated) {
+    const dt = new Date(d.generated);
+    const timeStr = dt.toLocaleString('en-AU', {
+      timeZone: 'Australia/Melbourne',
+      hour: '2-digit',
+      minute: '2-digit',
+      day: 'numeric',
+      month: 'short'
+    });
+    refreshEl.textContent = `📡 Live · ${timeStr}`;
+    refreshEl.title = `Data last pulled from Stripe pipeline: ${d.generated}`;
+  }
+}
+
+/* ═══════════════════════════════════════
    INIT
    ═══════════════════════════════════════ */
 async function init() {
@@ -489,6 +550,8 @@ async function init() {
   sprintData = sprintRes;
   activityData = actRes;
   
+  updateDashboardNumbers();
+  applyView(); // re-apply with live data
   renderTimeSection();
   renderSprint();
   renderWatch();
@@ -534,17 +597,24 @@ function applyView() {
   document.getElementById('hero-business').classList.toggle('hidden', m);
   document.getElementById('unit-economics').classList.toggle('hidden', m);
   
+  // Use live data if available, fall back to known-good values
+  const d = dashData;
+  const mrrK = d ? (d.mrr / 1000).toFixed(1) : '46.3';
+  const balK = d ? (d.balance_total / 1000).toFixed(1) : '22.5';
+  const cash7dK = d ? (d.cash_7d / 1000).toFixed(1) : '21.4';
+  const activeTotal = d ? d.active_total : 75;
+
   // Re-label nav stats based on view
   const moneyEl = document.getElementById('nav-money-stats');
   const peopleEl = document.getElementById('nav-people-stats');
   const salesEl = document.getElementById('nav-sales-stats');
   if(m) {
-    if(moneyEl) moneyEl.textContent = '92 families supported · $31.7K this week';
-    if(peopleEl) peopleEl.textContent = '92 families · 32 mentors · 7 boys waiting';
+    if(moneyEl) moneyEl.textContent = `${activeTotal} families supported · $${cash7dK}K this week`;
+    if(peopleEl) peopleEl.textContent = `${activeTotal} families · 32 mentors · 7 boys waiting`;
     if(salesEl) salesEl.textContent = '11 new families this week';
   } else {
-    if(moneyEl) moneyEl.textContent = 'MRR $67.3K ✅ · Stripe $22.5K ✅';
-    if(peopleEl) peopleEl.textContent = '92 families · 32 mentors';
+    if(moneyEl) moneyEl.textContent = `MRR $${mrrK}K ✅ · Stripe $${balK}K ✅`;
+    if(peopleEl) peopleEl.textContent = `${activeTotal} families · 32 mentors`;
     if(salesEl) salesEl.textContent = '11 closes WTD · 71% close rate';
   }
 }
@@ -881,8 +951,8 @@ function buildCmdIndex() {
     {icon:'📋',label:'Board Report',hint:'Board deck',href:'board/',type:'page'},
     {icon:'💬',label:'Leo Chat',hint:'Chat with Leo',href:'chat/',type:'page'},
     {icon:'📜',label:'Decisions',hint:'Decision log',href:'decisions/',type:'page'},
-    {icon:'📈',label:'MRR',hint:'$67,287 ✅',type:'metric',value:'$67,287'},
-    {icon:'💵',label:'Cash Collected (7d)',hint:'$31,692',type:'metric',value:'$31,692'},
+    {icon:'📈',label:'MRR',hint:(dashData?'$'+Math.round(dashData.mrr).toLocaleString('en-AU'):'$46,323')+' ✅',type:'metric',value:dashData?'$'+Math.round(dashData.mrr).toLocaleString('en-AU'):'$46,323'},
+    {icon:'💵',label:'Cash Collected (7d)',hint:dashData?'$'+Math.round(dashData.cash_7d).toLocaleString('en-AU'):'$21,389',type:'metric',value:dashData?'$'+Math.round(dashData.cash_7d).toLocaleString('en-AU'):'$21,389'},
     {icon:'🎯',label:'CAC (MTD)',hint:'$127/W1 start ✅',type:'metric',value:'$127'},
     {icon:'📢',label:'CPBC (7d)',hint:'$33/booked call',type:'metric',value:'$33'},
     {icon:'⭐',label:'LTV',hint:'$2,041 ✅ real',type:'metric',value:'$2,041'},

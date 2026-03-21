@@ -14,6 +14,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 .header-title{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
 .back-link{color:rgba(251,248,243,0.5);font-size:13px;text-decoration:none;display:flex;align-items:center;gap:6px;}
 .back-link:hover{color:var(--gold);}
+.data-refresh-indicator{font-size:10px;color:rgba(251,248,243,0.22);white-space:nowrap;display:flex;align-items:center;gap:3px;}
 .container{max-width:1100px;margin:0 auto;padding:32px 20px 60px;}
 
 /* HERO CARDS */
@@ -397,7 +398,10 @@ svg.mrr-chart{width:100%;overflow:visible;}
     <div class="header-logo">B&G</div>
     <div class="header-title">Revenue Forecast</div>
   </div>
-  <a class="back-link" href="../">← Mission Control</a>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <a class="back-link" href="../">← Mission Control</a>
+    <div class="data-refresh-indicator" id="data-refresh-indicator" title="Live pipeline data">📡 —</div>
+  </div>
 </div>
 
 <div class="container">
@@ -406,26 +410,39 @@ svg.mrr-chart{width:100%;overflow:visible;}
 <div class="hero-grid">
   <div class="hero-card navy-top">
     <div class="hero-lbl">Stripe Balance ✅</div>
-    <div class="hero-val">$22,544</div>
-    <div class="hero-sub">$12,739 available + $9,805 pending</div>
+    <div class="hero-val" id="hero-stripe-bal">$22,544</div>
+    <div class="hero-sub" id="hero-stripe-sub">$12.7K available + $9.8K pending</div>
     <div class="hero-sub2">Real-time from Stripe</div>
   </div>
   <div class="hero-card green-top">
     <div class="hero-lbl">Cash Collected 7d ✅</div>
-    <div class="hero-val" style="color:#4CAF50;">$31,692</div>
-    <div class="hero-sub">64 charges · from Stripe</div>
+    <div class="hero-val" id="hero-cash7d" style="color:#4CAF50;">$21,389</div>
+    <div class="hero-sub" id="hero-cash7d-sub">from Stripe</div>
   </div>
   <div class="hero-card">
     <div class="hero-lbl">MRR ✅</div>
-    <div class="hero-val" style="color:var(--gold);">$67,287</div>
-    <div class="hero-sub">92 active subscriptions</div>
-    <div class="hero-sub2">67 collecting + 25 paused</div>
+    <div class="hero-val" id="hero-mrr" style="color:var(--gold);">$46,323</div>
+    <div class="hero-sub" id="hero-mrr-sub">75 active subscriptions</div>
+    <div class="hero-sub2" id="hero-mrr-sub2">67 collecting + 8 paused</div>
   </div>
   <div class="hero-card risk">
     <div class="hero-lbl">Revenue at Risk ✅</div>
-    <div class="hero-val" style="color:var(--red);">$8,472</div>
-    <div class="hero-sub">$8,109 failed + $363 past due</div>
-    <div class="hero-sub2">From Stripe failed charges</div>
+    <div class="hero-val" id="hero-at-risk" style="color:var(--red);">$363</div>
+    <div class="hero-sub" id="hero-at-risk-sub">Past due subs</div>
+    <div class="hero-sub2">From Stripe</div>
+  </div>
+</div>
+<!-- CPBC + Booked Calls mini strip -->
+<div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+  <div style="background:rgba(16,21,32,0.7);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:12px 18px;flex:1;min-width:120px;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">CPBC MTD ✅</div>
+    <div style="font-family:'Archivo Black',sans-serif;font-size:22px;" id="hero-cpbc">$24.27</div>
+    <div style="font-size:10px;color:rgba(251,248,243,0.35);">cost per booked call</div>
+  </div>
+  <div style="background:rgba(16,21,32,0.7);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:12px 18px;flex:1;min-width:120px;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Booked Calls MTD ✅</div>
+    <div style="font-family:'Archivo Black',sans-serif;font-size:22px;" id="hero-booked-calls">176</div>
+    <div style="font-size:10px;color:rgba(251,248,243,0.35);">calls booked this month</div>
   </div>
 </div>
 
@@ -560,12 +577,12 @@ svg.mrr-chart{width:100%;overflow:visible;}
                 <span class="fm-slider-name">Cost per Booked Call</span>
                 <span class="fm-slider-val" id="fm-cpbc-val">$25</span>
               </div>
-              <input type="range" min="15" max="80" step="1" value="25" id="fm-cpbc" class="ccf-range" oninput="updateFunnel()">
+              <input type="range" min="15" max="80" step="1" value="24" id="fm-cpbc" class="ccf-range" oninput="updateFunnel()">
               <div class="fm-slider-hints"><span>$15</span><span>$80</span></div>
             </div>
           </div>
           <div class="fm-outputs" id="fm-ads-outputs"></div>
-          <div class="fm-reality-badge">✅ March: $4,201 spend, 168 booked calls, $25 CPBC</div>
+          <div class="fm-reality-badge">✅ March: $4,272 spend, 176 booked calls, $24.27 CPBC</div>
         </div>
       </div>
     </div>
@@ -753,7 +770,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
       </div>
       <div class="fin-input-group">
         <div class="fin-input-label">Avg Revenue / Family</div>
-        <div class="fin-input-field"><span class="fin-input-prefix">$</span><input type="number" id="fm-rev-per-family" value="731" min="0" onchange="updateFunnel()"></div>
+        <div class="fin-input-field"><span class="fin-input-prefix">$</span><input type="number" id="fm-rev-per-family" value="692" min="0" onchange="updateFunnel()"></div>
       </div>
       <div class="fin-input-group">
         <div class="fin-input-label">Hire Threshold (families)</div>
@@ -877,7 +894,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <div class="pace-callout">
     <div class="pace-item">
       <div class="pace-label" style="color:var(--cream);">Current MRR</div>
-      <div class="pace-val" style="color:var(--gold);">$67,287 ✅</div>
+      <div class="pace-val" id="pace-current-mrr" style="color:var(--gold);">$46,323 ✅</div>
       <div style="font-size:11px;color:rgba(251,248,243,0.35);margin-top:2px;">Real, from Stripe subscriptions</div>
     </div>
     <div class="pace-item">
@@ -909,12 +926,13 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <div style="margin-top:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
     <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 14px;">
       <div style="font-size:10px;color:rgba(251,248,243,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Total Active Subs</div>
-      <div style="font-family:'Archivo Black',sans-serif;font-size:18px;">92 ✅</div>
+      <div style="font-family:'Archivo Black',sans-serif;font-size:18px;" id="rev-source-total-subs">75 ✅</div>
+      <div style="font-size:10px;color:rgba(251,248,243,0.3);" id="rev-source-subs-note">67 collecting + 8 paused</div>
     </div>
     <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 14px;">
       <div style="font-size:10px;color:rgba(251,248,243,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Avg Monthly Revenue/Sub</div>
-      <div style="font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);">$731 ✅</div>
-      <div style="font-size:10px;color:rgba(251,248,243,0.3);">$67,287 ÷ 92</div>
+      <div style="font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);">$692 ✅</div>
+      <div style="font-size:10px;color:rgba(251,248,243,0.3);" id="rev-source-avg-note">$46,323 ÷ 67 collecting</div>
     </div>
   </div>
 </div>
@@ -969,8 +987,8 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <div class="section-title">💰 MONTHLY P&L — MARCH 2026</div>
   <div class="section-divider"></div>
   <div class="pnl-row">
-    <div><div class="pnl-name">Revenue (MRR) ✅</div><div class="pnl-note">92 active subscriptions · real-time from Stripe</div></div>
-    <div class="pnl-amount green">$67,287</div>
+    <div><div class="pnl-name">Revenue (MRR) ✅</div><div class="pnl-note" id="pnl-mrr-note">75 active subscriptions · real-time from Stripe</div></div>
+    <div class="pnl-amount green" id="pnl-mrr">$46,323</div>
   </div>
   <div class="pnl-row">
     <div><div class="pnl-name">Mentor Costs ✅</div><div class="pnl-note">Supabase invoices · March MTD · 26 mentors</div></div>
@@ -1061,10 +1079,99 @@ svg.mrr-chart{width:100%;overflow:visible;}
 </div>
 
 <script>
+// ═══ LIVE DASHBOARD DATA ═══
+var liveData = null;
+
+function fmt$(v) { return '$' + Math.round(v).toLocaleString('en-AU'); }
+
+function updateHeroCards(d) {
+  if (!d) return;
+
+  // Stripe Balance
+  var balEl = document.getElementById('hero-stripe-bal');
+  if (balEl) balEl.textContent = fmt$(d.balance_total);
+  var balSubEl = document.getElementById('hero-stripe-sub');
+  if (balSubEl) {
+    var avail = (d.balance_available / 1000).toFixed(1);
+    var pend = (d.balance_pending / 1000).toFixed(1);
+    balSubEl.textContent = '$' + avail + 'K available + $' + pend + 'K pending';
+  }
+
+  // Cash 7d
+  var cash7dEl = document.getElementById('hero-cash7d');
+  if (cash7dEl) cash7dEl.textContent = fmt$(d.cash_7d);
+  var cash7dSubEl = document.getElementById('hero-cash7d-sub');
+  if (cash7dSubEl) cash7dSubEl.textContent = 'from Stripe · MTD';
+
+  // MRR
+  var mrrEl = document.getElementById('hero-mrr');
+  if (mrrEl) mrrEl.textContent = fmt$(d.mrr);
+  var mrrSubEl = document.getElementById('hero-mrr-sub');
+  if (mrrSubEl) mrrSubEl.textContent = d.active_total + ' active subscriptions';
+  var mrrSub2El = document.getElementById('hero-mrr-sub2');
+  if (mrrSub2El) mrrSub2El.textContent = d.active_families + ' collecting + ' + d.paused + ' paused';
+
+  // Revenue at Risk
+  var riskEl = document.getElementById('hero-at-risk');
+  if (riskEl) riskEl.textContent = fmt$(d.revenue_at_risk);
+  var riskSubEl = document.getElementById('hero-at-risk-sub');
+  if (riskSubEl) riskSubEl.textContent = (d.failed_past_due || 0) + ' past due subs';
+
+  // CPBC
+  var cpbcEl = document.getElementById('hero-cpbc');
+  if (cpbcEl) cpbcEl.textContent = '$' + (d.cpbc_mtd || 0).toFixed(2);
+
+  // Booked Calls
+  var bcEl = document.getElementById('hero-booked-calls');
+  if (bcEl) bcEl.textContent = d.booked_calls_mtd || '—';
+
+  // MRR pace callout
+  var paceMrr = document.getElementById('pace-current-mrr');
+  if (paceMrr) paceMrr.textContent = fmt$(d.mrr) + ' ✅';
+
+  // P&L section
+  var pnlMrr = document.getElementById('pnl-mrr');
+  if (pnlMrr) pnlMrr.textContent = fmt$(d.mrr);
+  var pnlMrrNote = document.getElementById('pnl-mrr-note');
+  if (pnlMrrNote) pnlMrrNote.textContent = d.active_total + ' active subscriptions · real-time from Stripe';
+
+  // Revenue by source
+  var revSubs = document.getElementById('rev-source-total-subs');
+  if (revSubs) revSubs.textContent = d.active_total + ' ✅';
+  var revSubsNote = document.getElementById('rev-source-subs-note');
+  if (revSubsNote) revSubsNote.textContent = d.active_families + ' collecting + ' + d.paused + ' paused';
+  var revAvgNote = document.getElementById('rev-source-avg-note');
+  if (revAvgNote && d.active_families > 0) {
+    var avgPerCollecting = Math.round(d.mrr / d.active_families);
+    revAvgNote.textContent = fmt$(d.mrr) + ' ÷ ' + d.active_families + ' collecting';
+  }
+
+  // Last refreshed indicator
+  var refreshEl = document.getElementById('data-refresh-indicator');
+  if (refreshEl && d.generated) {
+    var dt = new Date(d.generated);
+    var timeStr = dt.toLocaleString('en-AU', {
+      timeZone: 'Australia/Melbourne',
+      hour: '2-digit',
+      minute: '2-digit',
+      day: 'numeric',
+      month: 'short'
+    });
+    refreshEl.textContent = '📡 Live · ' + timeStr;
+    refreshEl.title = 'Data last pulled: ' + d.generated;
+  }
+}
+
+// Fetch dashboard data and update on load
+fetch('../data/dashboard-data.json')
+  .then(function(r) { return r.json(); })
+  .then(function(d) { liveData = d; updateHeroCards(d); })
+  .catch(function(err) { console.warn('[Dashboard] Could not load live data, showing fallback values.', err); });
+
 // ═══ FUNNEL MODEL STATE ═══
 var FM = {
   adSpendPerDay: 140,
-  cpbc: 25,
+  cpbc: 24,         // updated: $24.27 actual CPBC
   showRate: 45,
   closeRate: 37,
   closeToW1: 62,
@@ -1073,7 +1180,7 @@ var FM = {
   ret30to60: 72,
   ret60to90: 68,
   ret90plus: 90,
-  avgMonthlyRev: 731,
+  avgMonthlyRev: 692, // updated: $46,323 ÷ 67 collecting
   mentorCostPerMonth: 84.85,
   // Financial model inputs
   startingFamilies: 67,
@@ -1085,10 +1192,10 @@ var FM = {
 };
 
 var FM_SCENARIOS = {
-  conservative: {adSpendPerDay:100,cpbc:35,showRate:40,closeRate:30,closeToW1:55,w1ToW2:80,w2To30d:70,ret30to60:65,ret60to90:60,ret90plus:85,startingFamilies:67,startingCash:22544,opexBaseline:7560,mentorCostPerFamily:84.85,hireThreshold:30,hireCost:2000},
-  current:      {adSpendPerDay:140,cpbc:25,showRate:45,closeRate:37,closeToW1:62,w1ToW2:85,w2To30d:78,ret30to60:72,ret60to90:68,ret90plus:90,startingFamilies:67,startingCash:22544,opexBaseline:7560,mentorCostPerFamily:84.85,hireThreshold:30,hireCost:2000},
-  aggressive:   {adSpendPerDay:200,cpbc:22,showRate:50,closeRate:42,closeToW1:75,w1ToW2:90,w2To30d:82,ret30to60:78,ret60to90:78,ret90plus:92,startingFamilies:67,startingCash:22544,opexBaseline:8560,mentorCostPerFamily:84.85,hireThreshold:30,hireCost:2000},
-  dream:        {adSpendPerDay:300,cpbc:20,showRate:55,closeRate:48,closeToW1:80,w1ToW2:95,w2To30d:88,ret30to60:85,ret60to90:85,ret90plus:95,startingFamilies:67,startingCash:22544,opexBaseline:8560,mentorCostPerFamily:84.85,hireThreshold:25,hireCost:2000}
+  conservative: {adSpendPerDay:100,cpbc:35,showRate:40,closeRate:30,closeToW1:55,w1ToW2:80,w2To30d:70,ret30to60:65,ret60to90:60,ret90plus:85,startingFamilies:67,startingCash:22544,opexBaseline:7560,mentorCostPerFamily:84.85,hireThreshold:30,hireCost:2000,avgMonthlyRev:692},
+  current:      {adSpendPerDay:140,cpbc:24,showRate:45,closeRate:37,closeToW1:62,w1ToW2:85,w2To30d:78,ret30to60:72,ret60to90:68,ret90plus:90,startingFamilies:67,startingCash:22544,opexBaseline:7560,mentorCostPerFamily:84.85,hireThreshold:30,hireCost:2000,avgMonthlyRev:692},
+  aggressive:   {adSpendPerDay:200,cpbc:22,showRate:50,closeRate:42,closeToW1:75,w1ToW2:90,w2To30d:82,ret30to60:78,ret60to90:78,ret90plus:92,startingFamilies:67,startingCash:22544,opexBaseline:8560,mentorCostPerFamily:84.85,hireThreshold:30,hireCost:2000,avgMonthlyRev:692},
+  dream:        {adSpendPerDay:300,cpbc:20,showRate:55,closeRate:48,closeToW1:80,w1ToW2:95,w2To30d:88,ret30to60:85,ret60to90:85,ret90plus:95,startingFamilies:67,startingCash:22544,opexBaseline:8560,mentorCostPerFamily:84.85,hireThreshold:25,hireCost:2000,avgMonthlyRev:692}
 };
 
 var MONTHLY_COSTS_BASE = 15365; // mentor + payroll + software (excl ads)
@@ -1171,7 +1278,7 @@ function readSliders(){
   FM.startingCash=parseFloat(document.getElementById('fm-start-cash').value)||22544;
   FM.opexBaseline=parseFloat(document.getElementById('fm-opex-baseline').value)||7560;
   FM.mentorCostPerFamily=parseFloat(document.getElementById('fm-mentor-cost').value)||84.85;
-  FM.avgMonthlyRev=parseFloat(document.getElementById('fm-rev-per-family').value)||731;
+  FM.avgMonthlyRev=parseFloat(document.getElementById('fm-rev-per-family').value)||692;
   FM.hireThreshold=parseInt(document.getElementById('fm-hire-threshold').value)||30;
   FM.hireCost=parseFloat(document.getElementById('fm-hire-cost').value)||2000;
 }

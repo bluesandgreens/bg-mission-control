@@ -16,5 +16,13 @@
   "xero_receivable": 19855.05,
   "xero_payable": 30040.13,
   "ndis_total": 1483.0,
-  "forecast_4wk": 29029.0
+  "forecast_4wk": 29029.0,
+  "ltv": 2795,
+  "ltgp": 2524,
+  "cac_ltv_ratio": "1:22.0",
+  "cac_ltgp_ratio": "1:19.9",
+  "avg_lifetime_days": 97,
+  "avg_lifetime_months": 3.2,
+  "mentor_cost_per_family": 84.85,
+  "payback_days": 3.5
 }
