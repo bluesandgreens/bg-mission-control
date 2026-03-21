@@ -122,7 +122,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 .bar-clickable:hover .bar-rect{opacity:1!important;filter:drop-shadow(0 0 6px rgba(200,169,81,0.5));}
 .bar-clickable .bar-rect{transition:opacity 0.2s,filter 0.2s;}
 
-/* SUBSCRIBER LIST (level 3) — SCROLL FIX */
+/* SUBSCRIBER LIST (level 3) */
 .sub-list{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1);}
 .sub-list.open{max-height:3000px;}
 .sub-list-inner{padding:8px 10px 12px;background:#161B24;border-radius:0 0 8px 8px;display:flex;flex-direction:column;gap:6px;border-top:1px solid rgba(200,169,81,0.1);max-height:400px;overflow-y:auto;scroll-behavior:smooth;}
@@ -169,16 +169,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 .ccf-grand-val{font-family:'Archivo Black',sans-serif;font-size:44px;color:var(--gold);}
 
 /* SLIDERS & INPUTS */
-.ccf-sliders{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
-.ccf-slider-group{background:rgba(255,255,255,0.03);border-radius:12px;padding:16px;}
-.ccf-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
-.ccf-slider-name{font-size:12px;font-weight:600;color:rgba(251,248,243,0.7);}
-.ccf-slider-val{font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--gold);}
 .ccf-range{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:rgba(255,255,255,0.1);outline:none;margin:4px 0;cursor:pointer;}
 .ccf-range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(200,169,81,0.2);transition:box-shadow 0.2s;}
 .ccf-range::-webkit-slider-thumb:hover{box-shadow:0 0 0 6px rgba(200,169,81,0.25);}
 .ccf-range::-moz-range-thumb{width:22px;height:22px;border:none;border-radius:50%;background:var(--gold);cursor:pointer;}
-.ccf-slider-hints{display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:rgba(251,248,243,0.25);}
 
 /* SCENARIO BUTTONS */
 .ccf-scenarios{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
@@ -187,33 +181,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 .ccf-btn .btn-total{display:block;font-size:11px;color:rgba(200,169,81,0.6);margin-top:4px;font-weight:400;}
 .ccf-btn.active .btn-total{color:var(--gold);}
 
-/* TIER INPUT GRID */
-.tier-input-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
-.tier-input-section{background:rgba(255,255,255,0.025);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04);}
-.tier-input-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:14px;}
-.tier-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.tier-row:last-child{margin-bottom:0;}
-.tier-label{font-size:12px;color:rgba(251,248,243,0.6);width:100px;flex-shrink:0;}
-.tier-range{flex:1;-webkit-appearance:none;appearance:none;height:5px;border-radius:3px;background:rgba(255,255,255,0.1);outline:none;cursor:pointer;}
-.tier-range::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 2px rgba(200,169,81,0.2);}
-.tier-range::-moz-range-thumb{width:18px;height:18px;border:none;border-radius:50%;background:var(--gold);cursor:pointer;}
-.tier-pct{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);width:40px;text-align:right;flex-shrink:0;}
-.tier-total-row{margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:rgba(251,248,243,0.4);}
-.tier-total-val{color:var(--gold);}
-.tier-total-val.error{color:var(--red);}
-.avg-payment-display{text-align:center;padding:18px;background:rgba(200,169,81,0.06);border:1px solid rgba(200,169,81,0.2);border-radius:12px;margin-bottom:20px;}
-.avg-payment-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:6px;}
-.avg-payment-val{font-family:'Archivo Black',sans-serif;font-size:32px;color:var(--gold);}
-.avg-payment-note{font-size:11px;color:rgba(251,248,243,0.35);margin-top:4px;}
-
 /* CHART LEGEND */
 .ccf-chart-legend{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;}
 .ccf-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(251,248,243,0.5);}
 .ccf-legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
-
-/* DISTRIBUTION */
-.ccf-dist-section{margin-bottom:24px;padding:16px;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid rgba(255,255,255,0.04);}
-.ccf-dist-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:14px;}
 
 /* COSTS */
 .ccf-costs-rows{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
@@ -224,20 +195,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 .ccf-net-row{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:rgba(76,175,80,0.08);border:1px solid rgba(76,175,80,0.2);border-radius:10px;}
 .ccf-net-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.6);}
 .ccf-net-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:#4CAF50;}
-
-/* RETENTION */
-.ret-toggle{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;cursor:pointer;user-select:none;margin-bottom:16px;transition:background 0.15s;}
-.ret-toggle:hover{background:rgba(255,255,255,0.05);}
-.ret-toggle-label{font-size:13px;font-weight:600;color:rgba(251,248,243,0.6);}
-.ret-toggle-chevron{font-size:12px;color:rgba(200,169,81,0.5);transition:transform 0.3s;}
-.ret-toggle.open .ret-toggle-chevron{transform:rotate(180deg);}
-.ret-sliders-wrap{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1);}
-.ret-sliders-wrap.open{max-height:600px;}
-.ret-sliders-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px;}
-.ret-slider-group{background:rgba(255,255,255,0.03);border-radius:10px;padding:14px 16px;}
-.ret-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
-.ret-slider-name{font-size:12px;font-weight:600;color:rgba(251,248,243,0.7);}
-.ret-slider-val{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);}
 
 /* FUNNEL */
 .funnel-wrap{margin-bottom:24px;}
@@ -307,19 +264,76 @@ svg.mrr-chart{width:100%;overflow:visible;}
 .connect-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:10px;border:1px solid rgba(255,255,255,0.05);font-size:13px;}
 .connect-icon{font-size:18px;flex-shrink:0;}
 
+/* ═══ FULL FUNNEL MODEL ═══ */
+.fm-master-toggle{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:rgba(200,169,81,0.06);border:1px solid rgba(200,169,81,0.2);border-radius:14px;cursor:pointer;user-select:none;transition:all 0.2s;margin-bottom:16px;}
+.fm-master-toggle:hover{background:rgba(200,169,81,0.1);border-color:rgba(200,169,81,0.35);}
+.fm-master-toggle-left{display:flex;align-items:center;gap:12px;}
+.fm-master-toggle-title{font-family:'Archivo Black',sans-serif;font-size:15px;color:var(--gold);letter-spacing:1px;}
+.fm-master-toggle-summary{font-size:12px;color:rgba(251,248,243,0.5);margin-top:2px;}
+.fm-master-toggle-chevron{font-size:16px;color:var(--gold);transition:transform 0.3s;}
+.fm-master-toggle.open .fm-master-toggle-chevron{transform:rotate(180deg);}
+.fm-master-body{max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.4,0,0.2,1);}
+.fm-master-body.open{max-height:8000px;}
+
+/* Summary strip */
+.fm-summary-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+.fm-summary-card{background:rgba(16,21,32,0.9);border-radius:12px;padding:14px 12px;text-align:center;border:1px solid rgba(255,255,255,0.06);}
+.fm-summary-card-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:4px;}
+.fm-summary-card-val{font-family:'Archivo Black',sans-serif;font-size:20px;color:var(--gold);}
+.fm-summary-card-note{font-size:9px;color:rgba(251,248,243,0.25);margin-top:2px;}
+.fm-summary-card.highlight{border-color:rgba(200,169,81,0.3);background:rgba(200,169,81,0.06);}
+
+/* Funnel sections */
+.fm-section{border-radius:12px;margin-bottom:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);}
+.fm-section-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;user-select:none;transition:background 0.15s;}
+.fm-section-header:hover{filter:brightness(1.1);}
+.fm-section-title{font-family:'Archivo Black',sans-serif;font-size:13px;letter-spacing:1px;display:flex;align-items:center;gap:8px;}
+.fm-section-summary{font-size:11px;color:rgba(251,248,243,0.5);}
+.fm-section-chevron{font-size:12px;color:rgba(200,169,81,0.5);transition:transform 0.3s;}
+.fm-section.open .fm-section-chevron{transform:rotate(180deg);}
+.fm-section-body{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1);}
+.fm-section.open .fm-section-body{max-height:600px;}
+.fm-section-inner{padding:0 18px 18px;}
+
+/* Funnel slider rows */
+.fm-slider-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.fm-slider-group{background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 14px;}
+.fm-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+.fm-slider-name{font-size:11px;font-weight:600;color:rgba(251,248,243,0.65);}
+.fm-slider-val{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);}
+.fm-slider-hints{display:flex;justify-content:space-between;margin-top:2px;font-size:9px;color:rgba(251,248,243,0.2);}
+
+/* Calculated outputs */
+.fm-outputs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+.fm-output{font-size:11px;color:rgba(251,248,243,0.55);background:rgba(255,255,255,0.03);padding:4px 10px;border-radius:8px;}
+.fm-output strong{color:var(--gold);font-family:'Archivo Black',sans-serif;font-size:13px;}
+
+/* Reality badge */
+.fm-reality-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:600;padding:4px 10px;border-radius:8px;background:rgba(76,175,80,0.08);border:1px solid rgba(76,175,80,0.2);color:#4CAF50;margin-top:8px;}
+
+/* Insight callout */
+.fm-insight{padding:10px 14px;border-radius:10px;background:rgba(200,169,81,0.06);border:1px solid rgba(200,169,81,0.15);font-size:11px;color:rgba(251,248,243,0.6);margin-top:10px;line-height:1.5;}
+.fm-insight strong{color:var(--gold);}
+
+/* Sensitivity analysis */
+.fm-lever-row{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+.fm-lever-rank{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);width:24px;text-align:center;flex-shrink:0;}
+.fm-lever-bar{height:28px;border-radius:6px;display:flex;align-items:center;padding:0 10px;min-width:40px;transition:width 0.5s;}
+.fm-lever-name{font-size:11px;font-weight:600;color:rgba(255,255,255,0.9);white-space:nowrap;}
+.fm-lever-impact{font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0;margin-left:auto;white-space:nowrap;}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero-grid{grid-template-columns:repeat(2,1fr);}
   .unit-grid{grid-template-columns:repeat(2,1fr);}
   .hero-val{font-size:22px;}
   .ccf-cards{grid-template-columns:1fr 1fr;}
-  .ccf-sliders{grid-template-columns:1fr;}
   .ccf-scenarios{grid-template-columns:repeat(2,1fr);}
   .ccf-grand-val{font-size:34px;}
-  .ret-sliders-grid{grid-template-columns:1fr;}
   .ltv-grid{grid-template-columns:1fr;}
   .funnel-stage-info{width:120px;}
-  .tier-input-grid{grid-template-columns:1fr;}
+  .fm-summary-strip{grid-template-columns:repeat(2,1fr);}
+  .fm-slider-grid{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
   .sub-card{flex-direction:column;align-items:flex-start;}
@@ -333,12 +347,14 @@ svg.mrr-chart{width:100%;overflow:visible;}
   .funnel-stage{flex-direction:column;align-items:stretch;}
   .funnel-stage-info{width:100%;text-align:left;display:flex;justify-content:space-between;}
   .ccf-scenarios{grid-template-columns:1fr 1fr;}
+  .fm-summary-strip{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:480px){
   .container{padding:20px 12px 60px;}
   .section{padding:18px 14px;}
   .unit-grid{grid-template-columns:1fr 1fr;}
   .week-card-total{font-size:15px;}
+  .fm-summary-card-val{font-size:16px;}
 }
 </style>
 </head>
@@ -385,15 +401,14 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <div class="paused-banner-left">
     <span class="paused-banner-icon">⏸️</span>
     <div class="paused-banner-text">
-      <strong style="color:var(--amber);">$20,912/month frozen</strong> in paused subscriptions —
-      17 marked <span style="color:#E85A5A;">Churn</span> but still active in Stripe,
-      8 still doing sessions but <em>not collecting</em>
+      <strong style="color:var(--amber);">$20,912/month frozen</strong> —
+      8 families still doing sessions but <em>not collecting payment</em>
     </div>
   </div>
   <a href="#paused-section" class="paused-banner-link">⬇ View Audit</a>
 </div>
 
-<!-- ═══ 2. CASH FLOW FORECAST — REAL DATA (FIRST) ═══ -->
+<!-- ═══ 2. CASH FLOW FORECAST — REAL DATA ═══ -->
 <div class="section">
   <div class="section-title">💸 CASH FLOW FORECAST — NEXT 4 WEEKS</div>
   <div class="section-divider"></div>
@@ -456,246 +471,247 @@ svg.mrr-chart{width:100%;overflow:visible;}
   <p class="click-hint">Click a bar above or a week card to see the daily breakdown with invoice tags</p>
 </div>
 
-<!-- ═══ 3. FORECAST MODEL (Sandbox) ═══ -->
-<div class="section sandbox" id="ccf-section">
-  <div class="section-title">🎯 FORECAST MODEL — SANDBOX</div>
+<!-- ═══ 3. FULL FUNNEL REVENUE MODEL ═══ -->
+<div class="section sandbox" id="funnel-model-section">
+  <div class="section-title">📊 FULL FUNNEL REVENUE MODEL</div>
   <div class="section-divider"></div>
-  <p style="font-size:12px;color:rgba(251,248,243,0.4);margin-bottom:24px;">Adjust inputs below to model different scenarios. Real data is above — this is your playground.</p>
 
-  <!-- Summary Cards -->
-  <div class="ccf-cards">
-    <div class="ccf-card locked">
-      <div class="ccf-card-emoji">✅</div>
-      <div class="ccf-card-label">Locked In</div>
-      <div class="ccf-card-val">$20,693</div>
-      <div class="ccf-card-note">Existing Stripe billing cycles · 4 weeks (paused excluded)</div>
-    </div>
-    <div class="ccf-card ndis">
-      <div class="ccf-card-emoji">✅</div>
-      <div class="ccf-card-label">NDIS Outstanding</div>
-      <div class="ccf-card-val">$11,249</div>
-      <div class="ccf-card-note">Xero authorised invoices · 17 families</div>
-    </div>
-    <div class="ccf-card projected">
-      <div class="ccf-card-emoji">⚠️</div>
-      <div class="ccf-card-label">New Closes (Projected)</div>
-      <div class="ccf-card-val" id="ccf-new-total">$19,572</div>
-      <div class="ccf-card-note" id="ccf-new-note">7/wk × $699 × 4 weeks</div>
-    </div>
-  </div>
+  <!-- SUMMARY STRIP (always visible) -->
+  <div class="fm-summary-strip" id="fm-summary-strip"></div>
 
-  <!-- Grand Total -->
-  <div class="ccf-grand-total">
-    <div class="ccf-grand-label">Total 4-Week Forecast (incl. Open Invoices)</div>
-    <div class="ccf-grand-val" id="ccf-grand-total">$79,803</div>
-  </div>
-
-  <!-- Scenario Quick-Picks (MORE PROMINENT) -->
-  <div style="margin-bottom:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);">Quick Scenarios</div>
+  <!-- SCENARIO QUICK-PICKS -->
+  <div style="margin-bottom:8px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.35);">Quick Scenarios</div>
   <div class="ccf-scenarios">
-    <button onclick="setCCFScenario('conservative')" class="ccf-btn" id="ccf-btn-0">
-      🐢 Conservative
-      <span class="btn-total" id="ccf-btn-total-0"></span>
-    </button>
-    <button onclick="setCCFScenario('current')" class="ccf-btn active" id="ccf-btn-1">
-      📊 Current Pace
-      <span class="btn-total" id="ccf-btn-total-1"></span>
-    </button>
-    <button onclick="setCCFScenario('aggressive')" class="ccf-btn" id="ccf-btn-2">
-      🚀 Aggressive
-      <span class="btn-total" id="ccf-btn-total-2"></span>
-    </button>
-    <button onclick="setCCFScenario('dream')" class="ccf-btn" id="ccf-btn-3">
-      🌟 Dream
-      <span class="btn-total" id="ccf-btn-total-3"></span>
-    </button>
+    <button onclick="setFunnelScenario('conservative')" class="ccf-btn" id="fm-btn-conservative">🐢 Conservative<span class="btn-total" id="fm-btn-total-conservative"></span></button>
+    <button onclick="setFunnelScenario('current')" class="ccf-btn active" id="fm-btn-current">📊 Current Pace<span class="btn-total" id="fm-btn-total-current"></span></button>
+    <button onclick="setFunnelScenario('aggressive')" class="ccf-btn" id="fm-btn-aggressive">🚀 Aggressive<span class="btn-total" id="fm-btn-total-aggressive"></span></button>
+    <button onclick="setFunnelScenario('dream')" class="ccf-btn" id="fm-btn-dream">🌟 Dream<span class="btn-total" id="fm-btn-total-dream"></span></button>
   </div>
 
-  <!-- Closes Slider (max 30) -->
-  <div class="ccf-sliders" style="grid-template-columns:1fr;">
-    <div class="ccf-slider-group">
-      <div class="ccf-slider-header">
-        <span class="ccf-slider-name">Closes per week</span>
-        <span class="ccf-slider-val" id="ccf-closes-val">7</span>
-      </div>
-      <input type="range" min="0" max="30" step="1" value="7" id="ccf-closes-slider" class="ccf-range">
-      <div class="ccf-slider-hints"><span>0</span><span>30</span></div>
-    </div>
-  </div>
-
-  <!-- Tier Split + Payment Type Inputs -->
-  <div class="tier-input-grid">
-    <div class="tier-input-section">
-      <div class="tier-input-title">🎯 Program Tier Split</div>
-      <div class="tier-row">
-        <span class="tier-label">Big Brother</span>
-        <input type="range" min="0" max="100" step="1" value="56" id="tier-bb" class="tier-range" oninput="updateTierSplit()">
-        <span class="tier-pct" id="tier-bb-val">56%</span>
-      </div>
-      <div class="tier-row">
-        <span class="tier-label">Lighthouse</span>
-        <input type="range" min="0" max="100" step="1" value="37" id="tier-lh" class="tier-range" oninput="updateTierSplit()">
-        <span class="tier-pct" id="tier-lh-val">37%</span>
-      </div>
-      <div class="tier-row">
-        <span class="tier-label">Other</span>
-        <input type="range" min="0" max="100" step="1" value="7" id="tier-other" class="tier-range" disabled style="opacity:0.5;">
-        <span class="tier-pct" id="tier-other-val">7%</span>
-      </div>
-      <div class="tier-total-row">
-        <span>Total</span>
-        <span class="tier-total-val" id="tier-total">100%</span>
+  <!-- COLLAPSIBLE MODEL TOGGLE -->
+  <div class="fm-master-toggle" id="fm-master-toggle" onclick="toggleFunnelModel()">
+    <div class="fm-master-toggle-left">
+      <span style="font-size:20px;">📊</span>
+      <div>
+        <div class="fm-master-toggle-title">Revenue Model — Adjust Levers</div>
+        <div class="fm-master-toggle-summary" id="fm-toggle-summary">5 sections · ad spend → retention</div>
       </div>
     </div>
-    <div class="tier-input-section">
-      <div class="tier-input-title">💳 Payment Type Split</div>
-      <div class="tier-row">
-        <span class="tier-label">Upfront</span>
-        <input type="range" min="0" max="100" step="1" value="16" id="pay-upfront" class="tier-range" oninput="updatePaySplit()">
-        <span class="tier-pct" id="pay-upfront-val">16%</span>
+    <span class="fm-master-toggle-chevron">▾</span>
+  </div>
+
+  <div class="fm-master-body" id="fm-master-body">
+
+    <!-- ═══ SECTION 1: AD SPEND ═══ -->
+    <div class="fm-section" id="fm-sec-ads" style="border-color:rgba(16,71,145,0.2);">
+      <div class="fm-section-header" style="background:#0C1220;" onclick="toggleFmSection('ads')">
+        <div>
+          <div class="fm-section-title" style="color:#5a9fd4;">📣 Ad Spend</div>
+          <div class="fm-section-summary" id="fm-ads-summary">$140/day · $25 CPBC · 168 calls/mo</div>
+        </div>
+        <span class="fm-section-chevron">▾</span>
       </div>
-      <div class="tier-row">
-        <span class="tier-label">Weekly</span>
-        <input type="range" min="0" max="100" step="1" value="47" id="pay-weekly" class="tier-range" oninput="updatePaySplit()">
-        <span class="tier-pct" id="pay-weekly-val">47%</span>
-      </div>
-      <div class="tier-row">
-        <span class="tier-label">Monthly</span>
-        <input type="range" min="0" max="100" step="1" value="23" id="pay-monthly" class="tier-range" oninput="updatePaySplit()">
-        <span class="tier-pct" id="pay-monthly-val">23%</span>
-      </div>
-      <div class="tier-row">
-        <span class="tier-label">Other</span>
-        <input type="range" min="0" max="100" step="1" value="14" id="pay-other" class="tier-range" disabled style="opacity:0.5;">
-        <span class="tier-pct" id="pay-other-val">14%</span>
-      </div>
-      <div class="tier-total-row">
-        <span>Total</span>
-        <span class="tier-total-val" id="pay-total">100%</span>
+      <div class="fm-section-body">
+        <div class="fm-section-inner" style="background:#0C1220;">
+          <div class="fm-slider-grid">
+            <div class="fm-slider-group">
+              <div class="fm-slider-header">
+                <span class="fm-slider-name">Ad Spend / Day</span>
+                <span class="fm-slider-val" id="fm-adspend-val">$140</span>
+              </div>
+              <input type="range" min="0" max="500" step="5" value="140" id="fm-adspend" class="ccf-range" oninput="updateFunnel()">
+              <div class="fm-slider-hints"><span>$0</span><span>$500</span></div>
+            </div>
+            <div class="fm-slider-group">
+              <div class="fm-slider-header">
+                <span class="fm-slider-name">Cost per Booked Call</span>
+                <span class="fm-slider-val" id="fm-cpbc-val">$25</span>
+              </div>
+              <input type="range" min="15" max="80" step="1" value="25" id="fm-cpbc" class="ccf-range" oninput="updateFunnel()">
+              <div class="fm-slider-hints"><span>$15</span><span>$80</span></div>
+            </div>
+          </div>
+          <div class="fm-outputs" id="fm-ads-outputs"></div>
+          <div class="fm-reality-badge">✅ March: $4,201 spend, 168 booked calls, $25 CPBC</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Calculated Average First Payment -->
-  <div class="avg-payment-display">
-    <div class="avg-payment-label">Average First Payment</div>
-    <div class="avg-payment-val" id="avg-payment-display">$699</div>
-    <div class="avg-payment-note" id="avg-payment-note">Calculated from tier mix: 56% BB × $947 + 37% LH × $425 + 7% Other × $211</div>
-  </div>
-
-  <!-- Stacked Bar Chart -->
-  <div class="ccf-chart-wrap" style="margin-bottom:20px;">
-    <svg id="ccf-bar-chart" viewBox="0 0 560 220" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:640px;display:block;"></svg>
-    <div class="ccf-chart-legend">
-      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#104791;"></div>Existing Subs (Stripe)</div>
-      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#C8A951;"></div>NDIS (Xero)</div>
-      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#386217;"></div>Projected New Closes</div>
-      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#E8795A;"></div>Open Invoices</div>
+    <!-- ═══ SECTION 2: DISCOVERY CALLS ═══ -->
+    <div class="fm-section" id="fm-sec-dcs" style="border-color:rgba(90,60,140,0.2);">
+      <div class="fm-section-header" style="background:#120C20;" onclick="toggleFmSection('dcs')">
+        <div>
+          <div class="fm-section-title" style="color:#B08AE8;">📞 Discovery Calls</div>
+          <div class="fm-section-summary" id="fm-dcs-summary">45% show · 37% close · ~28 closes/mo</div>
+        </div>
+        <span class="fm-section-chevron">▾</span>
+      </div>
+      <div class="fm-section-body">
+        <div class="fm-section-inner" style="background:#120C20;">
+          <div class="fm-slider-grid">
+            <div class="fm-slider-group">
+              <div class="fm-slider-header">
+                <span class="fm-slider-name">Show Rate</span>
+                <span class="fm-slider-val" id="fm-show-val">45%</span>
+              </div>
+              <input type="range" min="20" max="80" step="1" value="45" id="fm-show" class="ccf-range" oninput="updateFunnel()">
+              <div class="fm-slider-hints"><span>20%</span><span>80%</span></div>
+            </div>
+            <div class="fm-slider-group">
+              <div class="fm-slider-header">
+                <span class="fm-slider-name">Close Rate</span>
+                <span class="fm-slider-val" id="fm-close-val">37%</span>
+              </div>
+              <input type="range" min="15" max="60" step="1" value="37" id="fm-close" class="ccf-range" oninput="updateFunnel()">
+              <div class="fm-slider-hints"><span>15%</span><span>60%</span></div>
+            </div>
+          </div>
+          <div class="fm-outputs" id="fm-dcs-outputs"></div>
+          <div class="fm-reality-badge">✅ March: ~75 DCs taken, ~28 closes, $150 CAC</div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- Retention Funnel -->
+    <!-- ═══ SECTION 3: WEEK ONE ═══ -->
+    <div class="fm-section" id="fm-sec-w1" style="border-color:rgba(56,98,23,0.25);">
+      <div class="fm-section-header" style="background:#0C2012;" onclick="toggleFmSection('w1')">
+        <div>
+          <div class="fm-section-title" style="color:#6BBF3A;">🏠 Week One (Activation)</div>
+          <div class="fm-section-summary" id="fm-w1-summary">62% close→W1 · X families start/mo</div>
+        </div>
+        <span class="fm-section-chevron">▾</span>
+      </div>
+      <div class="fm-section-body">
+        <div class="fm-section-inner" style="background:#0C2012;">
+          <div class="fm-slider-grid" style="grid-template-columns:1fr;">
+            <div class="fm-slider-group">
+              <div class="fm-slider-header">
+                <span class="fm-slider-name">Close → W1 Start %</span>
+                <span class="fm-slider-val" id="fm-w1rate-val">62%</span>
+              </div>
+              <input type="range" min="30" max="100" step="1" value="62" id="fm-w1rate" class="ccf-range" oninput="updateFunnel()">
+              <div class="fm-slider-hints"><span>30%</span><span>100%</span></div>
+            </div>
+          </div>
+          <div class="fm-outputs" id="fm-w1-outputs"></div>
+          <div class="fm-insight" id="fm-w1-insight"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 4: ACTIVATION (W1→W4) ═══ -->
+    <div class="fm-section" id="fm-sec-act" style="border-color:rgba(0,150,136,0.2);">
+      <div class="fm-section-header" style="background:#0C1A1A;" onclick="toggleFmSection('act')">
+        <div>
+          <div class="fm-section-title" style="color:#26C6B0;">⚡ Activation (W1 → W4)</div>
+          <div class="fm-section-summary" id="fm-act-summary">85% W1→W2 · 78% to 30d</div>
+        </div>
+        <span class="fm-section-chevron">▾</span>
+      </div>
+      <div class="fm-section-body">
+        <div class="fm-section-inner" style="background:#0C1A1A;">
+          <div class="fm-slider-grid">
+            <div class="fm-slider-group">
+              <div class="fm-slider-header">
+                <span class="fm-slider-name">W1 → W2 %</span>
+                <span class="fm-slider-val" id="fm-w1w2-val">85%</span>
+              </div>
+              <input type="range" min="50" max="100" step="1" value="85" id="fm-w1w2" class="ccf-range" oninput="updateFunnel()">
+              <div class="fm-slider-hints"><span>50%</span><span>100%</span></div>
+            </div>
+            <div class="fm-slider-group">
+              <div class="fm-slider-header">
+                <span class="fm-slider-name">W2 → 30 days %</span>
+                <span class="fm-slider-val" id="fm-w2to30-val">78%</span>
+              </div>
+              <input type="range" min="50" max="100" step="1" value="78" id="fm-w2to30" class="ccf-range" oninput="updateFunnel()">
+              <div class="fm-slider-hints"><span>50%</span><span>100%</span></div>
+            </div>
+          </div>
+          <div class="fm-outputs" id="fm-act-outputs"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 5: RETENTION ═══ -->
+    <div class="fm-section" id="fm-sec-ret" style="border-color:rgba(200,169,81,0.2);">
+      <div class="fm-section-header" style="background:#1A170C;" onclick="toggleFmSection('ret')">
+        <div>
+          <div class="fm-section-title" style="color:var(--gold);">🔄 Retention</div>
+          <div class="fm-section-summary" id="fm-ret-summary">72% 30→60d · 68% 60→90d · 90% 90d+</div>
+        </div>
+        <span class="fm-section-chevron">▾</span>
+      </div>
+      <div class="fm-section-body">
+        <div class="fm-section-inner" style="background:#1A170C;">
+          <div class="fm-slider-grid">
+            <div class="fm-slider-group">
+              <div class="fm-slider-header">
+                <span class="fm-slider-name">30 → 60 days %</span>
+                <span class="fm-slider-val" id="fm-r60-val">72%</span>
+              </div>
+              <input type="range" min="50" max="100" step="1" value="72" id="fm-r60" class="ccf-range" oninput="updateFunnel()">
+              <div class="fm-slider-hints"><span>50%</span><span>100%</span></div>
+            </div>
+            <div class="fm-slider-group">
+              <div class="fm-slider-header">
+                <span class="fm-slider-name">60 → 90 days %</span>
+                <span class="fm-slider-val" id="fm-r90-val">68%</span>
+              </div>
+              <input type="range" min="50" max="100" step="1" value="68" id="fm-r90" class="ccf-range" oninput="updateFunnel()">
+              <div class="fm-slider-hints"><span>50%</span><span>100%</span></div>
+            </div>
+          </div>
+          <div class="fm-slider-grid" style="grid-template-columns:1fr;margin-top:0;">
+            <div class="fm-slider-group">
+              <div class="fm-slider-header">
+                <span class="fm-slider-name">90+ day retention %</span>
+                <span class="fm-slider-val" id="fm-r90p-val">90%</span>
+              </div>
+              <input type="range" min="50" max="100" step="1" value="90" id="fm-r90p" class="ccf-range" oninput="updateFunnel()">
+              <div class="fm-slider-hints"><span>50%</span><span>100%</span></div>
+            </div>
+          </div>
+          <div class="fm-outputs" id="fm-ret-outputs"></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /fm-master-body -->
+
+  <!-- ═══ FUNNEL VISUALIZATION ═══ -->
   <div style="margin-top:24px;">
-    <div class="section-title" style="font-size:14px;">🔄 RETENTION FUNNEL</div>
+    <div class="section-title" style="font-size:14px;">🔽 FUNNEL DROP-OFF</div>
     <div class="section-divider"></div>
-
-    <!-- Funnel Viz (always visible) -->
     <div class="funnel-wrap" id="funnel-viz"></div>
-    <p class="note" style="margin-bottom:16px;">Based on analysis of 358 cancelled Stripe subscriptions. Avg lifetime = 2.8 months. Avg revenue per sub = $731/mo.</p>
-
-    <!-- Collapsible Retention Sliders -->
-    <div class="ret-toggle" id="ret-toggle" onclick="toggleRetSliders()">
-      <span class="ret-toggle-label">Adjust Retention Rates</span>
-      <span class="ret-toggle-chevron">▾</span>
-    </div>
-    <div class="ret-sliders-wrap" id="ret-sliders-wrap">
-      <div class="ret-sliders-grid">
-        <div class="ret-slider-group">
-          <div class="ret-slider-header">
-            <span class="ret-slider-name">Close → W1 %</span>
-            <span class="ret-slider-val" id="ret-w1-val">62%</span>
-          </div>
-          <input type="range" min="30" max="100" step="1" value="62" id="ret-w1-slider" class="ccf-range" oninput="updateRetention()">
-          <div class="ccf-slider-hints"><span>30%</span><span>100%</span></div>
-        </div>
-        <div class="ret-slider-group">
-          <div class="ret-slider-header">
-            <span class="ret-slider-name">W1 → W2 %</span>
-            <span class="ret-slider-val" id="ret-w2-val">85%</span>
-          </div>
-          <input type="range" min="50" max="100" step="1" value="85" id="ret-w2-slider" class="ccf-range" oninput="updateRetention()">
-          <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
-        </div>
-        <div class="ret-slider-group">
-          <div class="ret-slider-header">
-            <span class="ret-slider-name">W2 → 30 days</span>
-            <span class="ret-slider-val" id="ret-30d-val">78%</span>
-          </div>
-          <input type="range" min="50" max="100" step="1" value="78" id="ret-30d-slider" class="ccf-range" oninput="updateRetention()">
-          <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
-        </div>
-        <div class="ret-slider-group">
-          <div class="ret-slider-header">
-            <span class="ret-slider-name">30 → 60 days</span>
-            <span class="ret-slider-val" id="ret-60d-val">72%</span>
-          </div>
-          <input type="range" min="50" max="100" step="1" value="72" id="ret-60d-slider" class="ccf-range" oninput="updateRetention()">
-          <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
-        </div>
-        <div class="ret-slider-group">
-          <div class="ret-slider-header">
-            <span class="ret-slider-name">60 → 90 days</span>
-            <span class="ret-slider-val" id="ret-90d-val">68%</span>
-          </div>
-          <input type="range" min="50" max="100" step="1" value="68" id="ret-90d-slider" class="ccf-range" oninput="updateRetention()">
-          <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
-        </div>
-        <div class="ret-slider-group">
-          <div class="ret-slider-header">
-            <span class="ret-slider-name">90+ days</span>
-            <span class="ret-slider-val" id="ret-90p-val">90%</span>
-          </div>
-          <input type="range" min="50" max="100" step="1" value="90" id="ret-90p-slider" class="ccf-range" oninput="updateRetention()">
-          <div class="ccf-slider-hints"><span>50%</span><span>100%</span></div>
-        </div>
-      </div>
-    </div>
   </div>
 
-  <!-- Monthly Trend -->
+  <!-- ═══ SENSITIVITY ANALYSIS ═══ -->
   <div style="margin-top:24px;">
-    <div class="ccf-dist-title" style="margin-bottom:12px;">📅 New Sub Revenue — Last 4 Months</div>
-    <svg viewBox="0 0 460 165" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:500px;display:block;">
-      <line x1="50" y1="20" x2="450" y2="20" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-      <line x1="50" y1="57" x2="450" y2="57" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-      <line x1="50" y1="94" x2="450" y2="94" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-      <text x="46" y="24" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$40K</text>
-      <text x="46" y="61" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$27K</text>
-      <text x="46" y="98" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$13K</text>
-      <text x="46" y="128" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$0</text>
-      <line x1="50" y1="125" x2="450" y2="125" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <rect x="65" y="116" width="65" height="9" rx="3" fill="#104791" opacity="0.75"/>
-      <text x="97" y="111" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">$3.4K</text>
-      <text x="97" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Dec</text>
-      <text x="97" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">6 subs</text>
-      <rect x="165" y="78" width="65" height="47" rx="3" fill="#386217" opacity="0.75"/>
-      <text x="197" y="73" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">$18K</text>
-      <text x="197" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Jan</text>
-      <text x="197" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">36 subs</text>
-      <rect x="265" y="113" width="65" height="12" rx="3" fill="#104791" opacity="0.75"/>
-      <text x="297" y="108" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">$4.6K</text>
-      <text x="297" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Feb</text>
-      <text x="297" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">8 subs</text>
-      <rect x="365" y="29" width="65" height="96" rx="3" fill="#C8A951" opacity="0.9"/>
-      <text x="397" y="23" text-anchor="middle" font-family="Archivo Black" font-size="10" fill="#C8A951">$36.8K</text>
-      <text x="397" y="140" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">Mar</text>
-      <text x="397" y="151" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.25)">40 subs</text>
-    </svg>
+    <div class="section-title" style="font-size:14px;">🎯 HIGHEST IMPACT LEVERS</div>
+    <div class="section-divider"></div>
+    <p style="font-size:11px;color:rgba(251,248,243,0.4);margin-bottom:14px;">Which input improvement adds the most monthly revenue?</p>
+    <div id="fm-sensitivity"></div>
+  </div>
+
+  <!-- ═══ 12-MONTH PROJECTION ═══ -->
+  <div style="margin-top:36px;">
+    <div class="section-title" style="font-size:14px;">📈 12-MONTH REVENUE PROJECTION</div>
+    <div class="section-divider"></div>
+    <div style="overflow-x:auto;">
+      <svg id="projection-chart" viewBox="0 0 900 300" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:960px;display:block;"></svg>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;">
+      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#C8A951;"></div>Current Settings</div>
+      <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#4CAF50;"></div>+10% Retention</div>
+    </div>
+    <div id="projection-table" style="margin-top:16px;"></div>
   </div>
 
   <!-- Known Monthly Costs & Net -->
   <div style="margin-top:24px;">
-    <div class="ccf-dist-title" style="margin-bottom:12px;">💼 Known Monthly Costs vs Projected Net</div>
+    <div class="section-title" style="font-size:14px;">💼 Known Monthly Costs vs Projected Net</div>
+    <div class="section-divider"></div>
     <div class="ccf-costs-rows">
       <div class="ccf-cost-row">
         <div><div class="ccf-cost-name">Mentor costs ✅</div><div class="ccf-cost-note">Supabase invoices · March MTD · 26 mentors</div></div>
@@ -711,51 +727,28 @@ svg.mrr-chart{width:100%;overflow:visible;}
       </div>
       <div class="ccf-cost-row">
         <div><div class="ccf-cost-name">Ad spend ✅</div><div class="ccf-cost-note">Meta Ads API · March MTD</div></div>
-        <div class="ccf-cost-amt">−$4,201</div>
+        <div class="ccf-cost-amt" id="fm-cost-ads">−$4,201</div>
       </div>
       <div class="ccf-cost-row" style="background:rgba(224,82,82,0.05);border:1px solid rgba(224,82,82,0.12);border-radius:8px;">
         <div><div class="ccf-cost-name" style="font-weight:700;">Total known costs / month</div></div>
-        <div class="ccf-cost-amt" style="font-size:15px;">−$19,566</div>
+        <div class="ccf-cost-amt" style="font-size:15px;" id="fm-cost-total">−$19,566</div>
       </div>
     </div>
     <div class="ccf-net-row">
       <div>
         <div class="ccf-net-label">Projected Monthly Net</div>
-        <div style="font-size:10px;color:rgba(251,248,243,0.3);margin-top:3px;">Based on 4-week forecast pace · known costs only</div>
+        <div style="font-size:10px;color:rgba(251,248,243,0.3);margin-top:3px;">MRR + new close rev − known costs</div>
       </div>
-      <div class="ccf-net-val" id="ccf-monthly-net">$55,912</div>
+      <div class="ccf-net-val" id="fm-monthly-net">$55,912</div>
     </div>
     <p class="note">⚠️ Full P&amp;L requires payroll (Rye, Norri, Harry) + rent + misc from Xero. Known costs only shown above.</p>
   </div>
 </div>
 
-<!-- ═══ 4. 12-MONTH REVENUE PROJECTION ═══ -->
-<div class="section" id="projection-section">
-  <div class="section-title">📈 12-MONTH REVENUE PROJECTION</div>
-  <div class="section-divider"></div>
-  <div style="overflow-x:auto;">
-    <svg id="projection-chart" viewBox="0 0 900 300" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:960px;display:block;"></svg>
-  </div>
-  <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;">
-    <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#C8A951;"></div>Current Retention</div>
-    <div class="ccf-legend-item"><div class="ccf-legend-dot" style="background:#4CAF50;"></div>Target Retention (+10%)</div>
-  </div>
-  <div id="projection-table" style="margin-top:16px;"></div>
-</div>
-
-<!-- ═══ 5. LTV IMPACT CALCULATOR ═══ -->
-<div class="section" id="ltv-section">
-  <div class="section-title">💎 LTV IMPACT CALCULATOR</div>
-  <div class="section-divider"></div>
-  <div class="ltv-grid" id="ltv-cards"></div>
-  <div id="ltv-delta-row" style="text-align:center;margin-top:16px;"></div>
-</div>
-
-<!-- ═══ 6. MRR TRAJECTORY ═══ -->
+<!-- ═══ 4. MRR TRAJECTORY ═══ -->
 <div class="section">
   <div class="section-title">📈 MRR TRAJECTORY — NEXT 12 WEEKS</div>
   <div class="section-divider"></div>
-
   <svg class="mrr-chart" viewBox="0 0 900 220" preserveAspectRatio="xMidYMid meet" style="height:220px;">
     <line x1="70" y1="20" x2="880" y2="20" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
     <line x1="70" y1="57" x2="880" y2="57" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
@@ -790,7 +783,6 @@ svg.mrr-chart{width:100%;overflow:visible;}
     <rect x="165" y="26" width="110" height="18" rx="4" fill="rgba(232,160,48,0.1)" stroke="rgba(232,160,48,0.3)" stroke-width="1"/>
     <text x="220" y="39" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#E8A030">⚠️ PROJECTED</text>
   </svg>
-
   <div class="pace-callout">
     <div class="pace-item">
       <div class="pace-label" style="color:var(--cream);">Current MRR</div>
@@ -815,7 +807,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
   </div>
 </div>
 
-<!-- ═══ 7. REVENUE BY SOURCE ═══ -->
+<!-- ═══ 5. REVENUE BY SOURCE ═══ -->
 <div class="section">
   <div class="section-title">🥧 REVENUE BY SOURCE ✅</div>
   <div class="section-divider"></div>
@@ -836,7 +828,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
   </div>
 </div>
 
-<!-- ═══ 8. UNIT ECONOMICS ═══ -->
+<!-- ═══ 6. UNIT ECONOMICS ═══ -->
 <div class="section">
   <div class="section-title">📐 UNIT ECONOMICS</div>
   <div class="section-divider"></div>
@@ -881,7 +873,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
   </div>
 </div>
 
-<!-- ═══ 9. MONTHLY P&L ═══ -->
+<!-- ═══ 7. MONTHLY P&L ═══ -->
 <div class="section">
   <div class="section-title">💰 MONTHLY P&L — MARCH 2026</div>
   <div class="section-divider"></div>
@@ -918,7 +910,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
   </div>
 </div>
 
-<!-- ═══ 10. FAILED PAYMENTS ═══ -->
+<!-- ═══ 8. FAILED PAYMENTS ═══ -->
 <div class="section">
   <div class="section-title">⚠️ FAILED PAYMENTS — LAST 7 DAYS ✅</div>
   <div class="section-divider"></div>
@@ -958,7 +950,7 @@ svg.mrr-chart{width:100%;overflow:visible;}
 <div class="section" id="paused-section" style="border-color:rgba(232,160,48,0.2);">
   <div class="section-title" style="color:var(--amber);">⏸️ PAUSED COLLECTIONS — $20,912/MONTH FROZEN</div>
   <div class="section-divider" style="background:linear-gradient(to right,rgba(232,160,48,0.3),transparent);"></div>
-  <p style="font-size:12px;color:rgba(251,248,243,0.45);margin-bottom:20px;">These subscriptions are active in Stripe but collection is paused. They're excluded from the forecast above. Review urgently — some are marked Churn in HubSpot but never cancelled.</p>
+  <p style="font-size:12px;color:rgba(251,248,243,0.45);margin-bottom:20px;">These 8 subscriptions are active in Stripe but collection is paused. They're excluded from the forecast above. All are still doing sessions — why aren't they paying?</p>
   <div id="paused-summary-stats"></div>
   <div id="paused-churn-group"></div>
   <div id="paused-active-group"></div>
@@ -978,97 +970,406 @@ svg.mrr-chart{width:100%;overflow:visible;}
 </div>
 
 <script>
-// ═══ GLOBAL STATE ═══
-var STATE = {
-  closesPerWeek: 7,
-  avgPayment: 699,
-  // Tier split
-  tierBB: 56, tierLH: 37, tierOther: 7,
-  // Payment split
-  payUpfront: 16, payWeekly: 47, payMonthly: 23, payOther: 14,
-  // Retention
-  closeToW1: 62, w1ToW2: 85,
-  retW2to30: 78, ret30to60: 72, ret60to90: 68, ret90plus: 90,
+// ═══ FUNNEL MODEL STATE ═══
+var FM = {
+  adSpendPerDay: 140,
+  cpbc: 25,
+  showRate: 45,
+  closeRate: 37,
+  closeToW1: 62,
+  w1ToW2: 85,
+  w2To30d: 78,
+  ret30to60: 72,
+  ret60to90: 68,
+  ret90plus: 90,
   avgMonthlyRev: 731,
-  invoiceData: null
+  mentorCostPerMonth: 84.85
 };
 
-// Tier avg first payments
-var TIER_AVG = {bb: 947, lh: 425, other: 211};
-
-var LOCKED_IN = 20693; // paused subs excluded
-var NDIS_TOTAL = 11249;
-var NDIS_PER_WEEK = 2812;
-var EXISTING_SUBS = [8051, 3358, 4656, 4628]; // paused subs removed
-var WEEK_LABELS = ['Mar 21–27', 'Mar 28–Apr 3', 'Apr 4–10', 'Apr 11–17'];
-var MONTHLY_COSTS = 19566;
-var INVOICE_OPEN_TOTAL = 10134;
-
-var SCENARIOS = {
-  conservative: {closes:4, bb:40, lh:50, other:10, upfront:10, weekly:55, monthly:25, payother:10, w1:55, w2:80, r30:70, r60:65, r90:60, r90p:85},
-  current:      {closes:7, bb:56, lh:37, other:7, upfront:16, weekly:47, monthly:23, payother:14, w1:62, w2:85, r30:78, r60:72, r90:68, r90p:90},
-  aggressive:   {closes:15, bb:60, lh:35, other:5, upfront:20, weekly:45, monthly:25, payother:10, w1:75, w2:90, r30:85, r60:80, r90:78, r90p:92},
-  dream:        {closes:25, bb:65, lh:30, other:5, upfront:25, weekly:40, monthly:25, payother:10, w1:80, w2:95, r30:90, r60:85, r90:82, r90p:95}
+var FM_SCENARIOS = {
+  conservative: {adSpendPerDay:100,cpbc:35,showRate:40,closeRate:30,closeToW1:55,w1ToW2:80,w2To30d:70,ret30to60:65,ret60to90:60,ret90plus:85},
+  current:      {adSpendPerDay:140,cpbc:25,showRate:45,closeRate:37,closeToW1:62,w1ToW2:85,w2To30d:78,ret30to60:72,ret60to90:68,ret90plus:90},
+  aggressive:   {adSpendPerDay:200,cpbc:22,showRate:50,closeRate:42,closeToW1:75,w1ToW2:90,w2To30d:82,ret30to60:78,ret60to90:78,ret90plus:92},
+  dream:        {adSpendPerDay:300,cpbc:20,showRate:55,closeRate:48,closeToW1:80,w1ToW2:95,w2To30d:88,ret30to60:85,ret60to90:85,ret90plus:95}
 };
 
-function fmtNum(n){ return '$'+Math.round(n).toLocaleString('en-AU'); }
-function fmt(n){ return '$'+n.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+var MONTHLY_COSTS_BASE = 15365; // mentor + payroll + software (excl ads)
+
+function fmtNum(n){return '$'+Math.round(n).toLocaleString('en-AU');}
+function fmt(n){return '$'+n.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function fmtDate(d){
-  var p=d.split('-');
-  var months=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var p=d.split('-');var months=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   return p[2]+' '+months[parseInt(p[1])];
 }
-function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
-// ═══ TIER & PAYMENT SPLIT HANDLERS ═══
-function calcAvgPayment(){
-  return Math.round((STATE.tierBB/100)*TIER_AVG.bb + (STATE.tierLH/100)*TIER_AVG.lh + (STATE.tierOther/100)*TIER_AVG.other);
+// ═══ FUNNEL MATH ═══
+function calcFunnel(){
+  var monthlySpend = FM.adSpendPerDay * 30;
+  var bookedCallsMonthly = FM.cpbc > 0 ? monthlySpend / FM.cpbc : 0;
+  var bookedCallsWeekly = bookedCallsMonthly / 4.33;
+  var dcsTaken = bookedCallsMonthly * (FM.showRate / 100);
+  var dcsTakenWeekly = dcsTaken / 4.33;
+  var closes = dcsTaken * (FM.closeRate / 100);
+  var closesWeekly = closes / 4.33;
+  var cac = closes > 0 ? monthlySpend / closes : 0;
+  var w1Starts = closes * (FM.closeToW1 / 100);
+  var w1Lost = closes - w1Starts;
+  var revLostActivation = w1Lost * 699;
+  var w2 = w1Starts * (FM.w1ToW2 / 100);
+  var at30d = w2 * (FM.w2To30d / 100);
+  var dropW1to30 = w1Starts - at30d;
+  var at60d = at30d * (FM.ret30to60 / 100);
+  var at90d = at60d * (FM.ret60to90 / 100);
+  var longTerm = at90d * (FM.ret90plus / 100);
+
+  // Average lifetime (geometric series)
+  var r90p = FM.ret90plus / 100;
+  var avgLifetimeMonths = 1 + ((FM.w1ToW2/100) * (1 + (FM.w2To30d/100) * (1 + (FM.ret30to60/100) * (1 + (FM.ret60to90/100) * (r90p < 1 ? (1 / (1 - r90p)) : 12)))));
+
+  var ltv = avgLifetimeMonths * FM.avgMonthlyRev;
+  var ltgp = ltv - (avgLifetimeMonths * FM.mentorCostPerMonth);
+  var cacLtvRatio = cac > 0 ? ltv / cac : 0;
+  var paybackDays = cac / (FM.avgMonthlyRev / 30);
+  var monthlyNewRevenue = w1Starts * 699; // first payment revenue per month
+
+  return {
+    monthlySpend:monthlySpend, bookedCallsMonthly:bookedCallsMonthly, bookedCallsWeekly:bookedCallsWeekly,
+    dcsTaken:dcsTaken, dcsTakenWeekly:dcsTakenWeekly, closes:closes, closesWeekly:closesWeekly, cac:cac,
+    w1Starts:w1Starts, w1Lost:w1Lost, revLostActivation:revLostActivation,
+    w2:w2, at30d:at30d, dropW1to30:dropW1to30,
+    at60d:at60d, at90d:at90d, longTerm:longTerm,
+    avgLifetimeMonths:avgLifetimeMonths, ltv:ltv, ltgp:ltgp,
+    cacLtvRatio:cacLtvRatio, paybackDays:paybackDays, monthlyNewRevenue:monthlyNewRevenue
+  };
 }
 
-window.updateTierSplit = function(){
-  var bb = parseInt(document.getElementById('tier-bb').value) || 0;
-  var lh = parseInt(document.getElementById('tier-lh').value) || 0;
-  // Enforce: if bb+lh > 100, clamp lh
-  if(bb + lh > 100) { lh = 100 - bb; document.getElementById('tier-lh').value = lh; }
-  var other = 100 - bb - lh;
-  STATE.tierBB = bb; STATE.tierLH = lh; STATE.tierOther = other;
-  document.getElementById('tier-bb-val').textContent = bb + '%';
-  document.getElementById('tier-lh-val').textContent = lh + '%';
-  document.getElementById('tier-other-val').textContent = other + '%';
-  document.getElementById('tier-other').value = other;
-  var total = bb + lh + other;
-  var totalEl = document.getElementById('tier-total');
-  totalEl.textContent = total + '%';
-  totalEl.classList.toggle('error', total !== 100);
-  STATE.avgPayment = calcAvgPayment();
-  updateAll();
+// ═══ SLIDER TRACK FILL ═══
+function fillTrack(id,val,min,max){
+  var el=document.getElementById(id);if(!el)return;
+  var pct=Math.max(0,Math.min(100,(val-min)/(max-min)*100)).toFixed(1);
+  el.style.background='linear-gradient(to right,#104791 0%,#104791 '+pct+'%,rgba(255,255,255,0.1) '+pct+'%)';
+}
+
+// ═══ READ ALL SLIDERS ═══
+function readSliders(){
+  FM.adSpendPerDay=parseInt(document.getElementById('fm-adspend').value)||0;
+  FM.cpbc=parseInt(document.getElementById('fm-cpbc').value)||25;
+  FM.showRate=parseInt(document.getElementById('fm-show').value)||45;
+  FM.closeRate=parseInt(document.getElementById('fm-close').value)||37;
+  FM.closeToW1=parseInt(document.getElementById('fm-w1rate').value)||62;
+  FM.w1ToW2=parseInt(document.getElementById('fm-w1w2').value)||85;
+  FM.w2To30d=parseInt(document.getElementById('fm-w2to30').value)||78;
+  FM.ret30to60=parseInt(document.getElementById('fm-r60').value)||72;
+  FM.ret60to90=parseInt(document.getElementById('fm-r90').value)||68;
+  FM.ret90plus=parseInt(document.getElementById('fm-r90p').value)||90;
+}
+
+// ═══ MASTER UPDATE ═══
+window.updateFunnel = function(){
+  readSliders();
+  var f = calcFunnel();
+
+  // Update slider displays
+  document.getElementById('fm-adspend-val').textContent = '$'+FM.adSpendPerDay;
+  document.getElementById('fm-cpbc-val').textContent = '$'+FM.cpbc;
+  document.getElementById('fm-show-val').textContent = FM.showRate+'%';
+  document.getElementById('fm-close-val').textContent = FM.closeRate+'%';
+  document.getElementById('fm-w1rate-val').textContent = FM.closeToW1+'%';
+  document.getElementById('fm-w1w2-val').textContent = FM.w1ToW2+'%';
+  document.getElementById('fm-w2to30-val').textContent = FM.w2To30d+'%';
+  document.getElementById('fm-r60-val').textContent = FM.ret30to60+'%';
+  document.getElementById('fm-r90-val').textContent = FM.ret60to90+'%';
+  document.getElementById('fm-r90p-val').textContent = FM.ret90plus+'%';
+
+  // Slider tracks
+  fillTrack('fm-adspend',FM.adSpendPerDay,0,500);
+  fillTrack('fm-cpbc',FM.cpbc,15,80);
+  fillTrack('fm-show',FM.showRate,20,80);
+  fillTrack('fm-close',FM.closeRate,15,60);
+  fillTrack('fm-w1rate',FM.closeToW1,30,100);
+  fillTrack('fm-w1w2',FM.w1ToW2,50,100);
+  fillTrack('fm-w2to30',FM.w2To30d,50,100);
+  fillTrack('fm-r60',FM.ret30to60,50,100);
+  fillTrack('fm-r90',FM.ret60to90,50,100);
+  fillTrack('fm-r90p',FM.ret90plus,50,100);
+
+  // Section summaries
+  document.getElementById('fm-ads-summary').textContent = '$'+FM.adSpendPerDay+'/day · $'+FM.cpbc+' CPBC · '+Math.round(f.bookedCallsMonthly)+' calls/mo';
+  document.getElementById('fm-dcs-summary').textContent = FM.showRate+'% show · '+FM.closeRate+'% close · ~'+Math.round(f.closes)+' closes/mo';
+  document.getElementById('fm-w1-summary').textContent = FM.closeToW1+'% close→W1 · '+f.w1Starts.toFixed(1)+' families start/mo';
+  document.getElementById('fm-act-summary').textContent = FM.w1ToW2+'% W1→W2 · '+FM.w2To30d+'% to 30d · '+f.at30d.toFixed(1)+' at 30d';
+  document.getElementById('fm-ret-summary').textContent = FM.ret30to60+'% 30→60d · '+FM.ret60to90+'% 60→90d · '+FM.ret90plus+'% 90d+';
+
+  // Section outputs
+  document.getElementById('fm-ads-outputs').innerHTML =
+    '<div class="fm-output">Monthly spend: <strong>'+fmtNum(f.monthlySpend)+'</strong></div>'+
+    '<div class="fm-output">Booked calls/mo: <strong>'+Math.round(f.bookedCallsMonthly)+'</strong></div>'+
+    '<div class="fm-output">Booked calls/wk: <strong>'+f.bookedCallsWeekly.toFixed(1)+'</strong></div>';
+
+  document.getElementById('fm-dcs-outputs').innerHTML =
+    '<div class="fm-output">DCs taken/mo: <strong>'+Math.round(f.dcsTaken)+'</strong></div>'+
+    '<div class="fm-output">DCs taken/wk: <strong>'+f.dcsTakenWeekly.toFixed(1)+'</strong></div>'+
+    '<div class="fm-output">Closes/mo: <strong>'+Math.round(f.closes)+'</strong></div>'+
+    '<div class="fm-output">Closes/wk: <strong>'+f.closesWeekly.toFixed(1)+'</strong></div>'+
+    '<div class="fm-output">CAC: <strong>'+fmtNum(f.cac)+'</strong></div>';
+
+  document.getElementById('fm-w1-outputs').innerHTML =
+    '<div class="fm-output">Families starting W1/mo: <strong>'+f.w1Starts.toFixed(1)+'</strong></div>'+
+    '<div class="fm-output">Families lost (no start): <strong>'+f.w1Lost.toFixed(1)+'</strong></div>'+
+    '<div class="fm-output">Revenue lost from gap: <strong>'+fmtNum(f.revLostActivation)+'</strong></div>';
+
+  // W1 insight
+  var improvedW1 = Math.min(100, FM.closeToW1 + 18);
+  var improvedStarts = f.closes * (improvedW1 / 100);
+  var extraFamilies = improvedStarts - f.w1Starts;
+  var extraRev = extraFamilies * 699;
+  document.getElementById('fm-w1-insight').innerHTML =
+    '💡 Improving Close→W1 from <strong>'+FM.closeToW1+'%</strong> to <strong>'+improvedW1+'%</strong> = <strong>+'+extraFamilies.toFixed(1)+'</strong> more families/month = <strong>+'+fmtNum(extraRev)+'</strong> revenue';
+
+  document.getElementById('fm-act-outputs').innerHTML =
+    '<div class="fm-output">Families at W2: <strong>'+f.w2.toFixed(1)+'</strong></div>'+
+    '<div class="fm-output">Families at 30d: <strong>'+f.at30d.toFixed(1)+'</strong></div>'+
+    '<div class="fm-output">Drop-off W1→30d: <strong>'+f.dropW1to30.toFixed(1)+'</strong></div>';
+
+  document.getElementById('fm-ret-outputs').innerHTML =
+    '<div class="fm-output">Families at 60d: <strong>'+f.at60d.toFixed(1)+'</strong></div>'+
+    '<div class="fm-output">Families at 90d: <strong>'+f.at90d.toFixed(1)+'</strong></div>'+
+    '<div class="fm-output">Long-term: <strong>'+f.longTerm.toFixed(1)+'</strong></div>'+
+    '<div class="fm-output">Avg lifetime: <strong>'+f.avgLifetimeMonths.toFixed(1)+' mo</strong></div>'+
+    '<div class="fm-output">LTV: <strong>'+fmtNum(f.ltv)+'</strong></div>'+
+    '<div class="fm-output">LTGP: <strong>'+fmtNum(f.ltgp)+'</strong></div>';
+
+  // Summary strip
+  renderSummaryStrip(f);
+
+  // Scenario buttons
+  ['conservative','current','aggressive','dream'].forEach(function(key){
+    var s = FM_SCENARIOS[key];
+    var btn = document.getElementById('fm-btn-'+key);
+    // Quick calc for button totals
+    var ms = s.adSpendPerDay*30;
+    var bc = s.cpbc>0?ms/s.cpbc:0;
+    var dc = bc*(s.showRate/100);
+    var cl = dc*(s.closeRate/100);
+    var totalEl = document.getElementById('fm-btn-total-'+key);
+    if(totalEl) totalEl.textContent = Math.round(cl)+' closes/mo';
+    if(btn){
+      var match = FM.adSpendPerDay===s.adSpendPerDay && FM.cpbc===s.cpbc && FM.showRate===s.showRate && FM.closeRate===s.closeRate;
+      btn.classList.toggle('active', match);
+    }
+  });
+
+  // Toggle summary text
+  document.getElementById('fm-toggle-summary').textContent =
+    Math.round(f.closes)+' closes → '+f.w1Starts.toFixed(0)+' W1 starts → '+f.longTerm.toFixed(1)+' long-term/mo · LTV '+fmtNum(f.ltv);
+
+  // Costs
+  var totalCosts = MONTHLY_COSTS_BASE + f.monthlySpend;
+  document.getElementById('fm-cost-ads').textContent = '−'+fmtNum(f.monthlySpend);
+  document.getElementById('fm-cost-total').textContent = '−'+fmtNum(totalCosts);
+  document.getElementById('fm-monthly-net').textContent = fmtNum(67287 + f.monthlyNewRevenue - totalCosts);
+
+  // Render sub-components
+  renderFunnelViz(f);
+  renderSensitivity(f);
+  renderProjection(f);
 };
 
-window.updatePaySplit = function(){
-  var up = parseInt(document.getElementById('pay-upfront').value) || 0;
-  var wk = parseInt(document.getElementById('pay-weekly').value) || 0;
-  var mo = parseInt(document.getElementById('pay-monthly').value) || 0;
-  if(up + wk + mo > 100) { mo = 100 - up - wk; if(mo<0){wk=100-up;mo=0;} document.getElementById('pay-monthly').value = mo; }
-  var oth = 100 - up - wk - mo;
-  STATE.payUpfront = up; STATE.payWeekly = wk; STATE.payMonthly = mo; STATE.payOther = oth;
-  document.getElementById('pay-upfront-val').textContent = up + '%';
-  document.getElementById('pay-weekly-val').textContent = wk + '%';
-  document.getElementById('pay-monthly-val').textContent = mo + '%';
-  document.getElementById('pay-other-val').textContent = oth + '%';
-  document.getElementById('pay-other').value = oth;
-  var total = up + wk + mo + oth;
-  var totalEl = document.getElementById('pay-total');
-  totalEl.textContent = total + '%';
-  totalEl.classList.toggle('error', total !== 100);
-  updateAll();
-};
+// ═══ SUMMARY STRIP ═══
+function renderSummaryStrip(f){
+  var html = '';
+  html += '<div class="fm-summary-card"><div class="fm-summary-card-lbl">Closes/mo</div><div class="fm-summary-card-val">'+Math.round(f.closes)+'</div><div class="fm-summary-card-note">'+f.closesWeekly.toFixed(1)+'/wk</div></div>';
+  html += '<div class="fm-summary-card"><div class="fm-summary-card-lbl">W1 Starts/mo</div><div class="fm-summary-card-val">'+Math.round(f.w1Starts)+'</div><div class="fm-summary-card-note">'+FM.closeToW1+'% activation</div></div>';
+  html += '<div class="fm-summary-card"><div class="fm-summary-card-lbl">Active @ 90d</div><div class="fm-summary-card-val">'+f.at90d.toFixed(1)+'</div><div class="fm-summary-card-note">per monthly cohort</div></div>';
+  html += '<div class="fm-summary-card"><div class="fm-summary-card-lbl">CAC</div><div class="fm-summary-card-val" style="color:#5a9fd4;">'+fmtNum(f.cac)+'</div><div class="fm-summary-card-note">ad spend ÷ closes</div></div>';
+  html += '<div class="fm-summary-card highlight"><div class="fm-summary-card-lbl">LTV</div><div class="fm-summary-card-val">'+fmtNum(f.ltv)+'</div><div class="fm-summary-card-note">'+f.avgLifetimeMonths.toFixed(1)+' mo × $731</div></div>';
+  html += '<div class="fm-summary-card highlight"><div class="fm-summary-card-lbl">CAC:LTV</div><div class="fm-summary-card-val" style="color:#4CAF50;">1:'+f.cacLtvRatio.toFixed(1)+'</div><div class="fm-summary-card-note">target >1:3 ✓</div></div>';
+  html += '<div class="fm-summary-card"><div class="fm-summary-card-lbl">New Revenue/mo</div><div class="fm-summary-card-val">'+fmtNum(f.monthlyNewRevenue)+'</div><div class="fm-summary-card-note">W1 starts × $699</div></div>';
+  html += '<div class="fm-summary-card"><div class="fm-summary-card-lbl">Payback</div><div class="fm-summary-card-val" style="color:#4CAF50;">'+Math.round(f.paybackDays)+'d</div><div class="fm-summary-card-note">CAC ÷ daily rev</div></div>';
+  document.getElementById('fm-summary-strip').innerHTML = html;
+}
 
-// ═══ RETENTION TOGGLE ═══
-window.toggleRetSliders = function(){
-  var toggle = document.getElementById('ret-toggle');
-  var wrap = document.getElementById('ret-sliders-wrap');
+// ═══ FUNNEL VISUALIZATION ═══
+function renderFunnelViz(f){
+  var stages = [
+    {name:'Booked Calls',count:f.bookedCallsMonthly,pct:100},
+    {name:'DCs Taken',count:f.dcsTaken,pct:FM.showRate},
+    {name:'Closes',count:f.closes,pct:FM.closeRate},
+    {name:'W1 Start',count:f.w1Starts,pct:FM.closeToW1},
+    {name:'W2',count:f.w2,pct:FM.w1ToW2},
+    {name:'30 Days',count:f.at30d,pct:FM.w2To30d},
+    {name:'60 Days',count:f.at60d,pct:FM.ret30to60},
+    {name:'90 Days',count:f.at90d,pct:FM.ret60to90},
+    {name:'Long-term',count:f.longTerm,pct:FM.ret90plus}
+  ];
+  var maxCount = stages[0].count || 1;
+  var html = '';
+  stages.forEach(function(s,i){
+    var widthPct = Math.max(8, Math.round(s.count / maxCount * 100));
+    var monthlyRev = s.count * FM.avgMonthlyRev;
+    var color = s.pct >= 80 ? '#386217' : (s.pct >= 70 ? '#C8A951' : '#E05252');
+    if(i === 0) color = '#104791';
+    html += '<div class="funnel-stage">';
+    html += '<div class="funnel-stage-info"><div class="funnel-stage-name">'+s.name+'</div><div class="funnel-stage-val">'+s.count.toFixed(1)+' · '+fmtNum(monthlyRev)+'/mo</div></div>';
+    html += '<div class="funnel-bar" style="width:'+widthPct+'%;background:'+color+';"><span class="funnel-bar-label">'+(i>0?s.pct+'%':Math.round(s.count))+'</span></div>';
+    html += '</div>';
+  });
+  document.getElementById('funnel-viz').innerHTML = html;
+}
+
+// ═══ SENSITIVITY ANALYSIS ═══
+function renderSensitivity(f){
+  // Calculate impact of improving each input by 5pp (or $20 for dollar amounts)
+  var levers = [
+    {name:'Ad Spend +$20/day',key:'adSpendPerDay',delta:20,type:'dollar'},
+    {name:'CPBC −$5',key:'cpbc',delta:-5,type:'dollar'},
+    {name:'Show Rate +5%',key:'showRate',delta:5,type:'pct'},
+    {name:'Close Rate +5%',key:'closeRate',delta:5,type:'pct'},
+    {name:'Close→W1 +5%',key:'closeToW1',delta:5,type:'pct'},
+    {name:'W1→W2 +5%',key:'w1ToW2',delta:5,type:'pct'},
+    {name:'W2→30d +5%',key:'w2To30d',delta:5,type:'pct'},
+    {name:'30→60d +5%',key:'ret30to60',delta:5,type:'pct'},
+    {name:'60→90d +5%',key:'ret60to90',delta:5,type:'pct'},
+    {name:'90d+ +5%',key:'ret90plus',delta:5,type:'pct'}
+  ];
+
+  var baseNewRev = f.monthlyNewRevenue;
+  var results = [];
+
+  levers.forEach(function(lever){
+    var saved = FM[lever.key];
+    FM[lever.key] = saved + lever.delta;
+    // Clamp percentage values
+    if(lever.type === 'pct') FM[lever.key] = Math.min(100, FM[lever.key]);
+    var improved = calcFunnel();
+    var impact = improved.monthlyNewRevenue - baseNewRev;
+    // Also consider LTV impact (long-term revenue improvement)
+    var ltvImpact = improved.ltv - f.ltv;
+    results.push({name:lever.name, impact:impact, ltvImpact:ltvImpact, totalImpact:impact});
+    FM[lever.key] = saved;
+  });
+
+  results.sort(function(a,b){return Math.abs(b.totalImpact) - Math.abs(a.totalImpact);});
+  var maxImpact = Math.abs(results[0].totalImpact) || 1;
+
+  var html = '';
+  var shown = Math.min(results.length, 6);
+  for(var i = 0; i < shown; i++){
+    var r = results[i];
+    var widthPct = Math.max(8, Math.round(Math.abs(r.totalImpact) / maxImpact * 100));
+    var opacity = 1 - (i * 0.12);
+    var color = i === 0 ? '#C8A951' : (i < 3 ? 'rgba(200,169,81,'+opacity+')' : 'rgba(251,248,243,'+(0.2)+')');
+    var sign = r.totalImpact >= 0 ? '+' : '';
+    html += '<div class="fm-lever-row">';
+    html += '<div class="fm-lever-rank">'+(i+1)+'</div>';
+    html += '<div class="fm-lever-bar" style="width:'+widthPct+'%;background:'+color+';"><span class="fm-lever-name">'+r.name+'</span></div>';
+    html += '<div class="fm-lever-impact">'+sign+fmtNum(r.totalImpact)+'/mo</div>';
+    html += '</div>';
+  }
+  document.getElementById('fm-sensitivity').innerHTML = html;
+}
+
+// ═══ 12-MONTH PROJECTION ═══
+function renderProjection(f){
+  var months = [];
+  var activeFamilies = 92;
+  var rev = FM.avgMonthlyRev;
+  var monthlyRetention = Math.pow((FM.w2To30d/100)*(FM.ret30to60/100),0.5);
+  var newPerMonth = f.w1Starts * (FM.w1ToW2/100);
+  var targetRetention = Math.pow(Math.min(1,(FM.w2To30d+10)/100)*Math.min(1,(FM.ret30to60+10)/100),0.5);
+  var activeCurrent = activeFamilies;
+  var activeTarget = activeFamilies;
+  for(var m=1;m<=12;m++){
+    var churned=activeCurrent*(1-monthlyRetention);
+    activeCurrent=activeCurrent-churned+newPerMonth;
+    var revCurrent=activeCurrent*rev;
+    var churnedTarget=activeTarget*(1-targetRetention);
+    activeTarget=activeTarget-churnedTarget+newPerMonth;
+    var revTarget=activeTarget*rev;
+    months.push({month:m,activeCurrent:activeCurrent,revCurrent:revCurrent,activeTarget:activeTarget,revTarget:revTarget,newAdded:newPerMonth,churned:churned});
+  }
+
+  var svg=document.getElementById('projection-chart');
+  var vW=900,vH=300,mL=70,mR=30,mT=30,mB=50;
+  var plotW=vW-mL-mR,plotH=vH-mT-mB;
+  var maxRev=Math.max.apply(null,months.map(function(m){return Math.max(m.revCurrent,m.revTarget);}));
+  maxRev=Math.max(maxRev,80000);
+  var scaleMax=maxRev*1.15;
+  var scale=plotH/scaleMax;
+  var stepX=plotW/11;
+  var html='';
+  var tickStep=scaleMax>300000?50000:(scaleMax>150000?25000:20000);
+  for(var t=0;t<=scaleMax;t+=tickStep){
+    var ty=mT+plotH-t*scale;if(ty<mT-2)break;
+    html+='<line x1="'+mL+'" y1="'+ty.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+ty.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
+    html+='<text x="'+(mL-8)+'" y="'+(ty+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(t/1000).toFixed(0)+'K</text>';
+  }
+  html+='<line x1="'+mL+'" y1="'+(mT+plotH)+'" x2="'+(vW-mR)+'" y2="'+(mT+plotH)+'" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>';
+  var currentPoints=months.map(function(m,i){return(mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revCurrent*scale).toFixed(0);}).join(' ');
+  html+='<polygon points="'+mL+','+(mT+plotH)+' '+currentPoints+' '+(mL+11*stepX).toFixed(0)+','+(mT+plotH)+'" fill="rgba(200,169,81,0.08)"/>';
+  html+='<polyline points="'+currentPoints+'" fill="none" stroke="#C8A951" stroke-width="2.5" stroke-linejoin="round"/>';
+  var targetPoints=months.map(function(m,i){return(mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revTarget*scale).toFixed(0);}).join(' ');
+  html+='<polyline points="'+targetPoints+'" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="8,4" stroke-linejoin="round" opacity="0.8"/>';
+  months.forEach(function(m,i){
+    var x=mL+i*stepX;var y=mT+plotH-m.revCurrent*scale;
+    html+='<circle cx="'+x.toFixed(0)+'" cy="'+y.toFixed(0)+'" r="4" fill="#C8A951" stroke="rgba(10,14,20,0.8)" stroke-width="1.5"/>';
+    if(i%3===0||i===11) html+='<text x="'+x.toFixed(0)+'" y="'+(y-10).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(200,169,81,0.8)">'+fmtNum(m.revCurrent)+'</text>';
+    html+='<text x="'+x.toFixed(0)+'" y="'+(mT+plotH+16).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.4)">M'+m.month+'</text>';
+  });
+  svg.innerHTML=html;
+
+  var tableHtml='<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:11px;">';
+  tableHtml+='<thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">';
+  tableHtml+='<th style="padding:6px 8px;text-align:left;color:rgba(251,248,243,0.4);font-size:10px;letter-spacing:1px;">MONTH</th>';
+  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">ACTIVE</th>';
+  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">NEW</th>';
+  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">REVENUE</th>';
+  tableHtml+='</tr></thead><tbody>';
+  months.forEach(function(m){
+    tableHtml+='<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">';
+    tableHtml+='<td style="padding:5px 8px;color:rgba(251,248,243,0.6);">Month '+m.month+'</td>';
+    tableHtml+='<td style="padding:5px 8px;text-align:right;font-weight:600;">'+Math.round(m.activeCurrent)+'</td>';
+    tableHtml+='<td style="padding:5px 8px;text-align:right;color:#386217;">+'+Math.round(m.newAdded)+'</td>';
+    tableHtml+='<td style="padding:5px 8px;text-align:right;color:var(--gold);font-weight:700;">'+fmtNum(m.revCurrent)+'</td>';
+    tableHtml+='</tr>';
+  });
+  tableHtml+='</tbody></table></div>';
+  document.getElementById('projection-table').innerHTML=tableHtml;
+}
+
+// ═══ TOGGLE FUNCTIONS ═══
+window.toggleFunnelModel = function(){
+  var toggle = document.getElementById('fm-master-toggle');
+  var body = document.getElementById('fm-master-body');
   toggle.classList.toggle('open');
-  wrap.classList.toggle('open');
+  body.classList.toggle('open');
+};
+
+window.toggleFmSection = function(key){
+  var sec = document.getElementById('fm-sec-'+key);
+  if(sec) sec.classList.toggle('open');
+};
+
+// ═══ SCENARIO QUICK-PICKS ═══
+window.setFunnelScenario = function(key){
+  var s = FM_SCENARIOS[key];
+  if(!s) return;
+  Object.keys(s).forEach(function(k){ FM[k] = s[k]; });
+
+  // Set slider values
+  document.getElementById('fm-adspend').value = FM.adSpendPerDay;
+  document.getElementById('fm-cpbc').value = FM.cpbc;
+  document.getElementById('fm-show').value = FM.showRate;
+  document.getElementById('fm-close').value = FM.closeRate;
+  document.getElementById('fm-w1rate').value = FM.closeToW1;
+  document.getElementById('fm-w1w2').value = FM.w1ToW2;
+  document.getElementById('fm-w2to30').value = FM.w2To30d;
+  document.getElementById('fm-r60').value = FM.ret30to60;
+  document.getElementById('fm-r90').value = FM.ret60to90;
+  document.getElementById('fm-r90p').value = FM.ret90plus;
+
+  updateFunnel();
 };
 
 // ═══ DONUT CHART ═══
@@ -1113,12 +1414,12 @@ window.toggleRetSliders = function(){
   var openDayId={};
 
   function getTypePill(sub){
-    if(!sub.type || sub.type !== 'invoice') return '';
-    var status = sub.status || '';
-    if(status === 'open') return '<span class="type-pill type-pill-invoice">INVOICE</span>';
-    if(status === 'draft_fe') return '<span class="type-pill type-pill-fe-draft">FE DRAFT</span>';
-    if(status === 'draft') return '<span class="type-pill type-pill-draft">DRAFT</span>';
-    if(status === 'scheduled') return '<span class="type-pill type-pill-scheduled">SCHEDULED</span>';
+    if(!sub.type||sub.type!=='invoice') return '';
+    var status=sub.status||'';
+    if(status==='open') return '<span class="type-pill type-pill-invoice">INVOICE</span>';
+    if(status==='draft_fe') return '<span class="type-pill type-pill-fe-draft">FE DRAFT</span>';
+    if(status==='draft') return '<span class="type-pill type-pill-draft">DRAFT</span>';
+    if(status==='scheduled') return '<span class="type-pill type-pill-scheduled">SCHEDULED</span>';
     return '<span class="type-pill type-pill-invoice">INVOICE</span>';
   }
 
@@ -1126,19 +1427,19 @@ window.toggleRetSliders = function(){
     if(!subs||!subs.length) return '<div style="font-size:12px;color:rgba(251,248,243,0.3);padding:8px 4px;">No subscriber data for this day.</div>';
     var sorted=[].concat(subs).sort(function(a,b){return b.amount-a.amount;});
     return sorted.map(function(sub){
-      var pill = getTypePill(sub);
-      var intervalPill = sub.type === 'invoice' ? '' : '<span class="interval-pill">'+esc(sub.interval)+'</span>';
+      var pill=getTypePill(sub);
+      var intervalPill=sub.type==='invoice'?'':'<span class="interval-pill">'+esc(sub.interval)+'</span>';
       return '<div class="sub-card">'
         +'<div class="sub-card-left">'
           +'<div class="sub-name">'+esc(sub.name)+' '+pill+'</div>'
-          +'<div class="sub-email">'+(sub.email ? esc(sub.email) : (sub.type==='invoice' ? 'Invoice' : ''))+'</div>'
+          +'<div class="sub-email">'+(sub.email?esc(sub.email):(sub.type==='invoice'?'Invoice':''))+'</div>'
         +'</div>'
         +'<div class="sub-card-right">'
           +'<span class="sub-amount">'+fmt(sub.amount)+'</span>'
           +intervalPill
           +'<div class="sub-links">'
             +'<a href="'+esc(sub.stripe_url)+'" target="_blank" rel="noopener" class="btn-stripe">💳 Stripe</a>'
-            +(sub.hubspot_url ? '<a href="'+esc(sub.hubspot_url)+'" target="_blank" rel="noopener" class="btn-hubspot">📋 HubSpot</a>' : '')
+            +(sub.hubspot_url?'<a href="'+esc(sub.hubspot_url)+'" target="_blank" rel="noopener" class="btn-hubspot">📋 HubSpot</a>':'')
           +'</div>'
         +'</div>'
       +'</div>';
@@ -1148,11 +1449,10 @@ window.toggleRetSliders = function(){
   function renderAccordion(data){
     var container=document.getElementById('weekAccordion');
     var html='';
-    // Calculate grand total
-    var grandTotal = 0;
-    data.weeks.forEach(function(week){ grandTotal += week.total; });
-    var gtEl = document.getElementById('cashflow-grand-total');
-    if(gtEl) gtEl.textContent = fmtNum(grandTotal);
+    var grandTotal=0;
+    data.weeks.forEach(function(week){grandTotal+=week.total;});
+    var gtEl=document.getElementById('cashflow-grand-total');
+    if(gtEl) gtEl.textContent=fmtNum(grandTotal);
 
     data.weeks.forEach(function(week,i){
       var maxDay=week.days.length>0?Math.max.apply(null,week.days.map(function(d){return d.amount;})):1;
@@ -1161,12 +1461,10 @@ window.toggleRetSliders = function(){
         var pct=maxDay>0?Math.round(day.amount/maxDay*100):0;
         var dayId='day-'+i+'-'+j;
         var subCards=buildSubscriberCards(day.subscribers);
-        // Count invoice vs sub
-        var invCount = 0, subCount = 0;
-        if(day.subscribers) day.subscribers.forEach(function(s){ if(s.type==='invoice') invCount++; else subCount++; });
-        var chargeLabel = day.charges + ' charge' + (day.charges!==1?'s':'');
-        if(invCount > 0) chargeLabel = subCount + ' sub' + (subCount!==1?'s':'') + ' + ' + invCount + ' inv';
-
+        var invCount=0,subCount=0;
+        if(day.subscribers) day.subscribers.forEach(function(s){if(s.type==='invoice')invCount++;else subCount++;});
+        var chargeLabel=day.charges+' charge'+(day.charges!==1?'s':'');
+        if(invCount>0) chargeLabel=subCount+' sub'+(subCount!==1?'s':'')+' + '+invCount+' inv';
         daysHtml+='<div class="day-row-wrap">'
           +'<div class="day-row" id="'+dayId+'" onclick="toggleDay(\''+dayId+'\','+i+')">'
             +'<div><div class="day-date">'+fmtDate(day.date)+'</div><div style="font-size:10px;color:rgba(251,248,243,0.3);">'+day.day+'</div></div>'
@@ -1210,8 +1508,8 @@ window.toggleRetSliders = function(){
     if(prevDayId&&prevDayId!==dayId){
       var prevDay=document.getElementById(prevDayId);
       var prevSubs=document.getElementById(prevDayId+'-subs');
-      if(prevDay) prevDay.classList.remove('day-expanded');
-      if(prevSubs) prevSubs.classList.remove('open');
+      if(prevDay)prevDay.classList.remove('day-expanded');
+      if(prevSubs)prevSubs.classList.remove('open');
     }
     if(isOpen){
       dayEl.classList.remove('day-expanded');
@@ -1229,7 +1527,7 @@ window.toggleRetSliders = function(){
     if(!cashflowData) return;
     if(openWeekIdx>=0&&openWeekIdx!==idx){
       var prev=document.getElementById('wcard-'+openWeekIdx);
-      if(prev) prev.classList.remove('expanded');
+      if(prev)prev.classList.remove('expanded');
       var prevBar=document.getElementById('svgbar-'+openWeekIdx);
       if(prevBar){var rb=prevBar.querySelector('.bar-rect');if(rb){rb.setAttribute('opacity','0.9');rb.setAttribute('filter','');}}
     }
@@ -1264,376 +1562,44 @@ window.toggleRetSliders = function(){
     });
 })();
 
-// ═══ LOAD FORECAST DATA ═══
-(function(){
-  fetch('../data/cashflow-forecast.json')
-    .then(function(r){return r.json();})
-    .then(function(data){
-      STATE.invoiceData=data.manual_invoices;
-    });
-})();
-
-// ═══ RETENTION FUNNEL ═══
-function calcRetentionFunnel(){
-  var closes=STATE.closesPerWeek;
-  var stages=[
-    {name:'Closes',count:closes,pct:100},
-    {name:'Start W1',count:closes*(STATE.closeToW1/100),pct:STATE.closeToW1},
-    {name:'Start W2',count:closes*(STATE.closeToW1/100)*(STATE.w1ToW2/100),pct:STATE.w1ToW2},
-    {name:'Active 30d',count:closes*(STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100),pct:STATE.retW2to30},
-    {name:'Active 60d',count:closes*(STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100),pct:STATE.ret30to60},
-    {name:'Active 90d',count:closes*(STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100)*(STATE.ret60to90/100),pct:STATE.ret60to90},
-    {name:'90d+ Long-term',count:closes*(STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100)*(STATE.ret60to90/100)*(STATE.ret90plus/100),pct:STATE.ret90plus}
-  ];
-  return stages;
-}
-
-function renderFunnel(){
-  var stages=calcRetentionFunnel();
-  var maxCount=stages[0].count||1;
-  var container=document.getElementById('funnel-viz');
-  var html='';
-  stages.forEach(function(s,i){
-    var widthPct=Math.max(8,Math.round(s.count/maxCount*100));
-    var monthlyRev=s.count*STATE.avgMonthlyRev;
-    var color=s.pct>=80?'#386217':(s.pct>=70?'#C8A951':'#E05252');
-    if(i===0) color='#104791';
-    html+='<div class="funnel-stage">';
-    html+='<div class="funnel-stage-info"><div class="funnel-stage-name">'+s.name+'</div><div class="funnel-stage-val">'+s.count.toFixed(1)+' families · '+fmtNum(monthlyRev)+'/mo</div></div>';
-    html+='<div class="funnel-bar" style="width:'+widthPct+'%;background:'+color+';"><span class="funnel-bar-label">'+(i>0?s.pct+'%':s.count.toFixed(0))+'</span></div>';
-    html+='</div>';
-  });
-  container.innerHTML=html;
-}
-
-// ═══ LTV CALCULATOR ═══
-function calcLTV(){
-  var survivalChain=[
-    STATE.closeToW1/100,
-    (STATE.closeToW1/100)*(STATE.w1ToW2/100),
-    (STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100),
-    (STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100),
-    (STATE.closeToW1/100)*(STATE.w1ToW2/100)*(STATE.retW2to30/100)*(STATE.ret30to60/100)*(STATE.ret60to90/100)
-  ];
-  var avgMonths=0;
-  for(var i=0;i<survivalChain.length;i++) avgMonths+=survivalChain[i];
-  var longTermSurv=survivalChain[survivalChain.length-1]*(STATE.ret90plus/100);
-  if(STATE.ret90plus<100){
-    var monthlyChurn=1-(STATE.ret90plus/100);
-    avgMonths+=longTermSurv/monthlyChurn;
-  }else{
-    avgMonths+=longTermSurv*12;
-  }
-  var ltv=avgMonths*STATE.avgMonthlyRev;
-  return{avgMonths:avgMonths,ltv:ltv};
-}
-
-function renderLTV(){
-  var current=calcLTV();
-  var baseline={avgMonths:2.8,ltv:2041};
-  var delta=current.ltv-baseline.ltv;
-  var deltaPct=baseline.ltv>0?Math.round(delta/baseline.ltv*100):0;
-  var html='';
-  html+='<div class="ltv-card"><div class="ltv-card-label">Baseline LTV</div><div class="ltv-card-val" style="color:rgba(251,248,243,0.5);">$2,041</div><div class="ltv-card-note">2.8 months avg at $731/mo</div></div>';
-  html+='<div class="ltv-card"><div class="ltv-card-label">Projected LTV</div><div class="ltv-card-val">'+fmtNum(current.ltv)+'</div><div class="ltv-card-note">'+current.avgMonths.toFixed(1)+' months avg</div></div>';
-  html+='<div class="ltv-card"><div class="ltv-card-label">Avg Lifetime</div><div class="ltv-card-val" style="color:'+(current.avgMonths>2.8?'#4CAF50':'var(--red)')+';">'+current.avgMonths.toFixed(1)+' mo</div><div class="ltv-card-note">'+(current.avgMonths>2.8?'↑':'↓')+' from 2.8 months</div></div>';
-  document.getElementById('ltv-cards').innerHTML=html;
-  var deltaHtml='';
-  if(delta>=0) deltaHtml='<span class="ltv-delta positive">+'+fmtNum(delta)+' per family (+'+deltaPct+'%)</span>';
-  else deltaHtml='<span class="ltv-delta negative">'+fmtNum(delta)+' per family ('+deltaPct+'%)</span>';
-  if(Math.abs(delta)>10) deltaHtml+='<div style="font-size:12px;color:rgba(251,248,243,0.4);margin-top:8px;">Moving from 2.8 to '+current.avgMonths.toFixed(1)+' months = '+(delta>=0?'+':'')+fmtNum(delta)+'/family</div>';
-  document.getElementById('ltv-delta-row').innerHTML=deltaHtml;
-}
-
-// ═══ 12-MONTH PROJECTION ═══
-function calcProjection(){
-  var months=[];
-  var activeFamilies=92;
-  var rev=STATE.avgMonthlyRev;
-  var monthlyRetention=Math.pow((STATE.retW2to30/100)*(STATE.ret30to60/100),0.5);
-  var newPerMonth=STATE.closesPerWeek*4.33*(STATE.closeToW1/100)*(STATE.w1ToW2/100);
-  var targetRetention=Math.pow(Math.min(1,(STATE.retW2to30+10)/100)*Math.min(1,(STATE.ret30to60+10)/100),0.5);
-  var activeCurrent=activeFamilies;
-  var activeTarget=activeFamilies;
-  for(var m=1;m<=12;m++){
-    var churned=activeCurrent*(1-monthlyRetention);
-    activeCurrent=activeCurrent-churned+newPerMonth;
-    var revCurrent=activeCurrent*rev;
-    var churnedTarget=activeTarget*(1-targetRetention);
-    activeTarget=activeTarget-churnedTarget+newPerMonth;
-    var revTarget=activeTarget*rev;
-    months.push({month:m,activeCurrent:activeCurrent,revCurrent:revCurrent,activeTarget:activeTarget,revTarget:revTarget,newAdded:newPerMonth,churned:churned});
-  }
-  return months;
-}
-
-function renderProjection(){
-  var months=calcProjection();
-  var svg=document.getElementById('projection-chart');
-  var vW=900,vH=300,mL=70,mR=30,mT=30,mB=50;
-  var plotW=vW-mL-mR,plotH=vH-mT-mB;
-  var maxRev=Math.max.apply(null,months.map(function(m){return Math.max(m.revCurrent,m.revTarget);}));
-  maxRev=Math.max(maxRev,80000);
-  var scaleMax=maxRev*1.15;
-  var scale=plotH/scaleMax;
-  var stepX=plotW/11;
-  var html='';
-  var tickStep=scaleMax>300000?50000:(scaleMax>150000?25000:20000);
-  for(var t=0;t<=scaleMax;t+=tickStep){
-    var ty=mT+plotH-t*scale;
-    if(ty<mT-2)break;
-    html+='<line x1="'+mL+'" y1="'+ty.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+ty.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
-    html+='<text x="'+(mL-8)+'" y="'+(ty+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(t/1000).toFixed(0)+'K</text>';
-  }
-  html+='<line x1="'+mL+'" y1="'+(mT+plotH)+'" x2="'+(vW-mR)+'" y2="'+(mT+plotH)+'" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>';
-  var currentPoints=months.map(function(m,i){return (mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revCurrent*scale).toFixed(0);}).join(' ');
-  html+='<polygon points="'+mL+','+(mT+plotH)+' '+currentPoints+' '+(mL+11*stepX).toFixed(0)+','+(mT+plotH)+'" fill="rgba(200,169,81,0.08)"/>';
-  html+='<polyline points="'+currentPoints+'" fill="none" stroke="#C8A951" stroke-width="2.5" stroke-linejoin="round"/>';
-  var targetPoints=months.map(function(m,i){return (mL+i*stepX).toFixed(0)+','+(mT+plotH-m.revTarget*scale).toFixed(0);}).join(' ');
-  html+='<polyline points="'+targetPoints+'" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="8,4" stroke-linejoin="round" opacity="0.8"/>';
-  months.forEach(function(m,i){
-    var x=mL+i*stepX;
-    var y=mT+plotH-m.revCurrent*scale;
-    html+='<circle cx="'+x.toFixed(0)+'" cy="'+y.toFixed(0)+'" r="4" fill="#C8A951" stroke="rgba(10,14,20,0.8)" stroke-width="1.5"/>';
-    if(i%3===0||i===11) html+='<text x="'+x.toFixed(0)+'" y="'+(y-10).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(200,169,81,0.8)">'+fmtNum(m.revCurrent)+'</text>';
-    html+='<text x="'+x.toFixed(0)+'" y="'+(mT+plotH+16).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.4)">M'+m.month+'</text>';
-  });
-  svg.innerHTML=html;
-
-  var tableHtml='<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:11px;">';
-  tableHtml+='<thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">';
-  tableHtml+='<th style="padding:6px 8px;text-align:left;color:rgba(251,248,243,0.4);font-size:10px;letter-spacing:1px;">MONTH</th>';
-  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">ACTIVE</th>';
-  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">NEW</th>';
-  tableHtml+='<th style="padding:6px 8px;text-align:right;color:rgba(251,248,243,0.4);font-size:10px;">REVENUE</th>';
-  tableHtml+='</tr></thead><tbody>';
-  months.forEach(function(m){
-    tableHtml+='<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">';
-    tableHtml+='<td style="padding:5px 8px;color:rgba(251,248,243,0.6);">Month '+m.month+'</td>';
-    tableHtml+='<td style="padding:5px 8px;text-align:right;font-weight:600;">'+Math.round(m.activeCurrent)+'</td>';
-    tableHtml+='<td style="padding:5px 8px;text-align:right;color:#386217;">+'+Math.round(m.newAdded)+'</td>';
-    tableHtml+='<td style="padding:5px 8px;text-align:right;color:var(--gold);font-weight:700;">'+fmtNum(m.revCurrent)+'</td>';
-    tableHtml+='</tr>';
-  });
-  tableHtml+='</tbody></table></div>';
-  document.getElementById('projection-table').innerHTML=tableHtml;
-}
-
-// ═══ CCF MODEL ═══
-function updateSliderTrack(id,val,min,max){
-  var el=document.getElementById(id);
-  if(!el)return;
-  var pct=Math.max(0,Math.min(100,(val-min)/(max-min)*100)).toFixed(1);
-  el.style.background='linear-gradient(to right,#104791 0%,#104791 '+pct+'%,rgba(255,255,255,0.1) '+pct+'%)';
-}
-
-function updateCCF(){
-  var newWeekly=STATE.closesPerWeek*STATE.avgPayment;
-  var newTotal=newWeekly*4;
-  var grandTotal=LOCKED_IN+NDIS_TOTAL+newTotal+INVOICE_OPEN_TOTAL;
-  var monthlyNet=(grandTotal/4)*4.33-MONTHLY_COSTS;
-
-  var el;
-  el=document.getElementById('ccf-new-total');if(el)el.textContent=fmtNum(newTotal);
-  el=document.getElementById('ccf-new-note');if(el)el.textContent=STATE.closesPerWeek+'/wk × $'+STATE.avgPayment.toLocaleString('en-AU')+' × 4 weeks';
-  el=document.getElementById('ccf-grand-total');if(el)el.textContent=fmtNum(grandTotal);
-  el=document.getElementById('ccf-monthly-net');if(el)el.textContent=fmtNum(monthlyNet);
-  el=document.getElementById('ccf-closes-val');if(el)el.textContent=STATE.closesPerWeek;
-
-  // Update avg payment display
-  el=document.getElementById('avg-payment-display');if(el)el.textContent=fmtNum(STATE.avgPayment);
-  el=document.getElementById('avg-payment-note');
-  if(el) el.textContent='Calculated from tier mix: '+STATE.tierBB+'% BB × $'+TIER_AVG.bb+' + '+STATE.tierLH+'% LH × $'+TIER_AVG.lh+' + '+STATE.tierOther+'% Other × $'+TIER_AVG.other;
-
-  updateSliderTrack('ccf-closes-slider',STATE.closesPerWeek,0,30);
-
-  // Update scenario buttons
-  var scenarioKeys=['conservative','current','aggressive','dream'];
-  scenarioKeys.forEach(function(key,i){
-    var s=SCENARIOS[key];
-    var btn=document.getElementById('ccf-btn-'+i);
-    var totalEl=document.getElementById('ccf-btn-total-'+i);
-    var avgPay=Math.round((s.bb/100)*TIER_AVG.bb+(s.lh/100)*TIER_AVG.lh+(s.other/100)*TIER_AVG.other);
-    var total=LOCKED_IN+NDIS_TOTAL+s.closes*avgPay*4+INVOICE_OPEN_TOTAL;
-    if(totalEl) totalEl.textContent=fmtNum(total);
-    if(btn){
-      var active=(STATE.closesPerWeek===s.closes&&STATE.tierBB===s.bb&&STATE.tierLH===s.lh);
-      btn.classList.toggle('active',active);
-    }
-  });
-
-  renderCCFStackedChart();
-}
-
-function renderCCFStackedChart(){
-  var svg=document.getElementById('ccf-bar-chart');
-  if(!svg)return;
-  var invPerWeek=[0,0,0,0];
-  if(STATE.invoiceData&&STATE.invoiceData.open){
-    STATE.invoiceData.open.forEach(function(i){
-      var d=new Date(i.due);
-      if(d<new Date('2026-03-28')) invPerWeek[0]+=i.amount;
-      else if(d<new Date('2026-04-04')) invPerWeek[1]+=i.amount;
-      else if(d<new Date('2026-04-11')) invPerWeek[2]+=i.amount;
-      else invPerWeek[3]+=i.amount;
-    });
-  }
-  var vW=560,vH=220,mL=56,mR=24,mT=34,mB=60;
-  var plotW=vW-mL-mR,plotH=vH-mT-mB;
-  var barW=76;
-  var newWeekly=STATE.closesPerWeek*STATE.avgPayment;
-  var bars=EXISTING_SUBS.map(function(sub,i){
-    return{stripe:sub,ndis:NDIS_PER_WEEK,newc:newWeekly,inv:invPerWeek[i],total:sub+NDIS_PER_WEEK+newWeekly+invPerWeek[i]};
-  });
-  var maxTotal=Math.max.apply(null,bars.map(function(b){return b.total;}));
-  var scaleMax=maxTotal*1.18;
-  var scale=scaleMax>0?plotH/scaleMax:1;
-  var gap=(plotW-4*barW)/5;
-  var html='';
-  var yTickStep=scaleMax>40000?10000:scaleMax>20000?5000:2500;
-  for(var t=0;t<=scaleMax;t+=yTickStep){
-    var ty=(mT+plotH-t*scale);
-    if(ty<mT-2)break;
-    html+='<line x1="'+mL+'" y1="'+ty.toFixed(0)+'" x2="'+(vW-mR)+'" y2="'+ty.toFixed(0)+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
-    html+='<text x="'+(mL-5)+'" y="'+(ty+4).toFixed(0)+'" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.3)">$'+(t/1000).toFixed(0)+'K</text>';
-  }
-  var baseY=mT+plotH;
-  html+='<line x1="'+mL+'" y1="'+baseY+'" x2="'+(vW-mR)+'" y2="'+baseY+'" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>';
-  bars.forEach(function(bar,i){
-    var bx=mL+gap+i*(barW+gap);
-    var h1=Math.max(0,bar.stripe*scale),y1=baseY-h1;
-    html+='<rect x="'+bx.toFixed(0)+'" y="'+y1.toFixed(0)+'" width="'+barW+'" height="'+h1.toFixed(0)+'" fill="#104791" opacity="0.9"/>';
-    var h2=Math.max(0,bar.ndis*scale),y2=y1-h2;
-    html+='<rect x="'+bx.toFixed(0)+'" y="'+y2.toFixed(0)+'" width="'+barW+'" height="'+h2.toFixed(0)+'" fill="#C8A951" opacity="0.9"/>';
-    var h3=Math.max(0,bar.newc*scale),y3=y2-h3;
-    if(h3>0)html+='<rect x="'+bx.toFixed(0)+'" y="'+y3.toFixed(0)+'" width="'+barW+'" height="'+h3.toFixed(0)+'" fill="#386217" opacity="0.9"/>';
-    var h4=Math.max(0,bar.inv*scale),y4=y3-h4;
-    if(h4>0)html+='<rect x="'+bx.toFixed(0)+'" y="'+y4.toFixed(0)+'" width="'+barW+'" height="'+h4.toFixed(0)+'" rx="4" fill="#E8795A" opacity="0.9"/>';
-    var topY=h4>0?y4:(h3>0?y3:y2);
-    html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(topY-6).toFixed(0)+'" text-anchor="middle" font-family="Archivo Black" font-size="10" fill="rgba(251,248,243,0.9)">'+fmtNum(bar.total)+'</text>';
-    html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(baseY+14).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.55)">'+WEEK_LABELS[i]+'</text>';
-    html+='<text x="'+(bx+barW/2).toFixed(0)+'" y="'+(baseY+26).toFixed(0)+'" text-anchor="middle" font-family="DM Sans" font-size="8" fill="rgba(251,248,243,0.28)">Week '+(i+1)+'</text>';
-  });
-  svg.innerHTML=html;
-}
-
-// ═══ SCENARIO QUICK-PICKS ═══
-window.setCCFScenario=function(key){
-  var s=SCENARIOS[key];
-  if(!s)return;
-  STATE.closesPerWeek=s.closes;
-  STATE.tierBB=s.bb; STATE.tierLH=s.lh; STATE.tierOther=s.other;
-  STATE.payUpfront=s.upfront; STATE.payWeekly=s.weekly; STATE.payMonthly=s.monthly; STATE.payOther=s.payother;
-  STATE.closeToW1=s.w1; STATE.w1ToW2=s.w2;
-  STATE.retW2to30=s.r30; STATE.ret30to60=s.r60; STATE.ret60to90=s.r90; STATE.ret90plus=s.r90p;
-  STATE.avgPayment=calcAvgPayment();
-
-  // Update all slider/input values
-  document.getElementById('ccf-closes-slider').value=s.closes;
-  document.getElementById('tier-bb').value=s.bb;
-  document.getElementById('tier-lh').value=s.lh;
-  document.getElementById('tier-other').value=s.other;
-  document.getElementById('tier-bb-val').textContent=s.bb+'%';
-  document.getElementById('tier-lh-val').textContent=s.lh+'%';
-  document.getElementById('tier-other-val').textContent=s.other+'%';
-  document.getElementById('tier-total').textContent='100%';
-  document.getElementById('tier-total').classList.remove('error');
-  document.getElementById('pay-upfront').value=s.upfront;
-  document.getElementById('pay-weekly').value=s.weekly;
-  document.getElementById('pay-monthly').value=s.monthly;
-  document.getElementById('pay-other').value=s.payother;
-  document.getElementById('pay-upfront-val').textContent=s.upfront+'%';
-  document.getElementById('pay-weekly-val').textContent=s.weekly+'%';
-  document.getElementById('pay-monthly-val').textContent=s.monthly+'%';
-  document.getElementById('pay-other-val').textContent=s.payother+'%';
-  document.getElementById('pay-total').textContent='100%';
-  document.getElementById('pay-total').classList.remove('error');
-
-  var retMap={'ret-w1-slider':s.w1,'ret-w2-slider':s.w2,'ret-30d-slider':s.r30,'ret-60d-slider':s.r60,'ret-90d-slider':s.r90,'ret-90p-slider':s.r90p};
-  Object.keys(retMap).forEach(function(id){var el=document.getElementById(id);if(el)el.value=retMap[id];});
-  updateAll();
-};
-
-// ═══ RETENTION HANDLER ═══
-window.updateRetention=function(){
-  STATE.closeToW1=parseInt(document.getElementById('ret-w1-slider').value)||62;
-  STATE.w1ToW2=parseInt(document.getElementById('ret-w2-slider').value)||85;
-  STATE.retW2to30=parseInt(document.getElementById('ret-30d-slider').value)||78;
-  STATE.ret30to60=parseInt(document.getElementById('ret-60d-slider').value)||72;
-  STATE.ret60to90=parseInt(document.getElementById('ret-90d-slider').value)||68;
-  STATE.ret90plus=parseInt(document.getElementById('ret-90p-slider').value)||90;
-  updateAll();
-};
-
-// ═══ MASTER UPDATE ═══
-function updateAll(){
-  // Retention slider displays
-  document.getElementById('ret-w1-val').textContent=STATE.closeToW1+'%';
-  document.getElementById('ret-w2-val').textContent=STATE.w1ToW2+'%';
-  document.getElementById('ret-30d-val').textContent=STATE.retW2to30+'%';
-  document.getElementById('ret-60d-val').textContent=STATE.ret30to60+'%';
-  document.getElementById('ret-90d-val').textContent=STATE.ret60to90+'%';
-  document.getElementById('ret-90p-val').textContent=STATE.ret90plus+'%';
-  // Slider tracks
-  updateSliderTrack('ret-w1-slider',STATE.closeToW1,30,100);
-  updateSliderTrack('ret-w2-slider',STATE.w1ToW2,50,100);
-  updateSliderTrack('ret-30d-slider',STATE.retW2to30,50,100);
-  updateSliderTrack('ret-60d-slider',STATE.ret30to60,50,100);
-  updateSliderTrack('ret-90d-slider',STATE.ret60to90,50,100);
-  updateSliderTrack('ret-90p-slider',STATE.ret90plus,50,100);
-
-  updateCCF();
-  renderFunnel();
-  renderLTV();
-  renderProjection();
-}
-
 // ═══ PAUSED COLLECTIONS ═══
 (function(){
   function fmtInterval(interval){
-    if(!interval) return '—';
-    var parts = String(interval).split(' ');
-    if(parts.length < 2) return interval;
-    var n = parts[0], unit = parts[1];
-    if(unit === 'week' || unit === 'weeks') return n === '1' ? 'Weekly' : 'Every '+n+' weeks';
-    if(unit === 'day' || unit === 'days') return 'Every '+n+' days';
-    if(unit === 'month' || unit === 'months') return n === '1' ? 'Monthly' : 'Every '+n+' months';
+    if(!interval)return '—';
+    var parts=String(interval).split(' ');
+    if(parts.length<2)return interval;
+    var n=parts[0],unit=parts[1];
+    if(unit==='week'||unit==='weeks') return n==='1'?'Weekly':'Every '+n+' weeks';
+    if(unit==='day'||unit==='days') return 'Every '+n+' days';
+    if(unit==='month'||unit==='months') return n==='1'?'Monthly':'Every '+n+' months';
     return interval;
   }
-
   function fmtResume(val){
-    if(!val || val === 'indefinite') return '<span class="resume-indefinite">Indefinite</span>';
-    // Format date nicely
-    var months = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    var p = String(val).split('-');
-    if(p.length === 3) return '<span class="resume-date">'+p[2]+' '+months[parseInt(p[1])]+' '+p[0]+'</span>';
+    if(!val||val==='indefinite') return '<span class="resume-indefinite">Indefinite</span>';
+    var months=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var p=String(val).split('-');
+    if(p.length===3) return '<span class="resume-date">'+p[2]+' '+months[parseInt(p[1])]+' '+p[0]+'</span>';
     return '<span class="resume-date">'+val+'</span>';
   }
-
   function calcMonthlyEquiv(sub){
-    var amt = sub.amount;
-    var interval = String(sub.interval || '').toLowerCase();
-    var parts = interval.split(' ');
-    if(parts.length < 2) return amt * 4.33;
-    var n = parseInt(parts[0]) || 1;
-    var unit = parts[1];
-    if(unit === 'week' || unit === 'weeks') return (amt / n) * 4.33;
-    if(unit === 'day' || unit === 'days') return (amt / n) * 30;
-    if(unit === 'month' || unit === 'months') return amt / n;
-    return amt * 4.33;
+    var amt=sub.amount;
+    var interval=String(sub.interval||'').toLowerCase();
+    var parts=interval.split(' ');
+    if(parts.length<2) return amt*4.33;
+    var n=parseInt(parts[0])||1,unit=parts[1];
+    if(unit==='week'||unit==='weeks') return(amt/n)*4.33;
+    if(unit==='day'||unit==='days') return(amt/n)*30;
+    if(unit==='month'||unit==='months') return amt/n;
+    return amt*4.33;
   }
-
-  function buildRow(sub, rowClass){
-    var name = sub.name || sub.email || 'Unknown';
-    var email = sub.name ? sub.email : '';
-    var isChurn = sub.hs_member_status === 'Churn';
-    var statusBadge = isChurn
-      ? '<span class="status-badge-churn">Churn</span>'
-      : '<span class="status-badge-active">Active Sessions</span>';
-    var lastSession = (sub.hs_last_session && sub.hs_last_session !== 'not set')
-      ? '<span style="color:var(--cream);">'+esc(sub.hs_last_session)+'</span>'
-      : '<span class="last-session-na">Not set</span>';
-    return '<tr class="'+rowClass+'">'
+  function buildRow(sub){
+    var name=sub.name||sub.email||'Unknown';
+    var email=sub.name?sub.email:'';
+    var statusBadge='<span class="status-badge-active">Active Sessions</span>';
+    var lastSession=(sub.hs_last_session&&sub.hs_last_session!=='not set')
+      ?'<span style="color:var(--cream);">'+esc(sub.hs_last_session)+'</span>'
+      :'<span class="last-session-na">Not set</span>';
+    return '<tr>'
       +'<td data-label="Name"><div class="paused-name">'+esc(name)+'</div>'+(email?'<div class="paused-email">'+esc(email)+'</div>':'')+'</td>'
       +'<td data-label="Amount"><span class="paused-amount">'+fmt(sub.amount)+'</span></td>'
       +'<td data-label="Billing"><span class="paused-interval">'+esc(fmtInterval(sub.interval))+'</span></td>'
@@ -1647,88 +1613,53 @@ function updateAll(){
       +'</tr>';
   }
 
-  function buildTable(subs, bgColor, rowClass){
-    var thead = '<thead><tr>'
-      +'<th>Name</th><th>Amount</th><th>Billing</th><th>Resumes</th><th>Status</th><th>Last Session</th><th>Actions</th>'
-      +'</tr></thead>';
-    var rows = subs.map(function(s){ return buildRow(s, rowClass); }).join('');
-    return '<div class="paused-table-wrap" style="background:'+bgColor+';border-radius:0 0 12px 12px;">'
-      +'<table class="paused-table"><'+thead+'<tbody>'+rows+'</tbody></table></div>';
-  }
-
   fetch('../data/paused-collections.json')
-    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
     .then(function(data){
-      var subs = data.paused_subs || [];
-      var churn = subs.filter(function(s){ return s.hs_member_status === 'Churn'; });
-      var active = subs.filter(function(s){ return s.hs_member_status !== 'Churn'; });
+      var subs=data.paused_subs||[];
+      var totalMonthly=subs.reduce(function(sum,s){return sum+calcMonthlyEquiv(s);},0);
 
-      var churnMonthly = churn.reduce(function(sum,s){ return sum + calcMonthlyEquiv(s); }, 0);
-      var activeMonthly = active.reduce(function(sum,s){ return sum + calcMonthlyEquiv(s); }, 0);
-
-      // Summary stats
-      var statsEl = document.getElementById('paused-summary-stats');
+      var statsEl=document.getElementById('paused-summary-stats');
       if(statsEl){
-        statsEl.innerHTML = '<div class="paused-summary-grid">'
+        statsEl.innerHTML='<div class="paused-summary-grid">'
           +'<div class="paused-stat-card"><div class="paused-stat-lbl">Total Paused</div><div class="paused-stat-val">'+data.total_count+'</div><div class="paused-stat-note">subscriptions</div></div>'
           +'<div class="paused-stat-card"><div class="paused-stat-lbl">Monthly Frozen</div><div class="paused-stat-val" style="color:var(--amber);">'+fmtNum(data.total_monthly_equiv)+'</div><div class="paused-stat-note">revenue not collecting</div></div>'
-          +'<div class="paused-stat-card" style="border-color:rgba(232,90,90,0.2);background:rgba(26,14,14,0.6);"><div class="paused-stat-lbl" style="color:rgba(232,90,90,0.6);">Churn Not Cancelled</div><div class="paused-stat-val" style="color:#E85A5A;">'+churn.length+'</div><div class="paused-stat-note">'+fmtNum(churnMonthly)+'/mo — should these be cancelled?</div></div>'
-          +'<div class="paused-stat-card" style="border-color:rgba(232,160,48,0.2);background:rgba(26,23,14,0.6);"><div class="paused-stat-lbl" style="color:rgba(232,160,48,0.6);">Active But Not Paying</div><div class="paused-stat-val" style="color:var(--amber);">'+active.length+'</div><div class="paused-stat-note">'+fmtNum(activeMonthly)+'/mo — why paused?</div></div>'
+          +'<div class="paused-stat-card" style="border-color:rgba(232,160,48,0.2);background:rgba(26,23,14,0.6);"><div class="paused-stat-lbl" style="color:rgba(232,160,48,0.6);">Active But Not Paying</div><div class="paused-stat-val" style="color:var(--amber);">'+subs.length+'</div><div class="paused-stat-note">'+fmtNum(totalMonthly)+'/mo — why paused?</div></div>'
+          +'<div class="paused-stat-card"><div class="paused-stat-lbl">Avg per Sub</div><div class="paused-stat-val" style="color:var(--gold);">'+fmtNum(totalMonthly/Math.max(1,subs.length))+'</div><div class="paused-stat-note">monthly per paused sub</div></div>'
           +'</div>';
       }
 
-      // Churn group
-      var churnEl = document.getElementById('paused-churn-group');
-      if(churnEl){
-        churnEl.innerHTML = '<div class="paused-group" style="background:#1A0E0E;">'
-          +'<div class="paused-group-header" style="background:rgba(232,90,90,0.12);border-bottom:1px solid rgba(232,90,90,0.2);">'
-            +'<span style="font-size:18px;">🔴</span>'
-            +'<div>'
-              +'<div class="paused-group-title" style="color:#E85A5A;">Churn + Paused ('+churn.length+' subs)</div>'
-              +'<div class="paused-group-subtitle" style="color:rgba(232,90,90,0.7);">Marked Churn in HubSpot but Stripe sub still active — should these be cancelled?</div>'
-            +'</div>'
-            +'<span class="paused-group-amount" style="color:#E85A5A;">'+fmtNum(churnMonthly)+'/mo</span>'
-          +'</div>'
-          + buildTable(churn, '#1A0E0E', 'churn-row')
-          +'</div>';
-      }
-
-      // Active Sessions group
-      var activeEl = document.getElementById('paused-active-group');
+      // Active Sessions group (all 8 are active sessions now)
+      var activeEl=document.getElementById('paused-active-group');
       if(activeEl){
-        activeEl.innerHTML = '<div class="paused-group" style="background:#1A170E;">'
+        var thead='<thead><tr><th>Name</th><th>Amount</th><th>Billing</th><th>Resumes</th><th>Status</th><th>Last Session</th><th>Actions</th></tr></thead>';
+        var rows=subs.map(function(s){return buildRow(s);}).join('');
+        activeEl.innerHTML='<div class="paused-group" style="background:#1A170E;">'
           +'<div class="paused-group-header" style="background:rgba(232,160,48,0.1);border-bottom:1px solid rgba(232,160,48,0.2);">'
             +'<span style="font-size:18px;">🟡</span>'
             +'<div>'
-              +'<div class="paused-group-title" style="color:var(--amber);">Active Sessions + Paused ('+active.length+' subs)</div>'
+              +'<div class="paused-group-title" style="color:var(--amber);">Active Sessions + Paused ('+subs.length+' subs)</div>'
               +'<div class="paused-group-subtitle" style="color:rgba(232,160,48,0.7);">Still doing sessions but collection is paused — why?</div>'
             +'</div>'
-            +'<span class="paused-group-amount" style="color:var(--amber);">'+fmtNum(activeMonthly)+'/mo</span>'
+            +'<span class="paused-group-amount" style="color:var(--amber);">'+fmtNum(totalMonthly)+'/mo</span>'
           +'</div>'
-          + buildTable(active, '#1A170E', 'active-row')
+          +'<div class="paused-table-wrap" style="background:#1A170E;border-radius:0 0 12px 12px;">'
+            +'<table class="paused-table">'+thead+'<tbody>'+rows+'</tbody></table>'
+          +'</div>'
           +'</div>';
       }
     })
     .catch(function(err){
-      console.error('[PausedCollections] Failed:', err);
-      var el = document.getElementById('paused-section');
-      if(el) el.insertAdjacentHTML('beforeend','<div style="padding:12px;color:rgba(251,248,243,0.3);font-size:12px;">⚠️ Could not load paused collections data.</div>');
+      console.error('[PausedCollections] Failed:',err);
     });
 })();
 
 // ═══ INIT ═══
 function init(){
-  var s1=document.getElementById('ccf-closes-slider');
-  if(s1) s1.addEventListener('input',function(){STATE.closesPerWeek=parseInt(this.value)||0;updateAll();});
-  updateAll();
+  updateFunnel();
 }
-
-if(document.readyState==='loading'){
-  document.addEventListener('DOMContentLoaded',init);
-}else{
-  init();
-  setTimeout(updateAll,60);
-}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}
+else{init();setTimeout(updateFunnel,60);}
 </script>
 </body>
 </html>
