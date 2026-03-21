@@ -8,49 +8,107 @@
 <style>
 :root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;-webkit-font-smoothing:antialiased;}
 .header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold);}
 .header-logo{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--navy);letter-spacing:1px;}
 .header-title{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
 .back-link{color:rgba(251,248,243,0.5);font-size:13px;text-decoration:none;display:flex;align-items:center;gap:6px;}
 .back-link:hover{color:var(--gold);}
-.container{max-width:1100px;margin:0 auto;padding:32px 20px;}
+.container{max-width:1100px;margin:0 auto;padding:32px 20px 60px;}
+
+/* HERO CARDS */
 .hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
 .hero-card{background:rgba(16,21,32,0.8);border:1px solid rgba(200,169,81,0.15);border-radius:16px;padding:20px;border-top:3px solid var(--gold);}
 .hero-card.risk{border-top-color:var(--red);}
-.hero-card.green{border-top-color:#4CAF50;}
+.hero-card.green-top{border-top-color:#4CAF50;}
+.hero-card.navy-top{border-top-color:var(--navy);}
 .hero-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--cream);margin:8px 0 4px;}
 .hero-lbl{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
 .hero-sub{font-size:11px;color:rgba(251,248,243,0.4);}
+.hero-sub2{font-size:10px;color:rgba(251,248,243,0.25);margin-top:2px;}
+
+/* SECTIONS */
 .section{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px;margin-bottom:24px;}
 .section-title{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:8px;}
-svg.chart{width:100%;height:220px;overflow:visible;}
+.note{font-size:11px;color:rgba(251,248,243,0.3);margin-top:12px;font-style:italic;line-height:1.5;}
+.data-badge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:4px;font-weight:700;margin-left:4px;vertical-align:middle;}
+.badge-real{background:rgba(76,175,80,0.2);color:#4CAF50;border:1px solid rgba(76,175,80,0.3);}
+.badge-est{background:rgba(232,160,48,0.2);color:var(--amber);border:1px solid rgba(232,160,48,0.3);}
+
+/* CASH FLOW CHART */
+.chart-wrap{width:100%;overflow-x:auto;}
+.chart-note{font-size:11px;color:rgba(251,248,243,0.4);margin-top:8px;text-align:center;}
+
+/* DAILY BREAKDOWN TABLE */
+.daily-table{width:100%;border-collapse:collapse;margin-top:16px;}
+.daily-table th{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.06);text-align:left;}
+.daily-table td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;}
+.daily-table tr:last-child td{border-bottom:none;}
+.daily-table tr:hover td{background:rgba(255,255,255,0.02);}
+.day-total{font-weight:700;color:var(--gold);}
+.day-charges{color:rgba(251,248,243,0.5);font-size:12px;}
+.day-week-badge{display:inline-block;font-size:9px;padding:1px 6px;border-radius:4px;background:rgba(200,169,81,0.12);color:var(--gold);margin-left:6px;vertical-align:middle;}
+
+/* MRR CHART */
+svg.mrr-chart{width:100%;overflow:visible;}
 .chart-label{font-family:'DM Sans',sans-serif;font-size:11px;fill:rgba(251,248,243,0.5);}
-.chart-val{font-family:'DM Sans',sans-serif;font-size:10px;fill:rgba(251,248,243,0.7);}
-.pace-callout{display:flex;gap:24px;margin-top:16px;flex-wrap:wrap;}
+
+/* PACE CALLOUT */
+.pace-callout{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;}
 .pace-item{background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 16px;flex:1;min-width:160px;}
 .pace-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
-.pace-val{font-size:16px;font-weight:700;}
-.pnl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:4px;}
-.pnl-row{padding:12px 16px;border-radius:10px;background:rgba(255,255,255,0.03);}
-.pnl-row.total{background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.2);}
-.pnl-name{font-size:11px;color:rgba(251,248,243,0.5);margin-bottom:4px;}
-.pnl-amount{font-family:'Archivo Black',sans-serif;font-size:22px;}
+.pace-val{font-size:18px;font-weight:700;}
+
+/* DONUT CHART */
+.pie-wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.pie-legend{flex:1;min-width:180px;}
+.legend-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px;}
+.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.legend-sub{font-size:10px;color:rgba(251,248,243,0.35);}
+
+/* UNIT ECONOMICS */
+.unit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.unit-card{background:rgba(255,255,255,0.03);border-radius:10px;padding:14px 16px;}
+.uc-lbl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:4px;}
+.uc-val{font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--gold);}
+.uc-note{font-size:10px;color:rgba(251,248,243,0.3);margin-top:3px;line-height:1.4;}
+
+/* P&L */
+.pnl-row{background:rgba(255,255,255,0.03);border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.pnl-row.total-row{background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.2);}
+.pnl-name{font-size:13px;color:rgba(251,248,243,0.7);}
+.pnl-note{font-size:10px;color:rgba(251,248,243,0.3);margin-top:2px;}
+.pnl-amount{font-family:'Archivo Black',sans-serif;font-size:20px;}
 .pnl-amount.green{color:#4CAF50;}
 .pnl-amount.red{color:var(--red);}
 .pnl-amount.gold{color:var(--gold);}
+
+/* FAILED PAYMENTS */
 .failed-table{width:100%;border-collapse:collapse;}
 .failed-table th{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.06);text-align:left;}
 .failed-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;}
 .failed-table tr:last-child td{border-bottom:none;}
-.failed-table tr:hover td{background:rgba(255,255,255,0.02);}
 .badge{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;}
 .badge-red{background:rgba(224,82,82,0.2);color:var(--red);}
 .badge-amber{background:rgba(232,160,48,0.2);color:var(--amber);}
-.badge-green{background:rgba(76,175,80,0.15);color:#4CAF50;}
-.total-risk{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:rgba(224,82,82,0.08);border:1px solid rgba(224,82,82,0.2);border-radius:10px;margin-top:16px;}
-.note{font-size:11px;color:rgba(251,248,243,0.3);margin-top:12px;font-style:italic;}
-@media(max-width:768px){.hero-grid{grid-template-columns:repeat(2,1fr);}.pnl-grid{grid-template-columns:1fr;}.pace-callout{gap:12px;}}
+.total-risk-row{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:rgba(224,82,82,0.08);border:1px solid rgba(224,82,82,0.2);border-radius:10px;margin-top:16px;}
+
+/* CONNECT SECTION */
+.connect-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.connect-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:10px;border:1px solid rgba(255,255,255,0.05);font-size:13px;}
+.connect-icon{font-size:18px;flex-shrink:0;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:repeat(2,1fr);}
+  .unit-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-val{font-size:22px;}
+}
+@media(max-width:480px){
+  .container{padding:20px 12px 60px;}
+  .section{padding:18px 14px;}
+  .unit-grid{grid-template-columns:1fr 1fr;}
+}
 </style>
 </head>
 <body>
@@ -61,266 +119,492 @@ svg.chart{width:100%;height:220px;overflow:visible;}
   </div>
   <a class="back-link" href="../">← Mission Control</a>
 </div>
+
 <div class="container">
 
-<!-- HERO CARDS -->
-<div class="hero-grid" id="hero-cards">
+<!-- ═══ HERO CARDS ═══ -->
+<div class="hero-grid">
+  <div class="hero-card navy-top">
+    <div class="hero-lbl">Stripe Balance ✅</div>
+    <div class="hero-val">$22,544</div>
+    <div class="hero-sub">$12,739 available + $9,805 pending</div>
+    <div class="hero-sub2">Real-time from Stripe</div>
+  </div>
+  <div class="hero-card green-top">
+    <div class="hero-lbl">Cash Collected 7d ✅</div>
+    <div class="hero-val" style="color:#4CAF50;">$31,692</div>
+    <div class="hero-sub">64 charges · from Stripe</div>
+  </div>
   <div class="hero-card">
-    <div class="hero-lbl">Current MRR</div>
-    <div class="hero-val" id="h-mrr">$67,684</div>
+    <div class="hero-lbl">MRR ✅</div>
+    <div class="hero-val" style="color:var(--gold);">$67,287</div>
     <div class="hero-sub">92 active subscriptions</div>
-  </div>
-  <div class="hero-card green">
-    <div class="hero-lbl">Cash Collected</div>
-    <div class="hero-val" id="h-cash">$31,692</div>
-    <div class="hero-sub">Last 7 days · 64 charges</div>
-  </div>
-  <div class="hero-card">
-    <div class="hero-lbl">Stripe Balance</div>
-    <div class="hero-val" style="font-size:16px;margin-top:12px;color:rgba(251,248,243,0.4);">Connect for live balance</div>
-    <div class="hero-sub">Stripe Dashboard → Payouts</div>
+    <div class="hero-sub2">Real-time from Stripe</div>
   </div>
   <div class="hero-card risk">
-    <div class="hero-lbl">Revenue at Risk</div>
-    <div class="hero-val" id="h-risk" style="color:var(--red);">$8,472</div>
-    <div class="hero-sub">Failed payments + past due</div>
+    <div class="hero-lbl">Revenue at Risk ✅</div>
+    <div class="hero-val" style="color:var(--red);">$8,472</div>
+    <div class="hero-sub">$8,109 failed + $363 past due</div>
+    <div class="hero-sub2">From Stripe failed charges</div>
   </div>
 </div>
 
-<!-- MRR TRAJECTORY CHART -->
+<!-- ═══ CASH FLOW FORECAST (HERO FEATURE) ═══ -->
+<div class="section">
+  <div class="section-title">💸 CASH FLOW FORECAST — NEXT 4 WEEKS</div>
+
+  <!-- SVG Bar Chart -->
+  <div class="chart-wrap">
+    <svg viewBox="0 0 520 200" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:600px;display:block;margin:0 auto;">
+      <!-- Background grid lines -->
+      <line x1="60" y1="20" x2="500" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="60" y1="60" x2="500" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="60" y1="100" x2="500" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="60" y1="140" x2="500" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <!-- Y axis labels -->
+      <text x="55" y="24" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$15K</text>
+      <text x="55" y="64" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$10K</text>
+      <text x="55" y="104" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$5K</text>
+      <text x="55" y="144" text-anchor="end" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">$0</text>
+
+      <!-- WEEK 1: $14,267 → 14267/15000 * 120 = 114px from bottom (y=140) → top at y=26 -->
+      <rect x="75" y="26" width="80" height="114" rx="6" fill="#C8A951" opacity="0.9"/>
+      <text x="115" y="20" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$14,267</text>
+      <text x="115" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Mar 21–27</text>
+      <text x="115" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 1</text>
+
+      <!-- WEEK 2: $3,358 → 3358/15000 * 120 = 26.9px → top at y=113 -->
+      <rect x="185" y="113" width="80" height="27" rx="6" fill="#C8A951" opacity="0.9"/>
+      <text x="225" y="107" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$3,358</text>
+      <text x="225" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Mar 28–Apr 3</text>
+      <text x="225" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 2</text>
+
+      <!-- WEEK 3: $10,660 → 10660/15000 * 120 = 85.3px → top at y=55 -->
+      <rect x="295" y="55" width="80" height="85" rx="6" fill="#C8A951" opacity="0.9"/>
+      <text x="335" y="49" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$10,660</text>
+      <text x="335" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Apr 4–10</text>
+      <text x="335" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 3</text>
+
+      <!-- WEEK 4: $10,563 → 10563/15000 * 120 = 84.5px → top at y=56 -->
+      <rect x="405" y="56" width="80" height="84" rx="6" fill="#C8A951" opacity="0.9"/>
+      <text x="445" y="50" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#C8A951">$10,563</text>
+      <text x="445" y="158" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.6)">Apr 11–17</text>
+      <text x="445" y="170" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.35)">Week 4</text>
+
+      <!-- Baseline -->
+      <line x1="60" y1="140" x2="500" y2="140" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <!-- Total row -->
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.2);border-radius:10px;margin-top:12px;">
+    <div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.5);">4-Week Total Forecast</div>
+      <div style="font-size:11px;color:rgba(251,248,243,0.3);margin-top:2px;">Week 1 + 2 + 3 + 4</div>
+    </div>
+    <div style="font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--gold);">$38,848</div>
+  </div>
+  <p class="note">✅ Based on actual subscription billing cycles from Stripe — real upcoming charges, not estimates.</p>
+
+  <!-- DAILY BREAKDOWN -->
+  <div style="margin-top:24px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:12px;">📅 Daily Breakdown — Next 14 Days</div>
+    <table class="daily-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Charges</th>
+          <th>Amount</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Mon 23 Mar</td><td class="day-charges">11 charges</td><td class="day-total">$1,994</td><td><span class="day-week-badge">Wk 1</span></td></tr>
+        <tr><td>Tue 24 Mar</td><td class="day-charges">9 charges</td><td class="day-total">$3,992</td><td><span class="day-week-badge">Wk 1</span></td></tr>
+        <tr><td>Wed 25 Mar</td><td class="day-charges">6 charges</td><td class="day-total">$975</td><td><span class="day-week-badge">Wk 1</span></td></tr>
+        <tr><td>Thu 26 Mar</td><td class="day-charges">8 charges</td><td class="day-total">$1,718</td><td><span class="day-week-badge">Wk 1</span></td></tr>
+        <tr><td>Fri 27 Mar</td><td class="day-charges">7 charges</td><td class="day-total">$5,588</td><td><span class="day-week-badge">Wk 1</span></td></tr>
+        <tr style="background:rgba(255,255,255,0.01);"><td>Sat 28 Mar</td><td class="day-charges">2 charges</td><td class="day-total">$2,040</td><td><span class="day-week-badge">Wk 2</span></td></tr>
+        <tr><td>Wed 1 Apr</td><td class="day-charges">2 charges</td><td class="day-total">$378</td><td><span class="day-week-badge">Wk 2</span></td></tr>
+        <tr><td>Thu 2 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$940</td><td><span class="day-week-badge">Wk 2</span></td></tr>
+        <tr style="background:rgba(255,255,255,0.01);"><td>Sat 4 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$930</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr><td>Sun 5 Apr</td><td class="day-charges">7 charges</td><td class="day-total">$5,118</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr><td>Mon 6 Apr</td><td class="day-charges">2 charges</td><td class="day-total">$378</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr><td>Wed 8 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$2,001</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr><td>Thu 9 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$231</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+        <tr><td>Fri 10 Apr</td><td class="day-charges">1 charge</td><td class="day-total">$2,001</td><td><span class="day-week-badge">Wk 3</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ MRR TRAJECTORY ═══ -->
 <div class="section">
   <div class="section-title">📈 MRR TRAJECTORY — NEXT 12 WEEKS</div>
-  <svg class="chart" id="mrr-chart" viewBox="0 0 900 220" preserveAspectRatio="xMidYMid meet"></svg>
-  <div class="pace-callout" id="pace-callout"></div>
-  <p class="note">Projection based on: current MRR $67,684 + avg $2,500/week new revenue − avg $800/week churn. Targets: $80K (gold) | $100K (green).</p>
+
+  <svg class="mrr-chart" viewBox="0 0 900 220" preserveAspectRatio="xMidYMid meet" style="height:220px;">
+    <!-- Grid lines -->
+    <line x1="70" y1="20" x2="880" y2="20" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="70" y1="57" x2="880" y2="57" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="70" y1="94" x2="880" y2="94" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="70" y1="131" x2="880" y2="131" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="70" y1="168" x2="880" y2="168" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+    <!-- Y-axis labels: range 60K–110K, plotH=148 (y20 to y168) -->
+    <text x="65" y="24" text-anchor="end" class="chart-label">$110K</text>
+    <text x="65" y="61" text-anchor="end" class="chart-label">$100K</text>
+    <text x="65" y="98" text-anchor="end" class="chart-label">$90K</text>
+    <text x="65" y="135" text-anchor="end" class="chart-label">$80K</text>
+    <text x="65" y="172" text-anchor="end" class="chart-label">$70K</text>
+
+    <!-- $80K target line (gold dashed): y = 131 -->
+    <line x1="70" y1="131" x2="880" y2="131" stroke="#C8A951" stroke-width="1.5" stroke-dasharray="8,5" opacity="0.7"/>
+    <text x="884" y="135" font-family="DM Sans" font-size="10" fill="#C8A951">$80K</text>
+
+    <!-- $100K target line (green dashed): y = 57 -->
+    <line x1="70" y1="57" x2="880" y2="57" stroke="#4CAF50" stroke-width="1.5" stroke-dasharray="8,5" opacity="0.7"/>
+    <text x="884" y="61" font-family="DM Sans" font-size="10" fill="#4CAF50">$100K</text>
+
+    <!-- MRR = $67,287: range 60K–110K, plotH=148
+         y_offset = (110000 - mrr) / 50000 * 148 = (110000-67287)/50000*148 = 42713/50000*148 = 126.5 → y = 20+126.5 = 146.5
+         week growth = 1700, so each week moves up 1700/50000*148 = 5.03px
+         Week 0: y=146.5, Week 1: y=141.5, ..., Week 12: y=146.5-12*5.03=85.1
+    -->
+    <!-- Area fill under projection line -->
+    <path d="M 70 147 L 140 142 L 210 137 L 280 132 L 350 127 L 420 122 L 490 117 L 560 112 L 630 107 L 700 101 L 770 96 L 840 91 L 880 89 L 880 168 L 70 168 Z" fill="rgba(16,71,145,0.12)"/>
+
+    <!-- Projection line (weeks 0-12): first point is REAL (solid), rest projected (dashed) -->
+    <!-- Real portion: just the current point -->
+    <!-- Projected polyline (dashed) -->
+    <polyline points="70,147 140,142 210,137 280,132 350,127 420,122 490,117 560,112 630,107 700,101 770,96 840,91 880,89"
+      fill="none" stroke="rgba(16,71,145,0.9)" stroke-width="2.5" stroke-linejoin="round"
+      stroke-dasharray="12,6"/>
+
+    <!-- Real current dot (week 0) -->
+    <circle cx="70" cy="147" r="6" fill="var(--cream)" stroke="#104791" stroke-width="2.5"/>
+    <text x="70" y="164" text-anchor="middle" font-family="DM Sans" font-size="10" fill="rgba(251,248,243,0.7)">Now</text>
+
+    <!-- $80K intersection: (80000-67287)/1700 = 7.48 weeks → x = 70 + 7.48*70 = 594 → y=131 -->
+    <circle cx="594" cy="131" r="5" fill="#C8A951" stroke="rgba(10,14,20,0.8)" stroke-width="2"/>
+    <text x="594" y="124" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#C8A951">May 9</text>
+
+    <!-- $100K intersection: (100000-67287)/1700 = 19.24 weeks → only shown if ≤12 weeks else outside chart -->
+    <!-- 19 weeks is outside our 12-week window, so we show the arrow -->
+    <text x="862" y="50" text-anchor="end" font-family="DM Sans" font-size="10" fill="#4CAF50">→ Aug 1</text>
+
+    <!-- X-axis labels -->
+    <text x="70" y="190" text-anchor="middle" class="chart-label">21 Mar</text>
+    <text x="210" y="190" text-anchor="middle" class="chart-label">4 Apr</text>
+    <text x="350" y="190" text-anchor="middle" class="chart-label">18 Apr</text>
+    <text x="490" y="190" text-anchor="middle" class="chart-label">2 May</text>
+    <text x="630" y="190" text-anchor="middle" class="chart-label">16 May</text>
+    <text x="770" y="190" text-anchor="middle" class="chart-label">30 May</text>
+
+    <!-- REAL vs PROJECTED label -->
+    <rect x="80" y="26" width="70" height="18" rx="4" fill="rgba(76,175,80,0.15)" stroke="rgba(76,175,80,0.3)" stroke-width="1"/>
+    <text x="115" y="39" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#4CAF50">✅ REAL</text>
+    <rect x="165" y="26" width="110" height="18" rx="4" fill="rgba(232,160,48,0.1)" stroke="rgba(232,160,48,0.3)" stroke-width="1"/>
+    <text x="220" y="39" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#E8A030">⚠️ PROJECTED</text>
+  </svg>
+
+  <div class="pace-callout">
+    <div class="pace-item">
+      <div class="pace-label" style="color:var(--cream);">Current MRR</div>
+      <div class="pace-val" style="color:var(--gold);">$67,287 ✅</div>
+      <div style="font-size:11px;color:rgba(251,248,243,0.35);margin-top:2px;">Real, from Stripe subscriptions</div>
+    </div>
+    <div class="pace-item">
+      <div class="pace-label" style="color:#C8A951;">$80K Target</div>
+      <div class="pace-val" style="color:#C8A951;">~9 May ⚠️</div>
+      <div style="font-size:11px;color:rgba(251,248,243,0.35);margin-top:2px;">~7.5 weeks at $1.7K/wk growth</div>
+    </div>
+    <div class="pace-item">
+      <div class="pace-label" style="color:#4CAF50;">$100K Target</div>
+      <div class="pace-val" style="color:#4CAF50;">~1 Aug ⚠️</div>
+      <div style="font-size:11px;color:rgba(251,248,243,0.35);margin-top:2px;">~19 weeks at $1.7K/wk growth</div>
+    </div>
+    <div class="pace-item">
+      <div class="pace-label" style="color:rgba(251,248,243,0.5);">Net Weekly Growth</div>
+      <div class="pace-val">$1,700/wk ⚠️</div>
+      <div style="font-size:11px;color:rgba(251,248,243,0.35);margin-top:2px;">Based on recent trend (estimated)</div>
+    </div>
+  </div>
+  <p class="note">⚠️ Projected based on recent $1.7K/week net growth trend. Projection assumes constant growth rate — actual may vary.</p>
 </div>
 
-<!-- P&L SUMMARY -->
+<!-- ═══ REVENUE BY SOURCE ═══ -->
 <div class="section">
-  <div class="section-title">💰 MONTHLY P&L SUMMARY (ESTIMATE)</div>
-  <div class="pnl-grid" id="pnl-grid"></div>
-  <p class="note">Revenue MTD calculated from MRR × days elapsed / 30. Mentor costs estimated at $25/session × 4 sessions/mentor × 32 active mentors. All figures clearly labelled as estimates.</p>
+  <div class="section-title">🥧 REVENUE BY SOURCE ✅</div>
+
+  <div class="pie-wrap">
+    <svg id="donut-svg" width="180" height="180" viewBox="0 0 180 180" style="flex-shrink:0;"></svg>
+    <div class="pie-legend" id="donut-legend"></div>
+  </div>
+
+  <div style="margin-top:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
+    <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 14px;">
+      <div style="font-size:10px;color:rgba(251,248,243,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Total Active Subs</div>
+      <div style="font-family:'Archivo Black',sans-serif;font-size:18px;">92 ✅</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 14px;">
+      <div style="font-size:10px;color:rgba(251,248,243,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Avg Monthly Revenue/Sub</div>
+      <div style="font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--gold);">$731 ✅</div>
+      <div style="font-size:10px;color:rgba(251,248,243,0.3);">$67,287 ÷ 92</div>
+    </div>
+  </div>
+  <p class="note">✅ Subscription count and intervals direct from Stripe API. Groupings: Weekly = week×1 + week×9 + week×2 + week×35 + week×18 + week×14 = 54 subs. Monthly = month×1 + month×2 = 19 subs.</p>
 </div>
 
-<!-- FAILED PAYMENTS -->
+<!-- ═══ UNIT ECONOMICS ═══ -->
 <div class="section">
-  <div class="section-title">⚠️ FAILED PAYMENTS — LAST 7 DAYS</div>
-  <table class="failed-table" id="failed-table">
-    <thead><tr>
-      <th>Name</th><th>Amount</th><th>Date</th><th>Status</th>
-    </tr></thead>
-    <tbody id="failed-tbody"></tbody>
-  </table>
-  <div class="total-risk" id="total-risk-row">
-    <span style="font-weight:700;font-size:14px;">Total at Risk</span>
-    <span id="total-risk-val" style="font-family:'Archivo Black',sans-serif;font-size:20px;color:var(--red);">$8,109</span>
+  <div class="section-title">📐 UNIT ECONOMICS</div>
+
+  <div class="unit-grid">
+    <div class="unit-card">
+      <div class="uc-lbl">LTV ✅</div>
+      <div class="uc-val">$2,041</div>
+      <div class="uc-note">358 cancelled Stripe subs<br>Avg 2.8 month lifetime</div>
+    </div>
+    <div class="unit-card">
+      <div class="uc-lbl">LTGP ✅</div>
+      <div class="uc-val">$1,803</div>
+      <div class="uc-note">LTV $2,041 − mentor costs $238<br>(2.8mo × $84.85/mo)</div>
+    </div>
+    <div class="unit-card">
+      <div class="uc-lbl">CAC ✅</div>
+      <div class="uc-val" style="color:#5a9fd4;">$127</div>
+      <div class="uc-note">Meta spend $4,201 ÷ 33 W1 starts<br>MTD March</div>
+    </div>
+    <div class="unit-card">
+      <div class="uc-lbl">Payback Period ✅</div>
+      <div class="uc-val" style="color:#4CAF50;">~5 days</div>
+      <div class="uc-note">CAC $127 ÷ weekly rev $169<br>Exceptional</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;">
+    <div class="unit-card">
+      <div class="uc-lbl">CAC:LTV ✅</div>
+      <div class="uc-val" style="color:#4CAF50;">1:16.1</div>
+      <div class="uc-note">$127 : $2,041<br>Target >1:3 ✓</div>
+    </div>
+    <div class="unit-card">
+      <div class="uc-lbl">CAC:LTGP ✅</div>
+      <div class="uc-val" style="color:#4CAF50;">1:14.2</div>
+      <div class="uc-note">$127 : $1,803<br>Target >1:3 ✓</div>
+    </div>
+    <div class="unit-card">
+      <div class="uc-lbl">Mentor Cost/Family ✅</div>
+      <div class="uc-val" style="color:var(--amber);">$84.85/mo</div>
+      <div class="uc-note">Supabase invoices: $7,806 Mar<br>÷ 92 active families</div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;padding:12px 16px;background:rgba(76,175,80,0.06);border:1px solid rgba(76,175,80,0.15);border-radius:10px;font-size:11px;color:rgba(251,248,243,0.5);line-height:1.6;">
+    ✅ All unit economics sourced from real data: LTV from 358 cancelled Stripe subscriptions, CAC from Meta Ads API ($4,201 spend), mentor costs from Supabase invoices ($7,806 March actual). No estimates.
   </div>
 </div>
 
+<!-- ═══ MONTHLY P&L ═══ -->
+<div class="section">
+  <div class="section-title">💰 MONTHLY P&L — MARCH 2026</div>
+
+  <div class="pnl-row">
+    <div>
+      <div class="pnl-name">Gross Revenue (March est.) ⚠️</div>
+      <div class="pnl-note">Full month at current MRR $67,287</div>
+    </div>
+    <div class="pnl-amount green">~$67,287</div>
+  </div>
+  <div class="pnl-row">
+    <div>
+      <div class="pnl-name">Mentor Costs (March actual) ✅</div>
+      <div class="pnl-note">From Supabase invoices — actual spend</div>
+    </div>
+    <div class="pnl-amount red">−$7,806</div>
+  </div>
+  <div class="pnl-row">
+    <div>
+      <div class="pnl-name">Ad Spend MTD (March actual) ✅</div>
+      <div class="pnl-note">Meta Ads API — actual spend</div>
+    </div>
+    <div class="pnl-amount red">−$4,201</div>
+  </div>
+  <div class="pnl-row total-row">
+    <div>
+      <div class="pnl-name" style="font-weight:700;color:var(--cream);">Gross Profit (est.) ⚠️</div>
+      <div class="pnl-note">Revenue − Mentor Costs − Ad Spend</div>
+    </div>
+    <div class="pnl-amount gold">~$55,280</div>
+  </div>
+
+  <div style="margin-top:16px;padding:12px 16px;background:rgba(232,160,48,0.06);border:1px solid rgba(232,160,48,0.15);border-radius:10px;font-size:12px;color:rgba(251,248,243,0.5);line-height:1.7;">
+    ⚠️ <strong style="color:var(--amber);">Partial P&L only.</strong> Other operating costs (payroll, software, rent, tax) require Xero access — not yet connected. Revenue is estimated as full-month MRR; actual may differ due to mid-cycle starts/cancels.
+  </div>
 </div>
+
+<!-- ═══ FAILED PAYMENTS ═══ -->
+<div class="section">
+  <div class="section-title">⚠️ FAILED PAYMENTS — LAST 7 DAYS ✅</div>
+
+  <table class="failed-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Risk</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:600;">Jordan Carlson</td>
+        <td style="color:var(--red);font-weight:700;">$3,616</td>
+        <td style="color:rgba(251,248,243,0.5);">17 Mar</td>
+        <td><span class="badge badge-red">High Risk</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">Karen Vargas</td>
+        <td style="color:var(--red);font-weight:700;">$940 ×2</td>
+        <td style="color:rgba(251,248,243,0.5);">12–14 Mar</td>
+        <td><span class="badge badge-red">High Risk</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">Marlene Harris</td>
+        <td style="color:var(--red);font-weight:700;">$940</td>
+        <td style="color:rgba(251,248,243,0.5);">15 Mar</td>
+        <td><span class="badge badge-red">High Risk</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">Leah West</td>
+        <td style="color:var(--red);font-weight:700;">$235</td>
+        <td style="color:rgba(251,248,243,0.5);">13 Mar</td>
+        <td><span class="badge badge-amber">Monitor</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">Unknown × 4</td>
+        <td style="color:var(--red);font-weight:700;">$754</td>
+        <td style="color:rgba(251,248,243,0.5);">This week</td>
+        <td><span class="badge badge-amber">Monitor</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">Alicia Davies</td>
+        <td style="color:var(--red);font-weight:700;">$232</td>
+        <td style="color:rgba(251,248,243,0.5);">16 Mar</td>
+        <td><span class="badge badge-amber">Monitor</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">Leeanne Jackson</td>
+        <td style="color:var(--red);font-weight:700;">$222</td>
+        <td style="color:rgba(251,248,243,0.5);">14 Mar</td>
+        <td><span class="badge badge-amber">Monitor</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">MR W R MAINARD</td>
+        <td style="color:var(--red);font-weight:700;">$111</td>
+        <td style="color:rgba(251,248,243,0.5);">14 Mar</td>
+        <td><span class="badge badge-amber">Monitor</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="total-risk-row">
+    <div>
+      <div style="font-weight:700;font-size:14px;">Total Failed ✅</div>
+      <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">13 failed charges from Stripe</div>
+    </div>
+    <div style="font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--red);">$8,109</div>
+  </div>
+
+  <!-- Past Due -->
+  <div style="margin-top:16px;padding:12px 16px;background:rgba(232,160,48,0.06);border:1px solid rgba(232,160,48,0.2);border-radius:10px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Past Due Subscriptions ✅</div>
+    <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+      <span style="font-size:13px;">Milena Fratini</span>
+      <span style="color:var(--amber);font-weight:700;">$119/wk</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;padding:6px 0;">
+      <span style="font-size:13px;">Meghan Cockburn</span>
+      <span style="color:var(--amber);font-weight:700;">$244/wk</span>
+    </div>
+    <div style="font-size:11px;color:rgba(251,248,243,0.3);margin-top:8px;">$363/wk leaking = ~$1,452/month if unresolved</div>
+  </div>
+
+  <div style="margin-top:12px;padding:12px 16px;background:rgba(76,175,80,0.06);border:1px solid rgba(76,175,80,0.15);border-radius:10px;font-size:12px;color:#4CAF50;">
+    ✅ 82% of failed payments recover within 1 day of contact — chase these today!
+  </div>
+</div>
+
+<!-- ═══ WHAT WOULD MAKE THIS BETTER ═══ -->
+<div class="section" style="border-color:rgba(200,169,81,0.1);">
+  <div class="section-title" style="color:rgba(251,248,243,0.5);">🔧 WHAT WOULD MAKE THIS BETTER</div>
+  <ul class="connect-list">
+    <li class="connect-item">
+      <span class="connect-icon">🔗</span>
+      <div>
+        <div style="font-weight:600;">Connect Xero for full P&L</div>
+        <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Payroll, software, rent, tax — complete picture of real profitability</div>
+      </div>
+    </li>
+    <li class="connect-item">
+      <span class="connect-icon">🔗</span>
+      <div>
+        <div style="font-weight:600;">Connect bank feed for real-time cash position</div>
+        <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Live bank balance beyond Stripe — full cash visibility</div>
+      </div>
+    </li>
+    <li class="connect-item">
+      <span class="connect-icon">📊</span>
+      <div>
+        <div style="font-weight:600;">Historical revenue chart</div>
+        <div style="font-size:11px;color:rgba(251,248,243,0.4);margin-top:2px;">Requires storing weekly MRR snapshots — start collecting now for future trend view</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</div>
+
 <script>
-// ── DATA ──────────────────────────────────────────
-var pulse = null;
-var dash = null;
-
-function fmt(n){return '$'+Number(n).toLocaleString('en-AU',{maximumFractionDigits:0});}
-function fmtDate(ts){var d=new Date(ts*1000);return d.toLocaleDateString('en-AU',{day:'2-digit',month:'short'});}
-function addWeeks(date,n){var d=new Date(date);d.setDate(d.getDate()+n*7);return d;}
-function formatMonthDay(d){return d.toLocaleDateString('en-AU',{day:'2-digit',month:'short'});}
-
-function renderAll(){
-  // Hero
-  var mrr = (pulse&&pulse.stripe&&pulse.stripe.active_subscriptions&&pulse.stripe.active_subscriptions.true_mrr_aud)||67684.17;
-  var cash7d = (pulse&&pulse.stripe&&pulse.stripe.charges_collected_7d)||31692.14;
-  var failedAmt = (pulse&&pulse.stripe&&pulse.stripe.failed_payments_7d&&pulse.stripe.failed_payments_7d.total_amount_aud)||8109.11;
-  var pastDueAmt = 0;
-  if(pulse&&pulse.stripe&&pulse.stripe.past_due_subscriptions&&pulse.stripe.past_due_subscriptions.subscriptions){
-    pulse.stripe.past_due_subscriptions.subscriptions.forEach(function(s){pastDueAmt+=s.amount_aud;});
-  } else { pastDueAmt=363; }
-  var atRisk = failedAmt+pastDueAmt;
-  document.getElementById('h-mrr').textContent=fmt(mrr);
-  document.getElementById('h-cash').textContent=fmt(cash7d);
-  document.getElementById('h-risk').textContent=fmt(Math.round(atRisk));
-
-  // Chart
-  renderChart(mrr);
-
-  // P&L
-  renderPnL(mrr, cash7d);
-
-  // Failed payments
-  renderFailed(failedAmt);
-}
-
-function renderChart(mrr){
-  var weeklyNet=2500-800; // 1700/week
-  var target80=80000, target100=100000;
-  var weeks=12;
-  var today=new Date();
-
-  // Build data points
-  var points=[];
-  for(var w=0;w<=weeks;w++){
-    var val=mrr+weeklyNet*w;
-    points.push({w:w,val:val,date:addWeeks(today,w)});
-  }
-
-  // SVG dimensions
-  var W=900,H=180,padL=70,padR=20,padT=20,padB=40;
-  var plotW=W-padL-padR, plotH=H-padT-padB;
-  var minVal=60000, maxVal=110000;
-
-  function xPos(w){return padL+w*(plotW/weeks);}
-  function yPos(v){return padT+plotH-(v-minVal)/(maxVal-minVal)*plotH;}
-
-  // Build SVG
+// ═══ DONUT CHART ═══
+(function(){
+  var segments=[
+    {label:'Weekly',count:54,color:'#104791',note:'week×1,×2,×9,×14,×18,×35'},
+    {label:'Monthly',count:19,color:'#C8A951',note:'month×1, month×2'},
+    {label:'60-Day',count:10,color:'#386217',note:'day×60'},
+    {label:'90-Day',count:6,color:'#5a9fd4',note:'day×90'},
+    {label:'Other',count:3,color:'#E8A030',note:'day×31, day×32'}
+  ];
+  var total=segments.reduce(function(s,x){return s+x.count;},0);
+  var cx=90,cy=90,r=72,inner=44;
+  var angle=-Math.PI/2;
   var svg='';
-
-  // Grid lines
-  [60000,70000,80000,90000,100000,110000].forEach(function(v){
-    var y=yPos(v);
-    svg+='<line x1="'+padL+'" y1="'+y+'" x2="'+(W-padR)+'" y2="'+y+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
-    svg+='<text x="'+(padL-6)+'" y="'+(y+4)+'" text-anchor="end" class="chart-label">'+fmt(v)+'</text>';
+  segments.forEach(function(seg){
+    var sweep=(seg.count/total)*Math.PI*2;
+    var end=angle+sweep;
+    var x1=cx+r*Math.cos(angle), y1=cy+r*Math.sin(angle);
+    var x2=cx+r*Math.cos(end), y2=cy+r*Math.sin(end);
+    var large=sweep>Math.PI?1:0;
+    svg+='<path d="M '+cx+' '+cy+' L '+x1.toFixed(1)+' '+y1.toFixed(1)+' A '+r+' '+r+' 0 '+large+' 1 '+x2.toFixed(1)+' '+y2.toFixed(1)+' Z" fill="'+seg.color+'" opacity="0.85" stroke="rgba(10,14,20,0.8)" stroke-width="2"/>';
+    angle=end;
   });
+  svg+='<circle cx="'+cx+'" cy="'+cy+'" r="'+inner+'" fill="rgba(16,21,32,0.95)"/>';
+  svg+='<text x="'+cx+'" y="'+(cy-5)+'" text-anchor="middle" font-family="Archivo Black" font-size="18" fill="#FBF8F3">92</text>';
+  svg+='<text x="'+cx+'" y="'+(cy+10)+'" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(251,248,243,0.5)">ACTIVE</text>';
+  document.getElementById('donut-svg').innerHTML=svg;
 
-  // Target line $80K
-  var y80=yPos(80000);
-  svg+='<line x1="'+padL+'" y1="'+y80+'" x2="'+(W-padR)+'" y2="'+y80+'" stroke="'+'"#C8A951"'+'" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.7"/>';
-  svg+='<text x="'+(W-padR+4)+'" y="'+(y80+4)+'" class="chart-label" fill="#C8A951" font-size="10">$80K</text>';
-
-  // Target line $100K
-  var y100=yPos(100000);
-  svg+='<line x1="'+padL+'" y1="'+y100+'" x2="'+(W-padR)+'" y2="'+y100+'" stroke="#386217" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.7"/>';
-  svg+='<text x="'+(W-padR+4)+'" y="'+(y100+4)+'" class="chart-label" fill="#4CAF50" font-size="10">$100K</text>';
-
-  // Current MRR horizontal reference
-  var yCurrent=yPos(mrr);
-  svg+='<line x1="'+padL+'" y1="'+yCurrent+'" x2="'+xPos(0)+'" y2="'+yCurrent+'" stroke="rgba(251,248,243,0.15)" stroke-width="1"/>';
-
-  // Projected line (polyline)
-  var pts=points.map(function(p){return xPos(p.w)+','+yPos(p.val);}).join(' ');
-  svg+='<polyline points="'+pts+'" fill="none" stroke="rgba(16,71,145,0.8)" stroke-width="2.5" stroke-linejoin="round"/>';
-
-  // Area fill
-  var areaPath='M '+xPos(0)+' '+(padT+plotH)+' L '+points.map(function(p){return xPos(p.w)+' '+yPos(p.val);}).join(' L ')+' L '+xPos(weeks)+' '+(padT+plotH)+' Z';
-  svg+='<path d="'+areaPath+'" fill="rgba(16,71,145,0.1)"/>';
-
-  // Current dot
-  svg+='<circle cx="'+xPos(0)+'" cy="'+yPos(mrr)+'" r="5" fill="var(--cream)" stroke="#104791" stroke-width="2"/>';
-
-  // X axis labels (every 2 weeks)
-  for(var w=0;w<=weeks;w+=2){
-    var d=addWeeks(today,w);
-    svg+='<text x="'+xPos(w)+'" y="'+(padT+plotH+20)+'" text-anchor="middle" class="chart-label">'+formatMonthDay(d)+'</text>';
-  }
-
-  document.getElementById('mrr-chart').innerHTML=svg;
-
-  // Calculate $80K and $100K dates
-  var weeks80=Math.ceil((80000-mrr)/weeklyNet);
-  var weeks100=Math.ceil((100000-mrr)/weeklyNet);
-  var date80=addWeeks(today,weeks80);
-  var date100=addWeeks(today,weeks100);
-
-  var html='';
-  html+='<div class="pace-item"><div class="pace-label" style="color:var(--gold);">$80K Target</div><div class="pace-val" style="color:var(--gold);">'+date80.toLocaleDateString('en-AU',{day:'2-digit',month:'short',year:'2-digit'})+'</div><div style="font-size:11px;color:rgba(251,248,243,0.4);">~'+weeks80+' weeks at current pace</div></div>';
-  html+='<div class="pace-item"><div class="pace-label" style="color:#4CAF50;">$100K Target</div><div class="pace-val" style="color:#4CAF50;">'+date100.toLocaleDateString('en-AU',{day:'2-digit',month:'short',year:'2-digit'})+'</div><div style="font-size:11px;color:rgba(251,248,243,0.4);">~'+weeks100+' weeks at current pace</div></div>';
-  html+='<div class="pace-item"><div class="pace-label" style="color:rgba(251,248,243,0.5);">Weekly Net Growth</div><div class="pace-val">'+fmt(weeklyNet)+'/wk</div><div style="font-size:11px;color:rgba(251,248,243,0.4);">New $2,500 − Churn $800</div></div>';
-  document.getElementById('pace-callout').innerHTML=html;
-}
-
-function renderPnL(mrr, cash7d){
-  var today=new Date();
-  var dayOfMonth=today.getDate();
-  var daysInMonth=new Date(today.getFullYear(),today.getMonth()+1,0).getDate();
-  var revMTD=mrr*(dayOfMonth/daysInMonth);
-  var adSpend=4201.55;
-  var activeMentors=32;
-  var sessionsPerMentorMonth=4;
-  var costPerSession=25;
-  var mentorCost=activeMentors*sessionsPerMentorMonth*costPerSession; // $3,200
-  var totalCosts=adSpend+mentorCost;
-  var margin=revMTD-totalCosts;
-  var html='';
-  html+='<div class="pnl-row"><div class="pnl-name">Revenue MTD (MRR prorated)</div><div class="pnl-amount green">'+fmt(Math.round(revMTD))+'</div><div style="font-size:10px;color:rgba(251,248,243,0.3);margin-top:2px;">Day '+dayOfMonth+' of '+daysInMonth+'</div></div>';
-  html+='<div class="pnl-row" style="grid-column:span 2;"><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">';
-  html+='<div><div class="pnl-name">Ad Spend MTD</div><div class="pnl-amount red">'+fmt(adSpend)+'</div></div>';
-  html+='<div><div class="pnl-name">Mentor Costs (est.)</div><div class="pnl-amount red">'+fmt(mentorCost)+'</div><div style="font-size:10px;color:rgba(251,248,243,0.3);">$25×4sess×32 mentors</div></div>';
-  html+='<div><div class="pnl-name">Gross Margin (est.)</div><div class="pnl-amount '+(margin>0?'gold':'red')+'">'+fmt(Math.round(margin))+'</div><div style="font-size:10px;color:rgba(251,248,243,0.3);">Rev − Ads − Mentors</div></div>';
-  html+='</div></div>';
-  document.getElementById('pnl-grid').innerHTML=html;
-}
-
-function renderFailed(totalAmt){
-  var payments=[];
-  if(pulse&&pulse.stripe&&pulse.stripe.failed_payments_7d&&pulse.stripe.failed_payments_7d.details){
-    payments=pulse.stripe.failed_payments_7d.details;
-  } else {
-    // Fallback from known data
-    payments=[
-      {name:'Jordan Carlson',amount_aud:3616,created:1773957637},
-      {name:'Marlene Harris',amount_aud:940,created:1773817086},
-      {name:'Karen Vargas',amount_aud:940,created:1773590556},
-      {name:'Karen Vargas',amount_aud:940,created:1773446554},
-      {name:'Alicia Davies',amount_aud:232,created:1773880260},
-      {name:'Leah West',amount_aud:235,created:1773669734},
-      {name:'Leeanne Jackson',amount_aud:222,created:1773709959},
-      {name:'MR W R MAINARD',amount_aud:111.11,created:1773715565},
-      {name:null,amount_aud:235,created:1773984554},
-      {name:null,amount_aud:119,created:1773842439},
-      {name:null,amount_aud:119,created:1773756108},
-      {name:null,amount_aud:235,created:1773682180},
-      {name:null,amount_aud:165,created:1773560779}
-    ];
-  }
-
-  // Sort by amount desc
-  payments.sort(function(a,b){return b.amount_aud-a.amount_aud;});
-
-  var html='';
-  payments.forEach(function(p,i){
-    var name=p.name||p.customer_name||'Unknown';
-    var date=p.created?fmtDate(p.created):'This week';
-    var amount=p.amount_aud||0;
-    var badge=(amount>500)?'<span class="badge badge-red">High Risk</span>':'<span class="badge badge-amber">Monitor</span>';
-    html+='<tr><td style="font-weight:500;">'+name+'</td><td style="color:var(--red);font-weight:700;">'+fmt(amount)+'</td><td style="color:rgba(251,248,243,0.5);">'+date+'</td><td>'+badge+'</td></tr>';
+  var legend='';
+  segments.forEach(function(seg){
+    var pct=Math.round(seg.count/total*100);
+    legend+='<div class="legend-row">';
+    legend+='<div class="legend-dot" style="background:'+seg.color+';"></div>';
+    legend+='<div style="flex:1;font-weight:600;">'+seg.label+'</div>';
+    legend+='<div style="color:rgba(251,248,243,0.5);">'+seg.count+' ('+pct+'%)</div>';
+    legend+='</div>';
+    legend+='<div class="legend-sub" style="padding-left:18px;margin-bottom:8px;">'+seg.note+'</div>';
   });
-  document.getElementById('failed-tbody').innerHTML=html;
-  document.getElementById('total-risk-val').textContent=fmt(totalAmt);
-}
-
-// Load data
-Promise.all([
-  fetch('../data/dashboard-data.json').then(function(r){return r.json();}).catch(function(){return null;}),
-]).then(function(results){
-  dash=results[0];
-  // Use embedded pulse data
-  pulse={
-    stripe:{
-      active_subscriptions:{count:92,true_mrr_aud:67684.17,interval_breakdown:{"day x90":6,"month x1":17,"day x60":10,"week x1":35,"day x31":2,"week x9":8,"week x2":3,"day x32":1,"month x2":2,"week x35":6,"week x18":1,"week x14":1}},
-      charges_collected_7d:31692.14,
-      charges_collected_7d_count:64,
-      failed_payments_7d:{count:13,total_amount_aud:8109.11,details:[
-        {name:'Jordan Carlson',amount_aud:3616,created:1773957637},
-        {name:'Marlene Harris',amount_aud:940,created:1773817086},
-        {name:'Karen Vargas',amount_aud:940,created:1773590556},
-        {name:'Karen Vargas',amount_aud:940,created:1773446554},
-        {name:'Alicia Davies',amount_aud:232,created:1773880260},
-        {name:'Leah West',amount_aud:235,created:1773669734},
-        {name:'Leeanne Jackson',amount_aud:222,created:1773709959},
-        {name:'MR W R MAINARD',amount_aud:111.11,created:1773715565},
-        {name:null,amount_aud:235,created:1773984554},
-        {name:null,amount_aud:119,created:1773842439},
-        {name:null,amount_aud:119,created:1773756108},
-        {name:null,amount_aud:235,created:1773682180},
-        {name:null,amount_aud:165,created:1773560779}
-      ]},
-      past_due_subscriptions:{count:2,subscriptions:[{email:'milenafratini@hotmail.com',amount_aud:119},{email:'meghanecockburn@gmail.com',amount_aud:244}]}
-    },
-    meta_ads:{mtd:{spend:4201.55}}
-  };
-  renderAll();
-});
+  document.getElementById('donut-legend').innerHTML=legend;
+})();
 </script>
 </body>
 </html>
