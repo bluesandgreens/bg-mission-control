@@ -5,11 +5,10 @@
   "mrr": 46334.19,
   "cash_7d": 18748.73,
   "balance_total": 12726.86,
-  "meta_spend_mtd": 4298.59,
-  "booked_calls_mtd": 181,
-  "cpbc_mtd": 23.75,
+  "meta_spend_mtd": 0,
+  "booked_calls_mtd": 0,
+  "cpbc_mtd": 0,
   "dcs_mtd": 77,
   "revenue_at_risk": 7288.11,
-  "generated_at": "2026-03-21T19:15:57.388061",
-  "close_rate_mtd": 26.0
+  "generated_at": "2026-03-21T19:15:57.388061"
 }
