@@ -388,6 +388,11 @@ body {
   <div class="mobile-card" onclick="document.getElementById('ideas-section').scrollIntoView({behavior:'smooth'})"><h3>💡 Ideas Vault</h3><p>Brainstorms, experiments, research</p></div>
   <div class="mobile-card" onclick="document.getElementById('team-view').scrollIntoView({behavior:'smooth'})"><h3>👥 Team View</h3><p>RP · BP · NQ — live metrics</p></div>
   <div class="mobile-card" onclick="document.getElementById('constraint-section').scrollIntoView({behavior:'smooth'})"><h3>🔧 Build Lab</h3><p>Constraint Lab · Experiments</p></div>
+  <div class="mobile-card" onclick="window.location.href='./revenue-forecast/'" style="border-top:3px solid var(--gold);"><h3>📈 Revenue Forecast</h3><p>MRR trajectory · P&L · Failed payments</p></div>
+  <div class="mobile-card" onclick="window.location.href='./family-health/'" style="border-top:3px solid #4CAF50;"><h3>🏠 Family Health</h3><p>Health scores · At-risk families · Flags</p></div>
+  <div class="mobile-card" onclick="window.location.href='./recommendations/'" style="border-top:3px solid #E05252;"><h3>🧠 Smart Recs</h3><p>Leo's daily recommendations</p></div>
+  <div class="mobile-card" onclick="window.location.href='./scorecard/'" style="border-top:3px solid #5a9fd4;"><h3>📋 Weekly Scorecard</h3><p>This week vs last week · All metrics</p></div>
+  <div class="mobile-card" onclick="window.location.href='./money/'" style="border-top:3px solid #E8A030;"><h3>💰 Money View</h3><p>Cash flow · Subscriptions · FE pipeline</p></div>
   <div style="padding:20px;">
     <div class="pulse-grid" style="position:relative; width:100%; grid-template-columns:repeat(5,1fr);">
       <div class="pulse-stat"><div class="val" id="m-active">--</div><div class="lbl">Active</div></div>
@@ -478,7 +483,7 @@ body {
 </div>
 
 <!-- DASHBOARDS HUB -->
-<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:40px;">
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:16px;">
   <a href="./dashboard/" style="text-decoration:none; background:rgba(26,30,42,0.6); border:1px solid rgba(16,71,145,0.2); border-radius:16px; padding:20px; transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(16,71,145,0.2)'">
     <div style="font-family:'Archivo Black',sans-serif; font-size:13px; color:var(--gold); margin-bottom:8px;">📊 DAILY DASHBOARD</div>
     <div id="dash-preview" style="font-size:12px; color:rgba(251,248,243,0.5);">Loading...</div>
@@ -494,6 +499,43 @@ body {
     <div id="ads-preview" style="font-size:12px; color:rgba(251,248,243,0.3);">Loading...</div>
     <div style="font-size:11px; color:rgba(251,248,243,0.3); margin-top:8px;">COMING SOON</div>
   </div>
+</div>
+
+<!-- MC v3 WAVE 1 — NEW FEATURE PAGES -->
+<div style="margin-bottom:8px; padding:0 2px;">
+  <div style="font-family:'Archivo Black',sans-serif; font-size:11px; color:var(--gold); letter-spacing:3px; text-transform:uppercase; margin-bottom:12px; opacity:0.7;">⚡ MISSION CONTROL v3</div>
+</div>
+<div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:40px;">
+  <a href="./revenue-forecast/" style="text-decoration:none; background:rgba(26,30,42,0.6); border:1px solid rgba(200,169,81,0.15); border-radius:14px; padding:18px 16px; transition:all 0.3s ease; border-top:3px solid var(--gold);" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(200,169,81,0.15)';this.style.transform='translateY(0)'">
+    <div style="font-size:22px; margin-bottom:8px;">📈</div>
+    <div style="font-family:'Archivo Black',sans-serif; font-size:12px; color:var(--gold); margin-bottom:6px;">REVENUE FORECAST</div>
+    <div style="font-size:11px; color:rgba(251,248,243,0.4);">MRR trajectory, P&amp;L, failed payments</div>
+    <div style="font-size:10px; color:var(--gold); margin-top:10px; font-weight:700;">OPEN →</div>
+  </a>
+  <a href="./family-health/" style="text-decoration:none; background:rgba(26,30,42,0.6); border:1px solid rgba(56,98,23,0.15); border-radius:14px; padding:18px 16px; transition:all 0.3s ease; border-top:3px solid #4CAF50;" onmouseover="this.style.borderColor='#4CAF50';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(56,98,23,0.15)';this.style.transform='translateY(0)'">
+    <div style="font-size:22px; margin-bottom:8px;">🏠</div>
+    <div style="font-family:'Archivo Black',sans-serif; font-size:12px; color:#4CAF50; margin-bottom:6px;">FAMILY HEALTH</div>
+    <div style="font-size:11px; color:rgba(251,248,243,0.4);">Health scores, flags, at-risk families</div>
+    <div style="font-size:10px; color:#4CAF50; margin-top:10px; font-weight:700;">OPEN →</div>
+  </a>
+  <a href="./recommendations/" style="text-decoration:none; background:rgba(26,30,42,0.6); border:1px solid rgba(224,82,82,0.15); border-radius:14px; padding:18px 16px; transition:all 0.3s ease; border-top:3px solid #E05252;" onmouseover="this.style.borderColor='#E05252';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(224,82,82,0.15)';this.style.transform='translateY(0)'">
+    <div style="font-size:22px; margin-bottom:8px;">🧠</div>
+    <div style="font-family:'Archivo Black',sans-serif; font-size:12px; color:#E05252; margin-bottom:6px;">SMART RECS</div>
+    <div style="font-size:11px; color:rgba(251,248,243,0.4);">Leo's daily recommendations</div>
+    <div style="font-size:10px; color:#E05252; margin-top:10px; font-weight:700;">OPEN →</div>
+  </a>
+  <a href="./scorecard/" style="text-decoration:none; background:rgba(26,30,42,0.6); border:1px solid rgba(90,159,212,0.15); border-radius:14px; padding:18px 16px; transition:all 0.3s ease; border-top:3px solid #5a9fd4;" onmouseover="this.style.borderColor='#5a9fd4';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(90,159,212,0.15)';this.style.transform='translateY(0)'">
+    <div style="font-size:22px; margin-bottom:8px;">📋</div>
+    <div style="font-family:'Archivo Black',sans-serif; font-size:12px; color:#5a9fd4; margin-bottom:6px;">WEEKLY SCORECARD</div>
+    <div style="font-size:11px; color:rgba(251,248,243,0.4);">This week vs last week</div>
+    <div style="font-size:10px; color:#5a9fd4; margin-top:10px; font-weight:700;">OPEN →</div>
+  </a>
+  <a href="./money/" style="text-decoration:none; background:rgba(26,30,42,0.6); border:1px solid rgba(232,160,48,0.15); border-radius:14px; padding:18px 16px; transition:all 0.3s ease; border-top:3px solid #E8A030;" onmouseover="this.style.borderColor='#E8A030';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(232,160,48,0.15)';this.style.transform='translateY(0)'">
+    <div style="font-size:22px; margin-bottom:8px;">💰</div>
+    <div style="font-family:'Archivo Black',sans-serif; font-size:12px; color:#E8A030; margin-bottom:6px;">MONEY VIEW</div>
+    <div style="font-size:11px; color:rgba(251,248,243,0.4);">Cash flow, sub breakdown, FE pipeline</div>
+    <div style="font-size:10px; color:#E8A030; margin-top:10px; font-weight:700;">OPEN →</div>
+  </a>
 </div>
 
 </div>

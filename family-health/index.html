@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Health Scores — B&G Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;}
+.header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold);}
+.header-logo{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--navy);}
+.header-title{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
+.back-link{color:rgba(251,248,243,0.5);font-size:13px;text-decoration:none;}
+.back-link:hover{color:var(--gold);}
+.container{max-width:1100px;margin:0 auto;padding:32px 20px;}
+.summary-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
+.sum-card{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px;text-align:center;}
+.sum-val{font-family:'Archivo Black',sans-serif;font-size:32px;}
+.sum-lbl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
+.sum-card.healthy .sum-val{color:#4CAF50;} .sum-card.healthy .sum-lbl{color:#4CAF50;}
+.sum-card.attention .sum-val{color:var(--amber);} .sum-card.attention .sum-lbl{color:var(--amber);}
+.sum-card.risk .sum-val{color:var(--red);} .sum-card.risk .sum-lbl{color:var(--red);}
+.sum-card.total .sum-val{color:var(--cream);} .sum-card.total .sum-lbl{color:var(--gold);}
+.filters{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;align-items:center;}
+.filter-btn{padding:6px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:rgba(251,248,243,0.6);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.filter-btn.active,.filter-btn:hover{background:rgba(200,169,81,0.15);border-color:var(--gold);color:var(--gold);}
+.search-box{margin-left:auto;padding:6px 14px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:var(--cream);font-size:12px;font-family:'DM Sans',sans-serif;width:200px;}
+.search-box:focus{outline:none;border-color:var(--gold);}
+.sort-info{font-size:11px;color:rgba(251,248,243,0.3);margin-bottom:12px;}
+table{width:100%;border-collapse:collapse;}
+thead th{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.06);text-align:left;cursor:pointer;white-space:nowrap;}
+thead th:hover{color:var(--gold);}
+tbody tr{cursor:pointer;transition:background 0.2s;}
+tbody tr:hover td{background:rgba(255,255,255,0.025);}
+tbody td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;}
+.detail-row td{background:rgba(16,21,32,0.9)!important;padding:0!important;}
+.detail-panel{padding:16px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.detail-item{background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 12px;}
+.detail-label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:4px;}
+.detail-val{font-size:13px;font-weight:600;}
+.score-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:700;}
+.score-green{background:rgba(76,175,80,0.15);color:#4CAF50;border:1px solid rgba(76,175,80,0.2);}
+.score-amber{background:rgba(232,160,48,0.15);color:var(--amber);border:1px solid rgba(232,160,48,0.2);}
+.score-red{background:rgba(224,82,82,0.15);color:var(--red);border:1px solid rgba(224,82,82,0.2);}
+.action-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;border:1px solid rgba(200,169,81,0.2);color:var(--gold);cursor:pointer;}
+.action-tag:hover{background:rgba(200,169,81,0.1);}
+.flag-chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;margin-right:4px;margin-bottom:2px;}
+.flag-red{background:rgba(224,82,82,0.2);color:var(--red);}
+.flag-amber{background:rgba(232,160,48,0.2);color:var(--amber);}
+.score-bar{height:4px;border-radius:2px;background:rgba(255,255,255,0.06);margin-top:4px;}
+.score-fill{height:100%;border-radius:2px;transition:width 0.4s;}
+@media(max-width:768px){.summary-bar{grid-template-columns:repeat(2,1fr);}.detail-panel{grid-template-columns:1fr 1fr;}.search-box{width:100%;margin-left:0;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="header-logo">B&G</div>
+    <div class="header-title">Family Health Scores</div>
+  </div>
+  <a class="back-link" href="../">← Mission Control</a>
+</div>
+<div class="container">
+  <div class="summary-bar" id="summary-bar">
+    <div class="sum-card healthy"><div class="sum-val" id="s-healthy">--</div><div class="sum-lbl">🟢 Healthy</div></div>
+    <div class="sum-card attention"><div class="sum-val" id="s-attention">--</div><div class="sum-lbl">🟡 Need Attention</div></div>
+    <div class="sum-card risk"><div class="sum-val" id="s-risk">--</div><div class="sum-lbl">🔴 At Risk</div></div>
+    <div class="sum-card total"><div class="sum-val" id="s-total">--</div><div class="sum-lbl">🏠 Total Families</div></div>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="setFilter('all',this)">All Families</button>
+    <button class="filter-btn" onclick="setFilter('risk',this)">🔴 At Risk (&lt;50)</button>
+    <button class="filter-btn" onclick="setFilter('attention',this)">🟡 Need Attention (50-69)</button>
+    <button class="filter-btn" onclick="setFilter('healthy',this)">🟢 Healthy (70+)</button>
+    <input class="search-box" type="text" id="search-input" placeholder="🔍 Search family name..." oninput="filterTable()">
+  </div>
+
+  <div class="sort-info">Click any column header to sort · Click a row to expand details</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th onclick="sortBy('name')">Family Name ↕</th>
+        <th onclick="sortBy('son')">Son</th>
+        <th onclick="sortBy('mentor')">Mentor</th>
+        <th onclick="sortBy('score')">Health Score ↕</th>
+        <th onclick="sortBy('status')">Status</th>
+        <th>Flags</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="family-tbody"></tbody>
+  </table>
+</div>
+
+<script>
+var families=[];
+var currentFilter='all';
+var currentSort={col:'score',dir:-1};
+var expandedId=null;
+
+function scoreColor(s){return s>=70?'score-green':s>=40?'score-amber':'score-red';}
+function scoreEmoji(s){return s>=70?'🟢':s>=40?'🟡':'🔴';}
+function statusLabel(f){
+  if(f.score<40)return'At Risk';
+  if(f.score<70)return'Needs Attention';
+  return'Healthy';
+}
+
+fetch('../data/dashboard-data.json').then(function(r){return r.json();}).then(function(dash){
+  buildFamilies(dash);
+  renderTable();
+}).catch(function(){
+  buildFamilies(null);
+  renderTable();
+});
+
+function buildFamilies(dash){
+  // Overdue W1s — these families get -30 points
+  var overdueNames={};
+  var overdue_w1s=dash&&dash.overdue_w1s||[
+    {name:'Lachlan',w1_scheduled_date:'2026-03-06',days_overdue:14,mentor:'Jed Woods'},
+    {name:'Aden',w1_scheduled_date:'2026-03-14',days_overdue:6,mentor:'Jett Cara'},
+    {name:'Elijah',w1_scheduled_date:'2026-03-07',days_overdue:13,mentor:'Lachlan Hall'},
+    {name:'Jake',w1_scheduled_date:'2026-03-04',days_overdue:16,mentor:''},
+    {name:'Londyn',w1_scheduled_date:'2026-03-11',days_overdue:9,mentor:'Xavier Lewis'},
+    {name:'Eric',w1_scheduled_date:'2026-03-19',days_overdue:1,mentor:'Tom Hermans'}
+  ];
+  overdue_w1s.forEach(function(o){overdueNames[o.name.toLowerCase().trim()]=o;});
+
+  // Past due / failed payments — -25 points
+  var paymentRisk={};
+  ['Milena Fratini','Meghan Cockburn','Jordan Carlson','Marlene Harris','Karen Vargas','Leeanne Jackson','Alicia Davies','Leah West'].forEach(function(n){
+    paymentRisk[n.toLowerCase()]=true;
+  });
+
+  // Surround sound — all have "No" touches, so no bonus
+  var surround=dash&&dash.surround_sound||[];
+  var surroundNames={};
+  surround.forEach(function(s){surroundNames[s.name.toLowerCase()]=s;});
+
+  // Families at risk from dashboard
+  var atRisk=dash&&dash.families_at_risk||[];
+  var riskNames={};
+  atRisk.forEach(function(f){riskNames[f.name.toLowerCase()]=f;});
+
+  // Retention — active families with session counts
+  var retention=dash&&dash.retention&&dash.retention.session_7_plus||[];
+  var mentorMap={};
+  var alloc=dash&&dash.activation_pipeline&&dash.activation_pipeline.mentor_allocated||[];
+  alloc.forEach(function(a){mentorMap[a.name.toLowerCase()]=a.mentor;});
+
+  // Build families from retention data
+  var seen={};
+  retention.forEach(function(r){
+    var key=r.name.toLowerCase().trim();
+    if(seen[key])return;
+    seen[key]=true;
+    var score=75;
+    var flags=[];
+    var sessions=parseInt(r.session_count)||0;
+
+    // Payment risk check
+    if(paymentRisk[key]){score-=25;flags.push({label:'Payment Issue',cls:'flag-red'});}
+
+    // Low sessions
+    if(sessions<5){score-=15;flags.push({label:'Low Sessions',cls:'flag-amber'});}
+
+    // Surround sound — no touches
+    if(riskNames[key]){
+      var signal=riskNames[key].risk_signal||'';
+      if(signal.indexOf('Missing touches')>-1){flags.push({label:'No Surround Touch',cls:'flag-amber'});}
+      if(signal.indexOf('days since last session')>-1){
+        var dayMatch=signal.match(/(\d+) days/);
+        var days=dayMatch?parseInt(dayMatch[1]):0;
+        if(days>30){score-=20;flags.push({label:days+'d No Session',cls:'flag-red'});}
+        else if(days>14){score-=10;flags.push({label:days+'d No Session',cls:'flag-amber'});}
+      }
+    }
+
+    score=Math.max(0,Math.min(100,score));
+
+    families.push({
+      id:key,
+      name:r.name,
+      son:'—',
+      mentor:mentorMap[key]||'—',
+      score:score,
+      sessions:sessions,
+      flags:flags,
+      paymentDate:r.payment_reset_date||null,
+      memberStatus:r.member_status||'Active',
+      dataQuality:'Full'
+    });
+  });
+
+  // Add overdue W1 families if not already in list
+  overdue_w1s.forEach(function(o){
+    var key=o.name.toLowerCase().trim();
+    var existing=families.find(function(f){return f.id===key;});
+    if(existing){
+      existing.score=Math.max(0,existing.score-30);
+      existing.flags.push({label:'Overdue W1 '+o.days_overdue+'d',cls:'flag-red'});
+    } else {
+      var score=75-30;
+      if(!o.name.trim())return;
+      families.push({
+        id:key,
+        name:'[Parent of] '+o.name,
+        son:o.name,
+        mentor:o.mentor||'—',
+        score:score,
+        sessions:0,
+        flags:[{label:'Overdue W1 '+o.days_overdue+'d',cls:'flag-red'}],
+        paymentDate:null,
+        memberStatus:'Activation',
+        dataQuality:'Limited'
+      });
+    }
+  });
+
+  // Add surround sound families not yet in list
+  surround.forEach(function(s){
+    var key=s.name.toLowerCase().trim();
+    if(families.find(function(f){return f.id===key;}))return;
+    var score=75;
+    var flags=[{label:'No Surround Touch',cls:'flag-amber'}];
+    families.push({
+      id:key,name:s.name,son:'—',mentor:'—',score:score,sessions:0,flags:flags,paymentDate:null,memberStatus:'Active',dataQuality:'Limited'
+    });
+  });
+}
+
+function renderSummary(){
+  var healthy=families.filter(function(f){return f.score>=70;}).length;
+  var attention=families.filter(function(f){return f.score>=40&&f.score<70;}).length;
+  var risk=families.filter(function(f){return f.score<40;}).length;
+  document.getElementById('s-healthy').textContent=healthy;
+  document.getElementById('s-attention').textContent=attention;
+  document.getElementById('s-risk').textContent=risk;
+  document.getElementById('s-total').textContent=families.length;
+}
+
+function getFiltered(){
+  var q=(document.getElementById('search-input').value||'').toLowerCase();
+  return families.filter(function(f){
+    if(currentFilter==='risk'&&f.score>=50)return false;
+    if(currentFilter==='attention'&&(f.score<40||f.score>=70))return false;
+    if(currentFilter==='healthy'&&f.score<70)return false;
+    if(q&&f.name.toLowerCase().indexOf(q)<0&&f.son.toLowerCase().indexOf(q)<0)return false;
+    return true;
+  }).sort(function(a,b){
+    var av=a[currentSort.col]||'',bv=b[currentSort.col]||'';
+    if(typeof av==='number')return currentSort.dir*(av-bv);
+    return currentSort.dir*(av.toString().localeCompare(bv.toString()));
+  });
+}
+
+function renderTable(){
+  renderSummary();
+  var rows=getFiltered();
+  var html='';
+  rows.forEach(function(f){
+    var sc=f.score;
+    var sClass=scoreColor(sc);
+    var fillColor=sc>=70?'#4CAF50':sc>=40?'#E8A030':'#E05252';
+    var flagsHtml=f.flags.map(function(fl){return'<span class="flag-chip '+fl.cls+'">'+fl.label+'</span>';}).join('');
+    html+='<tr onclick="toggleDetail(\''+f.id+'\')" id="row-'+f.id+'">';
+    html+='<td><strong>'+f.name+'</strong>'+(f.dataQuality==='Limited'?'<span style="font-size:9px;color:rgba(251,248,243,0.3);margin-left:6px;">limited data</span>':'')+'</td>';
+    html+='<td style="color:rgba(251,248,243,0.6);">'+f.son+'</td>';
+    html+='<td style="color:rgba(251,248,243,0.6);font-size:12px;">'+f.mentor+'</td>';
+    html+='<td><div style="display:flex;align-items:center;gap:8px;"><span class="score-pill '+sClass+'">'+scoreEmoji(sc)+' '+sc+'</span><div style="width:60px;"><div class="score-bar"><div class="score-fill" style="width:'+sc+'%;background:'+fillColor+';"></div></div></div></div></td>';
+    html+='<td><span style="font-size:12px;color:rgba(251,248,243,0.5);">'+f.memberStatus+'</span></td>';
+    html+='<td>'+flagsHtml+'</td>';
+    html+='<td><span class="action-tag" onclick="event.stopPropagation();copyAction(\''+f.name+'\')">📋 Copy</span></td>';
+    html+='</tr>';
+    html+='<tr class="detail-row" id="detail-'+f.id+'" style="display:none;"><td colspan="7">';
+    html+='<div class="detail-panel">';
+    html+='<div class="detail-item"><div class="detail-label">Health Score</div><div class="detail-val"><span class="score-pill '+sClass+'">'+scoreEmoji(sc)+' '+sc+'/100</span></div></div>';
+    html+='<div class="detail-item"><div class="detail-label">Sessions Completed</div><div class="detail-val">'+f.sessions+'</div></div>';
+    html+='<div class="detail-item"><div class="detail-label">Member Status</div><div class="detail-val">'+f.memberStatus+'</div></div>';
+    html+='<div class="detail-item"><div class="detail-label">Mentor</div><div class="detail-val">'+f.mentor+'</div></div>';
+    html+='<div class="detail-item"><div class="detail-label">Payment Reset</div><div class="detail-val">'+(f.paymentDate||'N/A')+'</div></div>';
+    html+='<div class="detail-item"><div class="detail-label">Active Flags</div><div class="detail-val">'+f.flags.map(function(fl){return'<span class="flag-chip '+fl.cls+'">'+fl.label+'</span>';}).join('')+'</div></div>';
+    html+='</div></td></tr>';
+  });
+  if(!html)html='<tr><td colspan="7" style="text-align:center;padding:40px;color:rgba(251,248,243,0.3);">No families match this filter</td></tr>';
+  document.getElementById('family-tbody').innerHTML=html;
+}
+
+function toggleDetail(id){
+  var row=document.getElementById('detail-'+id);
+  if(!row)return;
+  var showing=row.style.display!=='none';
+  if(expandedId&&expandedId!==id){var prev=document.getElementById('detail-'+expandedId);if(prev)prev.style.display='none';}
+  row.style.display=showing?'none':'table-row';
+  expandedId=showing?null:id;
+}
+
+function setFilter(f,btn){
+  currentFilter=f;
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  expandedId=null;
+  renderTable();
+}
+
+function sortBy(col){
+  if(currentSort.col===col)currentSort.dir*=-1;
+  else{currentSort.col=col;currentSort.dir=col==='score'?-1:1;}
+  renderTable();
+}
+
+function filterTable(){renderTable();}
+
+function copyAction(name){
+  var text='Follow up with '+name+' — check family health in Mission Control';
+  if(navigator.clipboard){navigator.clipboard.writeText(text);}
+  // toast
+  var t=document.createElement('div');
+  t.textContent='📋 Copied: '+name;
+  t.style.cssText='position:fixed;bottom:24px;right:24px;background:rgba(200,169,81,0.9);color:#0A0E14;padding:10px 18px;border-radius:10px;font-weight:700;font-size:13px;z-index:9999;';
+  document.body.appendChild(t);
+  setTimeout(function(){t.remove();},2000);
+}
+</script>
+</body>
+</html>

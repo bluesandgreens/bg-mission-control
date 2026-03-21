@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revenue Forecast — B&G Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;}
+.header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold);}
+.header-logo{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--navy);letter-spacing:1px;}
+.header-title{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
+.back-link{color:rgba(251,248,243,0.5);font-size:13px;text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link:hover{color:var(--gold);}
+.container{max-width:1100px;margin:0 auto;padding:32px 20px;}
+.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
+.hero-card{background:rgba(16,21,32,0.8);border:1px solid rgba(200,169,81,0.15);border-radius:16px;padding:20px;border-top:3px solid var(--gold);}
+.hero-card.risk{border-top-color:var(--red);}
+.hero-card.green{border-top-color:#4CAF50;}
+.hero-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--cream);margin:8px 0 4px;}
+.hero-lbl{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.hero-sub{font-size:11px;color:rgba(251,248,243,0.4);}
+.section{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px;margin-bottom:24px;}
+.section-title{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+svg.chart{width:100%;height:220px;overflow:visible;}
+.chart-label{font-family:'DM Sans',sans-serif;font-size:11px;fill:rgba(251,248,243,0.5);}
+.chart-val{font-family:'DM Sans',sans-serif;font-size:10px;fill:rgba(251,248,243,0.7);}
+.pace-callout{display:flex;gap:24px;margin-top:16px;flex-wrap:wrap;}
+.pace-item{background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 16px;flex:1;min-width:160px;}
+.pace-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
+.pace-val{font-size:16px;font-weight:700;}
+.pnl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:4px;}
+.pnl-row{padding:12px 16px;border-radius:10px;background:rgba(255,255,255,0.03);}
+.pnl-row.total{background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.2);}
+.pnl-name{font-size:11px;color:rgba(251,248,243,0.5);margin-bottom:4px;}
+.pnl-amount{font-family:'Archivo Black',sans-serif;font-size:22px;}
+.pnl-amount.green{color:#4CAF50;}
+.pnl-amount.red{color:var(--red);}
+.pnl-amount.gold{color:var(--gold);}
+.failed-table{width:100%;border-collapse:collapse;}
+.failed-table th{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.4);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.06);text-align:left;}
+.failed-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;}
+.failed-table tr:last-child td{border-bottom:none;}
+.failed-table tr:hover td{background:rgba(255,255,255,0.02);}
+.badge{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;}
+.badge-red{background:rgba(224,82,82,0.2);color:var(--red);}
+.badge-amber{background:rgba(232,160,48,0.2);color:var(--amber);}
+.badge-green{background:rgba(76,175,80,0.15);color:#4CAF50;}
+.total-risk{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:rgba(224,82,82,0.08);border:1px solid rgba(224,82,82,0.2);border-radius:10px;margin-top:16px;}
+.note{font-size:11px;color:rgba(251,248,243,0.3);margin-top:12px;font-style:italic;}
+@media(max-width:768px){.hero-grid{grid-template-columns:repeat(2,1fr);}.pnl-grid{grid-template-columns:1fr;}.pace-callout{gap:12px;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="header-logo">B&G</div>
+    <div class="header-title">Revenue Forecast</div>
+  </div>
+  <a class="back-link" href="../">← Mission Control</a>
+</div>
+<div class="container">
+
+<!-- HERO CARDS -->
+<div class="hero-grid" id="hero-cards">
+  <div class="hero-card">
+    <div class="hero-lbl">Current MRR</div>
+    <div class="hero-val" id="h-mrr">$67,684</div>
+    <div class="hero-sub">92 active subscriptions</div>
+  </div>
+  <div class="hero-card green">
+    <div class="hero-lbl">Cash Collected</div>
+    <div class="hero-val" id="h-cash">$31,692</div>
+    <div class="hero-sub">Last 7 days · 64 charges</div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-lbl">Stripe Balance</div>
+    <div class="hero-val" style="font-size:16px;margin-top:12px;color:rgba(251,248,243,0.4);">Connect for live balance</div>
+    <div class="hero-sub">Stripe Dashboard → Payouts</div>
+  </div>
+  <div class="hero-card risk">
+    <div class="hero-lbl">Revenue at Risk</div>
+    <div class="hero-val" id="h-risk" style="color:var(--red);">$8,472</div>
+    <div class="hero-sub">Failed payments + past due</div>
+  </div>
+</div>
+
+<!-- MRR TRAJECTORY CHART -->
+<div class="section">
+  <div class="section-title">📈 MRR TRAJECTORY — NEXT 12 WEEKS</div>
+  <svg class="chart" id="mrr-chart" viewBox="0 0 900 220" preserveAspectRatio="xMidYMid meet"></svg>
+  <div class="pace-callout" id="pace-callout"></div>
+  <p class="note">Projection based on: current MRR $67,684 + avg $2,500/week new revenue − avg $800/week churn. Targets: $80K (gold) | $100K (green).</p>
+</div>
+
+<!-- P&L SUMMARY -->
+<div class="section">
+  <div class="section-title">💰 MONTHLY P&L SUMMARY (ESTIMATE)</div>
+  <div class="pnl-grid" id="pnl-grid"></div>
+  <p class="note">Revenue MTD calculated from MRR × days elapsed / 30. Mentor costs estimated at $25/session × 4 sessions/mentor × 32 active mentors. All figures clearly labelled as estimates.</p>
+</div>
+
+<!-- FAILED PAYMENTS -->
+<div class="section">
+  <div class="section-title">⚠️ FAILED PAYMENTS — LAST 7 DAYS</div>
+  <table class="failed-table" id="failed-table">
+    <thead><tr>
+      <th>Name</th><th>Amount</th><th>Date</th><th>Status</th>
+    </tr></thead>
+    <tbody id="failed-tbody"></tbody>
+  </table>
+  <div class="total-risk" id="total-risk-row">
+    <span style="font-weight:700;font-size:14px;">Total at Risk</span>
+    <span id="total-risk-val" style="font-family:'Archivo Black',sans-serif;font-size:20px;color:var(--red);">$8,109</span>
+  </div>
+</div>
+
+</div>
+<script>
+// ── DATA ──────────────────────────────────────────
+var pulse = null;
+var dash = null;
+
+function fmt(n){return '$'+Number(n).toLocaleString('en-AU',{maximumFractionDigits:0});}
+function fmtDate(ts){var d=new Date(ts*1000);return d.toLocaleDateString('en-AU',{day:'2-digit',month:'short'});}
+function addWeeks(date,n){var d=new Date(date);d.setDate(d.getDate()+n*7);return d;}
+function formatMonthDay(d){return d.toLocaleDateString('en-AU',{day:'2-digit',month:'short'});}
+
+function renderAll(){
+  // Hero
+  var mrr = (pulse&&pulse.stripe&&pulse.stripe.active_subscriptions&&pulse.stripe.active_subscriptions.true_mrr_aud)||67684.17;
+  var cash7d = (pulse&&pulse.stripe&&pulse.stripe.charges_collected_7d)||31692.14;
+  var failedAmt = (pulse&&pulse.stripe&&pulse.stripe.failed_payments_7d&&pulse.stripe.failed_payments_7d.total_amount_aud)||8109.11;
+  var pastDueAmt = 0;
+  if(pulse&&pulse.stripe&&pulse.stripe.past_due_subscriptions&&pulse.stripe.past_due_subscriptions.subscriptions){
+    pulse.stripe.past_due_subscriptions.subscriptions.forEach(function(s){pastDueAmt+=s.amount_aud;});
+  } else { pastDueAmt=363; }
+  var atRisk = failedAmt+pastDueAmt;
+  document.getElementById('h-mrr').textContent=fmt(mrr);
+  document.getElementById('h-cash').textContent=fmt(cash7d);
+  document.getElementById('h-risk').textContent=fmt(Math.round(atRisk));
+
+  // Chart
+  renderChart(mrr);
+
+  // P&L
+  renderPnL(mrr, cash7d);
+
+  // Failed payments
+  renderFailed(failedAmt);
+}
+
+function renderChart(mrr){
+  var weeklyNet=2500-800; // 1700/week
+  var target80=80000, target100=100000;
+  var weeks=12;
+  var today=new Date();
+
+  // Build data points
+  var points=[];
+  for(var w=0;w<=weeks;w++){
+    var val=mrr+weeklyNet*w;
+    points.push({w:w,val:val,date:addWeeks(today,w)});
+  }
+
+  // SVG dimensions
+  var W=900,H=180,padL=70,padR=20,padT=20,padB=40;
+  var plotW=W-padL-padR, plotH=H-padT-padB;
+  var minVal=60000, maxVal=110000;
+
+  function xPos(w){return padL+w*(plotW/weeks);}
+  function yPos(v){return padT+plotH-(v-minVal)/(maxVal-minVal)*plotH;}
+
+  // Build SVG
+  var svg='';
+
+  // Grid lines
+  [60000,70000,80000,90000,100000,110000].forEach(function(v){
+    var y=yPos(v);
+    svg+='<line x1="'+padL+'" y1="'+y+'" x2="'+(W-padR)+'" y2="'+y+'" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>';
+    svg+='<text x="'+(padL-6)+'" y="'+(y+4)+'" text-anchor="end" class="chart-label">'+fmt(v)+'</text>';
+  });
+
+  // Target line $80K
+  var y80=yPos(80000);
+  svg+='<line x1="'+padL+'" y1="'+y80+'" x2="'+(W-padR)+'" y2="'+y80+'" stroke="'+'"#C8A951"'+'" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.7"/>';
+  svg+='<text x="'+(W-padR+4)+'" y="'+(y80+4)+'" class="chart-label" fill="#C8A951" font-size="10">$80K</text>';
+
+  // Target line $100K
+  var y100=yPos(100000);
+  svg+='<line x1="'+padL+'" y1="'+y100+'" x2="'+(W-padR)+'" y2="'+y100+'" stroke="#386217" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.7"/>';
+  svg+='<text x="'+(W-padR+4)+'" y="'+(y100+4)+'" class="chart-label" fill="#4CAF50" font-size="10">$100K</text>';
+
+  // Current MRR horizontal reference
+  var yCurrent=yPos(mrr);
+  svg+='<line x1="'+padL+'" y1="'+yCurrent+'" x2="'+xPos(0)+'" y2="'+yCurrent+'" stroke="rgba(251,248,243,0.15)" stroke-width="1"/>';
+
+  // Projected line (polyline)
+  var pts=points.map(function(p){return xPos(p.w)+','+yPos(p.val);}).join(' ');
+  svg+='<polyline points="'+pts+'" fill="none" stroke="rgba(16,71,145,0.8)" stroke-width="2.5" stroke-linejoin="round"/>';
+
+  // Area fill
+  var areaPath='M '+xPos(0)+' '+(padT+plotH)+' L '+points.map(function(p){return xPos(p.w)+' '+yPos(p.val);}).join(' L ')+' L '+xPos(weeks)+' '+(padT+plotH)+' Z';
+  svg+='<path d="'+areaPath+'" fill="rgba(16,71,145,0.1)"/>';
+
+  // Current dot
+  svg+='<circle cx="'+xPos(0)+'" cy="'+yPos(mrr)+'" r="5" fill="var(--cream)" stroke="#104791" stroke-width="2"/>';
+
+  // X axis labels (every 2 weeks)
+  for(var w=0;w<=weeks;w+=2){
+    var d=addWeeks(today,w);
+    svg+='<text x="'+xPos(w)+'" y="'+(padT+plotH+20)+'" text-anchor="middle" class="chart-label">'+formatMonthDay(d)+'</text>';
+  }
+
+  document.getElementById('mrr-chart').innerHTML=svg;
+
+  // Calculate $80K and $100K dates
+  var weeks80=Math.ceil((80000-mrr)/weeklyNet);
+  var weeks100=Math.ceil((100000-mrr)/weeklyNet);
+  var date80=addWeeks(today,weeks80);
+  var date100=addWeeks(today,weeks100);
+
+  var html='';
+  html+='<div class="pace-item"><div class="pace-label" style="color:var(--gold);">$80K Target</div><div class="pace-val" style="color:var(--gold);">'+date80.toLocaleDateString('en-AU',{day:'2-digit',month:'short',year:'2-digit'})+'</div><div style="font-size:11px;color:rgba(251,248,243,0.4);">~'+weeks80+' weeks at current pace</div></div>';
+  html+='<div class="pace-item"><div class="pace-label" style="color:#4CAF50;">$100K Target</div><div class="pace-val" style="color:#4CAF50;">'+date100.toLocaleDateString('en-AU',{day:'2-digit',month:'short',year:'2-digit'})+'</div><div style="font-size:11px;color:rgba(251,248,243,0.4);">~'+weeks100+' weeks at current pace</div></div>';
+  html+='<div class="pace-item"><div class="pace-label" style="color:rgba(251,248,243,0.5);">Weekly Net Growth</div><div class="pace-val">'+fmt(weeklyNet)+'/wk</div><div style="font-size:11px;color:rgba(251,248,243,0.4);">New $2,500 − Churn $800</div></div>';
+  document.getElementById('pace-callout').innerHTML=html;
+}
+
+function renderPnL(mrr, cash7d){
+  var today=new Date();
+  var dayOfMonth=today.getDate();
+  var daysInMonth=new Date(today.getFullYear(),today.getMonth()+1,0).getDate();
+  var revMTD=mrr*(dayOfMonth/daysInMonth);
+  var adSpend=4201.55;
+  var activeMentors=32;
+  var sessionsPerMentorMonth=4;
+  var costPerSession=25;
+  var mentorCost=activeMentors*sessionsPerMentorMonth*costPerSession; // $3,200
+  var totalCosts=adSpend+mentorCost;
+  var margin=revMTD-totalCosts;
+  var html='';
+  html+='<div class="pnl-row"><div class="pnl-name">Revenue MTD (MRR prorated)</div><div class="pnl-amount green">'+fmt(Math.round(revMTD))+'</div><div style="font-size:10px;color:rgba(251,248,243,0.3);margin-top:2px;">Day '+dayOfMonth+' of '+daysInMonth+'</div></div>';
+  html+='<div class="pnl-row" style="grid-column:span 2;"><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">';
+  html+='<div><div class="pnl-name">Ad Spend MTD</div><div class="pnl-amount red">'+fmt(adSpend)+'</div></div>';
+  html+='<div><div class="pnl-name">Mentor Costs (est.)</div><div class="pnl-amount red">'+fmt(mentorCost)+'</div><div style="font-size:10px;color:rgba(251,248,243,0.3);">$25×4sess×32 mentors</div></div>';
+  html+='<div><div class="pnl-name">Gross Margin (est.)</div><div class="pnl-amount '+(margin>0?'gold':'red')+'">'+fmt(Math.round(margin))+'</div><div style="font-size:10px;color:rgba(251,248,243,0.3);">Rev − Ads − Mentors</div></div>';
+  html+='</div></div>';
+  document.getElementById('pnl-grid').innerHTML=html;
+}
+
+function renderFailed(totalAmt){
+  var payments=[];
+  if(pulse&&pulse.stripe&&pulse.stripe.failed_payments_7d&&pulse.stripe.failed_payments_7d.details){
+    payments=pulse.stripe.failed_payments_7d.details;
+  } else {
+    // Fallback from known data
+    payments=[
+      {name:'Jordan Carlson',amount_aud:3616,created:1773957637},
+      {name:'Marlene Harris',amount_aud:940,created:1773817086},
+      {name:'Karen Vargas',amount_aud:940,created:1773590556},
+      {name:'Karen Vargas',amount_aud:940,created:1773446554},
+      {name:'Alicia Davies',amount_aud:232,created:1773880260},
+      {name:'Leah West',amount_aud:235,created:1773669734},
+      {name:'Leeanne Jackson',amount_aud:222,created:1773709959},
+      {name:'MR W R MAINARD',amount_aud:111.11,created:1773715565},
+      {name:null,amount_aud:235,created:1773984554},
+      {name:null,amount_aud:119,created:1773842439},
+      {name:null,amount_aud:119,created:1773756108},
+      {name:null,amount_aud:235,created:1773682180},
+      {name:null,amount_aud:165,created:1773560779}
+    ];
+  }
+
+  // Sort by amount desc
+  payments.sort(function(a,b){return b.amount_aud-a.amount_aud;});
+
+  var html='';
+  payments.forEach(function(p,i){
+    var name=p.name||p.customer_name||'Unknown';
+    var date=p.created?fmtDate(p.created):'This week';
+    var amount=p.amount_aud||0;
+    var badge=(amount>500)?'<span class="badge badge-red">High Risk</span>':'<span class="badge badge-amber">Monitor</span>';
+    html+='<tr><td style="font-weight:500;">'+name+'</td><td style="color:var(--red);font-weight:700;">'+fmt(amount)+'</td><td style="color:rgba(251,248,243,0.5);">'+date+'</td><td>'+badge+'</td></tr>';
+  });
+  document.getElementById('failed-tbody').innerHTML=html;
+  document.getElementById('total-risk-val').textContent=fmt(totalAmt);
+}
+
+// Load data
+Promise.all([
+  fetch('../data/dashboard-data.json').then(function(r){return r.json();}).catch(function(){return null;}),
+]).then(function(results){
+  dash=results[0];
+  // Use embedded pulse data
+  pulse={
+    stripe:{
+      active_subscriptions:{count:92,true_mrr_aud:67684.17,interval_breakdown:{"day x90":6,"month x1":17,"day x60":10,"week x1":35,"day x31":2,"week x9":8,"week x2":3,"day x32":1,"month x2":2,"week x35":6,"week x18":1,"week x14":1}},
+      charges_collected_7d:31692.14,
+      charges_collected_7d_count:64,
+      failed_payments_7d:{count:13,total_amount_aud:8109.11,details:[
+        {name:'Jordan Carlson',amount_aud:3616,created:1773957637},
+        {name:'Marlene Harris',amount_aud:940,created:1773817086},
+        {name:'Karen Vargas',amount_aud:940,created:1773590556},
+        {name:'Karen Vargas',amount_aud:940,created:1773446554},
+        {name:'Alicia Davies',amount_aud:232,created:1773880260},
+        {name:'Leah West',amount_aud:235,created:1773669734},
+        {name:'Leeanne Jackson',amount_aud:222,created:1773709959},
+        {name:'MR W R MAINARD',amount_aud:111.11,created:1773715565},
+        {name:null,amount_aud:235,created:1773984554},
+        {name:null,amount_aud:119,created:1773842439},
+        {name:null,amount_aud:119,created:1773756108},
+        {name:null,amount_aud:235,created:1773682180},
+        {name:null,amount_aud:165,created:1773560779}
+      ]},
+      past_due_subscriptions:{count:2,subscriptions:[{email:'milenafratini@hotmail.com',amount_aud:119},{email:'meghanecockburn@gmail.com',amount_aud:244}]}
+    },
+    meta_ads:{mtd:{spend:4201.55}}
+  };
+  renderAll();
+});
+</script>
+</body>
+</html>
