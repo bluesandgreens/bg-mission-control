@@ -3,251 +3,724 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mentors — B&G Mission Control</title>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Mentor Hub — Blues & Greens</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;}
-a{color:inherit;text-decoration:none;}
-.hdr{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(10,14,20,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,169,81,0.25);}
-.hdr-logo{font-family:'Archivo Black',sans-serif;font-size:16px;color:var(--navy);}
-.hdr-title{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
-.back{color:rgba(251,248,243,0.45);font-size:13px;}
-.back:hover{color:var(--gold);}
-.wrap{max-width:1100px;margin:0 auto;padding:16px;}
-.live-badge{font-size:10px;color:rgba(251,248,243,0.4);text-align:right;margin-bottom:12px;}
-.hero{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
-@media(max-width:640px){.hero{grid-template-columns:repeat(2,1fr);}}
-.hcard{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:14px;text-align:center;border-top:3px solid var(--gold);}
-.hcard.green{border-top-color:#4CAF50;}
-.hcard.amber{border-top-color:var(--amber);}
-.hcard.blue{border-top-color:#3B82F6;}
-.hval{font-family:'Archivo Black',sans-serif;font-size:26px;margin:4px 0 2px;color:var(--gold);}
-.hval.green{color:#4CAF50;}
-.hval.amber{color:var(--amber);}
-.hval.blue{color:#3B82F6;}
-.hlbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
-.hsub{font-size:10px;color:rgba(251,248,243,0.35);margin-top:2px;}
-.grid2{display:grid;grid-template-columns:3fr 2fr;gap:16px;margin-bottom:20px;}
-@media(max-width:768px){.grid2{grid-template-columns:1fr;}}
-.section{background:rgba(16,21,32,0.7);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:16px;}
-.section-title{font-family:'Archivo Black',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;}
-.sort-toggle{font-size:10px;font-family:'DM Sans',sans-serif;letter-spacing:0;text-transform:none;color:rgba(251,248,243,0.4);cursor:pointer;font-weight:400;}
-.sort-toggle:hover{color:var(--gold);}
-table{width:100%;border-collapse:collapse;font-size:12px;}
-thead th{text-align:left;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(251,248,243,0.35);padding:6px 8px;border-bottom:1px solid rgba(255,255,255,0.06);cursor:pointer;user-select:none;}
-thead th:hover{color:var(--gold);}
-tbody tr{border-bottom:1px solid rgba(255,255,255,0.04);transition:background 0.1s;}
-tbody tr:hover{background:rgba(200,169,81,0.04);}
-td{padding:8px 8px;vertical-align:middle;}
-.rank{font-size:10px;color:rgba(251,248,243,0.3);min-width:20px;}
-.mname{font-weight:600;font-size:13px;}
-.memail{font-size:10px;color:rgba(251,248,243,0.35);}
-.amount{font-family:'Archivo Black',sans-serif;font-size:13px;color:var(--gold);}
-.sessions{font-size:12px;color:rgba(251,248,243,0.6);}
-.status-wrap{display:flex;gap:4px;flex-wrap:wrap;}
-.sbadge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;}
-.sb-submitted{background:rgba(232,160,48,0.15);color:var(--amber);}
-.sb-approved{background:rgba(59,130,246,0.15);color:#3B82F6;}
-.sb-paid{background:rgba(76,175,80,0.15);color:#4CAF50;}
-/* Pipeline */
-.pipeline-stages{display:flex;flex-direction:column;gap:12px;}
-.stage{background:rgba(16,21,32,0.5);border-radius:10px;padding:14px;}
-.stage-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
-.stage-name{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-.stage-count{font-size:10px;color:rgba(251,248,243,0.4);}
-.stage-bar-wrap{height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;margin-bottom:8px;}
-.stage-bar{height:100%;border-radius:4px;}
-.stage-amount{font-family:'Archivo Black',sans-serif;font-size:18px;}
-.stage-meta{font-size:10px;color:rgba(251,248,243,0.4);}
-/* Recent invoices */
-.inv-list{max-height:240px;overflow-y:auto;}
-.inv-list::-webkit-scrollbar{width:4px;}
-.inv-list::-webkit-scrollbar-thumb{background:rgba(200,169,81,0.2);border-radius:2px;}
-.inv-item{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between;align-items:center;gap:8px;}
-.inv-item:last-child{border-bottom:none;}
-.inv-mentor{font-size:12px;font-weight:600;}
-.inv-ref{font-size:10px;color:rgba(251,248,243,0.35);}
-.inv-amount{font-size:12px;color:var(--gold);font-weight:700;}
-.loading{text-align:center;padding:40px;color:rgba(251,248,243,0.4);}
-@media(max-width:640px){.hide-mobile{display:none;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#104791;--deep:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;
+  --bg:#0A0E14;--card:#111827;--border:#1e2a3a;--text:#FBF8F3;--muted:#8899aa;
+  --amber:#F59E0B;--red:#EF4444;--success:#22C55E;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px}
+a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
+
+/* HEADER */
+.header{background:var(--deep);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.header-left{display:flex;align-items:center;gap:10px}
+.logo{font-size:18px;font-weight:700;color:var(--gold)}
+.back-link{color:var(--muted);font-size:12px;display:flex;align-items:center;gap:4px}
+.live-dot{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
+.live-dot span{width:7px;height:7px;background:var(--success);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* TABS */
+.tabs{display:flex;background:var(--card);border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;position:sticky;top:49px;z-index:90}
+.tab{flex:1;min-width:80px;padding:12px 8px;text-align:center;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--gold);border-color:var(--gold)}
+
+/* PANELS */
+.panel{display:none;padding:16px;max-width:1200px;margin:0 auto}
+.panel.active{display:block}
+
+/* HERO STATS */
+.hero-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px}
+@media(min-width:640px){.hero-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.hero-grid{grid-template-columns:repeat(5,1fr)}}
+.hero-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.hero-card .val{font-size:28px;font-weight:700;line-height:1}
+.hero-card .lbl{font-size:11px;color:var(--muted);margin-top:4px}
+.hero-card.gold .val{color:var(--gold)}
+.hero-card.green .val{color:var(--success)}
+.hero-card.amber .val{color:var(--amber)}
+.hero-card.red .val{color:var(--red)}
+.hero-card.blue .val{color:#60A5FA}
+
+/* SECTION HEADING */
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.section-head h2{font-size:14px;font-weight:600;color:var(--cream)}
+
+/* MENTOR CARDS */
+.mentor-list{display:flex;flex-direction:column;gap:8px}
+.mentor-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:.15s}
+.mentor-card:hover{border-color:var(--gold)}
+.mentor-card.filtered-active{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.mentor-head{display:flex;align-items:center;padding:12px 14px;gap:10px}
+.mentor-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.mentor-info{flex:1;min-width:0}
+.mentor-name{font-weight:600;font-size:13px}
+.mentor-meta{font-size:11px;color:var(--muted)}
+.mentor-right{display:flex;align-items:center;gap:8px}
+.fam-count{font-size:20px;font-weight:700}
+.fam-count.g{color:var(--success)}
+.fam-count.a{color:var(--amber)}
+.fam-count.r{color:var(--red)}
+.chevron{color:var(--muted);transition:.2s;font-size:16px}
+.mentor-card.open .chevron{transform:rotate(180deg)}
+.stage-badges{display:flex;flex-wrap:wrap;gap:4px;padding:0 14px 10px}
+.badge{font-size:10px;padding:2px 7px;border-radius:20px;font-weight:600}
+.b-dp{background:#1e3a5f;color:#60A5FA}
+.b-ma{background:#1a3a2a;color:#4ADE80}
+.b-w1{background:#3a2a10;color:#FCD34D}
+.b-ac{background:#1a3a1a;color:#86EFAC}
+.b-ar{background:#3a1a1a;color:#FCA5A5}
+.mentor-members{display:none;border-top:1px solid var(--border);background:#0d1520}
+.mentor-card.open .mentor-members{display:block}
+.member-row{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;border-bottom:1px solid var(--border);font-size:12px}
+.member-row:last-child{border-bottom:0}
+.member-row .stage-pill{font-size:10px;padding:2px 7px;border-radius:20px}
+.member-link{color:var(--text);font-weight:500}
+.member-link:hover{color:var(--gold)}
+
+/* FILTER BAR */
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center}
+.filter-bar select,.filter-bar input{background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:7px;padding:7px 10px;font-size:12px;font-family:inherit;outline:none;min-width:120px}
+.filter-bar select:focus,.filter-bar input:focus{border-color:var(--gold)}
+.btn-clear{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:7px 12px;font-size:12px;cursor:pointer;font-family:inherit}
+.btn-clear:hover{border-color:var(--red);color:var(--red)}
+.active-filter-tag{display:inline-flex;align-items:center;gap:4px;background:var(--deep);border:1px solid var(--gold);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--gold)}
+.active-filter-tag button{background:none;border:none;color:var(--gold);cursor:pointer;padding:0;font-size:12px;line-height:1}
+
+/* PIPELINE */
+.stage-section{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.stage-header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;cursor:pointer;user-select:none}
+.stage-header:hover{background:#151f2d}
+.stage-title{display:flex;align-items:center;gap:8px;font-weight:600;font-size:13px}
+.stage-count{background:var(--deep);color:var(--gold);border-radius:20px;padding:2px 9px;font-size:11px;font-weight:700}
+.stage-body{display:none}
+.stage-section.open .stage-body{display:block}
+.pipeline-table{width:100%;border-collapse:collapse}
+.pipeline-table th{text-align:left;padding:8px 14px;font-size:11px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);background:#0d1520}
+.pipeline-table td{padding:9px 14px;border-bottom:1px solid var(--border);font-size:12px;vertical-align:middle}
+.pipeline-table tr:last-child td{border-bottom:0}
+.pipeline-table tr:hover td{background:#151f2d}
+.pipeline-table tr.at-risk-row td{background:#1a0a0a}
+.wait-ok{color:var(--success)}
+.wait-amber{color:var(--amber)}
+.wait-red{color:var(--red)}
+.unassigned-flag{color:var(--red);font-size:10px;font-weight:700}
+
+/* CALENDAR */
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cal-nav h3{font-size:14px;font-weight:600}
+.cal-btn{background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:7px;padding:6px 12px;cursor:pointer;font-family:inherit;font-size:12px}
+.cal-btn:hover{border-color:var(--gold)}
+.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:14px}
+.day-col{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;min-height:80px}
+.day-head{padding:6px;text-align:center;border-bottom:1px solid var(--border);font-size:11px;font-weight:600}
+.day-head.today{background:var(--deep);color:var(--gold)}
+.day-events{padding:4px}
+.cal-event{font-size:10px;background:var(--deep);border-radius:4px;padding:3px 5px;margin-bottom:3px;line-height:1.3;border-left:2px solid var(--gold)}
+.cal-event.mentor-event{border-color:var(--success)}
+.no-events{font-size:10px;color:var(--muted);padding:6px;text-align:center}
+.cal-stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.cal-stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;flex:1;min-width:100px}
+.cal-stat .val{font-size:20px;font-weight:700;color:var(--gold)}
+.cal-stat .lbl{font-size:10px;color:var(--muted)}
+
+/* INVOICES */
+.inv-pipeline{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.inv-stage{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.inv-stage .amount{font-size:22px;font-weight:700;color:var(--gold)}
+.inv-stage .count{font-size:12px;color:var(--muted);margin-top:2px}
+.inv-stage .label{font-size:11px;font-weight:600;margin-bottom:6px;color:var(--cream)}
+.inv-table{width:100%;border-collapse:collapse}
+.inv-table th{text-align:left;padding:8px 14px;font-size:11px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);background:#0d1520}
+.inv-table td{padding:9px 14px;border-bottom:1px solid var(--border);font-size:12px}
+.inv-table tr:last-child td{border-bottom:0}
+.status-badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700}
+.st-submitted{background:#1e2a3a;color:#60A5FA}
+.st-approved{background:#1a3a2a;color:#4ADE80}
+.st-paid{background:#1a3a10;color:#86EFAC}
+
+/* EMPTY STATE */
+.empty{text-align:center;color:var(--muted);padding:32px;font-size:13px}
+
+/* LOADING */
+.loading{text-align:center;padding:40px;color:var(--muted)}
+.spinner{display:inline-block;width:24px;height:24px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* SCROLLABLE TABLE WRAPPER */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 </style>
 </head>
 <body>
-<div class="hdr">
-  <a class="hdr-logo" href="../index.html">B&G</a>
-  <span class="hdr-title">Mentors</span>
-  <a class="back" href="../index.html">← MC</a>
-</div>
-<div class="wrap">
-  <div class="live-badge" id="live-badge">📡 Live · loading...</div>
 
-  <div class="hero">
-    <div class="hcard"><div class="hval" id="h-count">—</div><div class="hlbl">Total Mentors</div><div class="hsub">Active on platform</div></div>
-    <div class="hcard green"><div class="hval green" id="h-total">—</div><div class="hlbl">Total Invoiced</div><div class="hsub">All time</div></div>
-    <div class="hcard amber"><div class="hval amber" id="h-pending">—</div><div class="hlbl">Pending</div><div class="hsub">Awaiting approval</div></div>
-    <div class="hcard blue"><div class="hval blue" id="h-avg">—</div><div class="hlbl">Avg per Mentor</div><div class="hsub">Total invoiced</div></div>
+<header class="header">
+  <div class="header-left">
+    <a href="../index.html" class="back-link">← MC</a>
+    <span class="logo">🧑‍🏫 Mentor Hub</span>
   </div>
+  <div class="live-dot"><span></span><span id="live-ts">Loading…</span></div>
+</header>
 
-  <div class="grid2">
-    <div class="section">
-      <div class="section-title">
-        Mentor Roster
-        <span class="sort-toggle" id="sort-toggle" onclick="toggleSort()">Sort: By Earnings ↕</span>
-      </div>
-      <table>
-        <thead><tr>
-          <th>#</th>
-          <th onclick="sortRoster('name')">Mentor</th>
-          <th onclick="sortRoster('total_invoiced')">Invoiced</th>
-          <th onclick="sortRoster('invoice_count')" class="hide-mobile">Sessions</th>
-          <th class="hide-mobile">Status Breakdown</th>
-          <th onclick="sortRoster('name')" class="hide-mobile">Email</th>
-        </tr></thead>
-        <tbody id="mentor-tbody"><tr><td colspan="6" class="loading">Loading…</td></tr></tbody>
-      </table>
-    </div>
-    <div>
-      <div class="section" style="margin-bottom:16px;">
-        <div class="section-title">Invoice Pipeline</div>
-        <div class="pipeline-stages" id="pipeline">
-          <div class="loading">Loading…</div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section-title">Recent Invoices</div>
-        <div class="inv-list" id="inv-list"><div class="loading">Loading…</div></div>
-      </div>
-    </div>
-  </div>
+<nav class="tabs">
+  <div class="tab active" data-tab="overview">📊 Overview</div>
+  <div class="tab" data-tab="calendar">📅 Calendar</div>
+  <div class="tab" data-tab="pipeline">🔄 Pipeline</div>
+  <div class="tab" data-tab="invoices">💰 Invoices</div>
+</nav>
+
+<div id="overview" class="panel active">
+  <div class="loading"><div class="spinner"></div><br>Loading data…</div>
 </div>
+<div id="calendar" class="panel">
+  <div class="loading"><div class="spinner"></div><br>Loading data…</div>
+</div>
+<div id="pipeline" class="panel">
+  <div class="loading"><div class="spinner"></div><br>Loading data…</div>
+</div>
+<div id="invoices" class="panel">
+  <div class="loading"><div class="spinner"></div><br>Loading data…</div>
+</div>
+
 <script>
-let mentorData = [];
-let sortKey = 'total_invoiced';
-let sortDir = -1;
+// ── STATE ────────────────────────────────────────────────────────────────────
+let DATA = { pipeline: null, mentors: null, calendar: null };
+let globalMentorFilter = null;
+let calWeekOffset = 0;
 
-function escHtml(s) {
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-function titleCase(s) {
-  return s.replace(/\b\w/g, c => c.toUpperCase());
-}
-
-function renderRoster() {
-  const sorted = [...mentorData].sort((a, b) => {
-    let av = a[sortKey] || 0, bv = b[sortKey] || 0;
-    if (sortKey === 'name') { av = String(av).toLowerCase(); bv = String(bv).toLowerCase(); }
-    return av < bv ? sortDir : av > bv ? -sortDir : 0;
-  });
-
-  document.getElementById('mentor-tbody').innerHTML = sorted.map((m, i) => {
-    const statuses = m.statuses || {};
-    const statusBadges = [
-      statuses.submitted ? `<span class="sbadge sb-submitted">${statuses.submitted} submitted</span>` : '',
-      statuses.approved ? `<span class="sbadge sb-approved">${statuses.approved} approved</span>` : '',
-      statuses.paid ? `<span class="sbadge sb-paid">${statuses.paid} paid</span>` : '',
-    ].filter(Boolean).join('');
-    return `<tr>
-      <td><span class="rank">${i+1}</span></td>
-      <td><div class="mname">${escHtml(titleCase(m.name))}</div></td>
-      <td><span class="amount">$${(m.total_invoiced||0).toLocaleString('en-AU',{maximumFractionDigits:0})}</span></td>
-      <td class="hide-mobile"><span class="sessions">${m.invoice_count||0}</span></td>
-      <td class="hide-mobile"><div class="status-wrap">${statusBadges}</div></td>
-      <td class="hide-mobile"><span class="memail">${escHtml(m.email||'')}</span></td>
-    </tr>`;
-  }).join('');
-}
-
-function sortRoster(key) {
-  if (sortKey === key) sortDir *= -1;
-  else { sortKey = key; sortDir = key === 'name' ? 1 : -1; }
-  renderRoster();
-}
-
-function toggleSort() {
-  sortKey = sortKey === 'total_invoiced' ? 'name' : 'total_invoiced';
-  sortDir = sortKey === 'name' ? 1 : -1;
-  document.getElementById('sort-toggle').textContent = sortKey === 'name' ? 'Sort: A–Z ↕' : 'Sort: By Earnings ↕';
-  renderRoster();
-}
-
-async function init() {
+// ── DATA LOAD ────────────────────────────────────────────────────────────────
+async function loadAll() {
+  const base = location.pathname.replace(/\/mentors\/?.*/, '');
+  const root = base || '';
   try {
-    const r = await fetch('../data/mentors.json');
-    const data = await r.json();
-
-    const gen = new Date(data.generated);
-    document.getElementById('live-badge').textContent = `📡 Live · ${gen.toLocaleString('en-AU',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'})}`;
-
-    const stats = data.mentor_stats || {};
-    mentorData = Object.entries(stats).map(([name, s]) => ({ name, ...s }));
-
-    // Hero
-    const total = mentorData.length;
-    const totalInvoiced = mentorData.reduce((s, m) => s + (m.total_invoiced||0), 0);
-    const pendingCount = mentorData.reduce((s, m) => s + (m.statuses?.submitted||0), 0);
-    const avg = total > 0 ? totalInvoiced / total : 0;
-
-    document.getElementById('h-count').textContent = total;
-    document.getElementById('h-total').textContent = '$' + totalInvoiced.toLocaleString('en-AU',{maximumFractionDigits:0});
-    document.getElementById('h-pending').textContent = pendingCount;
-    document.getElementById('h-avg').textContent = '$' + Math.round(avg).toLocaleString('en-AU');
-
-    renderRoster();
-
-    // Pipeline by status
-    const pipeline = { submitted: {count:0, amount:0}, approved: {count:0, amount:0}, paid: {count:0, amount:0} };
-    (data.recent_invoices || []).forEach(inv => {
-      const s = inv.status;
-      if (pipeline[s]) {
-        pipeline[s].count++;
-        pipeline[s].amount += inv.total_amount || 0;
-      }
-    });
-
-    const stageConfig = [
-      { key: 'submitted', label: '🕐 Submitted', color: '#E8A030', cls: 'stage-amber' },
-      { key: 'approved', label: '✅ Approved', color: '#3B82F6', cls: 'stage-blue' },
-      { key: 'paid', label: '💰 Paid', color: '#4CAF50', cls: 'stage-green' },
-    ];
-    const maxAmt = Math.max(...Object.values(pipeline).map(p => p.amount), 1);
-
-    document.getElementById('pipeline').innerHTML = stageConfig.map(s => {
-      const p = pipeline[s.key];
-      const pct = Math.round(p.amount / maxAmt * 100);
-      return `<div class="stage">
-        <div class="stage-header">
-          <span class="stage-name" style="color:${s.color};">${s.label}</span>
-          <span class="stage-count">${p.count} invoices</span>
-        </div>
-        <div class="stage-bar-wrap"><div class="stage-bar" style="width:${pct}%;background:${s.color};"></div></div>
-        <div class="stage-amount" style="color:${s.color};">$${p.amount.toLocaleString('en-AU',{maximumFractionDigits:0})}</div>
-        <div class="stage-meta">${p.count} invoice${p.count !== 1 ? 's' : ''} pending</div>
-      </div>`;
-    }).join('');
-
-    // Recent invoices
-    const recent = (data.recent_invoices || []).slice(0, 20);
-    document.getElementById('inv-list').innerHTML = recent.map(inv => {
-      const sbadge = inv.status === 'submitted' ? 'sb-submitted' : inv.status === 'approved' ? 'sb-approved' : 'sb-paid';
-      return `<div class="inv-item">
-        <div>
-          <div class="inv-mentor">${escHtml(titleCase(inv.mentor_name||''))}</div>
-          <div class="inv-ref">${escHtml(inv.reference_number||'')} · ${inv.week_start||''}</div>
-        </div>
-        <span class="sbadge ${sbadge}">${escHtml(inv.status)}</span>
-        <span class="inv-amount">$${(inv.total_amount||0).toFixed(0)}</span>
-      </div>`;
-    }).join('');
-
+    const [p, m, c] = await Promise.all([
+      fetch(root + '/data/mentor-pipeline.json').then(r => r.json()),
+      fetch(root + '/data/mentors.json').then(r => r.json()),
+      fetch(root + '/data/calendar.json').then(r => r.json())
+    ]);
+    DATA.pipeline = p;
+    DATA.mentors = m;
+    DATA.calendar = c;
+    const ts = new Date(p.generated);
+    document.getElementById('live-ts').textContent = '📡 Live · ' + ts.toLocaleTimeString('en-AU', {hour:'2-digit',minute:'2-digit'});
+    renderAll();
   } catch(e) {
-    document.getElementById('mentor-tbody').innerHTML = `<tr><td colspan="6" class="loading">Error: ${e.message}</td></tr>`;
+    console.error(e);
+    document.querySelectorAll('.loading').forEach(el => el.innerHTML = '⚠️ Failed to load data. ' + e.message);
   }
 }
 
-init();
+function renderAll() {
+  renderOverview();
+  renderCalendar();
+  renderPipeline();
+  renderInvoices();
+}
+
+// ── HELPERS ───────────────────────────────────────────────────────────────────
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function fmtAUD(n) { return '$' + Number(n||0).toLocaleString('en-AU', {minimumFractionDigits:0,maximumFractionDigits:0}); }
+function initials(name) { return name.split(' ').filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join(''); }
+
+const STAGE_LABELS = {
+  deposit_paid: 'Deposit Paid', mentor_allocated: 'Allocated',
+  w1_pending: 'W1 Pending', w1_booked: 'W1 Booked', w1_done: 'W1 Done',
+  active: 'Active', at_risk: 'At Risk'
+};
+const STAGE_BADGE_CLASS = {
+  deposit_paid:'b-dp', mentor_allocated:'b-ma', w1_pending:'b-w1',
+  w1_booked:'b-w1', w1_done:'b-w1', active:'b-ac', at_risk:'b-ar'
+};
+
+function avatarColor(name) {
+  const colors = ['#104791','#386217','#C8A951','#0A2E5C','#1a4a2a','#3a1a6a','#1a3a5a'];
+  let h = 0; for (const c of name) h = (h*31 + c.charCodeAt(0)) % colors.length;
+  return colors[h];
+}
+
+function stageOf(member) { return member.stage || member.member_status || ''; }
+
+function daysWaiting(member) {
+  const ref = member.dc_date || member.created_at;
+  if (!ref) return null;
+  return Math.floor((Date.now() - new Date(ref)) / 86400000);
+}
+
+function setGlobalFilter(mentor) {
+  globalMentorFilter = (globalMentorFilter === mentor) ? null : mentor;
+  renderAll();
+  // Switch to currently visible tab
+  document.querySelectorAll('.tab, .panel').forEach(el => {
+    if (el.classList.contains('active') && el.classList.contains('tab')) {
+      // already on active tab
+    }
+  });
+}
+
+// ── TAB SWITCHING ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
+
+// ── OVERVIEW ──────────────────────────────────────────────────────────────────
+function renderOverview() {
+  const p = DATA.pipeline;
+  const ms = DATA.mentors.mentor_stats;
+  const mm = p.mentor_members;
+
+  // Compute families assigned (distinct assigned mentors × their member counts)
+  let familiesAssigned = 0;
+  let activeMentorCount = 0;
+  for (const [mentor, members] of Object.entries(mm)) {
+    if (mentor !== 'Unassigned' && members.length > 0) {
+      familiesAssigned += members.length;
+      activeMentorCount++;
+    }
+  }
+  const avgPerMentor = activeMentorCount > 0 ? (familiesAssigned / activeMentorCount).toFixed(1) : 0;
+  const unassigned = (mm['Unassigned'] || []).length;
+  const pipeline = p.pipeline_stages.deposit_paid || 0;
+
+  // Build hero cards
+  let heroHtml = `
+    <div class="hero-grid">
+      <div class="hero-card gold"><div class="val">${p.mentor_count || p.all_mentors.length}</div><div class="lbl">Total Mentors</div></div>
+      <div class="hero-card green"><div class="val">${familiesAssigned}</div><div class="lbl">Families Assigned</div></div>
+      <div class="hero-card blue"><div class="val">${avgPerMentor}</div><div class="lbl">Avg per Mentor</div></div>
+      <div class="hero-card amber"><div class="val">${unassigned}</div><div class="lbl">Unassigned</div></div>
+      <div class="hero-card red"><div class="val">${pipeline}</div><div class="lbl">In Pipeline</div></div>
+    </div>`;
+
+  // Build mentor roster (skip Unassigned)
+  const mentorEntries = Object.entries(mm).filter(([name]) => name !== 'Unassigned');
+  // Sort by family count desc
+  mentorEntries.sort((a,b) => b[1].length - a[1].length);
+
+  // Filter bar
+  let filterTag = globalMentorFilter ? `<div class="active-filter-tag">👤 ${esc(globalMentorFilter)} <button onclick="setGlobalFilter(null)">×</button></div>` : '';
+
+  let rosterHtml = '';
+  const filteredEntries = globalMentorFilter
+    ? mentorEntries.filter(([name]) => name === globalMentorFilter)
+    : mentorEntries;
+
+  for (const [mentor, members] of filteredEntries) {
+    const count = members.length;
+    const colorClass = count <= 3 ? 'g' : count <= 5 ? 'a' : 'r';
+    const bg = avatarColor(mentor);
+    const inv = ms[mentor] || {};
+    const totalInv = inv.total_invoiced || 0;
+
+    // Stage breakdown
+    const stageMap = {};
+    for (const m of members) {
+      const s = stageOf(m);
+      stageMap[s] = (stageMap[s]||0) + 1;
+    }
+    const stageBadges = Object.entries(stageMap)
+      .map(([s, n]) => `<span class="badge ${STAGE_BADGE_CLASS[s]||'b-dp'}">${esc(STAGE_LABELS[s]||s)} ${n}</span>`)
+      .join('');
+
+    // Member rows (expand)
+    const memberRows = members.map(m => {
+      const stage = stageOf(m);
+      const days = daysWaiting(m);
+      const daysStr = days !== null ? `${days}d` : '';
+      return `<div class="member-row">
+        <a href="${esc(m.hs_url)}" target="_blank" class="member-link">👤 ${esc(m.name)}</a>
+        <div style="display:flex;align-items:center;gap:8px">
+          ${daysStr ? `<span style="font-size:10px;color:var(--muted)">${daysStr}</span>` : ''}
+          <span class="stage-pill badge ${STAGE_BADGE_CLASS[stage]||'b-dp'}">${esc(STAGE_LABELS[stage]||stage)}</span>
+          <a href="${esc(m.hs_url)}" target="_blank" style="font-size:10px;color:var(--muted)">HS ↗</a>
+        </div>
+      </div>`;
+    }).join('');
+
+    rosterHtml += `
+      <div class="mentor-card ${globalMentorFilter===mentor?'filtered-active':''}" data-mentor="${esc(mentor)}">
+        <div class="mentor-head" onclick="toggleMentorCard(this)">
+          <div class="mentor-avatar" style="background:${bg}">${esc(initials(mentor))}</div>
+          <div class="mentor-info">
+            <div class="mentor-name">${esc(mentor)}</div>
+            <div class="mentor-meta">${totalInv > 0 ? fmtAUD(totalInv) + ' invoiced' : 'No invoices'}</div>
+          </div>
+          <div class="mentor-right">
+            <div class="fam-count ${colorClass}" onclick="event.stopPropagation();setGlobalFilter('${esc(mentor).replace(/'/g,"\\'")}')">
+              ${count}
+            </div>
+            <div class="chevron">▾</div>
+          </div>
+        </div>
+        <div class="stage-badges">${stageBadges}</div>
+        <div class="mentor-members">${memberRows || '<div class="empty">No members</div>'}</div>
+      </div>`;
+  }
+
+  if (!rosterHtml) rosterHtml = '<div class="empty">No mentors match filter</div>';
+
+  document.getElementById('overview').innerHTML = heroHtml + `
+    <div class="section-head">
+      <h2>Mentor Roster <span style="color:var(--muted);font-weight:400">(${filteredEntries.length})</span></h2>
+      ${filterTag}
+    </div>
+    <div class="mentor-list">${rosterHtml}</div>`;
+}
+
+function toggleMentorCard(headEl) {
+  const card = headEl.closest('.mentor-card');
+  card.classList.toggle('open');
+}
+
+// ── CALENDAR ──────────────────────────────────────────────────────────────────
+function renderCalendar() {
+  const events = DATA.calendar.events || [];
+  const mentors = DATA.pipeline.all_mentors || [];
+
+  // Compute week start (Monday) + offset
+  const now = new Date();
+  const dayOfWeek = (now.getDay() + 6) % 7; // Mon=0
+  const weekStart = new Date(now);
+  weekStart.setDate(now.getDate() - dayOfWeek + calWeekOffset * 7);
+  weekStart.setHours(0,0,0,0);
+
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(weekStart);
+    d.setDate(weekStart.getDate() + i);
+    days.push(d);
+  }
+  const weekEnd = new Date(days[6]);
+  weekEnd.setHours(23,59,59,999);
+
+  // Filter events for this week
+  const weekEvents = events.filter(e => {
+    const d = new Date(e.start);
+    return d >= weekStart && d <= weekEnd;
+  });
+
+  // Mentor filter for calendar
+  const selMentorCal = globalMentorFilter;
+
+  // Categorise events
+  function isMentorEvent(ev) {
+    const s = (ev.summary||'').toLowerCase();
+    if (s.includes('mentor') || s.includes('session')) return true;
+    return mentors.some(m => s.includes(m.toLowerCase().split(' ')[0]));
+  }
+
+  // Stats
+  const todayStr = now.toISOString().slice(0,10);
+  const sessionsThisWeek = weekEvents.filter(isMentorEvent).length;
+  const sessionsToday = events.filter(e => e.start.slice(0,10) === todayStr && isMentorEvent(e)).length;
+  const activeMentors = DATA.pipeline.all_mentors ? DATA.pipeline.all_mentors.length : 0;
+
+  const fmtDay = (d) => d.toLocaleDateString('en-AU',{weekday:'short'});
+  const fmtDate = (d) => d.toLocaleDateString('en-AU',{day:'numeric',month:'short'});
+  const isToday = (d) => d.toISOString().slice(0,10) === todayStr;
+  const weekLabel = `${fmtDate(weekStart)} – ${fmtDate(days[6])}`;
+
+  let filterTag = globalMentorFilter ? `<div class="active-filter-tag">👤 ${esc(globalMentorFilter)} <button onclick="setGlobalFilter(null)">×</button></div>` : '';
+
+  // Build filter bar
+  let filterHtml = `<div class="filter-bar">
+    <select id="cal-mentor-sel" onchange="setGlobalFilter(this.value||null)">
+      <option value="">All Mentors</option>
+      ${(DATA.pipeline.all_mentors||[]).map(m => `<option value="${esc(m)}" ${globalMentorFilter===m?'selected':''}>${esc(m)}</option>`).join('')}
+    </select>
+    ${filterTag}
+  </div>`;
+
+  // Week grid
+  const dayColsHtml = days.map(d => {
+    const dayEvs = weekEvents.filter(e => new Date(e.start).toISOString().slice(0,10) === d.toISOString().slice(0,10));
+    const evHtml = dayEvs.length > 0
+      ? dayEvs.map(e => {
+          const mentor = isMentorEvent(e);
+          const time = new Date(e.start).toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'});
+          return `<div class="cal-event ${mentor?'mentor-event':''}" title="${esc(e.summary)}">${time} ${esc(e.summary)}</div>`;
+        }).join('')
+      : `<div class="no-events">—</div>`;
+    return `<div class="day-col">
+      <div class="day-head ${isToday(d)?'today':''}">${fmtDay(d)}<br><span style="font-size:10px;font-weight:400">${d.getDate()}</span></div>
+      <div class="day-events">${evHtml}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('calendar').innerHTML = `
+    ${filterHtml}
+    <div class="cal-stats">
+      <div class="cal-stat"><div class="val">${sessionsThisWeek}</div><div class="lbl">Sessions This Week</div></div>
+      <div class="cal-stat"><div class="val">${sessionsToday}</div><div class="lbl">Sessions Today</div></div>
+      <div class="cal-stat"><div class="val">${activeMentors}</div><div class="lbl">Active Mentors</div></div>
+    </div>
+    <div class="cal-nav">
+      <button class="cal-btn" onclick="calNav(-1)">← Prev</button>
+      <h3>${weekLabel}</h3>
+      <button class="cal-btn" onclick="calNav(1)">Next →</button>
+    </div>
+    <div class="table-wrap"><div class="week-grid">${dayColsHtml}</div></div>
+    <p style="font-size:11px;color:var(--muted);text-align:center">Showing all calendar events · Mentor sessions highlighted green</p>`;
+}
+
+function calNav(dir) {
+  calWeekOffset += dir;
+  renderCalendar();
+}
+
+// ── PIPELINE ──────────────────────────────────────────────────────────────────
+function renderPipeline() {
+  const p = DATA.pipeline;
+
+  // Filters
+  const owners = [...new Set(
+    Object.values(p.pipeline).flat().map(m => m.owner).filter(Boolean)
+  )].sort();
+  const mentors = (p.all_mentors || []).slice().sort();
+
+  // Read filter state from DOM if exists, else use global
+  const ownerSel = document.getElementById('pl-owner-sel');
+  const mentorSel = document.getElementById('pl-mentor-sel');
+  const nameSearch = document.getElementById('pl-name-search');
+  const ownerFilter = ownerSel ? ownerSel.value : '';
+  const mentorFilter = mentorSel ? mentorSel.value : (globalMentorFilter || '');
+  const nameFilter = nameSearch ? nameSearch.value.toLowerCase() : '';
+
+  let filterTag = globalMentorFilter ? `<div class="active-filter-tag">👤 ${esc(globalMentorFilter)} <button onclick="setGlobalFilter(null)">×</button></div>` : '';
+
+  const filterHtml = `<div class="filter-bar" id="pl-filters">
+    <input id="pl-name-search" type="search" placeholder="🔍 Search name…" value="${esc(nameFilter)}" oninput="renderPipeline()">
+    <select id="pl-mentor-sel" onchange="renderPipeline()">
+      <option value="">All Mentors</option>
+      ${mentors.map(m => `<option value="${esc(m)}" ${mentorFilter===m?'selected':''}>${esc(m)}</option>`).join('')}
+    </select>
+    <select id="pl-owner-sel" onchange="renderPipeline()">
+      <option value="">All Owners</option>
+      ${owners.map(o => `<option value="${esc(o)}" ${ownerFilter===o?'selected':''}>${esc(o)}</option>`).join('')}
+    </select>
+    ${filterTag}
+  </div>`;
+
+  function filterItems(items) {
+    return items.filter(m => {
+      if (nameFilter && !m.name.toLowerCase().includes(nameFilter)) return false;
+      if (mentorFilter && m.mentor !== mentorFilter) return false;
+      if (ownerFilter && m.owner !== ownerFilter) return false;
+      return true;
+    });
+  }
+
+  // Stage 1: Deposit Paid
+  const dp = filterItems(p.pipeline.deposit_paid || []);
+  const dpRows = dp.map(m => `<tr>
+    <td><a href="${esc(m.hs_url)}" target="_blank" class="member-link">${esc(m.name)}</a></td>
+    <td>${m.amount ? fmtAUD(m.amount) : '<span style="color:var(--muted)">—</span>'}</td>
+    <td>${esc(m.owner||'—')}</td>
+    <td><a href="${esc(m.hs_url)}" target="_blank" style="color:var(--muted);font-size:11px">HS ↗</a></td>
+  </tr>`).join('');
+
+  // Stage 2: Mentor Allocated
+  const ma = filterItems(p.pipeline.mentor_allocated || []);
+  const maRows = ma.map(m => `<tr>
+    <td><a href="${esc(m.hs_url)}" target="_blank" class="member-link">${esc(m.name)}</a></td>
+    <td>${m.tier ? esc(m.tier) : '<span style="color:var(--muted)">—</span>'}</td>
+    <td>${m.mentor && m.mentor !== 'Unassigned' ? esc(m.mentor) : '<span class="unassigned-flag">⚠ UNASSIGNED</span>'}</td>
+    <td><a href="${esc(m.hs_url)}" target="_blank" style="color:var(--muted);font-size:11px">HS ↗</a></td>
+  </tr>`).join('');
+
+  // Stage 3: W1 Pending
+  const w1 = filterItems(p.pipeline.w1_pending || []);
+  const w1Rows = w1.map(m => {
+    const days = daysWaiting(m);
+    const cls = days === null ? '' : days > 14 ? 'wait-red' : days > 7 ? 'wait-amber' : 'wait-ok';
+    return `<tr>
+      <td><a href="${esc(m.hs_url)}" target="_blank" class="member-link">${esc(m.name)}</a></td>
+      <td>${esc(m.mentor||'—')}</td>
+      <td class="${cls}">${days !== null ? days + 'd' : '—'}</td>
+      <td><a href="${esc(m.hs_url)}" target="_blank" style="color:var(--muted);font-size:11px">HS ↗</a></td>
+    </tr>`;
+  }).join('');
+
+  // Stage 4: Active
+  const ac = filterItems(p.pipeline.active || []);
+  const acRows = ac.map(m => {
+    const w1date = m.w1_date ? new Date(m.w1_date).toLocaleDateString('en-AU',{day:'numeric',month:'short'}) : '—';
+    return `<tr>
+      <td><a href="${esc(m.hs_url)}" target="_blank" class="member-link">${esc(m.name)}</a></td>
+      <td>${esc(m.mentor||'—')}</td>
+      <td>${w1date}</td>
+      <td>${m.tier ? esc(m.tier) : '—'}</td>
+      <td><a href="${esc(m.hs_url)}" target="_blank" style="color:var(--muted);font-size:11px">HS ↗</a></td>
+    </tr>`;
+  }).join('');
+
+  // Stage 5: At Risk
+  const ar = filterItems(p.pipeline.at_risk || []);
+  const arRows = ar.map(m => `<tr class="at-risk-row">
+    <td><a href="${esc(m.hs_url)}" target="_blank" style="color:var(--red)">${esc(m.name)}</a></td>
+    <td>${esc(m.mentor||'—')}</td>
+    <td>${m.amount ? fmtAUD(m.amount) : '—'}</td>
+    <td><a href="${esc(m.hs_url)}" target="_blank" style="color:var(--muted);font-size:11px">HS ↗</a></td>
+  </tr>`).join('');
+
+  function stageBlock(emoji, title, count, bodyHtml, openByDefault=false) {
+    return `<div class="stage-section ${openByDefault?'open':''}">
+      <div class="stage-header" onclick="this.closest('.stage-section').classList.toggle('open')">
+        <div class="stage-title">${emoji} ${title}</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="stage-count">${count}</span>
+          <span style="color:var(--muted)">▾</span>
+        </div>
+      </div>
+      <div class="stage-body">${bodyHtml}</div>
+    </div>`;
+  }
+
+  const dpBlock = stageBlock('💳','Deposit Paid', dp.length,
+    `<div class="table-wrap"><table class="pipeline-table"><thead><tr><th>Name</th><th>Amount</th><th>Owner</th><th></th></tr></thead><tbody>${dpRows || '<tr><td colspan=4 class="empty">No results</td></tr>'}</tbody></table></div>`, true);
+
+  const maBlock = stageBlock('👤','Mentor Allocated', ma.length,
+    `<div class="table-wrap"><table class="pipeline-table"><thead><tr><th>Name</th><th>Tier</th><th>Mentor</th><th></th></tr></thead><tbody>${maRows || '<tr><td colspan=4 class="empty">No results</td></tr>'}</tbody></table></div>`);
+
+  const w1Block = stageBlock('📅','W1 Pending', w1.length,
+    `<div class="table-wrap"><table class="pipeline-table"><thead><tr><th>Name</th><th>Mentor</th><th>Waiting</th><th></th></tr></thead><tbody>${w1Rows || '<tr><td colspan=4 class="empty">No results</td></tr>'}</tbody></table></div>`);
+
+  const acBlock = stageBlock('✅','Active', ac.length,
+    `<div class="table-wrap"><table class="pipeline-table"><thead><tr><th>Name</th><th>Mentor</th><th>W1 Date</th><th>Tier</th><th></th></tr></thead><tbody>${acRows || '<tr><td colspan=5 class="empty">No results</td></tr>'}</tbody></table></div>`);
+
+  const arBlock = stageBlock('⚠️','At Risk', ar.length,
+    `<div class="table-wrap"><table class="pipeline-table"><thead><tr><th>Name</th><th>Mentor</th><th>Amount</th><th></th></tr></thead><tbody>${arRows || '<tr><td colspan=4 class="empty">No results</td></tr>'}</tbody></table></div>`);
+
+  document.getElementById('pipeline').innerHTML = filterHtml + dpBlock + maBlock + w1Block + acBlock + arBlock;
+}
+
+// ── INVOICES ──────────────────────────────────────────────────────────────────
+function renderInvoices() {
+  const ms = DATA.mentors.mentor_stats;
+  const recent = DATA.mentors.recent_invoices || [];
+
+  // Compute pipeline totals
+  let subAmt = 0, subCnt = 0;
+  let appAmt = 0, appCnt = 0;
+  let paidAmt = 0, paidCnt = 0;
+
+  for (const stat of Object.values(ms)) {
+    const statuses = stat.statuses || {};
+    // We don't have per-status amounts in mentor_stats, just counts
+    // Use recent_invoices for actual breakdown
+  }
+
+  // Build from recent_invoices
+  for (const inv of recent) {
+    if (inv.status === 'submitted') { subAmt += inv.total_amount||0; subCnt++; }
+    if (inv.status === 'approved') { appAmt += inv.total_amount||0; appCnt++; }
+    if (inv.status === 'paid') { paidAmt += inv.total_amount||0; paidCnt++; }
+  }
+
+  // Total invoiced across all mentors
+  const totalInv = Object.values(ms).reduce((s,m) => s + (m.total_invoiced||0), 0);
+
+  // Mentor filter
+  const mentors = Object.keys(ms).sort();
+  const invMentorSel = document.getElementById('inv-mentor-sel');
+  const mentorFilter = invMentorSel ? invMentorSel.value : (globalMentorFilter || '');
+
+  let filterTag = globalMentorFilter ? `<div class="active-filter-tag">👤 ${esc(globalMentorFilter)} <button onclick="setGlobalFilter(null)">×</button></div>` : '';
+
+  const filterHtml = `<div class="filter-bar">
+    <select id="inv-mentor-sel" onchange="renderInvoices()">
+      <option value="">All Mentors</option>
+      ${mentors.map(m => `<option value="${esc(m)}" ${mentorFilter===m?'selected':''}>${esc(m)}</option>`).join('')}
+    </select>
+    ${filterTag}
+  </div>`;
+
+  // Per-mentor stats table
+  const mentorEntries = Object.entries(ms)
+    .filter(([name]) => !mentorFilter || name === mentorFilter)
+    .sort((a,b) => b[1].total_invoiced - a[1].total_invoiced);
+
+  const mentorRows = mentorEntries.map(([name, stat]) => {
+    const st = stat.statuses || {};
+    return `<tr>
+      <td style="font-weight:500">${esc(name)}</td>
+      <td>${fmtAUD(stat.total_invoiced)}</td>
+      <td>${stat.invoice_count||0}</td>
+      <td>${st.submitted||0 ? `<span class="status-badge st-submitted">${st.submitted} sub</span>` : ''} 
+          ${st.approved||0 ? `<span class="status-badge st-approved">${st.approved} app</span>` : ''} 
+          ${st.paid||0 ? `<span class="status-badge st-paid">${st.paid} paid</span>` : ''}</td>
+    </tr>`;
+  }).join('');
+
+  // Recent invoices (filtered)
+  const filteredRecent = recent
+    .filter(inv => !mentorFilter || inv.mentor_name === mentorFilter)
+    .sort((a,b) => new Date(b.submitted_at||b.created_at) - new Date(a.submitted_at||a.created_at))
+    .slice(0, 30);
+
+  const recentRows = filteredRecent.map(inv => {
+    const dt = new Date(inv.submitted_at||inv.created_at);
+    const dateStr = dt.toLocaleDateString('en-AU',{day:'numeric',month:'short'});
+    const cls = `st-${inv.status}`;
+    return `<tr>
+      <td style="font-size:11px;color:var(--muted)">${esc(inv.reference_number||inv.id.slice(0,8))}</td>
+      <td style="font-weight:500">${esc(inv.mentor_name||'—')}</td>
+      <td>${fmtAUD(inv.total_amount)}</td>
+      <td>${dateStr}</td>
+      <td><span class="status-badge ${cls}">${esc(inv.status)}</span></td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('invoices').innerHTML = `
+    ${filterHtml}
+    <div class="inv-pipeline">
+      <div class="inv-stage">
+        <div class="label">📤 Submitted</div>
+        <div class="amount">${fmtAUD(subAmt)}</div>
+        <div class="count">${subCnt} invoices</div>
+      </div>
+      <div class="inv-stage">
+        <div class="label">✅ Approved</div>
+        <div class="amount">${fmtAUD(appAmt)}</div>
+        <div class="count">${appCnt} invoices</div>
+      </div>
+      <div class="inv-stage">
+        <div class="label">💰 Paid</div>
+        <div class="amount">${fmtAUD(paidAmt)}</div>
+        <div class="count">${paidCnt} invoices</div>
+      </div>
+    </div>
+    <div class="section-head" style="margin-bottom:8px">
+      <h2>Mentor Invoice Summary</h2>
+      <span style="font-size:12px;color:var(--gold)">Total ${fmtAUD(totalInv)}</span>
+    </div>
+    <div class="table-wrap" style="margin-bottom:20px">
+      <table class="inv-table">
+        <thead><tr><th>Mentor</th><th>Total</th><th>Invoices</th><th>Status</th></tr></thead>
+        <tbody>${mentorRows || '<tr><td colspan=4 class="empty">No data</td></tr>'}</tbody>
+      </table>
+    </div>
+    <div class="section-head" style="margin-bottom:8px">
+      <h2>Recent Invoices</h2>
+    </div>
+    <div class="table-wrap">
+      <table class="inv-table">
+        <thead><tr><th>Ref</th><th>Mentor</th><th>Amount</th><th>Date</th><th>Status</th></tr></thead>
+        <tbody>${recentRows || '<tr><td colspan=5 class="empty">No invoices</td></tr>'}</tbody>
+      </table>
+    </div>`;
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+loadAll();
 </script>
 </body>
 </html>
