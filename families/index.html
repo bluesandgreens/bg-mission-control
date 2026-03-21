@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Command — B&G Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;}
+.header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,169,81,0.3);}
+.header-logo{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--navy);letter-spacing:1px;}
+.header-title{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
+.back-link{color:rgba(251,248,243,0.5);font-size:13px;text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link:hover{color:var(--gold);}
+.container{max-width:1200px;margin:0 auto;padding:28px 20px;}
+.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px;}
+.hero-card{background:rgba(16,21,32,0.8);border:1px solid rgba(200,169,81,0.12);border-radius:14px;padding:18px;border-top:3px solid var(--gold);}
+.hero-card.risk{border-top-color:var(--red);}
+.hero-card.amber{border-top-color:var(--amber);}
+.hero-card.blue{border-top-color:#5a9fd4;}
+.hero-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--cream);margin:6px 0 3px;}
+.hero-lbl{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.hero-sub{font-size:11px;color:rgba(251,248,243,0.4);}
+.controls{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;align-items:center;}
+.search-box{flex:1;min-width:200px;background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;}
+.search-box::placeholder{color:rgba(251,248,243,0.3);}
+.search-box:focus{border-color:var(--gold);}
+.filter-btn{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 14px;color:rgba(251,248,243,0.6);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.filter-btn:hover,.filter-btn.active{background:rgba(200,169,81,0.12);border-color:var(--gold);color:var(--gold);}
+.sort-select{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 12px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:12px;outline:none;cursor:pointer;}
+.sort-select option{background:#101520;}
+.families-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;}
+.family-card{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;transition:border-color 0.2s,transform 0.2s;cursor:pointer;}
+.family-card:hover{border-color:rgba(200,169,81,0.3);transform:translateY(-1px);}
+.family-card.at-risk{border-left:3px solid var(--red);}
+.family-card.healthy{border-left:3px solid #4CAF50;}
+.family-card.payment-issue{border-left:3px solid var(--amber);}
+.card-header{padding:16px 18px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.card-name{font-family:'Archivo Black',sans-serif;font-size:15px;color:var(--cream);margin-bottom:4px;}
+.card-son{font-size:12px;color:rgba(251,248,243,0.5);margin-bottom:8px;}
+.card-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.tag{display:inline-block;padding:2px 8px;border-radius:5px;font-size:10px;font-weight:700;letter-spacing:0.5px;}
+.tag-tier{background:rgba(200,169,81,0.15);color:var(--gold);}
+.tag-week{background:rgba(90,159,212,0.12);color:#5a9fd4;}
+.tag-mentor{background:rgba(56,98,23,0.2);color:#6db33f;}
+.card-body{padding:12px 18px;}
+.card-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.card-row:last-child{margin-bottom:0;}
+.card-label{font-size:11px;color:rgba(251,248,243,0.4);font-weight:600;}
+.card-value{font-size:12px;color:var(--cream);}
+.health-bar{display:flex;align-items:center;gap:8px;}
+.health-num{font-family:'Archivo Black',sans-serif;font-size:16px;}
+.health-num.high{color:#4CAF50;}
+.health-num.mid{color:var(--amber);}
+.health-num.low{color:var(--red);}
+.bar-track{flex:1;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:2px;transition:width 0.5s;}
+.flags-list{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.flag-item{font-size:10px;background:rgba(224,82,82,0.12);color:var(--red);padding:2px 7px;border-radius:4px;}
+.expand-btn{width:100%;background:none;border:none;border-top:1px solid rgba(255,255,255,0.05);padding:10px;color:rgba(251,248,243,0.3);font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:color 0.2s;}
+.expand-btn:hover{color:var(--gold);}
+.profile-panel{display:none;padding:16px 18px;background:rgba(10,14,20,0.5);border-top:1px solid rgba(255,255,255,0.05);}
+.profile-panel.open{display:block;}
+.profile-section{margin-bottom:14px;}
+.profile-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.timeline-item{display:flex;gap:10px;margin-bottom:8px;font-size:12px;}
+.timeline-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:4px;flex-shrink:0;}
+.touch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:10px;}
+.touch-item{background:rgba(255,255,255,0.03);border-radius:6px;padding:7px 10px;font-size:11px;}
+.touch-name{color:rgba(251,248,243,0.5);margin-bottom:2px;}
+.touch-val{font-weight:600;}
+.touch-val.yes{color:#4CAF50;}
+.touch-val.no{color:var(--red);}
+.action-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.action-btn{padding:7px 12px;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;border:none;transition:opacity 0.2s;}
+.action-btn:hover{opacity:0.8;}
+.btn-blue{background:rgba(16,71,145,0.3);color:#5a9fd4;border:1px solid rgba(16,71,145,0.4);}
+.btn-green{background:rgba(56,98,23,0.3);color:#6db33f;border:1px solid rgba(56,98,23,0.4);}
+.btn-amber{background:rgba(232,160,48,0.15);color:var(--amber);border:1px solid rgba(232,160,48,0.3);}
+.btn-red{background:rgba(224,82,82,0.12);color:var(--red);border:1px solid rgba(224,82,82,0.25);}
+.empty-state{text-align:center;padding:60px 20px;color:rgba(251,248,243,0.3);}
+.loading{text-align:center;padding:60px;color:var(--gold);}
+.count-badge{background:rgba(200,169,81,0.12);color:var(--gold);padding:3px 9px;border-radius:10px;font-size:11px;font-weight:700;margin-left:8px;}
+@media(max-width:768px){.hero-grid{grid-template-columns:repeat(2,1fr);}.families-grid{grid-template-columns:1fr;}.controls{gap:8px;}.hero-val{font-size:22px;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="header-logo">B&G</div>
+    <div class="header-title">Family Command</div>
+  </div>
+  <a class="back-link" href="../">← Mission Control</a>
+</div>
+
+<div class="container">
+  <!-- HERO STATS -->
+  <div class="hero-grid">
+    <div class="hero-card">
+      <div class="hero-lbl">Active Families</div>
+      <div class="hero-val" id="stat-total">—</div>
+      <div class="hero-sub">Across all tiers</div>
+    </div>
+    <div class="hero-card risk">
+      <div class="hero-lbl">At Risk</div>
+      <div class="hero-val" id="stat-risk">—</div>
+      <div class="hero-sub">Needs attention now</div>
+    </div>
+    <div class="hero-card amber">
+      <div class="hero-lbl">Overdue W1</div>
+      <div class="hero-val" id="stat-overdue">—</div>
+      <div class="hero-sub">First session not started</div>
+    </div>
+    <div class="hero-card blue">
+      <div class="hero-lbl">Avg Health Score</div>
+      <div class="hero-val" id="stat-health">—</div>
+      <div class="hero-sub">Out of 100</div>
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <input type="text" class="search-box" id="search-input" placeholder="🔍  Search by family name…" oninput="applyFilters()">
+    <button class="filter-btn active" data-filter="all" onclick="setFilter(this,'all')">All</button>
+    <button class="filter-btn" data-filter="risk" onclick="setFilter(this,'risk')">🔴 At Risk</button>
+    <button class="filter-btn" data-filter="new" onclick="setFilter(this,'new')">🆕 New (&lt;W4)</button>
+    <button class="filter-btn" data-filter="healthy" onclick="setFilter(this,'healthy')">✅ Healthy</button>
+    <button class="filter-btn" data-filter="payment" onclick="setFilter(this,'payment')">⚠️ Payment</button>
+    <select class="sort-select" id="sort-select" onchange="applyFilters()">
+      <option value="health">Sort: Health Score</option>
+      <option value="name">Sort: Name A→Z</option>
+      <option value="session">Sort: Session Count</option>
+    </select>
+    <span class="count-badge" id="showing-count">0 families</span>
+  </div>
+
+  <!-- FAMILIES GRID -->
+  <div class="families-grid" id="families-grid">
+    <div class="loading">Loading family data…</div>
+  </div>
+</div>
+
+<script>
+let allFamilies = [];
+let activeFilter = 'all';
+
+fetch('../data/dashboard-data.json')
+  .then(r => r.json())
+  .then(d => {
+    buildFamilyList(d);
+    renderStats();
+    applyFilters();
+  })
+  .catch(() => {
+    document.getElementById('families-grid').innerHTML = '<div class="empty-state">⚠️ Could not load data</div>';
+  });
+
+function buildFamilyList(d) {
+  const familyMap = {};
+
+  // Helper to normalize names
+  function norm(n) { return (n||'').toLowerCase().trim(); }
+  function upsert(name, fn) {
+    const key = norm(name);
+    if (!key || key === 'none none') return;
+    if (!familyMap[key]) familyMap[key] = { name, sessions: 0, paymentStatus: 'current', flags: [], surround: null, healthBonus: 0, weekNum: '—', mentor: '—', tier: '—', sonName: '—' };
+    fn(familyMap[key]);
+  }
+
+  // 1. Retention (active families with session counts)
+  (d.retention?.session_7_plus || []).forEach(r => {
+    upsert(r.name, f => {
+      f.sessions = parseInt(r.session_count) || 0;
+      f.weekNum = f.sessions > 0 ? 'Wk ' + f.sessions : '—';
+      f.memberStatus = r.member_status;
+    });
+  });
+
+  // 2. Past due & failed payments
+  (d.stripe?.past_due_list || []).forEach(p => {
+    upsert(p.name, f => { f.paymentStatus = 'past_due'; });
+  });
+  (d.stripe?.failed_payments_7d_list || []).forEach(p => {
+    if (p.name) upsert(p.name, f => { if (f.paymentStatus === 'current') f.paymentStatus = 'failed'; });
+  });
+
+  // 3. Overdue W1s
+  (d.overdue_w1s || []).forEach(o => {
+    upsert(o.name, f => {
+      f.overdueW1 = true;
+      f.daysOverdue = o.days_overdue;
+      f.activationStage = o.activation_stage;
+      if (o.mentor) f.mentor = o.mentor;
+    });
+  });
+
+  // 4. Surround sound
+  (d.surround_sound || []).forEach(s => {
+    upsert(s.name, f => {
+      f.surround = s;
+    });
+  });
+
+  // 5. Activation pipeline - get son names from unassigned
+  (d.unassigned || []).forEach(u => {
+    upsert(u.name, f => {
+      if (u.son_name) f.sonName = u.son_name;
+      if (u.program) f.tier = normTier(u.program);
+    });
+  });
+
+  // 6. DC closes for recent families
+  (d.dc_closes || []).slice(0, 20).forEach(c => {
+    upsert(c.name, f => {
+      f.closeDate = c.close_date;
+      f.closeRep = c.rep;
+      if (f.weekNum === '—') f.weekNum = 'New';
+    });
+  });
+
+  // 7. Perf flags
+  (d.perf_flags || []).forEach(pf => {
+    // flags have "mentor" field which can be a member name in overdue_session context
+    if (pf.type === 'overdue_session') {
+      // These are member names, not family names - add as flags to search
+    }
+  });
+
+  // 8. Mentor allocated
+  (d.activation_pipeline?.mentor_allocated || []).forEach(m => {
+    // These are son names with mentor assignments
+    // We can't directly link to mum without more data
+  });
+
+  // 9. families_at_risk
+  (d.families_at_risk || []).forEach(f => {
+    upsert(f.name, fam => {
+      fam.riskSignal = f.risk_signal;
+    });
+  });
+
+  // Calculate health scores
+  Object.values(familyMap).forEach(f => {
+    let score = 75;
+    if (f.overdueW1) score -= 30;
+    if (f.paymentStatus === 'past_due') score -= 20;
+    if (f.paymentStatus === 'failed') score -= 25;
+    if (f.riskSignal) score -= 15;
+    if (f.sessions >= 20) score = Math.min(score + 10, 100);
+    f.healthScore = Math.max(score, 0);
+  });
+
+  allFamilies = Object.values(familyMap).filter(f => {
+    const n = (f.name||'').toLowerCase();
+    return n && n !== 'harry quayle' && n !== 'none none';
+  });
+}
+
+function normTier(t) {
+  if (!t) return '—';
+  const l = t.toLowerCase();
+  if (l.includes('lighthouse')) return 'Lighthouse';
+  if (l.includes('big brother')) return 'Big Brother';
+  if (l.includes('mentor')) return 'Mentor';
+  if (l.includes('fe') || l.includes('future')) return 'FE';
+  return t;
+}
+
+function renderStats() {
+  const total = allFamilies.length;
+  const atRisk = allFamilies.filter(f => f.healthScore < 50 || f.riskSignal || f.overdueW1).length;
+  const overdue = allFamilies.filter(f => f.overdueW1).length;
+  const avgHealth = total > 0 ? Math.round(allFamilies.reduce((s,f) => s+f.healthScore, 0) / total) : 0;
+
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-risk').textContent = atRisk;
+  document.getElementById('stat-overdue').textContent = overdue;
+  document.getElementById('stat-health').textContent = avgHealth;
+}
+
+function setFilter(btn, filter) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = filter;
+  applyFilters();
+}
+
+function applyFilters() {
+  const q = (document.getElementById('search-input').value || '').toLowerCase();
+  const sort = document.getElementById('sort-select').value;
+
+  let filtered = allFamilies.filter(f => {
+    const name = (f.name||'').toLowerCase();
+    if (q && !name.includes(q)) return false;
+    if (activeFilter === 'risk') return f.healthScore < 50 || f.riskSignal || f.overdueW1;
+    if (activeFilter === 'new') return f.sessions < 4 || f.weekNum === 'New';
+    if (activeFilter === 'healthy') return f.healthScore >= 70 && !f.overdueW1 && f.paymentStatus === 'current';
+    if (activeFilter === 'payment') return f.paymentStatus !== 'current';
+    return true;
+  });
+
+  filtered.sort((a,b) => {
+    if (sort === 'health') return b.healthScore - a.healthScore;
+    if (sort === 'name') return (a.name||'').localeCompare(b.name||'');
+    if (sort === 'session') return b.sessions - a.sessions;
+    return b.healthScore - a.healthScore;
+  });
+
+  document.getElementById('showing-count').textContent = filtered.length + ' families';
+  renderCards(filtered);
+}
+
+function renderCards(families) {
+  const grid = document.getElementById('families-grid');
+  if (!families.length) {
+    grid.innerHTML = '<div class="empty-state">No families match your filters</div>';
+    return;
+  }
+
+  grid.innerHTML = families.map((f, i) => {
+    const cardClass = f.healthScore < 50 || f.riskSignal ? 'at-risk' : f.paymentStatus !== 'current' ? 'payment-issue' : f.healthScore >= 75 ? 'healthy' : '';
+    const payIcon = f.paymentStatus === 'past_due' ? '⚠️ Past Due' : f.paymentStatus === 'failed' ? '🔴 Failed' : '✅ Current';
+    const hClass = f.healthScore >= 70 ? 'high' : f.healthScore >= 45 ? 'mid' : 'low';
+    const barColor = f.healthScore >= 70 ? '#4CAF50' : f.healthScore >= 45 ? '#E8A030' : '#E05252';
+    const hasFlags = f.overdueW1 || f.riskSignal;
+
+    return `<div class="family-card ${cardClass}" id="card-${i}">
+      <div class="card-header" onclick="toggleProfile(${i})">
+        <div class="card-name">${esc(f.name)}</div>
+        <div class="card-son">${f.sonName !== '—' ? 'Son: ' + esc(f.sonName) : 'Son name not available'}</div>
+        <div class="card-meta">
+          ${f.tier !== '—' ? `<span class="tag tag-tier">${esc(f.tier)}</span>` : ''}
+          ${f.weekNum !== '—' ? `<span class="tag tag-week">${esc(f.weekNum)}</span>` : ''}
+          ${f.mentor !== '—' ? `<span class="tag tag-mentor">🧑 ${esc(f.mentor)}</span>` : ''}
+        </div>
+      </div>
+      <div class="card-body" onclick="toggleProfile(${i})">
+        <div class="card-row">
+          <span class="card-label">HEALTH</span>
+          <div class="health-bar" style="flex:1;margin-left:12px;">
+            <div class="bar-track"><div class="bar-fill" style="width:${f.healthScore}%;background:${barColor};"></div></div>
+            <span class="health-num ${hClass}" style="margin-left:8px;font-size:14px;">${f.healthScore}</span>
+          </div>
+        </div>
+        <div class="card-row">
+          <span class="card-label">PAYMENT</span>
+          <span class="card-value" style="${f.paymentStatus !== 'current' ? 'color:var(--amber)' : ''}">${payIcon}</span>
+        </div>
+        <div class="card-row">
+          <span class="card-label">SESSIONS</span>
+          <span class="card-value">${f.sessions > 0 ? f.sessions + ' completed' : 'Not started'}</span>
+        </div>
+        ${f.riskSignal ? `<div class="card-row"><span class="card-label">RISK</span><span class="card-value" style="color:var(--red);font-size:11px;">${esc(f.riskSignal)}</span></div>` : ''}
+        ${hasFlags ? `<div class="flags-list">${f.overdueW1 ? `<span class="flag-item">⏰ Overdue W1 (${f.daysOverdue}d)</span>` : ''}${f.riskSignal && !f.overdueW1 ? `<span class="flag-item">⚠️ At risk</span>` : ''}</div>` : ''}
+      </div>
+      <button class="expand-btn" id="expand-btn-${i}" onclick="toggleProfile(${i})">▼ View Full Profile</button>
+      <div class="profile-panel" id="profile-${i}">
+        ${renderProfile(f)}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderProfile(f) {
+  const surround = f.surround;
+  let html = '';
+
+  if (surround) {
+    html += `<div class="profile-section">
+      <div class="profile-label">Surround Sound Touches</div>
+      <div class="touch-grid">
+        <div class="touch-item"><div class="touch-name">Mentor</div><div class="touch-val ${surround.mentor_touch==='Yes'?'yes':'no'}">${surround.mentor_touch==='Yes'?'✅ Yes':'❌ No'}</div></div>
+        <div class="touch-item"><div class="touch-name">DC Rep</div><div class="touch-val ${surround.dcrep_touch==='Yes'?'yes':'no'}">${surround.dcrep_touch==='Yes'?'✅ Yes':'❌ No'}</div></div>
+        <div class="touch-item"><div class="touch-name">Norri</div><div class="touch-val ${surround.norri_touch==='Yes'?'yes':'no'}">${surround.norri_touch==='Yes'?'✅ Yes':'❌ No'}</div></div>
+        <div class="touch-item"><div class="touch-name">Brodie</div><div class="touch-val ${surround.brodie_touch==='Yes'?'yes':'no'}">${surround.brodie_touch==='Yes'?'✅ Yes':'❌ No'}</div></div>
+      </div>
+    </div>`;
+  }
+
+  if (f.closeDate || f.closeRep) {
+    html += `<div class="profile-section">
+      <div class="profile-label">Close Details</div>
+      <div style="font-size:12px;color:rgba(251,248,243,0.6);">
+        ${f.closeDate ? 'Closed: ' + f.closeDate : ''}
+        ${f.closeRep ? ' · Rep: ' + esc(f.closeRep) : ''}
+      </div>
+    </div>`;
+  }
+
+  if (f.overdueW1) {
+    html += `<div class="profile-section">
+      <div class="profile-label">⏰ Overdue W1</div>
+      <div style="font-size:12px;color:var(--red);">
+        ${f.daysOverdue} days overdue · Stage: ${esc(f.activationStage||'Unknown')}
+        ${f.mentor !== '—' ? ' · Mentor: ' + esc(f.mentor) : ''}
+      </div>
+    </div>`;
+  }
+
+  html += `<div class="profile-section">
+    <div class="profile-label">Actions</div>
+    <div class="action-btns">
+      <button class="action-btn btn-blue" onclick="showToast('📞 Schedule call feature coming soon')">📞 Schedule Call</button>
+      <button class="action-btn btn-green" onclick="showToast('→ Sent to Brodie')">→ Send to Brodie</button>
+      <button class="action-btn btn-green" onclick="showToast('→ Sent to Norri')">→ Send to Norri</button>
+      <button class="action-btn btn-amber" onclick="showToast('🚩 Flagged for retention')">🚩 Flag for Retention</button>
+    </div>
+  </div>`;
+
+  if (!html) html = '<div style="font-size:12px;color:rgba(251,248,243,0.3);">No additional data available</div>';
+  return html;
+}
+
+function toggleProfile(i) {
+  const panel = document.getElementById('profile-' + i);
+  const btn = document.getElementById('expand-btn-' + i);
+  if (!panel) return;
+  const isOpen = panel.classList.contains('open');
+  panel.classList.toggle('open', !isOpen);
+  btn.textContent = isOpen ? '▼ View Full Profile' : '▲ Hide Profile';
+}
+
+function esc(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+let toastTimer;
+function showToast(msg) {
+  let t = document.getElementById('toast');
+  if (!t) { t = document.createElement('div'); t.id='toast'; document.body.appendChild(t); }
+  t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(16,71,145,0.9);color:var(--cream);padding:10px 20px;border-radius:8px;font-size:13px;z-index:9999;border:1px solid var(--gold);';
+  t.textContent = msg;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.textContent = '', 2500);
+}
+</script>
+</body>
+</html>
