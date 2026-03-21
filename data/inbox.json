@@ -1,0 +1,11 @@
+{
+  "generated": "2026-03-21T11:00:00+11:00",
+  "unread_count": 4,
+  "emails": [
+    {"id": "1", "from": "Brodie Paull", "from_email": "brodie@bluesandgreens.com.au", "subject": "W1 Update — 3 booked this week", "preview": "Hey, got 3 W1s locked in for next week. Kirsty's son starts Monday...", "date": "2026-03-21T09:15:00+11:00", "read": false, "priority": "normal", "labels": ["team"]},
+    {"id": "2", "from": "Rye Penny", "from_email": "rye@bluesandgreens.com.au", "subject": "DC numbers this week", "preview": "5 DCs yesterday, 3 closes. Anthony struggling with objection handling...", "date": "2026-03-21T08:30:00+11:00", "read": false, "priority": "high", "labels": ["team", "sales"]},
+    {"id": "3", "from": "Norri Quayle", "from_email": "norri@bluesandgreens.com.au", "subject": "Payment flags — 3 families", "preview": "Jordan Carlson, Tania Paton, and Sarah Mitchell all have failed payments...", "date": "2026-03-20T16:00:00+11:00", "read": true, "priority": "high", "labels": ["team", "payments"]},
+    {"id": "4", "from": "Leo", "from_email": "hello@bluesandgreens.com.au", "subject": "📚 Morning Read — Naval: Specific Knowledge", "preview": "Specific knowledge is found by pursuing your genuine curiosity...", "date": "2026-03-21T10:25:00+11:00", "read": false, "priority": "normal", "labels": ["essay"]},
+    {"id": "5", "from": "Stripe", "from_email": "notifications@stripe.com", "subject": "Payment failed for Jordan Carlson", "preview": "A payment of $235.00 failed for subscription sub_1T...", "date": "2026-03-20T14:00:00+11:00", "read": true, "priority": "normal", "labels": ["payments"]}
+  ]
+}

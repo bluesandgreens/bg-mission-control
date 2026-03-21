@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Engine — B&G Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;}
+.header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold);}
+.header-logo{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--navy);letter-spacing:1px;}
+.header-title{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
+.back-link{color:rgba(251,248,243,0.5);font-size:13px;text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link:hover{color:var(--gold);}
+.container{max-width:900px;margin:0 auto;padding:32px 20px;}
+/* Stats bar */
+.stats-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+.stat-card{background:rgba(16,21,32,0.8);border:1px solid rgba(200,169,81,0.15);border-radius:14px;padding:18px 20px;border-top:3px solid var(--gold);}
+.stat-val{font-family:'Archivo Black',sans-serif;font-size:28px;color:var(--cream);margin:6px 0 3px;}
+.stat-lbl{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.stat-sub{font-size:11px;color:rgba(251,248,243,0.35);}
+/* Status flow */
+.status-flow{display:flex;align-items:center;gap:4px;margin-bottom:24px;flex-wrap:wrap;}
+.flow-step{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid rgba(255,255,255,0.08);color:rgba(251,248,243,0.4);cursor:pointer;transition:all 0.2s;}
+.flow-step.active,.flow-step:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,169,81,0.08);}
+.flow-arrow{color:rgba(255,255,255,0.2);font-size:14px;}
+/* Controls row */
+.controls-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;}
+.filter-btn{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(251,248,243,0.6);cursor:pointer;transition:all 0.2s;}
+.filter-btn.active,.filter-btn:hover{background:rgba(200,169,81,0.15);border-color:var(--gold);color:var(--gold);}
+.new-btn{padding:8px 18px;border-radius:20px;font-size:12px;font-weight:700;background:var(--gold);color:var(--dark);border:none;cursor:pointer;letter-spacing:1px;transition:all 0.2s;}
+.new-btn:hover{background:#d4b45e;}
+/* Essay cards */
+.essay-card{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:14px;margin-bottom:12px;overflow:hidden;cursor:pointer;transition:all 0.2s;}
+.essay-card:hover{border-color:rgba(200,169,81,0.2);}
+.essay-header{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;}
+.status-badge{padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;letter-spacing:1px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+.status-idea{background:rgba(200,169,81,0.15);color:var(--gold);}
+.status-awaiting_reply{background:rgba(16,71,145,0.3);color:#6BA3FF;}
+.status-draft{background:rgba(232,160,48,0.2);color:var(--amber);}
+.status-review{background:rgba(56,98,23,0.3);color:#7EC850;}
+.status-published{background:rgba(76,175,80,0.15);color:#4CAF50;}
+.essay-meta{flex:1;min-width:0;}
+.essay-title{font-family:'Archivo Black',sans-serif;font-size:15px;color:var(--cream);margin-bottom:4px;}
+.essay-prompt{font-size:12px;color:var(--gold);margin-bottom:6px;font-style:italic;}
+.essay-details{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+.essay-date{font-size:11px;color:rgba(251,248,243,0.35);}
+.essay-source{font-size:11px;color:rgba(251,248,243,0.35);}
+.tag{padding:2px 8px;border-radius:6px;font-size:10px;background:rgba(255,255,255,0.06);color:rgba(251,248,243,0.5);}
+/* Expanded */
+.essay-expanded{display:none;padding:0 20px 20px;border-top:1px solid rgba(255,255,255,0.05);}
+.essay-expanded.open{display:block;}
+.essay-body{font-size:13px;color:rgba(251,248,243,0.5);line-height:1.6;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px;margin:12px 0;font-style:italic;}
+.repurpose-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.repurpose-btn{padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;border:1px solid rgba(200,169,81,0.3);background:rgba(200,169,81,0.06);color:var(--gold);cursor:pointer;transition:all 0.2s;}
+.repurpose-btn:hover{background:rgba(200,169,81,0.15);}
+/* New essay modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:#101520;border:1px solid rgba(200,169,81,0.3);border-radius:16px;padding:28px;width:100%;max-width:500px;}
+.modal-title{font-family:'Archivo Black',sans-serif;font-size:16px;color:var(--gold);margin-bottom:20px;}
+.modal-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 14px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;margin-bottom:12px;}
+.modal-input:focus{border-color:var(--gold);}
+textarea.modal-input{height:80px;resize:vertical;}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:4px;}
+.modal-btn{padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;border:none;cursor:pointer;}
+.modal-btn.primary{background:var(--gold);color:var(--dark);}
+.modal-btn.secondary{background:rgba(255,255,255,0.06);color:var(--cream);}
+/* Toast */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(16,21,32,0.98);border:1px solid var(--gold);border-radius:10px;padding:12px 20px;font-size:13px;color:var(--cream);z-index:500;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.toast.show{opacity:1;}
+@media(max-width:600px){.stats-bar{grid-template-columns:1fr 1fr;}.controls-row{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="header-logo">B&G</div>
+    <div class="header-title">Content Engine</div>
+  </div>
+  <a class="back-link" href="../">← Mission Control</a>
+</div>
+<div class="container">
+
+<div class="stats-bar" id="stats-bar">
+  <div class="stat-card">
+    <div class="stat-lbl">Essays Started</div>
+    <div class="stat-val" id="s-started">0</div>
+    <div class="stat-sub">All time + local</div>
+  </div>
+  <div class="stat-card" style="border-top-color:#4CAF50;">
+    <div class="stat-lbl">Published</div>
+    <div class="stat-val" id="s-published" style="color:#4CAF50;">0</div>
+    <div class="stat-sub">This month</div>
+  </div>
+  <div class="stat-card" style="border-top-color:rgba(255,255,255,0.3);">
+    <div class="stat-lbl">Words Written</div>
+    <div class="stat-val" id="s-words">0</div>
+    <div class="stat-sub">This month</div>
+  </div>
+</div>
+
+<div class="status-flow">
+  <span class="flow-step active">💡 Idea</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">✍️ Draft</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">👀 Review</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">✅ Published</span>
+</div>
+
+<div class="controls-row">
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+    <button class="filter-btn" onclick="setFilter('idea',this)">💡 Ideas</button>
+    <button class="filter-btn" onclick="setFilter('draft',this)">✍️ Drafts</button>
+    <button class="filter-btn" onclick="setFilter('published',this)">✅ Published</button>
+  </div>
+  <button class="new-btn" onclick="openModal()">+ New Essay</button>
+</div>
+
+<div id="essay-list"></div>
+
+</div>
+
+<!-- New Essay Modal -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-title">💡 New Essay Idea</div>
+    <input class="modal-input" id="new-title" placeholder="Essay title...">
+    <textarea class="modal-input" id="new-prompt" placeholder="Prompt / seed idea..."></textarea>
+    <div class="modal-actions">
+      <button class="modal-btn secondary" onclick="closeModal()">Cancel</button>
+      <button class="modal-btn primary" onclick="saveNewEssay()">Save Idea</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+var allEssays = [];
+var repurposeOptions = [];
+var currentFilter = 'all';
+
+var STATUS_LABELS = {
+  idea: '💡 IDEA', awaiting_reply: '⏳ AWAITING', draft: '✍️ DRAFT',
+  review: '👀 REVIEW', published: '✅ PUBLISHED'
+};
+
+function statusClass(s) {
+  return 'status-' + s;
+}
+
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  renderEssays();
+}
+
+function renderEssays() {
+  var essays = allEssays.filter(function(e) {
+    if (currentFilter === 'all') return true;
+    if (currentFilter === 'draft') return e.status === 'draft' || e.status === 'awaiting_reply';
+    return e.status === currentFilter;
+  });
+  var html = '';
+  essays.forEach(function(es) {
+    var tags = (es.tags||[]).map(function(t){return '<span class="tag">'+t+'</span>';}).join('');
+    html += '<div class="essay-card" onclick="toggleEssay(\''+es.id+'\')">';
+    html += '<div class="essay-header">';
+    html += '<div class="status-badge '+statusClass(es.status)+'">'+(STATUS_LABELS[es.status]||es.status)+'</div>';
+    html += '<div class="essay-meta">';
+    html += '<div class="essay-title">'+es.title+'</div>';
+    html += '<div class="essay-prompt">'+es.prompt+'</div>';
+    html += '<div class="essay-details"><span class="essay-date">'+es.date+'</span><span class="essay-source">· '+es.source+'</span><div style="display:flex;gap:4px;">'+tags+'</div></div>';
+    html += '</div>';
+    if (es.word_count > 0) html += '<div style="font-size:11px;color:rgba(251,248,243,0.35);flex-shrink:0;">'+es.word_count+' words</div>';
+    html += '</div>';
+    html += '<div class="essay-expanded" id="exp-'+es.id+'">';
+    html += '<div class="essay-body">'+(es.body || 'No draft yet — reply to the essay prompt email to start writing.'  )+'</div>';
+    html += '<div style="font-size:11px;color:rgba(251,248,243,0.4);margin-bottom:10px;">Repurpose as:</div>';
+    html += '<div class="repurpose-row">';
+    var shown = ['LinkedIn Post','Email Newsletter','Ad Copy'];
+    shown.forEach(function(opt){
+      html += '<button class="repurpose-btn" onclick="event.stopPropagation();repurpose(\''+opt+'\')">'+opt+'</button>';
+    });
+    html += '</div></div></div>';
+  });
+  if (!html) html = '<p style="color:rgba(251,248,243,0.3);text-align:center;padding:40px;">No essays in this category yet</p>';
+  document.getElementById('essay-list').innerHTML = html;
+}
+
+function toggleEssay(id) {
+  var exp = document.getElementById('exp-'+id);
+  exp.classList.toggle('open');
+}
+
+function repurpose(type) {
+  showToast('💙 Leo will draft a ' + type + ' on next sync');
+}
+
+function openModal() {
+  document.getElementById('modal-overlay').classList.add('open');
+  document.getElementById('new-title').focus();
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+function saveNewEssay() {
+  var title = document.getElementById('new-title').value.trim();
+  var prompt = document.getElementById('new-prompt').value.trim();
+  if (!title) { showToast('Add a title first'); return; }
+  var newEssay = {
+    id: 'local-' + Date.now(),
+    title: title,
+    prompt: prompt || 'No prompt yet',
+    status: 'idea',
+    date: new Date().toISOString().split('T')[0],
+    source: 'Mission Control',
+    word_count: 0,
+    tags: []
+  };
+  allEssays.unshift(newEssay);
+  // Persist to localStorage
+  var local = JSON.parse(localStorage.getItem('mc-essays') || '[]');
+  local.unshift(newEssay);
+  localStorage.setItem('mc-essays', JSON.stringify(local));
+  closeModal();
+  document.getElementById('new-title').value = '';
+  document.getElementById('new-prompt').value = '';
+  renderEssays();
+  updateStats();
+  showToast('💡 Essay idea saved!');
+}
+
+function updateStats() {
+  document.getElementById('s-started').textContent = allEssays.length;
+  document.getElementById('s-published').textContent = allEssays.filter(function(e){return e.status==='published';}).length;
+  var words = allEssays.reduce(function(acc,e){return acc+(e.word_count||0);},0);
+  document.getElementById('s-words').textContent = words.toLocaleString();
+}
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');}, 3000);
+}
+
+fetch('../data/content.json').then(function(r){return r.json();}).then(function(d){
+  allEssays = d.essays;
+  repurposeOptions = d.repurpose_options;
+  // Merge local essays
+  var local = JSON.parse(localStorage.getItem('mc-essays') || '[]');
+  local.forEach(function(le){ if(!allEssays.find(function(e){return e.id===le.id;})) allEssays.unshift(le); });
+  renderEssays();
+  updateStats();
+}).catch(function(){
+  document.getElementById('essay-list').innerHTML = '<p style="color:rgba(251,248,243,0.3);text-align:center;padding:40px;">Content data unavailable</p>';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "generated": "2026-03-21T11:00:00+11:00",
+  "notifications": [
+    {"id": "1", "type": "achievement", "icon": "🟢", "title": "Mission Control v2 shipped", "detail": "Open loops, ideas vault, constraint lab, team cards — all live", "time": "2026-03-21T10:55:00+11:00", "source": "Leo", "actionable": false},
+    {"id": "2", "type": "alert", "icon": "🔴", "title": "5 overdue W1 families", "detail": "Kirsty Madigan (15d), Tania Paton (13d), Karen Vargas (12d) — constraint bottleneck", "time": "2026-03-21T06:30:00+11:00", "source": "Data Pull", "actionable": true, "action": "Send list to Brodie"},
+    {"id": "3", "type": "alert", "icon": "🟡", "title": "CPBC at $33 — above $30 threshold", "detail": "Bottom hooks: H14-B1 ($44), Hook E2C ($58). Consider swapping.", "time": "2026-03-21T06:30:00+11:00", "source": "Data Pull", "actionable": true, "action": "Review hooks in Meta"},
+    {"id": "4", "type": "insight", "icon": "💡", "title": "Revenue forecast: $80K MRR by April 28", "detail": "At current pace (+$1.7K/week net), you'll cross $80K in ~5 weeks", "time": "2026-03-21T07:30:00+11:00", "source": "Morning Brief", "actionable": false},
+    {"id": "5", "type": "completion", "icon": "✅", "title": "50 HubSpot contacts patched", "detail": "16 dup IDs, 8 status mismatches, 26 missing amounts — Stripe/HubSpot sync fixed", "time": "2026-03-21T01:00:00+11:00", "source": "Leo", "actionable": false},
+    {"id": "6", "type": "alert", "icon": "🔴", "title": "DC Scoring Pipeline timed out", "detail": "Last night's SIEL scores not generated. Pipeline needs timeout increase.", "time": "2026-03-20T22:00:00+11:00", "source": "Cron", "actionable": true, "action": "Leo: fix timeout"},
+    {"id": "7", "type": "money", "icon": "💰", "title": "Cash collected: $31,692 (7d)", "detail": "64 successful charges. Revenue at risk: $8,472 ($8,109 failed + $363 past due)", "time": "2026-03-21T06:30:00+11:00", "source": "Stripe", "actionable": false},
+    {"id": "8", "type": "team", "icon": "👥", "title": "Essay prompt sent", "detail": "Naval on Specific Knowledge → harry@bluesandgreens.com.au. Reply to start the habit.", "time": "2026-03-21T10:25:00+11:00", "source": "Leo", "actionable": true, "action": "Reply to essay prompt"}
+  ]
+}

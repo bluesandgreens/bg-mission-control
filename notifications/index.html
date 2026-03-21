@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notifications — B&G Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;}
+.header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold);}
+.header-logo{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--navy);letter-spacing:1px;}
+.header-title{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
+.back-link{color:rgba(251,248,243,0.5);font-size:13px;text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link:hover{color:var(--gold);}
+.container{max-width:800px;margin:0 auto;padding:32px 20px;}
+.notif-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;}
+.badge-wrap{display:flex;align-items:center;gap:10px;}
+.unread-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,169,81,0.12);border:1px solid rgba(200,169,81,0.3);border-radius:20px;padding:6px 16px;}
+.unread-count{font-family:'Archivo Black',sans-serif;font-size:20px;color:var(--gold);}
+.unread-label{font-size:11px;color:rgba(251,248,243,0.5);letter-spacing:1px;}
+.mark-all-btn{padding:7px 14px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(251,248,243,0.6);cursor:pointer;transition:all 0.2s;}
+.mark-all-btn:hover{background:rgba(255,255,255,0.08);color:var(--cream);}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.filter-btn{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(251,248,243,0.6);cursor:pointer;transition:all 0.2s;}
+.filter-btn.active,.filter-btn:hover{background:rgba(200,169,81,0.15);border-color:var(--gold);color:var(--gold);}
+/* Notification items */
+.notif-item{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:12px;margin-bottom:10px;transition:all 0.2s;position:relative;}
+.notif-item.dismissed{display:none;}
+.notif-item:hover{border-color:rgba(200,169,81,0.15);}
+.notif-icon{font-size:22px;flex-shrink:0;width:36px;text-align:center;line-height:1;}
+.notif-body{flex:1;min-width:0;}
+.notif-title{font-size:14px;font-weight:700;color:var(--cream);margin-bottom:4px;}
+.notif-detail{font-size:12px;color:rgba(251,248,243,0.5);line-height:1.5;margin-bottom:8px;}
+.notif-footer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.notif-time{font-size:11px;color:rgba(251,248,243,0.3);}
+.source-badge{padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;background:rgba(255,255,255,0.06);color:rgba(251,248,243,0.4);}
+.action-btn{padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;background:rgba(200,169,81,0.12);border:1px solid rgba(200,169,81,0.25);color:var(--gold);cursor:pointer;transition:all 0.2s;}
+.action-btn:hover{background:rgba(200,169,81,0.25);}
+.dismiss-btn{position:absolute;top:10px;right:12px;background:none;border:none;color:rgba(251,248,243,0.2);font-size:16px;cursor:pointer;transition:color 0.2s;padding:4px;}
+.dismiss-btn:hover{color:rgba(251,248,243,0.6);}
+/* Toast */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(16,21,32,0.98);border:1px solid var(--gold);border-radius:10px;padding:12px 20px;font-size:13px;color:var(--cream);z-index:500;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.toast.show{opacity:1;}
+@media(max-width:600px){.notif-header{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="header-logo">B&G</div>
+    <div class="header-title">Notifications</div>
+  </div>
+  <a class="back-link" href="../">← Mission Control</a>
+</div>
+<div class="container">
+
+<div class="notif-header">
+  <div class="badge-wrap">
+    <div class="unread-badge">
+      <span class="unread-count" id="unread-count">0</span>
+      <span class="unread-label">ACTIVE</span>
+    </div>
+  </div>
+  <button class="mark-all-btn" onclick="dismissAll()">Dismiss All</button>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+  <button class="filter-btn" onclick="setFilter('alert',this)">🔴 Alerts</button>
+  <button class="filter-btn" onclick="setFilter('insight',this)">💡 Insights</button>
+  <button class="filter-btn" onclick="setFilter('completion',this)">✅ Completions</button>
+  <button class="filter-btn" onclick="setFilter('money',this)">💰 Money</button>
+</div>
+
+<div id="notif-list"></div>
+
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+var allNotifs = [];
+var currentFilter = 'all';
+var dismissed = JSON.parse(localStorage.getItem('mc-dismissed-notifs') || '[]');
+
+function relativeTime(dateStr) {
+  var then = new Date(dateStr);
+  var now = new Date();
+  var diff = Math.floor((now - then) / 1000);
+  if (diff < 60) return 'just now';
+  if (diff < 3600) return Math.floor(diff/60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff/3600) + 'h ago';
+  return Math.floor(diff/86400) + 'd ago';
+}
+
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  renderList();
+}
+
+function renderList() {
+  var notifs = allNotifs.filter(function(n) {
+    if (dismissed.indexOf(n.id) !== -1) return false;
+    if (currentFilter === 'all') return true;
+    return n.type === currentFilter;
+  });
+  var html = '';
+  // Sort newest first
+  notifs = notifs.sort(function(a,b){ return new Date(b.time) - new Date(a.time); });
+  notifs.forEach(function(n) {
+    html += '<div class="notif-item" id="notif-'+n.id+'">';
+    html += '<div class="notif-icon">'+n.icon+'</div>';
+    html += '<div class="notif-body">';
+    html += '<div class="notif-title">'+n.title+'</div>';
+    html += '<div class="notif-detail">'+n.detail+'</div>';
+    html += '<div class="notif-footer">';
+    html += '<span class="notif-time">'+relativeTime(n.time)+'</span>';
+    html += '<span class="source-badge">'+n.source+'</span>';
+    if (n.actionable && n.action) {
+      html += '<button class="action-btn" onclick="doAction(\''+n.id+'\',\''+n.action.replace(/'/g,"\\'")+'\')">'+n.action+'</button>';
+    }
+    html += '</div>';
+    html += '</div>';
+    html += '<button class="dismiss-btn" onclick="dismissOne(\''+n.id+'\')" title="Dismiss">×</button>';
+    html += '</div>';
+  });
+  if (!html) html = '<p style="color:rgba(251,248,243,0.3);text-align:center;padding:40px;font-size:14px;">No notifications</p>';
+  document.getElementById('notif-list').innerHTML = html;
+  updateCount();
+}
+
+function dismissOne(id) {
+  dismissed.push(id);
+  localStorage.setItem('mc-dismissed-notifs', JSON.stringify(dismissed));
+  var el = document.getElementById('notif-'+id);
+  if (el) { el.style.opacity='0'; el.style.transform='translateX(20px)'; setTimeout(function(){el.style.display='none';updateCount();}, 250); }
+}
+
+function dismissAll() {
+  allNotifs.forEach(function(n){ if(dismissed.indexOf(n.id)===-1) dismissed.push(n.id); });
+  localStorage.setItem('mc-dismissed-notifs', JSON.stringify(dismissed));
+  renderList();
+  showToast('All notifications dismissed');
+}
+
+function doAction(id, action) {
+  showToast('💙 ' + action + ' — saved for Leo on next sync');
+}
+
+function updateCount() {
+  var active = allNotifs.filter(function(n){ return dismissed.indexOf(n.id)===-1; }).length;
+  document.getElementById('unread-count').textContent = active;
+}
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');}, 3000);
+}
+
+fetch('../data/notifications.json').then(function(r){return r.json();}).then(function(d){
+  allNotifs = d.notifications;
+  renderList();
+}).catch(function(){
+  document.getElementById('notif-list').innerHTML = '<p style="color:rgba(251,248,243,0.3);text-align:center;padding:40px;">Notification data unavailable</p>';
+});
+</script>
+</body>
+</html>
