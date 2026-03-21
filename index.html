@@ -121,7 +121,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 .nav-cell{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:16px;cursor:pointer;transition:all 0.2s;text-decoration:none;color:var(--cream);}
 .nav-cell:hover{border-color:rgba(200,169,81,0.3);transform:translateY(-1px);}
 .nc-icon{font-size:20px;margin-bottom:6px;}
-.nc-title{font-family:'Archivo Black',sans-serif;font-size:13px;letter-spacing:1px;margin-bottom:6px;}
+.nc-title{font-family:'Archivo Black',sans-serif;font-size:13px;letter-spacing:1px;margin-bottom:4px;}
+.nc-desc{font-size:11px;color:rgba(251,248,243,0.45);line-height:1.3;}
+a.nav-cell{text-decoration:none;color:var(--cream);}
 .nc-stats{font-size:11px;color:rgba(251,248,243,0.4);}
 .nc-links{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
 .nc-link{font-size:10px;color:var(--gold);text-decoration:none;padding:2px 6px;border-radius:4px;background:rgba(200,169,81,0.08);}
@@ -327,54 +329,114 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
   <div id="calendar-items"></div>
 </div>
 
-<!-- GO DEEPER -->
+<!-- MISSION CONTROL PAGES -->
 <div class="section">
-  <div class="section-header">🔍 Go Deeper</div>
+  <div class="section-header">💰 Money & Revenue</div>
   <div class="nav-grid">
-    <div class="nav-cell" onclick="location.href='revenue-forecast/'">
+    <a class="nav-cell" href="revenue-forecast/">
+      <div class="nc-icon">📈</div>
+      <div class="nc-title">Revenue Forecast</div>
+      <div class="nc-desc">Cash flow, financial model, 12-month projection</div>
+    </a>
+    <a class="nav-cell" href="money/">
       <div class="nc-icon">💰</div>
-      <div class="nc-title">Money</div>
-      <div class="nc-stats" id="nav-money-stats">MRR $67.3K ✅ · Stripe $22.5K ✅</div>
-      <div class="nc-links">
-        <a class="nc-link" href="revenue-forecast/">Revenue</a>
-        <a class="nc-link" href="money/">Money View</a>
-      </div>
-    </div>
-    <div class="nav-cell" onclick="location.href='families/'">
+      <div class="nc-title">Money View</div>
+      <div class="nc-desc">P&L, unit economics, Xero costs</div>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">👨‍👩‍👦 Families & Mentors</div>
+  <div class="nav-grid">
+    <a class="nav-cell" href="families/">
       <div class="nc-icon">👨‍👩‍👦</div>
-      <div class="nc-title">People</div>
-      <div class="nc-stats" id="nav-people-stats">92 families · 32 mentors</div>
-      <div class="nc-links">
-        <a class="nc-link" href="families/">Families</a>
-        <a class="nc-link" href="mentors/">Mentors</a>
-        <a class="nc-link" href="family-health/">Health</a>
-      </div>
-    </div>
-    <div class="nav-cell" onclick="location.href='dc-warroom/'">
-      <div class="nc-icon">⚔️</div>
-      <div class="nc-title">Sales</div>
-      <div class="nc-stats" id="nav-sales-stats">11 closes WTD · 71% close rate</div>
-      <div class="nc-links">
-        <a class="nc-link" href="dc-warroom/">DC War Room</a>
-        <a class="nc-link" href="scorecard/">Scorecard</a>
-        <a class="nc-link" href="recommendations/">Recs</a>
-        <a class="nc-link" href="ads/">📣 Ads</a>
-      </div>
-    </div>
-    <div class="nav-cell" onclick="location.href='calendar/'">
-      <div class="nc-icon">⚙️</div>
-      <div class="nc-title">System</div>
-      <div class="nc-stats">Calendar · Inbox · Notifications</div>
-      <div class="nc-links">
-        <a class="nc-link" href="calendar/">Calendar</a>
-        <a class="nc-link" href="inbox/">Inbox</a>
-        <a class="nc-link" href="notifications/">Alerts</a>
-        <a class="nc-link" href="content/">Content</a>
-        <a class="nc-link" href="board/">Board</a>
-        <a class="nc-link" href="chat/">Chat</a>
-        <a class="nc-link" href="decisions/">Decisions</a>
-      </div>
-    </div>
+      <div class="nc-title">Family Command</div>
+      <div class="nc-desc" id="nav-families-desc">205 families · pipeline & status</div>
+    </a>
+    <a class="nav-cell" href="mentors/">
+      <div class="nc-icon">🧑‍🤝‍🧑</div>
+      <div class="nc-title">Mentors</div>
+      <div class="nc-desc">31 mentors · invoices & capacity</div>
+    </a>
+    <a class="nav-cell" href="family-health/">
+      <div class="nc-icon">❤️</div>
+      <div class="nc-title">Family Health</div>
+      <div class="nc-desc">Retention signals & risk flags</div>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">⚔️ Sales & Ads</div>
+  <div class="nav-grid">
+    <a class="nav-cell" href="dc-warroom/">
+      <div class="nc-icon">📞</div>
+      <div class="nc-title">DC War Room</div>
+      <div class="nc-desc" id="nav-dc-desc">129 DCs · 60% close rate · rep stats</div>
+    </a>
+    <a class="nav-cell" href="ads/">
+      <div class="nc-icon">📣</div>
+      <div class="nc-title">Ad Command Centre</div>
+      <div class="nc-desc" id="nav-ads-desc">Hook leaderboard · spend pacing · flags</div>
+    </a>
+    <a class="nav-cell" href="scorecard/">
+      <div class="nc-icon">🎯</div>
+      <div class="nc-title">Scorecard</div>
+      <div class="nc-desc">Weekly performance tracking</div>
+    </a>
+    <a class="nav-cell" href="recommendations/">
+      <div class="nc-icon">💡</div>
+      <div class="nc-title">Smart Recs</div>
+      <div class="nc-desc">AI-powered recommendations</div>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">📝 Content & Ideas</div>
+  <div class="nav-grid">
+    <a class="nav-cell" href="content/">
+      <div class="nc-icon">✍️</div>
+      <div class="nc-title">Content Hub</div>
+      <div class="nc-desc">Essay spark · ideas vault · repurposing</div>
+    </a>
+    <a class="nav-cell" href="decisions/">
+      <div class="nc-icon">⚖️</div>
+      <div class="nc-title">Decision Log</div>
+      <div class="nc-desc">Key decisions & rationale</div>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">📅 Operations</div>
+  <div class="nav-grid">
+    <a class="nav-cell" href="calendar/">
+      <div class="nc-icon">📅</div>
+      <div class="nc-title">Calendar</div>
+      <div class="nc-desc">Today's schedule · DCs · deep work</div>
+    </a>
+    <a class="nav-cell" href="inbox/">
+      <div class="nc-icon">📬</div>
+      <div class="nc-title">Inbox</div>
+      <div class="nc-desc">Email feed & follow-ups</div>
+    </a>
+    <a class="nav-cell" href="notifications/">
+      <div class="nc-icon">🔔</div>
+      <div class="nc-title">Notifications</div>
+      <div class="nc-desc">Alerts & flags from Leo</div>
+    </a>
+    <a class="nav-cell" href="board/">
+      <div class="nc-icon">📊</div>
+      <div class="nc-title">Board Report</div>
+      <div class="nc-desc">Monthly investor-ready view</div>
+    </a>
+    <a class="nav-cell" href="chat/">
+      <div class="nc-icon">💬</div>
+      <div class="nc-title">Leo Chat</div>
+      <div class="nc-desc">Ask Leo anything</div>
+    </a>
   </div>
 </div>
 
