@@ -1,114 +1,94 @@
 {
-  "updated": "12:30pm Sun 22 Mar",
-  "projects": [
-    {
-      "icon": "📋",
-      "title": "Onboarding Manual v2 — Notion Restructure",
-      "detail": "Wiping & rebuilding both Notion pages (Manual + Impl Guide) with clean structure. No more duplication.",
-      "status": "active",
-      "owner": "Leo",
-      "agent": "Opus",
-      "eta": "~15 min",
-      "next": "Harry reviews clean structure"
-    },
-    {
-      "icon": "✉️",
-      "title": "HubSpot Email Workflows",
-      "detail": "8 onboarding emails drafted. Waiting for Harry to approve copy before wiring HubSpot workflows.",
-      "status": "review",
-      "owner": "Harry",
-      "agent": null,
-      "eta": null,
-      "next": "Harry approves → Leo builds workflows"
-    },
-    {
-      "icon": "🎓",
-      "title": "School of Life v2 — Session Menu",
-      "detail": "12 session activities across 3 blocks. Redesigned around what 14yo boys actually engage with.",
-      "status": "review",
-      "owner": "Harry",
-      "agent": null,
-      "eta": null,
-      "next": "Harry picks sessions for MVP → Leo updates PDF + invite"
-    },
-    {
-      "icon": "🎵",
-      "title": "DC Recordings — Audio Wired",
-      "detail": "68/86 call library entries have playable audio on DC Hub. All 46 MP3s on Google Drive.",
-      "status": "done",
-      "owner": "Leo",
-      "agent": null,
-      "eta": null,
-      "next": null
-    },
-    {
-      "icon": "📝",
-      "title": "Content Engine — Mirror Theory",
-      "detail": "10 content outputs + Notion pipeline DB + MC Content Hub live. First full content run complete.",
-      "status": "done",
-      "owner": "Leo",
-      "agent": null,
-      "eta": null,
-      "next": "Harry reviews newsletter voice → feedback for tuning"
-    },
-    {
-      "icon": "💰",
-      "title": "Money View — GP Corrected",
-      "detail": "Blended mentor cost $206/mo (BB $50, LH $40). LTGP $1,463. CAC:LTGP 1:11.5.",
-      "status": "done",
-      "owner": "Leo",
-      "agent": null,
-      "eta": null,
-      "next": null
-    },
-    {
-      "icon": "🌅",
-      "title": "Morning Essay Prompts — Redesigned",
-      "detail": "Now personal themes (identity, vulnerability, masculinity) not business ops. 8am daily.",
-      "status": "done",
-      "owner": "Leo",
-      "agent": null,
-      "eta": null,
-      "next": null
-    },
-    {
-      "icon": "🏗️",
-      "title": "Portal — Parent & Admin Changes",
-      "detail": "15 features spec'd (7 parent, 8 admin). Full implementation plan in Notion.",
-      "status": "queued",
-      "owner": "Leo",
-      "agent": null,
-      "eta": "Week 2-4",
-      "next": "Phase 2 build starts after Monday rollout settles"
-    },
-    {
-      "icon": "🤖",
-      "title": "Mentor Matching AI",
-      "detail": "3-step flow designed (notify → AI recommend → Brodie confirms). Manual matching Monday.",
-      "status": "queued",
-      "owner": "Leo",
-      "agent": null,
-      "eta": "Week 2-4",
-      "next": "Build scoring model after manual matching generates data"
-    },
-    {
-      "icon": "🔄",
-      "title": "Exit Interviews & Win-Back Pipeline",
-      "detail": "Cancellation flow + churned members Kanban + Day 0/30/60/90 win-back sequence designed.",
-      "status": "queued",
-      "owner": "Leo",
-      "agent": null,
-      "eta": "Week 2-4",
-      "next": "Build churned_members table + portal pipeline view"
-    }
-  ],
-  "open_loops": [
-    "HubSpot auto-upgraded tier cleanup still pending",
-    "13 failed payments ($7,288) to chase — Norri",
-    "Zapier issues (5 alerts) unresolved",
-    "DC Hub deploy needs Harry to sync Lovable dashboard",
-    "Book Bali accom (Harry flying Monday early AM)",
-    "Rahmain FE session — run sheet ready in Notion",
-    "6-7 overdue W1 families (Joe 10d, Oscar 8d) — Brodie to call"
-  ]
+  "lastUpdated": "2026-03-22T16:24",
+  "sections": {
+    "inProgress": [
+      {
+        "title": "HubSpot Workflow Audit",
+        "detail": "210 workflows mapped. 14 conflict with new onboarding. Audit doc ready for review.",
+        "agent": "Leo",
+        "eta": "Done",
+        "priority": "high"
+      },
+      {
+        "title": "New Onboarding Email Workflows",
+        "detail": "Building post-close email, consent reminder, mentor matched, W1 scheduled workflows",
+        "agent": "Leo",
+        "eta": "Tonight",
+        "priority": "high"
+      }
+    ],
+    "needsReview": [
+      {
+        "title": "School of Life V2 \u2014 Session Menu",
+        "detail": "19K words. Imposter game, Vulnerability Circle, Phone Lockscreens, Creative blocks. Full menu.",
+        "link": "workspace/school-of-life/session-menu-v2.md"
+      },
+      {
+        "title": "Onboarding Manual + Impl Guide",
+        "detail": "Both Notion pages rebuilt clean. 155 + 241 blocks. Ready for Monday rollout.",
+        "link": "https://notion.so/3298322e6bdc8134820ac478015863b8"
+      },
+      {
+        "title": "HubSpot Workflow Audit",
+        "detail": "14 workflows conflict with new flow. Recommendation: turn off 3, review 11, build 7 new.",
+        "link": "workspace/onboarding/hubspot-workflow-audit.md"
+      }
+    ],
+    "upNext": [
+      {
+        "title": "Build 7 New HubSpot Workflows",
+        "detail": "Post-close email, consent reminder, mentor matched, W1 scheduled, microowner task, Brodie task, NDIS auto-assign",
+        "timeline": "Tonight / Monday AM"
+      },
+      {
+        "title": "Clean Up Dead Workflows",
+        "detail": "17+ unnamed workflows, duplicates, old campaign workflows to delete",
+        "timeline": "After Harry reviews audit"
+      }
+    ],
+    "doneToday": [
+      {
+        "title": "Batch 2 Ads Uploaded",
+        "detail": "6 new hooks (H2,H4,H6,H13,H15,H18) live in Tournament at $110/day. Kaleidoscope + Emerging paused."
+      },
+      {
+        "title": "Notion Restructure",
+        "detail": "Manual (155 blocks) + Impl Guide (241 blocks) rebuilt from scratch"
+      },
+      {
+        "title": "MC Work Plate",
+        "detail": "Live on Mission Control homepage"
+      },
+      {
+        "title": "DOF Fix Found",
+        "detail": "Video touchups API fix \u2014 copy H14-B1 exact spec, exclude standard_enhancements_catalog"
+      },
+      {
+        "title": "HubSpot Workflow Audit",
+        "detail": "210 workflows categorised. 14 onboarding conflicts identified."
+      },
+      {
+        "title": "School of Life V2",
+        "detail": "Full session menu with Imposter, Human Ranking, Circle, Phone Lockscreens, Creative blocks"
+      }
+    ],
+    "openLoops": [
+      {
+        "title": "6 failed payments ($8,690)",
+        "detail": "Rachel $1,899, Selena $2,730, Lucia $1,808, Mardi $1,899, Milena $119, Leah $235"
+      },
+      {
+        "title": "8 March closes 8+ days without W1",
+        "detail": "Eileen 9d, Cass 10d, Rhiannon 11d, Belynda 11d, Samantha 12d, Rahmain 12d, Kelly 13d \u2014 need Brodie"
+      },
+      {
+        "title": "Video touchups check",
+        "detail": "DOF fix applied via API \u2014 Harry to verify in Ads Manager UI"
+      },
+      {
+        "title": "Monday rollout prep",
+        "detail": "Brief messages for Rye, Brodie, Norri needed by 8am"
+      }
+    ]
+  }
 }
