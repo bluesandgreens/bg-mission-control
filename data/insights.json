@@ -1,22 +1,32 @@
 {
-  "last_updated": "2026-03-20T23:04:00+11:00",
-  "nightly_summary": {
-    "date": "2026-03-20",
-    "calls_total": 21,
-    "calls_scoreable": 2,
-    "calls_scored": 1,
-    "calls_unscoreable": 1,
-    "reason_unscoreable": "No recording available (Hollie A, 106667824281)",
-    "avg_score_today": 5.3
+  "last_updated": "2026-03-22T11:10:43Z",
+  "summary": {
+    "total_scored": 6,
+    "total_closes": 2,
+    "total_objections": 4,
+    "overall_close_rate": 33.3,
+    "avg_siel_overall": 4.22,
+    "avg_e_score_on_closes": 1.5,
+    "avg_e_score_on_objections": 1.25,
+    "lucky_closes": 1,
+    "false_positives": 0
   },
-  "scoring_note": "First ever SIEL scoring run. Bootstrap mode (< 50 calls). Conversion predictor is heuristic-only until 50 scored calls accumulated.",
-  "top_coaching_opportunity": {
-    "rep": "Anthony",
-    "dimension": "E (Emotional)",
-    "score": 2,
-    "insight": "Anthony walked past 3 major emotional bombs in today's call (birth mum abandonment, resentment, brick wall). The Emotional dimension is the #1 predictor of retention per spec. This is the coaching priority.",
-    "drill": "Emotional Bomb Cycling \u2014 see call entry for drill details"
+  "flags": {
+    "lucky_closes": [
+      {
+        "contact": "Jasmine Lund",
+        "score": 3.7,
+        "date": "2026-03-21"
+      }
+    ],
+    "false_positives": []
   },
-  "flags_today": [],
-  "conversion_predictor_note": "43/100 for Tayla Colman (estimated). Partner objection is the key variable. Monday follow-up scheduled. If Anthony opens with mentor framing on Monday, close probability rises."
+  "dimension_analysis": {
+    "avg_s": 2.5,
+    "avg_i": 1.83,
+    "avg_e": 1.33,
+    "avg_l": 2.67,
+    "avg_opening": 2.17,
+    "avg_objection": 2.83
+  }
 }

@@ -1,31 +1,41 @@
 {
-  "last_updated": "2026-03-20T23:04:00+11:00",
-  "period": "2026-03-20",
-  "reps": [
-    {
-      "name": "Anthony",
-      "calls_scored_today": 1,
-      "calls_scored_total": 1,
-      "avg_siel_today": 5.3,
-      "avg_siel_total": 5.3,
-      "closes_today": 0,
-      "follow_ups_today": 1,
-      "conversion_predictor_avg": 43,
+  "last_updated": "2026-03-22T11:10:43Z",
+  "reps": {
+    "Harry": {
+      "total_calls": 1,
+      "closes": 1,
+      "avg_score": 5.5,
       "false_positives": 0,
       "lucky_closes": 0,
-      "label_quality_distribution": {
-        "RED": 1,
-        "AMBER": 0,
-        "GREEN": 0
-      },
-      "dimension_avgs": {
-        "S": 3.0,
-        "I": 3.0,
-        "E": 2.0,
-        "L": 3.0,
-        "Opening": 2.0,
-        "OH": 3.0
-      }
+      "avg_conversion_predictor": 55.0,
+      "close_rate": 100.0
+    },
+    "Rye": {
+      "total_calls": 1,
+      "closes": 0,
+      "avg_score": 4.4,
+      "false_positives": 0,
+      "lucky_closes": 0,
+      "avg_conversion_predictor": 29.0,
+      "close_rate": 0.0
+    },
+    "Bailey": {
+      "total_calls": 3,
+      "closes": 1,
+      "avg_score": 3.37,
+      "false_positives": 0,
+      "lucky_closes": 1,
+      "avg_conversion_predictor": 18.7,
+      "close_rate": 33.3
+    },
+    "Anthony": {
+      "total_calls": 1,
+      "closes": 0,
+      "avg_score": 5.3,
+      "false_positives": 0,
+      "lucky_closes": 0,
+      "avg_conversion_predictor": 43.0,
+      "close_rate": 0.0
     }
-  ]
+  }
 }
