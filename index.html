@@ -199,6 +199,25 @@ a.nav-cell{text-decoration:none;color:var(--cream);}
 
 /* ═══ OPEN LOOPS ═══ */
 .loops-section,.ideas-section{margin-bottom:20px;}
+
+/* WORKPLATE */
+.wp-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px 14px;margin-bottom:8px;transition:border-color 0.2s;}
+.wp-card:hover{border-color:rgba(200,169,81,0.3);}
+.wp-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.wp-card-title{font-size:13px;font-weight:600;color:var(--cream);}
+.wp-card-status{font-size:10px;font-weight:700;letter-spacing:0.5px;padding:2px 8px;border-radius:4px;text-transform:uppercase;}
+.wp-status-active{background:rgba(76,175,80,0.2);color:#4CAF50;animation:pulse-glow 2s infinite;}
+.wp-status-queued{background:rgba(232,160,48,0.2);color:#E8A030;}
+.wp-status-blocked{background:rgba(224,82,82,0.2);color:#E05252;}
+.wp-status-done{background:rgba(255,255,255,0.06);color:rgba(251,248,243,0.3);text-decoration:line-through;}
+.wp-status-review{background:rgba(200,169,81,0.2);color:var(--gold);}
+.wp-card-meta{display:flex;gap:12px;font-size:11px;color:rgba(251,248,243,0.4);}
+.wp-card-meta span{display:flex;align-items:center;gap:3px;}
+.wp-card-next{font-size:11px;color:rgba(251,248,243,0.5);margin-top:4px;padding-top:4px;border-top:1px solid rgba(255,255,255,0.04);}
+.wp-owner-harry{color:var(--gold);}
+.wp-owner-leo{color:#4CAF50;}
+.wp-divider{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(251,248,243,0.25);margin:12px 0 8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);}
+@keyframes pulse-glow{0%,100%{opacity:1;}50%{opacity:0.7;}}
 .collapsible-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:8px 0;user-select:none;}
 .collapsible-header .chevron{transition:transform 0.2s;font-size:14px;color:rgba(251,248,243,0.4);}
 .collapsible-header.open .chevron{transform:rotate(180deg);}
@@ -318,6 +337,11 @@ a.nav-cell{text-decoration:none;color:var(--cream);}
 <div id="dc-prep-section"></div>
 
 <!-- WATCH THIS -->
+<div class="section" id="workplate-section">
+  <div class="section-header">📋 Today's Work Plate</div>
+  <div id="workplate-content" style="font-size:12px;color:rgba(251,248,243,0.3);">Loading...</div>
+</div>
+
 <div class="section" id="watch-section">
   <div class="section-header">⚠️ Watch This</div>
   <div id="watch-cards"></div>
@@ -627,6 +651,7 @@ async function init() {
   renderCalendar();
   renderDCPrep();
   renderLeo();
+  renderWorkplate();
   buildCmdIndex();
 }
 
@@ -956,6 +981,66 @@ function renderDCPrep() {
 /* ═══════════════════════════════════════
    LEO FEED
    ═══════════════════════════════════════ */
+/* ═══════════════════════════════════════
+   WORK PLATE
+   ═══════════════════════════════════════ */
+async function renderWorkplate() {
+  const el = document.getElementById('workplate-content');
+  try {
+    const wp = await fetch('data/workplate.json').then(r=>r.json());
+    if(!wp || !wp.projects) { el.innerHTML='<div style="font-size:12px;color:rgba(251,248,243,0.3);">No active projects</div>'; return; }
+    
+    const statusClass = s => ({active:'wp-status-active',queued:'wp-status-queued',blocked:'wp-status-blocked',done:'wp-status-done',review:'wp-status-review'}[s]||'wp-status-queued');
+    const statusLabel = s => ({active:'🔄 Active',queued:'⏳ Queued',blocked:'🚫 Blocked',done:'✅ Done',review:'👀 Review'}[s]||s);
+    const ownerClass = o => o.toLowerCase().includes('harry')?'wp-owner-harry':'wp-owner-leo';
+    
+    const active = wp.projects.filter(p=>p.status==='active');
+    const queued = wp.projects.filter(p=>p.status==='queued');
+    const review = wp.projects.filter(p=>p.status==='review');
+    const blocked = wp.projects.filter(p=>p.status==='blocked');
+    const done = wp.projects.filter(p=>p.status==='done');
+    
+    let html = '';
+    
+    // Updated timestamp
+    if(wp.updated) {
+      html += `<div style="font-size:10px;color:rgba(251,248,243,0.2);margin-bottom:10px;text-align:right;">Last updated: ${wp.updated}</div>`;
+    }
+    
+    const renderCards = (items) => items.map(p => {
+      let meta = '';
+      if(p.owner) meta += `<span class="${ownerClass(p.owner)}">👤 ${p.owner}</span>`;
+      if(p.agent) meta += `<span>🤖 ${p.agent}</span>`;
+      if(p.eta) meta += `<span>⏱ ${p.eta}</span>`;
+      return `<div class="wp-card">
+        <div class="wp-card-header">
+          <span class="wp-card-title">${p.icon||'📌'} ${p.title}</span>
+          <span class="wp-card-status ${statusClass(p.status)}">${statusLabel(p.status)}</span>
+        </div>
+        ${p.detail?`<div style="font-size:11px;color:rgba(251,248,243,0.5);margin-bottom:4px;">${p.detail}</div>`:''}
+        <div class="wp-card-meta">${meta}</div>
+        ${p.next?`<div class="wp-card-next">→ Next: ${p.next}</div>`:''}
+      </div>`;
+    }).join('');
+    
+    if(active.length) { html += '<div class="wp-divider">🔄 In Progress</div>' + renderCards(active); }
+    if(review.length) { html += '<div class="wp-divider">👀 Needs Review</div>' + renderCards(review); }
+    if(queued.length) { html += '<div class="wp-divider">⏳ Up Next</div>' + renderCards(queued); }
+    if(blocked.length) { html += '<div class="wp-divider">🚫 Blocked</div>' + renderCards(blocked); }
+    if(done.length) { html += '<div class="wp-divider">✅ Done Today</div>' + renderCards(done); }
+    
+    // Open loops summary
+    if(wp.open_loops && wp.open_loops.length) {
+      html += '<div class="wp-divider">🔁 Open Loops</div>';
+      html += wp.open_loops.map(l => `<div style="font-size:11px;color:rgba(251,248,243,0.4);padding:4px 0;">• ${l}</div>`).join('');
+    }
+    
+    el.innerHTML = html || '<div style="font-size:12px;color:rgba(251,248,243,0.3);">Clear plate — nothing active</div>';
+  } catch(e) {
+    el.innerHTML='<div style="font-size:12px;color:rgba(251,248,243,0.3);">Work plate loading...</div>';
+  }
+}
+
 function renderLeo() {
   const el = document.getElementById('leo-feed');
   if(!activityData) return;

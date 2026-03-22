@@ -1,0 +1,114 @@
+{
+  "updated": "12:30pm Sun 22 Mar",
+  "projects": [
+    {
+      "icon": "📋",
+      "title": "Onboarding Manual v2 — Notion Restructure",
+      "detail": "Wiping & rebuilding both Notion pages (Manual + Impl Guide) with clean structure. No more duplication.",
+      "status": "active",
+      "owner": "Leo",
+      "agent": "Opus",
+      "eta": "~15 min",
+      "next": "Harry reviews clean structure"
+    },
+    {
+      "icon": "✉️",
+      "title": "HubSpot Email Workflows",
+      "detail": "8 onboarding emails drafted. Waiting for Harry to approve copy before wiring HubSpot workflows.",
+      "status": "review",
+      "owner": "Harry",
+      "agent": null,
+      "eta": null,
+      "next": "Harry approves → Leo builds workflows"
+    },
+    {
+      "icon": "🎓",
+      "title": "School of Life v2 — Session Menu",
+      "detail": "12 session activities across 3 blocks. Redesigned around what 14yo boys actually engage with.",
+      "status": "review",
+      "owner": "Harry",
+      "agent": null,
+      "eta": null,
+      "next": "Harry picks sessions for MVP → Leo updates PDF + invite"
+    },
+    {
+      "icon": "🎵",
+      "title": "DC Recordings — Audio Wired",
+      "detail": "68/86 call library entries have playable audio on DC Hub. All 46 MP3s on Google Drive.",
+      "status": "done",
+      "owner": "Leo",
+      "agent": null,
+      "eta": null,
+      "next": null
+    },
+    {
+      "icon": "📝",
+      "title": "Content Engine — Mirror Theory",
+      "detail": "10 content outputs + Notion pipeline DB + MC Content Hub live. First full content run complete.",
+      "status": "done",
+      "owner": "Leo",
+      "agent": null,
+      "eta": null,
+      "next": "Harry reviews newsletter voice → feedback for tuning"
+    },
+    {
+      "icon": "💰",
+      "title": "Money View — GP Corrected",
+      "detail": "Blended mentor cost $206/mo (BB $50, LH $40). LTGP $1,463. CAC:LTGP 1:11.5.",
+      "status": "done",
+      "owner": "Leo",
+      "agent": null,
+      "eta": null,
+      "next": null
+    },
+    {
+      "icon": "🌅",
+      "title": "Morning Essay Prompts — Redesigned",
+      "detail": "Now personal themes (identity, vulnerability, masculinity) not business ops. 8am daily.",
+      "status": "done",
+      "owner": "Leo",
+      "agent": null,
+      "eta": null,
+      "next": null
+    },
+    {
+      "icon": "🏗️",
+      "title": "Portal — Parent & Admin Changes",
+      "detail": "15 features spec'd (7 parent, 8 admin). Full implementation plan in Notion.",
+      "status": "queued",
+      "owner": "Leo",
+      "agent": null,
+      "eta": "Week 2-4",
+      "next": "Phase 2 build starts after Monday rollout settles"
+    },
+    {
+      "icon": "🤖",
+      "title": "Mentor Matching AI",
+      "detail": "3-step flow designed (notify → AI recommend → Brodie confirms). Manual matching Monday.",
+      "status": "queued",
+      "owner": "Leo",
+      "agent": null,
+      "eta": "Week 2-4",
+      "next": "Build scoring model after manual matching generates data"
+    },
+    {
+      "icon": "🔄",
+      "title": "Exit Interviews & Win-Back Pipeline",
+      "detail": "Cancellation flow + churned members Kanban + Day 0/30/60/90 win-back sequence designed.",
+      "status": "queued",
+      "owner": "Leo",
+      "agent": null,
+      "eta": "Week 2-4",
+      "next": "Build churned_members table + portal pipeline view"
+    }
+  ],
+  "open_loops": [
+    "HubSpot auto-upgraded tier cleanup still pending",
+    "13 failed payments ($7,288) to chase — Norri",
+    "Zapier issues (5 alerts) unresolved",
+    "DC Hub deploy needs Harry to sync Lovable dashboard",
+    "Book Bali accom (Harry flying Monday early AM)",
+    "Rahmain FE session — run sheet ready in Notion",
+    "6-7 overdue W1 families (Joe 10d, Oscar 8d) — Brodie to call"
+  ]
+}
