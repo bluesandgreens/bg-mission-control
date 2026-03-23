@@ -1,43 +1,15 @@
 {
-  "generated": "2026-03-23T18:00:03.939708",
+  "generated": "2026-03-24T06:35:43.535499",
   "weeks": [
     {
-      "label": "Week 1 (Mar 23 - Mar 29)",
-      "total": 17437.0,
+      "label": "Week 1 (Mar 24 - Mar 30)",
+      "total": 11755.0,
       "days": [
-        {
-          "date": "2026-03-23",
-          "day": "Mon",
-          "charges": 2,
-          "amount": 2131.0,
-          "subscribers": [
-            {
-              "name": "Emily Greaves",
-              "email": "em-greaves@hotmail.com",
-              "amount": 232.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1Sjd6L2mA5zLxyK8XzL49PU9",
-              "customer_id": "cus_TaZaq9fp05L3Cu",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sjd6L2mA5zLxyK8XzL49PU9",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/183682873004"
-            },
-            {
-              "name": "Mardi Moore",
-              "email": "",
-              "amount": 1899.0,
-              "interval": "OPEN",
-              "type": "invoice",
-              "status": "open",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TBOm62mA5zLxyK86inwhKtk",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
-            }
-          ]
-        },
         {
           "date": "2026-03-24",
           "day": "Tue",
-          "charges": 6,
-          "amount": 3447.0,
+          "charges": 4,
+          "amount": 1520.0,
           "subscribers": [
             {
               "name": "GEMMA GARNER",
@@ -70,16 +42,6 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/176178292630"
             },
             {
-              "name": "Celeste Paull",
-              "email": "celeste.paull.84@gmail.com",
-              "amount": 119.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1SwMk72mA5zLxyK86uycpGtf",
-              "customer_id": "cus_ThbmEYs3H0maXB",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SwMk72mA5zLxyK86uycpGtf",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/188644928560"
-            },
-            {
               "name": "Tiffany Thomas",
               "email": "tiff.e.thomas35@gmail.com",
               "amount": 119.0,
@@ -88,24 +50,14 @@
               "customer_id": "cus_TX8HPESpKeuMnt",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1ShPOL2mA5zLxyK8QFhH4ozx",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/180422169868"
-            },
-            {
-              "name": "Lucia Ciccollitto",
-              "email": "",
-              "amount": 1808.0,
-              "interval": "OPEN",
-              "type": "invoice",
-              "status": "open",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TBsdy2mA5zLxyK8m89g9xX4",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
         },
         {
           "date": "2026-03-25",
           "day": "Wed",
-          "charges": 7,
-          "amount": 3705.0,
+          "charges": 6,
+          "amount": 975.0,
           "subscribers": [
             {
               "name": "Annie Stazak",
@@ -166,16 +118,6 @@
               "customer_id": "cus_S7XS1cWfAPUrO1",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RDINj2mA5zLxyK8z55icErH",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/115998356243"
-            },
-            {
-              "name": "Selena Fletcher",
-              "email": "",
-              "amount": 2730.0,
-              "interval": "OPEN",
-              "type": "invoice",
-              "status": "open",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCEBV2mA5zLxyK8hfm25PsL",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
         },
@@ -312,19 +254,23 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/126700344428"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 2 (Mar 30 - Apr 05)",
-      "total": 6239.0,
-      "days": [
+        },
         {
           "date": "2026-03-30",
           "day": "Mon",
-          "charges": 6,
-          "amount": 874.0,
+          "charges": 7,
+          "amount": 1106.0,
           "subscribers": [
+            {
+              "name": "Emily Greaves",
+              "email": "em-greaves@hotmail.com",
+              "amount": 232.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1Sjd6L2mA5zLxyK8XzL49PU9",
+              "customer_id": "cus_TaZaq9fp05L3Cu",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sjd6L2mA5zLxyK8XzL49PU9",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/183682873004"
+            },
             {
               "name": "Julie-Anne Jacotine",
               "email": "julzie79@gmail.com",
@@ -386,7 +332,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/135810870042"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 2 (Mar 31 - Apr 06)",
+      "total": 5743.0,
+      "days": [
         {
           "date": "2026-04-01",
           "day": "Wed",
@@ -518,13 +470,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/140747141419"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 3 (Apr 06 - Apr 12)",
-      "total": 609.0,
-      "days": [
+        },
         {
           "date": "2026-04-06",
           "day": "Mon",
@@ -552,7 +498,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/181216963768"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 3 (Apr 07 - Apr 13)",
+      "total": 2039.0,
+      "days": [
         {
           "date": "2026-04-09",
           "day": "Thu",
@@ -570,13 +522,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/132301268801"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 4 (Apr 13 - Apr 19)",
-      "total": 10124.0,
-      "days": [
+        },
         {
           "date": "2026-04-13",
           "day": "Mon",
@@ -604,7 +550,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/198845395067"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 4 (Apr 14 - Apr 20)",
+      "total": 8316.0,
+      "days": [
         {
           "date": "2026-04-16",
           "day": "Thu",
