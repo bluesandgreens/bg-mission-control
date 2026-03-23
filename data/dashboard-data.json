@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-22T20:02:59.686106Z",
+  "generated_at": "2026-03-23T01:03:06.529746Z",
   "period": {
     "today": "2026-03-23",
     "week_start": "2026-03-23",
@@ -7,28 +7,28 @@
   },
   "pulse": {
     "today": {
-      "new_leads": 0,
+      "new_leads": 1,
       "booked_calls": 0,
-      "dcs_completed": 0,
+      "dcs_completed": 1,
       "closes": 0,
       "w1_starts": 0,
       "agreement_forms": 0
     },
     "wtd": {
-      "new_leads": 0,
+      "new_leads": 1,
       "booked_calls": 0,
-      "dcs_completed": 0,
+      "dcs_completed": 1,
       "closes": 0,
       "w1_starts": 0,
       "agreement_forms": 0
     },
     "mtd": {
-      "new_leads": 640,
-      "booked_calls": 116,
-      "dcs_completed": 77,
+      "new_leads": 644,
+      "booked_calls": 117,
+      "dcs_completed": 79,
       "closes": 54,
       "w1_starts": 34,
-      "agreement_forms": 47
+      "agreement_forms": 48
     }
   },
   "reps": [
@@ -36,21 +36,21 @@
       "name": "Harry",
       "owner_id": "75967744",
       "today": {
-        "leads": 0,
+        "leads": 1,
         "w1_starts": 0,
         "dcs_taken": 0,
         "closes": 0,
         "close_rate": 0.0
       },
       "wtd": {
-        "leads": 0,
+        "leads": 1,
         "w1_starts": 0,
         "dcs_taken": 0,
         "closes": 0,
         "close_rate": 0.0
       },
       "mtd": {
-        "leads": 498,
+        "leads": 501,
         "w1_starts": 6,
         "dcs_taken": 19,
         "closes": 16,
@@ -76,7 +76,7 @@
         "close_rate": 0.0
       },
       "mtd": {
-        "leads": 14,
+        "leads": 15,
         "w1_starts": 2,
         "dcs_taken": 12,
         "closes": 6,
@@ -90,25 +90,25 @@
       "today": {
         "leads": 0,
         "w1_starts": 0,
-        "dcs_taken": 0,
+        "dcs_taken": 1,
         "closes": 0,
         "close_rate": 0.0
       },
       "wtd": {
         "leads": 0,
         "w1_starts": 0,
-        "dcs_taken": 0,
+        "dcs_taken": 1,
         "closes": 0,
         "close_rate": 0.0
       },
       "mtd": {
         "leads": 18,
         "w1_starts": 1,
-        "dcs_taken": 23,
+        "dcs_taken": 25,
         "closes": 6,
-        "close_rate": 0.26
+        "close_rate": 0.24
       },
-      "total_calls_mtd": 102
+      "total_calls_mtd": 107
     },
     {
       "name": "Bailey",
@@ -160,7 +160,7 @@
         "closes": 7,
         "close_rate": 0.88
       },
-      "total_calls_mtd": 50
+      "total_calls_mtd": 54
     },
     {
       "name": "Brodie",
@@ -191,19 +191,19 @@
   ],
   "meta_ads": {
     "today": {
-      "spend": 10.74,
-      "booked_calls": 0,
-      "cpbc": 0
+      "spend": 43.97,
+      "booked_calls": 1,
+      "cpbc": 43.97
     },
     "wtd": {
-      "spend": 10.74,
-      "booked_calls": 0,
-      "cpbc": 0
+      "spend": 43.97,
+      "booked_calls": 1,
+      "cpbc": 43.97
     },
     "mtd": {
-      "spend": 4639.74,
-      "booked_calls": 188,
-      "cpbc": 24.68
+      "spend": 4673.28,
+      "booked_calls": 189,
+      "cpbc": 24.73
     }
   },
   "stripe": {
@@ -253,9 +253,24 @@
         "customer": "cus_TKMmHFXrHYV6et"
       }
     ],
-    "failed_payments_7d": 11,
-    "failed_payments_7d_total": 6183.11,
+    "failed_payments_7d": 14,
+    "failed_payments_7d_total": 21153.11,
     "failed_payments_7d_list": [
+      {
+        "name": null,
+        "email": null,
+        "amount_aud": 4990.0
+      },
+      {
+        "name": "Vanessa Koina",
+        "email": null,
+        "amount_aud": 4990.0
+      },
+      {
+        "name": "Alysha M Nation",
+        "email": null,
+        "amount_aud": 4990.0
+      },
       {
         "name": null,
         "email": null,
@@ -1051,11 +1066,6 @@
         "w1_activation_stage": null
       },
       {
-        "name": "Kate Harding",
-        "date": "2026-03-19T00:35:48.619Z",
-        "w1_activation_stage": null
-      },
-      {
         "name": "Kelly Wellsmore",
         "date": "2026-03-21T07:21:38.426Z",
         "w1_activation_stage": null
@@ -1135,6 +1145,11 @@
       {
         "name": "Jenny Lee",
         "date": "2026-03-13T03:13:08.797Z",
+        "w1_activation_stage": null
+      },
+      {
+        "name": "Kate Harding",
+        "date": "2026-03-22T23:32:35.451Z",
         "w1_activation_stage": null
       },
       {
@@ -2333,7 +2348,7 @@
       },
       {
         "name": "Colin Miller",
-        "session_count": "26",
+        "session_count": "27",
         "payment_reset_date": null,
         "member_status": "Active Sessions"
       },
@@ -2501,7 +2516,7 @@
       },
       {
         "name": "Selena Fletcher",
-        "session_count": "32",
+        "session_count": "33",
         "payment_reset_date": "2026-07-16",
         "member_status": "Active Sessions"
       },
@@ -2721,14 +2736,14 @@
         "mentor": "Brodie Paull",
         "count": 10,
         "status": "At Capacity",
-        "avg_consistency": 88,
+        "avg_consistency": 0,
         "flagged_count": 0
       },
       {
         "mentor": "Blair Huggins",
         "count": 9,
         "status": "At Capacity",
-        "avg_consistency": 88,
+        "avg_consistency": 32,
         "flagged_count": 0
       },
       {
@@ -2756,7 +2771,7 @@
         "mentor": "Harper Montgomery",
         "count": 7,
         "status": "Wants More",
-        "avg_consistency": 55,
+        "avg_consistency": 29,
         "flagged_count": 0
       },
       {
@@ -2767,13 +2782,6 @@
         "flagged_count": 0
       },
       {
-        "mentor": "Anthony Audino",
-        "count": 6,
-        "status": "At Capacity",
-        "avg_consistency": 99,
-        "flagged_count": 0
-      },
-      {
         "mentor": "Hayden Sampson",
         "count": 6,
         "status": "",
@@ -2781,24 +2789,24 @@
         "flagged_count": 0
       },
       {
+        "mentor": "Anthony Audino",
+        "count": 6,
+        "status": "At Capacity",
+        "avg_consistency": 99,
+        "flagged_count": 0
+      },
+      {
         "mentor": "Jack Petruccelle",
         "count": 5,
         "status": "At Capacity",
-        "avg_consistency": 100,
+        "avg_consistency": 0,
         "flagged_count": 0
       },
       {
         "mentor": "Cristian Milograd",
         "count": 5,
         "status": "Wants More",
-        "avg_consistency": 100,
-        "flagged_count": 0
-      },
-      {
-        "mentor": "Tom Hermans",
-        "count": 5,
-        "status": "Wants More",
-        "avg_consistency": 100,
+        "avg_consistency": 20,
         "flagged_count": 0
       },
       {
@@ -2806,6 +2814,13 @@
         "count": 5,
         "status": "At Capacity",
         "avg_consistency": 93,
+        "flagged_count": 0
+      },
+      {
+        "mentor": "Tom Hermans",
+        "count": 5,
+        "status": "Wants More",
+        "avg_consistency": 100,
         "flagged_count": 0
       },
       {
@@ -2847,7 +2862,7 @@
         "mentor": "Luke Vella",
         "count": 3,
         "status": "",
-        "avg_consistency": 63,
+        "avg_consistency": 33,
         "flagged_count": 0
       },
       {
@@ -2858,14 +2873,14 @@
         "flagged_count": 0
       },
       {
-        "mentor": "Rye Penny",
+        "mentor": "Fletcher Gauci",
         "count": 2,
         "status": "",
         "avg_consistency": 100,
         "flagged_count": 0
       },
       {
-        "mentor": "Fletcher Gauci",
+        "mentor": "Rye Penny",
         "count": 2,
         "status": "",
         "avg_consistency": 100,
@@ -2886,14 +2901,14 @@
         "flagged_count": 0
       },
       {
-        "mentor": "Amin Naim",
+        "mentor": "josh gould",
         "count": 2,
         "status": "At Capacity",
         "avg_consistency": 100,
         "flagged_count": 0
       },
       {
-        "mentor": "josh gould",
+        "mentor": "Amin Naim",
         "count": 2,
         "status": "At Capacity",
         "avg_consistency": 100,
@@ -2921,7 +2936,7 @@
         "flagged_count": 0
       },
       {
-        "mentor": "Sam Bearder",
+        "mentor": "Riv Robbins",
         "count": 0,
         "status": "",
         "avg_consistency": 0,
@@ -2935,7 +2950,7 @@
         "flagged_count": 0
       },
       {
-        "mentor": "Riv Robbins",
+        "mentor": "Sam Bearder",
         "count": 0,
         "status": "",
         "avg_consistency": 0,
@@ -2949,7 +2964,7 @@
         "name": "Elliot Mahoney",
         "tier": "gold",
         "active_members": 4,
-        "sessions_week": 4,
+        "sessions_week": 0,
         "sessions_month": 12,
         "wins_week": 0,
         "retention_pct": 0,
@@ -2961,9 +2976,9 @@
         "name": "Shane Clouugh",
         "tier": "standard",
         "active_members": 3,
-        "sessions_week": 1,
+        "sessions_week": 0,
         "sessions_month": 4,
-        "wins_week": 1,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": null,
         "no_shows_week": 0,
@@ -2973,7 +2988,7 @@
         "name": "Taj Schofield",
         "tier": "gold",
         "active_members": 7,
-        "sessions_week": 4,
+        "sessions_week": 0,
         "sessions_month": 12,
         "wins_week": 0,
         "retention_pct": 0,
@@ -2985,7 +3000,7 @@
         "name": "Benjamin Philip",
         "tier": "gold",
         "active_members": 4,
-        "sessions_week": 3,
+        "sessions_week": 0,
         "sessions_month": 11,
         "wins_week": 1,
         "retention_pct": 0,
@@ -2997,7 +3012,7 @@
         "name": "Luke Dixon",
         "tier": "standard",
         "active_members": 1,
-        "sessions_week": 1,
+        "sessions_week": 0,
         "sessions_month": 2,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3021,9 +3036,9 @@
         "name": "Fletcher Gauci",
         "tier": "standard",
         "active_members": 2,
-        "sessions_week": 2,
+        "sessions_week": 0,
         "sessions_month": 6,
-        "wins_week": 2,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": null,
         "no_shows_week": 0,
@@ -3033,7 +3048,7 @@
         "name": "Rye Penny",
         "tier": "gold",
         "active_members": 2,
-        "sessions_week": 2,
+        "sessions_week": 0,
         "sessions_month": 9,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3045,9 +3060,9 @@
         "name": "Blair Huggins",
         "tier": "gold",
         "active_members": 9,
-        "sessions_week": 8,
+        "sessions_week": 0,
         "sessions_month": 28,
-        "wins_week": 10,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 10,
         "no_shows_week": 0,
@@ -3057,9 +3072,9 @@
         "name": "Luke Vella",
         "tier": "gold",
         "active_members": 3,
-        "sessions_week": 1,
+        "sessions_week": 0,
         "sessions_month": 7,
-        "wins_week": 1,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 10,
         "no_shows_week": 0,
@@ -3069,7 +3084,7 @@
         "name": "Jack Petruccelle",
         "tier": "gold",
         "active_members": 5,
-        "sessions_week": 2,
+        "sessions_week": 0,
         "sessions_month": 5,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3081,8 +3096,8 @@
         "name": "Harper Montgomery",
         "tier": "standard",
         "active_members": 7,
-        "sessions_week": 5,
-        "sessions_month": 20,
+        "sessions_week": 1,
+        "sessions_month": 23,
         "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": null,
@@ -3093,7 +3108,7 @@
         "name": "Connor Savill",
         "tier": "standard",
         "active_members": 3,
-        "sessions_week": 1,
+        "sessions_week": 0,
         "sessions_month": 10,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3105,7 +3120,7 @@
         "name": "Brodie Paull",
         "tier": "gold",
         "active_members": 10,
-        "sessions_week": 6,
+        "sessions_week": 0,
         "sessions_month": 23,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3117,7 +3132,7 @@
         "name": "Cristian Milograd",
         "tier": "gold",
         "active_members": 5,
-        "sessions_week": 3,
+        "sessions_week": 0,
         "sessions_month": 10,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3153,9 +3168,9 @@
         "name": "Anthony Audino",
         "tier": "standard",
         "active_members": 6,
-        "sessions_week": 6,
+        "sessions_week": 0,
         "sessions_month": 12,
-        "wins_week": 1,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 6,
         "no_shows_week": 0,
@@ -3165,19 +3180,19 @@
         "name": "Bailey Kiefer",
         "tier": "standard",
         "active_members": 8,
-        "sessions_week": 8,
-        "sessions_month": 24,
-        "wins_week": 6,
+        "sessions_week": 0,
+        "sessions_month": 25,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 8,
-        "no_shows_week": 1,
+        "no_shows_week": 0,
         "capacity": null
       },
       {
         "name": "Hayden Sampson",
         "tier": "standard",
         "active_members": 6,
-        "sessions_week": 4,
+        "sessions_week": 0,
         "sessions_month": 9,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3189,9 +3204,9 @@
         "name": "Xavier Lewis",
         "tier": "standard",
         "active_members": 10,
-        "sessions_week": 9,
+        "sessions_week": 0,
         "sessions_month": 26,
-        "wins_week": 4,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 8,
         "no_shows_week": 0,
@@ -3201,9 +3216,9 @@
         "name": "Jed Woods",
         "tier": "standard",
         "active_members": 4,
-        "sessions_week": 3,
+        "sessions_week": 0,
         "sessions_month": 12,
-        "wins_week": 1,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": null,
         "no_shows_week": 0,
@@ -3237,9 +3252,9 @@
         "name": "Tom Hermans",
         "tier": "standard",
         "active_members": 5,
-        "sessions_week": 5,
+        "sessions_week": 0,
         "sessions_month": 11,
-        "wins_week": 4,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 8,
         "no_shows_week": 0,
@@ -3249,7 +3264,7 @@
         "name": "josh gould",
         "tier": "standard",
         "active_members": 2,
-        "sessions_week": 2,
+        "sessions_week": 0,
         "sessions_month": 4,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3261,7 +3276,7 @@
         "name": "Miles Dalgliesh",
         "tier": "standard",
         "active_members": 2,
-        "sessions_week": 1,
+        "sessions_week": 0,
         "sessions_month": 4,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3273,9 +3288,9 @@
         "name": "Jett Cara",
         "tier": "standard",
         "active_members": 5,
-        "sessions_week": 4,
+        "sessions_week": 0,
         "sessions_month": 14,
-        "wins_week": 10,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 10,
         "no_shows_week": 0,
@@ -3285,9 +3300,9 @@
         "name": "Aidan Cole",
         "tier": "standard",
         "active_members": 7,
-        "sessions_week": 6,
+        "sessions_week": 0,
         "sessions_month": 10,
-        "wins_week": 2,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 9.3,
         "no_shows_week": 0,
@@ -3297,7 +3312,7 @@
         "name": "Amin Naim",
         "tier": "standard",
         "active_members": 2,
-        "sessions_week": 1,
+        "sessions_week": 0,
         "sessions_month": 3,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3309,9 +3324,9 @@
         "name": "Noah Cockerell",
         "tier": "standard",
         "active_members": 3,
-        "sessions_week": 2,
+        "sessions_week": 0,
         "sessions_month": 6,
-        "wins_week": 1,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 10,
         "no_shows_week": 0,
@@ -3321,9 +3336,9 @@
         "name": "Lachlan Hall",
         "tier": "standard",
         "active_members": 2,
-        "sessions_week": 1,
+        "sessions_week": 0,
         "sessions_month": 3,
-        "wins_week": 1,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 10,
         "no_shows_week": 0,
@@ -3333,7 +3348,7 @@
         "name": "Ben Kaipau",
         "tier": "standard",
         "active_members": 2,
-        "sessions_week": 2,
+        "sessions_week": 0,
         "sessions_month": 7,
         "wins_week": 0,
         "retention_pct": 0,
@@ -3357,21 +3372,21 @@
         "name": "Aidan Librio",
         "tier": "standard",
         "active_members": 2,
-        "sessions_week": 3,
+        "sessions_week": 0,
         "sessions_month": 4,
         "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": 10,
-        "no_shows_week": 1,
+        "no_shows_week": 0,
         "capacity": null
       },
       {
         "name": "Jonti Crisp",
         "tier": "standard",
         "active_members": 2,
-        "sessions_week": 2,
+        "sessions_week": 0,
         "sessions_month": 3,
-        "wins_week": 2,
+        "wins_week": 0,
         "retention_pct": 0,
         "avg_parent_nps": null,
         "no_shows_week": 0,
@@ -3419,49 +3434,49 @@
     {
       "name": "Buddy",
       "w1_scheduled_date": "2026-03-20",
-      "days_overdue": 2,
+      "days_overdue": 3,
       "activation_stage": null,
       "mentor": "Jonti Crisp"
     },
     {
       "name": "Lachlan",
       "w1_scheduled_date": "2026-03-06",
-      "days_overdue": 16,
+      "days_overdue": 17,
       "activation_stage": "Intro Call Complete",
       "mentor": "Jed Woods"
     },
     {
       "name": "Aden",
       "w1_scheduled_date": "2026-03-14",
-      "days_overdue": 8,
+      "days_overdue": 9,
       "activation_stage": "Stage 3: Cold Call",
       "mentor": "Jett Cara"
     },
     {
       "name": "Elijah",
       "w1_scheduled_date": "2026-03-07",
-      "days_overdue": 15,
+      "days_overdue": 16,
       "activation_stage": "Stage 3: Cold Call",
       "mentor": "Lachlan Hall"
     },
     {
       "name": "Jake",
       "w1_scheduled_date": "2026-03-04",
-      "days_overdue": 18,
+      "days_overdue": 19,
       "activation_stage": "Hesitant",
       "mentor": ""
     },
     {
       "name": "Nic",
       "w1_scheduled_date": "2026-03-21",
-      "days_overdue": 1,
+      "days_overdue": 2,
       "activation_stage": null,
       "mentor": "Amin Naim"
     },
     {
       "name": "Londyn ",
       "w1_scheduled_date": "2026-03-11",
-      "days_overdue": 11,
+      "days_overdue": 12,
       "activation_stage": "Awaiting First Message",
       "mentor": "Xavier Lewis"
     }
@@ -3648,12 +3663,6 @@
       "status": "Active Sessions"
     },
     {
-      "name": "SHERTAM MOTTO",
-      "close_date": "2026-03-09",
-      "rep": "Elliot Mahoney",
-      "status": "Deposit Paid"
-    },
-    {
       "name": "Mel Colles",
       "close_date": "2026-03-09",
       "rep": "Harry",
@@ -3680,104 +3689,26 @@
   ],
   "perf_flags": [
     {
-      "type": "no_show",
-      "detail": "1 no-show(s) this week",
-      "mentor": "Bailey Kiefer",
-      "severity": "high"
-    },
-    {
-      "type": "wellbeing",
-      "detail": "1 wellbeing flag(s) this week",
-      "mentor": "Jed Woods",
-      "severity": "high"
-    },
-    {
-      "type": "wellbeing",
-      "detail": "1 wellbeing flag(s) this week",
-      "mentor": "Tom Hermans",
-      "severity": "high"
-    },
-    {
-      "type": "wellbeing",
-      "detail": "2 wellbeing flag(s) this week",
-      "mentor": "Jett Cara",
-      "severity": "high"
-    },
-    {
-      "type": "wellbeing",
-      "detail": "3 wellbeing flag(s) this week",
-      "mentor": "Aidan Cole",
-      "severity": "high"
-    },
-    {
-      "type": "wellbeing",
-      "detail": "1 wellbeing flag(s) this week",
-      "mentor": "Amin Naim",
-      "severity": "high"
-    },
-    {
-      "type": "no_show",
-      "detail": "1 no-show(s) this week",
-      "mentor": "Aidan Librio",
-      "severity": "high"
-    },
-    {
-      "type": "wellbeing",
-      "detail": "1 wellbeing flag(s) this week",
-      "mentor": "Jonti Crisp",
-      "severity": "high"
-    },
-    {
       "type": "overdue_session",
-      "detail": "24 days since last session",
-      "mentor": "Rylan",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "18 days since last session",
-      "mentor": "Thomas",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "20 days since last session",
+      "detail": "21 days since last session",
       "mentor": "Alexander",
       "severity": "medium"
     },
     {
       "type": "overdue_session",
-      "detail": "26 days since last session",
-      "mentor": "Michael Anastassiou",
+      "detail": "25 days since last session",
+      "mentor": "Rylan",
       "severity": "high"
     },
     {
       "type": "overdue_session",
-      "detail": "47 days since last session",
-      "mentor": "Rudy",
-      "severity": "high"
+      "detail": "19 days since last session",
+      "mentor": "Thomas",
+      "severity": "medium"
     },
     {
       "type": "overdue_session",
-      "detail": "31 days since last session",
-      "mentor": "Darcy",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "28 days since last session",
-      "mentor": "Kellen",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "37 days since last session",
-      "mentor": "Toby",
-      "severity": "high"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "20 days since last session",
+      "detail": "21 days since last session",
       "mentor": "Ryan",
       "severity": "medium"
     },
@@ -3789,31 +3720,61 @@
     },
     {
       "type": "overdue_session",
+      "detail": "15 days since last session",
+      "mentor": "Cohan",
+      "severity": "medium"
+    },
+    {
+      "type": "overdue_session",
       "detail": "109 days since last session",
       "mentor": "Archie",
       "severity": "high"
     },
     {
       "type": "overdue_session",
-      "detail": "16 days since last session",
+      "detail": "47 days since last session",
+      "mentor": "Rudy",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "32 days since last session",
+      "mentor": "Darcy",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "29 days since last session",
+      "mentor": "Kellen",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "38 days since last session",
+      "mentor": "Toby",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "27 days since last session",
+      "mentor": "Michael Anastassiou",
+      "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "17 days since last session",
       "mentor": "Jacob ",
       "severity": "medium"
     },
     {
       "type": "overdue_session",
-      "detail": "17 days since last session",
+      "detail": "18 days since last session",
       "mentor": "Elwyn Vesey",
       "severity": "medium"
     },
     {
       "type": "overdue_session",
-      "detail": "19 days since last session",
-      "mentor": "Ari",
-      "severity": "medium"
-    },
-    {
-      "type": "overdue_session",
-      "detail": "30 days since last session",
+      "detail": "31 days since last session",
       "mentor": "Michael ",
       "severity": "high"
     },
@@ -3822,6 +3783,12 @@
       "detail": "35 days since last session",
       "mentor": "Jasper",
       "severity": "high"
+    },
+    {
+      "type": "overdue_session",
+      "detail": "20 days since last session",
+      "mentor": "Ari",
+      "severity": "medium"
     }
   ],
   "trend_14d": [
@@ -3899,26 +3866,26 @@
     },
     {
       "date": "2026-03-22",
-      "new_leads": 22,
-      "booked_calls": 4,
+      "new_leads": 25,
+      "booked_calls": 5,
       "closes": 0
     },
     {
       "date": "2026-03-23",
-      "new_leads": 0,
+      "new_leads": 1,
       "booked_calls": 0,
       "closes": 0
     }
   ],
   "portal_stats": {
-    "active_users": 148,
+    "active_users": 150,
     "active_mentors": 39,
-    "unassigned_count": 20,
+    "unassigned_count": 21,
     "parent_nps_score": 63,
     "safeguarding_flags": 0,
-    "support_requests_open": 5,
+    "support_requests_open": 6,
     "parent_escalations_open": 9,
-    "activation_pipeline_total": 33
+    "activation_pipeline_total": 34
   },
   "surround_sound": [
     {
@@ -4028,14 +3995,14 @@
       "status": ""
     },
     {
-      "name": "Harry Quayle",
-      "son_name": "Jimmy",
+      "name": "Sarah Miller",
+      "son_name": "Lachy",
       "program": "The Big Brother",
       "status": ""
     },
     {
-      "name": "Sarah Miller",
-      "son_name": "Lachy",
+      "name": "Harry Quayle",
+      "son_name": "Jimmy",
       "program": "The Big Brother",
       "status": ""
     },
@@ -4070,6 +4037,18 @@
       "status": "matching"
     },
     {
+      "name": "Dory Dorazio",
+      "son_name": "Leon",
+      "program": "Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Bridget Jones",
+      "son_name": "Lachlan ",
+      "program": null,
+      "status": "matching"
+    },
+    {
       "name": "Rosanna Bell",
       "son_name": "Xavier",
       "program": "Mentor",
@@ -4082,20 +4061,14 @@
       "status": "matching"
     },
     {
-      "name": "Bridget Jones",
-      "son_name": "Lachlan ",
-      "program": null,
-      "status": "matching"
-    },
-    {
-      "name": "Dory Dorazio",
-      "son_name": "Leon",
+      "name": "Bron Lea",
+      "son_name": "Jasper",
       "program": "Big Brother",
       "status": "matching"
     },
     {
-      "name": "Bron Lea",
-      "son_name": "Jasper",
+      "name": "Katrina Glover",
+      "son_name": "Lachlan",
       "program": "Big Brother",
       "status": "matching"
     },
@@ -4106,20 +4079,8 @@
       "status": "matching"
     },
     {
-      "name": "Katrina Glover",
-      "son_name": "Lachlan",
-      "program": "Big Brother",
-      "status": "matching"
-    },
-    {
       "name": "Samantha Moore",
       "son_name": "Bronson Henry",
-      "program": null,
-      "status": "matching"
-    },
-    {
-      "name": "Renee Connolly",
-      "son_name": "Hayden",
       "program": null,
       "status": "matching"
     },
@@ -4127,6 +4088,12 @@
       "name": "Carrianne Blanchard",
       "son_name": "Emannuel",
       "program": "Mentor",
+      "status": "matching"
+    },
+    {
+      "name": "Renee Connolly",
+      "son_name": "Hayden",
+      "program": null,
       "status": "matching"
     },
     {
@@ -4142,14 +4109,14 @@
       "status": "matching"
     },
     {
-      "name": "Brigid Faust",
-      "son_name": "Harper Badcock",
+      "name": "Misty Fernandez",
+      "son_name": "Charlie",
       "program": "Big Brother",
       "status": "matching"
     },
     {
-      "name": "Misty Fernandez",
-      "son_name": "Charlie",
+      "name": "Brigid Faust",
+      "son_name": "Harper Badcock",
       "program": "Big Brother",
       "status": "matching"
     },
@@ -4172,15 +4139,9 @@
       "status": "matching"
     },
     {
-      "name": "Alicia Honey",
-      "son_name": "Hunter",
-      "program": "The Big Brother",
-      "status": "matching"
-    },
-    {
-      "name": "Mel Mannix",
-      "son_name": "Benny",
-      "program": "The Big Brother",
+      "name": "Megan Harker",
+      "son_name": "Tate",
+      "program": null,
       "status": "matching"
     },
     {
@@ -4196,14 +4157,14 @@
       "status": "matching"
     },
     {
-      "name": "Megan Harker",
-      "son_name": "Tate",
-      "program": null,
+      "name": "Mel Mannix",
+      "son_name": "Benny",
+      "program": "The Big Brother",
       "status": "matching"
     },
     {
-      "name": "Carrie Fildes",
-      "son_name": "George Fildes",
+      "name": "Alicia Honey",
+      "son_name": "Hunter",
       "program": "The Big Brother",
       "status": "matching"
     },
@@ -4214,14 +4175,20 @@
       "status": "matching"
     },
     {
-      "name": "Alison Ratcliffe",
-      "son_name": "Archer",
+      "name": "Helena Agaibi",
+      "son_name": "Aiden",
       "program": null,
       "status": "matching"
     },
     {
-      "name": "Helena Agaibi",
-      "son_name": "Aiden",
+      "name": "Carrie Fildes",
+      "son_name": "George Fildes",
+      "program": "The Big Brother",
+      "status": "matching"
+    },
+    {
+      "name": "Alison Ratcliffe",
+      "son_name": "Archer",
       "program": null,
       "status": "matching"
     },
@@ -4238,14 +4205,14 @@
       "status": "matching"
     },
     {
-      "name": "Hania  Trzaskowski",
-      "son_name": "Dacian",
+      "name": "Becka Tearoa",
+      "son_name": "Julius ",
       "program": "The Big Brother",
       "status": "matching"
     },
     {
-      "name": "Becka Tearoa",
-      "son_name": "Julius ",
+      "name": "Hania  Trzaskowski",
+      "son_name": "Dacian",
       "program": "The Big Brother",
       "status": "matching"
     }
@@ -4950,7 +4917,7 @@
     "breakdown": [
       {
         "outcome": "Follow Up Scheduled",
-        "count": 24
+        "count": 26
       },
       {
         "outcome": "Time Objection",
@@ -4970,6 +4937,18 @@
       }
     ],
     "details": [
+      {
+        "name": "Carissa Pattel",
+        "outcome": "Follow Up Scheduled",
+        "rep": "Anthony",
+        "date": "2026-03-23"
+      },
+      {
+        "name": "Beck Reside",
+        "outcome": "Follow Up Scheduled",
+        "rep": "Anthony",
+        "date": "2026-03-22"
+      },
       {
         "name": "Steffany Campbell",
         "outcome": "Follow Up Scheduled",
@@ -5221,23 +5200,38 @@
       "source": "surround_sound"
     },
     {
+      "name": "Alexander",
+      "risk_signal": "21 days since last session",
+      "source": "perf_flags"
+    },
+    {
       "name": "Rylan",
-      "risk_signal": "24 days since last session",
+      "risk_signal": "25 days since last session",
       "source": "perf_flags"
     },
     {
       "name": "Thomas",
-      "risk_signal": "18 days since last session",
+      "risk_signal": "19 days since last session",
       "source": "perf_flags"
     },
     {
-      "name": "Alexander",
-      "risk_signal": "20 days since last session",
+      "name": "Ryan",
+      "risk_signal": "21 days since last session",
       "source": "perf_flags"
     },
     {
-      "name": "Michael Anastassiou",
-      "risk_signal": "26 days since last session",
+      "name": "Billy",
+      "risk_signal": "64 days since last session",
+      "source": "perf_flags"
+    },
+    {
+      "name": "Cohan",
+      "risk_signal": "15 days since last session",
+      "source": "perf_flags"
+    },
+    {
+      "name": "Archie",
+      "risk_signal": "109 days since last session",
       "source": "perf_flags"
     },
     {
@@ -5247,57 +5241,47 @@
     },
     {
       "name": "Darcy",
-      "risk_signal": "31 days since last session",
+      "risk_signal": "32 days since last session",
       "source": "perf_flags"
     },
     {
       "name": "Kellen",
-      "risk_signal": "28 days since last session",
+      "risk_signal": "29 days since last session",
       "source": "perf_flags"
     },
     {
       "name": "Toby",
-      "risk_signal": "37 days since last session",
+      "risk_signal": "38 days since last session",
       "source": "perf_flags"
     },
     {
-      "name": "Ryan",
-      "risk_signal": "20 days since last session",
-      "source": "perf_flags"
-    },
-    {
-      "name": "Billy",
-      "risk_signal": "64 days since last session",
-      "source": "perf_flags"
-    },
-    {
-      "name": "Archie",
-      "risk_signal": "109 days since last session",
+      "name": "Michael Anastassiou",
+      "risk_signal": "27 days since last session",
       "source": "perf_flags"
     },
     {
       "name": "Jacob ",
-      "risk_signal": "16 days since last session",
-      "source": "perf_flags"
-    },
-    {
-      "name": "Elwyn Vesey",
       "risk_signal": "17 days since last session",
       "source": "perf_flags"
     },
     {
-      "name": "Ari",
-      "risk_signal": "19 days since last session",
+      "name": "Elwyn Vesey",
+      "risk_signal": "18 days since last session",
       "source": "perf_flags"
     },
     {
       "name": "Michael ",
-      "risk_signal": "30 days since last session",
+      "risk_signal": "31 days since last session",
       "source": "perf_flags"
     },
     {
       "name": "Jasper",
       "risk_signal": "35 days since last session",
+      "source": "perf_flags"
+    },
+    {
+      "name": "Ari",
+      "risk_signal": "20 days since last session",
       "source": "perf_flags"
     }
   ]
