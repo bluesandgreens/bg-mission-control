@@ -1,13 +1,13 @@
 {
-  "last_updated": "2026-03-22T11:10:43Z",
+  "last_updated": "2026-03-23T11:00:00Z",
   "summary": {
-    "total_scored": 6,
-    "total_closes": 2,
-    "total_objections": 4,
-    "overall_close_rate": 33.3,
-    "avg_siel_overall": 4.22,
-    "avg_e_score_on_closes": 1.5,
-    "avg_e_score_on_objections": 1.25,
+    "total_scored": 11,
+    "total_closes": 4,
+    "total_objections": 7,
+    "overall_close_rate": 36.4,
+    "avg_siel_overall": 5.06,
+    "avg_e_score_on_closes": 2.0,
+    "avg_e_score_on_objections": 1.57,
     "lucky_closes": 1,
     "false_positives": 0
   },
@@ -22,11 +22,58 @@
     "false_positives": []
   },
   "dimension_analysis": {
-    "avg_s": 2.5,
-    "avg_i": 1.83,
-    "avg_e": 1.33,
-    "avg_l": 2.67,
-    "avg_opening": 2.17,
-    "avg_objection": 2.83
-  }
+    "avg_s": 3.27,
+    "avg_i": 2.36,
+    "avg_e": 1.73,
+    "avg_l": 2.73,
+    "avg_opening": 2.91,
+    "avg_objection": 3.0
+  },
+  "todays_calls": [
+    {
+      "contact": "Beck Reside",
+      "son": "Braxton (13)",
+      "rep": "Anthony",
+      "score": 5.8,
+      "grade": "B",
+      "outcome": "Follow Up Scheduled",
+      "conversion_predictor": 33
+    },
+    {
+      "contact": "Judith Lacey",
+      "son": "Jack (Year 10)",
+      "rep": "Anthony",
+      "score": 7.1,
+      "grade": "B+",
+      "outcome": "Onboarding Booked",
+      "conversion_predictor": 71
+    },
+    {
+      "contact": "Leanne Black",
+      "son": "Matthew (19)",
+      "rep": "Anthony",
+      "score": 6.2,
+      "grade": "B",
+      "outcome": "Onboarding Booked",
+      "conversion_predictor": 47
+    },
+    {
+      "contact": "Sophie Cuzzy",
+      "son": "Leo (11)",
+      "rep": "Anthony",
+      "score": 4.5,
+      "grade": "C",
+      "outcome": "Follow Up Scheduled",
+      "conversion_predictor": 30
+    },
+    {
+      "contact": "Jo Kelly",
+      "son": "Tyson (14)",
+      "rep": "Rye",
+      "score": 6.8,
+      "grade": "B+",
+      "outcome": "None",
+      "conversion_predictor": 68
+    }
+  ]
 }
