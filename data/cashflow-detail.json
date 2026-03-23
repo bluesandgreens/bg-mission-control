@@ -1,15 +1,15 @@
 {
-  "generated": "2026-03-23T15:03:08.705429",
+  "generated": "2026-03-23T18:00:03.939708",
   "weeks": [
     {
       "label": "Week 1 (Mar 23 - Mar 29)",
-      "total": 18023.0,
+      "total": 17437.0,
       "days": [
         {
           "date": "2026-03-23",
           "day": "Mon",
-          "charges": 4,
-          "amount": 2482.0,
+          "charges": 2,
+          "amount": 2131.0,
           "subscribers": [
             {
               "name": "Emily Greaves",
@@ -20,26 +20,6 @@
               "customer_id": "cus_TaZaq9fp05L3Cu",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sjd6L2mA5zLxyK8XzL49PU9",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/183682873004"
-            },
-            {
-              "name": "Julie-Anne Jacotine",
-              "email": "julzie79@gmail.com",
-              "amount": 232.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1SeV2A2mA5zLxyK84qi8FFPd",
-              "customer_id": "cus_TZtvr9Yg97CuOI",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SeV2A2mA5zLxyK84qi8FFPd",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/183231550491"
-            },
-            {
-              "name": "Lisa Kerin",
-              "email": "thetomczakfamily@gmail.com",
-              "amount": 119.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1SrAn52mA5zLxyK8YKnzrOcY",
-              "customer_id": "cus_Tl3DzHG6GWHgwf",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SrAn52mA5zLxyK8YKnzrOcY",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/189928674323"
             },
             {
               "name": "Mardi Moore",
@@ -56,8 +36,8 @@
         {
           "date": "2026-03-24",
           "day": "Tue",
-          "charges": 7,
-          "amount": 3682.0,
+          "charges": 6,
+          "amount": 3447.0,
           "subscribers": [
             {
               "name": "GEMMA GARNER",
@@ -78,16 +58,6 @@
               "customer_id": "cus_St3jO1YVIzua2Q",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SFQKQ2mA5zLxyK8YXtcx5UQ",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/147655717776"
-            },
-            {
-              "name": "Leanne Scott",
-              "email": "85leanne@gmail.com",
-              "amount": 235.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1TBoNS2mA5zLxyK8guAZeVv7",
-              "customer_id": "cus_U4SKEDa1hKykEh",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TBoNS2mA5zLxyK8guAZeVv7",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/205989322767"
             },
             {
               "name": "Leeanne Jackson",
@@ -347,14 +317,24 @@
     },
     {
       "label": "Week 2 (Mar 30 - Apr 05)",
-      "total": 5888.0,
+      "total": 6239.0,
       "days": [
         {
           "date": "2026-03-30",
           "day": "Mon",
-          "charges": 4,
-          "amount": 523.0,
+          "charges": 6,
+          "amount": 874.0,
           "subscribers": [
+            {
+              "name": "Julie-Anne Jacotine",
+              "email": "julzie79@gmail.com",
+              "amount": 232.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1SeV2A2mA5zLxyK84qi8FFPd",
+              "customer_id": "cus_TZtvr9Yg97CuOI",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SeV2A2mA5zLxyK84qi8FFPd",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/183231550491"
+            },
             {
               "name": "Tarryn",
               "email": "tarrynsmith77@gmail.com",
@@ -384,6 +364,16 @@
               "customer_id": "cus_SlEvWFjw69yE1N",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Szr9b2mA5zLxyK8RtLWsvNV",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/138140352114"
+            },
+            {
+              "name": "Lisa Kerin",
+              "email": "thetomczakfamily@gmail.com",
+              "amount": 119.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1SrAn52mA5zLxyK8YKnzrOcY",
+              "customer_id": "cus_Tl3DzHG6GWHgwf",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SrAn52mA5zLxyK8YKnzrOcY",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/189928674323"
             },
             {
               "name": "Stephanie Mckeown",

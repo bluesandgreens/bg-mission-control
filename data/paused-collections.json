@@ -1,15 +1,6 @@
 {
-  "generated": "2026-03-23T15:03:08.705429",
+  "generated": "2026-03-23T18:00:03.939708",
   "paused_subs": [
-    {
-      "name": "Kristy Nash",
-      "email": "kristy.nash@education.wa.edu.au",
-      "amount": 232.0,
-      "resumes_at": "2026-04-09",
-      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Supje2mA5zLxyK887V7W9V3",
-      "hs_url": "",
-      "hs_member_status": "Active Sessions"
-    },
     {
       "name": "Jo Flanagan",
       "email": "joflanagan@hotmail.com",
@@ -74,5 +65,5 @@
       "hs_member_status": "Active Sessions"
     }
   ],
-  "total_count": 8
+  "total_count": 7
 }
