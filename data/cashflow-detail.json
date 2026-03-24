@@ -1,15 +1,15 @@
 {
-  "generated": "2026-03-24T06:35:43.535499",
+  "generated": "2026-03-24T12:02:16.974437",
   "weeks": [
     {
       "label": "Week 1 (Mar 24 - Mar 30)",
-      "total": 11755.0,
+      "total": 11533.0,
       "days": [
         {
           "date": "2026-03-24",
           "day": "Tue",
-          "charges": 4,
-          "amount": 1520.0,
+          "charges": 3,
+          "amount": 1298.0,
           "subscribers": [
             {
               "name": "GEMMA GARNER",
@@ -30,16 +30,6 @@
               "customer_id": "cus_St3jO1YVIzua2Q",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SFQKQ2mA5zLxyK8YXtcx5UQ",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/147655717776"
-            },
-            {
-              "name": "Leeanne Jackson",
-              "email": "jackson.honey@hotmail.com",
-              "amount": 222.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1RNQ7l2mA5zLxyK8aCgyZ95b",
-              "customer_id": "cus_SDp7DJqdZ2mEDo",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RNQ7l2mA5zLxyK8aCgyZ95b",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/176178292630"
             },
             {
               "name": "Tiffany Thomas",
