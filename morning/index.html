@@ -114,11 +114,45 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
 .obj-grade{font-weight:700;padding:2px 8px;border-radius:6px;font-size:10px;}
 
 /* CASHFLOW */
-.cf-day{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;}
+.cf-day{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;cursor:pointer;transition:background 0.15s;border-radius:6px;}
+.cf-day:hover{background:rgba(255,255,255,0.02);}
 .cf-day:last-child{border-bottom:none;}
+.cf-day-row{display:flex;align-items:center;justify-content:space-between;padding:2px 4px;}
 .cf-date{font-weight:600;min-width:100px;}
 .cf-charges{color:rgba(251,248,243,0.4);}
 .cf-amount{font-family:'Archivo Black',sans-serif;color:var(--gold);}
+.cf-day-detail{display:none;padding:8px 8px 4px;margin-top:4px;background:rgba(255,255,255,0.02);border-radius:8px;}
+.cf-day-detail.show{display:block;}
+.cf-sub-row{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.03);font-size:11px;color:rgba(251,248,243,0.5);}
+.cf-sub-row:last-child{border-bottom:none;}
+.cf-sub-name{font-weight:600;color:rgba(251,248,243,0.7);}
+.cf-sub-amount{font-family:'Archivo Black',sans-serif;font-size:11px;color:var(--gold);}
+.cf-sub-links{display:flex;gap:8px;margin-top:2px;}
+.cf-sub-links a{font-size:9px;color:var(--navy);text-decoration:none;padding:2px 6px;border-radius:4px;background:rgba(16,71,145,0.15);}
+.cf-sub-links a:hover{background:rgba(16,71,145,0.3);}
+
+/* CALL DETAIL EXPANDED */
+.call-expanded{display:none;margin-top:8px;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px;border:1px solid rgba(255,255,255,0.04);}
+.call-expanded.show{display:block;}
+.siel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px;}
+.siel-box{text-align:center;padding:8px 4px;border-radius:8px;background:rgba(255,255,255,0.04);}
+.siel-letter{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);}
+.siel-score{font-family:'Archivo Black',sans-serif;font-size:18px;margin-top:2px;}
+.siel-score.high{color:var(--green-bright);}
+.siel-score.mid{color:var(--amber);}
+.siel-score.low{color:var(--red);}
+.call-section-lbl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin:10px 0 4px;}
+.call-bullet{font-size:11px;color:rgba(251,248,243,0.5);padding:3px 0;line-height:1.4;}
+
+/* OBJECTION EXPANDED */
+.obj-row{display:flex;align-items:center;gap:8px;padding:8px 4px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;cursor:pointer;border-radius:6px;transition:background 0.15s;}
+.obj-row:hover{background:rgba(255,255,255,0.02);}
+.obj-expanded{display:none;padding:8px 12px;background:rgba(255,255,255,0.02);border-radius:8px;margin-bottom:4px;}
+.obj-expanded.show{display:block;}
+
+/* LEO LAB DEEP DIVE */
+.leo-item-deep{display:none;margin-top:10px;padding:12px 14px;background:rgba(200,169,81,0.04);border:1px solid rgba(200,169,81,0.1);border-radius:8px;font-size:12px;color:rgba(251,248,243,0.6);line-height:1.6;}
+.leo-item-deep.show{display:block;}
 
 /* FUNNEL */
 .funnel{display:flex;align-items:center;justify-content:center;gap:4px;padding:16px 0;flex-wrap:wrap;}
@@ -324,7 +358,7 @@ function renderPulse() {
     { lbl: 'Active Families', val: (D.active_families||0) + '/' + (D.active_total||0), trend: 'flat', trendTxt: (D.paused||0) + ' paused', sub: fmtPct(((D.active_families||0)/(D.active_total||1))*100) + ' active rate' },
     { lbl: 'Booked Calls MTD', val: D.booked_calls_mtd||0, trend: 'up', trendTxt: '192 this month', sub: 'Meta + organic' },
     { lbl: 'Close Rate', val: fmtPct(closeRate), trend: closeRate >= 40 ? 'up' : 'down', trendTxt: 'Rolling avg', sub: (I.summary ? I.summary.total_closes : 0) + ' closes / ' + (I.summary ? I.summary.total_scored : 0) + ' scored' },
-    { lbl: 'CPBC', val: fmt$(D.cpbc_mtd), trend: D.cpbc_mtd < 30 ? 'up' : 'down', trendTxt: D.cpbc_mtd < 30 ? 'Below $30 target' : 'Above target', sub: fmt$(D.meta_spend_mtd) + ' Meta spend MTD' },
+    { lbl: 'CAC', val: fmt$(D.cac_mtd), trend: D.cac_mtd < 150 ? 'up' : 'down', trendTxt: 'CPBC ' + fmt$(D.cpbc_mtd), sub: fmt$(D.meta_spend_mtd) + ' spend / ' + (D.closes_mtd||0) + ' closes' },
     { lbl: 'Stripe Balance', val: fmt$(D.balance_total), trend: 'flat', trendTxt: fmt$(D.balance_available) + ' available', sub: fmt$(D.balance_pending) + ' pending' },
   ];
   grid.innerHTML = cards.map((c, i) => `
@@ -467,11 +501,41 @@ function renderDC() {
     const statusClass = r.status === 'active' ? 'active' : r.status === 'active_coaching' ? 'coaching' : r.status === 'exited_dc' ? 'exited' : 'commission';
     const statusLabel = r.status.replace(/_/g, ' ');
     const calls = (C.calls||[]).filter(c => c.rep_name === r.rep).slice(0, 5);
-    const callsHtml = calls.map(c => `
-      <div style="font-size:11px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
-        <strong>${escHtml(c.contact_name)}</strong> - Score: ${c.overall_score} (${c.score_grade}) - ${c.true_outcome||'Pending'}
-      </div>
-    `).join('');
+    const callsHtml = calls.map((c, ci) => {
+      const siel = c.siel_scores||{};
+      const sielColor = (v) => v >= 4 ? 'high' : v >= 2.5 ? 'mid' : 'low';
+      const strengths = (c.key_strengths||[]).map(s => `<div class="call-bullet">✅ ${escHtml(s)}</div>`).join('');
+      const misses = (c.critical_misses||[]).map(m => `<div class="call-bullet">❌ ${escHtml(m)}</div>`).join('');
+      const flags = (c.flags||[]).map(f => `<div class="call-bullet">🚩 ${escHtml(f)}</div>`).join('');
+      const callId = (r.rep + ci).replace(/\s/g,'');
+      return `
+        <div style="border-bottom:1px solid rgba(255,255,255,0.04);padding:4px 0;">
+          <div style="font-size:11px;padding:6px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;" onclick="event.stopPropagation();document.getElementById('call-${callId}').classList.toggle('show')">
+            <span><strong>${escHtml(c.contact_name)}</strong>${c.son_name?' ('+escHtml(c.son_name)+')':''} — ${c.duration||'?'}min</span>
+            <span style="display:flex;gap:6px;align-items:center;">
+              <span style="font-family:'Archivo Black',sans-serif;color:${c.overall_score>=7?'var(--green-bright)':c.overall_score>=5?'var(--amber)':'var(--red)'}">${c.overall_score}</span>
+              <span style="font-size:9px;padding:2px 6px;border-radius:4px;background:${c.true_outcome==='Onboarding Booked'?'rgba(76,175,80,0.2)':'rgba(255,255,255,0.06)'};color:${c.true_outcome==='Onboarding Booked'?'var(--green-bright)':'rgba(251,248,243,0.4)'}">${c.true_outcome||'Pending'}</span>
+              <span style="font-size:10px;color:rgba(251,248,243,0.3)">▼</span>
+            </span>
+          </div>
+          <div class="call-expanded" id="call-${callId}">
+            <div class="siel-grid">
+              <div class="siel-box"><div class="siel-letter">S</div><div class="siel-score ${sielColor(siel.S||0)}">${siel.S||'-'}</div></div>
+              <div class="siel-box"><div class="siel-letter">I</div><div class="siel-score ${sielColor(siel.I||0)}">${siel.I||'-'}</div></div>
+              <div class="siel-box"><div class="siel-letter">E</div><div class="siel-score ${sielColor(siel.E||0)}">${siel.E||'-'}</div></div>
+              <div class="siel-box"><div class="siel-letter">L</div><div class="siel-score ${sielColor(siel.L||0)}">${siel.L||'-'}</div></div>
+            </div>
+            ${siel.Opening!==undefined?`<div style="display:flex;gap:12px;margin-bottom:8px;font-size:11px;"><span>Opening: <strong>${siel.Opening}/5</strong></span><span>Objection: <strong>${siel.Objection}/5</strong></span></div>`:''}
+            ${c.one_line?`<div style="font-size:12px;color:var(--cream);margin-bottom:8px;font-style:italic;">"${escHtml(c.one_line)}"</div>`:''}
+            ${strengths?`<div class="call-section-lbl">Strengths</div>${strengths}`:''}
+            ${misses?`<div class="call-section-lbl">Critical Misses</div>${misses}`:''}
+            ${flags?`<div class="call-section-lbl">Flags</div>${flags}`:''}
+            ${c.one_drill?`<div class="call-section-lbl">One Drill</div><div class="call-bullet" style="color:var(--gold);">🎯 ${escHtml(c.one_drill)}</div>`:''}
+            ${c.contact_hubspot_id?`<div style="margin-top:8px;"><a href="https://app.hubspot.com/contacts/48782903/contact/${c.contact_hubspot_id}" target="_blank" style="font-size:10px;color:var(--navy);text-decoration:none;padding:3px 8px;border-radius:4px;background:rgba(16,71,145,0.15);">Open in HubSpot →</a></div>`:''}
+          </div>
+        </div>
+      `;
+    }).join('');
     return `
       <div class="rep-card" onclick="this.querySelector('.rep-detail').classList.toggle('show')">
         <div class="rep-top">
@@ -487,20 +551,44 @@ function renderDC() {
         </div>
         <div class="rep-detail">
           <div style="margin-bottom:8px;color:rgba(251,248,243,0.6)">${escHtml(r.improvement_area_short).replace(/\u2014/g,' - ')}</div>
-          ${callsHtml?'<div style="font-size:10px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:8px 0 4px;">Recent Calls</div>'+callsHtml:''}
+          ${callsHtml?'<div style="font-size:10px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:8px 0 4px;">Recent Calls <span style="font-weight:400;color:rgba(251,248,243,0.3)">tap to expand</span></div>'+callsHtml:''}
         </div>
       </div>
     `;
   }).join('');
 
-  let objsHtml = objs.map(o => {
+  let objsHtml = objs.map((o, oi) => {
     const gradeColor = o.avg_handling_grade >= 3 ? 'var(--amber)' : 'var(--red)';
+    // Find calls with this objection category
+    const objCalls = (C.calls||[]).filter(c => {
+      const callFlags = (c.flags||[]).join(' ').toLowerCase();
+      const callMisses = (c.critical_misses||[]).join(' ').toLowerCase();
+      const callOne = (c.one_line||'').toLowerCase();
+      const cat = o.category.replace(/_/g, ' ').toLowerCase();
+      return callFlags.includes(cat) || callMisses.includes(cat) || callOne.includes(cat) ||
+        (c.siel_scores && c.siel_scores.Objection !== undefined && cat.includes('think') && c.siel_scores.Objection <= 2);
+    });
+    const objCallsHtml = objCalls.length > 0 ? objCalls.map(c => `
+      <div class="cf-sub-row">
+        <div>
+          <div class="cf-sub-name">${escHtml(c.contact_name)} — ${escHtml(c.rep_name)}</div>
+          <div style="font-size:10px;color:rgba(251,248,243,0.3);">${c.call_date} · Score: ${c.overall_score} · ${c.true_outcome||'Pending'}</div>
+        </div>
+        ${c.contact_hubspot_id?`<a href="https://app.hubspot.com/contacts/48782903/contact/${c.contact_hubspot_id}" target="_blank" style="font-size:9px;color:var(--navy);text-decoration:none;padding:2px 6px;border-radius:4px;background:rgba(16,71,145,0.15);">HubSpot</a>`:''}
+      </div>
+    `).join('') : '<div style="font-size:11px;color:rgba(251,248,243,0.3);padding:6px 0;">Call matching coming with next scoring run</div>';
     return `
-      <div class="obj-row">
+      <div class="obj-row" onclick="document.getElementById('obj-${oi}').classList.toggle('show')">
         <span class="obj-rank">#${o.rank}</span>
         <span class="obj-cat">${escHtml(o.category).replace(/_/g, ' ')}</span>
         <span class="obj-count">${o.count}x</span>
         <span class="obj-grade" style="background:${gradeColor}22;color:${gradeColor}">${o.avg_handling_grade.toFixed(1)}/5</span>
+        <span style="font-size:10px;color:rgba(251,248,243,0.3)">▼</span>
+      </div>
+      <div class="obj-expanded" id="obj-${oi}">
+        ${o.note?`<div style="font-size:11px;color:rgba(251,248,243,0.5);margin-bottom:8px;font-style:italic;">${escHtml(o.note)}</div>`:''}
+        <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Calls with this objection</div>
+        ${objCallsHtml}
       </div>
     `;
   }).join('');
@@ -544,14 +632,36 @@ function renderRevenue() {
         <div class="mini-sub">${fmt$(D.xero_payable)} payable</div>
       </div>
     </div>
-    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Upcoming Charges - ${thisWeek.label||'This Week'}</div>
-    ${topDays.map(d => `
-      <div class="cf-day">
-        <span class="cf-date">${d.day} ${d.date.slice(5)}</span>
-        <span class="cf-charges">${d.charges} charge${d.charges!==1?'s':''}</span>
-        <span class="cf-amount">${fmt$(d.amount)}</span>
-      </div>
-    `).join('')}
+    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Upcoming Charges - ${thisWeek.label||'This Week'} <span style="font-weight:400;color:rgba(251,248,243,0.3);font-size:9px;">tap day to expand</span></div>
+    ${topDays.map((d, di) => {
+      const subs = d.subscribers || [];
+      const subsHtml = subs.map(s => `
+        <div class="cf-sub-row">
+          <div style="flex:1;">
+            <div class="cf-sub-name">${escHtml(s.name)}</div>
+            <div style="font-size:10px;color:rgba(251,248,243,0.3);">${s.interval||'Weekly'}</div>
+            <div class="cf-sub-links">
+              ${s.stripe_url?`<a href="${s.stripe_url}" target="_blank">Stripe</a>`:''}
+              ${s.hubspot_url?`<a href="${s.hubspot_url}" target="_blank">HubSpot</a>`:''}
+            </div>
+          </div>
+          <div class="cf-sub-amount">${fmt$(s.amount)}</div>
+        </div>
+      `).join('');
+      return `
+        <div class="cf-day" onclick="document.getElementById('cfday-${di}').classList.toggle('show')">
+          <div class="cf-day-row">
+            <span class="cf-date">${d.day} ${d.date.slice(5)}</span>
+            <span class="cf-charges">${d.charges} charge${d.charges!==1?'s':''}</span>
+            <span class="cf-amount">${fmt$(d.amount)}</span>
+            <span style="font-size:10px;color:rgba(251,248,243,0.3);margin-left:4px;">▼</span>
+          </div>
+          <div class="cf-day-detail" id="cfday-${di}">
+            ${subs.length > 0 ? subsHtml : '<div style="font-size:11px;color:rgba(251,248,243,0.3);padding:6px 0;">Subscriber detail loading...</div>'}
+          </div>
+        </div>
+      `;
+    }).join('')}
     <div style="margin-top:8px;font-size:12px;color:rgba(251,248,243,0.4);">Week total: <strong style="color:var(--gold)">${fmt$(thisWeek.total)}</strong></div>
     <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Churn Scenarios (Hormozi Model)</div>
     <div class="metric-row">
@@ -639,22 +749,18 @@ function renderLeo() {
     emoji: item.emoji || '💡',
     tag: item.tag || '',
     text: item.headline,
-    detail: item.detail
-  })) : [
-    { num: 1, emoji: '📧', tag: 'capacity', text: "Recovery email sent to 1,895 leads. Watch for /start page conversions today.", detail: "If 2% convert at $111, that's 38 deposits without a single DC call." },
-    { num: 2, emoji: '🔄', tag: 'ads', text: "H14-B1 (best ad, 5.1x ROAS) is still paused.", detail: "Every day it's off costs ~$350 in missed revenue." },
-    { num: 3, emoji: '⏰', tag: 'team', text: "Tom is job hunting. Make the offer before someone else does.", detail: "5 DCs/week at 50% close = 10 new families/month potential." },
-    { num: 4, emoji: '🎓', tag: 'growth', text: "Melbourne Uni: 2,400 psych students. One email = mentor pipeline.", detail: "1% conversion = 24 mentors/year across 4 unis." },
-    { num: 5, emoji: '🔬', tag: 'strategy', text: "$111 micro-commitment might be your permanent funnel.", detail: "Peloton, CrossFit, F45 all use this model. You're already doing it." }
-  ];
+    detail: item.detail,
+    deep_dive: item.deep_dive || ''
+  })) : [];
 
   el.innerHTML = `
     <div class="leo-greeting">Good morning, <strong>Harry.</strong></div>
-    ${items.map(i => `
-      <div class="leo-item" onclick="this.querySelector('.leo-item-detail').classList.toggle('show')">
+    ${items.map((i, idx) => `
+      <div class="leo-item" onclick="toggleLabItem(${idx}, event)">
         <div class="leo-item-num">${i.emoji} ${i.tag ? '<span style="background:rgba(200,169,81,0.15);padding:2px 8px;border-radius:4px;font-size:9px;letter-spacing:1px;">' + escHtml(i.tag.toUpperCase()) + '</span>' : 'INSIGHT ' + i.num}</div>
         <div class="leo-item-text">${escHtml(i.text)}</div>
-        <div class="leo-item-detail">${escHtml(i.detail)}<div style="font-size:10px;color:rgba(251,248,243,0.3);margin-top:8px;">Click to collapse</div></div>
+        <div class="leo-item-detail" id="lab-detail-${idx}">${escHtml(i.detail)}${i.deep_dive ? '<div style="font-size:10px;color:var(--gold);margin-top:8px;font-weight:600;">↓ Tap again to go deeper</div>' : '<div style="font-size:10px;color:rgba(251,248,243,0.3);margin-top:8px;">Tap to collapse</div>'}</div>
+        ${i.deep_dive ? `<div class="leo-item-deep" id="lab-deep-${idx}">${i.deep_dive}</div>` : ''}
       </div>
     `).join('')}
     ${actions.length > 0 ? `
@@ -664,6 +770,24 @@ function renderLeo() {
       </div>
     ` : ''}
   `;
+}
+
+// ─── LAB ITEM TOGGLE (double-expand) ───
+function toggleLabItem(idx, event) {
+  const detail = document.getElementById('lab-detail-' + idx);
+  const deep = document.getElementById('lab-deep-' + idx);
+  
+  if (!detail.classList.contains('show')) {
+    // First click — show summary
+    detail.classList.add('show');
+  } else if (deep && !deep.classList.contains('show')) {
+    // Second click — show deep dive
+    deep.classList.add('show');
+  } else {
+    // Third click — collapse all
+    detail.classList.remove('show');
+    if (deep) deep.classList.remove('show');
+  }
 }
 
 // ─── YESTERDAY'S SCORECARD ───
