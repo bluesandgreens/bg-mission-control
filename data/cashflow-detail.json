@@ -1,38 +1,10 @@
 {
-  "generated": "2026-03-25T18:00:06.531855",
+  "generated": "2026-03-26T06:36:07.852959",
   "weeks": [
     {
-      "label": "Week 1 (Mar 25 - Mar 31)",
-      "total": 10456.0,
+      "label": "Week 1 (Mar 26 - Apr 01)",
+      "total": 8503.0,
       "days": [
-        {
-          "date": "2026-03-26",
-          "day": "Thu",
-          "charges": 2,
-          "amount": 2952.0,
-          "subscribers": [
-            {
-              "name": "Rebecca Maggiora (Son Leo)",
-              "email": "Rebecca_maggiora@live.com",
-              "amount": 2730.0,
-              "interval": "Every 90 days",
-              "sub_id": "sub_1TEi6E2mA5zLxyK8TtHCMp4J",
-              "customer_id": "cus_UA4PrHNCFkEL4T",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TEi6E2mA5zLxyK8TtHCMp4J",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/209323800421"
-            },
-            {
-              "name": "Tanya Major",
-              "email": "major.t@bigpond.com",
-              "amount": 222.0,
-              "interval": "Every 2 weeks",
-              "sub_id": "sub_1SlGrN2mA5zLxyK87uOZu1Tw",
-              "customer_id": "cus_TCDVkq9NsYj47n",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SlGrN2mA5zLxyK87uOZu1Tw",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/161592595362"
-            }
-          ]
-        },
         {
           "date": "2026-03-27",
           "day": "Fri",
@@ -214,13 +186,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/147655717776"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 2 (Apr 01 - Apr 07)",
-      "total": 6364.0,
-      "days": [
+        },
         {
           "date": "2026-04-01",
           "day": "Wed",
@@ -288,7 +254,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/115998356243"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 2 (Apr 02 - Apr 08)",
+      "total": 5587.0,
+      "days": [
         {
           "date": "2026-04-02",
           "day": "Thu",
@@ -420,11 +392,29 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/181216963768"
             }
           ]
+        },
+        {
+          "date": "2026-04-08",
+          "day": "Wed",
+          "charges": 1,
+          "amount": 222.0,
+          "subscribers": [
+            {
+              "name": "Tanya Major",
+              "email": "major.t@bigpond.com",
+              "amount": 222.0,
+              "interval": "Every 2 weeks",
+              "sub_id": "sub_1SlGrN2mA5zLxyK87uOZu1Tw",
+              "customer_id": "cus_TCDVkq9NsYj47n",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SlGrN2mA5zLxyK87uOZu1Tw",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/161592595362"
+            }
+          ]
         }
       ]
     },
     {
-      "label": "Week 3 (Apr 08 - Apr 14)",
+      "label": "Week 3 (Apr 09 - Apr 15)",
       "total": 2039.0,
       "days": [
         {
@@ -476,8 +466,8 @@
       ]
     },
     {
-      "label": "Week 4 (Apr 15 - Apr 21)",
-      "total": 8316.0,
+      "label": "Week 4 (Apr 16 - Apr 22)",
+      "total": 9781.5,
       "days": [
         {
           "date": "2026-04-16",
@@ -578,6 +568,34 @@
               "customer_id": "cus_U8fCr3UFSc3YQR",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TCG1m2mA5zLxyK819BJSq9C",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/194010862702"
+            }
+          ]
+        },
+        {
+          "date": "2026-04-22",
+          "day": "Wed",
+          "charges": 2,
+          "amount": 1465.5,
+          "subscribers": [
+            {
+              "name": "Troy Speed",
+              "email": "jackrspeed@gmail.com",
+              "amount": 535.5,
+              "interval": "Every 32 days",
+              "sub_id": "sub_1Sq0Vf2mA5zLxyK8weKggu2e",
+              "customer_id": "cus_Tnbj2BTpeLPHtr",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sq0Vf2mA5zLxyK8weKggu2e",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/186715470737"
+            },
+            {
+              "name": "SHARON ARTHUR",
+              "email": "",
+              "amount": 930.0,
+              "interval": "DRAFT",
+              "type": "invoice",
+              "status": "draft",
+              "stripe_url": "https://dashboard.stripe.com/invoices/in_1T7E2K2mA5zLxyK8XfAfZA8B",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
         }
