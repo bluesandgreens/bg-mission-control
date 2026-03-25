@@ -167,14 +167,22 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);
   </div>
 
   <div id="tab-notes" class="tab-panel" style="display:none;">
-    <!-- BRAIN DUMP -->
+    <!-- NOTION LINK -->
     <div class="section">
-      <div class="section-lbl">🧠 Brain Dump</div>
+      <div class="section-lbl">📝 Notion Daily Page</div>
+      <a id="notion-link" href="#" target="_blank" style="display:block;padding:16px;background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.25);border-radius:12px;text-decoration:none;color:var(--cream);margin-bottom:16px;transition:all 0.2s;">
+        <div style="font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);margin-bottom:4px;">Open in Notion →</div>
+        <div style="font-size:12px;color:rgba(251,248,243,0.5);">Brain dumps, detailed notes, meeting prep — edit everything in Notion. Leo picks up changes on heartbeats.</div>
+      </a>
+    </div>
+    <!-- QUICK CAPTURE (stays here for fast thoughts) -->
+    <div class="section">
+      <div class="section-lbl">⚡ Quick Capture</div>
       <div class="dump-area">
-        <textarea class="dump-input" id="dump-input" placeholder="Dump your thoughts here... ideas, observations, random stuff. Leo picks these up and routes them."></textarea>
+        <textarea class="dump-input" id="dump-input" placeholder="Quick thought... (or open Notion for longer brain dumps)"></textarea>
         <div class="dump-actions">
           <span class="dump-count" id="dump-count">0 entries today</span>
-          <button class="dump-save" onclick="saveDump()">Save Thought</button>
+          <button class="dump-save" onclick="saveDump()">Save</button>
         </div>
       </div>
       <div class="dump-history" id="dump-history"></div>
@@ -226,6 +234,9 @@ function render() {
   document.getElementById('day-date').textContent = DP.label || today();
   document.getElementById('day-location').textContent = DP.location || '';
   document.getElementById('one-thing').textContent = DP.one_thing || 'Not set — what matters most today?';
+  if (DP.notion_url) {
+    document.getElementById('notion-link').href = DP.notion_url;
+  }
   renderTasks();
   renderSchedule();
   renderDumps();

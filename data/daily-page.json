@@ -2,25 +2,125 @@
   "generated": "2026-03-26T09:00:00+11:00",
   "date": "2026-03-26",
   "label": "Thursday, March 26",
-  "location": "Bali 🌴",
-  "one_thing": "Fix Zapier + Call Tom — both unlock everything downstream",
+  "location": "Bali \ud83c\udf34",
+  "one_thing": "Fix Zapier + Call Tom \u2014 both unlock everything downstream",
   "tasks": [
-    { "id": "t1", "text": "Call Tom — make the part-time offer", "priority": "p0", "status": "open", "note": "Part-time contract (~20hrs, 8 DCs/month MPS). Get him shadowing Rye before Perth. Comp models: /workspace/reference/dc-comp-parttime-final.pdf", "source": "leo" },
-    { "id": "t2", "text": "Fix Zapier HubSpot auth", "priority": "p0", "status": "open", "note": "7+ Zaps down. Stripe cancel sync broken = phantom active counts. 10 min fix in Zapier settings → reconnect HubSpot.", "source": "leo" },
-    { "id": "t3", "text": "Unpause H14-B1", "priority": "p1", "status": "open", "note": "Best ad by ROAS (5.1x). Every day off = ~$350 missed revenue. Quick toggle in Meta Ads Manager.", "source": "leo" },
-    { "id": "t4", "text": "Monitor /start page deposit conversions", "priority": "p1", "status": "open", "note": "Recovery email went to 1,895 leads yesterday. Check Stripe for $111 deposits. If 2%+ convert, this becomes the permanent funnel.", "source": "leo" },
-    { "id": "t5", "text": "Rye conversation prep (uni deferral)", "priority": "p2", "status": "open", "note": "Bali window = best time for face-to-face. Frame: trust & investment, not pressure. 'Double the time = more than double the output.'", "source": "leo" },
-    { "id": "t6", "text": "Kyan Steele — confirm payment received", "priority": "p2", "status": "open", "note": "FE-0005 invoice sent. $5,489 ($4,990 + GST). Check bank: BSB 086-495 / Acc 31-904-6705", "source": "leo" }
+    {
+      "id": "t1",
+      "text": "Call Tom \u2014 make the part-time offer",
+      "priority": "p0",
+      "status": "open",
+      "note": "Part-time contract (~20hrs, 8 DCs/month MPS). Get him shadowing Rye before Perth. Comp models: /workspace/reference/dc-comp-parttime-final.pdf",
+      "source": "leo"
+    },
+    {
+      "id": "t2",
+      "text": "Fix Zapier HubSpot auth",
+      "priority": "p0",
+      "status": "open",
+      "note": "7+ Zaps down. Stripe cancel sync broken = phantom active counts. 10 min fix in Zapier settings \u2192 reconnect HubSpot.",
+      "source": "leo"
+    },
+    {
+      "id": "t3",
+      "text": "Unpause H14-B1",
+      "priority": "p1",
+      "status": "open",
+      "note": "Best ad by ROAS (5.1x). Every day off = ~$350 missed revenue. Quick toggle in Meta Ads Manager.",
+      "source": "leo"
+    },
+    {
+      "id": "t4",
+      "text": "Monitor /start page deposit conversions",
+      "priority": "p1",
+      "status": "open",
+      "note": "Recovery email went to 1,895 leads yesterday. Check Stripe for $111 deposits. If 2%+ convert, this becomes the permanent funnel.",
+      "source": "leo"
+    },
+    {
+      "id": "t5",
+      "text": "Rye conversation prep (uni deferral)",
+      "priority": "p2",
+      "status": "open",
+      "note": "Bali window = best time for face-to-face. Frame: trust & investment, not pressure. 'Double the time = more than double the output.'",
+      "source": "leo"
+    },
+    {
+      "id": "t6",
+      "text": "Kyan Steele \u2014 confirm payment received",
+      "priority": "p2",
+      "status": "open",
+      "note": "FE-0005 invoice sent. $5,489 ($4,990 + GST). Check bank: BSB 086-495 / Acc 31-904-6705",
+      "source": "leo"
+    }
   ],
   "schedule": [
-    { "time": "09:00", "end": "09:30", "title": "Morning B&G Church ⛪", "type": "maker", "agenda": "Daily intention setting. What's the ONE THING today? Review yesterday's scorecard wins/misses.", "editable": true },
-    { "time": "09:30", "end": "12:00", "title": "Deep Work Block", "type": "maker", "agenda": "Zapier fix + Tom call + /start page monitoring. No meetings, no Slack.", "editable": true },
-    { "time": "12:00", "end": "12:30", "title": "W1 & Mentor Pulse", "type": "manager", "agenda": "Check with Brodie: how many W1s scheduled this week? Any session gap families contacted? 10 families flagged with 8-10 day gaps — get status.", "editable": true },
-    { "time": "12:30", "end": "14:00", "title": "Lunch + Admin", "type": "break", "agenda": "", "editable": true },
-    { "time": "14:00", "end": "14:30", "title": "#virtual-coffee Donut ☕", "type": "manager", "agenda": "Casual catch-up. No prep needed.", "editable": true },
-    { "time": "14:30", "end": "20:00", "title": "Bali Free Time / Async Work", "type": "maker", "agenda": "Review Leo's Lab deep dives. Brain dump ideas. Prep for tonight's live.", "editable": true },
-    { "time": "20:00", "end": "20:45", "title": "The Founder & The Mum: LIVE 💙", "type": "manager", "agenda": "LIVE session with a parent. Topics to cover: what the first month looks like, what mums notice changing, the mentor relationship. This is content gold — record it.", "editable": true },
-    { "time": "21:00", "end": "21:30", "title": "Journal 📓", "type": "maker", "agenda": "End of day reflection. What worked? What didn't? What's tomorrow's ONE THING?", "editable": true }
+    {
+      "time": "09:00",
+      "end": "09:30",
+      "title": "Morning B&G Church \u26ea",
+      "type": "maker",
+      "agenda": "Daily intention setting. What's the ONE THING today? Review yesterday's scorecard wins/misses.",
+      "editable": true
+    },
+    {
+      "time": "09:30",
+      "end": "12:00",
+      "title": "Deep Work Block",
+      "type": "maker",
+      "agenda": "Zapier fix + Tom call + /start page monitoring. No meetings, no Slack.",
+      "editable": true
+    },
+    {
+      "time": "12:00",
+      "end": "12:30",
+      "title": "W1 & Mentor Pulse",
+      "type": "manager",
+      "agenda": "Check with Brodie: how many W1s scheduled this week? Any session gap families contacted? 10 families flagged with 8-10 day gaps \u2014 get status.",
+      "editable": true
+    },
+    {
+      "time": "12:30",
+      "end": "14:00",
+      "title": "Lunch + Admin",
+      "type": "break",
+      "agenda": "",
+      "editable": true
+    },
+    {
+      "time": "14:00",
+      "end": "14:30",
+      "title": "#virtual-coffee Donut \u2615",
+      "type": "manager",
+      "agenda": "Casual catch-up. No prep needed.",
+      "editable": true
+    },
+    {
+      "time": "14:30",
+      "end": "20:00",
+      "title": "Bali Free Time / Async Work",
+      "type": "maker",
+      "agenda": "Review Leo's Lab deep dives. Brain dump ideas. Prep for tonight's live.",
+      "editable": true
+    },
+    {
+      "time": "20:00",
+      "end": "20:45",
+      "title": "The Founder & The Mum: LIVE \ud83d\udc99",
+      "type": "manager",
+      "agenda": "LIVE session with a parent. Topics to cover: what the first month looks like, what mums notice changing, the mentor relationship. This is content gold \u2014 record it.",
+      "editable": true
+    },
+    {
+      "time": "21:00",
+      "end": "21:30",
+      "title": "Journal \ud83d\udcd3",
+      "type": "maker",
+      "agenda": "End of day reflection. What worked? What didn't? What's tomorrow's ONE THING?",
+      "editable": true
+    }
   ],
-  "brain_dumps": []
+  "brain_dumps": [],
+  "notion_url": "https://www.notion.so/Thursday-March-26-Daily-Page-32e8322e6bdc811498ddfec4bebeedf9",
+  "notion_page_id": "32e8322e-6bdc-8114-98dd-fec4bebeedf9"
 }
