@@ -1,44 +1,26 @@
 {
-  "generated": "2026-03-25T12:00:55.721722",
+  "generated": "2026-03-25T18:00:06.531855",
   "weeks": [
     {
       "label": "Week 1 (Mar 25 - Mar 31)",
-      "total": 9362.0,
+      "total": 10456.0,
       "days": [
-        {
-          "date": "2026-03-25",
-          "day": "Wed",
-          "charges": 2,
-          "amount": 401.0,
-          "subscribers": [
-            {
-              "name": "Annie Stazak",
-              "email": "stazak24@gmail.com",
-              "amount": 235.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1TC9Nc2mA5zLxyK8oLsHaoVl",
-              "customer_id": "cus_U5EAMlAEQsOtOy",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TC9Nc2mA5zLxyK8oLsHaoVl",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207559251551"
-            },
-            {
-              "name": "Jess Ward",
-              "email": "madewithlove@live.com.au",
-              "amount": 166.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1T79MC2mA5zLxyK8GpqYtb76",
-              "customer_id": "cus_U1sdQ0MXbmilzK",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T79MC2mA5zLxyK8GpqYtb76",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/204452331309"
-            }
-          ]
-        },
         {
           "date": "2026-03-26",
           "day": "Thu",
-          "charges": 1,
-          "amount": 222.0,
+          "charges": 2,
+          "amount": 2952.0,
           "subscribers": [
+            {
+              "name": "Rebecca Maggiora (Son Leo)",
+              "email": "Rebecca_maggiora@live.com",
+              "amount": 2730.0,
+              "interval": "Every 90 days",
+              "sub_id": "sub_1TEi6E2mA5zLxyK8TtHCMp4J",
+              "customer_id": "cus_UA4PrHNCFkEL4T",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TEi6E2mA5zLxyK8TtHCMp4J",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/209323800421"
+            },
             {
               "name": "Tanya Major",
               "email": "major.t@bigpond.com",
@@ -55,7 +37,7 @@
           "date": "2026-03-27",
           "day": "Fri",
           "charges": 6,
-          "amount": 5463.0,
+          "amount": 4228.0,
           "subscribers": [
             {
               "name": "Melissa Angell",
@@ -66,6 +48,16 @@
               "customer_id": "cus_T3xOAlKjQxkphH",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SUvxI2mA5zLxyK8LrSQiiNK",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/154944680027"
+            },
+            {
+              "name": "Judy Lacey (Son Jack)",
+              "email": "phudyjillips@hotmail.com",
+              "amount": 664.0,
+              "interval": "Monthly",
+              "sub_id": "sub_1TEh802mA5zLxyK8HK6eCH9I",
+              "customer_id": "cus_UCLtzel9XvqiJi",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TEh802mA5zLxyK8HK6eCH9I",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/210681564002"
             },
             {
               "name": "Whitney Trigwell",
@@ -106,16 +98,6 @@
               "customer_id": "cus_Tmte86JNLCfNSm",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SpfOO2mA5zLxyK8lzQDKrks",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/145164842544"
-            },
-            {
-              "name": "Rachel Hawyes",
-              "email": "",
-              "amount": 1899.0,
-              "interval": "OPEN",
-              "type": "invoice",
-              "status": "open",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1TCt0Z2mA5zLxyK8hMnalPDt",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
         },
@@ -237,23 +219,23 @@
     },
     {
       "label": "Week 2 (Apr 01 - Apr 07)",
-      "total": 6198.0,
+      "total": 6364.0,
       "days": [
         {
           "date": "2026-04-01",
           "day": "Wed",
-          "charges": 5,
-          "amount": 833.0,
+          "charges": 6,
+          "amount": 999.0,
           "subscribers": [
             {
-              "name": "LEAH WEST",
-              "email": "Leah_ellen1995@icloud.com",
+              "name": "Annie Stazak",
+              "email": "stazak24@gmail.com",
               "amount": 235.0,
               "interval": "Weekly",
-              "sub_id": "sub_1TC8NN2mA5zLxyK8aMFSaFSq",
-              "customer_id": "cus_U7U7U7L0gbrjII",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TC8NN2mA5zLxyK8aMFSaFSq",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207947485189"
+              "sub_id": "sub_1TC9Nc2mA5zLxyK8oLsHaoVl",
+              "customer_id": "cus_U5EAMlAEQsOtOy",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TC9Nc2mA5zLxyK8oLsHaoVl",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207559251551"
             },
             {
               "name": "Tracey  Bunyan ",
@@ -274,6 +256,16 @@
               "customer_id": "cus_TKMmHFXrHYV6et",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T91gg2mA5zLxyK8gTqp8Uul",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/168923252353"
+            },
+            {
+              "name": "Jess Ward",
+              "email": "madewithlove@live.com.au",
+              "amount": 166.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1T79MC2mA5zLxyK8GpqYtb76",
+              "customer_id": "cus_U1sdQ0MXbmilzK",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T79MC2mA5zLxyK8GpqYtb76",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/204452331309"
             },
             {
               "name": "Katie Campbell",

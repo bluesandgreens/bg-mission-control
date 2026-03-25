@@ -1,8 +1,0 @@
-{
-  "generated": "2026-03-21T11:00:00+11:00",
-  "sessions": [
-    {"time": "16:00", "mentor": "Jack", "member": "Cohan Cooper", "week": 12, "status": "scheduled"},
-    {"time": "16:30", "mentor": "Harper", "member": "Xavier Harris", "week": 8, "status": "scheduled"},
-    {"time": "17:00", "mentor": "Brodie", "member": "Lucas Chen", "week": 3, "status": "scheduled"}
-  ]
-}

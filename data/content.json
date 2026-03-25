@@ -1,9 +1,0 @@
-{
-  "generated": "2026-03-21T11:00:00+11:00",
-  "essays": [
-    {"id": "1", "title": "Why B&G Works — The Psychology", "prompt": "Naval on Specific Knowledge", "status": "awaiting_reply", "date": "2026-03-21", "source": "Morning Essay Prompt", "word_count": 0, "tags": ["philosophy", "business"]},
-    {"id": "2", "title": "The Mentor Model", "prompt": "Why young men mentoring teenage boys works better than therapists", "status": "idea", "date": "2026-03-20", "source": "Conversation with Leo", "word_count": 0, "tags": ["product", "mission"]},
-    {"id": "3", "title": "90% of Buyers Are Mums", "prompt": "The psychology of a mother buying mentorship for her son", "status": "idea", "date": "2026-03-19", "source": "DC pattern analysis", "word_count": 0, "tags": ["marketing", "psychology"]}
-  ],
-  "repurpose_options": ["LinkedIn Post", "Email Newsletter", "Ad Copy", "Book Chapter", "Podcast Notes", "Team Email"]
-}

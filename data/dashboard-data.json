@@ -1,68 +1,68 @@
 {
-  "generated": "2026-03-25T12:00:55.721722",
-  "active_families": 59,
-  "active_total": 66,
+  "generated": "2026-03-25T18:00:06.531855",
+  "active_families": 60,
+  "active_total": 67,
   "paused": 7,
-  "mrr": 41139.73,
-  "cash_7d": 27994.86,
-  "balance_available": 12490.62,
-  "balance_pending": 1942.56,
-  "balance_total": 14433.18,
-  "revenue_at_risk": 823.0,
-  "failed_past_due": 5,
-  "meta_spend_mtd": 4913.03,
+  "mrr": 41709.53,
+  "cash_7d": 29671.64,
+  "balance_available": 12474.87,
+  "balance_pending": 4138.68,
+  "balance_total": 16613.55,
+  "revenue_at_risk": 1058.0,
+  "failed_past_due": 6,
+  "meta_spend_mtd": 4933.02,
   "booked_calls_mtd": 192,
-  "cpbc_mtd": 25.59,
+  "cpbc_mtd": 25.69,
   "xero_receivable": 20779.05,
   "xero_payable": 27533.64,
   "ndis_total": 1602.0,
-  "forecast_4wk": 25915.0,
+  "forecast_4wk": 27175.0,
   "hormozi": {
     "new_subs_per_month": 30,
     "steady_state_families": 100,
-    "current_collecting": 59,
-    "avg_rev_per_sub": 697.28,
-    "cac": 25.59,
+    "current_collecting": 60,
+    "avg_rev_per_sub": 695.16,
+    "cac": 25.69,
     "ltv_current": 2041.0,
-    "roic_multiple": 79.8,
+    "roic_multiple": 79.4,
     "payback_days": 1.0,
-    "retention_lever_1mo_annual": 493674.0,
+    "retention_lever_1mo_annual": 500515.0,
     "churn_scenarios": [
       {
         "label": "Current",
         "emoji": "\ud83d\udd34",
         "churn_rate": 0.3,
         "steady_state_families": 100,
-        "ltv": 2324.0,
+        "ltv": 2317.0,
         "lifetime_months": 3.3,
-        "mrr_ceiling": 69728.0
+        "mrr_ceiling": 69516.0
       },
       {
         "label": "Target",
         "emoji": "\ud83d\udfe1",
         "churn_rate": 0.2,
         "steady_state_families": 150,
-        "ltv": 3486.0,
+        "ltv": 3476.0,
         "lifetime_months": 5.0,
-        "mrr_ceiling": 104592.0
+        "mrr_ceiling": 104274.0
       },
       {
         "label": "Dream",
         "emoji": "\ud83d\udfe2",
         "churn_rate": 0.15,
         "steady_state_families": 200,
-        "ltv": 4649.0,
+        "ltv": 4634.0,
         "lifetime_months": 6.7,
-        "mrr_ceiling": 139456.0
+        "mrr_ceiling": 139032.0
       },
       {
         "label": "Elite",
         "emoji": "\ud83d\udc51",
         "churn_rate": 0.1,
         "steady_state_families": 300,
-        "ltv": 6973.0,
+        "ltv": 6952.0,
         "lifetime_months": 10.0,
-        "mrr_ceiling": 209184.0
+        "mrr_ceiling": 208548.0
       }
     ]
   }
