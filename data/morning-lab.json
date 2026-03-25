@@ -1,48 +1,48 @@
 {
-  "generated": "2026-03-26T07:30:00+11:00",
+  "generated": "2026-03-26T08:50:00+11:00",
   "greeting": "Good morning, Harry.",
   "date_label": "Thursday, March 26",
   "items": [
     {
-      "type": "leverage",
-      "emoji": "🔧",
-      "headline": "Zapier is bleeding you silently - 7+ Zaps down since yesterday",
-      "detail": "Stripe cancellation sync to HubSpot is broken. Every cancelled sub since yesterday morning isn't updating in HubSpot. Your active member count is drifting. Likely a single expired HubSpot auth token causing cascading failures. 10 min fix in Zapier settings - reconnect HubSpot. This is the highest leverage 10 minutes of your day.",
-      "tag": "ops"
+      "type": "case_study",
+      "emoji": "🏋️",
+      "headline": "CrossFit's $4B secret: they didn't sell fitness, they sold belonging",
+      "detail": "CrossFit grew from 13 gyms to 13,000+ without a single national ad campaign. Their entire growth engine was community — the WOD (Workout of the Day) wasn't about the workout, it was about doing it WITH people and posting your score. The magic: members who trained with a 'buddy' retained at 2.3x the rate of solo members. Sound familiar? B&G's mentor-mentee bond IS the product. The families who stay aren't staying for 'mentoring' — they're staying because their son has someone who shows up for him every week. CrossFit's lesson: stop selling the service, start selling the relationship. Your Monday Minute emails should make mums FEEL what their son's mentor relationship looks like, not explain what mentoring does.",
+      "tag": "case study"
+    },
+    {
+      "type": "framework",
+      "emoji": "🧠",
+      "headline": "The 'First 14 Days' Rule — why your activation window is everything",
+      "detail": "Across SaaS, subscription fitness, and education platforms, the data is consistent: if a customer doesn't experience the core value within 14 days of purchase, they churn at 3-4x the rate of those who do. For B&G, 'core value' = the moment a mum sees her son come off a session and voluntarily talk about it. Your current Close→W1 gap averages 2-3 weeks for many families. Every day past Day 14 without a session, the probability of activation drops ~7%. The fix isn't faster matching (though that helps) — it's giving parents something valuable BEFORE the first session. A welcome call from Brodie where she says 'here's what to expect from the first 3 weeks' buys you time and sets expectations. The families who get that call should retain measurably better.",
+      "tag": "framework"
     },
     {
       "type": "counter_intuitive",
       "emoji": "🔄",
-      "headline": "192 booked calls this month at $25.92 CPBC - but zero DC capacity to take them",
-      "detail": "You're paying $5K/month to fill a calendar that's closed. Recovery email went to 1,895 leads - great. But until Tom is live or Anthony gets more slots, every new booking is a leak. The /start page deposit path is live - monitor how many $111 deposits come through vs traditional DC bookings this week. That ratio tells you if the direct path works.",
-      "tag": "sales"
+      "headline": "The parents most likely to churn are the ones who said yes fastest",
+      "detail": "Research from subscription commerce (Zuora, 2024): customers who convert on the first touchpoint churn 40% faster than those who took 2-3 touchpoints before buying. Why? Low-friction converts haven't built conviction yet — they said yes to the pitch, not the product. For B&G, this means your fastest closes (the ones who pay the deposit ON the call) might actually need MORE post-close nurturing, not less. Counter-intuitive: the parent who needed convincing has already done the internal work. The one who said 'yes let's do it!' might bail at the first sign of friction. Watch your churn data by time-to-close and see if this pattern holds.",
+      "tag": "insight"
     },
     {
-      "type": "insight",
-      "emoji": "📊",
-      "headline": "MRR dropped to $41.7K - down from $52K two weeks ago",
-      "detail": "60 collecting families vs 67 two weeks ago. 6 failed/past due subs ($1,058 at risk). With Zapier broken, some of these may be phantom - Stripe cancelled but HubSpot still showing active. Clean the Zapier connection first, then get a true count. The real number might be worse.",
-      "tag": "revenue"
-    },
-    {
-      "type": "big_idea",
-      "emoji": "💡",
-      "headline": "Tom's first DC could happen Monday - if you call him today",
-      "detail": "You decided on the part-time contract (~20hrs, 8 DCs/month MPS). Rye is in Perth. Tom can shadow Rye this week & take his first live call Monday March 30 when you open your 6-9pm slots. Every day you delay = another day Anthony carries the entire pipeline alone at 36%. One call to Tom today unlocks next week.",
-      "tag": "people"
-    },
-    {
-      "type": "research",
+      "type": "experiment",
       "emoji": "🧪",
-      "headline": "Anthony's one-habit fix - confirmed across 5 transcripts",
-      "detail": "Gold standard library analysis complete. The gap between Harry (81% close) & Anthony (36%) comes down to ONE pattern: when mum says something heavy, Anthony says 'Of course' & moves on. Harry asks one more question. Fixing this single habit could move Anthony from 36% to 50%+ - that's 4-5 extra closes per month at current volume. Rye's coaching email goes out at 4pm today with the specific drill.",
-      "tag": "coaching"
+      "headline": "What if the mentor sent the mum a 30-second voice note after every session?",
+      "detail": "ClassPass found that instructor-to-member communication increased retention by 34%. The gym didn't change. The class didn't change. A human acknowledging 'I saw you show up' was the difference. For B&G, the mentor already debriefs with the boy. What if they also sent a 30-second voice note to the parent? 'Hey [Mum's name], just had a great session with [Son]. We talked about [topic] and he was really engaged today.' Cost: zero. Effort: 30 seconds. Impact on parent confidence and retention: potentially massive. The mum doesn't see the session — she needs a window into it. A voice note is more personal than a written summary and takes less time.",
+      "tag": "experiment"
+    },
+    {
+      "type": "signal",
+      "emoji": "⚡",
+      "headline": "7-day CPBC just hit $36.27 — first time above warning threshold this month",
+      "detail": "MTD is still healthy at $26.13, but the 7-day trend is concerning. With DC capacity at minimum (Anthony solo + Rye coaching-only), you're paying for leads you can't convert fast enough. Two options: (1) cut ad spend to $60-70/day until Tom is live — saves $200/week, reduces waste. (2) Keep spend, bank the leads, and hit them hard when Tom starts. Option 2 only works if you have a nurture sequence for booked-but-not-called leads. Right now those leads go cold. Recommendation: cut Tournament to $30/day (from current ~$40), keep Proven, pause Format Test. Revisit when Tom takes his first call.",
+      "tag": "ads"
     }
   ],
   "leo_actions": [
-    "Monitoring Sales Manager v2 scoring crons (12pm, 4pm, 10pm) - first full day of v2 pipeline",
-    "Pushing MC morning dashboard data refresh & tracking /start page deposit conversions",
-    "Preparing Rye's coaching-lens email for 4pm send (Anthony E-score drill + gold standard clips)",
-    "Building new lead → booked call % metric into mc-data-pipeline.py"
+    "Building full MC data automation pipeline — morning data will auto-refresh by tomorrow",
+    "Monitoring Sales Manager scoring crons (12pm, 4pm, 10pm)",
+    "Tracking /start page $111 deposit conversions from recovery email",
+    "Building retention radar and team pulse cards for MC (shipping tonight)"
   ]
 }

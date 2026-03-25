@@ -1,29 +1,30 @@
 {
-  "generated": "2026-03-26T07:30:00+11:00",
+  "generated": "2026-03-26T08:50:00+11:00",
   "date": "2026-03-25",
-  "label": "Wednesday, March 25",
+  "label": "Tuesday, March 25",
   "wins": [
-    "Recovery email sent to 1,895 leads - capacity crisis response shipped same day",
-    "/start page live - $111 direct deposit path bypasses DC bottleneck",
-    "Sales Manager v2 fully deployed - 6 crons (transcript pipeline + scoring)",
-    "Gold standard coaching library built from 5 real transcripts",
+    "Recovery email sent to 1,895 leads — capacity crisis response shipped same day",
+    "/start page live — $111 direct deposit path bypasses DC bottleneck",
+    "Sales Manager v2 fully deployed — 6 crons (transcript pipeline + scoring)",
+    "Gold standard coaching library built from Harry's Kelly Wellsmore call (8 new techniques)",
     "Kyan Steele FE agreement & invoice sent ($5,489)",
-    "18 newsletters written via newsletter skill - content engine proving out",
-    "Morning MC dashboard shipped overnight - interactive, expandable, Leo's Lab live"
+    "18 newsletters written via newsletter skill",
+    "Morning MC dashboard shipped — interactive, expandable, Leo's Lab live",
+    "Harry's 'Give Away Your Keys' clarity moment — constraint = himself, not manpower"
   ],
   "misses": [
-    "Zapier still broken - 7+ Zaps down all day (Stripe cancel sync critical)",
+    "Zapier still broken — 7+ Zaps down (Stripe cancel sync critical)",
     "H14-B1 still paused (best ad by ROAS at 5.1x)",
-    "Tom call not made yet",
+    "Tom call not made yet — every day delayed = another day Anthony carries alone",
     "Portal specs (parent + admin side) not started"
   ],
   "carry_forwards": [
-    "Call Tom - make the part-time offer, get him shadowing Rye before Perth",
-    "Rye uni deferral conversation (Bali window)",
-    "/start page v2 upgrades (Mirror Truth, Bridge, pivotal age copy)",
-    "Gold CTA on /book page linking to /start",
-    "Fix Zapier HubSpot auth (10 min fix, critical path)",
-    "7-day automated email workflow once /start is fully upgraded"
+    "Call Tom — make the part-time offer, get him shadowing Rye",
+    "Rye uni deferral conversation (Bali window — have it face to face)",
+    "Fix Zapier HubSpot auth (10 min fix, critical — member counts drifting)",
+    "/start page v2 upgrades (Mirror Truth copy, Bridge section)",
+    "Gold CTA on /book page linking to /start when no availability",
+    "7-day automated email workflow for /start signups"
   ],
-  "one_thing_tomorrow": "Call Tom & fix Zapier - both unlock everything downstream"
+  "one_thing_tomorrow": "Fix Zapier + Call Tom — both are 10-minute actions that unlock everything downstream"
 }

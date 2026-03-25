@@ -1,40 +1,40 @@
 {
-  "generated": "2026-03-26T07:00:00+11:00",
+  "generated": "2026-03-26T08:50:00+11:00",
   "functions": [
     {
       "name": "Sales Engine",
       "owner": "Rye",
-      "status": "amber",
-      "constraint": "DC capacity critical - Anthony solo Mon/Tue, Rye coaching-only, Tom not yet live",
-      "key_metric": "Close Rate: 36% (Anthony) | 192 BCs MTD at $25.92 CPBC",
-      "highest_leverage_task": "Call Tom today & get him shadowing Rye before Perth next week",
+      "status": "red",
+      "constraint": "DC capacity critical — Anthony solo, Rye coaching-only, Tom not yet live. 7d CPBC hit $36.27 (above warning).",
+      "key_metric": "Close Rate: 36% (Anthony) | 191 BCs MTD at $26.13 CPBC",
+      "highest_leverage_task": "Call Tom today — one conversation unlocks DC capacity next week",
       "team": ["Rye", "Anthony", "Tom (onboarding)"]
     },
     {
       "name": "Mentor Journey",
       "owner": "TBD",
       "status": "red",
-      "constraint": "No single owner - split across Harry/Brodie/mentors",
-      "key_metric": "Session gap avg: needs measurement",
-      "highest_leverage_task": "Assign owner & connect Fireflies to member records",
+      "constraint": "No single owner — split across Harry/Brodie/mentors. 10 families with 8-10 day session gaps flagged.",
+      "key_metric": "10 session gap alerts this week (8+ days between sessions)",
+      "highest_leverage_task": "Brodie to call the 10 session-gap families today — before they become churn",
       "team": ["Mentors", "Brodie (activation)"]
     },
     {
       "name": "Member Experience",
       "owner": "Brodie & Norri",
       "status": "amber",
-      "constraint": "63% of churned families never got a mentor - activation gap persists",
-      "key_metric": "6 failed/past due subs ($1,058 at risk) | 10 families with 8-10 day session gaps",
-      "highest_leverage_task": "Chase 10 session-gap families (HubSpot alerts) & tighten activation window",
-      "team": ["Brodie", "Norri", "Microowners"]
+      "constraint": "6 past-due subs ($1,058/cycle at risk). Zapier broken = phantom active counts in HubSpot.",
+      "key_metric": "60 collecting | 7 paused | 6 past due | $41.7K MRR",
+      "highest_leverage_task": "Fix Zapier HubSpot auth (10 min) — then true-up active member count",
+      "team": ["Brodie", "Norri"]
     },
     {
       "name": "Brand & Content",
       "owner": "Harry",
       "status": "green",
-      "constraint": "Content creation bottlenecked on Harry's time",
-      "key_metric": "18 newsletters drafted, content engine skill live",
-      "highest_leverage_task": "Batch-produce content from newsletters & repurpose",
+      "constraint": "Content engine proving out — 18 newsletters, /start page live, recovery email sent",
+      "key_metric": "1,895 leads emailed | /start page deposit conversions TBD",
+      "highest_leverage_task": "Monitor /start page conversions today — if 2%+ convert, scale the direct path",
       "team": ["Harry", "Leo"]
     }
   ]
