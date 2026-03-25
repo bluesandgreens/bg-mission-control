@@ -1,48 +1,48 @@
 {
-  "generated": "2026-03-26T07:00:00+11:00",
+  "generated": "2026-03-26T07:30:00+11:00",
   "greeting": "Good morning, Harry.",
   "date_label": "Thursday, March 26",
   "items": [
     {
-      "type": "insight",
-      "emoji": "📧",
-      "headline": "Recovery email went to 1,895 leads last night",
-      "detail": "If even 2% convert on the $111 deposit, that's 38 families without a single DC call. The /start page is live. Watch HubSpot today for deposit notifications - any conversion here is pure gravy since these leads had zero path to buy before.",
-      "tag": "capacity"
+      "type": "leverage",
+      "emoji": "🔧",
+      "headline": "Zapier is bleeding you silently - 7+ Zaps down since yesterday",
+      "detail": "Stripe cancellation sync to HubSpot is broken. Every cancelled sub since yesterday morning isn't updating in HubSpot. Your active member count is drifting. Likely a single expired HubSpot auth token causing cascading failures. 10 min fix in Zapier settings - reconnect HubSpot. This is the highest leverage 10 minutes of your day.",
+      "tag": "ops"
     },
     {
       "type": "counter_intuitive",
       "emoji": "🔄",
-      "headline": "Your best ad (H14-B1) is still paused",
-      "detail": "H14-B1 has a 5.1x ROAS - $1,770 per member, $17 CPBC. Every day it's off costs roughly $350 in missed revenue based on historical performance. It was paused March 22 and nobody's turned it back on. Worth reactivating even at reduced spend.",
-      "tag": "ads"
+      "headline": "192 booked calls this month at $25.92 CPBC - but zero DC capacity to take them",
+      "detail": "You're paying $5K/month to fill a calendar that's closed. Recovery email went to 1,895 leads - great. But until Tom is live or Anthony gets more slots, every new booking is a leak. The /start page deposit path is live - monitor how many $111 deposits come through vs traditional DC bookings this week. That ratio tells you if the direct path works.",
+      "tag": "sales"
     },
     {
-      "type": "leverage",
-      "emoji": "⏰",
-      "headline": "Tom is job hunting right now",
-      "detail": "Every day you wait to make the offer is a day he might accept something else. If he could take 5 DCs per week starting next week at a 50% close rate, that's 10 new families per month. The cost of one week's delay: potentially $9,400/month in recurring revenue you didn't capture.",
-      "tag": "team"
+      "type": "insight",
+      "emoji": "📊",
+      "headline": "MRR dropped to $41.7K - down from $52K two weeks ago",
+      "detail": "60 collecting families vs 67 two weeks ago. 6 failed/past due subs ($1,058 at risk). With Zapier broken, some of these may be phantom - Stripe cancelled but HubSpot still showing active. Clean the Zapier connection first, then get a true count. The real number might be worse.",
+      "tag": "revenue"
     },
     {
       "type": "big_idea",
-      "emoji": "🎓",
-      "headline": "Melbourne Uni has 2,400 psychology students",
-      "detail": "Even a 1% conversion to mentors = 24 new mentors per year. One email to the psych department's student coordinator could solve your mentor pipeline for 2026. Deakin, Monash, and RMIT have similar programs. Total addressable mentor pool across 4 unis: ~8,000 students.",
-      "tag": "growth"
+      "emoji": "💡",
+      "headline": "Tom's first DC could happen Monday - if you call him today",
+      "detail": "You decided on the part-time contract (~20hrs, 8 DCs/month MPS). Rye is in Perth. Tom can shadow Rye this week & take his first live call Monday March 30 when you open your 6-9pm slots. Every day you delay = another day Anthony carries the entire pipeline alone at 36%. One call to Tom today unlocks next week.",
+      "tag": "people"
     },
     {
       "type": "research",
-      "emoji": "🔬",
-      "headline": "The $111 deposit might be your permanent funnel",
-      "detail": "The 'micro-commitment' pricing model you accidentally created for the capacity crisis follows the same pattern as Peloton ($250 deposit), CrossFit ($150 intro), and F45 ($50 trial). Companies using micro-commitments before the full price conversation see 20-40% higher lifetime value because the customer has already said yes once. You're already doing it - might not need to stop when capacity returns.",
-      "tag": "strategy"
+      "emoji": "🧪",
+      "headline": "Anthony's one-habit fix - confirmed across 5 transcripts",
+      "detail": "Gold standard library analysis complete. The gap between Harry (81% close) & Anthony (36%) comes down to ONE pattern: when mum says something heavy, Anthony says 'Of course' & moves on. Harry asks one more question. Fixing this single habit could move Anthony from 36% to 50%+ - that's 4-5 extra closes per month at current volume. Rye's coaching email goes out at 4pm today with the specific drill.",
+      "tag": "coaching"
     }
   ],
   "leo_actions": [
-    "Monitoring HubSpot for /start page deposit conversions",
-    "Sales Manager v2 scoring active calls at 12pm, 4pm, 10pm",
-    "Building constraint tracker for MC",
-    "Reading remaining gold standard transcripts for coaching library"
+    "Monitoring Sales Manager v2 scoring crons (12pm, 4pm, 10pm) - first full day of v2 pipeline",
+    "Pushing MC morning dashboard data refresh & tracking /start page deposit conversions",
+    "Preparing Rye's coaching-lens email for 4pm send (Anthony E-score drill + gold standard clips)",
+    "Building new lead → booked call % metric into mc-data-pipeline.py"
   ]
 }

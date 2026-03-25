@@ -1,29 +1,29 @@
 {
-  "generated": "2026-03-26T07:00:00+11:00",
+  "generated": "2026-03-26T07:30:00+11:00",
   "date": "2026-03-25",
   "label": "Wednesday, March 25",
   "wins": [
-    "Recovery email built & sent to 1,895 leads (capacity crisis response)",
-    "/start page live - direct deposit path for families who can't book a DC",
-    "Sales Manager v2 fully deployed - 6 crons running (transcript + scoring)",
-    "Kyan Steele FE agreement & invoice sent ($5,489)",
-    "18 newsletters written via Claude newsletter skill",
+    "Recovery email sent to 1,895 leads - capacity crisis response shipped same day",
+    "/start page live - $111 direct deposit path bypasses DC bottleneck",
+    "Sales Manager v2 fully deployed - 6 crons (transcript pipeline + scoring)",
     "Gold standard coaching library built from 5 real transcripts",
-    "Virtual tour Lovable prompt delivered"
+    "Kyan Steele FE agreement & invoice sent ($5,489)",
+    "18 newsletters written via newsletter skill - content engine proving out",
+    "Morning MC dashboard shipped overnight - interactive, expandable, Leo's Lab live"
   ],
   "misses": [
-    "Zapier still broken - 7+ Zaps down all day (Stripe cancels not syncing to HubSpot)",
-    "H14-B1 still paused (best performing ad by ROAS)",
-    "Fireflies session linking not yet set up",
-    "Portal parent-side & admin-side specs not started"
+    "Zapier still broken - 7+ Zaps down all day (Stripe cancel sync critical)",
+    "H14-B1 still paused (best ad by ROAS at 5.1x)",
+    "Tom call not made yet",
+    "Portal specs (parent + admin side) not started"
   ],
   "carry_forwards": [
-    "Tom conversation - make the offer",
-    "Rye uni deferral conversation",
-    "/start page v2 upgrades (DC script elements - Mirror Truth, Bridge, pivotal age)",
-    "Gold CTA on /book page",
-    "7-day automated email workflow (pending /start being fully upgraded)",
-    "Fix Zapier (critical - cancellation sync broken)"
+    "Call Tom - make the part-time offer, get him shadowing Rye before Perth",
+    "Rye uni deferral conversation (Bali window)",
+    "/start page v2 upgrades (Mirror Truth, Bridge, pivotal age copy)",
+    "Gold CTA on /book page linking to /start",
+    "Fix Zapier HubSpot auth (10 min fix, critical path)",
+    "7-day automated email workflow once /start is fully upgraded"
   ],
-  "one_thing_tomorrow": "Tom conversation + /start page upgrades live"
+  "one_thing_tomorrow": "Call Tom & fix Zapier - both unlock everything downstream"
 }

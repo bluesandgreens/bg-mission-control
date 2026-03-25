@@ -5,9 +5,9 @@
       "name": "Sales Engine",
       "owner": "Rye",
       "status": "amber",
-      "constraint": "DC capacity - only Anthony active Mon/Tue, Rye coaching-focused",
-      "key_metric": "Close Rate: 36% (Anthony) / 90% (Rye)",
-      "highest_leverage_task": "Get Tom on DCs & coach Anthony's E-score up 1 point",
+      "constraint": "DC capacity critical - Anthony solo Mon/Tue, Rye coaching-only, Tom not yet live",
+      "key_metric": "Close Rate: 36% (Anthony) | 192 BCs MTD at $25.92 CPBC",
+      "highest_leverage_task": "Call Tom today & get him shadowing Rye before Perth next week",
       "team": ["Rye", "Anthony", "Tom (onboarding)"]
     },
     {
@@ -23,9 +23,9 @@
       "name": "Member Experience",
       "owner": "Brodie & Norri",
       "status": "amber",
-      "constraint": "63% of churned families never got a mentor - activation gap",
-      "key_metric": "Close-to-W1 conversion: ~59%",
-      "highest_leverage_task": "Tighten post-close activation to <7 days from close to W1",
+      "constraint": "63% of churned families never got a mentor - activation gap persists",
+      "key_metric": "6 failed/past due subs ($1,058 at risk) | 10 families with 8-10 day session gaps",
+      "highest_leverage_task": "Chase 10 session-gap families (HubSpot alerts) & tighten activation window",
       "team": ["Brodie", "Norri", "Microowners"]
     },
     {
