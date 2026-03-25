@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Blues & Greens - Morning Mission Control</title>
+<meta name="theme-color" content="#104791">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;--green-bright:#4CAF50;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;-webkit-font-smoothing:antialiased;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:#2a3040;border-radius:3px;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,169,81,0.3);gap:8px;}
+.nav-left{display:flex;align-items:center;gap:10px;}
+.nav-logo{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--navy);}
+.nav-logo a{color:var(--navy);text-decoration:none;}
+.nav-title{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-clock{font-size:12px;color:rgba(251,248,243,0.4);font-variant-numeric:tabular-nums;}
+
+/* TAB TOGGLE */
+.view-toggle{display:flex;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);}
+.view-btn{padding:5px 12px;font-size:11px;font-weight:600;cursor:pointer;border:none;background:none;color:rgba(251,248,243,0.5);transition:all 0.2s;white-space:nowrap;}
+.view-btn.active{background:var(--gold);color:var(--dark);}
+
+/* MAIN */
+.main{max-width:860px;margin:0 auto;padding:16px 16px 100px;}
+
+/* PULSE */
+.pulse-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+.pulse-card{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:14px 12px;text-align:center;transition:border-color 0.2s;}
+.pulse-card:hover{border-color:rgba(200,169,81,0.25);}
+.pulse-card.highlight{border-color:rgba(200,169,81,0.3);}
+.pulse-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.pulse-val{font-family:'Archivo Black',sans-serif;font-size:22px;line-height:1.2;}
+.pulse-trend{font-size:11px;margin-top:2px;}
+.pulse-sub{font-size:9px;color:rgba(251,248,243,0.3);margin-top:2px;}
+.trend-up{color:var(--green-bright);}
+.trend-down{color:var(--red);}
+.trend-flat{color:rgba(251,248,243,0.4);}
+
+.pulse-summary{font-size:12px;color:rgba(251,248,243,0.5);text-align:center;padding:8px 0 20px;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:20px;}
+.pulse-summary strong{color:var(--cream);}
+
+/* SECTIONS */
+.section{margin-bottom:12px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);background:rgba(16,21,32,0.6);}
+.section-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;user-select:none;transition:background 0.15s;}
+.section-head:hover{background:rgba(255,255,255,0.02);}
+.section-head-left{display:flex;align-items:center;gap:10px;}
+.section-icon{font-size:16px;}
+.section-title{font-family:'Archivo Black',sans-serif;font-size:13px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;}
+.section-preview{font-size:11px;color:rgba(251,248,243,0.4);margin-left:8px;}
+.section-chevron{font-size:12px;color:rgba(251,248,243,0.3);transition:transform 0.3s ease;}
+.section-chevron.open{transform:rotate(180deg);}
+.section-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease;}
+.section-body.open{max-height:5000px;}
+.section-content{padding:0 16px 16px;}
+
+/* LEO'S LAB special */
+.section.leo-lab{background:linear-gradient(135deg,rgba(200,169,81,0.06),rgba(16,21,32,0.8));border-color:rgba(200,169,81,0.15);}
+.leo-greeting{font-size:18px;color:var(--cream);margin-bottom:16px;font-weight:300;}
+.leo-greeting strong{font-weight:700;color:var(--gold);}
+.leo-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px 16px;margin-bottom:8px;cursor:pointer;transition:all 0.2s;}
+.leo-item:hover{border-color:rgba(200,169,81,0.2);background:rgba(255,255,255,0.05);}
+.leo-item-num{font-family:'Archivo Black',sans-serif;font-size:11px;color:var(--gold);margin-bottom:6px;}
+.leo-item-text{font-size:13px;color:rgba(251,248,243,0.7);line-height:1.6;}
+.leo-item-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);font-size:12px;color:rgba(251,248,243,0.5);line-height:1.5;}
+.leo-item-detail.show{display:block;}
+
+/* METRIC ROWS */
+.metric-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px;}
+.metric-row.triple{grid-template-columns:repeat(3,1fr);}
+.mini-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:12px;}
+.mini-lbl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:4px;}
+.mini-val{font-family:'Archivo Black',sans-serif;font-size:18px;}
+.mini-sub{font-size:10px;color:rgba(251,248,243,0.3);margin-top:2px;}
+
+/* REP CARDS */
+.rep-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:border-color 0.2s;}
+.rep-card:hover{border-color:rgba(200,169,81,0.25);}
+.rep-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.rep-name{font-size:14px;font-weight:700;}
+.rep-status{font-size:9px;font-weight:700;padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.5px;}
+.rep-status.active{background:rgba(76,175,80,0.2);color:var(--green-bright);}
+.rep-status.coaching{background:rgba(232,160,48,0.2);color:var(--amber);}
+.rep-status.exited{background:rgba(255,255,255,0.06);color:rgba(251,248,243,0.4);}
+.rep-status.commission{background:rgba(224,82,82,0.2);color:var(--red);}
+.rep-stats{display:flex;gap:16px;font-size:11px;color:rgba(251,248,243,0.5);}
+.rep-stats span{display:flex;align-items:center;gap:3px;}
+.rep-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);font-size:12px;color:rgba(251,248,243,0.5);line-height:1.5;}
+.rep-detail.show{display:block;}
+
+/* FLAGS */
+.flag-card{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;margin-bottom:6px;font-size:12px;line-height:1.4;}
+.flag-red{background:rgba(224,82,82,0.08);border:1px solid rgba(224,82,82,0.15);}
+.flag-amber{background:rgba(232,160,48,0.08);border:1px solid rgba(232,160,48,0.15);}
+.flag-icon{font-size:14px;flex-shrink:0;padding-top:1px;}
+
+/* OBJECTION ROW */
+.obj-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;}
+.obj-row:last-child{border-bottom:none;}
+.obj-rank{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);min-width:24px;}
+.obj-cat{font-weight:600;flex:1;}
+.obj-count{color:rgba(251,248,243,0.4);}
+.obj-grade{font-weight:700;padding:2px 8px;border-radius:6px;font-size:10px;}
+
+/* CASHFLOW */
+.cf-day{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;}
+.cf-day:last-child{border-bottom:none;}
+.cf-date{font-weight:600;min-width:100px;}
+.cf-charges{color:rgba(251,248,243,0.4);}
+.cf-amount{font-family:'Archivo Black',sans-serif;color:var(--gold);}
+
+/* FUNNEL */
+.funnel{display:flex;align-items:center;justify-content:center;gap:4px;padding:16px 0;flex-wrap:wrap;}
+.funnel-stage{text-align:center;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);min-width:70px;}
+.funnel-val{font-family:'Archivo Black',sans-serif;font-size:16px;}
+.funnel-lbl{font-size:9px;color:rgba(251,248,243,0.4);text-transform:uppercase;letter-spacing:1px;}
+.funnel-arrow{font-size:14px;color:rgba(251,248,243,0.2);}
+.funnel-pct{font-size:10px;color:var(--gold);font-weight:700;}
+
+/* CONSTRAINT CARDS */
+.constraint-input-wrap{margin-bottom:20px;}
+.constraint-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:14px 16px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;}
+.constraint-input:focus{border-color:var(--gold);}
+.constraint-input::placeholder{color:rgba(251,248,243,0.3);}
+.constraint-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:24px;}
+.c-card{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px;transition:border-color 0.2s;}
+.c-card:hover{border-color:rgba(200,169,81,0.2);}
+.c-card-fn{font-family:'Archivo Black',sans-serif;font-size:12px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.c-card-owner{font-size:11px;color:rgba(251,248,243,0.4);margin-bottom:10px;}
+.c-card-constraint{font-size:12px;color:rgba(251,248,243,0.6);margin-bottom:8px;line-height:1.4;padding:8px 10px;background:rgba(224,82,82,0.06);border-radius:8px;border-left:3px solid var(--red);}
+.c-card-task{font-size:11px;color:rgba(251,248,243,0.5);line-height:1.4;}
+.c-card-task strong{color:var(--gold);}
+
+/* OWNERSHIP MAP */
+.own-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+.own-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;}
+.own-status{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.own-status.green{background:var(--green-bright);}
+.own-status.amber{background:var(--amber);}
+.own-status.red{background:var(--red);}
+.own-info{flex:1;}
+.own-fn{font-size:12px;font-weight:700;}
+.own-name{font-size:10px;color:rgba(251,248,243,0.4);}
+.own-metric{font-size:11px;font-weight:600;color:var(--gold);}
+
+/* PLACEHOLDER */
+.placeholder{text-align:center;padding:24px 16px;color:rgba(251,248,243,0.3);font-size:13px;font-style:italic;}
+
+/* THOUGHT BUTTON */
+.thought-btn{position:fixed;bottom:24px;right:24px;z-index:90;width:52px;height:52px;border-radius:50%;background:var(--gold);border:none;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(200,169,81,0.3);transition:all 0.2s;}
+.thought-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(200,169,81,0.4);}
+
+/* THOUGHT MODAL */
+.thought-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:500;display:none;align-items:flex-end;justify-content:center;padding:16px;}
+.thought-overlay.open{display:flex;}
+.thought-box{background:#141924;border:1px solid rgba(200,169,81,0.25);border-radius:16px;padding:20px;width:100%;max-width:440px;margin-bottom:60px;animation:slideUp 0.2s ease;}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.thought-title{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);margin-bottom:12px;}
+.thought-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;resize:none;min-height:60px;}
+.thought-input:focus{border-color:var(--gold);}
+.thought-input::placeholder{color:rgba(251,248,243,0.3);}
+.thought-hint{font-size:10px;color:rgba(251,248,243,0.25);margin-top:6px;}
+.thought-list{margin-top:12px;max-height:200px;overflow-y:auto;}
+.thought-item{font-size:12px;color:rgba(251,248,243,0.5);padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.thought-item:last-child{border-bottom:none;}
+.thought-item-time{font-size:10px;color:rgba(251,248,243,0.25);margin-bottom:2px;}
+
+/* VIEW PANELS */
+.view-panel{display:none;}
+.view-panel.active{display:block;}
+
+/* SECTION LABEL */
+.section-label{font-family:'Archivo Black',sans-serif;font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin:24px 0 12px;display:flex;align-items:center;gap:8px;}
+.section-label::after{content:'';flex:1;height:1px;background:rgba(200,169,81,0.15);}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--gold);color:var(--dark);padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:2000;transition:transform 0.3s ease;pointer-events:none;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* ANIMATIONS */
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.hidden{display:none!important;}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .pulse-grid{grid-template-columns:repeat(2,1fr);}
+  .constraint-grid{grid-template-columns:1fr;}
+  .own-grid{grid-template-columns:1fr;}
+  .metric-row{grid-template-columns:1fr;}
+  .metric-row.triple{grid-template-columns:repeat(2,1fr);}
+  .funnel{flex-direction:column;gap:2px;}
+  .funnel-arrow{transform:rotate(90deg);}
+  .section-preview{display:none;}
+}
+@media(min-width:601px) and (max-width:800px){
+  .pulse-grid{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-left">
+    <div class="nav-logo"><a href="../">B&G</a></div>
+    <div class="nav-title">Morning Brief</div>
+  </div>
+  <div class="nav-right">
+    <div class="view-toggle">
+      <button class="view-btn active" id="btn-dashboard" onclick="setView('dashboard')">Dashboard</button>
+      <button class="view-btn" id="btn-constraints" onclick="setView('constraints')">Constraints</button>
+    </div>
+    <div class="nav-clock" id="clock"></div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- ===== DASHBOARD VIEW ===== -->
+<div class="view-panel active" id="view-dashboard">
+
+<!-- THE PULSE -->
+<div class="section-label" style="margin-top:8px;">The Pulse</div>
+<div class="pulse-grid" id="pulse-grid"></div>
+<div class="pulse-summary" id="pulse-summary"></div>
+
+<!-- SECTIONS -->
+<div id="sections-container"></div>
+
+</div><!-- /dashboard -->
+
+<!-- ===== CONSTRAINTS VIEW ===== -->
+<div class="view-panel" id="view-constraints">
+
+<div class="section-label" style="margin-top:8px;">What's On Your Mind?</div>
+<div class="constraint-input-wrap">
+  <input type="text" class="constraint-input" id="constraint-input" placeholder="What are you working on today?" />
+</div>
+
+<div class="section-label">Current Constraints by Function</div>
+<div class="constraint-grid" id="constraint-grid"></div>
+
+<div class="section-label">Ownership Map</div>
+<div class="own-grid" id="ownership-grid"></div>
+
+</div><!-- /constraints -->
+
+</div><!-- /main -->
+
+<!-- THOUGHT BUTTON -->
+<button class="thought-btn" onclick="toggleThought()" title="Quick capture">💭</button>
+
+<!-- THOUGHT MODAL -->
+<div class="thought-overlay" id="thought-overlay" onclick="closeThoughtOutside(event)">
+  <div class="thought-box">
+    <div class="thought-title">What's on your mind?</div>
+    <textarea class="thought-input" id="thought-input" placeholder="Type a thought, hit Enter..." rows="2"></textarea>
+    <div class="thought-hint">Press Enter to save. Shift+Enter for new line.</div>
+    <div class="thought-list" id="thought-list"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── DATA ───
+let D = {}; // dashboard-data
+let R = {}; // rep-stats
+let C = {}; // dc-calls
+let I = {}; // insights
+let CF = {}; // cashflow
+let ML = {}; // morning-lab
+let SC = {}; // scorecard
+let OW = {}; // ownership
+
+const DATA_BASE = '../data/';
+
+async function loadData() {
+  const [d, r, c, i, cf, ml, sc, ow] = await Promise.all([
+    fetch(DATA_BASE + 'dashboard-data.json').then(r => r.json()).catch(() => ({})),
+    fetch(DATA_BASE + 'rep-stats.json').then(r => r.json()).catch(() => ({})),
+    fetch(DATA_BASE + 'dc-calls.json').then(r => r.json()).catch(() => ({})),
+    fetch(DATA_BASE + 'insights.json').then(r => r.json()).catch(() => ({})),
+    fetch(DATA_BASE + 'cashflow-detail.json').then(r => r.json()).catch(() => ({})),
+    fetch(DATA_BASE + 'morning-lab.json').then(r => r.json()).catch(() => ({})),
+    fetch(DATA_BASE + 'scorecard.json').then(r => r.json()).catch(() => ({})),
+    fetch(DATA_BASE + 'ownership.json').then(r => r.json()).catch(() => ({})),
+  ]);
+  D = d; R = r; C = c; I = i; CF = cf; ML = ml; SC = sc; OW = ow;
+  render();
+}
+
+// ─── HELPERS ───
+function fmt$(n) { return '$' + Number(n||0).toLocaleString('en-AU', {minimumFractionDigits:0, maximumFractionDigits:0}); }
+function fmtPct(n) { return Number(n||0).toFixed(1) + '%'; }
+function escHtml(s) { const d = document.createElement('div'); d.textContent = s||''; return d.innerHTML; }
+
+// ─── RENDER ───
+function render() {
+  renderPulse();
+  renderSections();
+  renderConstraints();
+  renderOwnership();
+}
+
+function renderPulse() {
+  const grid = document.getElementById('pulse-grid');
+  const closeRate = I.summary ? I.summary.overall_close_rate : 0;
+  const cards = [
+    { lbl: 'MRR', val: fmt$(D.mrr), trend: 'up', trendTxt: 'Up this month', sub: D.active_families + ' collecting families' },
+    { lbl: 'Active Families', val: (D.active_families||0) + '/' + (D.active_total||0), trend: 'flat', trendTxt: (D.paused||0) + ' paused', sub: fmtPct(((D.active_families||0)/(D.active_total||1))*100) + ' active rate' },
+    { lbl: 'Booked Calls MTD', val: D.booked_calls_mtd||0, trend: 'up', trendTxt: '192 this month', sub: 'Meta + organic' },
+    { lbl: 'Close Rate', val: fmtPct(closeRate), trend: closeRate >= 40 ? 'up' : 'down', trendTxt: 'Rolling avg', sub: (I.summary ? I.summary.total_closes : 0) + ' closes / ' + (I.summary ? I.summary.total_scored : 0) + ' scored' },
+    { lbl: 'CPBC', val: fmt$(D.cpbc_mtd), trend: D.cpbc_mtd < 30 ? 'up' : 'down', trendTxt: D.cpbc_mtd < 30 ? 'Below $30 target' : 'Above target', sub: fmt$(D.meta_spend_mtd) + ' Meta spend MTD' },
+    { lbl: 'Stripe Balance', val: fmt$(D.balance_total), trend: 'flat', trendTxt: fmt$(D.balance_available) + ' available', sub: fmt$(D.balance_pending) + ' pending' },
+  ];
+  grid.innerHTML = cards.map((c, i) => `
+    <div class="pulse-card${i===0?' highlight':''}">
+      <div class="pulse-lbl">${c.lbl}</div>
+      <div class="pulse-val">${c.val}</div>
+      <div class="pulse-trend trend-${c.trend}">${c.trend==='up'?'↑':c.trend==='down'?'↓':'→'} ${c.trendTxt}</div>
+      <div class="pulse-sub">${c.sub}</div>
+    </div>
+  `).join('');
+
+  // Summary line
+  const reps = R.reps || [];
+  const lowE = reps.filter(r => r.e_score_avg < 2.5).map(r => r.rep);
+  let summaryParts = [
+    `<strong>${fmt$(D.mrr)}</strong> MRR`,
+    `<strong>${D.failed_past_due||0}</strong> failed/past due`,
+    `<strong>${fmt$(D.revenue_at_risk)}</strong> revenue at risk`,
+  ];
+  if (lowE.length) summaryParts.push(`<strong>${lowE.join(' & ')}</strong> need E-score coaching`);
+  document.getElementById('pulse-summary').innerHTML = summaryParts.join(' · ');
+}
+
+function renderSections() {
+  const container = document.getElementById('sections-container');
+  const sections = [
+    { id:'pipeline', icon:'🔄', title:'Pipeline', preview: getPipelinePreview, render: renderPipeline },
+    { id:'dc-war', icon:'🎯', title:'DC War Room', preview: getDCPreview, render: renderDC },
+    { id:'revenue', icon:'💰', title:'Revenue & Retention', preview: getRevenuePreview, render: renderRevenue },
+    { id:'ads', icon:'📣', title:'Ads', preview: getAdsPreview, render: renderAds },
+    { id:'fe-pipeline', icon:'🏗️', title:'FE Pipeline', preview: () => 'Placeholder', render: renderFE },
+    { id:'today', icon:'📅', title:'Today', preview: () => getTodayDate(), render: renderToday },
+    { id:'leo-lab', icon:'🧪', title:"Leo's Lab", preview: () => '5 insights', render: renderLeo, defaultOpen: true, special: 'leo-lab' },
+    { id:'scorecard', icon:'📋', title:"Yesterday's Scorecard", preview: () => 'Review', render: renderScorecard },
+  ];
+
+  const savedStates = JSON.parse(localStorage.getItem('mc-section-states') || '{}');
+
+  container.innerHTML = sections.map(s => {
+    const isOpen = savedStates[s.id] !== undefined ? savedStates[s.id] : (s.defaultOpen || false);
+    return `
+      <div class="section${s.special ? ' '+s.special : ''}" id="section-${s.id}">
+        <div class="section-head" onclick="toggleSection('${s.id}')">
+          <div class="section-head-left">
+            <span class="section-icon">${s.icon}</span>
+            <span class="section-title">${s.title}</span>
+            <span class="section-preview" id="preview-${s.id}">${s.preview()}</span>
+          </div>
+          <span class="section-chevron${isOpen?' open':''}" id="chev-${s.id}">▼</span>
+        </div>
+        <div class="section-body${isOpen?' open':''}" id="body-${s.id}">
+          <div class="section-content" id="content-${s.id}"></div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Render content for each section
+  sections.forEach(s => s.render());
+}
+
+function toggleSection(id) {
+  const body = document.getElementById('body-' + id);
+  const chev = document.getElementById('chev-' + id);
+  const isOpen = body.classList.toggle('open');
+  chev.classList.toggle('open', isOpen);
+  const saved = JSON.parse(localStorage.getItem('mc-section-states') || '{}');
+  saved[id] = isOpen;
+  localStorage.setItem('mc-section-states', JSON.stringify(saved));
+}
+
+// ─── PIPELINE ───
+function getPipelinePreview() {
+  return `${D.booked_calls_mtd||0} booked MTD · ${D.active_families||0} active`;
+}
+function renderPipeline() {
+  const el = document.getElementById('content-pipeline');
+  el.innerHTML = `
+    <div class="metric-row triple">
+      <div class="mini-card">
+        <div class="mini-lbl">Booked Calls MTD</div>
+        <div class="mini-val">${D.booked_calls_mtd||0}</div>
+        <div class="mini-sub">Via Meta + organic</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-lbl">Active Families</div>
+        <div class="mini-val">${D.active_families||0}</div>
+        <div class="mini-sub">${D.paused||0} paused</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-lbl">4-Week Forecast</div>
+        <div class="mini-val">${fmt$(D.forecast_4wk)}</div>
+        <div class="mini-sub">Upcoming charges</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Funnel</div>
+    <div class="funnel">
+      <div class="funnel-stage"><div class="funnel-val">${D.booked_calls_mtd||0}</div><div class="funnel-lbl">Leads</div></div>
+      <div><span class="funnel-arrow">→</span><div class="funnel-pct">${fmtPct(((I.summary?.total_scored||0)/(D.booked_calls_mtd||1))*100)}</div></div>
+      <div class="funnel-stage"><div class="funnel-val">${I.summary?.total_scored||0}</div><div class="funnel-lbl">DC Calls</div></div>
+      <div><span class="funnel-arrow">→</span><div class="funnel-pct">${fmtPct(I.summary?.overall_close_rate||0)}</div></div>
+      <div class="funnel-stage"><div class="funnel-val">${I.summary?.total_closes||0}</div><div class="funnel-lbl">Deposits</div></div>
+      <div><span class="funnel-arrow">→</span></div>
+      <div class="funnel-stage"><div class="funnel-val">${D.active_families||0}</div><div class="funnel-lbl">Active</div></div>
+    </div>
+    ${D.hormozi ? `
+    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Unit Economics</div>
+    <div class="metric-row">
+      <div class="mini-card">
+        <div class="mini-lbl">CAC</div>
+        <div class="mini-val" style="color:var(--green-bright)">${fmt$(D.hormozi.cac)}</div>
+        <div class="mini-sub">Cost to acquire</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-lbl">LTV</div>
+        <div class="mini-val">${fmt$(D.hormozi.ltv_current)}</div>
+        <div class="mini-sub">ROIC ${D.hormozi.roic_multiple}x</div>
+      </div>
+    </div>` : ''}
+  `;
+}
+
+// ─── DC WAR ROOM ───
+function getDCPreview() {
+  const reps = R.reps||[];
+  const active = reps.filter(r => r.status !== 'exited_dc');
+  return `${active.length} active reps · Avg ${(I.summary?.avg_overall_score||0).toFixed(1)} score`;
+}
+function renderDC() {
+  const el = document.getElementById('content-dc-war');
+  const reps = R.reps || [];
+  const objs = R.top_objections || [];
+  const flags = R.flags || {};
+
+  let flagsHtml = '';
+  if (flags.post_close_risk) flagsHtml += `<div class="flag-card flag-red"><span class="flag-icon">🚨</span><div>${escHtml(flags.post_close_risk).replace(/\u2014/g,' - ')}</div></div>`;
+  if (flags.pending_outcome) flagsHtml += `<div class="flag-card flag-amber"><span class="flag-icon">⏳</span><div>${escHtml(flags.pending_outcome).replace(/\u2014/g,' - ')}</div></div>`;
+
+  let repsHtml = reps.map(r => {
+    const statusClass = r.status === 'active' ? 'active' : r.status === 'active_coaching' ? 'coaching' : r.status === 'exited_dc' ? 'exited' : 'commission';
+    const statusLabel = r.status.replace(/_/g, ' ');
+    const calls = (C.calls||[]).filter(c => c.rep_name === r.rep).slice(0, 5);
+    const callsHtml = calls.map(c => `
+      <div style="font-size:11px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <strong>${escHtml(c.contact_name)}</strong> - Score: ${c.overall_score} (${c.score_grade}) - ${c.true_outcome||'Pending'}
+      </div>
+    `).join('');
+    return `
+      <div class="rep-card" onclick="this.querySelector('.rep-detail').classList.toggle('show')">
+        <div class="rep-top">
+          <span class="rep-name">${escHtml(r.rep)}</span>
+          <span class="rep-status ${statusClass}">${statusLabel}</span>
+        </div>
+        <div class="rep-stats">
+          <span>Avg: <strong>${r.avg_score.toFixed(1)}</strong></span>
+          <span>Close: <strong>${fmtPct(r.close_rate)}</strong></span>
+          <span>E: <strong style="color:${r.e_score_avg<2.5?'var(--red)':'var(--green-bright)'}">${r.e_score_avg.toFixed(1)}</strong></span>
+          <span>I: <strong>${r.i_score_avg.toFixed(1)}</strong></span>
+          ${r.p3_flag?'<span style="color:var(--red)">⚠ P3</span>':''}
+        </div>
+        <div class="rep-detail">
+          <div style="margin-bottom:8px;color:rgba(251,248,243,0.6)">${escHtml(r.improvement_area_short).replace(/\u2014/g,' - ')}</div>
+          ${callsHtml?'<div style="font-size:10px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:8px 0 4px;">Recent Calls</div>'+callsHtml:''}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  let objsHtml = objs.map(o => {
+    const gradeColor = o.avg_handling_grade >= 3 ? 'var(--amber)' : 'var(--red)';
+    return `
+      <div class="obj-row">
+        <span class="obj-rank">#${o.rank}</span>
+        <span class="obj-cat">${escHtml(o.category).replace(/_/g, ' ')}</span>
+        <span class="obj-count">${o.count}x</span>
+        <span class="obj-grade" style="background:${gradeColor}22;color:${gradeColor}">${o.avg_handling_grade.toFixed(1)}/5</span>
+      </div>
+    `;
+  }).join('');
+
+  el.innerHTML = `
+    ${flagsHtml?'<div style="margin-bottom:12px;">'+flagsHtml+'</div>':''}
+    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Rep Scorecards</div>
+    ${repsHtml}
+    ${objs.length?`
+    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Top Objections This Week</div>
+    ${objsHtml}
+    `:''}
+  `;
+}
+
+// ─── REVENUE & RETENTION ───
+function getRevenuePreview() {
+  return `${fmt$(D.mrr)} MRR · ${fmt$(D.revenue_at_risk)} at risk`;
+}
+function renderRevenue() {
+  const el = document.getElementById('content-revenue');
+  const weeks = CF.weeks || [];
+  const thisWeek = weeks[0] || { days:[], total:0 };
+  const topDays = thisWeek.days.slice(0, 5);
+
+  el.innerHTML = `
+    <div class="metric-row triple">
+      <div class="mini-card">
+        <div class="mini-lbl">MRR</div>
+        <div class="mini-val">${fmt$(D.mrr)}</div>
+        <div class="mini-sub">${D.active_families||0} collecting</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-lbl">Revenue at Risk</div>
+        <div class="mini-val" style="color:var(--red)">${fmt$(D.revenue_at_risk)}</div>
+        <div class="mini-sub">${D.failed_past_due||0} failed/past due</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-lbl">Xero Receivable</div>
+        <div class="mini-val">${fmt$(D.xero_receivable)}</div>
+        <div class="mini-sub">${fmt$(D.xero_payable)} payable</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Upcoming Charges - ${thisWeek.label||'This Week'}</div>
+    ${topDays.map(d => `
+      <div class="cf-day">
+        <span class="cf-date">${d.day} ${d.date.slice(5)}</span>
+        <span class="cf-charges">${d.charges} charge${d.charges!==1?'s':''}</span>
+        <span class="cf-amount">${fmt$(d.amount)}</span>
+      </div>
+    `).join('')}
+    <div style="margin-top:8px;font-size:12px;color:rgba(251,248,243,0.4);">Week total: <strong style="color:var(--gold)">${fmt$(thisWeek.total)}</strong></div>
+    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Churn Scenarios (Hormozi Model)</div>
+    <div class="metric-row">
+      ${(D.hormozi?.churn_scenarios||[]).map(s => `
+        <div class="mini-card">
+          <div class="mini-lbl">${s.emoji} ${s.label}</div>
+          <div class="mini-val">${fmt$(s.mrr_ceiling)}</div>
+          <div class="mini-sub">${fmtPct(s.churn_rate*100)} churn · ${s.steady_state_families} families · ${s.lifetime_months}mo LTV</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+// ─── ADS ───
+function getAdsPreview() {
+  return `CPBC ${fmt$(D.cpbc_mtd)} · ${fmt$(D.meta_spend_mtd)} spend`;
+}
+function renderAds() {
+  const el = document.getElementById('content-ads');
+  el.innerHTML = `
+    <div class="metric-row triple">
+      <div class="mini-card">
+        <div class="mini-lbl">CPBC</div>
+        <div class="mini-val" style="color:var(--green-bright)">${fmt$(D.cpbc_mtd)}</div>
+        <div class="mini-sub">Cost per booked call</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-lbl">Meta Spend MTD</div>
+        <div class="mini-val">${fmt$(D.meta_spend_mtd)}</div>
+        <div class="mini-sub">${D.booked_calls_mtd||0} booked calls</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-lbl">NDIS Revenue</div>
+        <div class="mini-val">${fmt$(D.ndis_total)}</div>
+        <div class="mini-sub">Total NDIS billing</div>
+      </div>
+    </div>
+    <div class="placeholder" style="margin-top:16px;">Hook performance & ROAS by ad - coming soon</div>
+  `;
+}
+
+// ─── FE PIPELINE ───
+function renderFE() {
+  const el = document.getElementById('content-fe-pipeline');
+  el.innerHTML = `<div class="placeholder">FE pipeline data source not yet connected. Check back soon.</div>`;
+}
+
+// ─── TODAY ───
+function getTodayDate() {
+  const d = new Date();
+  return d.toLocaleDateString('en-AU', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+}
+function renderToday() {
+  const el = document.getElementById('content-today');
+  el.innerHTML = `
+    <div style="font-size:16px;font-weight:600;margin-bottom:12px;">${getTodayDate()}</div>
+    <div class="metric-row">
+      <div class="mini-card">
+        <div class="mini-lbl">DC Calls Today</div>
+        <div class="mini-val">${C.calls_today||0}</div>
+        <div class="mini-sub">${C.calls_today===0?'No calls scheduled':'Check HubSpot'}</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-lbl">Cash 7 Day</div>
+        <div class="mini-val">${fmt$(D.cash_7d)}</div>
+        <div class="mini-sub">Last 7 days collected</div>
+      </div>
+    </div>
+    <div class="placeholder" style="margin-top:12px;">Connect calendar for live schedule view</div>
+  `;
+}
+
+// ─── LEO'S LAB ───
+function renderLeo() {
+  const el = document.getElementById('content-leo-lab');
+  
+  // Pull from morning-lab.json if available, otherwise use defaults
+  const labItems = (ML && ML.items) ? ML.items : [];
+  const greeting = (ML && ML.greeting) ? ML.greeting : 'Good morning, Harry.';
+  const actions = (ML && ML.leo_actions) ? ML.leo_actions : [];
+  
+  const items = labItems.length > 0 ? labItems.map((item, idx) => ({
+    num: idx + 1,
+    emoji: item.emoji || '💡',
+    tag: item.tag || '',
+    text: item.headline,
+    detail: item.detail
+  })) : [
+    { num: 1, emoji: '📧', tag: 'capacity', text: "Recovery email sent to 1,895 leads. Watch for /start page conversions today.", detail: "If 2% convert at $111, that's 38 deposits without a single DC call." },
+    { num: 2, emoji: '🔄', tag: 'ads', text: "H14-B1 (best ad, 5.1x ROAS) is still paused.", detail: "Every day it's off costs ~$350 in missed revenue." },
+    { num: 3, emoji: '⏰', tag: 'team', text: "Tom is job hunting. Make the offer before someone else does.", detail: "5 DCs/week at 50% close = 10 new families/month potential." },
+    { num: 4, emoji: '🎓', tag: 'growth', text: "Melbourne Uni: 2,400 psych students. One email = mentor pipeline.", detail: "1% conversion = 24 mentors/year across 4 unis." },
+    { num: 5, emoji: '🔬', tag: 'strategy', text: "$111 micro-commitment might be your permanent funnel.", detail: "Peloton, CrossFit, F45 all use this model. You're already doing it." }
+  ];
+
+  el.innerHTML = `
+    <div class="leo-greeting">Good morning, <strong>Harry.</strong></div>
+    ${items.map(i => `
+      <div class="leo-item" onclick="this.querySelector('.leo-item-detail').classList.toggle('show')">
+        <div class="leo-item-num">${i.emoji} ${i.tag ? '<span style="background:rgba(200,169,81,0.15);padding:2px 8px;border-radius:4px;font-size:9px;letter-spacing:1px;">' + escHtml(i.tag.toUpperCase()) + '</span>' : 'INSIGHT ' + i.num}</div>
+        <div class="leo-item-text">${escHtml(i.text)}</div>
+        <div class="leo-item-detail">${escHtml(i.detail)}<div style="font-size:10px;color:rgba(251,248,243,0.3);margin-top:8px;">Click to collapse</div></div>
+      </div>
+    `).join('')}
+    ${actions.length > 0 ? `
+      <div style="margin-top:16px;padding:12px 16px;background:rgba(16,71,145,0.1);border:1px solid rgba(16,71,145,0.2);border-radius:10px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--navy);text-transform:uppercase;margin-bottom:8px;">What Leo's Working On Today</div>
+        ${actions.map(a => `<div style="font-size:12px;color:rgba(251,248,243,0.5);padding:3px 0;">→ ${escHtml(a)}</div>`).join('')}
+      </div>
+    ` : ''}
+  `;
+}
+
+// ─── YESTERDAY'S SCORECARD ───
+function renderScorecard() {
+  const el = document.getElementById('content-scorecard');
+  el.innerHTML = `
+    <div class="metric-row">
+      <div class="mini-card">
+        <div class="mini-lbl">Calls Scored</div>
+        <div class="mini-val">${I.summary?.total_scored||0}</div>
+        <div class="mini-sub">Across all reps</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-lbl">Avg Score</div>
+        <div class="mini-val">${(I.summary?.avg_overall_score||0).toFixed(1)}</div>
+        <div class="mini-sub">${I.score_distribution?Object.entries(I.score_distribution).map(([k,v])=>k.replace('_',': ')+' = '+v).join(', '):''}</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Key Stats</div>
+    <div class="flag-card flag-amber"><span class="flag-icon">📊</span><div>Close rate: <strong>${fmtPct(I.summary?.overall_close_rate||0)}</strong> - ${I.summary?.total_closes||0} closes from ${I.summary?.total_scored||0} scored calls</div></div>
+    ${I.summary?.lucky_closes?`<div class="flag-card flag-red"><span class="flag-icon">🍀</span><div><strong>${I.summary.lucky_closes}</strong> lucky close${I.summary.lucky_closes>1?'s':''} detected - high churn risk on these</div></div>`:''}
+    ${SC && SC.wins ? `
+      <div style="font-size:11px;color:var(--green-bright);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">✅ Wins</div>
+      ${SC.wins.map(w => `<div style="font-size:12px;color:rgba(251,248,243,0.6);padding:4px 0;">→ ${escHtml(w)}</div>`).join('')}
+    ` : ''}
+    ${SC && SC.misses ? `
+      <div style="font-size:11px;color:var(--red);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">❌ Misses</div>
+      ${SC.misses.map(m => `<div style="font-size:12px;color:rgba(251,248,243,0.6);padding:4px 0;">→ ${escHtml(m)}</div>`).join('')}
+    ` : ''}
+    ${SC && SC.carry_forwards ? `
+      <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">📋 Carry Forward</div>
+      ${SC.carry_forwards.map(cf => `<div style="font-size:12px;color:rgba(251,248,243,0.6);padding:4px 0;">→ ${escHtml(cf)}</div>`).join('')}
+    ` : ''}
+    ${SC && SC.one_thing_tomorrow ? `
+      <div style="margin-top:16px;padding:12px 16px;background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.2);border-radius:10px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Tomorrow's ONE THING</div>
+        <div style="font-size:14px;color:var(--cream);font-weight:600;">${escHtml(SC.one_thing_tomorrow)}</div>
+      </div>
+    ` : '<div class="placeholder" style="margin-top:12px;">Scorecard data loads from scorecard.json</div>'}
+  `;
+}
+
+// ─── CONSTRAINTS ───
+function renderConstraints() {
+  const grid = document.getElementById('constraint-grid');
+  const constraints = (OW && OW.functions) ? OW.functions.map(f => ({
+    fn: f.name,
+    owner: f.owner,
+    status: f.status,
+    constraint: f.constraint,
+    task: f.highest_leverage_task,
+    metric: f.key_metric
+  })) : [
+    { fn: 'Sales Engine', owner: 'Rye', status: 'amber', constraint: 'DC capacity - only 2 active closers', task: 'Get Tom on DCs & coach Anthony', metric: 'Close Rate: 36% (Anthony) / 90% (Rye)' },
+    { fn: 'Mentor Journey', owner: 'TBD', status: 'red', constraint: 'No single owner', task: 'Assign owner & connect Fireflies', metric: 'Session gap avg: needs measurement' },
+    { fn: 'Member Experience', owner: 'Brodie & Norri', status: 'amber', constraint: '63% churned never got a mentor', task: 'Tighten activation to <7 days', metric: 'Close-to-W1: ~59%' },
+    { fn: 'Brand & Content', owner: 'Harry', status: 'green', constraint: 'Content bottlenecked on Harry', task: 'Batch-produce from newsletters', metric: '18 newsletters drafted' },
+  ];
+
+  const statusColor = { green: 'var(--green-bright)', amber: 'var(--amber)', red: 'var(--red)' };
+  grid.innerHTML = constraints.map(c => `
+    <div class="c-card" style="border-left:3px solid ${statusColor[c.status]||'var(--amber)'};">
+      <div class="c-card-fn">${c.fn}</div>
+      <div class="c-card-owner">${c.owner}</div>
+      ${c.metric ? `<div style="font-size:11px;color:var(--gold);margin:4px 0;">${escHtml(c.metric)}</div>` : ''}
+      <div class="c-card-constraint">${c.constraint}</div>
+      <div class="c-card-task"><strong>Highest leverage:</strong> ${c.task}</div>
+    </div>
+  `).join('');
+}
+
+function renderOwnership() {
+  const grid = document.getElementById('ownership-grid');
+  const items = [
+    { fn: 'Sales Engine', name: 'Rye', status: 'amber', metric: '40% close rate' },
+    { fn: 'DC Operations', name: 'Anthony', status: 'green', metric: 'Avg 5.96 score' },
+    { fn: 'Member Experience', name: 'Brodie & Norri', status: 'amber', metric: '60 active families' },
+    { fn: 'Brand & Content', name: 'Harry', status: 'red', metric: 'H14-B1 paused' },
+    { fn: 'Mentor Pipeline', name: 'TBD', status: 'red', metric: 'No owner assigned' },
+    { fn: 'Finance & Ops', name: 'Harry', status: 'green', metric: fmt$(D.balance_total) + ' balance' },
+  ];
+
+  grid.innerHTML = items.map(i => `
+    <div class="own-card">
+      <div class="own-status ${i.status}"></div>
+      <div class="own-info">
+        <div class="own-fn">${i.fn}</div>
+        <div class="own-name">${i.name}</div>
+      </div>
+      <div class="own-metric">${i.metric}</div>
+    </div>
+  `).join('');
+}
+
+// ─── VIEW TOGGLE ───
+function setView(view) {
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('btn-' + view).classList.add('active');
+  document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('view-' + view).classList.add('active');
+  localStorage.setItem('mc-morning-view', view);
+}
+
+// Restore view
+const savedView = localStorage.getItem('mc-morning-view');
+if (savedView) setView(savedView);
+
+// ─── THOUGHT CAPTURE ───
+function toggleThought() {
+  document.getElementById('thought-overlay').classList.toggle('open');
+  if (document.getElementById('thought-overlay').classList.contains('open')) {
+    document.getElementById('thought-input').focus();
+    renderThoughts();
+  }
+}
+function closeThoughtOutside(e) {
+  if (e.target === e.currentTarget) toggleThought();
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('thought-overlay').classList.remove('open');
+  }
+});
+
+function getThoughts() {
+  return JSON.parse(localStorage.getItem('mc-thoughts') || '[]');
+}
+
+function saveThought(text) {
+  if (!text.trim()) return;
+  const thoughts = getThoughts();
+  thoughts.unshift({ text: text.trim(), ts: new Date().toISOString() });
+  if (thoughts.length > 50) thoughts.length = 50;
+  localStorage.setItem('mc-thoughts', JSON.stringify(thoughts));
+  renderThoughts();
+  showToast('Thought saved');
+}
+
+function renderThoughts() {
+  const list = document.getElementById('thought-list');
+  const thoughts = getThoughts().slice(0, 5);
+  list.innerHTML = thoughts.length ? thoughts.map(t => {
+    const d = new Date(t.ts);
+    const timeStr = d.toLocaleDateString('en-AU', {day:'numeric',month:'short'}) + ' ' + d.toLocaleTimeString('en-AU', {hour:'2-digit',minute:'2-digit'});
+    return `<div class="thought-item"><div class="thought-item-time">${timeStr}</div>${escHtml(t.text)}</div>`;
+  }).join('') : '<div style="font-size:11px;color:rgba(251,248,243,0.2);padding:8px 0;">No thoughts captured yet</div>';
+}
+
+document.getElementById('thought-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    saveThought(this.value);
+    this.value = '';
+  }
+});
+
+// Constraint input save
+document.getElementById('constraint-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    const val = this.value.trim();
+    if (val) {
+      localStorage.setItem('mc-today-focus', JSON.stringify({ text: val, ts: new Date().toISOString() }));
+      showToast('Focus saved');
+    }
+  }
+});
+// Restore
+const savedFocus = JSON.parse(localStorage.getItem('mc-today-focus') || 'null');
+if (savedFocus) document.getElementById('constraint-input').value = savedFocus.text;
+
+// ─── CLOCK ───
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent = now.toLocaleTimeString('en-AU', { hour:'2-digit', minute:'2-digit' });
+}
+updateClock();
+setInterval(updateClock, 30000);
+
+// ─── TOAST ───
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// ─── INIT ───
+loadData();
+</script>
+</body>
+</html>

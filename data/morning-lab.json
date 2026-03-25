@@ -1,0 +1,48 @@
+{
+  "generated": "2026-03-26T07:00:00+11:00",
+  "greeting": "Good morning, Harry.",
+  "date_label": "Thursday, March 26",
+  "items": [
+    {
+      "type": "insight",
+      "emoji": "📧",
+      "headline": "Recovery email went to 1,895 leads last night",
+      "detail": "If even 2% convert on the $111 deposit, that's 38 families without a single DC call. The /start page is live. Watch HubSpot today for deposit notifications - any conversion here is pure gravy since these leads had zero path to buy before.",
+      "tag": "capacity"
+    },
+    {
+      "type": "counter_intuitive",
+      "emoji": "🔄",
+      "headline": "Your best ad (H14-B1) is still paused",
+      "detail": "H14-B1 has a 5.1x ROAS - $1,770 per member, $17 CPBC. Every day it's off costs roughly $350 in missed revenue based on historical performance. It was paused March 22 and nobody's turned it back on. Worth reactivating even at reduced spend.",
+      "tag": "ads"
+    },
+    {
+      "type": "leverage",
+      "emoji": "⏰",
+      "headline": "Tom is job hunting right now",
+      "detail": "Every day you wait to make the offer is a day he might accept something else. If he could take 5 DCs per week starting next week at a 50% close rate, that's 10 new families per month. The cost of one week's delay: potentially $9,400/month in recurring revenue you didn't capture.",
+      "tag": "team"
+    },
+    {
+      "type": "big_idea",
+      "emoji": "🎓",
+      "headline": "Melbourne Uni has 2,400 psychology students",
+      "detail": "Even a 1% conversion to mentors = 24 new mentors per year. One email to the psych department's student coordinator could solve your mentor pipeline for 2026. Deakin, Monash, and RMIT have similar programs. Total addressable mentor pool across 4 unis: ~8,000 students.",
+      "tag": "growth"
+    },
+    {
+      "type": "research",
+      "emoji": "🔬",
+      "headline": "The $111 deposit might be your permanent funnel",
+      "detail": "The 'micro-commitment' pricing model you accidentally created for the capacity crisis follows the same pattern as Peloton ($250 deposit), CrossFit ($150 intro), and F45 ($50 trial). Companies using micro-commitments before the full price conversation see 20-40% higher lifetime value because the customer has already said yes once. You're already doing it - might not need to stop when capacity returns.",
+      "tag": "strategy"
+    }
+  ],
+  "leo_actions": [
+    "Monitoring HubSpot for /start page deposit conversions",
+    "Sales Manager v2 scoring active calls at 12pm, 4pm, 10pm",
+    "Building constraint tracker for MC",
+    "Reading remaining gold standard transcripts for coaching library"
+  ]
+}

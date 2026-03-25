@@ -1,37 +1,86 @@
 {
-  "last_updated": "2026-03-25T16:00:00+11:00",
+  "last_updated": "2026-03-25T22:00:00+11:00",
+  "pass": "deep_nightly",
   "reps": [
     {
       "rep": "Anthony",
-      "total_calls": 9,
-      "closes": 4,
-      "follow_ups": 5,
-      "avg_score": 5.93,
-      "close_rate": 44.4
+      "status": "active",
+      "calls_scored": 5,
+      "closes": 2,
+      "follow_ups": 3,
+      "avg_score": 5.96,
+      "close_rate": 40.0,
+      "e_score_avg": 2.2,
+      "i_score_avg": 3.0,
+      "p3_flag": false,
+      "improvement_area_short": "E (Emotional Labelling) \u2014 avg 2.2/5, bottom dimension across 4/5 calls. Consiste"
     },
     {
       "rep": "Rye",
-      "total_calls": 2,
+      "status": "active_coaching",
+      "calls_scored": 2,
       "closes": 0,
-      "follow_ups": 1,
+      "follow_ups": 2,
       "avg_score": 5.6,
-      "close_rate": 0.0
+      "close_rate": 0.0,
+      "e_score_avg": 2.0,
+      "i_score_avg": 2.5,
+      "p3_flag": true,
+      "improvement_area_short": "P3 Deepening (I=2.5 avg, E=2.0 avg) \u2014 both below the 3.0 threshold. Rye's openin"
     },
     {
       "rep": "Harry",
-      "total_calls": 1,
+      "status": "exited_dc",
+      "calls_scored": 1,
       "closes": 1,
       "follow_ups": 0,
       "avg_score": 5.5,
-      "close_rate": 100.0
+      "close_rate": 100.0,
+      "e_score_avg": 2.0,
+      "i_score_avg": 3.0,
+      "p3_flag": false,
+      "improvement_area_short": "N/A \u2014 exited DC role. Reference only."
     },
     {
       "rep": "Bailey",
-      "total_calls": 3,
+      "status": "active_commission",
+      "calls_scored": 3,
       "closes": 1,
       "follow_ups": 2,
       "avg_score": 3.37,
-      "close_rate": 33.3
+      "close_rate": 33.3,
+      "e_score_avg": 1.0,
+      "i_score_avg": 1.0,
+      "p3_flag": true,
+      "improvement_area_short": "CRITICAL: I Score = 1.0, E Score = 1.0 \u2014 no emotional deepening present in any s"
     }
-  ]
+  ],
+  "top_objections": [
+    {
+      "rank": 1,
+      "category": "partner_coparent",
+      "count": 3,
+      "avg_handling_grade": 3.0,
+      "note": "Most common objection this week. Wide range in handling quality \u2014 from Anthony's excellent Judith Lacey isolation (4/5) to Sophie Cuzzy cave (2/5). Needs consistent playbook application."
+    },
+    {
+      "rank": 2,
+      "category": "price_affordability",
+      "count": 3,
+      "avg_handling_grade": 2.3,
+      "note": "Worst-handled category this week. Beck Reside was genuinely unwinnable. Suzette Banks' financial barrier needed more exploration. Core miss: impact not cycled before price in any of these calls."
+    },
+    {
+      "rank": 3,
+      "category": "think_about_it",
+      "count": 2,
+      "avg_handling_grade": 2.5,
+      "note": "Both Anthony cases. Pattern: isolation starts but never completes. The '$111 is just raising your hand' de-risk frame was not used in either instance."
+    }
+  ],
+  "flags": {
+    "post_close_risk": "Jasmine Lund (Bailey/Mar21) \u2014 status: Call Objection. Brodie activation urgent.",
+    "pending_outcome": "Jo Kelly (Rye/Mar23) \u2014 outcome still pending. Score: 6.8. Check again Thu/Fri.",
+    "duplicate_records": "March 23 calls (Sophie Cuzzy, Leanne Black, Judith Lacey, Beck Reside) each have 2 Notion entries from separate scoring runs. Primary records used for profile calculations."
+  }
 }

@@ -1,0 +1,29 @@
+{
+  "generated": "2026-03-26T07:00:00+11:00",
+  "date": "2026-03-25",
+  "label": "Wednesday, March 25",
+  "wins": [
+    "Recovery email built & sent to 1,895 leads (capacity crisis response)",
+    "/start page live - direct deposit path for families who can't book a DC",
+    "Sales Manager v2 fully deployed - 6 crons running (transcript + scoring)",
+    "Kyan Steele FE agreement & invoice sent ($5,489)",
+    "18 newsletters written via Claude newsletter skill",
+    "Gold standard coaching library built from 5 real transcripts",
+    "Virtual tour Lovable prompt delivered"
+  ],
+  "misses": [
+    "Zapier still broken - 7+ Zaps down all day (Stripe cancels not syncing to HubSpot)",
+    "H14-B1 still paused (best performing ad by ROAS)",
+    "Fireflies session linking not yet set up",
+    "Portal parent-side & admin-side specs not started"
+  ],
+  "carry_forwards": [
+    "Tom conversation - make the offer",
+    "Rye uni deferral conversation",
+    "/start page v2 upgrades (DC script elements - Mirror Truth, Bridge, pivotal age)",
+    "Gold CTA on /book page",
+    "7-day automated email workflow (pending /start being fully upgraded)",
+    "Fix Zapier (critical - cancellation sync broken)"
+  ],
+  "one_thing_tomorrow": "Tom conversation + /start page upgrades live"
+}
