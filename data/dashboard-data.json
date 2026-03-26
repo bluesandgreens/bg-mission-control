@@ -1,19 +1,19 @@
 {
-  "generated": "2026-03-26T08:50:00+11:00",
+  "generated": "2026-03-26T12:00:18.153691",
   "active_families": 60,
-  "active_total": 73,
+  "active_total": 67,
   "paused": 7,
   "mrr": 41709.53,
-  "cash_7d": 37613.64,
-  "balance_available": 14395.47,
-  "balance_pending": 10165.09,
-  "balance_total": 24560.56,
-  "revenue_at_risk": 1058,
+  "cash_7d": 34796.13,
+  "balance_available": 14391.58,
+  "balance_pending": 10499.19,
+  "balance_total": 24890.77,
+  "revenue_at_risk": 1058.0,
   "failed_past_due": 6,
-  "meta_spend_mtd": 4992,
-  "booked_calls_mtd": 191,
-  "cpbc_mtd": 26.13,
-  "xero_receivable": 20785.05,
+  "meta_spend_mtd": 5008.84,
+  "booked_calls_mtd": 192,
+  "cpbc_mtd": 26.09,
+  "xero_receivable": 15797.05,
   "xero_payable": 27138.64,
   "ndis_total": 1837.0,
   "forecast_4wk": 25910.5,
@@ -22,9 +22,9 @@
     "steady_state_families": 100,
     "current_collecting": 60,
     "avg_rev_per_sub": 695.16,
-    "cac": 25.95,
+    "cac": 26.09,
     "ltv_current": 2041.0,
-    "roic_multiple": 78.7,
+    "roic_multiple": 78.2,
     "payback_days": 1.0,
     "retention_lever_1mo_annual": 500515.0,
     "churn_scenarios": [
@@ -65,8 +65,5 @@
         "mrr_ceiling": 208548.0
       }
     ]
-  },
-  "cpbc_7d": 36.27,
-  "closes_mtd": 56,
-  "cac_mtd": 89.14
+  }
 }
