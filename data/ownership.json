@@ -1,40 +1,40 @@
 {
-  "generated": "2026-03-26T08:50:00+11:00",
+  "generated": "2026-03-28T15:37:00+11:00",
   "functions": [
     {
       "name": "Sales Engine",
       "owner": "Rye",
-      "status": "red",
-      "constraint": "DC capacity critical — Anthony solo, Rye coaching-only, Tom not yet live. 7d CPBC hit $36.27 (above warning).",
-      "key_metric": "Close Rate: 36% (Anthony) | 191 BCs MTD at $26.13 CPBC",
-      "highest_leverage_task": "Call Tom today — one conversation unlocks DC capacity next week",
-      "team": ["Rye", "Anthony", "Tom (onboarding)"]
+      "status": "amber",
+      "constraint": "Tom starts Monday - DC capacity about to double. Anthony holding 40% close rate solo. Rye 0/3 closes but shifting to coaching role.",
+      "key_metric": "Close Rate: 40% (Anthony) | 194 BCs MTD at $26.94 CPBC | Tom starts Mon",
+      "highest_leverage_task": "Lock Tom's Monday start - Rye call for week 1 schedule, docs, contract",
+      "team": ["Rye", "Anthony", "Tom (starting Mon)"]
     },
     {
       "name": "Mentor Journey",
       "owner": "TBD",
       "status": "red",
-      "constraint": "No single owner — split across Harry/Brodie/mentors. 10 families with 8-10 day session gaps flagged.",
-      "key_metric": "10 session gap alerts this week (8+ days between sessions)",
-      "highest_leverage_task": "Brodie to call the 10 session-gap families today — before they become churn",
+      "constraint": "No single owner. Connection Assessment now available but not yet integrated into mentor matching flow.",
+      "key_metric": "Session gap alerts need re-check (Leo was down 46hrs)",
+      "highest_leverage_task": "Integrate Connection Assessment archetypes into mentor onboarding briefing",
       "team": ["Mentors", "Brodie (activation)"]
     },
     {
       "name": "Member Experience",
       "owner": "Brodie & Norri",
       "status": "amber",
-      "constraint": "6 past-due subs ($1,058/cycle at risk). Zapier broken = phantom active counts in HubSpot.",
-      "key_metric": "60 collecting | 7 paused | 6 past due | $41.7K MRR",
-      "highest_leverage_task": "Fix Zapier HubSpot auth (10 min) — then true-up active member count",
+      "constraint": "4 past-due subs ($820/cycle at risk). 60 collecting, 8 paused. Zapier still broken.",
+      "key_metric": "60 collecting | 8 paused | 4 past due | $41.4K MRR",
+      "highest_leverage_task": "Fix Zapier HubSpot auth + true-up active member count",
       "team": ["Brodie", "Norri"]
     },
     {
       "name": "Brand & Content",
       "owner": "Harry",
       "status": "green",
-      "constraint": "Content engine proving out — 18 newsletters, /start page live, recovery email sent",
-      "key_metric": "1,895 leads emailed | /start page deposit conversions TBD",
-      "highest_leverage_task": "Monitor /start page conversions today — if 2%+ convert, scale the direct path",
+      "constraint": "18 newsletters written, portal sprint done, newsletter skill built. Content engine operational.",
+      "key_metric": "18 newsletters in Notion | Portal upgraded (45 commits) | Circle MVP April W2",
+      "highest_leverage_task": "Review 18 newsletters - Harry's edits calibrate the skill for auto-generation",
       "team": ["Harry", "Leo"]
     }
   ]

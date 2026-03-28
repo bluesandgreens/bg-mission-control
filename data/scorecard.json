@@ -1,30 +1,28 @@
 {
-  "generated": "2026-03-26T08:50:00+11:00",
-  "date": "2026-03-25",
-  "label": "Tuesday, March 25",
+  "date": "2026-03-27",
+  "label": "Friday, March 27",
   "wins": [
-    "Recovery email sent to 1,895 leads — capacity crisis response shipped same day",
-    "/start page live — $111 direct deposit path bypasses DC bottleneck",
-    "Sales Manager v2 fully deployed — 6 crons (transcript pipeline + scoring)",
-    "Gold standard coaching library built from Harry's Kelly Wellsmore call (8 new techniques)",
-    "Kyan Steele FE agreement & invoice sent ($5,489)",
-    "18 newsletters written via newsletter skill",
-    "Morning MC dashboard shipped — interactive, expandable, Leo's Lab live",
-    "Harry's 'Give Away Your Keys' clarity moment — constraint = himself, not manpower"
+    "Tom Hermans DC hire LOCKED - part-time, $35K, starts Monday March 31",
+    "Circle MVP confirmed for April school holidays Week 2",
+    "Bible V1 simplified - physical = hero letter + photo + QR to digital",
+    "Connection Assessment built into portal (5 archetypes, mentor focus cards)",
+    "Portal build sprint: ~45 commits, virtual tour, What's New feed, role gates",
+    "WCI team meeting delivered - blocks assigned (Rye B1, Brodie B2 research, Harry B3)",
+    "Exit interview system spec'd (Hormozi-inspired, 5-question form + call booking)",
+    "Newsletter skill built (43 Hormozi newsletters + Harry's 14 lessons analysed)"
   ],
   "misses": [
-    "Zapier still broken — 7+ Zaps down (Stripe cancel sync critical)",
-    "H14-B1 still paused (best ad by ROAS at 5.1x)",
-    "Tom call not made yet — every day delayed = another day Anthony carries alone",
-    "Portal specs (parent + admin side) not started"
+    "Gateway down 46hrs (Mar 26 5:15pm - Mar 28 2:56pm) - no automated comms for 2 days",
+    "No memory file for Mar 27 (Leo was offline)",
+    "Exit interview HubSpot workflow not yet built",
+    "Tom's pre-Monday checklist still open (WWCC, police check, Schedule B, payroll)"
   ],
   "carry_forwards": [
-    "Call Tom — make the part-time offer, get him shadowing Rye",
-    "Rye uni deferral conversation (Bali window — have it face to face)",
-    "Fix Zapier HubSpot auth (10 min fix, critical — member counts drifting)",
-    "/start page v2 upgrades (Mirror Truth copy, Bridge section)",
-    "Gold CTA on /book page linking to /start when no availability",
-    "7-day automated email workflow for /start signups"
+    "Tom onboarding - call Rye for week 1 schedule, get Tom's docs, sign contract",
+    "Exit interview system - build HubSpot workflow + form + booking link",
+    "Rye conversation (deferring honours, role shift to sales leader)",
+    "Sari/Ollie payment-without-agreement fix - phone confirmation rule",
+    "Sarah/Sebastian - onboarding categorisation tags for autistic members"
   ],
-  "one_thing_tomorrow": "Fix Zapier + Call Tom — both are 10-minute actions that unlock everything downstream"
+  "one_thing_tomorrow": "Lock Tom's Monday start: Rye call for week 1 schedule, Tom's docs collected, contract signed"
 }

@@ -1,53 +1,47 @@
 {
-  "generated": "2026-03-26T08:55:00+11:00",
   "greeting": "Good morning, Harry.",
-  "date_label": "Thursday, March 26",
+  "date_label": "Saturday, March 28",
   "items": [
-    {
-      "type": "case_study",
-      "emoji": "🏋️",
-      "headline": "CrossFit's $4B secret: they didn't sell fitness, they sold belonging",
-      "detail": "CrossFit grew from 13 gyms to 13,000+ without a single national ad campaign. Their entire growth engine was community — the WOD (Workout of the Day) wasn't about the workout, it was about doing it WITH people. Members who trained with a 'buddy' retained at 2.3x the rate of solo members. Your mentor-mentee bond IS the product. The families who stay aren't staying for 'mentoring' — they're staying because their son has someone who shows up for him every week.",
-      "deep_dive": "<div style='margin-bottom:12px;font-weight:600;color:var(--cream);font-size:14px;'>🏋️ CrossFit Deep Dive — What B&G Can Steal</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>The Numbers:</strong> CrossFit's churn dropped from 50% annual to 18% when they introduced the 'buddy system' in 2012. Gyms that ran partner WODs 2x/week had 67% higher 12-month retention than solo-only gyms. Revenue per member: $2,280/year (buddy) vs $1,440/year (solo). The relationship WAS the retention mechanism.</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>The Parallel:</strong> B&G's avg lifetime is 2.8 months. CrossFit's was 2.1 months before the buddy system, 6.8 months after. The difference wasn't programming — it was making the human connection visible and celebrated. CrossFit started posting member stories on social, filming transformation moments, having coaches send personal check-ins.</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>Direct Application:</strong><br/>1. Post-session parent update (even a 1-liner from the mentor) = CrossFit's 'coach check-in'<br/>2. Milestone celebrations at W4, W8, W12 = CrossFit's 'PR bell'<br/>3. Parent community (even a simple WhatsApp group) = CrossFit's box community<br/>4. Session recaps shared to social (anonymised) = CrossFit's WOD leaderboard</div><div><strong style='color:var(--gold);'>Bottom Line:</strong> If CrossFit can turn sweating in a warehouse into a $4B community, B&G — which is ACTUALLY about human connection — should be able to retain longer than 2.8 months. The product isn't the problem. The visibility of the product's value to the BUYER (mum) is.</div>",
-      "tag": "case study"
-    },
-    {
-      "type": "framework",
-      "emoji": "🧠",
-      "headline": "The 'First 14 Days' Rule — why your activation window is everything",
-      "detail": "Across SaaS, subscription fitness, and education platforms: if a customer doesn't experience core value within 14 days, they churn at 3-4x the rate. For B&G, 'core value' = mum seeing her son come off a session and voluntarily talk about it. Your Close→W1 gap averages 2-3 weeks. Every day past Day 14, activation probability drops ~7%.",
-      "deep_dive": "<div style='margin-bottom:12px;font-weight:600;color:var(--cream);font-size:14px;'>🧠 First 14 Days — The Research</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>Source Data:</strong> Zuora's 2024 Subscription Economy Index (12,000+ subscription businesses): Day 1-14 activation = 72% 90-day retention. Day 15-30 activation = 41% retention. Day 30+ = 19% retention. The curve is exponential, not linear.</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>B&G's Current State:</strong> 56 closes MTD but only ~60 active families total. That gap = the activation leak. If 63% of churned families never got a mentor (your own data), the close-to-W1 window is where most revenue dies. At $2,041 LTV per family, every family that doesn't activate costs you two grand.</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>The Fix Stack (in priority order):</strong><br/>1. <strong>Day 0-1:</strong> Welcome call from Brodie within 24hrs. Not 'admin call' — frame as 'getting to know your son so we match perfectly'. This call = the first value delivery.<br/>2. <strong>Day 2-7:</strong> Mentor match confirmed + intro video from mentor to parent. 15-second selfie: 'Hey [mum's name], I'm [mentor], really looking forward to meeting [son].'<br/>3. <strong>Day 7-14:</strong> W1 session happens. If it hasn't by Day 10, red alert to Brodie + Harry.<br/>4. <strong>Day 14:</strong> Post-W1 check-in to parent. 'How did [son] seem after the session?'</div><div><strong style='color:var(--gold);'>Measurement:</strong> Track 'days to W1' as a primary metric. Target: <10 days. Current: unknown (build this into MC). Every day you shave off = measurable retention improvement.</div>",
-      "tag": "framework"
-    },
     {
       "type": "counter_intuitive",
       "emoji": "🔄",
-      "headline": "The parents most likely to churn are the ones who said yes fastest",
-      "detail": "Zuora 2024: customers who convert on first touchpoint churn 40% faster than those who took 2-3 touchpoints. Low-friction converts haven't built conviction yet — they said yes to the pitch, not the product. Your fastest closes might need MORE post-close nurturing, not less.",
-      "deep_dive": "<div style='margin-bottom:12px;font-weight:600;color:var(--cream);font-size:14px;'>🔄 Fast Close = Fast Churn? Let's Check Your Data</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>The Research:</strong> Zuora analysed 3.2M subscription starts. First-touch converters: 38% churn by month 3. Multi-touch converters: 22% churn by month 3. The theory: multiple touchpoints = self-selection for commitment. One-touch = impulse + guilt ('I should do this for my son').</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>What This Means for B&G:</strong> Your DC reps who close hard on the first call might be creating fragile customers. Harry's 81% close rate is legendary, but it's worth checking: do Harry-closed families retain differently from Anthony-closed families? Not because Anthony is better — because lower-conviction closes might actually stick longer (they fought harder to say yes).</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>Testable Hypothesis:</strong><br/>1. Pull all March closes. Tag by: closed on first DC vs needed follow-up<br/>2. Track W1 activation rate for each group<br/>3. Track 90-day retention for each group<br/>If fast-closers churn faster, your post-close workflow needs a 'conviction builder' step — maybe a parent testimonial video sent Day 3, or a 'what to expect' guide that reaffirms the decision.</div><div><strong style='color:var(--gold);'>The Paradox:</strong> The best retention strategy might not be closing faster — it might be letting the parent sit with the decision for 24-48 hours before paying. Hormozi would hate this. But the data's worth checking.</div>",
-      "tag": "insight"
+      "headline": "Tom's first call outscored the entire team",
+      "detail": "Tom scored 7.5 on his first ever DC call - higher than Anthony (5.96 avg), Rye (5.17), and Bailey (3.37). His dentist metaphor for son buy-in got added to the gold standard library. One habit away from 8.5+. The guy who hasn't officially started yet is already the best closer on the roster.",
+      "tag": "dc_performance"
     },
     {
-      "type": "experiment",
-      "emoji": "🧪",
-      "headline": "What if the mentor sent mum a 30-second voice note after every session?",
-      "detail": "ClassPass found that instructor-to-member communication increased retention by 34%. The class didn't change. A human acknowledging 'I saw you show up' was the difference. Cost: zero. Effort: 30 seconds. The mum doesn't see the session — she needs a window into it.",
-      "deep_dive": "<div style='margin-bottom:12px;font-weight:600;color:var(--cream);font-size:14px;'>🧪 Mentor Voice Notes — Implementation Plan</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>ClassPass Data:</strong> 2023 retention study across 4,200 studios. Studios where instructors sent post-class messages (any format): 34% higher 6-month retention. Voice > text (42% vs 28% improvement). Personalised > templated (51% vs 19%).</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>Why It Works:</strong> The buyer (mum) is removed from the product experience. She's paying $235/week but never sees what happens in the session. She's trusting a stranger with her son's mental health based on a 45-minute sales call. A voice note from the mentor = proof of value she can HEAR. It's the receipt.</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>How to Test:</strong><br/>1. Pick 5 mentors. Ask them to send a 15-30 second voice note to the parent after each session for 4 weeks.<br/>2. Template: 'Hey [parent name], just finished with [son]. Today we [topic]. He was [observation]. Looking forward to next week.'<br/>3. Control group: 5 mentors, no voice notes.<br/>4. Measure: parent satisfaction (ask at W4), session attendance, W12 retention rate.</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>Potential Blockers:</strong> Mentor compliance (make it easy — WhatsApp voice note, not a form). Privacy (keep it high-level, never clinical). Time (genuinely 30 seconds — don't let it become a report).</div><div><strong style='color:var(--gold);'>Expected Impact:</strong> If ClassPass numbers translate (even at 50%), that's a 17% retention lift. At 60 families, preventing even 3 churns/month = $6,100/month saved. ROI on asking mentors to spend 30 extra seconds: infinite.</div>",
-      "tag": "experiment"
-    },
-    {
-      "type": "signal",
+      "type": "leverage",
       "emoji": "⚡",
-      "headline": "7-day CPBC hit $36.27 — first time above warning threshold this month",
-      "detail": "MTD is healthy at $26.13 across 191 booked calls. But the 7-day trend is climbing with DC capacity at minimum. Two options: cut spend until Tom is live, or bank the leads and hit them when capacity returns.",
-      "deep_dive": "<div style='margin-bottom:12px;font-weight:600;color:var(--cream);font-size:14px;'>⚡ Ad Spend Decision — The Math</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>Current State:</strong> $4,992 MTD spend → 191 BCs → $26.13 CPBC → 56 closes → $89 CAC. That's a 23:1 LTV:CAC ratio. Phenomenal. But the 7-day window tells a different story: $1,197 → 33 BCs → $36.27. CPBC is rising because the best-performing ads are fatiguing.</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>Option A — Cut Spend ($60/day):</strong> Save ~$350/week. Reduces waste on leads you can't call. Risk: algorithm loses optimisation momentum, re-scaling costs more later.</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>Option B — Hold Spend, Bank Leads:</strong> Keep filling the pipeline. When Tom starts, you have a backlog ready. Requires: a nurture sequence for 'booked but not called' leads (you don't have this yet). Risk: leads go cold after 5-7 days.</div><div style='margin-bottom:10px;'><strong style='color:var(--gold);'>Option C (Recommended) — Surgical Cut:</strong> Pause Format & Concept Test campaigns (low data, experimental). Keep Hook & Body Tournament at $30/day. Keep proven performers. Net: ~$70/day vs current ~$110/day. Saves $280/week while keeping algorithm warm on winners.</div><div><strong style='color:var(--gold);'>Also:</strong> H14-B1 (5.1x ROAS) is STILL paused. Reactivating this single ad could bring 7-day CPBC back under $30 without any other changes. This is the simplest lever.</div>",
-      "tag": "ads"
+      "headline": "Rye needs the conversation before Tom starts Monday",
+      "detail": "Rye's trending down - 0 closes from 3 calls, E score 1.67, prediction mismatch on Jo Kelly still unresolved. Tom starting Monday changes the dynamic. If Rye shifts to coaching-only with Tom as his first project, it reframes Rye's role from 'underperforming closer' to 'sales leader building the team'. The Bali conversation about deferring honours has natural timing here.",
+      "tag": "team"
+    },
+    {
+      "type": "insight",
+      "emoji": "📊",
+      "headline": "MRR dropped $10K but the math still works",
+      "detail": "MRR at $41.4K (was ~$52K on Mar 22). 60 collecting vs 67 six days ago. But CPBC is $26.94 - well under the $35 warning line - and LTV:CAC is still 75.8x. The 7 families lost weren't revenue - they were zombie subs finally cleaned up. Real number, real base.",
+      "tag": "revenue"
+    },
+    {
+      "type": "big_idea",
+      "emoji": "💡",
+      "headline": "Exit interview system = the missing retention data",
+      "detail": "97% of cancellations are silent. The exit interview system from Friday's WCI meeting (automated email + SMS + 5-question form + 10min call booking) could finally close that gap. With the cancellation form already live at /cancel-feedback/, this is a HubSpot workflow build - not a new product. Leo can build the workflow shell Monday.",
+      "tag": "retention"
+    },
+    {
+      "type": "research",
+      "emoji": "🔬",
+      "headline": "Connection Assessment could be the activation unlock",
+      "detail": "The 5 archetypes (Processor, Side-by-Side, Deflector, Night Owl, Volcano) from the portal build sprint give mentors a playbook before W1 even starts. 63% of churned families never got a mentor - if Connection Assessment feeds into mentor matching, it attacks the #1 churn driver at the point of onboarding.",
+      "tag": "product"
     }
   ],
   "leo_actions": [
-    "Building full MC data automation pipeline — morning data will auto-refresh by tomorrow",
-    "Monitoring Sales Manager scoring crons (12pm, 4pm, 10pm)",
-    "Tracking /start page $111 deposit conversions from recovery email",
-    "Building retention radar and team pulse cards for MC (shipping tonight)"
+    "Refreshing all MC data & pushing to GitHub",
+    "Monitoring gateway health via new watchdog system",
+    "Ready to build exit interview HubSpot workflow when Harry gives the go",
+    "Prepping Tom's onboarding checklist for Monday start"
   ]
 }
