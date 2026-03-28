@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-28T15:13:00+11:00",
-  "pass": "nightly_deep_scoring",
+  "last_updated": "2026-03-28T15:41:00+11:00",
+  "pass": "afternoon_summary_no_dcs",
   "reps": [
     {
       "rep": "Anthony",
@@ -14,7 +14,7 @@
       "i_score_avg": 3.0,
       "p3_flag": false,
       "trend": "stable",
-      "improvement_area_short": "E (Emotional Labelling) — avg 2.2/5. Uses generic labels instead of parent's exact words. GREEN LABEL DRILL active."
+      "improvement_area_short": "E (Emotional Labelling) \u2014 avg 2.2/5. Uses generic labels instead of parent's exact words. GREEN LABEL DRILL active."
     },
     {
       "rep": "Rye",
@@ -42,7 +42,7 @@
       "i_score_avg": 3.0,
       "p3_flag": false,
       "trend": "n/a",
-      "improvement_area_short": "N/A — exited DC role. Reference only."
+      "improvement_area_short": "N/A \u2014 exited DC role. Reference only."
     },
     {
       "rep": "Bailey",
@@ -70,7 +70,7 @@
       "i_score_avg": 3.0,
       "p3_flag": false,
       "trend": "new",
-      "improvement_area_short": "P3 fear bomb cycling — single gap. 'My biggest concern is that it kills him' → pivoted instead of cycling. One habit from 8.5+."
+      "improvement_area_short": "P3 fear bomb cycling \u2014 single gap. 'My biggest concern is that it kills him' \u2192 pivoted instead of cycling. One habit from 8.5+."
     }
   ]
 }
