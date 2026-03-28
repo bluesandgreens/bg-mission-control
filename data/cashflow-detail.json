@@ -1,9 +1,9 @@
 {
-  "generated": "2026-03-28T18:00:03.489748",
+  "generated": "2026-03-29T06:35:00.933056",
   "weeks": [
     {
-      "label": "Week 1 (Mar 28 - Apr 03)",
-      "total": 4121.0,
+      "label": "Week 1 (Mar 29 - Apr 04)",
+      "total": 5283.0,
       "days": [
         {
           "date": "2026-03-30",
@@ -244,13 +244,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/141769433122"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 2 (Apr 04 - Apr 10)",
-      "total": 5110.0,
-      "days": [
+        },
         {
           "date": "2026-04-04",
           "day": "Sat",
@@ -278,7 +272,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/126700344428"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 2 (Apr 05 - Apr 11)",
+      "total": 3948.0,
+      "days": [
         {
           "date": "2026-04-05",
           "day": "Sun",
@@ -414,8 +414,8 @@
       ]
     },
     {
-      "label": "Week 3 (Apr 11 - Apr 17)",
-      "total": 4628.0,
+      "label": "Week 3 (Apr 12 - Apr 18)",
+      "total": 6436.0,
       "days": [
         {
           "date": "2026-04-13",
@@ -490,13 +490,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207777789452"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 4 (Apr 18 - Apr 24)",
-      "total": 6961.5,
-      "days": [
+        },
         {
           "date": "2026-04-18",
           "day": "Sat",
@@ -514,7 +508,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/181238625886"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 4 (Apr 19 - Apr 25)",
+      "total": 5153.5,
+      "days": [
         {
           "date": "2026-04-19",
           "day": "Sun",
