@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-28T14:57:01.194072",
+  "generated": "2026-03-28T15:05:20.200964",
   "active_families": 60,
   "active_total": 68,
   "paused": 8,
@@ -10,7 +10,7 @@
   "balance_total": 35351.15,
   "revenue_at_risk": 820.0,
   "failed_past_due": 4,
-  "meta_spend_mtd": 5226.54,
+  "meta_spend_mtd": 5226.87,
   "booked_calls_mtd": 194,
   "cpbc_mtd": 26.94,
   "xero_receivable": 15653.04,
