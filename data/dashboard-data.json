@@ -65,5 +65,25 @@
         "mrr_ceiling": 207054.0
       }
     ]
-  }
+  },
+  "cac_mtd": 68.2,
+  "closes_mtd": 78,
+  "meta_ads": {
+    "wtd": {
+      "cpbc": 27.28,
+      "spend": 5319.24,
+      "booked_calls": 195
+    }
+  },
+  "stripe": {
+    "failed_payments_7d": 4,
+    "failed_payments_7d_total": 820.0
+  },
+  "overdue_w1s": [],
+  "perf_flags": [],
+  "retention": {
+    "session_attendance_7d": 0
+  },
+  "surround_sound": [],
+  "dc_closes": 78
 }

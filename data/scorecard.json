@@ -23,5 +23,11 @@
     "W1 portal feature: Brodie daily comment + last 3 days on dashboard",
     "Monthly ROAS refresh for Batch 2 ad attribution"
   ],
-  "one_thing_tomorrow": "Tom starts Monday - everything ready: contract signed, Rye briefed, week 1 schedule locked"
+  "one_thing_tomorrow": "Tom starts Monday - everything ready: contract signed, Rye briefed, week 1 schedule locked",
+  "constraints": [
+    "Tom onboarding prep \u2014 Schedule B + WWCC before Monday",
+    "DC capacity thin until Tom ramps",
+    "Close\u2192W1 activation gap still unmeasured"
+  ],
+  "grade": "B+"
 }
