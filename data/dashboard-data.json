@@ -65,5 +65,9 @@
         "mrr_ceiling": 207054.0
       }
     ]
-  }
+  },
+  "closes_mtd": 78,
+  "cac_mtd": 67.77,
+  "w1_starts_mtd": 0,
+  "churn_mtd": 0
 }

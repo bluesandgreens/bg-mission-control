@@ -1,0 +1,53 @@
+{
+  "updated": "2026-03-29T10:40:29.960147",
+  "projects": [
+    {
+      "id": "agent-stack",
+      "name": "Agent Stack Roadmap (14 skills)",
+      "status": "active",
+      "owner": "Leo",
+      "progress": 15,
+      "note": "Content Engine + Daily AI Scout first"
+    },
+    {
+      "id": "family-bible",
+      "name": "Family Bible",
+      "status": "queued",
+      "owner": "Harry",
+      "progress": 5,
+      "note": "THE retention unlock. FE families = lab."
+    },
+    {
+      "id": "tom-onboarding",
+      "name": "Tom Hermans Onboarding",
+      "status": "active",
+      "owner": "Harry + Rye",
+      "progress": 60,
+      "note": "Contract sent. Starts Mon March 31."
+    },
+    {
+      "id": "dc-scoring",
+      "name": "DC Call Scoring Pipeline",
+      "status": "active",
+      "owner": "Leo",
+      "progress": 70,
+      "note": "Fireflies \u2192 SIEL \u2192 HubSpot"
+    },
+    {
+      "id": "cancel-form",
+      "name": "Cancellation Feedback Form",
+      "status": "done",
+      "owner": "Leo",
+      "progress": 100,
+      "note": "Live at /cancel-feedback/"
+    },
+    {
+      "id": "mc-morning",
+      "name": "Morning Mission Control",
+      "status": "done",
+      "owner": "Leo",
+      "progress": 100,
+      "note": "Live at /morning/"
+    }
+  ]
+}
