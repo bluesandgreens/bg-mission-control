@@ -4,25 +4,25 @@
   "wins": [
     "Tom Hermans DC hire LOCKED - part-time, $35K, starts Monday March 31",
     "Circle MVP confirmed for April school holidays Week 2",
-    "Bible V1 simplified - physical = hero letter + photo + QR to digital",
+    "Bible V1 simplified - hero letter + photo + QR to digital",
     "Connection Assessment built into portal (5 archetypes, mentor focus cards)",
     "Portal build sprint: ~45 commits, virtual tour, What's New feed, role gates",
-    "WCI team meeting delivered - blocks assigned (Rye B1, Brodie B2 research, Harry B3)",
-    "Exit interview system spec'd (Hormozi-inspired, 5-question form + call booking)",
-    "Newsletter skill built (43 Hormozi newsletters + Harry's 14 lessons analysed)"
+    "WCI team meeting delivered - blocks assigned (Rye B1, Brodie B2, Harry B3)",
+    "Exit interview system spec'd (Hormozi-inspired, 5-question + call booking)",
+    "Newsletter skill built (43 Hormozi newsletters + 14 lessons analysed)"
   ],
   "misses": [
-    "Gateway down 46hrs (Mar 26 5:15pm - Mar 28 2:56pm) - no automated comms for 2 days",
+    "Gateway down 46hrs (Mar 26 5:15pm - Mar 28 2:56pm) - no automated comms",
     "No memory file for Mar 27 (Leo was offline)",
     "Exit interview HubSpot workflow not yet built",
     "Tom's pre-Monday checklist still open (WWCC, police check, Schedule B, payroll)"
   ],
   "carry_forwards": [
-    "Tom onboarding - call Rye for week 1 schedule, get Tom's docs, sign contract",
+    "Tom onboarding - call Rye for week 1 schedule, get docs, sign contract",
     "Exit interview system - build HubSpot workflow + form + booking link",
     "Rye conversation (deferring honours, role shift to sales leader)",
     "Sari/Ollie payment-without-agreement fix - phone confirmation rule",
     "Sarah/Sebastian - onboarding categorisation tags for autistic members"
   ],
-  "one_thing_tomorrow": "Lock Tom's Monday start: Rye call for week 1 schedule, Tom's docs collected, contract signed"
+  "one_thing_tomorrow": "Lock Tom's Monday start: Rye call, docs collected, contract signed, payroll set up"
 }

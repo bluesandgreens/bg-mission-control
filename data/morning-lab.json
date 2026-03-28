@@ -5,43 +5,43 @@
     {
       "type": "counter_intuitive",
       "emoji": "🔄",
-      "headline": "Tom's first call outscored the entire team",
-      "detail": "Tom scored 7.5 on his first ever DC call - higher than Anthony (5.96 avg), Rye (5.17), and Bailey (3.37). His dentist metaphor for son buy-in got added to the gold standard library. One habit away from 8.5+. The guy who hasn't officially started yet is already the best closer on the roster.",
+      "headline": "Tom outscored every rep on call #1",
+      "detail": "7.5 overall - higher than Anthony (5.96 avg), Rye (5.17) & Bailey (3.37). His dentist metaphor for son buy-in landed a gold standard tag. One habit fix (fear bomb cycling) away from 8.5+. The guy who hasn't officially started is already the best closer on the roster.",
       "tag": "dc_performance"
     },
     {
       "type": "leverage",
       "emoji": "⚡",
-      "headline": "Rye needs the conversation before Tom starts Monday",
-      "detail": "Rye's trending down - 0 closes from 3 calls, E score 1.67, prediction mismatch on Jo Kelly still unresolved. Tom starting Monday changes the dynamic. If Rye shifts to coaching-only with Tom as his first project, it reframes Rye's role from 'underperforming closer' to 'sales leader building the team'. The Bali conversation about deferring honours has natural timing here.",
+      "headline": "Rye conversation has natural timing before Monday",
+      "detail": "0 closes from 3 calls. E score 1.67. Jo Kelly prediction mismatch still open. Tom starting Monday reframes everything - Rye shifts from 'underperforming closer' to 'sales leader building the next rep'. The honours deferral chat in Bali lands perfectly here. Coaching role = growth, not demotion.",
       "tag": "team"
     },
     {
       "type": "insight",
       "emoji": "📊",
-      "headline": "MRR dropped $10K but the math still works",
-      "detail": "MRR at $41.4K (was ~$52K on Mar 22). 60 collecting vs 67 six days ago. But CPBC is $26.94 - well under the $35 warning line - and LTV:CAC is still 75.8x. The 7 families lost weren't revenue - they were zombie subs finally cleaned up. Real number, real base.",
+      "headline": "$41.4K MRR is the real number now",
+      "detail": "Down from ~$52K but that's zombie cleanup, not churn. 60 collecting families, 8 paused. CPBC at $26.94 (well under $35 warning). LTV:CAC = 75.8x. Stripe balance $35.3K. The base is honest now - growth from here counts.",
       "tag": "revenue"
     },
     {
       "type": "big_idea",
       "emoji": "💡",
-      "headline": "Exit interview system = the missing retention data",
-      "detail": "97% of cancellations are silent. The exit interview system from Friday's WCI meeting (automated email + SMS + 5-question form + 10min call booking) could finally close that gap. With the cancellation form already live at /cancel-feedback/, this is a HubSpot workflow build - not a new product. Leo can build the workflow shell Monday.",
+      "headline": "Exit interviews close the 97% silence gap",
+      "detail": "97% of cancellations leave zero feedback. Friday's WCI spec (auto email + SMS + 5-question form + 10min call booking) turns every churn into data. Cancellation form already live at /cancel-feedback/. This is a HubSpot workflow build - not a new product. Shell can be up Monday.",
       "tag": "retention"
     },
     {
       "type": "research",
       "emoji": "🔬",
-      "headline": "Connection Assessment could be the activation unlock",
-      "detail": "The 5 archetypes (Processor, Side-by-Side, Deflector, Night Owl, Volcano) from the portal build sprint give mentors a playbook before W1 even starts. 63% of churned families never got a mentor - if Connection Assessment feeds into mentor matching, it attacks the #1 churn driver at the point of onboarding.",
+      "headline": "Connection Assessment attacks the #1 churn driver",
+      "detail": "5 archetypes (Processor, Side-by-Side, Deflector, Night Owl, Volcano) give mentors a playbook before W1. 63% of churned families never got a mentor assigned. If archetypes feed into mentor matching at onboarding, you're solving activation failure at the source - not chasing it after the fact.",
       "tag": "product"
     }
   ],
   "leo_actions": [
-    "Refreshing all MC data & pushing to GitHub",
-    "Monitoring gateway health via new watchdog system",
-    "Ready to build exit interview HubSpot workflow when Harry gives the go",
-    "Prepping Tom's onboarding checklist for Monday start"
+    "Refreshing MC data & pushing to GitHub",
+    "Gateway watchdog healthy - no stalls since recovery",
+    "Prepping Tom's Monday onboarding checklist (docs, contract, Schedule B)",
+    "Ready to build exit interview HubSpot workflow on your go"
   ]
 }
