@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-29T07:31:09.285282",
+  "generated": "2026-03-29T10:47:16.951448",
   "active_families": 60,
   "active_total": 68,
   "paused": 8,
@@ -10,9 +10,9 @@
   "balance_total": 35339.93,
   "revenue_at_risk": 820.0,
   "failed_past_due": 4,
-  "meta_spend_mtd": 5286.17,
-  "booked_calls_mtd": 194,
-  "cpbc_mtd": 27.25,
+  "meta_spend_mtd": 5319.24,
+  "booked_calls_mtd": 195,
+  "cpbc_mtd": 27.28,
   "xero_receivable": 14708.04,
   "xero_payable": 25609.93,
   "ndis_total": 1718.0,
@@ -22,9 +22,9 @@
     "steady_state_families": 100,
     "current_collecting": 60,
     "avg_rev_per_sub": 690.18,
-    "cac": 27.25,
+    "cac": 27.28,
     "ltv_current": 2041.0,
-    "roic_multiple": 74.9,
+    "roic_multiple": 74.8,
     "payback_days": 1.0,
     "retention_lever_1mo_annual": 496930.0,
     "churn_scenarios": [
@@ -65,9 +65,5 @@
         "mrr_ceiling": 207054.0
       }
     ]
-  },
-  "closes_mtd": 78,
-  "cac_mtd": 67.77,
-  "w1_starts_mtd": 0,
-  "churn_mtd": 0
+  }
 }
