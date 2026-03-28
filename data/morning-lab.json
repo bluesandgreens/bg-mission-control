@@ -1,47 +1,47 @@
 {
   "greeting": "Good morning, Harry.",
-  "date_label": "Saturday, March 28",
+  "date_label": "Sunday, March 29",
   "items": [
     {
       "type": "counter_intuitive",
       "emoji": "🔄",
-      "headline": "Tom outscored every rep on call #1",
-      "detail": "7.5 overall - higher than Anthony (5.96 avg), Rye (5.17) & Bailey (3.37). His dentist metaphor for son buy-in landed a gold standard tag. One habit fix (fear bomb cycling) away from 8.5+. The guy who hasn't officially started is already the best closer on the roster.",
+      "headline": "Bailey's false positive is now a documented teaching case",
+      "detail": "Jasmine Lund: closed on-call (3.7 SIEL), paid deposit, then Call Objection in HubSpot 7 days later. I=1, E=1. No emotional anchoring = close didn't hold. This is the first time the scoring system predicted a reversal & it materialised exactly. One case study is worth 100 role plays for the team. Use it Monday.",
       "tag": "dc_performance"
     },
     {
       "type": "leverage",
       "emoji": "⚡",
-      "headline": "Rye conversation has natural timing before Monday",
-      "detail": "0 closes from 3 calls. E score 1.67. Jo Kelly prediction mismatch still open. Tom starting Monday reframes everything - Rye shifts from 'underperforming closer' to 'sales leader building the next rep'. The honours deferral chat in Bali lands perfectly here. Coaching role = growth, not demotion.",
+      "headline": "Tom starts tomorrow with the highest call 1 score ever",
+      "detail": "7.5 on his first DC - above Anthony's 5-call average (5.96) & Rye's 3-call average (5.17). Dentist metaphor = gold standard for son buy-in. One fix: fear bomb cycling (I=3). Rye coaching him from day 1 means Rye's new role has an immediate proof point. Tom + Rye is the play.",
       "tag": "team"
     },
     {
       "type": "insight",
       "emoji": "📊",
-      "headline": "$41.4K MRR is the real number now",
-      "detail": "Down from ~$52K but that's zombie cleanup, not churn. 60 collecting families, 8 paused. CPBC at $26.94 (well under $35 warning). LTV:CAC = 75.8x. Stripe balance $35.3K. The base is honest now - growth from here counts.",
+      "headline": "194 booked calls this month at $27.23 CPBC",
+      "detail": "Well under the $35 warning line. Meta spend $5,283 MTD. But ad-to-member conversion matters more than CPBC - last audit showed H14-B1 at 5.1x ROAS while H1-B1 was 0.6x. Same CPBC range, wildly different revenue. Monthly ROAS refresh due this week to see how Batch 2 hooks are converting.",
       "tag": "revenue"
     },
     {
       "type": "big_idea",
       "emoji": "💡",
-      "headline": "Exit interviews close the 97% silence gap",
-      "detail": "97% of cancellations leave zero feedback. Friday's WCI spec (auto email + SMS + 5-question form + 10min call booking) turns every churn into data. Cancellation form already live at /cancel-feedback/. This is a HubSpot workflow build - not a new product. Shell can be up Monday.",
-      "tag": "retention"
+      "headline": "Agent Stack Roadmap - 14 skills, Leo's building",
+      "detail": "You handed this off Friday. Build order set: Content Engine first (extends newsletter writer to 5 formats), then Daily AI Scout, then Win/Loss Analyser (70% built from SIEL work). Revenue Reconciliation moved up to catch silent leaks. Progress updates coming to you unprompted - this is my project now.",
+      "tag": "systems"
     },
     {
       "type": "research",
       "emoji": "🔬",
-      "headline": "Connection Assessment attacks the #1 churn driver",
-      "detail": "5 archetypes (Processor, Side-by-Side, Deflector, Night Owl, Volcano) give mentors a playbook before W1. 63% of churned families never got a mentor assigned. If archetypes feed into mentor matching at onboarding, you're solving activation failure at the source - not chasing it after the fact.",
+      "headline": "Alpha School's 'Time Back' is the retention framing B&G is missing",
+      "detail": "Alpha's #1 lever: motivation through giving kids their time back. B&G Circle MVP (April W2) can test this - frame it as 'your son gets 2 hours of focused development instead of scrolling'. Not 'come to our program'. Time Back reframes value from what they pay to what they get back. Podcast analysis shipped Friday.",
       "tag": "product"
     }
   ],
   "leo_actions": [
-    "Refreshing MC data & pushing to GitHub",
-    "Gateway watchdog healthy - no stalls since recovery",
-    "Prepping Tom's Monday onboarding checklist (docs, contract, Schedule B)",
-    "Ready to build exit interview HubSpot workflow on your go"
+    "Building Content Engine skill (Agent Stack item #1) - extends newsletter writer to 5 output formats",
+    "Monthly ROAS refresh prep - pulling March ad attribution data for Batch 2 analysis",
+    "Tom's Monday onboarding checklist finalised - contract signed, Schedule B still needs Rye + Harry",
+    "MC data refreshed & pushed to GitHub"
   ]
 }

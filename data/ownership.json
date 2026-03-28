@@ -1,20 +1,20 @@
 {
-  "generated": "2026-03-28T16:24:00+11:00",
+  "generated": "2026-03-29T07:30:00+11:00",
   "functions": [
     {
       "name": "Sales Engine",
       "owner": "Rye",
-      "status": "amber",
-      "constraint": "Tom starts Monday - DC capacity doubling. Anthony holding 40% close rate solo. Rye shifting to coaching role (0/3 closes but that's the plan now).",
-      "key_metric": "Close Rate: 40% (Anthony) | 194 BCs MTD at $26.94 CPBC | Tom starts Mon",
-      "highest_leverage_task": "Lock Tom's Monday start - Rye call, docs, contract, payroll",
+      "status": "green",
+      "constraint": "Tom starts Monday. Anthony holding 40% close rate. Rye shifting to coaching role. DC capacity about to double.",
+      "key_metric": "Close Rate: 40% (Anthony) | 100% (Tom, n=1) | 194 BCs MTD at $27.23 CPBC",
+      "highest_leverage_task": "Tom's first week - shadow Rye, 2-3 live DCs, fear anchor drill",
       "team": ["Rye", "Anthony", "Tom (starting Mon)"]
     },
     {
       "name": "Mentor Journey",
       "owner": "TBD",
       "status": "red",
-      "constraint": "No single owner. Connection Assessment (5 archetypes) built but not yet integrated into mentor matching.",
+      "constraint": "No single owner. Connection Assessment built but not integrated into mentor matching.",
       "key_metric": "63% of churned families never got a mentor - activation gap",
       "highest_leverage_task": "Integrate Connection Assessment into mentor onboarding briefing",
       "team": ["Mentors", "Brodie (activation)"]
@@ -25,16 +25,16 @@
       "status": "amber",
       "constraint": "4 past-due subs ($820 at risk). 60 collecting, 8 paused. Zapier still broken.",
       "key_metric": "60 collecting | 8 paused | 4 past due | $41.4K MRR",
-      "highest_leverage_task": "Chase 4 past-due families + fix Zapier HubSpot auth",
+      "highest_leverage_task": "Chase 4 past-due families + Jasmine Lund re-anchor call (Bailey reversal)",
       "team": ["Brodie", "Norri"]
     },
     {
       "name": "Brand & Content",
       "owner": "Harry",
       "status": "green",
-      "constraint": "Content engine operational. 18 newsletters awaiting Harry's review to calibrate auto-generation.",
-      "key_metric": "18 newsletters in Notion | Portal upgraded | Circle MVP April W2",
-      "highest_leverage_task": "Review 2-3 newsletters to calibrate the writing skill",
+      "constraint": "Content engine operational. 18 newsletters awaiting review. Circle MVP locked for April W2.",
+      "key_metric": "18 newsletters in Notion | Alpha School research complete | Circle MVP April W2",
+      "highest_leverage_task": "Review 2-3 newsletters to calibrate writing skill",
       "team": ["Harry", "Leo"]
     }
   ]

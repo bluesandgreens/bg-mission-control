@@ -1,28 +1,27 @@
 {
-  "date": "2026-03-27",
-  "label": "Friday, March 27",
+  "date": "2026-03-28",
+  "label": "Saturday, March 28",
   "wins": [
-    "Tom Hermans DC hire LOCKED - part-time, $35K, starts Monday March 31",
-    "Circle MVP confirmed for April school holidays Week 2",
-    "Bible V1 simplified - hero letter + photo + QR to digital",
-    "Connection Assessment built into portal (5 archetypes, mentor focus cards)",
-    "Portal build sprint: ~45 commits, virtual tour, What's New feed, role gates",
-    "WCI team meeting delivered - blocks assigned (Rye B1, Brodie B2, Harry B3)",
-    "Exit interview system spec'd (Hormozi-inspired, 5-question + call booking)",
-    "Newsletter skill built (43 Hormozi newsletters + 14 lessons analysed)"
+    "Gateway recovered + 3 LaunchAgents deployed (watchdog, remote restart, Cloudflare tunnel)",
+    "Tom Hermans contract v2 delivered - title, pay timing & structure updated per Harry's notes",
+    "Alpha School strategic report shipped (6-page PDF) + podcast learnings (7 podcasts, 58K words)",
+    "Sales manager deep pass - all prediction outcomes verified against HubSpot",
+    "Tom's close confirmed: Bec Richardson Deposit Paid. 7.5 SIEL = highest call 1 score ever",
+    "Bailey false positive confirmed: Jasmine Lund Call Objection validates scoring system",
+    "Agent Stack Roadmap received from Harry - 14 skills, build order set, Leo's project now"
   ],
   "misses": [
-    "Gateway down 46hrs (Mar 26 5:15pm - Mar 28 2:56pm) - no automated comms",
-    "No memory file for Mar 27 (Leo was offline)",
-    "Exit interview HubSpot workflow not yet built",
-    "Tom's pre-Monday checklist still open (WWCC, police check, Schedule B, payroll)"
+    "Harry mostly offline (travel day Bali to Perth) - limited decisions made",
+    "Schedule B for Tom still needs Rye + Harry input",
+    "WWCC & police check confirmation for Tom still outstanding"
   ],
   "carry_forwards": [
-    "Tom onboarding - call Rye for week 1 schedule, get docs, sign contract",
-    "Exit interview system - build HubSpot workflow + form + booking link",
-    "Rye conversation (deferring honours, role shift to sales leader)",
-    "Sari/Ollie payment-without-agreement fix - phone confirmation rule",
-    "Sarah/Sebastian - onboarding categorisation tags for autistic members"
+    "Tom Monday start - Schedule B, WWCC, police check, Rye call for week 1 plan",
+    "Exit interview HubSpot workflow build",
+    "Rye conversation (honours deferral, coaching role shift)",
+    "Agent Stack builds - Content Engine first, then Daily AI Scout",
+    "W1 portal feature: Brodie daily comment + last 3 days on dashboard",
+    "Monthly ROAS refresh for Batch 2 ad attribution"
   ],
-  "one_thing_tomorrow": "Lock Tom's Monday start: Rye call, docs collected, contract signed, payroll set up"
+  "one_thing_tomorrow": "Tom starts Monday - everything ready: contract signed, Rye briefed, week 1 schedule locked"
 }
