@@ -1,636 +1,252 @@
 {
-  "last_updated": "2026-03-28T15:41:00+11:00",
-  "total_calls": 17,
-  "avg_score": 4.5,
-  "calls_today": 0,
-  "calls": [
-    {
-      "call_id": "2026-03-23 \u2014 Sophie Cuzzy",
-      "call_date": "2026-03-23",
-      "duration": 36,
-      "rep_name": "Anthony",
-      "contact_name": "Sophie Cuzzy",
-      "son_name": "Leo (11)",
-      "hubspot_call_id": "106740779678",
-      "contact_hubspot_id": "210632072461",
-      "siel_scores": {
-        "S": 4,
-        "I": 3,
-        "E": 2,
-        "L": 2,
-        "Opening": 4,
-        "Objection": 3
+  "last_updated": "2026-03-28",
+  "total_calls_analysed": 19,
+  "weekly_reset_date": "2026-03-28",
+  "categories": {
+    "price_affordability": {
+      "count": 5,
+      "last_week": 5,
+      "trend": "increasing",
+      "by_rep": {
+        "anthony": 1,
+        "bailey": 2,
+        "rye": 2
       },
-      "overall_score": 5.6,
-      "score_grade": "C (4-5.9)",
-      "ai_predicted_outcome": "Follow Up Scheduled",
-      "true_outcome": "Follow Up Scheduled",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 41,
-      "label_quality": "RED",
-      "key_strengths": "1. Good rapport and natural conversation flow \u2014 Sophie was comfortable throughout.\n2. Co-parenting dynamic identified and respected early.\n3. Clean follow-up locked in with no pressure \u2014 Monday callback scheduled.",
-      "critical_misses": "1. When Sophie mentioned her own teenage struggles ('it brings back all those memories') \u2014 the emotional peak of the call \u2014 it was barely acknowledged before moving on.\n2. Pain stack built in Anthony's words, not Sophie's \u2014 'lost', 'afraid', 'don't know what direction' were Sophie's exact words and weren't used.\n3. At 7-8/10 with clear interest, should have tried harder to get dad on the call now, or locked in a stronger conditional commitment.",
-      "one_drill": "When a parent mentions their own history: 'It sounds like this is hitting close to home for you, Sophie. Tell me \u2014 what were your teenage years like?' Then mirror Leo's situation back through her experience. This unlocks the deepest emotional purchase.",
-      "one_line": "\"Sophie, it sounds like watching Leo struggle is bringing up your own teenage stuff \u2014 and that's the scariest part, right?\"",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
+      "avg_handling_grade": 1.8,
+      "best_example": {
+        "call": "Leanne Black — Anthony — Mar 23",
+        "parent_quote": "NDIS funding question raised",
+        "rep_response": "Proactively offered NDIS pathway before objection fully formed",
+        "grade": 4,
+        "note": "Best example of pre-handling — solved before it became a blocker"
+      },
+      "worst_example": {
+        "call": "Bianca JESS — Rye — Mar 26",
+        "parent_quote": "$450 a fortnight? Oh shit.",
+        "rep_response": "\"Off the top of my head, about $450, I think.\" Immediately offered to send email info without any objection handling.",
+        "grade": 1,
+        "note": "Worst price handling on record. Rep did not know his own payment plans, calculated live ('off the top of my head'), retreated to email at first resistance. No isolation, no pain re-anchor, no urgency. Bianca then said 'I'll find a way' — a clear buying signal that Rye acknowledged with 'yeah yeah 100%' and booked a follow-up. That buying signal was a YES."
+      },
+      "weekly_note": "Mar 28 update: Price handling avg (1.8) remains the weakest category this week. Tom's clean $2,700 delivery on Bec Richardson (grade 4) is still the best contrast — confident, single price, no hesitation. Rye's Bianca JESS (grade 1) remains the worst on record. All reps must have price card memorised: $2,700 lump / $450 fortnightly / $225 weekly / $900 monthly."
+    },
+    "partner_coparent": {
+      "count": 3,
+      "last_week": 3,
+      "trend": "stable",
+      "by_rep": {
+        "anthony": 3
+      },
+      "avg_handling_grade": 3.0,
+      "best_example": {
+        "call": "Judith Lacey — Anthony — Mar 23",
+        "parent_quote": "His dad needs to agree",
+        "rep_response": "Excellent isolation: 'If dad wasn't on board, what would happen?' — isolated the conditional and addressed the auth question cleanly. Achieved 10/10 after.",
+        "grade": 4,
+        "note": "Best Anthony objection handling on record — proactive isolation + conditional close"
+      },
+      "worst_example": {
+        "call": "Sophie Cuzzy — Anthony — Mar 23",
+        "parent_quote": "Probably just to talk to his dad and maybe just think it over",
+        "rep_response": "A hundred percent. Sit with that a little bit.",
+        "grade": 2,
+        "note": "Classic BAMFAM cave — accepted without isolating root cause. Should have asked: 'Apart from talking to dad, are we good to go?' then de-risked with $111 framing."
       }
     },
-    {
-      "call_id": "2026-03-23 \u2014 Leanne Black",
-      "call_date": "2026-03-23",
-      "duration": 38,
-      "rep_name": "Anthony",
-      "contact_name": "Leanne Black",
-      "son_name": "Matthew (19)",
-      "hubspot_call_id": "106740624413",
-      "contact_hubspot_id": "210694378854",
-      "siel_scores": {
-        "S": 5,
-        "I": 3,
-        "E": 2,
-        "L": 3,
-        "Opening": 4,
-        "Objection": 4
+    "son_buyin": {
+      "count": 2,
+      "last_week": 2,
+      "trend": "increasing",
+      "by_rep": {
+        "rye": 1,
+        "tom": 1
       },
-      "overall_score": 6.5,
-      "score_grade": "B (6-7.9)",
-      "ai_predicted_outcome": "Onboarding Booked",
-      "true_outcome": "Onboarding Booked",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 65,
-      "label_quality": "AMBER",
-      "key_strengths": "1. Excellent surface \u2014 Matthew's autism/ADHD/sexuality/online danger surfaced richly in the opening 3 minutes.\n2. Very efficient, confident program pitch \u2014 NDIS option offered proactively at the right moment.\n3. Clean close \u2014 Leanne committed on-call, portal walkthrough completed despite tech issues.",
-      "critical_misses": "1. Leanne was pre-sold \u2014 Anthony matched her low emotional temperature instead of deepening it. Depth was available.\n2. 'It sounds like it's been a pretty stressful time' \u2014 generic label used across calls; needs specificity per parent.\n3. Matthew's father passing was mentioned and then not explored for emotional impact \u2014 a rare and significant moment.",
-      "one_drill": "Practice naming the specific emotion after a parent discloses a loss or trauma. After 'his dad passed away a few years ago': pause, then 'Leanne, can I check in \u2014 Matthew lost his dad. What does that add to all of this for him? And for you?'",
-      "one_line": "\"Leanne, it sounds like you've been fighting this battle completely alone \u2014 is that fair to say?\"",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": true,
-        "session_count": null
+      "avg_handling_grade": 4.0,
+      "best_example": {
+        "call": "Bec Richardson — Tom — Mar 26",
+        "parent_quote": "He'll be anti it to start with. It's all about picking your moment.",
+        "rep_response": "Dentist metaphor delivered naturally: 'It's a bit like getting them to the dentist, just get them in the chair and they'll get it done. You get them on the phone with us and boys that were reluctant will be buzzing for the next call.'",
+        "grade": 5,
+        "note": "Tom delivered the dentist metaphor in the right context, naturally woven in. Mum's objection was pre-empted before it became a blocker. Grade 5 — gold standard. Pre-emptive handling from confirmed close."
+      },
+      "worst_example": null
+    },
+    "timing_not_now": {
+      "count": 1,
+      "last_week": 1,
+      "trend": "stable",
+      "by_rep": {
+        "rye": 1
+      },
+      "avg_handling_grade": 3.0,
+      "best_example": {
+        "call": "Steffany Campbell — Rye — Mar 21",
+        "parent_quote": "Want to wait until Koban gets back from Bendigo",
+        "rep_response": "Used son's return as urgency window — 'this is actually the perfect time before he gets home'",
+        "grade": 3,
+        "note": "Decent urgency reframe but financial blocker (ongoing subscription) not addressed"
+      },
+      "worst_example": null
+    },
+    "misunderstanding": {
+      "count": 0,
+      "last_week": 0,
+      "trend": "new",
+      "by_rep": {},
+      "avg_handling_grade": 0,
+      "best_example": null,
+      "worst_example": null
+    },
+    "trust_credibility": {
+      "count": 1,
+      "last_week": 1,
+      "trend": "stable",
+      "by_rep": {
+        "anthony": 1
+      },
+      "avg_handling_grade": 3.0,
+      "best_example": {
+        "call": "Beck Reside — Anthony — Mar 23",
+        "parent_quote": "I've heard all this before. And I'm pretty sure none of this is going to help.",
+        "rep_response": "Acknowledged skepticism, stayed warm, continued with pitch. Did not isolate the 'I've tried everything' root cause.",
+        "grade": 3,
+        "note": "Handled with empathy but the 'past failure' pattern needed specific reframing — 'Tell me what missed the mark last time, Beck. Because that matters.' Not done."
+      },
+      "worst_example": null
+    },
+    "past_failure": {
+      "count": 1,
+      "last_week": 1,
+      "trend": "stable",
+      "by_rep": {
+        "anthony": 1
+      },
+      "avg_handling_grade": 3.0,
+      "best_example": {
+        "call": "Beck Reside — Anthony — Mar 23",
+        "parent_quote": "It all sounds very good. Like I said, I've heard all this before.",
+        "rep_response": "Maintained warmth but didn't use the gold standard 'what missed the mark' question to reframe",
+        "grade": 3,
+        "note": "Gold standard from Harry: 'What do you think missed the mark with previous supports?' — gets mum to articulate exactly what she needs, positions B&G as the answer. Missed here."
+      },
+      "worst_example": null
+    },
+    "think_about_it": {
+      "count": 2,
+      "last_week": 2,
+      "trend": "stable",
+      "by_rep": {
+        "anthony": 2
+      },
+      "avg_handling_grade": 2.5,
+      "best_example": {
+        "call": "Tayla Colman — Anthony — Mar 20",
+        "parent_quote": "I need to have a chat with my husband first",
+        "rep_response": "Partial isolation — 'if Anthony said no, would you still go?' secured a YES. Did not de-risk with $111 frame or try conditional commit.",
+        "grade": 3,
+        "note": "Got the YES conditional which is good instinct. Failed to convert it."
+      },
+      "worst_example": {
+        "call": "Sophie Cuzzy — Anthony — Mar 23",
+        "parent_quote": "Maybe just think it over",
+        "rep_response": "A hundred percent. Sit with that a little bit.",
+        "grade": 2,
+        "note": "No isolation, no de-risk, no urgency. Straight BAMFAM."
       }
     },
-    {
-      "call_id": "2026-03-23 \u2014 Judith Lacey",
-      "call_date": "2026-03-23",
-      "duration": 33,
-      "rep_name": "Anthony",
-      "contact_name": "Judith Lacey",
-      "son_name": "Jack (Year 10)",
-      "hubspot_call_id": "106739906707",
-      "contact_hubspot_id": "210681564002",
-      "siel_scores": {
-        "S": 4,
-        "I": 3,
-        "E": 3,
-        "L": 3,
-        "Opening": 4,
-        "Objection": 4
+    "logistics": {
+      "count": 2,
+      "last_week": 2,
+      "trend": "stable",
+      "by_rep": {
+        "anthony": 1,
+        "bailey": 1
       },
-      "overall_score": 6.7,
-      "score_grade": "B (6-7.9)",
-      "ai_predicted_outcome": "Onboarding Booked",
-      "true_outcome": "Onboarding Booked",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 67,
-      "label_quality": "AMBER",
-      "key_strengths": "1. Excellent objection isolation \u2014 'if dad wasn't on board, what would happen?' perfectly isolated the conditional objection before addressing it.\n2. Strong 1-10 scale execution \u2014 achieved a 10/10 and used the momentum cleanly.\n3. Smooth close execution \u2014 portal walkthrough, activation pass, W1 booked for March 27.",
-      "critical_misses": "1. The suicide comment ('I worry about young men with suicide') was the emotional peak of the call \u2014 Anthony moved past it far too quickly without sitting in it.\n2. Emotional labels present but not precision-targeted \u2014 'It sounds like it's becoming a lot for you' is too vague when the underlying fear is 'I'm terrified I'll lose him'.\n3. Didn't probe why Jack chose to move to dad's house \u2014 rich surface/impact goldmine left unexplored.",
-      "one_drill": "The pause after the big line \u2014 when a parent mentions suicide risk, next move is silence, then: 'Tell me more about that, Judith.' Practice sitting in that silence for 3 full seconds before responding.",
-      "one_line": "\"Judith, it sounds like deep down you're terrified of losing him \u2014 is that right?\"",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": 4,
-        "still_active": true,
-        "session_count": null
-      }
+      "avg_handling_grade": 3.5,
+      "best_example": {
+        "call": "Leanne Black — Anthony — Mar 23",
+        "parent_quote": "NDIS funding availability",
+        "rep_response": "Proactively identified and offered NDIS pathway — pre-handled before it became a blocker",
+        "grade": 4,
+        "note": "Best example of funding objection handling — know your lead's profile before the call"
+      },
+      "worst_example": null
+    },
+    "emotional_overwhelm": {
+      "count": 1,
+      "last_week": 1,
+      "trend": "stable",
+      "by_rep": {
+        "anthony": 1
+      },
+      "avg_handling_grade": 3.0,
+      "best_example": {
+        "call": "Beck Reside — Anthony — Mar 23",
+        "parent_quote": "I'm absolutely exhausted. We've tried everything.",
+        "rep_response": "Acknowledged with empathy, did not push the close. Correctly identified call was likely unwinnable given financial constraints + system fatigue.",
+        "grade": 3,
+        "note": "Sometimes the right call is to preserve the relationship not close the deal. Anthony read this correctly even if technique was passive."
+      },
+      "worst_example": null
+    }
+  },
+  "weekly_top_3": [
+    {
+      "rank": 1,
+      "category": "price_affordability",
+      "count": 5,
+      "avg_handling_grade": 1.8,
+      "note": "Most common AND worst-handled category. Five instances, avg grade 1.8. Rye's Bianca JESS (grade 1) is the worst on record. The contrast: Tom's Bec Richardson — price stated confidently ($2,700), once, no calculation. All reps must memorise the price card. 'I'll find a way' is now a documented buying signal — it is a YES, not a stall."
     },
     {
-      "call_id": "2026-03-23 \u2014 Beck Reside",
-      "call_date": "2026-03-23",
-      "duration": 48,
-      "rep_name": "Anthony",
-      "contact_name": "Beck Reside",
-      "son_name": "Braxton (13)",
-      "hubspot_call_id": "106739813245",
-      "contact_hubspot_id": "210651628109",
-      "siel_scores": {
-        "S": 5,
-        "I": 3,
-        "E": 2,
-        "L": 2,
-        "Opening": 4,
-        "Objection": 2
-      },
-      "overall_score": 5.7,
-      "score_grade": "C (4-5.9)",
-      "ai_predicted_outcome": "Follow Up Scheduled",
-      "true_outcome": "Follow Up Scheduled",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 32,
-      "label_quality": "RED",
-      "key_strengths": "1. Exceptional surface work \u2014 uncovered full DV history, brothers in jail, 7-year foster journey in first 5 mins.\n2. Strong rapport \u2014 Beck opened up completely, shared everything without prompting.\n3. Good program walkthrough, appropriately simplified for a skeptical/exhausted parent.",
-      "critical_misses": "1. Emotional labelling was generic ('wearing a fair bit of weight') \u2014 never named the core emotion (trapped, exhausted, grieving).\n2. Impact not cycled \u2014 'can't work because of him' and 'choosing between Brax and my biological kids' were huge moments left on the table.\n3. Price objection: sent link before re-anchoring to pain. Should have cycled impact THEN presented price.",
-      "one_drill": "Pain cycling drill \u2014 after Beck says something impactful, stop and ask: 'What does that feel like for you as a foster mum?' or 'How is that affecting you day to day?' Don't let big pain moments pass without cycling.",
-      "one_line": "\"Before I talk price, I want to make sure I've heard you, Beck \u2014 does it feel like you're having to choose between saving him and protecting your own family?\"",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
+      "rank": 2,
+      "category": "partner_coparent",
+      "count": 3,
+      "avg_handling_grade": 3.0,
+      "note": "All three from Anthony. Range of 2-4/5 shows the technique exists but isn't systematic. Gets it right with isolation ('if dad wasn't on board, what would happen?') but defaults to BAMFAM when he doesn't think to isolate. The $111 de-risk frame was not used in any partner objection this week."
     },
     {
-      "call_id": "2026-03-23 \u2014 Jo Kelly",
-      "call_date": "2026-03-23",
-      "duration": 41.4,
-      "rep_name": "Rye",
-      "contact_name": "Jo Kelly",
-      "son_name": "Tyson (14)",
-      "hubspot_call_id": "106739913828",
-      "contact_hubspot_id": "210787354671",
-      "siel_scores": {
-        "S": 5,
-        "I": 3,
-        "E": 3,
-        "L": 3,
-        "Opening": 3,
-        "Objection": 4
-      },
-      "overall_score": 6.8,
-      "score_grade": "B+",
-      "ai_predicted_outcome": "Near Close",
-      "true_outcome": "None",
-      "prediction_match": false,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 68,
-      "label_quality": null,
-      "key_strengths": "Exceptional situational discovery \u2014 deepest story uncovered of all 5 calls. Objection handling excellent \u2014 offered to personally engage Tyson to reduce his resistance. Genuinely empathetic tone throughout. 'Load lifted' closing moment shows real emotional connection made.",
-      "critical_misses": "Opening frame weak and confusing \u2014 'the point of this call, Joe, really obviously is not...' unclear. Emotional labeling generic \u2014 missed naming Jo's abandonment, grief, isolation as specific emotions. Impact not cycled back to create urgency. BAMFAM close leaves the deal hanging \u2014 'I'll be in touch this afternoon' without a firmer commitment or start fee collected on call.",
-      "one_drill": "Abandonment cycling drill: 'Jo, Tyson said this morning \u2018if he was so worried about me, why would he leave me?\u2019 \u2014 that's not a question, that's a wound. Before we move on, tell me what that was like to hear from your son.'",
-      "one_line": "When a 15-year-old asks why his dad left him, that's not a conversation about the program \u2014 that's the whole reason you're here. Stay there.",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
+      "rank": 3,
+      "category": "son_buyin",
+      "count": 2,
+      "avg_handling_grade": 4.0,
+      "note": "Best-handled category. Tom's dentist metaphor on Bec Richardson (grade 5) is gold standard — pre-emptive, natural, from a confirmed close. This is what objection handling from depth looks like. The objection was absorbed before it became a blocker."
+    }
+  ],
+  "new_patterns": [
+    {
+      "date": "2026-03-25",
+      "pattern": "Post-close activation risk from emotional under-anchoring",
+      "description": "Jasmine Lund (Bailey, Mar 21) — Lucky close (score 3.7), now CONFIRMED 'Call Objection' in HubSpot (member_status). Consistent with no emotional investment during the call. When parents say yes without emotional anchoring, they reverse. CONFIRMED: Jasmine's Call Objection status validates the Lucky Close prediction exactly.",
+      "reps_affected": ["bailey"],
+      "recommendation": "Brodie to call Jasmine within 48hrs. Ask: 'What made you decide to go ahead today?' Then reflect it back to build commitment consistency before W1. Bailey to review this outcome as a teaching case: the close that didn't hold."
     },
     {
-      "call_id": "2026-03-23 \u2014 Sophie Cuzzy",
-      "call_date": "2026-03-23",
-      "duration": 32.1,
-      "rep_name": "Anthony",
-      "contact_name": "Sophie Cuzzy",
-      "son_name": "Leo (11)",
-      "hubspot_call_id": "106740779678",
-      "contact_hubspot_id": "210632072461",
-      "siel_scores": {
-        "S": 4,
-        "I": 2,
-        "E": 1,
-        "L": 2,
-        "Opening": 4,
-        "Objection": 2
-      },
-      "overall_score": 4.5,
-      "score_grade": "C",
-      "ai_predicted_outcome": "Follow Up Scheduled",
-      "true_outcome": "Follow Up Scheduled",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 30,
-      "label_quality": null,
-      "key_strengths": "Good casual rapport at opening. Clean frame set. Leo's interests surfaced (surfing, skateboarding). Follow-up booked for Monday.",
-      "critical_misses": "MASSIVE miss: Sophie disclosed personal teenage trauma \u2014 not followed up at all. Emotional labeling barely present. Impact on Sophie's daily life never fully explored. Pain stack essentially empty. Went straight to $111 multiple times without addressing 'dad needs to agree' properly. Leo's self-talk ('I'm just a loser') not connected to stakes.",
-      "one_drill": "Gold moment drill: when a parent discloses personal history, STOP \u2014 'Sophie, pause \u2014 you just said you had a hard time as a teenager. What happened for you? Because I think that's exactly why you're here today.'",
-      "one_line": "The parent's story is usually the son's story in 15 years \u2014 if she gives you hers, take it.",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
-    },
-    {
-      "call_id": "2026-03-23 \u2014 Leanne Black",
-      "call_date": "2026-03-23",
-      "duration": 32.8,
-      "rep_name": "Anthony",
-      "contact_name": "Leanne Black",
-      "son_name": "Matthew (19)",
-      "hubspot_call_id": "106740624413",
-      "contact_hubspot_id": "210694378854",
-      "siel_scores": {
-        "S": 4,
-        "I": 3,
-        "E": 2,
-        "L": 3,
-        "Opening": 4,
-        "Objection": 4
-      },
-      "overall_score": 6.2,
-      "score_grade": "B",
-      "ai_predicted_outcome": "Onboarding Booked",
-      "true_outcome": "Onboarding Booked",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 47,
-      "label_quality": null,
-      "key_strengths": "Strong NDIS pivot \u2014 identified and resolved funding objection immediately. Good situational discovery of complex profile (autism/ADHD/ID). Warm natural rapport. Effective 'what if nothing changes' question. Clean close execution.",
-      "critical_misses": "Emotional labeling weak \u2014 never named Leanne's fear or isolation. Pre-sold mum = coaching opportunity missed (didn't test assumptions or earn the close). Impact not cycled before close. Pain stack used program language not mum's own words.",
-      "one_drill": "Easy close drill: for pre-sold mums, always test \u2014 'Leanne, before I run you through the program, what's the one thing that scares you most if we don't get Matt the right support right now?'",
-      "one_line": "Easy closes don't mean good calls \u2014 always find the fear before the close.",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
-    },
-    {
-      "call_id": "2026-03-23 \u2014 Judith Lacey",
-      "call_date": "2026-03-23",
-      "duration": 37.1,
-      "rep_name": "Anthony",
-      "contact_name": "Judith Lacey",
-      "son_name": "Jack (Year 10)",
-      "hubspot_call_id": "106739906707",
-      "contact_hubspot_id": "210681564002",
-      "siel_scores": {
-        "S": 4,
-        "I": 4,
-        "E": 3,
-        "L": 3,
-        "Opening": 4,
-        "Objection": 4
-      },
-      "overall_score": 7.1,
-      "score_grade": "B+",
-      "ai_predicted_outcome": "Onboarding Booked",
-      "true_outcome": "Onboarding Booked",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 71,
-      "label_quality": null,
-      "key_strengths": "Strong impact moment \u2014 suicide concern surfaced and reflected clearly. Clean close execution, 10/10 scale response handled well. Good opening frame. Natural rapport and warmth throughout.",
-      "critical_misses": "Emotional labeling too general \u2014 never named Judith's specific fear (terror, loss, grief). Pain stack built in rep's words not mum's own language. Post-discovery transition to program pitch slightly abrupt. Suicide concern surfaced but not cycled back to hard enough.",
-      "one_drill": "Words in her mouth drill \u2014 use Judith's own phrases in the pain stack: 'You said Jack told you he feels worthless \u2014 that's not just teenage talk, that's a boy who's silently screaming.'",
-      "one_line": "'You said it yourself Judith \u2014 you're not just worried about his rugby, you're worried about him being here.'",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
-    },
-    {
-      "call_id": "2026-03-23 \u2014 Beck Reside",
-      "call_date": "2026-03-23",
-      "duration": 39.1,
-      "rep_name": "Anthony",
-      "contact_name": "Beck Reside",
-      "son_name": "Braxton (13)",
-      "hubspot_call_id": "106739813245",
-      "contact_hubspot_id": "210651628109",
-      "siel_scores": {
-        "S": 4,
-        "I": 3,
-        "E": 2,
-        "L": 3,
-        "Opening": 4,
-        "Objection": 2
-      },
-      "overall_score": 5.8,
-      "score_grade": "B",
-      "ai_predicted_outcome": "Follow Up Scheduled",
-      "true_outcome": "Follow Up Scheduled",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 33,
-      "label_quality": null,
-      "key_strengths": "Strong situational discovery \u2014 complex foster care story fully uncovered. Good rapport and casual tone. Frame set cleanly at opening. Genuine empathy at key moments.",
-      "critical_misses": "Emotional labeling too generic \u2014 never named Beck's specific emotions (exhaustion, grief, guilt). Cost objection not isolated before addressing. Husband not brought in or triaged as deal blocker. Impact not cycled back repeatedly. BAMFAM weak \u2014 follow-up scheduled for Thursday.",
-      "one_drill": "Emotional label drill: for every impact moment, name the emotion \u2014 'It sounds like you're grieving the family you hoped to be' not 'it sounds tough'.",
-      "one_line": "Pain over price: 'Before we talk dollars, Beck \u2014 if cost wasn't a factor, is Blues and Greens what Braxton needs right now?'",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
-    },
-    {
-      "call_id": "Kelly Wellsmore \u2014 2026-03-21",
-      "call_date": "2026-03-21",
-      "duration": 50,
-      "rep_name": "Harry",
-      "contact_name": "Kelly Wellsmore",
-      "son_name": "Jackson (15)",
-      "hubspot_call_id": "106736521734",
-      "contact_hubspot_id": "210455058520",
-      "siel_scores": {
-        "S": 3,
-        "I": 3,
-        "E": 2,
-        "L": 3,
-        "Opening": 3,
-        "Objection": 3
-      },
-      "overall_score": 5.5,
-      "score_grade": "C",
-      "ai_predicted_outcome": "Onboarding Booked",
-      "true_outcome": "Onboarding Booked",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 55,
-      "label_quality": "AMBER",
-      "key_strengths": "1. Created genuine space for Kelly to share at length \u2014 minimal interruption in first 15 min, Kelly volunteered deep context unprompted.\n2. Strong \"fast forward 60-90 days\" anchor question revealed clear success vision.\n3. Effective program link: \"not carrying it alone anymore\" explicitly tied to Kelly's stated helplessness.\n4. Honest handling of mentor tenure objection (\"I'll be completely honest... 13 months, zero mentor departures\").\n5. Natural, pressure-free close after rapport was established.",
-      "critical_misses": "1. BOMB DROPPED, NOT CYCLED: Kelly said \"I expect something bad will happen to him eventually because he doesn't want to be here\" \u2014 Harry acknowledged then immediately cheerleaded (\"awesome trait as a mum\"). This is the biggest miss on the call.\n2. No specific emotional labels using Kelly's language \u2014 \"carrying a lot of weight\" is generic, not Green.\n3. \"Feeling helpless\" acknowledged but not cycled \u2014 moved to program pitch too quickly.\n4. Opening slightly transactional: \"purpose of this call is...\" rather than genuine curiosity framing.\n5. No explicit Ask Permission before going deeper.",
-      "one_drill": "CYCLE THE BOMB: When a parent drops an emotional bomb (suicide fear, \"he doesn't want to be here\"), pause 3 seconds, reflect it back, cycle 2-3 times BEFORE moving forward. Drill: Harry plays parent, rep must cycle 3\u00d7 on the bomb before being allowed to continue. Do NOT acknowledge-and-move.",
-      "one_line": "When mum says 'I expect something bad will happen to him,' that's not background noise \u2014 that's the whole call. Everything after that is noise until you've sat in that fear with her.",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
-    },
-    {
-      "call_id": "2026-03-21_Steffany_Campbell_106736022198",
-      "call_date": "2026-03-21",
-      "duration": 0,
-      "rep_name": "Rye",
-      "contact_name": "Steffany Campbell",
-      "son_name": "Koban",
-      "hubspot_call_id": "106736022198",
-      "contact_hubspot_id": "185785679667",
-      "siel_scores": {
-        "S": 3,
-        "I": 2,
-        "E": 1,
-        "L": 3,
-        "Opening": 2,
-        "Objection": 3
-      },
-      "overall_score": 4.4,
-      "score_grade": "C (4-5.9)",
-      "ai_predicted_outcome": "Follow Up Scheduled",
-      "true_outcome": "Follow Up Scheduled",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 29,
-      "label_quality": "AMBER",
-      "key_strengths": "Long-standing lead (since Dec 2025) reactivated with clean BAMFAM set. Son returning from Bendigo creates natural urgency window. Start fee willingness signals genuine intent \u2014 Rye correctly identified the trigger moment.",
-      "critical_misses": "Financial barrier around ongoing subscription fees not addressed \u2014 only start fee resolved. No emotional pain stack in notes. Three-month gap in engagement is a trust erosion risk. Scored from rep notes only \u2014 transcript unavailable.",
-      "one_drill": "Pre-call prep for Monday: Rye to map Steffany's 3 fears (son's situation after Bendigo, ongoing cost, will it actually help). Prepare pain-first close with specific link-back to Koban's situation.",
-      "one_line": "Koban coming home is the trigger Rye has been waiting for since December \u2014 this is the close window, do not BAMFAM past it.",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
-    },
-    {
-      "call_id": "2026-03-21_Jasmine_Lund_106736025775",
-      "call_date": "2026-03-21",
-      "duration": 19,
-      "rep_name": "Bailey",
-      "contact_name": "Jasmine Lund",
-      "son_name": "Henley",
-      "hubspot_call_id": "106736025775",
-      "contact_hubspot_id": "210472872823",
-      "siel_scores": {
-        "S": 2,
-        "I": 1,
-        "E": 1,
-        "L": 3,
-        "Opening": 2,
-        "Objection": 3
-      },
-      "overall_score": 3.7,
-      "score_grade": "D (1-3.9)",
-      "ai_predicted_outcome": "Closed",
-      "true_outcome": "Onboarding Booked",
-      "prediction_match": true,
-      "flags": [
-        "LUCKY_CLOSE"
-      ],
-      "false_positive": false,
-      "lucky_close": true,
-      "prediction_mismatch": false,
-      "conversion_predictor": 22,
-      "label_quality": "RED",
-      "key_strengths": "Verbal close secured despite wifi connectivity issues. Creative adaptation \u2014 directed mum to complete form offline. Showed composure under difficult call conditions.",
-      "critical_misses": "LUCKY CLOSE \u2014 SIEL 3.7 but outcome is Onboarding Booked. Mum was likely pre-sold before the call. No emotional investment evident in notes \u2014 high churn risk if Brodie does not anchor the decision emotionally in activation call. No pain stack built.",
-      "one_drill": "Brodie activation priority: Call Jasmine within 24hrs, anchor the YES emotionally \u2014 ask her what made her decide today, reflect it back, build commitment consistency before W1.",
-      "one_line": "She said yes on a bad connection \u2014 Brodie needs to make sure she is emotionally anchored before Henley gets home, or this could reverse.",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
-    },
-    {
-      "call_id": "2026-03-21_Tiffany_Fraser_106735655049",
-      "call_date": "2026-03-21",
-      "duration": 20,
-      "rep_name": "Bailey",
-      "contact_name": "Tiffany Fraser",
-      "son_name": "Lachlan",
-      "hubspot_call_id": "106735655049",
-      "contact_hubspot_id": "210620945693",
-      "siel_scores": {
-        "S": 2,
-        "I": 1,
-        "E": 1,
-        "L": 2,
-        "Opening": 2,
-        "Objection": 2
-      },
-      "overall_score": 3.1,
-      "score_grade": "D (1-3.9)",
-      "ai_predicted_outcome": "Follow Up Scheduled",
-      "true_outcome": "Follow Up Scheduled",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 16,
-      "label_quality": "RED",
-      "key_strengths": "Both parents engaged on the call \u2014 dual buy-in is rare and a strong buying signal. That both showed up is worth noting.",
-      "critical_misses": "Single-line notes \u2014 impossible to assess SIEL technique. No record of pain surfaced, emotional moments, or what stalled the close. Scored from rep notes only.",
-      "one_drill": "Partner objection-prevention frame: when dad is on the call, Bailey should name it early \u2014 address the fact that BOTH parents are hearing this together and use it as a close anchor.",
-      "one_line": "Dad on the call is an asset, not a blocker \u2014 use the dual parent presence to build shared commitment before BAMFAM.",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
-    },
-    {
-      "call_id": "2026-03-21_Suzette_Banks_106736552620",
-      "call_date": "2026-03-21",
-      "duration": 17,
-      "rep_name": "Bailey",
-      "contact_name": "Suzette Banks",
-      "son_name": "Cooper",
-      "hubspot_call_id": "106736552620",
-      "contact_hubspot_id": "210436973882",
-      "siel_scores": {
-        "S": 2,
-        "I": 1,
-        "E": 1,
-        "L": 2,
-        "Opening": 2,
-        "Objection": 3
-      },
-      "overall_score": 3.3,
-      "score_grade": "D (1-3.9)",
-      "ai_predicted_outcome": "Follow Up Scheduled",
-      "true_outcome": "Follow Up Scheduled",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 18,
-      "label_quality": "RED",
-      "key_strengths": "Discovered DCJ funding pathway \u2014 turned financial blocker into a structured next step. Shows resourcefulness on the financial objection.",
-      "critical_misses": "Notes too sparse to assess SIEL technique. No impact cycling, emotional exploration, or pain naming visible. Scored from rep notes only \u2014 transcript unavailable.",
-      "one_drill": "Post-call debrief habit: Bailey to write 3+ bullet notes per call capturing (1) mum pain named, (2) emotional moment, (3) where call stalled.",
-      "one_line": "The DCJ funding find is good instinct \u2014 but name her pain before you solve the logistics.",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
-    },
-    {
-      "call_id": "2026-03-20 | Tayla Colman | Anthony",
-      "call_date": "2026-03-20",
-      "duration": 44,
-      "rep_name": "Anthony",
-      "contact_name": "Tayla Colman",
-      "son_name": "Johnny",
-      "hubspot_call_id": "106667667622",
-      "contact_hubspot_id": "210265656976",
-      "siel_scores": {
-        "S": 3,
-        "I": 3,
-        "E": 2,
-        "L": 3,
-        "Opening": 2,
-        "Objection": 3
-      },
-      "overall_score": 5.3,
-      "score_grade": "C (4-5.9)",
-      "ai_predicted_outcome": "Follow Up Scheduled",
-      "true_outcome": "Follow Up Scheduled",
-      "prediction_match": true,
-      "flags": [],
-      "false_positive": false,
-      "lucky_close": false,
-      "prediction_mismatch": false,
-      "conversion_predictor": 43,
-      "label_quality": "RED",
-      "key_strengths": "1. Strong rapport \u2014 natural small talk, name coincidence, relaxed opener. 2. Rich family context surfaced \u2014 blended family, birth mum story, ADHD/ODD, husband away. 3. Decent program pivot \u2014 linked not carrying it all on your own to her stated pain. 4. Good objection isolation \u2014 tested if Anthony said no, would you still go and got YES. 5. Tayla mentioned potentially enrolling second son Chase too.",
-      "critical_misses": "1. EMOTIONAL BOMBS WALKED PAST: Birth mum abandonment, resentment, brick wall \u2014 all acknowledged and moved on. Zero cycling. 2. Program mention too early \u2014 in first 90 seconds. 3. No $111 close on the day \u2014 Tayla asked and Anthony let her off. 4. Partner objection accepted too passively. 5. No GREEN labels \u2014 every label was generic, never used her exact words.",
-      "one_drill": "EMOTIONAL BOMB CYCLING DRILL: Pull this transcript. Find the 5 bombs. When mum says it PAUSE. Tell me more. What does it bring up for you. Label it using her exact words. Do not move on until 2+ minutes spent on each bomb.",
-      "one_line": "The hardest part wasn't what she said \u2014 it was what she dropped and you walked past. The birth mum story wasn't background. That WAS the whole call.",
-      "longitudinal": {
-        "w1_completed": false,
-        "days_to_w1": null,
-        "still_active": false,
-        "session_count": null
-      }
-    },
-    {
-      "id": "DC-2026-03-26-BEC-TOM",
       "date": "2026-03-26",
-      "rep": "Tom",
-      "contact": "Bec Richardson",
-      "son": "Max (14)",
-      "outcome": "Onboarding Booked",
-      "score": 5.8,
-      "grade": "C",
-      "s": 3,
-      "i": 2,
-      "e": 3,
-      "l": 3,
-      "opening": 2,
-      "oh": 3,
-      "duration_min": 32,
-      "flag": false,
-      "lucky_close": true,
-      "notion_id": "32f8322e-6bdc-81ff-a420-cea94ddcb9e2"
+      "pattern": "Payment plan ignorance — Rye calculated fortnightly payments live on call",
+      "description": "Bianca JESS: Rye said 'off the top of my head, about $450, I think, a fortnight' — this is $2,700 / 6 = $450. Should be memorised. When reps don't know their own numbers, parents hear hesitation and doubt before they hear the price.",
+      "reps_affected": ["rye"],
+      "recommendation": "Price card drill for all reps before next DC session: $2,700 lump / $450 fortnightly / $225 weekly / $900 monthly. No rep should ever calculate live. Brodie to send a pre-call prep card."
     },
     {
-      "id": "DC-2026-03-26-BIANCA-RYE",
       "date": "2026-03-26",
-      "rep": "Rye",
-      "contact": "Bianca JESS",
-      "son": "Jess (18) + Jack (15)",
-      "outcome": "Follow Up Scheduled",
-      "score": 3.2,
-      "grade": "D",
-      "s": 2,
-      "i": 2,
-      "e": 2,
-      "l": 1,
-      "opening": 1,
-      "oh": 1,
-      "duration_min": 27,
-      "flag": true,
-      "flag_reason": "Overall < 4",
-      "lucky_close": false,
-      "notion_id": "32f8322e-6bdc-814e-bd55-e2a289dc188b"
+      "pattern": "'I'll find a way' — buying signal after price shock misidentified as a stall",
+      "description": "Bianca JESS (Rye, Mar 26): After '$450 a fortnight? Oh shit', Bianca said 'I'll find a way.' Rye replied 'yeah yeah 100%' and booked a follow-up. THIS IS A YES. 'I'll find a way' means the parent has internally committed and is now problem-solving logistics.",
+      "reps_affected": ["rye"],
+      "recommendation": "Add 'I'll find a way' to the buying signal recognition drill. When a parent says this, it's a conditional YES — isolate the condition (payment schedule) and close. Do NOT book a follow-up."
+    },
+    {
+      "date": "2026-03-28",
+      "pattern": "Jo Kelly (Rye, Mar 23) — PREDICTION MISMATCH CONFIRMED WEEK 1",
+      "description": "Rye's Jo Kelly call (score 6.8, predicted Near Close) showing 'Booked Call / IN_PROGRESS' in HubSpot on March 28, 5 days post-call. No discovery_call_outcome set. The 6.8 score reflects technique quality — call CAN reach near-close. But uncycled abandonment bomb (Tyson: 'if he was so worried about me, why would he leave me?') left emotional anchoring incomplete. Mum appears still warm (hasn't gone cold) — Rye should re-engage before she does.",
+      "reps_affected": ["rye"],
+      "recommendation": "Rye to follow up Jo Kelly this week. Re-anchor: 'I've been thinking about Tyson since our call.' Don't pitch — re-anchor the emotional truth. If re-engaged, second call is the close."
+    },
+    {
+      "date": "2026-03-28",
+      "pattern": "FALSE POSITIVE CONFIRMED — Jasmine Lund (Bailey) Call Objection status is post-close reversal from emotionless close",
+      "description": "This is now the second outcome confirmation for the Lucky Close pattern. Score 3.7, I=1, E=1, closed on-call. 7 days later: Call Objection. The confirmation took exactly 7 days. Going forward: any call scoring below 4.5 overall with I or E below 2 should be flagged as reversal risk even if closed. Brodie activation protocol should include a re-anchoring call within 48hrs for any Lucky Close flag.",
+      "reps_affected": ["bailey"],
+      "recommendation": "Add Lucky Close Protocol to Brodie's onboarding checklist: if a call is flagged Lucky Close, Brodie calls the parent within 48hrs to re-anchor the decision emotionally before W1."
     }
   ]
 }

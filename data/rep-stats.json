@@ -1,76 +1,254 @@
 {
-  "last_updated": "2026-03-28T15:41:00+11:00",
-  "pass": "afternoon_summary_no_dcs",
-  "reps": [
-    {
-      "rep": "Anthony",
+  "last_updated": "2026-03-28",
+  "reps": {
+    "anthony": {
+      "hubspot_owner_id": "87029276",
+      "email": "anthony@bluesandgreens.com.au",
       "status": "active",
       "calls_scored": 5,
-      "closes": 2,
-      "follow_ups": 3,
-      "avg_score": 5.96,
-      "close_rate": 40.0,
-      "e_score_avg": 2.2,
-      "i_score_avg": 3.0,
+      "rolling_10": {
+        "overall": [5.3, 6.7, 6.5, 5.6, 5.7],
+        "s": [3, 4, 5, 4, 5],
+        "i": [3, 3, 3, 3, 3],
+        "e": [2, 3, 2, 2, 2],
+        "l": [3, 3, 3, 2, 2],
+        "opening": [2, 4, 4, 4, 4],
+        "oh": [3, 4, 4, 3, 2]
+      },
+      "averages": {
+        "overall": 5.96,
+        "s": 4.2,
+        "i": 3.0,
+        "e": 2.2,
+        "l": 2.6,
+        "opening": 3.6,
+        "oh": 3.2
+      },
+      "trend": {
+        "last_5_avg": 5.96,
+        "prior_5_avg": null,
+        "direction": "insufficient_data",
+        "note": "5 calls scored. Range 5.3–6.7. No new calls Mar 27–28. Holding pattern. Predictions matched: Judith Lacey (Deposit Paid ✅), Leanne Black (Deposit Paid ✅), Beck Reside (FU ✅), Sophie Cuzzy (FU ✅). 2/4 closes this week. 50% close rate from scored calls. Improvement area unchanged: E score avg 2.2."
+      },
+      "close_rate_vs_siel": {
+        "calls": 5,
+        "closes": 2,
+        "rate": 40.0,
+        "avg_close_siel": 6.6,
+        "avg_miss_siel": 5.53,
+        "note": "HubSpot confirms: Judith Lacey = Deposit Paid, Leanne Black = Deposit Paid, Sophie Cuzzy = Booked Call, Beck Reside = Booked Call. All predictions accurate."
+      },
+      "top_objections": ["partner_coparent", "price_affordability", "think_about_it"],
+      "improvement_area": "E (Emotional Labelling) — avg 2.2/5, bottom dimension across 4/5 calls. Consistently uses generic labels ('it sounds tough', 'a lot going on') instead of naming the parent's specific emotion using their exact words. P3 deepening (I=3.0) is borderline — emotional labelling failure is THE limiting factor.",
       "p3_flag": false,
-      "trend": "stable",
-      "improvement_area_short": "E (Emotional Labelling) \u2014 avg 2.2/5. Uses generic labels instead of parent's exact words. GREEN LABEL DRILL active."
+      "p3_note": "I Score avg = 3.0 (borderline). E Score = 2.2 — labelling failure within deepening is the actual gap. Treat as priority.",
+      "coaching_history": [
+        {
+          "date": "2026-03-25",
+          "pattern": "Recurring — emotional bomb walking. Present in Tayla Colman, Sophie Cuzzy, Leanne Black, Beck Reside. Only Judith Lacey's suicide mention forced genuine depth.",
+          "the_moment": "Beck Reside: 'can't work because of him' and 'choosing between Brax and my biological kids' — massive impact statements walked past with generic acknowledgement.",
+          "drill": "GREEN LABEL DRILL: After every emotional disclosure, Anthony must (1) pause 2 seconds, (2) name the specific emotion using the parent's EXACT words — not summaries. Practise on Tayla Colman transcript: find the 5 bombs, cycle each 2+ times with exact language before moving on.",
+          "metric_to_watch": "E Score — current 2.2, target 3.5 by call 10"
+        },
+        {
+          "date": "2026-03-28",
+          "pattern": "Weekly validation — all 4 predictions confirmed accurate (Mar 23 calls). 2 closes (Judith, Leanne) both at E=2-3. The question is ceiling: would Judith have been a 10/10 instead of needing isolation if deepening had gone deeper? Yes. Sophie Cuzzy is the proof — E=2 + no bomb cycling = no close.",
+          "the_moment": "Sophie Cuzzy: 'He's even like at times when he was upset, he's like, I'm just a loser.' Anthony summarised this as 'boost his self-esteem a little bit.' The mum handed him the close — Leo's own words — and Anthony translated it into generic language.",
+          "drill": "EXACT LANGUAGE DRILL: Review Sophie Cuzzy transcript. Find every time the mum used specific language (Leo's words, her words about her own feeling). Write out a label using ONLY her exact words — not paraphrase. 'Leo said he's just a loser — when you heard that, what went through you as his mum?' This is the drill. 5 reps before next call.",
+          "metric_to_watch": "E Score — current 2.2. Target 3.0+ by call 7. Also: OH Score has dropped from 4 to 2 in last 2 calls — the Sophie Cuzzy 'a hundred percent, sit with that a little bit' cave is a regression. Watch this."
+        }
+      ]
     },
-    {
-      "rep": "Rye",
+    "rye": {
+      "hubspot_owner_id": "86488316",
+      "email": "rye@bluesandgreens.com.au",
       "status": "active_coaching",
       "calls_scored": 3,
-      "closes": 0,
-      "follow_ups": 3,
-      "avg_score": 5.17,
-      "close_rate": 0.0,
-      "e_score_avg": 1.67,
-      "i_score_avg": 2.0,
+      "rolling_10": {
+        "overall": [4.4, 6.8, 4.3],
+        "s": [3, 5, 2],
+        "i": [2, 3, 1],
+        "e": [1, 3, 1],
+        "l": [3, 3, 3],
+        "opening": [2, 3, 1],
+        "oh": [3, 4, 1]
+      },
+      "averages": {
+        "overall": 5.17,
+        "s": 3.33,
+        "i": 2.0,
+        "e": 1.67,
+        "l": 3.0,
+        "opening": 2.0,
+        "oh": 2.67
+      },
+      "trend": {
+        "last_5_avg": 5.17,
+        "prior_5_avg": null,
+        "direction": "declining",
+        "note": "VOLATILE — 4.4 → 6.8 → 4.3. Jo Kelly (6.8) PREDICTION MISMATCH CONFIRMED: still 'Booked Call / IN_PROGRESS' in HubSpot 5 days after call. Score 6.8 predicted Near Close — not materialised. Likely cause: Tyson abandonment bomb uncycled in P3 (I=3) left emotional anchoring incomplete. Bianca JESS (4.3) consistent with No Sale. 0/3 closes from 3 scored calls. L Score (3.0) is the only consistent strength. I and E both critical."
+      },
+      "close_rate_vs_siel": {
+        "calls": 3,
+        "closes": 0,
+        "rate": 0.0,
+        "avg_close_siel": null,
+        "avg_miss_siel": 5.17,
+        "note": "Jo Kelly remains unresolved — Booked Call status, no DC outcome logged. If Jo Kelly closes this week, rate becomes 1/3 (33%). Bianca JESS = Booked Call / UNQUALIFIED = stale lead. 0 confirmed closes from 3 DCs."
+      },
+      "top_objections": ["price_affordability", "partner_coparent"],
+      "improvement_area": "BUYING SIGNAL RECOGNITION + PRICE CARD are now #1 priority. Jo Kelly PREDICTION MISMATCH confirms: deepening CAN reach 6.8 quality but without cycling the abandonment bomb, the emotional anchor doesn't hold. Two things must happen: (1) Memorise price card — $2,700 lump / $450 fortnightly / $225 weekly / $900 monthly. No on-call calculation. Ever. (2) When mum reveals something heavy (Tyson's abandonment, Bianca's knife incident) — STOP and ask 2 more questions before moving. Not 1. Two.",
       "p3_flag": true,
-      "trend": "declining",
-      "improvement_area_short": "P3 Deepening (I=2.0, E=1.67) + Buying Signal Recognition + Price Card. Three critical misses. PREDICTION MISMATCH: Jo Kelly (6.8) still unresolved."
+      "p3_note": "PRIORITY FLAG — I avg=2.0, E avg=1.67. Three consecutive calls with P3 failure. Bianca JESS: 'I had a knife on him' — Rye said 'That is...' and moved on. Jo Kelly: Tyson's abandonment bomb — Rye heard it but didn't cycle. Pattern is consistent. Not random. Drills must be internalised before next call.",
+      "coaching_history": [
+        {
+          "date": "2026-03-25",
+          "pattern": "Inconsistency — Jo Kelly (6.8) shows real coaching ceiling; Steffany Campbell (4.4) shows floor. Gap of 2.4 points between calls is too wide. Pattern suggests technique is not yet systematic.",
+          "the_moment": "Jo Kelly: Tyson said 'if he was so worried about me, why would he leave me?' — Rye heard it but didn't cycle. This was the deepest pain point of the call and the moment the close was there to be made.",
+          "drill": "ABANDONMENT CYCLING DRILL: When a parent reveals a child's pain (self-talk, absent parent, loss) — stop and cycle 3× before moving. Use: 'Tell me more about that.' / 'What does that feel like for you as his mum?' / 'How long has he been carrying that?' Do not acknowledge-and-move. Jo Kelly transcript: find the Tyson bomb, practise cycling.",
+          "metric_to_watch": "I Score and E Score — current 2.5/2.0, target both to 3.5 by call 6"
+        },
+        {
+          "date": "2026-03-26",
+          "pattern": "REGRESSION — Bianca JESS (4.3 full v2) is lowest score. No frame set, price unprepared, OH=1. 'I'll find a way' buying signal missed. Jo Kelly high is not yet a habit.",
+          "the_moment": "Bianca: 'he's threatened to commit suicide. I had a knife on him.' Rye said 'That is...' and moved on. Then: Bianca said 'I'll find a way' after price shock — Rye replied 'yeah yeah 100%' and booked a follow-up. Both were closes waiting to happen.",
+          "drill": "BUYING SIGNAL DRILL: Practise on Bianca JESS transcript. Find 'I'll find a way' → write your response out loud: 'You just said you'll find a way — I believe you. If I can find a payment schedule that works, are we doing this today?' Speak it 5× before next call. ALSO: Price card — memorise $2,700 lump / $450 fortnightly / $225 weekly / $900 monthly. No calculation on-call. Ever.",
+          "metric_to_watch": "OH Score (1/5) is now most urgent gap. Also Opening (1/5) — frame set habit. Target OH to 3+ by call 4, Opening to 2+ by next call."
+        },
+        {
+          "date": "2026-03-28",
+          "pattern": "PREDICTION MISMATCH CONFIRMED — Jo Kelly (6.8, Near Close predicted) still Booked Call/IN_PROGRESS in HubSpot on March 28, 5 days post-call. 0/3 close rate confirmed. The Jo Kelly score reflects that technique CAN reach near-close quality — but the uncycled abandonment bomb means the emotional anchoring wasn't complete. The call quality wasn't enough to close because the deepest pain point was touched and left. Deepening = 60% there, not 100%.",
+          "the_moment": "Jo Kelly: Tyson abandonment bomb — 'if he was so worried about me, why would he leave me?' This is the moment the close was won or lost. Rye moved past it. If he had said: 'Tell me more about Tyson saying that — how long has he been carrying that feeling?' the call changes. The fact this lead is still warm in HubSpot 5 days later suggests the call built enough connection that she hasn't gone cold. Re-engage this week.",
+          "drill": "Re-engage Jo Kelly this week. Do NOT pitch. Open with: 'I've been thinking about Tyson since our call. What you shared about him asking why his dad left — I wanted to make sure you're okay, and that he's okay.' Re-anchor the emotional truth. If she's still warm, the second conversation is the close. ONE drill for next DC: when any parent reveals a child's pain about abandonment or a parent leaving — STOP. Cycle twice before moving. The close is IN that moment, not at the end.",
+          "metric_to_watch": "Close rate (0/3, 0%). Next scored call: target OH > 2, Opening > 1. Jo Kelly follow-up outcome to be logged this week. If closes: recalculate. If no contact: flag as cold lead."
+        }
+      ]
     },
-    {
-      "rep": "Harry",
+    "harry": {
+      "hubspot_owner_id": "75967744",
+      "email": "harry@bluesandgreens.com.au",
       "status": "exited_dc",
       "calls_scored": 1,
-      "closes": 1,
-      "follow_ups": 0,
-      "avg_score": 5.5,
-      "close_rate": 100.0,
-      "e_score_avg": 2.0,
-      "i_score_avg": 3.0,
+      "rolling_10": {
+        "overall": [5.5],
+        "s": [3], "i": [3], "e": [2], "l": [3], "opening": [3], "oh": [3]
+      },
+      "averages": {
+        "overall": 5.5,
+        "s": 3.0, "i": 3.0, "e": 2.0, "l": 3.0, "opening": 3.0, "oh": 3.0
+      },
+      "trend": {
+        "note": "Exited DC role. Kelly Wellsmore (5.5) is the baseline reference call for calibration. Note: this call is treated as gold standard in training library but scored 5.5 on the SIEL framework — the transcript-level scoring identified the 'BOMB DROPPED NOT CYCLED' miss which is the key gap between a 5.5 and a 9+.",
+        "direction": "n/a"
+      },
+      "close_rate_vs_siel": {
+        "calls": 1,
+        "closes": 1,
+        "rate": 100.0,
+        "avg_close_siel": 5.5,
+        "avg_miss_siel": null
+      },
+      "top_objections": [],
+      "improvement_area": "N/A — exited DC role. Reference only.",
       "p3_flag": false,
-      "trend": "n/a",
-      "improvement_area_short": "N/A \u2014 exited DC role. Reference only."
+      "p3_note": "Not applicable — Harry is the benchmark, not a coaching subject.",
+      "coaching_history": []
     },
-    {
-      "rep": "Bailey",
+    "bailey": {
+      "hubspot_owner_id": null,
+      "email": "bailey@bluesandgreens.com.au",
       "status": "active_commission",
       "calls_scored": 3,
-      "closes": 1,
-      "follow_ups": 2,
-      "avg_score": 3.37,
-      "close_rate": 33.3,
-      "e_score_avg": 1.0,
-      "i_score_avg": 1.0,
+      "rolling_10": {
+        "overall": [3.7, 3.1, 3.3],
+        "s": [2, 2, 2], "i": [1, 1, 1], "e": [1, 1, 1], "l": [3, 2, 2], "opening": [2, 2, 2], "oh": [3, 2, 3]
+      },
+      "averages": {
+        "overall": 3.37,
+        "s": 2.0, "i": 1.0, "e": 1.0, "l": 2.33, "opening": 2.0, "oh": 2.67
+      },
+      "trend": {
+        "last_5_avg": 3.37,
+        "prior_5_avg": null,
+        "direction": "flat",
+        "note": "CONFIRMED FALSE POSITIVE: Jasmine Lund now shows 'Call Objection' in HubSpot (member_status) — DC Outcome still says Onboarding Booked from original close, but member_status = Call Objection confirms post-close reversal. Lucky Close prediction has materialised exactly as flagged. Brodie must re-engage Jasmine this week. No new calls this week from Bailey. Transcript availability remains 0/3 — all calls scored from notes. This is a data integrity problem."
+      },
+      "close_rate_vs_siel": {
+        "calls": 3,
+        "closes": 1,
+        "rate": 33.3,
+        "avg_close_siel": 3.7,
+        "avg_miss_siel": 3.2,
+        "note": "FALSE POSITIVE CONFIRMED — Jasmine Lund (3.7, I=1, E=1) closed on-call but HubSpot shows Call Objection status post-close. Payment was made without emotional anchoring. Reversal materialised as predicted. Effective close rate from genuinely anchored closes: 0/3 (0%)."
+      },
+      "top_objections": ["price_affordability", "logistics"],
+      "improvement_area": "CRITICAL: I Score = 1.0, E Score = 1.0 — no emotional deepening present in any scored call. All three calls show minimal engagement with parent pain. Transcripts unavailable — scoring confidence low, but direction clear. FALSE POSITIVE on Jasmine Lund is now a documented teaching case: close without emotional anchoring = reversal within 7 days. Discovery/deepening fundamentals required before any close skill development.",
       "p3_flag": true,
-      "trend": "flat",
-      "improvement_area_short": "CRITICAL: I=1.0, E=1.0. Jasmine Lund 'Call Objection' confirms Lucky Close reversal. Post-close activation at risk. Transcript access needed."
+      "p3_note": "CRITICAL FLAG — I Score avg = 1.0, E Score avg = 1.0. Both well below 3.0 threshold. P3 failure is systematic. Jasmine Lund Call Objection status CONFIRMS post-close reversal from emotional under-anchoring. This is the documented outcome of a D-range call that closes. Transcript submission is blocking further scoring.",
+      "coaching_history": [
+        {
+          "date": "2026-03-25",
+          "pattern": "Systematic — all 3 calls show I=1, E=1. No emotional engagement visible. Notes too sparse to assess technique. May not be applying deepening framework at all.",
+          "the_moment": "Jasmine Lund: Close secured despite I=1, E=1 — this was a pre-sold lead. Risk: Jasmine Lund now shows 'Call Objection' status in HubSpot (post-close activation issue) — consistent with no emotional anchoring during the call.",
+          "drill": "DISCOVERY BASICS FIRST: (1) After the open question — say NOTHING for 2 full minutes. Let the mum fill the silence. (2) When she reveals anything painful — ask ONE follow-up question before moving on. (3) Write 3 notes per call: mum's pain named, emotional moment, where call stalled. Start these 3 habits before any other technique work.",
+          "metric_to_watch": "I Score and E Score — current 1.0 each, target 2.5+ by call 8. Also: transcript availability — 3/3 scored from notes only, need recordings going forward."
+        },
+        {
+          "date": "2026-03-28",
+          "pattern": "FALSE POSITIVE CONFIRMED — Jasmine Lund 'Call Objection' in HubSpot validates Lucky Close prediction. Emotional under-anchoring → post-close reversal. This is now a documented and CONFIRMED pattern. Brodie must call Jasmine within 48hrs to re-anchor before she cancels.",
+          "the_moment": "Jasmine Lund: paid on-call (score 3.7, I=1, E=1). 7 days later: Call Objection status in HubSpot. When the mum said yes without emotional investment, that yes didn't hold. The close without deepening is a false positive. This is the exact outcome the scoring system predicted.",
+          "drill": "Brodie to call Jasmine Lund immediately: 'What made you decide to go ahead originally? I want to make sure we're set up for success.' Re-anchor the decision emotionally before W1. Bailey to review this outcome as a teaching case: the close that didn't hold. For future calls — a yes without tears, vulnerability, or a named fear is not a committed yes.",
+          "metric_to_watch": "Jasmine Lund activation status — must be resolved this week. Bailey transcript submission — currently 0/3, blocking improvement. Without transcripts, coaching is blind."
+        }
+      ]
     },
-    {
-      "rep": "Tom",
+    "tom": {
+      "hubspot_owner_id": "89664116",
+      "email": "tom@bluesandgreens.com.au",
       "status": "active",
       "calls_scored": 1,
-      "closes": 1,
-      "follow_ups": 0,
-      "avg_score": 7.5,
-      "close_rate": 100.0,
-      "e_score_avg": 3.0,
-      "i_score_avg": 3.0,
+      "rolling_10": {
+        "overall": [7.5],
+        "s": [4], "i": [3], "e": [3], "l": [4], "opening": [4], "oh": [4]
+      },
+      "averages": {
+        "overall": 7.5,
+        "s": 4.0, "i": 3.0, "e": 3.0, "l": 4.0, "opening": 4.0, "oh": 4.0
+      },
+      "trend": {
+        "last_5_avg": 7.5,
+        "prior_5_avg": null,
+        "direction": "new",
+        "note": "First call scored — CLOSED on call 1 (10 days in the job). Bec Richardson: Deposit Paid in HubSpot confirmed. 7.5/10 genuine close. Not a lucky close — score supports it, HubSpot confirms it. Single gap: P3 fear bomb pivot (I=3). Opening (4), L (4), OH (4) all above average for reps at this stage. Prediction matched perfectly."
+      },
+      "close_rate_vs_siel": {
+        "calls": 1,
+        "closes": 1,
+        "rate": 100.0,
+        "avg_close_siel": 7.5,
+        "avg_miss_siel": null,
+        "note": "HubSpot confirms: Bec Richardson = Deposit Paid / Onboarding Booked. Legitimate close. Not flagged as lucky — score (7.5) supports the outcome. All phase scores above 3. Prediction: matched."
+      },
+      "top_objections": ["son_buyin"],
+      "improvement_area": "P3 Deepening (I=3) — single gap. When Bec said 'my biggest concern is that it kills him' Tom replied 'Yeah yeah yeah. But I think what's hard is there's so many problems at the moment...' — pivoted. Gold standard: pause, repeat her words, ask 'Tell me more about that.' This is the ONLY gap between Tom's current 7.5 and an 8.5+ score. Everything else is already above rep average.",
       "p3_flag": false,
-      "trend": "new",
-      "improvement_area_short": "P3 fear bomb cycling \u2014 single gap. 'My biggest concern is that it kills him' \u2192 pivoted instead of cycling. One habit from 8.5+."
+      "p3_note": "I=3 on first call — fear bomb pivot. Not flagged (single call, natural new rep pattern). Monitor next 2 calls. If I stays below 3 on call 2, flag. Opening, L, and OH already at 4/5 — above Anthony's averages after 5 calls.",
+      "coaching_history": [
+        {
+          "date": "2026-03-26",
+          "pattern": "First call. CLOSED 7.5/10 — genuine close, not lucky. Multiple gold standard techniques used naturally: 'regardless' frame (P1), held space through Bec's story (P2), 'wearing hats' stack (P4), dentist metaphor (P5, gold standard grade 5 Son Buy-In handling), link sent on-call (P6). P3 fear bomb is the single gap. HubSpot confirms: Deposit Paid.",
+          "the_moment": "Bec said 'my biggest concern is that it kills him' — Tom replied 'Yeah yeah yeah. But I think what's hard is there's so many problems at the moment. I'm like, which paddle are we picking...' Gold standard: STOP. Repeat her exact words. 'Tell me more about that fear. How long have you been carrying it?' Do not move until you've cycled 2×.",
+          "drill": "FEAR ANCHOR DRILL: When mum reveals worst fear — STOP. Repeat her exact words back. Say: 'Tell me more about that.' Stay for 2 full cycles before moving to Discovery close. Practise on Bec Richardson transcript: find the fear bomb, speak your cycling response out loud 3×.",
+          "metric_to_watch": "I Score — 3/5 on call 1. Target 4+ by call 2. Opening (4/5) and OH (4/5) already strong."
+        },
+        {
+          "date": "2026-03-28",
+          "pattern": "Bec Richardson CONFIRMED: Deposit Paid in HubSpot. Prediction matched perfectly. Tom is the only rep this week with a clean, confirmed, emotionally-anchored close. 10 days in. The fear bomb pivot is the only coaching note — everything else is performing at or above expected level. This rep has genuine instinct.",
+          "the_moment": "Bec said 'my biggest concern is that it kills him' — the close was right there. Tom felt it (he slowed down) but pivoted to problems instead of anchoring. Next call: if this moment appears — hold it. 'That's her worst fear. I need to stay here.' One breath. Then: 'Tell me more about that.'",
+          "drill": "FEAR ANCHOR DRILL (repeat): Bec Richardson transcript — find the fear bomb (timestamp ~22 min). Practice the cycling response out loud: 'My biggest concern is that it kills him. Tell me more about that. How long have you been sitting with that fear?' Do it 5 times before call 2. When you can say it without hesitating, you're ready.",
+          "metric_to_watch": "I Score — current 3/5. Target 4+ on call 2. This is the only gap. Lock it in and the ceiling is 8.5+."
+        }
+      ]
     }
-  ]
+  }
 }
