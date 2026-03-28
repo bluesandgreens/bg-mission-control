@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-26T12:00:18.153691",
+  "generated": "2026-03-28T14:57:01.194072",
   "paused_subs": [
     {
       "name": "Jo Flanagan",
@@ -25,6 +25,15 @@
       "amount": 1808.0,
       "resumes_at": "2026-05-18",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SdNL92mA5zLxyK8v58BTnyP",
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
+    },
+    {
+      "name": "Melissa Angell",
+      "email": "mel@directelectricalsolutions.com.au",
+      "amount": 2856.0,
+      "resumes_at": "indefinite",
+      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SUvxI2mA5zLxyK8LrSQiiNK",
       "hs_url": "",
       "hs_member_status": "Active Sessions"
     },
@@ -65,5 +74,5 @@
       "hs_member_status": "Active Sessions"
     }
   ],
-  "total_count": 7
+  "total_count": 8
 }
