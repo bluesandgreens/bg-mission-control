@@ -1,18 +1,18 @@
 {
-  "generated": "2026-03-29T10:47:16.951448",
+  "generated": "2026-03-29T12:00:40.937791",
   "active_families": 60,
   "active_total": 68,
   "paused": 8,
   "mrr": 41410.76,
-  "cash_7d": 34930.52,
-  "balance_available": 24428.5,
+  "cash_7d": 34698.52,
+  "balance_available": 24407.81,
   "balance_pending": 10911.43,
-  "balance_total": 35339.93,
+  "balance_total": 35319.24,
   "revenue_at_risk": 820.0,
   "failed_past_due": 4,
-  "meta_spend_mtd": 5319.24,
+  "meta_spend_mtd": 5328.55,
   "booked_calls_mtd": 195,
-  "cpbc_mtd": 27.28,
+  "cpbc_mtd": 27.33,
   "xero_receivable": 14708.04,
   "xero_payable": 25609.93,
   "ndis_total": 1718.0,
@@ -22,9 +22,9 @@
     "steady_state_families": 100,
     "current_collecting": 60,
     "avg_rev_per_sub": 690.18,
-    "cac": 27.28,
+    "cac": 27.33,
     "ltv_current": 2041.0,
-    "roic_multiple": 74.8,
+    "roic_multiple": 74.7,
     "payback_days": 1.0,
     "retention_lever_1mo_annual": 496930.0,
     "churn_scenarios": [
@@ -65,25 +65,5 @@
         "mrr_ceiling": 207054.0
       }
     ]
-  },
-  "cac_mtd": 68.2,
-  "closes_mtd": 78,
-  "meta_ads": {
-    "wtd": {
-      "cpbc": 27.28,
-      "spend": 5319.24,
-      "booked_calls": 195
-    }
-  },
-  "stripe": {
-    "failed_payments_7d": 4,
-    "failed_payments_7d_total": 820.0
-  },
-  "overdue_w1s": [],
-  "perf_flags": [],
-  "retention": {
-    "session_attendance_7d": 0
-  },
-  "surround_sound": [],
-  "dc_closes": 78
+  }
 }
