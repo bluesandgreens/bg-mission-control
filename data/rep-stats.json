@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-28",
+  "last_updated": "2026-03-29",
   "reps": [
     {
       "rep": "Anthony",
@@ -13,8 +13,11 @@
       "opening_avg": 3.6,
       "oh_avg": 3.2,
       "total_calls": 5,
-      "improvement_area_short": "E (Emotional Labelling) \u2014 avg 2.2/5, bottom dimension across 4/5 calls. Consistently uses generic labels ('it sounds tough', 'a lot going on') instead of naming the parent's specific emotion using their exact words. P3 deepening (I=3.0) is borderline \u2014 emotional labelling failure is THE limiting factor.",
-      "p3_flag": false
+      "confirmed_closes": 2,
+      "confirmed_w1": 1,
+      "improvement_area_short": "E (Emotional Labelling) avg 2.2/5. Secondary alert: OH dropping (4→2 last 2 calls — Sophie Cuzzy + Beck Reside both BAMFAM caved). Isolation drill needed before next call.",
+      "p3_flag": false,
+      "week_summary": "5/5 prediction accuracy. Judith Lacey Active Sessions (W1 Mar 29). Leanne Black Deposit Paid. Both closes confirmed. Sophie Cuzzy + Beck Reside = no close (predicted, confirmed)."
     },
     {
       "rep": "Rye",
@@ -28,8 +31,11 @@
       "opening_avg": 2.0,
       "oh_avg": 2.67,
       "total_calls": 3,
-      "improvement_area_short": "BUYING SIGNAL RECOGNITION + PRICE CARD are now #1 priority. Jo Kelly PREDICTION MISMATCH confirms: deepening CAN reach 6.8 quality but without cycling the abandonment bomb, the emotional anchor doesn't hold. Two things must happen: (1) Memorise price card \u2014 $2,700 lump / $450 fortnightly / $225 weekly / $900 monthly. No on-call calculation. Ever. (2) When mum reveals something heavy (Tyson's abandonment, Bianca's knife incident) \u2014 STOP and ask 2 more questions before moving. Not 1. Two.",
-      "p3_flag": true
+      "confirmed_closes": 0,
+      "confirmed_w1": 0,
+      "improvement_area_short": "URGENT: Jo Kelly re-engage Mar 30 (Day 7 window). Price card memorise. Fear bomb cycling drill before next DC.",
+      "p3_flag": true,
+      "week_summary": "0/3 closes confirmed. Jo Kelly PREDICTION MISMATCH (Day 6, still Booked Call). Re-engage tomorrow before window closes. Bianca JESS = no close (prediction match)."
     },
     {
       "rep": "Harry",
@@ -43,14 +49,17 @@
       "opening_avg": 3.0,
       "oh_avg": 3.0,
       "total_calls": 1,
-      "improvement_area_short": "N/A \u2014 exited DC role. Reference only.",
-      "p3_flag": false
+      "confirmed_closes": 1,
+      "improvement_area_short": "N/A — exited DC role. Reference only.",
+      "p3_flag": false,
+      "week_summary": "Reference rep only."
     },
     {
       "rep": "Bailey",
       "status": "active_commission",
       "avg_score": 3.37,
       "close_rate": 33.3,
+      "effective_close_rate": 0.0,
       "e_score_avg": 1.0,
       "i_score_avg": 1.0,
       "s_score_avg": 2.0,
@@ -58,8 +67,10 @@
       "opening_avg": 2.0,
       "oh_avg": 2.67,
       "total_calls": 3,
-      "improvement_area_short": "CRITICAL: I Score = 1.0, E Score = 1.0 \u2014 no emotional deepening present in any scored call. All three calls show minimal engagement with parent pain. Transcripts unavailable \u2014 scoring confidence low, but direction clear. FALSE POSITIVE on Jasmine Lund is now a documented teaching case: close without emotional anchoring = reversal within 7 days. Discovery/deepening fundamentals required before any close skill development.",
-      "p3_flag": true
+      "confirmed_closes": 0,
+      "improvement_area_short": "CRITICAL: I=1.0, E=1.0. Jasmine Lund FALSE POSITIVE confirmed (Call Objection). Lucky Close Protocol not triggered — process gap. No transcripts submitted (0/3).",
+      "p3_flag": true,
+      "week_summary": "Jasmine Lund Call Objection confirmed. Lucky Close Protocol not followed. No new calls this week. Transcript blocking all further coaching."
     },
     {
       "rep": "Tom",
@@ -73,8 +84,11 @@
       "opening_avg": 4.0,
       "oh_avg": 4.0,
       "total_calls": 1,
-      "improvement_area_short": "P3 Deepening (I=3) \u2014 single gap. When Bec said 'my biggest concern is that it kills him' Tom replied 'Yeah yeah yeah. But I think what's hard is there's so many problems at the moment...' \u2014 pivoted. Gold standard: pause, repeat her words, ask 'Tell me more about that.' This is the ONLY gap between Tom's current 7.5 and an 8.5+ score. Everything else is already above rep average.",
-      "p3_flag": false
+      "confirmed_closes": 1,
+      "confirmed_w1": 0,
+      "improvement_area_short": "I=3 (fear bomb pivot) is the single gap. Fix it, ceiling jumps to 9+. Emily Brady (Booked Call) in pipeline for call 2.",
+      "p3_flag": false,
+      "week_summary": "Bec Richardson confirmed Deposit Paid. 7.5/10, Day 10 on the job. Emily Brady added to pipeline (Booked Call, Mar 29). Fear anchor drill before call 2."
     }
   ],
   "top_objections": [
@@ -83,22 +97,48 @@
       "category": "price_affordability",
       "count": 5,
       "avg_handling_grade": 1.8,
-      "note": "Most common AND worst-handled category. Five instances, avg grade 1.8. Rye's Bianca JESS (grade 1) is the worst on record. The contrast: Tom's Bec Richardson \u2014 price stated confidently ($2,700), once, no calculation. All reps must memorise the price card. 'I'll find a way' is now a documented buying signal \u2014 it is a YES, not a stall."
+      "note": "CONFIRMED this week: Every close had confident price delivery. Every miss had hesitant/absent delivery. Price card = most high-leverage skill to train NOW."
     },
     {
       "rank": 2,
       "category": "partner_coparent",
       "count": 3,
       "avg_handling_grade": 3.0,
-      "note": "All three from Anthony. Range of 2-4/5 shows the technique exists but isn't systematic. Gets it right with isolation ('if dad wasn't on board, what would happen?') but defaults to BAMFAM when he doesn't think to isolate. The $111 de-risk frame was not used in any partner objection this week."
+      "note": "Judith Lacey (grade 4, isolation) = Active Sessions. Sophie Cuzzy (grade 2, BAMFAM) = no close. The $111 de-risk frame was not used once this week. It's free points."
     },
     {
       "rank": 3,
       "category": "son_buyin",
       "count": 2,
       "avg_handling_grade": 4.0,
-      "note": "Best-handled category. Tom's dentist metaphor on Bec Richardson (grade 5) is gold standard \u2014 pre-emptive, natural, from a confirmed close. This is what objection handling from depth looks like. The objection was absorbed before it became a blocker."
+      "note": "Tom's dentist metaphor (grade 5, Bec Richardson) = Deposit Paid confirmed. Pre-emptive handling is the standard to teach."
     }
   ],
-  "flags": {}
+  "flags": {
+    "prediction_mismatches": [
+      {
+        "call": "Jo Kelly — Rye — Mar 23",
+        "score": 6.8,
+        "predicted": "Near Close",
+        "actual": "Booked Call (Day 6)",
+        "reason": "Uncycled abandonment bomb — Tyson 'why did dad leave me' moment not cycled. Anchor incomplete.",
+        "action_required": "Rye to call Mar 30. Re-anchor only."
+      }
+    ],
+    "false_positives": [
+      {
+        "call": "Jasmine Lund — Bailey — Mar 21",
+        "score": 3.7,
+        "predicted": "Lucky Close / reversal risk",
+        "actual": "Call Objection confirmed",
+        "reason": "I=1, E=1. Closed without emotional anchoring. Reversal in 7 days exactly as predicted.",
+        "action_required": "Brodie re-engage. Lucky Close Protocol gap — add to Brodie's activation checklist."
+      }
+    ],
+    "process_gaps": [
+      "Lucky Close Protocol not triggered for Jasmine Lund (Bailey, Mar 21). Brodie must add to checklist.",
+      "Bailey transcript submission: 0/3. Coaching is blind without recordings.",
+      "Bec Richardson W1 not yet scheduled in HubSpot despite Deposit Paid — Brodie to follow up."
+    ]
+  }
 }
