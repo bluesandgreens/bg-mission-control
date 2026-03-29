@@ -1,0 +1,5378 @@
+{
+  "monday": {
+    "date": "2026-03-31",
+    "label": "Monday Mar 31",
+    "total": 58,
+    "contacts": [
+      {
+        "name": "Amanda Dudley",
+        "email": "amanda.dudley@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Senior Lecturer & Placement Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Amanda Dudley",
+          "uni_name": "Deakin",
+          "dept_name": "Psych",
+          "role": "Senior Lecturer & Placement Coordinator"
+        }
+      },
+      {
+        "name": "Dr Elizabeth Clancy",
+        "email": "elizabeth.clancy@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Unit Chair, Psychology at Work (HPS328)",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Dr Elizabeth Clancy",
+          "uni_name": "Deakin",
+          "dept_name": "WIL",
+          "role": "Unit Chair, Psychology at Work (HPS328)"
+        }
+      },
+      {
+        "name": "Federation Education",
+        "email": "education@federation.edu.au",
+        "uni": "Federation",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Federation Education",
+          "uni_name": "Federation",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Federation Social Work",
+        "email": "socialwork@federation.edu.au",
+        "uni": "Federation",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Federation Social Work",
+          "uni_name": "Federation",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "La Trobe Social Work",
+        "email": "socialwork@latrobe.edu.au",
+        "uni": "La Trobe",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "La Trobe Social Work",
+          "uni_name": "La Trobe",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "Dr Luis Mascaro",
+        "email": "luis.mascaro@monash.edu",
+        "uni": "Monash",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Placement Liaison, Head Tutor",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Dr Luis Mascaro",
+          "uni_name": "Monash",
+          "dept_name": "Psych",
+          "role": "Placement Liaison, Head Tutor"
+        }
+      },
+      {
+        "name": "RMIT Social Work",
+        "email": "social-work@rmit.edu.au",
+        "uni": "RMIT",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Field Education Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "RMIT Social Work",
+          "uni_name": "RMIT",
+          "dept_name": "Social Work",
+          "role": "Field Education Coordinator"
+        }
+      },
+      {
+        "name": "Megan Pote",
+        "email": "m.pote@swin.edu.au",
+        "uni": "Swinburne",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Manager, Health Placements",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Megan Pote",
+          "uni_name": "Swinburne",
+          "dept_name": "WIL",
+          "role": "Manager, Health Placements"
+        }
+      },
+      {
+        "name": "Swinburne Education",
+        "email": "education@swinburne.edu.au",
+        "uni": "Swinburne",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Swinburne Education",
+          "uni_name": "Swinburne",
+          "dept_name": "Education",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Torrens Education",
+        "email": "education@torrens.edu.au",
+        "uni": "Torrens",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Torrens Education",
+          "uni_name": "Torrens",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UniMelb Social Work",
+        "email": "socialwork-enquiries@unimelb.edu.au",
+        "uni": "UniMelb",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "UniMelb Social Work",
+          "uni_name": "UniMelb",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "VU Education",
+        "email": "education@vu.edu.au",
+        "uni": "VU",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "VU Education",
+          "uni_name": "VU",
+          "dept_name": "Education",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "VU Social Work",
+        "email": "socialwork@vu.edu.au",
+        "uni": "VU",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "VU Social Work",
+          "uni_name": "VU",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "ACU Education Placements",
+        "email": "education.placements@acu.edu.au",
+        "uni": "ACU",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "ACU",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "ACU Social Work Placements",
+        "email": "socialwork.placements@acu.edu.au",
+        "uni": "ACU",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Field Education Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "ACU",
+          "dept_name": "Social Work",
+          "role": "Field Education Coordinator"
+        }
+      },
+      {
+        "name": "La Trobe Education Placements",
+        "email": "education.placements@latrobe.edu.au",
+        "uni": "La Trobe",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "La Trobe",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Monash Psych Placements",
+        "email": "psych.industry-placements@monash.edu",
+        "uni": "Monash",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Psychology Placements Team (PSY3034)",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Monash",
+          "dept_name": "WIL",
+          "role": "Psychology Placements Team (PSY3034)"
+        }
+      },
+      {
+        "name": "RMIT Education Placements",
+        "email": "education.placements@rmit.edu.au",
+        "uni": "RMIT",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "RMIT",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Torrens WIL Office",
+        "email": "wil@torrens.edu.au",
+        "uni": "Torrens",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Torrens",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UNSW Social Work",
+        "email": "socialwork@unsw.edu.au",
+        "uni": "UNSW",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "UNSW Social Work",
+          "uni_name": "UNSW",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "Donna Corcoran",
+        "email": "d.corcoran@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Placement Manager (Clinical Psych)",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Donna Corcoran",
+          "uni_name": "UQ",
+          "dept_name": "Psych",
+          "role": "Placement Manager (Clinical Psych)"
+        }
+      },
+      {
+        "name": "Emma-Jane Harrison",
+        "email": "e.harrison@psy.uq.edu.au",
+        "uni": "UQ",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Practicum Officer (Internships)",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Emma-Jane Harrison",
+          "uni_name": "UQ",
+          "dept_name": "Psych",
+          "role": "Practicum Officer (Internships)"
+        }
+      },
+      {
+        "name": "CDU WIL Office",
+        "email": "wil@cdu.edu.au",
+        "uni": "CDU",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "CDU",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "CSU WIL Office",
+        "email": "wil@csu.edu.au",
+        "uni": "CSU",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "CSU",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Curtin WIL Office",
+        "email": "wil@curtin.edu.au",
+        "uni": "Curtin",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Curtin",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "ECU WIL Office",
+        "email": "wil@ecu.edu.au",
+        "uni": "ECU",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "ECU",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Flinders WIL Office",
+        "email": "wil@flinders.edu.au",
+        "uni": "Flinders",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Flinders",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Griffith WIL Office",
+        "email": "wil@griffith.edu.au",
+        "uni": "Griffith",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Griffith",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "JCU WIL Office",
+        "email": "wil@jcu.edu.au",
+        "uni": "JCU",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "JCU",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Newcastle WIL Office",
+        "email": "wil@newcastle.edu.au",
+        "uni": "Newcastle",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Newcastle",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "QUT WIL Office",
+        "email": "wil@qut.edu.au",
+        "uni": "QUT",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "QUT",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "SCU WIL Office",
+        "email": "wil@scu.edu.au",
+        "uni": "SCU",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "SCU",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UC WIL Office",
+        "email": "wil@canberra.edu.au",
+        "uni": "UC",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "ACT",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UC",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UNE WIL Office",
+        "email": "wil@une.edu.au",
+        "uni": "UNE",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UNE",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "USyd Psych Placements",
+        "email": "science.psychology-placements@sydney.edu.au",
+        "uni": "USyd",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Faculty of Science Placements Officer",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "USyd",
+          "dept_name": "Psych",
+          "role": "Faculty of Science Placements Officer"
+        }
+      },
+      {
+        "name": "UTAS WIL Office",
+        "email": "wil@utas.edu.au",
+        "uni": "UTAS",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "TAS",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UTAS",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UWA WIL Office",
+        "email": "wil@uwa.edu.au",
+        "uni": "UWA",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UWA",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UniSA WIL Office",
+        "email": "wil@unisa.edu.au",
+        "uni": "UniSA",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UniSA",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UniSC WIL",
+        "email": "wil@usc.edu.au",
+        "uni": "UniSC",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Work Integrated Learning",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UniSC",
+          "dept_name": "WIL",
+          "role": "Work Integrated Learning"
+        }
+      },
+      {
+        "name": "WSU WIL Office",
+        "email": "wil@westernsydney.edu.au",
+        "uni": "WSU",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "WSU",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UOW WIL Office",
+        "email": "wil@uow.edu.au",
+        "uni": "Wollongong",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Wollongong",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Bond Psychology",
+        "email": "psychology@bond.edu.au",
+        "uni": "Bond",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Bond Psychology",
+          "uni_name": "Bond",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Curtin Sport Science",
+        "email": "health-sciences@curtin.edu.au",
+        "uni": "Curtin",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Curtin Sport Science",
+          "uni_name": "Curtin",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "ECU Psychology",
+        "email": "psychology@ecu.edu.au",
+        "uni": "ECU",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "ECU Psychology",
+          "uni_name": "ECU",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Griffith Youth Work & Human Services",
+        "email": "humanservices@griffith.edu.au",
+        "uni": "Griffith",
+        "dept": "Youth Work",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Griffith Youth Work & Human Services",
+          "uni_name": "Griffith",
+          "dept_name": "Youth Work",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "JCU Sport & Exercise Science",
+        "email": "sport.exercise@jcu.edu.au",
+        "uni": "JCU",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "JCU Sport & Exercise Science",
+          "uni_name": "JCU",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Murdoch Psychology",
+        "email": "psychology@murdoch.edu.au",
+        "uni": "Murdoch",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Murdoch Psychology",
+          "uni_name": "Murdoch",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "QUT Justice & Legal Studies",
+        "email": "justice@qut.edu.au",
+        "uni": "QUT",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "QUT Justice & Legal Studies",
+          "uni_name": "QUT",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "UC Sport Science",
+        "email": "sport.science@canberra.edu.au",
+        "uni": "UC",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "ACT",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UC Sport Science",
+          "uni_name": "UC",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "USyd Exercise & Sport Science",
+        "email": "exercise.sport@sydney.edu.au",
+        "uni": "USyd",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "USyd Exercise & Sport Science",
+          "uni_name": "USyd",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UniMelb Education",
+        "email": "education-enquiries@unimelb.edu.au",
+        "uni": "UniMelb",
+        "dept": "Education",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Graduate School of Education",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UniMelb Education",
+          "uni_name": "UniMelb",
+          "dept_name": "Education",
+          "role": "Graduate School of Education"
+        }
+      },
+      {
+        "name": "UniSA Sport & Exercise Science",
+        "email": "health.sciences@unisa.edu.au",
+        "uni": "UniSA",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "SA",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "UniSA Sport & Exercise Science",
+          "uni_name": "UniSA",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UniSC Sport Science",
+        "email": "sport-science@usc.edu.au",
+        "uni": "UniSC",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UniSC Sport Science",
+          "uni_name": "UniSC",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "WSU Sport & Exercise Science",
+        "email": "sport@westernsydney.edu.au",
+        "uni": "WSU",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "WSU Sport & Exercise Science",
+          "uni_name": "WSU",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "AASW Victorian Branch",
+        "email": "victoria@aasw.asn.au",
+        "uni": "",
+        "dept": "Professional Assoc",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "State Branch",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "AASW Victorian Branch",
+          "uni_name": "",
+          "dept_name": "Professional Assoc",
+          "role": "State Branch"
+        }
+      },
+      {
+        "name": "Australian Youth Affairs Coalition",
+        "email": "info@ayac.org.au",
+        "uni": "",
+        "dept": "Peak Body",
+        "tier": "Tier 5 (Other)",
+        "state": "ACT",
+        "role": "Partnerships",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "Australian Youth Affairs Coalition",
+          "uni_name": "",
+          "dept_name": "Peak Body",
+          "role": "Partnerships"
+        }
+      },
+      {
+        "name": "GOTAFE - Community Services",
+        "email": "info@gotafe.vic.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "GOTAFE - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "Holmesglen TAFE - Community Services",
+        "email": "info@holmesglen.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "Holmesglen TAFE - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      }
+    ],
+    "stats": {
+      "by_uni": {
+        "Deakin": 2,
+        "Federation": 2,
+        "La Trobe": 2,
+        "Monash": 2,
+        "RMIT": 2,
+        "Swinburne": 2,
+        "Torrens": 2,
+        "UniMelb": 2,
+        "VU": 2,
+        "ACU": 2,
+        "UQ": 2,
+        "Curtin": 2,
+        "ECU": 2,
+        "Griffith": 2,
+        "JCU": 2,
+        "QUT": 2,
+        "UC": 2,
+        "USyd": 2,
+        "UniSA": 2,
+        "UniSC": 2,
+        "WSU": 2,
+        "": 2,
+        "TAFE": 2,
+        "UNSW": 1,
+        "CDU": 1,
+        "CSU": 1,
+        "Flinders": 1,
+        "Newcastle": 1,
+        "SCU": 1,
+        "UNE": 1,
+        "UTAS": 1,
+        "UWA": 1,
+        "Wollongong": 1,
+        "Bond": 1,
+        "Murdoch": 1
+      },
+      "by_tier": {
+        "Tier 1 (WIL Office)": 41,
+        "Tier 2 (Unit Coordinator)": 13,
+        "Tier 5 (Other)": 4
+      },
+      "subject_a": 29,
+      "subject_b": 29
+    }
+  },
+  "tuesday": {
+    "date": "2026-04-01",
+    "label": "Tuesday Apr 1",
+    "total": 71,
+    "contacts": [
+      {
+        "name": "Adelaide Education",
+        "email": "education@adelaide.edu.au",
+        "uni": "Adelaide",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Adelaide Education",
+          "uni_name": "Adelaide",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "CDU Education",
+        "email": "education@cdu.edu.au",
+        "uni": "CDU",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "CDU Education",
+          "uni_name": "CDU",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "CDU Social Work",
+        "email": "socialwork@cdu.edu.au",
+        "uni": "CDU",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "CDU Social Work",
+          "uni_name": "CDU",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "CQU Social Work & Community Services",
+        "email": "socialwork@cqu.edu.au",
+        "uni": "CQU",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "CQU Social Work & Community Services",
+          "uni_name": "CQU",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "CSU Education",
+        "email": "education@csu.edu.au",
+        "uni": "CSU",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "CSU Education",
+          "uni_name": "CSU",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "CSU Social Work",
+        "email": "socialwork@csu.edu.au",
+        "uni": "CSU",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "CSU Social Work",
+          "uni_name": "CSU",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "Curtin Education",
+        "email": "education@curtin.edu.au",
+        "uni": "Curtin",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Curtin Education",
+          "uni_name": "Curtin",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Curtin Social Work",
+        "email": "socialwork@curtin.edu.au",
+        "uni": "Curtin",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Curtin Social Work",
+          "uni_name": "Curtin",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "ECU Education",
+        "email": "education@ecu.edu.au",
+        "uni": "ECU",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "ECU Education",
+          "uni_name": "ECU",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "ECU Social Work",
+        "email": "socialwork@ecu.edu.au",
+        "uni": "ECU",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "ECU Social Work",
+          "uni_name": "ECU",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "Flinders Education",
+        "email": "education@flinders.edu.au",
+        "uni": "Flinders",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Flinders Education",
+          "uni_name": "Flinders",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Flinders Social Work",
+        "email": "socialwork@flinders.edu.au",
+        "uni": "Flinders",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Flinders Social Work",
+          "uni_name": "Flinders",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "Griffith Social Work",
+        "email": "socialwork@griffith.edu.au",
+        "uni": "Griffith",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Griffith Social Work",
+          "uni_name": "Griffith",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "JCU Education",
+        "email": "education@jcu.edu.au",
+        "uni": "JCU",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "JCU Education",
+          "uni_name": "JCU",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "JCU Social Work",
+        "email": "socialwork@jcu.edu.au",
+        "uni": "JCU",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "JCU Social Work",
+          "uni_name": "JCU",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "Macquarie Education",
+        "email": "education@mq.edu.au",
+        "uni": "Macquarie",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Macquarie Education",
+          "uni_name": "Macquarie",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Macquarie Social Work",
+        "email": "socialwork@mq.edu.au",
+        "uni": "Macquarie",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Macquarie Social Work",
+          "uni_name": "Macquarie",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "Murdoch Education",
+        "email": "education@murdoch.edu.au",
+        "uni": "Murdoch",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Murdoch Education",
+          "uni_name": "Murdoch",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Newcastle Education",
+        "email": "education@newcastle.edu.au",
+        "uni": "Newcastle",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Newcastle Education",
+          "uni_name": "Newcastle",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Newcastle Social Work",
+        "email": "socialwork@newcastle.edu.au",
+        "uni": "Newcastle",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Newcastle Social Work",
+          "uni_name": "Newcastle",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "QUT Social Work",
+        "email": "socialwork@qut.edu.au",
+        "uni": "QUT",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "QUT Social Work",
+          "uni_name": "QUT",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "SCU Education",
+        "email": "education@scu.edu.au",
+        "uni": "SCU",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "SCU Education",
+          "uni_name": "SCU",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "SCU Social Work",
+        "email": "socialwork@scu.edu.au",
+        "uni": "SCU",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "SCU Social Work",
+          "uni_name": "SCU",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "UC Education",
+        "email": "education@canberra.edu.au",
+        "uni": "UC",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "ACT",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "UC Education",
+          "uni_name": "UC",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UC Social Work",
+        "email": "socialwork@canberra.edu.au",
+        "uni": "UC",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "ACT",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "UC Social Work",
+          "uni_name": "UC",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "UNE Education",
+        "email": "education@une.edu.au",
+        "uni": "UNE",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "UNE Education",
+          "uni_name": "UNE",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UNE Social Work",
+        "email": "socialwork@une.edu.au",
+        "uni": "UNE",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "UNE Social Work",
+          "uni_name": "UNE",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "Shane Lee Vassallo",
+        "email": "s.vassallo@unsw.edu.au",
+        "uni": "UNSW",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Clinic Director & Placement Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Shane Lee Vassallo",
+          "uni_name": "UNSW",
+          "dept_name": "Psych",
+          "role": "Clinic Director & Placement Coordinator"
+        }
+      },
+      {
+        "name": "UNSW Education",
+        "email": "education@unsw.edu.au",
+        "uni": "UNSW",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Placement Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "UNSW Education",
+          "uni_name": "UNSW",
+          "dept_name": "Education",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Adheesha Ratnayake",
+        "email": "a.ratnayake@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Placement Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Adheesha Ratnayake",
+          "uni_name": "UQ",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Andrea Richardson",
+        "email": "andrea.richardson@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Placement Manager",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Andrea Richardson",
+          "uni_name": "UQ",
+          "dept_name": "Psych",
+          "role": "Placement Manager"
+        }
+      },
+      {
+        "name": "USyd Social Work",
+        "email": "social-work.placements@sydney.edu.au",
+        "uni": "USyd",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "USyd Social Work",
+          "uni_name": "USyd",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "UTAS Education",
+        "email": "education@utas.edu.au",
+        "uni": "UTAS",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "TAS",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "UTAS Education",
+          "uni_name": "UTAS",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UTAS Social Work",
+        "email": "socialwork@utas.edu.au",
+        "uni": "UTAS",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "TAS",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "UTAS Social Work",
+          "uni_name": "UTAS",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "UWA Education",
+        "email": "education@uwa.edu.au",
+        "uni": "UWA",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "UWA Education",
+          "uni_name": "UWA",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UWA Social Work",
+        "email": "socialwork@uwa.edu.au",
+        "uni": "UWA",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "UWA Social Work",
+          "uni_name": "UWA",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "UniSA Education",
+        "email": "education@unisa.edu.au",
+        "uni": "UniSA",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "UniSA Education",
+          "uni_name": "UniSA",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UniSA Social Work",
+        "email": "socialwork@unisa.edu.au",
+        "uni": "UniSA",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "UniSA Social Work",
+          "uni_name": "UniSA",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "UniSC Education",
+        "email": "education.placements@usc.edu.au",
+        "uni": "UniSC",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "UniSC Education",
+          "uni_name": "UniSC",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UniSC Social Work",
+        "email": "socialwork@usc.edu.au",
+        "uni": "UniSC",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "UniSC Social Work",
+          "uni_name": "UniSC",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "WSU Education",
+        "email": "education.placements@westernsydney.edu.au",
+        "uni": "WSU",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "WSU Education",
+          "uni_name": "WSU",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "WSU Social Work",
+        "email": "socialwork@westernsydney.edu.au",
+        "uni": "WSU",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "WSU Social Work",
+          "uni_name": "WSU",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "UOW Education",
+        "email": "education@uow.edu.au",
+        "uni": "Wollongong",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "UOW Education",
+          "uni_name": "Wollongong",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UOW Social Work",
+        "email": "socialwork@uow.edu.au",
+        "uni": "Wollongong",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "UOW Social Work",
+          "uni_name": "Wollongong",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "ANU WIL Office",
+        "email": "wil@anu.edu.au",
+        "uni": "ANU",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "ACT",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "ANU",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Adelaide WIL Office",
+        "email": "wil@adelaide.edu.au",
+        "uni": "Adelaide",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "SA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Adelaide",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Bond WIL Office",
+        "email": "wil@bond.edu.au",
+        "uni": "Bond",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Bond",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "CQU WIL Office",
+        "email": "wil@cqu.edu.au",
+        "uni": "CQU",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "CQU",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Griffith Education Placements",
+        "email": "education-placements@griffith.edu.au",
+        "uni": "Griffith",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Griffith",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Murdoch WIL Office",
+        "email": "wil@murdoch.edu.au",
+        "uni": "Murdoch",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Murdoch",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "QUT Education Placements",
+        "email": "education.placements@qut.edu.au",
+        "uni": "QUT",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "QUT",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "USyd Education WIL",
+        "email": "education.placements@sydney.edu.au",
+        "uni": "USyd",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "NSW",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "USyd",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Dr Neetu George",
+        "email": "neetu.george@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Unit Chair, Health Practicum",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Dr Neetu George",
+          "uni_name": "Deakin",
+          "dept_name": "WIL",
+          "role": "Unit Chair, Health Practicum"
+        }
+      },
+      {
+        "name": "Dr Patricia Taylor",
+        "email": "patricia.taylor@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Course Director, Public Health / Unit Chair Health Practicum",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Dr Patricia Taylor",
+          "uni_name": "Deakin",
+          "dept_name": "WIL",
+          "role": "Course Director, Public Health / Unit Chair Health Practicum"
+        }
+      },
+      {
+        "name": "Swinburne Social Work",
+        "email": "socialwork@swinburne.edu.au",
+        "uni": "Swinburne",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Swinburne Social Work",
+          "uni_name": "Swinburne",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "VU Sport & Exercise Science",
+        "email": "sport@vu.edu.au",
+        "uni": "VU",
+        "dept": "Sport Science",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "VU Sport & Exercise Science",
+          "uni_name": "VU",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "ACU WIL Office",
+        "email": "wil@acu.edu.au",
+        "uni": "ACU",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "ACU",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Federation WIL Office",
+        "email": "wil@federation.edu.au",
+        "uni": "Federation",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Federation",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "La Trobe WIL",
+        "email": "",
+        "uni": "La Trobe",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Work Based Learning Team",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "La Trobe",
+          "dept_name": "WIL",
+          "role": "Work Based Learning Team"
+        }
+      },
+      {
+        "name": "Social Work Placements",
+        "email": "socialwork.placements@monash.edu",
+        "uni": "Monash",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Field Education Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Monash",
+          "dept_name": "Social Work",
+          "role": "Field Education Coordinator"
+        }
+      },
+      {
+        "name": "VU WIL Office",
+        "email": "wil@vu.edu.au",
+        "uni": "VU",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Work Integrated Learning",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "VU",
+          "dept_name": "WIL",
+          "role": "Work Integrated Learning"
+        }
+      },
+      {
+        "name": "La Trobe Sport Science",
+        "email": "sport-exercise@latrobe.edu.au",
+        "uni": "La Trobe",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "La Trobe Sport Science",
+          "uni_name": "La Trobe",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Dr Elise Facer-Childs",
+        "email": "elise.facer-childs@monash.edu",
+        "uni": "Monash",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Chief Examiner, PSY3034",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Dr Elise Facer-Childs",
+          "uni_name": "Monash",
+          "dept_name": "Psych",
+          "role": "Chief Examiner, PSY3034"
+        }
+      },
+      {
+        "name": "RMIT Psychology",
+        "email": "psychology@rmit.edu.au",
+        "uni": "RMIT",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "RMIT Psychology",
+          "uni_name": "RMIT",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "UniMelb Psych Sciences",
+        "email": "msps-enquiries@unimelb.edu.au",
+        "uni": "UniMelb",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "School of Psychological Sciences",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UniMelb Psych Sciences",
+          "uni_name": "UniMelb",
+          "dept_name": "Psych",
+          "role": "School of Psychological Sciences"
+        }
+      },
+      {
+        "name": "UniMelb Sport Science",
+        "email": "exercise-science@unimelb.edu.au",
+        "uni": "UniMelb",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "UniMelb Sport Science",
+          "uni_name": "UniMelb",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "ACU Psychology Placements",
+        "email": "psychology.placements@acu.edu.au",
+        "uni": "ACU",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "ACU",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "GoVolunteer - Partnerships",
+        "email": "info@govolunteer.com.au",
+        "uni": "",
+        "dept": "Volunteer",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Partnerships Manager",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "GoVolunteer - Partnerships",
+          "uni_name": "",
+          "dept_name": "Volunteer",
+          "role": "Partnerships Manager"
+        }
+      },
+      {
+        "name": "Queensland Youth Alliance",
+        "email": "info@qya.org.au",
+        "uni": "",
+        "dept": "Peak Body",
+        "tier": "Tier 5 (Other)",
+        "state": "QLD",
+        "role": "Partnerships",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "Queensland Youth Alliance",
+          "uni_name": "",
+          "dept_name": "Peak Body",
+          "role": "Partnerships"
+        }
+      },
+      {
+        "name": "Kangan Institute - Community Services",
+        "email": "info@kangan.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "Kangan Institute - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "Melbourne Polytechnic - Community Services",
+        "email": "info@melbournepolytechnic.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "Melbourne Polytechnic - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      }
+    ],
+    "stats": {
+      "by_uni": {
+        "Adelaide": 2,
+        "CDU": 2,
+        "CQU": 2,
+        "CSU": 2,
+        "Curtin": 2,
+        "ECU": 2,
+        "Flinders": 2,
+        "Griffith": 2,
+        "JCU": 2,
+        "Macquarie": 2,
+        "Murdoch": 2,
+        "Newcastle": 2,
+        "QUT": 2,
+        "SCU": 2,
+        "UC": 2,
+        "UNE": 2,
+        "UNSW": 2,
+        "UQ": 2,
+        "USyd": 2,
+        "UTAS": 2,
+        "UWA": 2,
+        "UniSA": 2,
+        "UniSC": 2,
+        "WSU": 2,
+        "Wollongong": 2,
+        "Deakin": 2,
+        "VU": 2,
+        "ACU": 2,
+        "La Trobe": 2,
+        "Monash": 2,
+        "UniMelb": 2,
+        "": 2,
+        "TAFE": 2,
+        "ANU": 1,
+        "Bond": 1,
+        "Swinburne": 1,
+        "Federation": 1,
+        "RMIT": 1
+      },
+      "by_tier": {
+        "Tier 1 (WIL Office)": 61,
+        "Tier 2 (Unit Coordinator)": 6,
+        "Tier 5 (Other)": 4
+      },
+      "subject_a": 36,
+      "subject_b": 35
+    }
+  },
+  "wednesday": {
+    "date": "2026-04-02",
+    "label": "Wednesday Apr 2",
+    "total": 71,
+    "contacts": [
+      {
+        "name": "ACU Counselling",
+        "email": "counselling@acu.edu.au",
+        "uni": "ACU",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "ACU Counselling",
+          "uni_name": "ACU",
+          "dept_name": "Counselling",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "ACU Youth Work & Community",
+        "email": "youthwork@acu.edu.au",
+        "uni": "ACU",
+        "dept": "Youth Work",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "ACU Youth Work & Community",
+          "uni_name": "ACU",
+          "dept_name": "Youth Work",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "ANU Criminology",
+        "email": "regnet@anu.edu.au",
+        "uni": "ANU",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "ACT",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "ANU Criminology",
+          "uni_name": "ANU",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "ANU Psychology",
+        "email": "psychology@anu.edu.au",
+        "uni": "ANU",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "ACT",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "ANU Psychology",
+          "uni_name": "ANU",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Adelaide Criminology",
+        "email": "arts@adelaide.edu.au",
+        "uni": "Adelaide",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "SA",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Adelaide Criminology",
+          "uni_name": "Adelaide",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Adelaide Psychology",
+        "email": "psychology@adelaide.edu.au",
+        "uni": "Adelaide",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "SA",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Adelaide Psychology",
+          "uni_name": "Adelaide",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Bond Counselling",
+        "email": "counselling@bond.edu.au",
+        "uni": "Bond",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Bond Counselling",
+          "uni_name": "Bond",
+          "dept_name": "Counselling",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Bond Criminology",
+        "email": "criminology@bond.edu.au",
+        "uni": "Bond",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Bond Criminology",
+          "uni_name": "Bond",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "CDU Psychology",
+        "email": "psychology@cdu.edu.au",
+        "uni": "CDU",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "SA",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "CDU Psychology",
+          "uni_name": "CDU",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "CQU Psychology",
+        "email": "psychology@cqu.edu.au",
+        "uni": "CQU",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "CQU Psychology",
+          "uni_name": "CQU",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "CSU Criminal Justice",
+        "email": "policing@csu.edu.au",
+        "uni": "CSU",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "CSU Criminal Justice",
+          "uni_name": "CSU",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "CSU Psychology",
+        "email": "psychology@csu.edu.au",
+        "uni": "CSU",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "CSU Psychology",
+          "uni_name": "CSU",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Curtin Counselling",
+        "email": "counselling@curtin.edu.au",
+        "uni": "Curtin",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Curtin Counselling",
+          "uni_name": "Curtin",
+          "dept_name": "Counselling",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Curtin Psychology",
+        "email": "psychology@curtin.edu.au",
+        "uni": "Curtin",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Curtin Psychology",
+          "uni_name": "Curtin",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Criminology Program",
+        "email": "arts-enquiries@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Director",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Criminology Program",
+          "uni_name": "Deakin",
+          "dept_name": "Criminology",
+          "role": "Program Director"
+        }
+      },
+      {
+        "name": "Prof Jane McGillivray",
+        "email": "jane.mcgillivray@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Head of School of Psychology",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Prof Jane McGillivray",
+          "uni_name": "Deakin",
+          "dept_name": "Psych",
+          "role": "Head of School of Psychology"
+        }
+      },
+      {
+        "name": "ECU Counselling",
+        "email": "counselling@ecu.edu.au",
+        "uni": "ECU",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "ECU Counselling",
+          "uni_name": "ECU",
+          "dept_name": "Counselling",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "ECU Exercise & Sport Science",
+        "email": "exercise.sport@ecu.edu.au",
+        "uni": "ECU",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "ECU Exercise & Sport Science",
+          "uni_name": "ECU",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Federation Community Services",
+        "email": "community.services@federation.edu.au",
+        "uni": "Federation",
+        "dept": "Community Services",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Federation Community Services",
+          "uni_name": "Federation",
+          "dept_name": "Community Services",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Federation Psychology",
+        "email": "psychology@federation.edu.au",
+        "uni": "Federation",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Federation Psychology",
+          "uni_name": "Federation",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Flinders Criminology",
+        "email": "hass.enquiries@flinders.edu.au",
+        "uni": "Flinders",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "SA",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Flinders Criminology",
+          "uni_name": "Flinders",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Flinders Psychology",
+        "email": "psychology@flinders.edu.au",
+        "uni": "Flinders",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "SA",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Flinders Psychology",
+          "uni_name": "Flinders",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "A/Prof Heather Green",
+        "email": "h.green@griffith.edu.au",
+        "uni": "Griffith",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "DHoS (Learning & Teaching)",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "A/Prof Heather Green",
+          "uni_name": "Griffith",
+          "dept_name": "Psych",
+          "role": "DHoS (Learning & Teaching)"
+        }
+      },
+      {
+        "name": "Griffith Criminology",
+        "email": "criminology@griffith.edu.au",
+        "uni": "Griffith",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Griffith Criminology",
+          "uni_name": "Griffith",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "JCU Community Welfare",
+        "email": "community.welfare@jcu.edu.au",
+        "uni": "JCU",
+        "dept": "Youth Work",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "JCU Community Welfare",
+          "uni_name": "JCU",
+          "dept_name": "Youth Work",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "JCU Psychology",
+        "email": "psychology@jcu.edu.au",
+        "uni": "JCU",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "JCU Psychology",
+          "uni_name": "JCU",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "La Trobe Counselling",
+        "email": "counselling@latrobe.edu.au",
+        "uni": "La Trobe",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "La Trobe Counselling",
+          "uni_name": "La Trobe",
+          "dept_name": "Counselling",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "La Trobe Psychology",
+        "email": "psychology@latrobe.edu.au",
+        "uni": "La Trobe",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "La Trobe Psychology",
+          "uni_name": "La Trobe",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Macquarie Criminology",
+        "email": "arts@mq.edu.au",
+        "uni": "Macquarie",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Macquarie Criminology",
+          "uni_name": "Macquarie",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Prof Maria Kangas",
+        "email": "maria.kangas@mq.edu.au",
+        "uni": "Macquarie",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Head of School, Psychological Sciences",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Prof Maria Kangas",
+          "uni_name": "Macquarie",
+          "dept_name": "Psych",
+          "role": "Head of School, Psychological Sciences"
+        }
+      },
+      {
+        "name": "Counselling Program",
+        "email": "counselling.placements@monash.edu",
+        "uni": "Monash",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Counselling Program",
+          "uni_name": "Monash",
+          "dept_name": "Counselling",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Dr Chris Siva",
+        "email": "chris.siva@monash.edu",
+        "uni": "Monash",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Education Services Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Dr Chris Siva",
+          "uni_name": "Monash",
+          "dept_name": "Psych",
+          "role": "Education Services Coordinator"
+        }
+      },
+      {
+        "name": "Murdoch Counselling",
+        "email": "counselling@murdoch.edu.au",
+        "uni": "Murdoch",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Murdoch Counselling",
+          "uni_name": "Murdoch",
+          "dept_name": "Counselling",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Murdoch Criminology",
+        "email": "criminology@murdoch.edu.au",
+        "uni": "Murdoch",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Murdoch Criminology",
+          "uni_name": "Murdoch",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Newcastle Psychology",
+        "email": "psychology@newcastle.edu.au",
+        "uni": "Newcastle",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Newcastle Psychology",
+          "uni_name": "Newcastle",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Newcastle Youth Studies",
+        "email": "hss@newcastle.edu.au",
+        "uni": "Newcastle",
+        "dept": "Youth Work",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Newcastle Youth Studies",
+          "uni_name": "Newcastle",
+          "dept_name": "Youth Work",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "QUT Exercise & Sport Science",
+        "email": "exercise.sport@qut.edu.au",
+        "uni": "QUT",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "QUT Exercise & Sport Science",
+          "uni_name": "QUT",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "QUT Human Services & Counselling",
+        "email": "humanservices@qut.edu.au",
+        "uni": "QUT",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "QUT Human Services & Counselling",
+          "uni_name": "QUT",
+          "dept_name": "Counselling",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "RMIT - GUSS",
+        "email": "guss@rmit.edu.au",
+        "uni": "RMIT",
+        "dept": "Youth Work",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "School of Global, Urban & Social Studies",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "RMIT - GUSS",
+          "uni_name": "RMIT",
+          "dept_name": "Youth Work",
+          "role": "School of Global, Urban & Social Studies"
+        }
+      },
+      {
+        "name": "RMIT Criminology & Justice",
+        "email": "sass@rmit.edu.au",
+        "uni": "RMIT",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "RMIT Criminology & Justice",
+          "uni_name": "RMIT",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "SCU Psychology",
+        "email": "psychology@scu.edu.au",
+        "uni": "SCU",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "SCU Psychology",
+          "uni_name": "SCU",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Jenny Linossier",
+        "email": "jlinossier@swinburne.edu.au",
+        "uni": "Swinburne",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Clinic Student Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Jenny Linossier",
+          "uni_name": "Swinburne",
+          "dept_name": "Psych",
+          "role": "Clinic Student Coordinator"
+        }
+      },
+      {
+        "name": "Swinburne Criminology",
+        "email": "enquiries@swinburne.edu.au",
+        "uni": "Swinburne",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Swinburne Criminology",
+          "uni_name": "Swinburne",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Torrens Counselling & Social Work",
+        "email": "health@torrens.edu.au",
+        "uni": "Torrens",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Torrens Counselling & Social Work",
+          "uni_name": "Torrens",
+          "dept_name": "Counselling",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "UC Counselling",
+        "email": "counselling@canberra.edu.au",
+        "uni": "UC",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "ACT",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UC Counselling",
+          "uni_name": "UC",
+          "dept_name": "Counselling",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "UC Psychology",
+        "email": "psychology@canberra.edu.au",
+        "uni": "UC",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "ACT",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "UC Psychology",
+          "uni_name": "UC",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "UNE Criminology",
+        "email": "criminology@une.edu.au",
+        "uni": "UNE",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UNE Criminology",
+          "uni_name": "UNE",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "UNE Psychology",
+        "email": "psychology@une.edu.au",
+        "uni": "UNE",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "UNE Psychology",
+          "uni_name": "UNE",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "UNSW Criminology",
+        "email": "arts.unsw@unsw.edu.au",
+        "uni": "UNSW",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UNSW Criminology",
+          "uni_name": "UNSW",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Dr Kristy Sippel",
+        "email": "k.sippel@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Placements Manager (Clinical Psych)",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Dr Kristy Sippel",
+          "uni_name": "UQ",
+          "dept_name": "Psych",
+          "role": "Placements Manager (Clinical Psych)"
+        }
+      },
+      {
+        "name": "UQ Counselling",
+        "email": "counselling@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UQ Counselling",
+          "uni_name": "UQ",
+          "dept_name": "Counselling",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "USyd Counselling Program",
+        "email": "counselling.placements@sydney.edu.au",
+        "uni": "USyd",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "USyd Counselling Program",
+          "uni_name": "USyd",
+          "dept_name": "Counselling",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "USyd Criminology",
+        "email": "arts.faculty@sydney.edu.au",
+        "uni": "USyd",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "USyd Criminology",
+          "uni_name": "USyd",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "UTAS Psychology",
+        "email": "psychology@utas.edu.au",
+        "uni": "UTAS",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "TAS",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "UTAS Psychology",
+          "uni_name": "UTAS",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "UWA Psychology",
+        "email": "psychology@uwa.edu.au",
+        "uni": "UWA",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UWA Psychology",
+          "uni_name": "UWA",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "UWA Sport Science",
+        "email": "sport.science@uwa.edu.au",
+        "uni": "UWA",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "UWA Sport Science",
+          "uni_name": "UWA",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UniMelb Counselling & Psych Sciences",
+        "email": "msps-placements@unimelb.edu.au",
+        "uni": "UniMelb",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UniMelb Counselling & Psych Sciences",
+          "uni_name": "UniMelb",
+          "dept_name": "Counselling",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "UniMelb Criminology",
+        "email": "arts-enquiries@unimelb.edu.au",
+        "uni": "UniMelb",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "UniMelb Criminology",
+          "uni_name": "UniMelb",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "UniSA Human Services",
+        "email": "humanservices@unisa.edu.au",
+        "uni": "UniSA",
+        "dept": "Youth Work",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "SA",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UniSA Human Services",
+          "uni_name": "UniSA",
+          "dept_name": "Youth Work",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "UniSA Psychology",
+        "email": "psychology@unisa.edu.au",
+        "uni": "UniSA",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "SA",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "UniSA Psychology",
+          "uni_name": "UniSA",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Dr Kathina Ali",
+        "email": "kali@usc.edu.au",
+        "uni": "UniSC",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Clinical Psych Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Dr Kathina Ali",
+          "uni_name": "UniSC",
+          "dept_name": "Psych",
+          "role": "Clinical Psych Program Coordinator"
+        }
+      },
+      {
+        "name": "UniSC Counselling",
+        "email": "counselling@usc.edu.au",
+        "uni": "UniSC",
+        "dept": "Counselling",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "UniSC Counselling",
+          "uni_name": "UniSC",
+          "dept_name": "Counselling",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "VU Community Development",
+        "email": "community.development@vu.edu.au",
+        "uni": "VU",
+        "dept": "Community Services",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "VU Community Development",
+          "uni_name": "VU",
+          "dept_name": "Community Services",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "VU Psychology",
+        "email": "psychology@vu.edu.au",
+        "uni": "VU",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "VU Psychology",
+          "uni_name": "VU",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "WSU Criminology & Policing",
+        "email": "criminology@westernsydney.edu.au",
+        "uni": "WSU",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "WSU Criminology & Policing",
+          "uni_name": "WSU",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "WSU Psychology",
+        "email": "psychology@westernsydney.edu.au",
+        "uni": "WSU",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "WSU Psychology",
+          "uni_name": "WSU",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "UOW Psychology",
+        "email": "psychology@uow.edu.au",
+        "uni": "Wollongong",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "NSW",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UOW Psychology",
+          "uni_name": "Wollongong",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Seek Volunteer - Partnerships",
+        "email": "info@seekvolunteer.com.au",
+        "uni": "",
+        "dept": "Volunteer",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Partnerships Manager",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "Seek Volunteer - Partnerships",
+          "uni_name": "",
+          "dept_name": "Volunteer",
+          "role": "Partnerships Manager"
+        }
+      },
+      {
+        "name": "Volunteering Australia",
+        "email": "admin@volunteeringaustralia.org",
+        "uni": "",
+        "dept": "Volunteer",
+        "tier": "Tier 5 (Other)",
+        "state": "ACT",
+        "role": "National Peak Body",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "Volunteering Australia",
+          "uni_name": "",
+          "dept_name": "Volunteer",
+          "role": "National Peak Body"
+        }
+      },
+      {
+        "name": "North Metro TAFE - Community Services",
+        "email": "info@northmetrotafe.wa.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "WA",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "North Metro TAFE - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "South Metro TAFE - Community Services",
+        "email": "info@southmetrotafe.wa.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "WA",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "South Metro TAFE - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      }
+    ],
+    "stats": {
+      "by_uni": {
+        "ACU": 2,
+        "ANU": 2,
+        "Adelaide": 2,
+        "Bond": 2,
+        "CSU": 2,
+        "Curtin": 2,
+        "Deakin": 2,
+        "ECU": 2,
+        "Federation": 2,
+        "Flinders": 2,
+        "Griffith": 2,
+        "JCU": 2,
+        "La Trobe": 2,
+        "Macquarie": 2,
+        "Monash": 2,
+        "Murdoch": 2,
+        "Newcastle": 2,
+        "QUT": 2,
+        "RMIT": 2,
+        "Swinburne": 2,
+        "UC": 2,
+        "UNE": 2,
+        "UQ": 2,
+        "USyd": 2,
+        "UWA": 2,
+        "UniMelb": 2,
+        "UniSA": 2,
+        "UniSC": 2,
+        "VU": 2,
+        "WSU": 2,
+        "": 2,
+        "TAFE": 2,
+        "CDU": 1,
+        "CQU": 1,
+        "SCU": 1,
+        "Torrens": 1,
+        "UNSW": 1,
+        "UTAS": 1,
+        "Wollongong": 1
+      },
+      "by_tier": {
+        "Tier 2 (Unit Coordinator)": 67,
+        "Tier 5 (Other)": 4
+      },
+      "subject_a": 36,
+      "subject_b": 35
+    }
+  },
+  "thursday": {
+    "date": "2026-04-03",
+    "label": "Thursday Apr 3",
+    "total": 50,
+    "contacts": [
+      {
+        "name": "RUSU Compass Service",
+        "email": "rusu.jobs@rmit.edu.au",
+        "uni": "RMIT",
+        "dept": "Club",
+        "tier": "Tier 4 (Student Club)",
+        "state": "VIC",
+        "role": "Student Welfare & Mentoring",
+        "template": "T4",
+        "subject_variant": "A",
+        "subject_line": "Would love to chat with your members about youth mentoring",
+        "personalisation": {
+          "contact_name": "RUSU Compass Service",
+          "uni_name": "RMIT",
+          "dept_name": "Club",
+          "role": "Student Welfare & Mentoring"
+        }
+      },
+      {
+        "name": "UQ Employability",
+        "email": "employability@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "QLD",
+        "role": "Careers & Employability Team",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "UQ Employability",
+          "uni_name": "UQ",
+          "dept_name": "Careers",
+          "role": "Careers & Employability Team"
+        }
+      },
+      {
+        "name": "UQ Psych Reception",
+        "email": "reception@psy.uq.edu.au",
+        "uni": "UQ",
+        "dept": "Psych",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "QLD",
+        "role": "School of Psychology General",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "UQ Psych Reception",
+          "uni_name": "UQ",
+          "dept_name": "Psych",
+          "role": "School of Psychology General"
+        }
+      },
+      {
+        "name": "ACU Careers",
+        "email": "careers@acu.edu.au",
+        "uni": "ACU",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "ACU",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "ANU Careers",
+        "email": "careers@anu.edu.au",
+        "uni": "ANU",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "ACT",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "ANU",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Adelaide Careers",
+        "email": "careers@adelaide.edu.au",
+        "uni": "Adelaide",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "SA",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Adelaide",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Bond Careers",
+        "email": "careers@bond.edu.au",
+        "uni": "Bond",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "QLD",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Bond",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "CQU Careers",
+        "email": "careers@cqu.edu.au",
+        "uni": "CQU",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "QLD",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "CQU",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "CSU Careers",
+        "email": "careers@csu.edu.au",
+        "uni": "CSU",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "NSW",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "CSU",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Curtin Careers",
+        "email": "careers@curtin.edu.au",
+        "uni": "Curtin",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "WA",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Curtin",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Deakin Careers",
+        "email": "careers@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Deakin",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Deakin Psych General",
+        "email": "psychology@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "Psych",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "School of Psychology inbox",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Deakin",
+          "dept_name": "Psych",
+          "role": "School of Psychology inbox"
+        }
+      },
+      {
+        "name": "ECU Careers",
+        "email": "careers@ecu.edu.au",
+        "uni": "ECU",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "WA",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "ECU",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Federation Careers",
+        "email": "careers@federation.edu.au",
+        "uni": "Federation",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Federation",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Flinders Careers",
+        "email": "careers@flinders.edu.au",
+        "uni": "Flinders",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "SA",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Flinders",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Griffith Careers",
+        "email": "careers@griffith.edu.au",
+        "uni": "Griffith",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "QLD",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Griffith",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "JCU Careers",
+        "email": "careers@jcu.edu.au",
+        "uni": "JCU",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "QLD",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "JCU",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "La Trobe Careers",
+        "email": "careers@latrobe.edu.au",
+        "uni": "La Trobe",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "La Trobe",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Macquarie Careers",
+        "email": "careers@mq.edu.au",
+        "uni": "Macquarie",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "NSW",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Macquarie",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Monash Careers Connect",
+        "email": "careers.connect@monash.edu",
+        "uni": "Monash",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Monash",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Murdoch Careers",
+        "email": "careers@murdoch.edu.au",
+        "uni": "Murdoch",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "WA",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Murdoch",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Newcastle Careers",
+        "email": "careers@newcastle.edu.au",
+        "uni": "Newcastle",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "NSW",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Newcastle",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "QUT Careers",
+        "email": "careers@qut.edu.au",
+        "uni": "QUT",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "QLD",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "QUT",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "RMIT Careers",
+        "email": "careers@rmit.edu.au",
+        "uni": "RMIT",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "RMIT",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "SCU Careers",
+        "email": "careers@scu.edu.au",
+        "uni": "SCU",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "NSW",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "SCU",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Swinburne Careers",
+        "email": "careers@swinburne.edu.au",
+        "uni": "Swinburne",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Swinburne",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Torrens Careers",
+        "email": "careers@torrens.edu.au",
+        "uni": "Torrens",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Torrens",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "UC Careers",
+        "email": "careers@canberra.edu.au",
+        "uni": "UC",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "ACT",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UC",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "UNE Careers",
+        "email": "careers@une.edu.au",
+        "uni": "UNE",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "NSW",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UNE",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "UNSW Careers",
+        "email": "careers@unsw.edu.au",
+        "uni": "UNSW",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "NSW",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UNSW",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "UNSW Psych General",
+        "email": "psychology@unsw.edu.au",
+        "uni": "UNSW",
+        "dept": "Psych",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "NSW",
+        "role": "School of Psychology inbox",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UNSW",
+          "dept_name": "Psych",
+          "role": "School of Psychology inbox"
+        }
+      },
+      {
+        "name": "USyd Careers",
+        "email": "careers.centre@sydney.edu.au",
+        "uni": "USyd",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "NSW",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "USyd",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "UTAS Careers",
+        "email": "careers@utas.edu.au",
+        "uni": "UTAS",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "TAS",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UTAS",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "UWA Careers",
+        "email": "careers@uwa.edu.au",
+        "uni": "UWA",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "WA",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UWA",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "UniMelb Careers",
+        "email": "careers@unimelb.edu.au",
+        "uni": "UniMelb",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UniMelb",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "UniSA Careers",
+        "email": "careers@unisa.edu.au",
+        "uni": "UniSA",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "SA",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UniSA",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "UniSC Careers",
+        "email": "careers@usc.edu.au",
+        "uni": "UniSC",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "QLD",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UniSC",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "VU Careers",
+        "email": "careers@vu.edu.au",
+        "uni": "VU",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "VIC",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "VU",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "WSU Careers",
+        "email": "careers@westernsydney.edu.au",
+        "uni": "WSU",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "NSW",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "WSU",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "UOW Careers",
+        "email": "careers@uow.edu.au",
+        "uni": "Wollongong",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "NSW",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "B",
+        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Wollongong",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "ECU Youth Work",
+        "email": "youthwork@ecu.edu.au",
+        "uni": "ECU",
+        "dept": "Youth Work",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "WA",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "ECU Youth Work",
+          "uni_name": "ECU",
+          "dept_name": "Youth Work",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Prof Allison Waters",
+        "email": "allison.waters@griffith.edu.au",
+        "uni": "Griffith",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Head of School, Applied Psychology",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Prof Allison Waters",
+          "uni_name": "Griffith",
+          "dept_name": "Psych",
+          "role": "Head of School, Applied Psychology"
+        }
+      },
+      {
+        "name": "La Trobe Youth & Community",
+        "email": "hss-enquiries@latrobe.edu.au",
+        "uni": "La Trobe",
+        "dept": "Youth Work",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "La Trobe Youth & Community",
+          "uni_name": "La Trobe",
+          "dept_name": "Youth Work",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Elly Francis Pester",
+        "email": "elly.francispester@monash.edu",
+        "uni": "Monash",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Unit Coordinator, PSY3034",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Elly Francis Pester",
+          "uni_name": "Monash",
+          "dept_name": "Psych",
+          "role": "Unit Coordinator, PSY3034"
+        }
+      },
+      {
+        "name": "QUT Psychology",
+        "email": "psychology@qut.edu.au",
+        "uni": "QUT",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Placement Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "QUT Psychology",
+          "uni_name": "QUT",
+          "dept_name": "Psych",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "VU Youth Work",
+        "email": "youthwork@vu.edu.au",
+        "uni": "VU",
+        "dept": "Youth Work",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "VU Youth Work",
+          "uni_name": "VU",
+          "dept_name": "Youth Work",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "Volunteering Victoria",
+        "email": "info@volunteeringvictoria.org.au",
+        "uni": "",
+        "dept": "Volunteer",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "State Peak Body",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "Volunteering Victoria",
+          "uni_name": "",
+          "dept_name": "Volunteer",
+          "role": "State Peak Body"
+        }
+      },
+      {
+        "name": "YACVic - Youth Affairs Council Victoria",
+        "email": "info@yacvic.org.au",
+        "uni": "",
+        "dept": "Peak Body",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Partnerships",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "YACVic - Youth Affairs Council Victoria",
+          "uni_name": "",
+          "dept_name": "Peak Body",
+          "role": "Partnerships"
+        }
+      },
+      {
+        "name": "Swinburne TAFE - Community Services",
+        "email": "tafe@swinburne.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "Swinburne TAFE - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "TAFE NSW - Community Services (Sydney)",
+        "email": "enquiries@tafensw.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "NSW",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "TAFE NSW - Community Services (Sydney)",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      }
+    ],
+    "stats": {
+      "by_uni": {
+        "RMIT": 2,
+        "UQ": 2,
+        "Deakin": 2,
+        "ECU": 2,
+        "Griffith": 2,
+        "La Trobe": 2,
+        "Monash": 2,
+        "QUT": 2,
+        "UNSW": 2,
+        "VU": 2,
+        "": 2,
+        "TAFE": 2,
+        "ACU": 1,
+        "ANU": 1,
+        "Adelaide": 1,
+        "Bond": 1,
+        "CQU": 1,
+        "CSU": 1,
+        "Curtin": 1,
+        "Federation": 1,
+        "Flinders": 1,
+        "JCU": 1,
+        "Macquarie": 1,
+        "Murdoch": 1,
+        "Newcastle": 1,
+        "SCU": 1,
+        "Swinburne": 1,
+        "Torrens": 1,
+        "UC": 1,
+        "UNE": 1,
+        "USyd": 1,
+        "UTAS": 1,
+        "UWA": 1,
+        "UniMelb": 1,
+        "UniSA": 1,
+        "UniSC": 1,
+        "WSU": 1,
+        "Wollongong": 1
+      },
+      "by_tier": {
+        "Tier 4 (Student Club)": 1,
+        "Tier 3 (Careers Board)": 39,
+        "Tier 2 (Unit Coordinator)": 6,
+        "Tier 5 (Other)": 4
+      },
+      "subject_a": 25,
+      "subject_b": 25
+    }
+  },
+  "friday": {
+    "date": "2026-04-04",
+    "label": "Friday Apr 4",
+    "total": 35,
+    "contacts": [
+      {
+        "name": "AASW NSW Branch",
+        "email": "nsw@aasw.asn.au",
+        "uni": "",
+        "dept": "Professional Assoc",
+        "tier": "Tier 5 (Other)",
+        "state": "NSW",
+        "role": "State Branch",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "AASW NSW Branch",
+          "uni_name": "",
+          "dept_name": "Professional Assoc",
+          "role": "State Branch"
+        }
+      },
+      {
+        "name": "AASW QLD Branch",
+        "email": "qld@aasw.asn.au",
+        "uni": "",
+        "dept": "Professional Assoc",
+        "tier": "Tier 5 (Other)",
+        "state": "QLD",
+        "role": "State Branch",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "AASW QLD Branch",
+          "uni_name": "",
+          "dept_name": "Professional Assoc",
+          "role": "State Branch"
+        }
+      },
+      {
+        "name": "Box Hill Institute - Community Services",
+        "email": "info@boxhill.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "Box Hill Institute - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "Chisholm TAFE - Community Services",
+        "email": "info@chisholm.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "Chisholm TAFE - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "Emilya Umashankar",
+        "email": "emilya.umashankar@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Senior Advisor WIL",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Emilya Umashankar",
+          "uni_name": "Deakin",
+          "dept_name": "WIL",
+          "role": "Senior Advisor WIL"
+        }
+      },
+      {
+        "name": "Jess McCann",
+        "email": "jessica.mccann@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Jess McCann",
+          "uni_name": "Deakin",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Lauren Dinale",
+        "email": "lauren.dinale@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Lauren Dinale",
+          "uni_name": "Deakin",
+          "dept_name": "WIL",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Sarah Haintz",
+        "email": "sarah.haintz@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Senior Adviser WIL",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Sarah Haintz",
+          "uni_name": "Deakin",
+          "dept_name": "WIL",
+          "role": "Senior Adviser WIL"
+        }
+      },
+      {
+        "name": "Shufen Lin",
+        "email": "shufen.lin@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Manager, Faculty of Health",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Shufen Lin",
+          "uni_name": "Deakin",
+          "dept_name": "WIL",
+          "role": "WIL Manager, Faculty of Health"
+        }
+      },
+      {
+        "name": "Deakin Health WIL Team",
+        "email": "health-wil@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "WIL",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "General WIL enquiries",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Deakin",
+          "dept_name": "WIL",
+          "role": "General WIL enquiries"
+        }
+      },
+      {
+        "name": "Education Placements Office",
+        "email": "education-placements@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Deakin",
+          "dept_name": "Education",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Social Work Placements",
+        "email": "socialwork-placements@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "Placement Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Deakin",
+          "dept_name": "Social Work",
+          "role": "Placement Coordinator"
+        }
+      },
+      {
+        "name": "Sport Science WIL",
+        "email": "exercise-sport@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "Sport Science",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Deakin",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Michelle Heatley",
+        "email": "m.heatley@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Placement Manager",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "Michelle Heatley",
+          "uni_name": "UQ",
+          "dept_name": "Psych",
+          "role": "Placement Manager"
+        }
+      },
+      {
+        "name": "Michelle McEniery",
+        "email": "m.mceniery@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Placement Manager",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "Michelle McEniery",
+          "uni_name": "UQ",
+          "dept_name": "Psych",
+          "role": "Placement Manager"
+        }
+      },
+      {
+        "name": "UQ Education",
+        "email": "education@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Education",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "UQ Education",
+          "uni_name": "UQ",
+          "dept_name": "Education",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "UQ Social Work",
+        "email": "sw-fieldplacements@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Social Work",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Field Education",
+        "template": "T1",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring placement opportunity for your students",
+        "personalisation": {
+          "contact_name": "UQ Social Work",
+          "uni_name": "UQ",
+          "dept_name": "Social Work",
+          "role": "Field Education"
+        }
+      },
+      {
+        "name": "Fiona Williams",
+        "email": "fiona.williams@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Psych",
+        "tier": "Tier 1 (WIL Office)",
+        "state": "QLD",
+        "role": "Placement Manager (Counselling Psych)",
+        "template": "T1",
+        "subject_variant": "B",
+        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UQ",
+          "dept_name": "Psych",
+          "role": "Placement Manager (Counselling Psych)"
+        }
+      },
+      {
+        "name": "Stef Sharman",
+        "email": "stef.sharman@deakin.edu.au",
+        "uni": "Deakin",
+        "dept": "Psych",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Assoc Head (Teaching & Learning)",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Stef Sharman",
+          "uni_name": "Deakin",
+          "dept_name": "Psych",
+          "role": "Assoc Head (Teaching & Learning)"
+        }
+      },
+      {
+        "name": "Monash Sport",
+        "email": "sport@monash.edu",
+        "uni": "Monash",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "Monash Sport",
+          "uni_name": "Monash",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Youth & Community Studies",
+        "email": "education.enquiries@monash.edu",
+        "uni": "Monash",
+        "dept": "Youth Work",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "Youth & Community Studies",
+          "uni_name": "Monash",
+          "dept_name": "Youth Work",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "UQ Criminology & Criminal Justice",
+        "email": "socs@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Criminology",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "Program Coordinator",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "UQ Criminology & Criminal Justice",
+          "uni_name": "UQ",
+          "dept_name": "Criminology",
+          "role": "Program Coordinator"
+        }
+      },
+      {
+        "name": "UQ Sport & Exercise Science",
+        "email": "hms@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Sport Science",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "QLD",
+        "role": "WIL Coordinator",
+        "template": "T2",
+        "subject_variant": "A",
+        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "personalisation": {
+          "contact_name": "UQ Sport & Exercise Science",
+          "uni_name": "UQ",
+          "dept_name": "Sport Science",
+          "role": "WIL Coordinator"
+        }
+      },
+      {
+        "name": "Monash Education Placements",
+        "email": "edu-psychplacements@monash.edu",
+        "uni": "Monash",
+        "dept": "Education",
+        "tier": "Tier 2 (Unit Coordinator)",
+        "state": "VIC",
+        "role": "Education Faculty Placements",
+        "template": "T2",
+        "subject_variant": "B",
+        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "Monash",
+          "dept_name": "Education",
+          "role": "Education Faculty Placements"
+        }
+      },
+      {
+        "name": "UQ Careers",
+        "email": "student.employability@uq.edu.au",
+        "uni": "UQ",
+        "dept": "Careers",
+        "tier": "Tier 3 (Careers Board)",
+        "state": "QLD",
+        "role": "Student Employment",
+        "template": "T3",
+        "subject_variant": "A",
+        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "UQ",
+          "dept_name": "Careers",
+          "role": "Student Employment"
+        }
+      },
+      {
+        "name": "Youth Affairs Council SA",
+        "email": "info@sacoss.org.au",
+        "uni": "",
+        "dept": "Peak Body",
+        "tier": "Tier 5 (Other)",
+        "state": "SA",
+        "role": "Partnerships",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "Youth Affairs Council SA",
+          "uni_name": "",
+          "dept_name": "Peak Body",
+          "role": "Partnerships"
+        }
+      },
+      {
+        "name": "Youth Affairs Council WA",
+        "email": "info@yacwa.org.au",
+        "uni": "",
+        "dept": "Peak Body",
+        "tier": "Tier 5 (Other)",
+        "state": "WA",
+        "role": "Partnerships",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "Youth Affairs Council WA",
+          "uni_name": "",
+          "dept_name": "Peak Body",
+          "role": "Partnerships"
+        }
+      },
+      {
+        "name": "TAFE NSW - Youth Work",
+        "email": "enquiries@tafensw.edu.au",
+        "uni": "TAFE",
+        "dept": "Youth Work",
+        "tier": "Tier 5 (Other)",
+        "state": "NSW",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "TAFE NSW - Youth Work",
+          "uni_name": "TAFE",
+          "dept_name": "Youth Work",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "TAFE QLD - Community Services",
+        "email": "enquiries@tafeqld.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "QLD",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "TAFE QLD - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "TAFE QLD - Youth Work",
+        "email": "enquiries@tafeqld.edu.au",
+        "uni": "TAFE",
+        "dept": "Youth Work",
+        "tier": "Tier 5 (Other)",
+        "state": "QLD",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "TAFE QLD - Youth Work",
+          "uni_name": "TAFE",
+          "dept_name": "Youth Work",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "TAFE SA - Community Services",
+        "email": "enquiries@tafesa.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "SA",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "TAFE SA - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "TasTAFE - Community Services",
+        "email": "info@tastafe.tas.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "TAS",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "TasTAFE - Community Services",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      },
+      {
+        "name": "AASW - Student Member Section",
+        "email": "office@aasw.asn.au",
+        "uni": "",
+        "dept": "Professional Assoc",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Student Engagement",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "",
+          "dept_name": "Professional Assoc",
+          "role": "Student Engagement"
+        }
+      },
+      {
+        "name": "APS - Student Section",
+        "email": "membership@psychology.org.au",
+        "uni": "",
+        "dept": "Professional Assoc",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Student Engagement",
+        "template": "T5",
+        "subject_variant": "B",
+        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "",
+          "dept_name": "Professional Assoc",
+          "role": "Student Engagement"
+        }
+      },
+      {
+        "name": "William Angliss - Community Services",
+        "email": "info@angliss.edu.au",
+        "uni": "TAFE",
+        "dept": "Community Services",
+        "tier": "Tier 5 (Other)",
+        "state": "VIC",
+        "role": "Course Coordinator",
+        "template": "T5",
+        "subject_variant": "A",
+        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "personalisation": {
+          "contact_name": "",
+          "uni_name": "TAFE",
+          "dept_name": "Community Services",
+          "role": "Course Coordinator"
+        }
+      }
+    ],
+    "stats": {
+      "by_uni": {
+        "Deakin": 10,
+        "TAFE": 8,
+        "UQ": 8,
+        "": 6,
+        "Monash": 3
+      },
+      "by_tier": {
+        "Tier 5 (Other)": 14,
+        "Tier 1 (WIL Office)": 14,
+        "Tier 2 (Unit Coordinator)": 6,
+        "Tier 3 (Careers Board)": 1
+      },
+      "subject_a": 18,
+      "subject_b": 17
+    }
+  }
+}

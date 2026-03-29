@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📧 Outreach Rollout — Blues & Greens Mission Control</title>
+<style>
+:root {
+  --bg: #0A0E14;
+  --bg-card: #111820;
+  --bg-card-hover: #182030;
+  --navy: #104791;
+  --gold: #C8A951;
+  --cream: #FBF8F3;
+  --cream-muted: rgba(251,248,243,0.7);
+  --cream-dim: rgba(251,248,243,0.4);
+  --green: #2ECC71;
+  --red: #E74C3C;
+  --orange: #F39C12;
+  --border: rgba(251,248,243,0.08);
+  --radius: 12px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+a { color: var(--gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.header {
+  text-align: center;
+  padding: 30px 0 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+.header h1 { font-size: 1.8em; margin-bottom: 6px; }
+.header .subtitle { color: var(--cream-muted); font-size: 0.95em; }
+.back-link { display: inline-block; margin-bottom: 15px; font-size: 0.85em; color: var(--cream-dim); }
+
+/* Status banner */
+.status-banner {
+  background: linear-gradient(135deg, rgba(200,169,81,0.15), rgba(16,71,145,0.15));
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.status-banner .status-label { font-size: 0.85em; color: var(--cream-muted); }
+.status-banner .status-value { font-size: 1.1em; font-weight: 600; color: var(--gold); }
+.status-banner .approve-btn {
+  background: var(--gold);
+  color: var(--bg);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.approve-btn:hover { transform: scale(1.03); }
+.approve-btn:active { transform: scale(0.98); }
+
+/* Summary row */
+.summary-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+.summary-card .num { font-size: 1.8em; font-weight: 700; color: var(--gold); }
+.summary-card .label { font-size: 0.8em; color: var(--cream-dim); margin-top: 2px; }
+
+/* Section */
+.section { margin-bottom: 35px; }
+.section-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Expandable card */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: rgba(251,248,243,0.15); }
+.card-header {
+  padding: 14px 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+.card-header:hover { background: var(--bg-card-hover); }
+.card-header .title { font-weight: 600; font-size: 0.95em; }
+.card-header .badge {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+.card-header .chevron {
+  transition: transform 0.2s;
+  color: var(--cream-dim);
+  font-size: 0.8em;
+}
+.card.open .card-header .chevron { transform: rotate(90deg); }
+.card-body {
+  display: none;
+  padding: 0 18px 18px;
+  border-top: 1px solid var(--border);
+}
+.card.open .card-body { display: block; padding-top: 14px; }
+
+/* Template display */
+.template-content {
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.85em;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  color: var(--cream-muted);
+}
+.template-content .placeholder {
+  background: rgba(200,169,81,0.2);
+  color: var(--gold);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.subject-line {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.88em;
+}
+.subject-a { background: rgba(16,71,145,0.2); border-left: 3px solid var(--navy); }
+.subject-b { background: rgba(200,169,81,0.15); border-left: 3px solid var(--gold); }
+.subject-label { font-weight: 700; font-size: 0.75em; text-transform: uppercase; margin-right: 6px; }
+
+/* Day rollout */
+.day-card { margin-bottom: 14px; }
+.day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.day-header .day-name { font-weight: 700; font-size: 1em; }
+.day-header .day-count {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+.day-stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  font-size: 0.82em;
+  color: var(--cream-dim);
+}
+.day-stats .stat-chip {
+  background: rgba(251,248,243,0.05);
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+.uni-breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.uni-chip {
+  background: rgba(16,71,145,0.2);
+  color: var(--cream-muted);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+}
+
+/* Contact table */
+.contact-table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+  font-size: 0.82em;
+}
+.contact-table th {
+  text-align: left;
+  padding: 8px 10px;
+  color: var(--cream-dim);
+  font-weight: 600;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+.contact-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--cream-muted);
+}
+.contact-table tr:hover td { color: var(--cream); }
+.ab-badge {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 18px;
+  font-size: 0.7em;
+  font-weight: 700;
+}
+.ab-a { background: var(--navy); color: white; }
+.ab-b { background: var(--gold); color: var(--bg); }
+.preview-toggle {
+  color: var(--gold);
+  cursor: pointer;
+  font-size: 0.82em;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .header h1 { font-size: 1.3em; }
+  .summary-row { grid-template-columns: repeat(2, 1fr); }
+  .contact-table { font-size: 0.75em; }
+  .contact-table th, .contact-table td { padding: 5px 6px; }
+}
+</style>
+</head>
+<body>
+
+<a href="../" class="back-link">← Back to Mentor Pipeline</a>
+
+<div class="header">
+  <h1>📧 Outreach Rollout</h1>
+  <div class="subtitle">Week of March 31 – April 4, 2026 • University Mentor Pipeline</div>
+</div>
+
+<div class="status-banner" id="statusBanner">
+  <div>
+    <div class="status-label">CAMPAIGN STATUS</div>
+    <div class="status-value" id="statusText">⏳ Awaiting Harry's Approval</div>
+  </div>
+  <button class="approve-btn" id="approveBtn" onclick="approveRollout()">✅ Approve & Lock In</button>
+</div>
+
+<div class="summary-row" id="summaryRow"></div>
+
+<!-- Section 1: Email Templates -->
+<div class="section">
+  <div class="section-title">📝 Email Templates</div>
+  <div id="templatesContainer"></div>
+</div>
+
+<!-- Section 2: Rollout Plan -->
+<div class="section">
+  <div class="section-title">📅 Weekly Rollout Plan</div>
+  <div id="rolloutContainer"></div>
+</div>
+
+<script>
+// Templates data
+const templates = {
+  T1: {
+    name: 'T1 — WIL Office Introduction',
+    tier: 'Tier 1 (WIL Office)',
+    subjectA: 'Youth mentoring placement opportunity for your students',
+    subjectB: 'WIL placement host — youth mentoring program',
+    body: `Hi <span class="placeholder">[Name]</span>,
+
+My name's Harry - I'm the founder of Blues & Greens, a youth mentoring program based in Melbourne that pairs teenage boys (13-17) with young male mentors in their 20s for weekly one-on-one video sessions.
+
+I'm reaching out because I think your students would be a brilliant fit for what we do - & we'd love to register as a placement host for your WIL program.
+
+The role is simple: one hour a week, a video call with a teenage boy. We provide full training, ongoing supervision, & a structured session framework. Mentors get real experience working with adolescents in a supportive, high-impact environment.
+
+For psych, education, or youth work students, it's hands-on experience working with adolescents in a real mentoring context - not a tick-box placement.
+
+Would you be open to a 15-minute call to chat about how this could work? Happy to send through more detail on our training program & supervision structure.
+
+Cheers,
+Harry Quayle
+Founder, Blues & Greens
+harry@bluesandgreens.com.au`
+  },
+  T2: {
+    name: 'T2 — Unit Coordinator',
+    tier: 'Tier 2 (Unit Coordinator)',
+    subjectA: 'Opportunity for your students — youth mentoring role',
+    subjectB: 'Paid mentoring role — perfect for your cohort',
+    body: `Hi <span class="placeholder">[Name]</span>,
+
+I'm Harry, founder of Blues & Greens - a youth mentoring program in Melbourne.
+
+I used to get emails like this from unit coordinators when I was at uni & honestly, the opportunities that came through those emails were some of the most valuable things I did.
+
+We're looking for young men in their 20s to become paid casual mentors for teenage boys. One hour a week, video call, full training & supervision. $50 per session.
+
+I think this would be really relevant for your <span class="placeholder">[unit name]</span> students - it's real-world experience with adolescents that you can't get in a textbook.
+
+Would you be happy to share a short blurb with your cohort? I've drafted a student-facing email below that's ready to forward.
+
+Cheers,
+Harry Quayle
+harry@bluesandgreens.com.au`
+  },
+  T3: {
+    name: 'T3 — Careers Board',
+    tier: 'Tier 3 (Careers Board)',
+    subjectA: 'Paid Casual Youth Mentor — Blues & Greens',
+    subjectB: 'Youth Mentor role — 1hr/week, $50/session',
+    body: `Role Title: Paid Casual Youth Mentor - Blues & Greens
+Location: Remote (Victoria-based preferred)
+Hours: 1 hour per week | Pay: $50 per session
+Ideal for: Psychology, Education, Youth Work, Social Work, Counselling students
+
+Blues & Greens pairs teenage boys (13-17) with young male mentors in their 20s. Weekly 1-hour video call. Full training & supervision provided. Real experience working with adolescents.
+
+Apply: Email harry@bluesandgreens.com.au with a short intro.`
+  },
+  T4: {
+    name: 'T4 — Student Club',
+    tier: 'Tier 4 (Student Club)',
+    subjectA: 'Would love to chat with your members about youth mentoring',
+    subjectB: 'Mentoring opportunity for your club members',
+    body: `Hey <span class="placeholder">[Club Name]</span> team,
+
+I'm Harry - I run Blues & Greens, a youth mentoring program in Melbourne. We pair teenage boys with young male mentors in their 20s for weekly video sessions. Our mission is reducing teenage male suicide through connection.
+
+I'd love to come talk to your members for 20 minutes about what youth mentoring actually looks like. Happy to do it in person or on a call.
+
+We're also actively recruiting mentors ($50/session, 1hr/week).
+
+Keen?
+
+Harry
+harry@bluesandgreens.com.au`
+  },
+  T5: {
+    name: 'T5 — Student-Facing',
+    tier: 'Tier 5 (Other)',
+    subjectA: 'Youth mentoring opportunity — Blues & Greens',
+    subjectB: 'Become a youth mentor — paid, 1hr/week',
+    body: `Hey,
+
+Quick one - Blues & Greens is looking for young blokes in their 20s to become mentors for teenage boys.
+
+The role: one hour a week, a video call with a 13-17 year old boy. You chat, build rapport, & become a positive mirror in his life. $50 per session. Full training & supervision.
+
+If you're studying psych, education, youth work, social work, or counselling - this is hands-on experience you can't get in a textbook.
+
+Interested? Email harry@bluesandgreens.com.au with a short intro.`
+  },
+  T6: {
+    name: 'T6 — Follow-Up (Day 7)',
+    tier: 'All tiers',
+    subjectA: 'Re: [original subject]',
+    subjectB: 'Re: [original subject]',
+    body: `Hi <span class="placeholder">[Name]</span>, just bumping this up - totally understand if you're buried in emails. Happy to jump on a quick call if that's easier.
+
+Cheers, Harry`
+  }
+};
+
+let rolloutData = null;
+
+// Load rollout data
+fetch('../../../data/outreach-rollout.json')
+  .then(r => r.json())
+  .then(data => {
+    rolloutData = data;
+    renderSummary(data);
+    renderRollout(data);
+  })
+  .catch(e => {
+    console.error('Failed to load rollout data:', e);
+    document.getElementById('rolloutContainer').innerHTML = '<p style="color:var(--red)">Failed to load rollout data. Check console.</p>';
+  });
+
+// Render templates
+function renderTemplates() {
+  const container = document.getElementById('templatesContainer');
+  let html = '';
+  for (const [key, t] of Object.entries(templates)) {
+    html += `
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div>
+          <span class="title">${t.name}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="badge">${t.tier}</span>
+          <span class="chevron">▶</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="subject-line subject-a"><span class="subject-label">Subject A:</span> ${t.subjectA}</div>
+        <div class="subject-line subject-b"><span class="subject-label">Subject B:</span> ${t.subjectB}</div>
+        <div class="template-content">${t.body}</div>
+      </div>
+    </div>`;
+  }
+  container.innerHTML = html;
+}
+renderTemplates();
+
+function renderSummary(data) {
+  const days = ['monday','tuesday','wednesday','thursday','friday'];
+  let total = 0;
+  let totalA = 0, totalB = 0;
+  let tiers = {};
+  days.forEach(d => {
+    total += data[d].total;
+    totalA += data[d].stats.subject_a;
+    totalB += data[d].stats.subject_b;
+    for (const [t, c] of Object.entries(data[d].stats.by_tier)) {
+      tiers[t] = (tiers[t]||0) + c;
+    }
+  });
+  
+  const row = document.getElementById('summaryRow');
+  row.innerHTML = `
+    <div class="summary-card"><div class="num">${total}</div><div class="label">Total Emails</div></div>
+    <div class="summary-card"><div class="num">5</div><div class="label">Send Days</div></div>
+    <div class="summary-card"><div class="num">${totalA}</div><div class="label">Subject A</div></div>
+    <div class="summary-card"><div class="num">${totalB}</div><div class="label">Subject B</div></div>
+    <div class="summary-card"><div class="num">6</div><div class="label">Templates</div></div>
+  `;
+}
+
+function renderRollout(data) {
+  const container = document.getElementById('rolloutContainer');
+  const dayOrder = ['monday','tuesday','wednesday','thursday','friday'];
+  const dayDescriptions = {
+    monday: 'Tier 1 VIC — WIL offices at Victorian unis',
+    tuesday: 'Tier 1 Interstate — WIL offices outside VIC',
+    wednesday: 'Tier 2 — Unit Coordinators (all states)',
+    thursday: 'Tier 3 + 4 — Careers boards & student clubs',
+    friday: 'Tier 5 — TAFEs, volunteer platforms, peak bodies'
+  };
+  
+  let html = '';
+  dayOrder.forEach(dayKey => {
+    const day = data[dayKey];
+    const unis = Object.entries(day.stats.by_uni).sort((a,b) => b[1]-a[1]);
+    
+    html += `
+    <div class="card day-card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="day-header" style="flex:1;">
+          <div>
+            <span class="day-name">${day.label}</span>
+            <div style="font-size:0.8em;color:var(--cream-dim);margin-top:2px;">${dayDescriptions[dayKey]}</div>
+          </div>
+          <span class="day-count">${day.total} emails</span>
+        </div>
+        <span class="chevron" style="margin-left:12px;">▶</span>
+      </div>
+      <div class="card-body">
+        <div class="day-stats">
+          <span class="stat-chip">📊 ${day.stats.subject_a}A / ${day.stats.subject_b}B split</span>
+          <span class="stat-chip">🏫 ${unis.length} organisations</span>
+        </div>
+        <div class="uni-breakdown">
+          ${unis.map(([u, c]) => `<span class="uni-chip">${u || 'Other'} (${c})</span>`).join('')}
+        </div>
+        <table class="contact-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Uni/Org</th>
+              <th>Dept</th>
+              <th>Template</th>
+              <th>A/B</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${day.contacts.slice(0, 3).map(c => `
+            <tr>
+              <td>${c.name || '—'}</td>
+              <td>${c.uni || c.personalisation.uni_name || '—'}</td>
+              <td>${c.dept || '—'}</td>
+              <td>${c.template}</td>
+              <td><span class="ab-badge ${c.subject_variant === 'A' ? 'ab-a' : 'ab-b'}">${c.subject_variant}</span></td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+        ${day.contacts.length > 3 ? `
+        <span class="preview-toggle" onclick="event.stopPropagation(); showAllContacts(this, '${dayKey}')">
+          ▸ Show all ${day.contacts.length} contacts
+        </span>
+        <div class="all-contacts-container" style="display:none;"></div>
+        ` : ''}
+      </div>
+    </div>`;
+  });
+  
+  container.innerHTML = html;
+}
+
+function showAllContacts(el, dayKey) {
+  const container = el.nextElementSibling;
+  if (container.style.display === 'none') {
+    const day = rolloutData[dayKey];
+    container.innerHTML = `
+      <table class="contact-table" style="margin-top:8px;">
+        <thead>
+          <tr><th>#</th><th>Name</th><th>Email</th><th>Uni/Org</th><th>Dept</th><th>State</th><th>Template</th><th>A/B</th></tr>
+        </thead>
+        <tbody>
+          ${day.contacts.map((c, i) => `
+          <tr>
+            <td>${i+1}</td>
+            <td>${c.name || '—'}</td>
+            <td style="font-size:0.85em;">${c.email || '—'}</td>
+            <td>${c.uni || '—'}</td>
+            <td>${c.dept || '—'}</td>
+            <td>${c.state || '—'}</td>
+            <td>${c.template}</td>
+            <td><span class="ab-badge ${c.subject_variant === 'A' ? 'ab-a' : 'ab-b'}">${c.subject_variant}</span></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>`;
+    container.style.display = 'block';
+    el.textContent = `▾ Hide contacts`;
+  } else {
+    container.style.display = 'none';
+    el.textContent = `▸ Show all ${rolloutData[dayKey].contacts.length} contacts`;
+  }
+}
+
+function toggleCard(el) {
+  el.classList.toggle('open');
+}
+
+function approveRollout() {
+  if (confirm('Lock in the outreach rollout? This confirms you\'ve reviewed all templates and the send schedule.')) {
+    document.getElementById('statusText').textContent = '✅ Approved — Day 1 Ready';
+    document.getElementById('statusBanner').style.borderColor = 'var(--green)';
+    document.getElementById('approveBtn').textContent = '🔒 Locked In';
+    document.getElementById('approveBtn').disabled = true;
+    document.getElementById('approveBtn').style.opacity = '0.6';
+    document.getElementById('approveBtn').style.cursor = 'default';
+    // Save approval state
+    localStorage.setItem('outreach-rollout-approved', 'true');
+    localStorage.setItem('outreach-rollout-approved-date', new Date().toISOString());
+  }
+}
+
+// Check for prior approval
+if (localStorage.getItem('outreach-rollout-approved') === 'true') {
+  document.getElementById('statusText').textContent = '✅ Approved — Day 1 Ready';
+  document.getElementById('statusBanner').style.borderColor = 'var(--green)';
+  document.getElementById('approveBtn').textContent = '🔒 Locked In';
+  document.getElementById('approveBtn').disabled = true;
+  document.getElementById('approveBtn').style.opacity = '0.6';
+}
+</script>
+
+</body>
+</html>
