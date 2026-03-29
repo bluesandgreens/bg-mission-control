@@ -15,6 +15,7 @@
   --text: #e8e8e8;
   --text-muted: #8899aa;
   --green: #22c55e;
+  --bright-green: #4ade80;
   --red: #ef4444;
   --orange: #f59e0b;
   --blue: #3b82f6;
@@ -144,11 +145,276 @@ body {
 }
 
 .section.open .section-content {
-  max-height: 2000px;
+  max-height: 5000px;
 }
 
 .section-body {
   padding: 0 20px 20px;
+}
+
+/* ============ KANBAN BOARD ============ */
+.kanban-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.kanban-board {
+  display: flex;
+  gap: 12px;
+  min-width: min-content;
+}
+
+.kanban-col {
+  min-width: 200px;
+  max-width: 240px;
+  flex: 1;
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+  border: 1px solid var(--dark-border);
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+}
+
+.kanban-col-header {
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.kanban-col-header .count {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.kanban-col.not-contacted .kanban-col-header { color: var(--text-muted); border-color: #555; }
+.kanban-col.queued .kanban-col-header { color: var(--orange); border-color: var(--orange); }
+.kanban-col.emailed .kanban-col-header { color: var(--blue); border-color: var(--blue); }
+.kanban-col.responded .kanban-col-header { color: var(--gold); border-color: var(--gold); }
+.kanban-col.meeting .kanban-col-header { color: var(--green); border-color: var(--green); }
+.kanban-col.registered .kanban-col-header { color: var(--bright-green); border-color: var(--bright-green); }
+
+.kanban-cards {
+  overflow-y: auto;
+  padding: 8px;
+  flex: 1;
+}
+
+.kanban-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.kanban-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.kanban-card .card-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 2px;
+}
+
+.kanban-card .card-uni {
+  font-size: 11px;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.kanban-card .card-dept {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.kanban-card .card-date {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.kanban-empty {
+  text-align: center;
+  padding: 20px 8px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.kanban-overflow {
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--dark-border);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.kanban-overflow:hover {
+  color: var(--gold);
+}
+
+/* ============ WEEK VIEW ============ */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .week-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.week-day {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--dark-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.week-day.next-up {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(200,169,81,0.15);
+}
+
+.week-day-header {
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.week-day-header:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+.week-day.next-up .week-day-header {
+  background: rgba(200,169,81,0.08);
+}
+
+.week-day-header .day-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cream);
+}
+
+.week-day.next-up .day-name {
+  color: var(--gold);
+}
+
+.week-day-header .day-date {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.week-day-header .day-count {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.day-label {
+  padding: 0 16px 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.next-up-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.week-day-contacts {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.week-day.expanded .week-day-contacts {
+  max-height: 3000px;
+}
+
+.week-contact-list {
+  padding: 0 12px 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.week-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  transition: background 0.1s;
+}
+
+.week-contact:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.week-contact .wc-name {
+  font-weight: 600;
+  color: var(--cream);
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.week-contact .wc-uni {
+  color: var(--blue);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.week-contact .wc-dept {
+  color: var(--text-muted);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.week-day-toggle {
+  padding: 8px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-top: 1px solid var(--dark-border);
+}
+
+.week-day-toggle:hover {
+  color: var(--gold);
 }
 
 /* Funnel */
@@ -292,6 +558,33 @@ body {
   font-weight: 600;
 }
 
+/* Dept breakdown */
+.dept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dept-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.dept-card .num {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.dept-card .lbl {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
 /* Action items */
 .action-item {
   display: flex;
@@ -326,33 +619,6 @@ body {
   color: var(--orange);
 }
 
-/* Dept breakdown */
-.dept-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.dept-card {
-  background: rgba(255,255,255,0.03);
-  border-radius: 8px;
-  padding: 10px;
-  text-align: center;
-}
-
-.dept-card .num {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--purple);
-}
-
-.dept-card .lbl {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
 .loading {
   text-align: center;
   padding: 60px;
@@ -378,6 +644,7 @@ body {
   .summary-grid { grid-template-columns: repeat(2, 1fr); }
   .header { padding: 16px; }
   .header h1 { font-size: 22px; }
+  .kanban-col { min-width: 170px; }
 }
 </style>
 </head>
@@ -406,9 +673,37 @@ body {
     
     <!-- Summary Cards -->
     <div class="summary-grid" id="summary-cards"></div>
+
+    <!-- ============ KANBAN BOARD ============ -->
+    <div class="section open" id="kanban-section">
+      <div class="section-header" onclick="toggleSection('kanban-section')">
+        <h2>📋 Pipeline Kanban <span class="badge" id="kanban-badge">285 contacts</span></h2>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <div class="kanban-wrapper">
+            <div class="kanban-board" id="kanban-board"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ WEEK VIEW ============ -->
+    <div class="section open" id="weekview-section">
+      <div class="section-header" onclick="toggleSection('weekview-section')">
+        <h2>📅 Week Plan — Mar 31 – Apr 4 <span class="badge" id="weekview-badge">5 days</span></h2>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <div class="week-grid" id="week-grid"></div>
+        </div>
+      </div>
+    </div>
     
     <!-- Funnel Section -->
-    <div class="section open" id="funnel-section">
+    <div class="section" id="funnel-section">
       <div class="section-header" onclick="toggleSection('funnel-section')">
         <h2>📊 Pipeline Funnel</h2>
         <span class="arrow">▼</span>
@@ -498,6 +793,10 @@ function toggleSection(id) {
   document.getElementById(id).classList.toggle('open');
 }
 
+function toggleWeekDay(idx) {
+  document.getElementById('week-day-' + idx).classList.toggle('expanded');
+}
+
 async function loadData() {
   try {
     const resp = await fetch('../data/mentor-pipeline.json');
@@ -514,6 +813,7 @@ function render(data) {
   
   const s = data.summary;
   const f = data.funnel;
+  const contacts = data.contacts || [];
   
   // Summary cards
   const cards = [
@@ -529,6 +829,12 @@ function render(data) {
   document.getElementById('summary-cards').innerHTML = cards.map(c =>
     `<div class="summary-card"><div class="number">${c.num}</div><div class="label">${c.label}</div></div>`
   ).join('');
+
+  // ============ KANBAN BOARD ============
+  renderKanban(contacts, f);
+
+  // ============ WEEK VIEW ============
+  renderWeekView(data.week_plan || []);
   
   // Funnel
   const total = Math.max(s.total_contacts, 1);
@@ -625,6 +931,141 @@ function render(data) {
   
   // Updated at
   document.getElementById('updated-at').textContent = `Last updated: ${new Date(data.generated_at).toLocaleString('en-AU')}`;
+}
+
+function renderKanban(contacts, funnel) {
+  const statusMap = {
+    'Not Contacted': { cls: 'not-contacted', label: 'Not Contacted', max: 20 },
+    'Queued Today': { cls: 'queued', label: 'Queued Today', max: 50 },
+    'Emailed': { cls: 'emailed', label: 'Emailed', max: 50 },
+    'Responded': { cls: 'responded', label: 'Responded', max: 50 },
+    'Meeting Booked': { cls: 'meeting', label: 'Meeting Booked', max: 50 },
+    'Registered': { cls: 'registered', label: 'Registered', max: 50 }
+  };
+
+  // Group contacts by status
+  const grouped = {};
+  Object.keys(statusMap).forEach(s => grouped[s] = []);
+  
+  contacts.forEach(c => {
+    const st = c.status || 'Not Contacted';
+    if (grouped[st]) {
+      grouped[st].push(c);
+    } else {
+      // Fallback - treat as not contacted
+      grouped['Not Contacted'].push(c);
+    }
+  });
+
+  // Determine today's queue from week_plan (if today matches)
+  // For now, Monday's batch is "Queued Today" if today is Monday
+  const today = new Date().toISOString().slice(0, 10);
+  // We'll handle this dynamically later
+
+  const board = document.getElementById('kanban-board');
+  board.innerHTML = Object.entries(statusMap).map(([status, cfg]) => {
+    const items = grouped[status] || [];
+    const count = items.length;
+    const showMax = cfg.max;
+    const visible = items.slice(0, showMax);
+    const overflow = count - showMax;
+
+    let cardsHtml;
+    if (count === 0) {
+      cardsHtml = `<div class="kanban-empty">No contacts</div>`;
+    } else {
+      cardsHtml = visible.map(c => `
+        <div class="kanban-card">
+          <div class="card-name">${esc(c.name)}</div>
+          <div class="card-uni">${esc(c.uni)}</div>
+          <div class="card-dept">${esc(c.dept)}${c.role ? ' · ' + esc(c.role) : ''}</div>
+          ${c.date_emailed ? `<div class="card-date">📧 ${c.date_emailed}</div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    const overflowHtml = overflow > 0 
+      ? `<div class="kanban-overflow">+ ${overflow} more</div>` 
+      : '';
+
+    return `
+      <div class="kanban-col ${cfg.cls}">
+        <div class="kanban-col-header">
+          <span>${cfg.label}</span>
+          <span class="count">${count}</span>
+        </div>
+        <div class="kanban-cards">${cardsHtml}</div>
+        ${overflowHtml}
+      </div>
+    `;
+  }).join('');
+
+  document.getElementById('kanban-badge').textContent = `${contacts.length} contacts`;
+}
+
+function renderWeekView(weekPlan) {
+  if (!weekPlan || weekPlan.length === 0) {
+    document.getElementById('week-grid').innerHTML = '<div class="empty-state">No week plan available</div>';
+    return;
+  }
+
+  const today = new Date().toISOString().slice(0, 10);
+  // Find the next upcoming day or today
+  let nextUpIdx = 0;
+  for (let i = 0; i < weekPlan.length; i++) {
+    if (weekPlan[i].date >= today) {
+      nextUpIdx = i;
+      break;
+    }
+  }
+
+  const totalContacts = weekPlan.reduce((sum, d) => sum + d.count, 0);
+  document.getElementById('weekview-badge').textContent = `${totalContacts} contacts across 5 days`;
+
+  document.getElementById('week-grid').innerHTML = weekPlan.map((day, idx) => {
+    const isNextUp = idx === nextUpIdx;
+    const isToday = day.date === today;
+    const badge = isToday ? '<span class="next-up-badge">SENDING TODAY</span>' 
+                 : isNextUp ? '<span class="next-up-badge">NEXT UP</span>' : '';
+    
+    const contactsHtml = (day.contacts || []).map(c => `
+      <div class="week-contact">
+        <span class="wc-name">${esc(c.name)}</span>
+        <span class="wc-uni">${esc(c.uni)}</span>
+        <span class="wc-dept">${esc(c.dept)}</span>
+      </div>
+    `).join('');
+
+    const dateStr = new Date(day.date + 'T12:00:00').toLocaleDateString('en-AU', { month: 'short', day: 'numeric' });
+
+    return `
+      <div class="week-day ${isNextUp ? 'next-up' : ''}" id="week-day-${idx}">
+        <div class="week-day-header" onclick="toggleWeekDay(${idx})">
+          <div>
+            <div class="day-name">${day.day}${badge}</div>
+            <div class="day-date">${dateStr}</div>
+          </div>
+          <div class="day-count">${day.count}</div>
+        </div>
+        <div class="day-label">${esc(day.label)}</div>
+        <div class="week-day-contacts">
+          <div class="week-contact-list">
+            ${contactsHtml || '<div class="empty-state">No contacts</div>'}
+          </div>
+        </div>
+        <div class="week-day-toggle" onclick="toggleWeekDay(${idx})">
+          ${day.count > 0 ? '▼ Show contacts' : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function esc(str) {
+  if (!str) return '';
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
 }
 
 loadData();

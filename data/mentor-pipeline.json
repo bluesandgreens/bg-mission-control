@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-29T18:09:22.684646",
+  "generated_at": "2026-03-29T20:58:58.339529",
   "summary": {
     "total_contacts": 285,
     "universities_covered": 37,
@@ -5135,6 +5135,2357 @@
       "date_emailed": "",
       "date_followed_up": "",
       "notes": ""
+    }
+  ],
+  "contacts_by_status": {
+    "Not Contacted": 285
+  },
+  "contacts_by_tier": {
+    "Tier 1 (WIL Office)": 116,
+    "Tier 4 (Student Club)": 1,
+    "Tier 3 (Careers Board)": 40,
+    "Tier 2 (Unit Coordinator)": 98,
+    "Tier 5 (Other)": 30
+  },
+  "contacts_by_state": {
+    "QLD": 59,
+    "VIC": 97,
+    "NSW": 56,
+    "WA": 30,
+    "SA": 24,
+    "TAS": 6,
+    "ACT": 13
+  },
+  "week_plan": [
+    {
+      "date": "2026-03-31",
+      "day": "Monday",
+      "label": "T1 VIC WIL Offices",
+      "tier": "Tier 1",
+      "template": "WIL Office Intro",
+      "count": 37,
+      "contacts": [
+        {
+          "name": "ACU Social Work Placements",
+          "email": "socialwork.placements@acu.edu.au",
+          "uni": "ACU",
+          "dept": "Social Work",
+          "role": "Field Education Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "ACU WIL Office",
+          "email": "wil@acu.edu.au",
+          "uni": "ACU",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "ACU Education Placements",
+          "email": "education.placements@acu.edu.au",
+          "uni": "ACU",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Jess McCann",
+          "email": "jessica.mccann@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Dr Patricia Taylor",
+          "email": "patricia.taylor@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "WIL",
+          "role": "Course Director, Public Health / Unit Chair Health Practicum",
+          "state": "VIC"
+        },
+        {
+          "name": "Shufen Lin",
+          "email": "shufen.lin@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "WIL",
+          "role": "WIL Manager, Faculty of Health",
+          "state": "VIC"
+        },
+        {
+          "name": "Dr Elizabeth Clancy",
+          "email": "elizabeth.clancy@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "WIL",
+          "role": "Unit Chair, Psychology at Work (HPS328)",
+          "state": "VIC"
+        },
+        {
+          "name": "Dr Neetu George",
+          "email": "neetu.george@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "WIL",
+          "role": "Unit Chair, Health Practicum",
+          "state": "VIC"
+        },
+        {
+          "name": "Deakin Health WIL Team",
+          "email": "health-wil@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "WIL",
+          "role": "General WIL enquiries",
+          "state": "VIC"
+        },
+        {
+          "name": "Lauren Dinale",
+          "email": "lauren.dinale@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Sarah Haintz",
+          "email": "sarah.haintz@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "WIL",
+          "role": "Senior Adviser WIL",
+          "state": "VIC"
+        },
+        {
+          "name": "Emilya Umashankar",
+          "email": "emilya.umashankar@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "WIL",
+          "role": "Senior Advisor WIL",
+          "state": "VIC"
+        },
+        {
+          "name": "Amanda Dudley",
+          "email": "amanda.dudley@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "Psych",
+          "role": "Senior Lecturer & Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Education Placements Office",
+          "email": "education-placements@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "Education",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Sport Science WIL",
+          "email": "exercise-sport@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Social Work Placements",
+          "email": "socialwork-placements@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "Social Work",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Federation Education",
+          "email": "education@federation.edu.au",
+          "uni": "Federation",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Federation WIL Office",
+          "email": "wil@federation.edu.au",
+          "uni": "Federation",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Federation Social Work",
+          "email": "socialwork@federation.edu.au",
+          "uni": "Federation",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "VIC"
+        },
+        {
+          "name": "La Trobe WIL",
+          "email": "",
+          "uni": "La Trobe",
+          "dept": "WIL",
+          "role": "Work Based Learning Team",
+          "state": "VIC"
+        },
+        {
+          "name": "La Trobe Education Placements",
+          "email": "education.placements@latrobe.edu.au",
+          "uni": "La Trobe",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "La Trobe Social Work",
+          "email": "socialwork@latrobe.edu.au",
+          "uni": "La Trobe",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "VIC"
+        },
+        {
+          "name": "Dr Luis Mascaro",
+          "email": "luis.mascaro@monash.edu",
+          "uni": "Monash",
+          "dept": "Psych",
+          "role": "Placement Liaison, Head Tutor",
+          "state": "VIC"
+        },
+        {
+          "name": "Monash Psych Placements",
+          "email": "psych.industry-placements@monash.edu",
+          "uni": "Monash",
+          "dept": "WIL",
+          "role": "Psychology Placements Team (PSY3034)",
+          "state": "VIC"
+        },
+        {
+          "name": "Social Work Placements",
+          "email": "socialwork.placements@monash.edu",
+          "uni": "Monash",
+          "dept": "Social Work",
+          "role": "Field Education Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "RMIT Education Placements",
+          "email": "education.placements@rmit.edu.au",
+          "uni": "RMIT",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "RMIT Social Work",
+          "email": "social-work@rmit.edu.au",
+          "uni": "RMIT",
+          "dept": "Social Work",
+          "role": "Field Education Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Megan Pote",
+          "email": "m.pote@swin.edu.au",
+          "uni": "Swinburne",
+          "dept": "WIL",
+          "role": "Manager, Health Placements",
+          "state": "VIC"
+        },
+        {
+          "name": "Swinburne Education",
+          "email": "education@swinburne.edu.au",
+          "uni": "Swinburne",
+          "dept": "Education",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Swinburne Social Work",
+          "email": "socialwork@swinburne.edu.au",
+          "uni": "Swinburne",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "VIC"
+        },
+        {
+          "name": "Torrens Education",
+          "email": "education@torrens.edu.au",
+          "uni": "Torrens",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Torrens WIL Office",
+          "email": "wil@torrens.edu.au",
+          "uni": "Torrens",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "UniMelb Social Work",
+          "email": "socialwork-enquiries@unimelb.edu.au",
+          "uni": "UniMelb",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "VIC"
+        },
+        {
+          "name": "VU WIL Office",
+          "email": "wil@vu.edu.au",
+          "uni": "VU",
+          "dept": "WIL",
+          "role": "Work Integrated Learning",
+          "state": "VIC"
+        },
+        {
+          "name": "VU Social Work",
+          "email": "socialwork@vu.edu.au",
+          "uni": "VU",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "VIC"
+        },
+        {
+          "name": "VU Education",
+          "email": "education@vu.edu.au",
+          "uni": "VU",
+          "dept": "Education",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "VU Sport & Exercise Science",
+          "email": "sport@vu.edu.au",
+          "uni": "VU",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "day": "Tuesday",
+      "label": "T1 Interstate WIL Offices",
+      "tier": "Tier 1",
+      "template": "WIL Office Intro",
+      "count": 79,
+      "contacts": [
+        {
+          "name": "ANU WIL Office",
+          "email": "wil@anu.edu.au",
+          "uni": "ANU",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "ACT"
+        },
+        {
+          "name": "Adelaide Education",
+          "email": "education@adelaide.edu.au",
+          "uni": "Adelaide",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "Adelaide WIL Office",
+          "email": "wil@adelaide.edu.au",
+          "uni": "Adelaide",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "Bond WIL Office",
+          "email": "wil@bond.edu.au",
+          "uni": "Bond",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "CDU Social Work",
+          "email": "socialwork@cdu.edu.au",
+          "uni": "CDU",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "SA"
+        },
+        {
+          "name": "CDU WIL Office",
+          "email": "wil@cdu.edu.au",
+          "uni": "CDU",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "CDU Education",
+          "email": "education@cdu.edu.au",
+          "uni": "CDU",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "CQU Social Work & Community Services",
+          "email": "socialwork@cqu.edu.au",
+          "uni": "CQU",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "QLD"
+        },
+        {
+          "name": "CQU WIL Office",
+          "email": "wil@cqu.edu.au",
+          "uni": "CQU",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "CSU WIL Office",
+          "email": "wil@csu.edu.au",
+          "uni": "CSU",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "CSU Social Work",
+          "email": "socialwork@csu.edu.au",
+          "uni": "CSU",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "NSW"
+        },
+        {
+          "name": "CSU Education",
+          "email": "education@csu.edu.au",
+          "uni": "CSU",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "Curtin Social Work",
+          "email": "socialwork@curtin.edu.au",
+          "uni": "Curtin",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "WA"
+        },
+        {
+          "name": "Curtin WIL Office",
+          "email": "wil@curtin.edu.au",
+          "uni": "Curtin",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Curtin Education",
+          "email": "education@curtin.edu.au",
+          "uni": "Curtin",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "ECU Social Work",
+          "email": "socialwork@ecu.edu.au",
+          "uni": "ECU",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "WA"
+        },
+        {
+          "name": "ECU WIL Office",
+          "email": "wil@ecu.edu.au",
+          "uni": "ECU",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "ECU Education",
+          "email": "education@ecu.edu.au",
+          "uni": "ECU",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Flinders Social Work",
+          "email": "socialwork@flinders.edu.au",
+          "uni": "Flinders",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "SA"
+        },
+        {
+          "name": "Flinders WIL Office",
+          "email": "wil@flinders.edu.au",
+          "uni": "Flinders",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "Flinders Education",
+          "email": "education@flinders.edu.au",
+          "uni": "Flinders",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "Griffith WIL Office",
+          "email": "wil@griffith.edu.au",
+          "uni": "Griffith",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "Griffith Education Placements",
+          "email": "education-placements@griffith.edu.au",
+          "uni": "Griffith",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "Griffith Social Work",
+          "email": "socialwork@griffith.edu.au",
+          "uni": "Griffith",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "QLD"
+        },
+        {
+          "name": "JCU Social Work",
+          "email": "socialwork@jcu.edu.au",
+          "uni": "JCU",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "QLD"
+        },
+        {
+          "name": "JCU Education",
+          "email": "education@jcu.edu.au",
+          "uni": "JCU",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "JCU WIL Office",
+          "email": "wil@jcu.edu.au",
+          "uni": "JCU",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "Macquarie Social Work",
+          "email": "socialwork@mq.edu.au",
+          "uni": "Macquarie",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "NSW"
+        },
+        {
+          "name": "Macquarie Education",
+          "email": "education@mq.edu.au",
+          "uni": "Macquarie",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "Murdoch Education",
+          "email": "education@murdoch.edu.au",
+          "uni": "Murdoch",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Murdoch WIL Office",
+          "email": "wil@murdoch.edu.au",
+          "uni": "Murdoch",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Newcastle Social Work",
+          "email": "socialwork@newcastle.edu.au",
+          "uni": "Newcastle",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "NSW"
+        },
+        {
+          "name": "Newcastle Education",
+          "email": "education@newcastle.edu.au",
+          "uni": "Newcastle",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "Newcastle WIL Office",
+          "email": "wil@newcastle.edu.au",
+          "uni": "Newcastle",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "QUT WIL Office",
+          "email": "wil@qut.edu.au",
+          "uni": "QUT",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "QUT Social Work",
+          "email": "socialwork@qut.edu.au",
+          "uni": "QUT",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "QLD"
+        },
+        {
+          "name": "QUT Education Placements",
+          "email": "education.placements@qut.edu.au",
+          "uni": "QUT",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "SCU Social Work",
+          "email": "socialwork@scu.edu.au",
+          "uni": "SCU",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "NSW"
+        },
+        {
+          "name": "SCU WIL Office",
+          "email": "wil@scu.edu.au",
+          "uni": "SCU",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "SCU Education",
+          "email": "education@scu.edu.au",
+          "uni": "SCU",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "UC WIL Office",
+          "email": "wil@canberra.edu.au",
+          "uni": "UC",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "ACT"
+        },
+        {
+          "name": "UC Education",
+          "email": "education@canberra.edu.au",
+          "uni": "UC",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "ACT"
+        },
+        {
+          "name": "UC Social Work",
+          "email": "socialwork@canberra.edu.au",
+          "uni": "UC",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "ACT"
+        },
+        {
+          "name": "UNE Social Work",
+          "email": "socialwork@une.edu.au",
+          "uni": "UNE",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "NSW"
+        },
+        {
+          "name": "UNE WIL Office",
+          "email": "wil@une.edu.au",
+          "uni": "UNE",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "UNE Education",
+          "email": "education@une.edu.au",
+          "uni": "UNE",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "Shane Lee Vassallo",
+          "email": "s.vassallo@unsw.edu.au",
+          "uni": "UNSW",
+          "dept": "Psych",
+          "role": "Clinic Director & Placement Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "UNSW Social Work",
+          "email": "socialwork@unsw.edu.au",
+          "uni": "UNSW",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "NSW"
+        },
+        {
+          "name": "UNSW Education",
+          "email": "education@unsw.edu.au",
+          "uni": "UNSW",
+          "dept": "Education",
+          "role": "Placement Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "Donna Corcoran",
+          "email": "d.corcoran@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Psych",
+          "role": "Placement Manager (Clinical Psych)",
+          "state": "QLD"
+        },
+        {
+          "name": "Emma-Jane Harrison",
+          "email": "e.harrison@psy.uq.edu.au",
+          "uni": "UQ",
+          "dept": "Psych",
+          "role": "Practicum Officer (Internships)",
+          "state": "QLD"
+        },
+        {
+          "name": "Michelle McEniery",
+          "email": "m.mceniery@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Psych",
+          "role": "Placement Manager",
+          "state": "QLD"
+        },
+        {
+          "name": "Fiona Williams",
+          "email": "fiona.williams@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Psych",
+          "role": "Placement Manager (Counselling Psych)",
+          "state": "QLD"
+        },
+        {
+          "name": "Michelle Heatley",
+          "email": "m.heatley@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Psych",
+          "role": "Placement Manager",
+          "state": "QLD"
+        },
+        {
+          "name": "Andrea Richardson",
+          "email": "andrea.richardson@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Psych",
+          "role": "Placement Manager",
+          "state": "QLD"
+        },
+        {
+          "name": "Adheesha Ratnayake",
+          "email": "a.ratnayake@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "UQ Social Work",
+          "email": "sw-fieldplacements@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "QLD"
+        },
+        {
+          "name": "UQ Education",
+          "email": "education@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "USyd Psych Placements",
+          "email": "science.psychology-placements@sydney.edu.au",
+          "uni": "USyd",
+          "dept": "Psych",
+          "role": "Faculty of Science Placements Officer",
+          "state": "NSW"
+        },
+        {
+          "name": "USyd Social Work",
+          "email": "social-work.placements@sydney.edu.au",
+          "uni": "USyd",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "NSW"
+        },
+        {
+          "name": "USyd Education WIL",
+          "email": "education.placements@sydney.edu.au",
+          "uni": "USyd",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "UTAS Social Work",
+          "email": "socialwork@utas.edu.au",
+          "uni": "UTAS",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "TAS"
+        },
+        {
+          "name": "UTAS WIL Office",
+          "email": "wil@utas.edu.au",
+          "uni": "UTAS",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "TAS"
+        },
+        {
+          "name": "UTAS Education",
+          "email": "education@utas.edu.au",
+          "uni": "UTAS",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "TAS"
+        },
+        {
+          "name": "UWA Education",
+          "email": "education@uwa.edu.au",
+          "uni": "UWA",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "UWA Social Work",
+          "email": "socialwork@uwa.edu.au",
+          "uni": "UWA",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "WA"
+        },
+        {
+          "name": "UWA WIL Office",
+          "email": "wil@uwa.edu.au",
+          "uni": "UWA",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "UniSA Education",
+          "email": "education@unisa.edu.au",
+          "uni": "UniSA",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "UniSA Social Work",
+          "email": "socialwork@unisa.edu.au",
+          "uni": "UniSA",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "SA"
+        },
+        {
+          "name": "UniSA WIL Office",
+          "email": "wil@unisa.edu.au",
+          "uni": "UniSA",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "UniSC WIL",
+          "email": "wil@usc.edu.au",
+          "uni": "UniSC",
+          "dept": "WIL",
+          "role": "Work Integrated Learning",
+          "state": "QLD"
+        },
+        {
+          "name": "UniSC Social Work",
+          "email": "socialwork@usc.edu.au",
+          "uni": "UniSC",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "QLD"
+        },
+        {
+          "name": "UniSC Education",
+          "email": "education.placements@usc.edu.au",
+          "uni": "UniSC",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "WSU WIL Office",
+          "email": "wil@westernsydney.edu.au",
+          "uni": "WSU",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "WSU Education",
+          "email": "education.placements@westernsydney.edu.au",
+          "uni": "WSU",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "WSU Social Work",
+          "email": "socialwork@westernsydney.edu.au",
+          "uni": "WSU",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "NSW"
+        },
+        {
+          "name": "UOW Social Work",
+          "email": "socialwork@uow.edu.au",
+          "uni": "Wollongong",
+          "dept": "Social Work",
+          "role": "Field Education",
+          "state": "NSW"
+        },
+        {
+          "name": "UOW Education",
+          "email": "education@uow.edu.au",
+          "uni": "Wollongong",
+          "dept": "Education",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "UOW WIL Office",
+          "email": "wil@uow.edu.au",
+          "uni": "Wollongong",
+          "dept": "WIL",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "day": "Wednesday",
+      "label": "T2 Unit Coordinators",
+      "tier": "Tier 2",
+      "template": "Unit Coordinator Intro",
+      "count": 98,
+      "contacts": [
+        {
+          "name": "ACU Youth Work & Community",
+          "email": "youthwork@acu.edu.au",
+          "uni": "ACU",
+          "dept": "Youth Work",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "ACU Counselling",
+          "email": "counselling@acu.edu.au",
+          "uni": "ACU",
+          "dept": "Counselling",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "ACU Psychology Placements",
+          "email": "psychology.placements@acu.edu.au",
+          "uni": "ACU",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "ANU Criminology",
+          "email": "regnet@anu.edu.au",
+          "uni": "ANU",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "ACT"
+        },
+        {
+          "name": "ANU Psychology",
+          "email": "psychology@anu.edu.au",
+          "uni": "ANU",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "ACT"
+        },
+        {
+          "name": "Adelaide Criminology",
+          "email": "arts@adelaide.edu.au",
+          "uni": "Adelaide",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "Adelaide Psychology",
+          "email": "psychology@adelaide.edu.au",
+          "uni": "Adelaide",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "Bond Counselling",
+          "email": "counselling@bond.edu.au",
+          "uni": "Bond",
+          "dept": "Counselling",
+          "role": "Program Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "Bond Psychology",
+          "email": "psychology@bond.edu.au",
+          "uni": "Bond",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "Bond Criminology",
+          "email": "criminology@bond.edu.au",
+          "uni": "Bond",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "CDU Psychology",
+          "email": "psychology@cdu.edu.au",
+          "uni": "CDU",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "CQU Psychology",
+          "email": "psychology@cqu.edu.au",
+          "uni": "CQU",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "CSU Criminal Justice",
+          "email": "policing@csu.edu.au",
+          "uni": "CSU",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "CSU Psychology",
+          "email": "psychology@csu.edu.au",
+          "uni": "CSU",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "Curtin Psychology",
+          "email": "psychology@curtin.edu.au",
+          "uni": "Curtin",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Curtin Counselling",
+          "email": "counselling@curtin.edu.au",
+          "uni": "Curtin",
+          "dept": "Counselling",
+          "role": "Program Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Curtin Sport Science",
+          "email": "health-sciences@curtin.edu.au",
+          "uni": "Curtin",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Prof Jane McGillivray",
+          "email": "jane.mcgillivray@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "Psych",
+          "role": "Head of School of Psychology",
+          "state": "VIC"
+        },
+        {
+          "name": "Stef Sharman",
+          "email": "stef.sharman@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "Psych",
+          "role": "Assoc Head (Teaching & Learning)",
+          "state": "VIC"
+        },
+        {
+          "name": "Criminology Program",
+          "email": "arts-enquiries@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "Criminology",
+          "role": "Program Director",
+          "state": "VIC"
+        },
+        {
+          "name": "ECU Exercise & Sport Science",
+          "email": "exercise.sport@ecu.edu.au",
+          "uni": "ECU",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "ECU Youth Work",
+          "email": "youthwork@ecu.edu.au",
+          "uni": "ECU",
+          "dept": "Youth Work",
+          "role": "Program Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "ECU Psychology",
+          "email": "psychology@ecu.edu.au",
+          "uni": "ECU",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "ECU Counselling",
+          "email": "counselling@ecu.edu.au",
+          "uni": "ECU",
+          "dept": "Counselling",
+          "role": "Program Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Federation Community Services",
+          "email": "community.services@federation.edu.au",
+          "uni": "Federation",
+          "dept": "Community Services",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Federation Psychology",
+          "email": "psychology@federation.edu.au",
+          "uni": "Federation",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Flinders Psychology",
+          "email": "psychology@flinders.edu.au",
+          "uni": "Flinders",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "Flinders Criminology",
+          "email": "hass.enquiries@flinders.edu.au",
+          "uni": "Flinders",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "Prof Allison Waters",
+          "email": "allison.waters@griffith.edu.au",
+          "uni": "Griffith",
+          "dept": "Psych",
+          "role": "Head of School, Applied Psychology",
+          "state": "QLD"
+        },
+        {
+          "name": "A/Prof Heather Green",
+          "email": "h.green@griffith.edu.au",
+          "uni": "Griffith",
+          "dept": "Psych",
+          "role": "DHoS (Learning & Teaching)",
+          "state": "QLD"
+        },
+        {
+          "name": "Griffith Criminology",
+          "email": "criminology@griffith.edu.au",
+          "uni": "Griffith",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "Griffith Youth Work & Human Services",
+          "email": "humanservices@griffith.edu.au",
+          "uni": "Griffith",
+          "dept": "Youth Work",
+          "role": "Program Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "JCU Sport & Exercise Science",
+          "email": "sport.exercise@jcu.edu.au",
+          "uni": "JCU",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "JCU Psychology",
+          "email": "psychology@jcu.edu.au",
+          "uni": "JCU",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "JCU Community Welfare",
+          "email": "community.welfare@jcu.edu.au",
+          "uni": "JCU",
+          "dept": "Youth Work",
+          "role": "Program Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "La Trobe Counselling",
+          "email": "counselling@latrobe.edu.au",
+          "uni": "La Trobe",
+          "dept": "Counselling",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "La Trobe Youth & Community",
+          "email": "hss-enquiries@latrobe.edu.au",
+          "uni": "La Trobe",
+          "dept": "Youth Work",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "La Trobe Sport Science",
+          "email": "sport-exercise@latrobe.edu.au",
+          "uni": "La Trobe",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "La Trobe Psychology",
+          "email": "psychology@latrobe.edu.au",
+          "uni": "La Trobe",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Prof Maria Kangas",
+          "email": "maria.kangas@mq.edu.au",
+          "uni": "Macquarie",
+          "dept": "Psych",
+          "role": "Head of School, Psychological Sciences",
+          "state": "NSW"
+        },
+        {
+          "name": "Macquarie Criminology",
+          "email": "arts@mq.edu.au",
+          "uni": "Macquarie",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "Dr Chris Siva",
+          "email": "chris.siva@monash.edu",
+          "uni": "Monash",
+          "dept": "Psych",
+          "role": "Education Services Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Monash Education Placements",
+          "email": "edu-psychplacements@monash.edu",
+          "uni": "Monash",
+          "dept": "Education",
+          "role": "Education Faculty Placements",
+          "state": "VIC"
+        },
+        {
+          "name": "Dr Elise Facer-Childs",
+          "email": "elise.facer-childs@monash.edu",
+          "uni": "Monash",
+          "dept": "Psych",
+          "role": "Chief Examiner, PSY3034",
+          "state": "VIC"
+        },
+        {
+          "name": "Elly Francis Pester",
+          "email": "elly.francispester@monash.edu",
+          "uni": "Monash",
+          "dept": "Psych",
+          "role": "Unit Coordinator, PSY3034",
+          "state": "VIC"
+        },
+        {
+          "name": "Monash Sport",
+          "email": "sport@monash.edu",
+          "uni": "Monash",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Youth & Community Studies",
+          "email": "education.enquiries@monash.edu",
+          "uni": "Monash",
+          "dept": "Youth Work",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Counselling Program",
+          "email": "counselling.placements@monash.edu",
+          "uni": "Monash",
+          "dept": "Counselling",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Murdoch Criminology",
+          "email": "criminology@murdoch.edu.au",
+          "uni": "Murdoch",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Murdoch Counselling",
+          "email": "counselling@murdoch.edu.au",
+          "uni": "Murdoch",
+          "dept": "Counselling",
+          "role": "Program Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Murdoch Psychology",
+          "email": "psychology@murdoch.edu.au",
+          "uni": "Murdoch",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Newcastle Psychology",
+          "email": "psychology@newcastle.edu.au",
+          "uni": "Newcastle",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "Newcastle Youth Studies",
+          "email": "hss@newcastle.edu.au",
+          "uni": "Newcastle",
+          "dept": "Youth Work",
+          "role": "Program Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "QUT Justice & Legal Studies",
+          "email": "justice@qut.edu.au",
+          "uni": "QUT",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "QUT Exercise & Sport Science",
+          "email": "exercise.sport@qut.edu.au",
+          "uni": "QUT",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "QUT Human Services & Counselling",
+          "email": "humanservices@qut.edu.au",
+          "uni": "QUT",
+          "dept": "Counselling",
+          "role": "Program Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "QUT Psychology",
+          "email": "psychology@qut.edu.au",
+          "uni": "QUT",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "RMIT - GUSS",
+          "email": "guss@rmit.edu.au",
+          "uni": "RMIT",
+          "dept": "Youth Work",
+          "role": "School of Global, Urban & Social Studies",
+          "state": "VIC"
+        },
+        {
+          "name": "RMIT Criminology & Justice",
+          "email": "sass@rmit.edu.au",
+          "uni": "RMIT",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "RMIT Psychology",
+          "email": "psychology@rmit.edu.au",
+          "uni": "RMIT",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "SCU Psychology",
+          "email": "psychology@scu.edu.au",
+          "uni": "SCU",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "Jenny Linossier",
+          "email": "jlinossier@swinburne.edu.au",
+          "uni": "Swinburne",
+          "dept": "Psych",
+          "role": "Clinic Student Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Swinburne Criminology",
+          "email": "enquiries@swinburne.edu.au",
+          "uni": "Swinburne",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Torrens Counselling & Social Work",
+          "email": "health@torrens.edu.au",
+          "uni": "Torrens",
+          "dept": "Counselling",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "UC Counselling",
+          "email": "counselling@canberra.edu.au",
+          "uni": "UC",
+          "dept": "Counselling",
+          "role": "Program Coordinator",
+          "state": "ACT"
+        },
+        {
+          "name": "UC Sport Science",
+          "email": "sport.science@canberra.edu.au",
+          "uni": "UC",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "ACT"
+        },
+        {
+          "name": "UC Psychology",
+          "email": "psychology@canberra.edu.au",
+          "uni": "UC",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "ACT"
+        },
+        {
+          "name": "UNE Psychology",
+          "email": "psychology@une.edu.au",
+          "uni": "UNE",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "UNE Criminology",
+          "email": "criminology@une.edu.au",
+          "uni": "UNE",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "UNSW Criminology",
+          "email": "arts.unsw@unsw.edu.au",
+          "uni": "UNSW",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "Dr Kristy Sippel",
+          "email": "k.sippel@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Psych",
+          "role": "Placements Manager (Clinical Psych)",
+          "state": "QLD"
+        },
+        {
+          "name": "UQ Counselling",
+          "email": "counselling@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Counselling",
+          "role": "Placement Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "UQ Criminology & Criminal Justice",
+          "email": "socs@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "UQ Sport & Exercise Science",
+          "email": "hms@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "USyd Criminology",
+          "email": "arts.faculty@sydney.edu.au",
+          "uni": "USyd",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "USyd Counselling Program",
+          "email": "counselling.placements@sydney.edu.au",
+          "uni": "USyd",
+          "dept": "Counselling",
+          "role": "Placement Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "USyd Exercise & Sport Science",
+          "email": "exercise.sport@sydney.edu.au",
+          "uni": "USyd",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "UTAS Psychology",
+          "email": "psychology@utas.edu.au",
+          "uni": "UTAS",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "TAS"
+        },
+        {
+          "name": "UWA Sport Science",
+          "email": "sport.science@uwa.edu.au",
+          "uni": "UWA",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "UWA Psychology",
+          "email": "psychology@uwa.edu.au",
+          "uni": "UWA",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "UniMelb Psych Sciences",
+          "email": "msps-enquiries@unimelb.edu.au",
+          "uni": "UniMelb",
+          "dept": "Psych",
+          "role": "School of Psychological Sciences",
+          "state": "VIC"
+        },
+        {
+          "name": "UniMelb Education",
+          "email": "education-enquiries@unimelb.edu.au",
+          "uni": "UniMelb",
+          "dept": "Education",
+          "role": "Graduate School of Education",
+          "state": "VIC"
+        },
+        {
+          "name": "UniMelb Sport Science",
+          "email": "exercise-science@unimelb.edu.au",
+          "uni": "UniMelb",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "UniMelb Counselling & Psych Sciences",
+          "email": "msps-placements@unimelb.edu.au",
+          "uni": "UniMelb",
+          "dept": "Counselling",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "UniMelb Criminology",
+          "email": "arts-enquiries@unimelb.edu.au",
+          "uni": "UniMelb",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "UniSA Psychology",
+          "email": "psychology@unisa.edu.au",
+          "uni": "UniSA",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "UniSA Human Services",
+          "email": "humanservices@unisa.edu.au",
+          "uni": "UniSA",
+          "dept": "Youth Work",
+          "role": "Program Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "UniSA Sport & Exercise Science",
+          "email": "health.sciences@unisa.edu.au",
+          "uni": "UniSA",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "Dr Kathina Ali",
+          "email": "kali@usc.edu.au",
+          "uni": "UniSC",
+          "dept": "Psych",
+          "role": "Clinical Psych Program Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "UniSC Counselling",
+          "email": "counselling@usc.edu.au",
+          "uni": "UniSC",
+          "dept": "Counselling",
+          "role": "Placement Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "UniSC Sport Science",
+          "email": "sport-science@usc.edu.au",
+          "uni": "UniSC",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "VU Community Development",
+          "email": "community.development@vu.edu.au",
+          "uni": "VU",
+          "dept": "Community Services",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "VU Psychology",
+          "email": "psychology@vu.edu.au",
+          "uni": "VU",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "VU Youth Work",
+          "email": "youthwork@vu.edu.au",
+          "uni": "VU",
+          "dept": "Youth Work",
+          "role": "Program Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "WSU Psychology",
+          "email": "psychology@westernsydney.edu.au",
+          "uni": "WSU",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "WSU Criminology & Policing",
+          "email": "criminology@westernsydney.edu.au",
+          "uni": "WSU",
+          "dept": "Criminology",
+          "role": "Program Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "WSU Sport & Exercise Science",
+          "email": "sport@westernsydney.edu.au",
+          "uni": "WSU",
+          "dept": "Sport Science",
+          "role": "WIL Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "UOW Psychology",
+          "email": "psychology@uow.edu.au",
+          "uni": "Wollongong",
+          "dept": "Psych",
+          "role": "Placement Coordinator",
+          "state": "NSW"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "day": "Thursday",
+      "label": "T3 Careers Boards & TAFEs",
+      "tier": "Tier 3",
+      "template": "Careers Board Intro",
+      "count": 40,
+      "contacts": [
+        {
+          "name": "ACU Careers",
+          "email": "careers@acu.edu.au",
+          "uni": "ACU",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "VIC"
+        },
+        {
+          "name": "ANU Careers",
+          "email": "careers@anu.edu.au",
+          "uni": "ANU",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "ACT"
+        },
+        {
+          "name": "Adelaide Careers",
+          "email": "careers@adelaide.edu.au",
+          "uni": "Adelaide",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "SA"
+        },
+        {
+          "name": "Bond Careers",
+          "email": "careers@bond.edu.au",
+          "uni": "Bond",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "QLD"
+        },
+        {
+          "name": "CQU Careers",
+          "email": "careers@cqu.edu.au",
+          "uni": "CQU",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "QLD"
+        },
+        {
+          "name": "CSU Careers",
+          "email": "careers@csu.edu.au",
+          "uni": "CSU",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "NSW"
+        },
+        {
+          "name": "Curtin Careers",
+          "email": "careers@curtin.edu.au",
+          "uni": "Curtin",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "WA"
+        },
+        {
+          "name": "Deakin Psych General",
+          "email": "psychology@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "Psych",
+          "role": "School of Psychology inbox",
+          "state": "VIC"
+        },
+        {
+          "name": "Deakin Careers",
+          "email": "careers@deakin.edu.au",
+          "uni": "Deakin",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "VIC"
+        },
+        {
+          "name": "ECU Careers",
+          "email": "careers@ecu.edu.au",
+          "uni": "ECU",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "WA"
+        },
+        {
+          "name": "Federation Careers",
+          "email": "careers@federation.edu.au",
+          "uni": "Federation",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "VIC"
+        },
+        {
+          "name": "Flinders Careers",
+          "email": "careers@flinders.edu.au",
+          "uni": "Flinders",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "SA"
+        },
+        {
+          "name": "Griffith Careers",
+          "email": "careers@griffith.edu.au",
+          "uni": "Griffith",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "QLD"
+        },
+        {
+          "name": "JCU Careers",
+          "email": "careers@jcu.edu.au",
+          "uni": "JCU",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "QLD"
+        },
+        {
+          "name": "La Trobe Careers",
+          "email": "careers@latrobe.edu.au",
+          "uni": "La Trobe",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "VIC"
+        },
+        {
+          "name": "Macquarie Careers",
+          "email": "careers@mq.edu.au",
+          "uni": "Macquarie",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "NSW"
+        },
+        {
+          "name": "Monash Careers Connect",
+          "email": "careers.connect@monash.edu",
+          "uni": "Monash",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "VIC"
+        },
+        {
+          "name": "Murdoch Careers",
+          "email": "careers@murdoch.edu.au",
+          "uni": "Murdoch",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "WA"
+        },
+        {
+          "name": "Newcastle Careers",
+          "email": "careers@newcastle.edu.au",
+          "uni": "Newcastle",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "NSW"
+        },
+        {
+          "name": "QUT Careers",
+          "email": "careers@qut.edu.au",
+          "uni": "QUT",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "QLD"
+        },
+        {
+          "name": "RMIT Careers",
+          "email": "careers@rmit.edu.au",
+          "uni": "RMIT",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "VIC"
+        },
+        {
+          "name": "SCU Careers",
+          "email": "careers@scu.edu.au",
+          "uni": "SCU",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "NSW"
+        },
+        {
+          "name": "Swinburne Careers",
+          "email": "careers@swinburne.edu.au",
+          "uni": "Swinburne",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "VIC"
+        },
+        {
+          "name": "Torrens Careers",
+          "email": "careers@torrens.edu.au",
+          "uni": "Torrens",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "VIC"
+        },
+        {
+          "name": "UC Careers",
+          "email": "careers@canberra.edu.au",
+          "uni": "UC",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "ACT"
+        },
+        {
+          "name": "UNE Careers",
+          "email": "careers@une.edu.au",
+          "uni": "UNE",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "NSW"
+        },
+        {
+          "name": "UNSW Psych General",
+          "email": "psychology@unsw.edu.au",
+          "uni": "UNSW",
+          "dept": "Psych",
+          "role": "School of Psychology inbox",
+          "state": "NSW"
+        },
+        {
+          "name": "UNSW Careers",
+          "email": "careers@unsw.edu.au",
+          "uni": "UNSW",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "NSW"
+        },
+        {
+          "name": "UQ Employability",
+          "email": "employability@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Careers",
+          "role": "Careers & Employability Team",
+          "state": "QLD"
+        },
+        {
+          "name": "UQ Psych Reception",
+          "email": "reception@psy.uq.edu.au",
+          "uni": "UQ",
+          "dept": "Psych",
+          "role": "School of Psychology General",
+          "state": "QLD"
+        },
+        {
+          "name": "UQ Careers",
+          "email": "student.employability@uq.edu.au",
+          "uni": "UQ",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "QLD"
+        },
+        {
+          "name": "USyd Careers",
+          "email": "careers.centre@sydney.edu.au",
+          "uni": "USyd",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "NSW"
+        },
+        {
+          "name": "UTAS Careers",
+          "email": "careers@utas.edu.au",
+          "uni": "UTAS",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "TAS"
+        },
+        {
+          "name": "UWA Careers",
+          "email": "careers@uwa.edu.au",
+          "uni": "UWA",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "WA"
+        },
+        {
+          "name": "UniMelb Careers",
+          "email": "careers@unimelb.edu.au",
+          "uni": "UniMelb",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "VIC"
+        },
+        {
+          "name": "UniSA Careers",
+          "email": "careers@unisa.edu.au",
+          "uni": "UniSA",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "SA"
+        },
+        {
+          "name": "UniSC Careers",
+          "email": "careers@usc.edu.au",
+          "uni": "UniSC",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "QLD"
+        },
+        {
+          "name": "VU Careers",
+          "email": "careers@vu.edu.au",
+          "uni": "VU",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "VIC"
+        },
+        {
+          "name": "WSU Careers",
+          "email": "careers@westernsydney.edu.au",
+          "uni": "WSU",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "NSW"
+        },
+        {
+          "name": "UOW Careers",
+          "email": "careers@uow.edu.au",
+          "uni": "Wollongong",
+          "dept": "Careers",
+          "role": "Student Employment",
+          "state": "NSW"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "day": "Friday",
+      "label": "T5 Peak Bodies + T4 Overflow",
+      "tier": "Tier 4/5",
+      "template": "Peak Body / Club Intro",
+      "count": 31,
+      "contacts": [
+        {
+          "name": "GoVolunteer - Partnerships",
+          "email": "info@govolunteer.com.au",
+          "uni": "",
+          "dept": "Volunteer",
+          "role": "Partnerships Manager",
+          "state": "VIC"
+        },
+        {
+          "name": "Queensland Youth Alliance",
+          "email": "info@qya.org.au",
+          "uni": "",
+          "dept": "Peak Body",
+          "role": "Partnerships",
+          "state": "QLD"
+        },
+        {
+          "name": "AASW - Student Member Section",
+          "email": "office@aasw.asn.au",
+          "uni": "",
+          "dept": "Professional Assoc",
+          "role": "Student Engagement",
+          "state": "VIC"
+        },
+        {
+          "name": "AASW QLD Branch",
+          "email": "qld@aasw.asn.au",
+          "uni": "",
+          "dept": "Professional Assoc",
+          "role": "State Branch",
+          "state": "QLD"
+        },
+        {
+          "name": "Youth Affairs Council WA",
+          "email": "info@yacwa.org.au",
+          "uni": "",
+          "dept": "Peak Body",
+          "role": "Partnerships",
+          "state": "WA"
+        },
+        {
+          "name": "Volunteering Australia",
+          "email": "admin@volunteeringaustralia.org",
+          "uni": "",
+          "dept": "Volunteer",
+          "role": "National Peak Body",
+          "state": "ACT"
+        },
+        {
+          "name": "Seek Volunteer - Partnerships",
+          "email": "info@seekvolunteer.com.au",
+          "uni": "",
+          "dept": "Volunteer",
+          "role": "Partnerships Manager",
+          "state": "VIC"
+        },
+        {
+          "name": "APS - Student Section",
+          "email": "membership@psychology.org.au",
+          "uni": "",
+          "dept": "Professional Assoc",
+          "role": "Student Engagement",
+          "state": "VIC"
+        },
+        {
+          "name": "AASW NSW Branch",
+          "email": "nsw@aasw.asn.au",
+          "uni": "",
+          "dept": "Professional Assoc",
+          "role": "State Branch",
+          "state": "NSW"
+        },
+        {
+          "name": "Volunteering Victoria",
+          "email": "info@volunteeringvictoria.org.au",
+          "uni": "",
+          "dept": "Volunteer",
+          "role": "State Peak Body",
+          "state": "VIC"
+        },
+        {
+          "name": "AASW Victorian Branch",
+          "email": "victoria@aasw.asn.au",
+          "uni": "",
+          "dept": "Professional Assoc",
+          "role": "State Branch",
+          "state": "VIC"
+        },
+        {
+          "name": "YACVic - Youth Affairs Council Victoria",
+          "email": "info@yacvic.org.au",
+          "uni": "",
+          "dept": "Peak Body",
+          "role": "Partnerships",
+          "state": "VIC"
+        },
+        {
+          "name": "Australian Youth Affairs Coalition",
+          "email": "info@ayac.org.au",
+          "uni": "",
+          "dept": "Peak Body",
+          "role": "Partnerships",
+          "state": "ACT"
+        },
+        {
+          "name": "Youth Affairs Council SA",
+          "email": "info@sacoss.org.au",
+          "uni": "",
+          "dept": "Peak Body",
+          "role": "Partnerships",
+          "state": "SA"
+        },
+        {
+          "name": "RUSU Compass Service",
+          "email": "rusu.jobs@rmit.edu.au",
+          "uni": "RMIT",
+          "dept": "Club",
+          "role": "Student Welfare & Mentoring",
+          "state": "VIC"
+        },
+        {
+          "name": "TAFE QLD - Community Services",
+          "email": "enquiries@tafeqld.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "Swinburne TAFE - Community Services",
+          "email": "tafe@swinburne.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "South Metro TAFE - Community Services",
+          "email": "info@southmetrotafe.wa.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "WA"
+        },
+        {
+          "name": "Holmesglen TAFE - Community Services",
+          "email": "info@holmesglen.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "William Angliss - Community Services",
+          "email": "info@angliss.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "TAFE SA - Community Services",
+          "email": "enquiries@tafesa.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "SA"
+        },
+        {
+          "name": "Kangan Institute - Community Services",
+          "email": "info@kangan.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "Chisholm TAFE - Community Services",
+          "email": "info@chisholm.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "TAFE NSW - Community Services (Sydney)",
+          "email": "enquiries@tafensw.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "TAFE QLD - Youth Work",
+          "email": "enquiries@tafeqld.edu.au",
+          "uni": "TAFE",
+          "dept": "Youth Work",
+          "role": "Course Coordinator",
+          "state": "QLD"
+        },
+        {
+          "name": "Melbourne Polytechnic - Community Services",
+          "email": "info@melbournepolytechnic.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "TAFE NSW - Youth Work",
+          "email": "enquiries@tafensw.edu.au",
+          "uni": "TAFE",
+          "dept": "Youth Work",
+          "role": "Course Coordinator",
+          "state": "NSW"
+        },
+        {
+          "name": "GOTAFE - Community Services",
+          "email": "info@gotafe.vic.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "TasTAFE - Community Services",
+          "email": "info@tastafe.tas.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "TAS"
+        },
+        {
+          "name": "Box Hill Institute - Community Services",
+          "email": "info@boxhill.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "VIC"
+        },
+        {
+          "name": "North Metro TAFE - Community Services",
+          "email": "info@northmetrotafe.wa.edu.au",
+          "uni": "TAFE",
+          "dept": "Community Services",
+          "role": "Course Coordinator",
+          "state": "WA"
+        }
+      ]
     }
   ]
 }
