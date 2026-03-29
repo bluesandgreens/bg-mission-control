@@ -1,40 +1,40 @@
 {
-  "generated": "2026-03-29T07:30:00+11:00",
+  "generated": "2026-03-30T07:58:00+11:00",
   "functions": [
     {
       "name": "Sales Engine",
       "owner": "Rye",
-      "status": "green",
-      "constraint": "Tom starts Monday. Anthony holding 40% close rate. Rye shifting to coaching role. DC capacity about to double.",
-      "key_metric": "Close Rate: 40% (Anthony) | 100% (Tom, n=1) | 194 BCs MTD at $27.23 CPBC",
-      "highest_leverage_task": "Tom's first week - shadow Rye, 2-3 live DCs, fear anchor drill",
-      "team": ["Rye", "Anthony", "Tom (starting Mon)"]
+      "status": "amber",
+      "constraint": "DC booking rate 11.8% (target 25%). Tom starts April 6. Anthony at 40% close rate. Rye coaching-focused, low volume. 92 warm contacts bounced off no-availability last week.",
+      "key_metric": "Close Rate: 40% (Anthony) | 100% (Tom, n=1) | 196 BCs MTD at $27.57 CPBC",
+      "highest_leverage_task": "Re-engage 92 warm contacts from last week + prep Tom's onboarding",
+      "team": ["Rye", "Anthony", "Tom (starts Apr 6)"]
     },
     {
       "name": "Mentor Journey",
       "owner": "TBD",
       "status": "red",
-      "constraint": "No single owner. Connection Assessment built but not integrated into mentor matching.",
-      "key_metric": "63% of churned families never got a mentor - activation gap",
-      "highest_leverage_task": "Integrate Connection Assessment into mentor onboarding briefing",
+      "constraint": "No single owner. 63% of churned families never got a mentor. 36 families closed but not activated.",
+      "key_metric": "36 un-activated families | W1 activation 39% (target 50%)",
+      "highest_leverage_task": "Brodie activation chase - daily list now automated (7:45am cron)",
       "team": ["Mentors", "Brodie (activation)"]
     },
     {
       "name": "Member Experience",
       "owner": "Brodie & Norri",
       "status": "amber",
-      "constraint": "4 past-due subs ($820 at risk). 60 collecting, 8 paused. Zapier still broken.",
+      "constraint": "4 past-due subs ($820 at risk). 60 collecting, 8 paused. Retention call engine live.",
       "key_metric": "60 collecting | 8 paused | 4 past due | $41.4K MRR",
-      "highest_leverage_task": "Chase 4 past-due families + Jasmine Lund re-anchor call (Bailey reversal)",
+      "highest_leverage_task": "Harry makes 3 retention calls from hitlist - 49 renewals in 30 days",
       "team": ["Brodie", "Norri"]
     },
     {
       "name": "Brand & Content",
       "owner": "Harry",
-      "status": "green",
-      "constraint": "Content engine operational. 18 newsletters awaiting review. Circle MVP locked for April W2.",
-      "key_metric": "18 newsletters in Notion | Alpha School research complete | Circle MVP April W2",
-      "highest_leverage_task": "Review 2-3 newsletters to calibrate writing skill",
+      "status": "amber",
+      "constraint": "Europe Readiness scored 1.5/5 for Brand & Content - biggest blocker to scale. All content still depends on Harry.",
+      "key_metric": "18 newsletters awaiting review | Brand strategy PDF shipped | Brand Operator hire TBD",
+      "highest_leverage_task": "Brand Operator hiring decision this week",
       "team": ["Harry", "Leo"]
     }
   ]

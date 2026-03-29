@@ -1,47 +1,46 @@
 {
-  "greeting": "Good morning, Harry.",
-  "date_label": "Sunday, March 29",
+  "generated": "2026-03-30T07:58:00+11:00",
   "items": [
     {
-      "type": "counter_intuitive",
-      "emoji": "🔄",
-      "headline": "Bailey's false positive is now a documented teaching case",
-      "detail": "Jasmine Lund: closed on-call (3.7 SIEL), paid deposit, then Call Objection in HubSpot 7 days later. I=1, E=1. No emotional anchoring = close didn't hold. This is the first time the scoring system predicted a reversal & it materialised exactly. One case study is worth 100 role plays for the team. Use it Monday.",
-      "tag": "dc_performance"
-    },
-    {
       "type": "leverage",
-      "emoji": "⚡",
-      "headline": "Tom starts tomorrow with the highest call 1 score ever",
-      "detail": "7.5 on his first DC - above Anthony's 5-call average (5.96) & Rye's 3-call average (5.17). Dentist metaphor = gold standard for son buy-in. One fix: fear bomb cycling (I=3). Rye coaching him from day 1 means Rye's new role has an immediate proof point. Tom + Rye is the play.",
-      "tag": "team"
-    },
-    {
-      "type": "insight",
-      "emoji": "📊",
-      "headline": "194 booked calls this month at $27.23 CPBC",
-      "detail": "Well under the $35 warning line. Meta spend $5,283 MTD. But ad-to-member conversion matters more than CPBC - last audit showed H14-B1 at 5.1x ROAS while H1-B1 was 0.6x. Same CPBC range, wildly different revenue. Monthly ROAS refresh due this week to see how Batch 2 hooks are converting.",
+      "emoji": "🔥",
+      "headline": "1,929 warm leads sitting idle - reactivation sequence built",
+      "detail": "3-email sequence created in HubSpot (IDs 210149699674, 210149699677, 210149977892). Conservative 2.5% booking = ~$28K revenue. 5% = ~$58K. Harry needs 2 mins in HubSpot to schedule sends: tonight 7pm, Thu 8am, next Mon 7pm.",
       "tag": "revenue"
     },
     {
+      "type": "counter_intuitive",
+      "emoji": "📉",
+      "headline": "MRR dropped $52K to $41K - but close rate is 57%",
+      "detail": "Revenue dip is a BOOKING problem, not a closing problem. 119 leads last week, only 14 booked (11.8%). When reps get on calls, they close. Tom starting April 6 adds 15+ slots/week. The 92 contacts that bounced are still warm.",
+      "tag": "constraint"
+    },
+    {
+      "type": "insight",
+      "emoji": "⚡",
+      "headline": "36 families closed but never activated - Brodie now gets daily chase list",
+      "detail": "Daily 7:45am cron sends Brodie an HTML email with his activation chase list. 14+ days without W1 = critical. Revenue at risk from non-activated families: ~$6,500/week. The 46% first-month churn starts here.",
+      "tag": "retention"
+    },
+    {
       "type": "big_idea",
-      "emoji": "💡",
-      "headline": "Agent Stack Roadmap - 14 skills, Leo's building",
-      "detail": "You handed this off Friday. Build order set: Content Engine first (extends newsletter writer to 5 formats), then Daily AI Scout, then Win/Loss Analyser (70% built from SIEL work). Revenue Reconciliation moved up to catch silent leaks. Progress updates coming to you unprompted - this is my project now.",
-      "tag": "systems"
+      "emoji": "🎯",
+      "headline": "Retention call engine is live - no more scheduling friction",
+      "detail": "Daily 8:30am email lands in Harry's inbox with top 5 families to call, personalised talking points, renewal dates, commitment lock offer script. 49 families renew in next 30 days = $28,461/week at risk. Previous 50 retention calls = $30K+ recovered.",
+      "tag": "retention"
     },
     {
       "type": "research",
-      "emoji": "🔬",
-      "headline": "Alpha School's 'Time Back' is the retention framing B&G is missing",
-      "detail": "Alpha's #1 lever: motivation through giving kids their time back. B&G Circle MVP (April W2) can test this - frame it as 'your son gets 2 hours of focused development instead of scrolling'. Not 'come to our program'. Time Back reframes value from what they pay to what they get back. Podcast analysis shipped Friday.",
-      "tag": "product"
+      "emoji": "🧪",
+      "headline": "Mentor pipeline: 285 contacts queued, approval page live",
+      "detail": "Interactive approval page at MC /mentor-pipeline/outreach/. 285 emails across Mon-Fri (58/71/71/50/35). Templates editable in browser, Supabase-backed. Harry approves templates + days, Leo sends. Student-facing blurb ready.",
+      "tag": "growth"
     }
   ],
   "leo_actions": [
-    "Building Content Engine skill (Agent Stack item #1) - extends newsletter writer to 5 output formats",
-    "Monthly ROAS refresh prep - pulling March ad attribution data for Batch 2 analysis",
-    "Tom's Monday onboarding checklist finalised - contract signed, Schedule B still needs Rye + Harry",
-    "MC data refreshed & pushed to GitHub"
+    "Running Fireflies backfill for about_the_son field (22 families matched, API reset at 7:30am)",
+    "Monitoring mentor outreach approval - ready to send W1 batch when Harry greenlights",
+    "Warm lead reactivation emails staged - waiting for Harry to schedule in HubSpot UI",
+    "Agent Stack: 9/14 skills shipped, continuing build on remaining 5"
   ]
 }

@@ -1,33 +1,23 @@
 {
-  "date": "2026-03-28",
-  "label": "Saturday, March 28",
+  "date": "2026-03-30",
+  "label": "Monday",
   "wins": [
-    "Gateway recovered + 3 LaunchAgents deployed (watchdog, remote restart, Cloudflare tunnel)",
-    "Tom Hermans contract v2 delivered - title, pay timing & structure updated per Harry's notes",
-    "Alpha School strategic report shipped (6-page PDF) + podcast learnings (7 podcasts, 58K words)",
-    "Sales manager deep pass - all prediction outcomes verified against HubSpot",
-    "Tom's close confirmed: Bec Richardson Deposit Paid. 7.5 SIEL = highest call 1 score ever",
-    "Bailey false positive confirmed: Jasmine Lund Call Objection validates scoring system",
-    "Agent Stack Roadmap received from Harry - 14 skills, build order set, Leo's project now"
+    "8 deliverables shipped overnight: retention hitlist, Norri TestGorilla guide, group interview format, DC rep sourcing, Brodie onboarding msg, mobile outreach fix, morning hitlist, AI scout script",
+    "Brodie activation chase system live - daily 7:45am cron, 36 un-activated families identified",
+    "3-email warm lead reactivation sequence built in HubSpot (1,929 leads in list)",
+    "Post-close email workflow built + wired to HubSpot workflow 1782566247",
+    "Retention call engine shipped - daily 8:30am email with top 5 families + talking points",
+    "Weekly constraint report confirmed: DC Availability is THE constraint (11.8% booking rate)"
   ],
   "misses": [
-    "Harry mostly offline (travel day Bali to Perth) - limited decisions made",
-    "Schedule B for Tom still needs Rye + Harry input",
-    "WWCC & police check confirmation for Tom still outstanding"
+    "Fireflies about-the-son backfill hit rate limit - scheduled for 7:30am auto-run",
+    "HubSpot post-close workflow needs Harry's 2-min activation (can't access sequence scope via API)"
   ],
   "carry_forwards": [
-    "Tom Monday start - Schedule B, WWCC, police check, Rye call for week 1 plan",
-    "Exit interview HubSpot workflow build",
-    "Rye conversation (honours deferral, coaching role shift)",
-    "Agent Stack builds - Content Engine first, then Daily AI Scout",
-    "W1 portal feature: Brodie daily comment + last 3 days on dashboard",
-    "Monthly ROAS refresh for Batch 2 ad attribution"
+    "Tom activation - 83 warm leads ready for reassignment when Harry approves",
+    "Mentor pipeline W1 batch - 285 emails pending Harry's template approval",
+    "Warm lead emails need Harry to schedule in HubSpot UI (2 mins)",
+    "Agent Stack remaining 5 skills: Video Pipeline, Mentor Pipeline Research, Content Intelligence, SEO Planner, Board-Ready Report"
   ],
-  "one_thing_tomorrow": "Tom starts Monday - everything ready: contract signed, Rye briefed, week 1 schedule locked",
-  "constraints": [
-    "Tom onboarding prep \u2014 Schedule B + WWCC before Monday",
-    "DC capacity thin until Tom ramps",
-    "Close\u2192W1 activation gap still unmeasured"
-  ],
-  "grade": "B+"
+  "one_thing_tomorrow": "Make 3 retention calls from the hitlist - $28K/week at risk from 49 renewals in 30 days"
 }
