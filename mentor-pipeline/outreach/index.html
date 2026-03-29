@@ -17,6 +17,7 @@
   --green: #2ECC71;
   --red: #E74C3C;
   --orange: #F39C12;
+  --blue: #3498DB;
   --border: rgba(251,248,243,0.08);
   --radius: 12px;
 }
@@ -27,7 +28,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', sans-serif;
   line-height: 1.6;
   padding: 20px;
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
 }
 a { color: var(--gold); text-decoration: none; }
@@ -43,34 +44,44 @@ a:hover { text-decoration: underline; }
 .header .subtitle { color: var(--cream-muted); font-size: 0.95em; }
 .back-link { display: inline-block; margin-bottom: 15px; font-size: 0.85em; color: var(--cream-dim); }
 
-.status-banner {
-  background: linear-gradient(135deg, rgba(200,169,81,0.15), rgba(16,71,145,0.15));
-  border: 1px solid var(--gold);
-  border-radius: var(--radius);
-  padding: 16px 20px;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.status-banner .status-label { font-size: 0.85em; color: var(--cream-muted); }
-.status-banner .status-value { font-size: 1.1em; font-weight: 600; color: var(--gold); }
-.status-banner .approve-btn {
-  background: var(--gold);
+/* Toast notification */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--green);
   color: var(--bg);
-  border: none;
-  padding: 10px 24px;
+  padding: 12px 20px;
   border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.95em;
-  cursor: pointer;
-  transition: transform 0.1s;
+  font-weight: 600;
+  font-size: 0.9em;
+  z-index: 1000;
+  transform: translateX(120%);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-.approve-btn:hover { transform: scale(1.03); }
-.approve-btn:active { transform: scale(0.98); }
+.toast.show { transform: translateX(0); }
+.toast.error { background: var(--red); color: white; }
 
+/* Loading spinner */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--cream-dim);
+}
+.spinner {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--border);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 10px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Summary row */
 .summary-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -87,6 +98,7 @@ a:hover { text-decoration: underline; }
 .summary-card .num { font-size: 1.8em; font-weight: 700; color: var(--gold); }
 .summary-card .label { font-size: 0.8em; color: var(--cream-dim); margin-top: 2px; }
 
+/* Section headers */
 .section { margin-bottom: 35px; }
 .section-title {
   font-size: 1.2em;
@@ -97,102 +109,157 @@ a:hover { text-decoration: underline; }
   gap: 8px;
 }
 
-.card {
+/* Template cards */
+.template-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   overflow: hidden;
   transition: border-color 0.2s;
 }
-.card:hover { border-color: rgba(251,248,243,0.15); }
-.card-header {
+.template-card:hover { border-color: rgba(251,248,243,0.15); }
+.template-card.is-blurb {
+  background: linear-gradient(135deg, rgba(46,204,113,0.08), rgba(16,71,145,0.08));
+  border-color: rgba(46,204,113,0.3);
+}
+.template-card-header {
   padding: 14px 18px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   user-select: none;
+  gap: 10px;
 }
-.card-header:hover { background: var(--bg-card-hover); }
-.card-header .title { font-weight: 600; font-size: 0.95em; }
-.card-header .badge {
-  background: var(--navy);
-  color: var(--cream);
-  padding: 2px 10px;
+.template-card-header:hover { background: var(--bg-card-hover); }
+.template-card-header .title { font-weight: 600; font-size: 0.95em; flex: 1; }
+.badge {
+  padding: 3px 10px;
   border-radius: 20px;
-  font-size: 0.75em;
-  font-weight: 600;
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
-.card-header .chevron {
+.badge-pending { background: rgba(251,248,243,0.1); color: var(--cream-dim); }
+.badge-approved { background: rgba(200,169,81,0.2); color: var(--gold); }
+.badge-sending { background: rgba(52,152,219,0.2); color: var(--blue); }
+.badge-sent { background: rgba(46,204,113,0.2); color: var(--green); }
+.chevron {
   transition: transform 0.2s;
   color: var(--cream-dim);
   font-size: 0.8em;
 }
-.card.open .card-header .chevron { transform: rotate(90deg); }
-.card-body {
+.template-card.open .chevron { transform: rotate(90deg); }
+.template-card-body {
   display: none;
   padding: 0 18px 18px;
   border-top: 1px solid var(--border);
 }
-.card.open .card-body { display: block; padding-top: 14px; }
+.template-card.open .template-card-body { display: block; padding-top: 14px; }
 
-.template-content {
-  background: rgba(0,0,0,0.3);
+/* Textarea editor */
+.template-editor {
+  width: 100%;
+  min-height: 180px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 14px 16px;
-  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
   font-size: 0.85em;
   line-height: 1.7;
-  white-space: pre-wrap;
   color: var(--cream-muted);
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
 }
-.template-content .placeholder {
-  background: rgba(200,169,81,0.2);
-  color: var(--gold);
-  padding: 1px 5px;
-  border-radius: 3px;
-  font-weight: 600;
+.template-editor:focus {
+  border-color: var(--gold);
 }
-.subject-line {
-  margin-bottom: 10px;
-  padding: 8px 12px;
-  border-radius: 6px;
+.template-editor.subject-editor {
+  min-height: 42px;
+  height: 42px;
+  resize: none;
   font-size: 0.88em;
 }
-.subject-a { background: rgba(16,71,145,0.2); border-left: 3px solid var(--navy); }
-.subject-b { background: rgba(200,169,81,0.15); border-left: 3px solid var(--gold); }
-.subject-label { font-weight: 700; font-size: 0.75em; text-transform: uppercase; margin-right: 6px; }
 
-.blurb-card {
-  background: linear-gradient(135deg, rgba(46,204,113,0.1), rgba(16,71,145,0.1));
-  border: 1px solid var(--green);
-  border-radius: var(--radius);
-  padding: 20px;
-  margin-bottom: 20px;
+/* Action buttons */
+.template-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  align-items: center;
 }
-.blurb-card .blurb-title {
+.btn {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
   font-weight: 700;
-  font-size: 1em;
-  margin-bottom: 4px;
-  color: var(--green);
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
-.blurb-card .blurb-subtitle {
-  font-size: 0.82em;
-  color: var(--cream-dim);
-  margin-bottom: 14px;
+.btn:hover { transform: scale(1.03); }
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.5; cursor: default; transform: none; }
+.btn-save { background: var(--gold); color: var(--bg); }
+.btn-approve { background: var(--green); color: var(--bg); }
+.btn-unapprove { background: rgba(251,248,243,0.1); color: var(--cream-dim); }
+.btn-reset { background: rgba(251,248,243,0.06); color: var(--cream-dim); font-weight: 500; font-size: 0.8em; }
+.modified-indicator {
+  font-size: 0.8em;
+  color: var(--orange);
+  font-style: italic;
 }
 
-.day-card { margin-bottom: 14px; }
-.day-header {
+/* Subject line labels */
+.subject-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.subject-label {
+  font-weight: 700;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  min-width: 70px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.label-a { background: rgba(16,71,145,0.3); color: var(--cream); }
+.label-b { background: rgba(200,169,81,0.2); color: var(--gold); }
+
+/* Day cards */
+.day-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.day-card:hover { border-color: rgba(251,248,243,0.15); }
+.day-card-header {
+  padding: 14px 18px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
+  user-select: none;
+  gap: 10px;
 }
-.day-header .day-name { font-weight: 700; font-size: 1em; }
-.day-header .day-count {
+.day-card-header:hover { background: var(--bg-card-hover); }
+.day-info { flex: 1; }
+.day-name { font-weight: 700; font-size: 1em; }
+.day-count {
   background: var(--navy);
   color: var(--cream);
   padding: 3px 12px;
@@ -200,15 +267,23 @@ a:hover { text-decoration: underline; }
   font-size: 0.8em;
   font-weight: 600;
 }
+.day-card.open .chevron { transform: rotate(90deg); }
+.day-card-body {
+  display: none;
+  padding: 0 18px 18px;
+  border-top: 1px solid var(--border);
+}
+.day-card.open .day-card-body { display: block; padding-top: 14px; }
+
 .day-stats {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 8px;
+  margin-bottom: 12px;
   font-size: 0.82em;
   color: var(--cream-dim);
 }
-.day-stats .stat-chip {
+.stat-chip {
   background: rgba(251,248,243,0.05);
   padding: 3px 10px;
   border-radius: 6px;
@@ -217,7 +292,7 @@ a:hover { text-decoration: underline; }
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 10px;
+  margin-bottom: 12px;
 }
 .uni-chip {
   background: rgba(16,71,145,0.2);
@@ -229,9 +304,9 @@ a:hover { text-decoration: underline; }
 
 .contact-table {
   width: 100%;
-  margin-top: 12px;
   border-collapse: collapse;
   font-size: 0.82em;
+  margin-top: 8px;
 }
 .contact-table th {
   text-align: left;
@@ -268,12 +343,28 @@ a:hover { text-decoration: underline; }
   display: inline-block;
 }
 
+/* Placeholder highlighting in preview */
+.placeholder-highlight {
+  background: rgba(200,169,81,0.2);
+  color: var(--gold);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* Approved border glow */
+.day-card.status-approved { border-color: rgba(200,169,81,0.4); }
+.day-card.status-sending { border-color: rgba(52,152,219,0.4); }
+.day-card.status-sent { border-color: rgba(46,204,113,0.4); }
+
 @media (max-width: 600px) {
   body { padding: 12px; }
   .header h1 { font-size: 1.3em; }
   .summary-row { grid-template-columns: repeat(2, 1fr); }
   .contact-table { font-size: 0.75em; }
   .contact-table th, .contact-table td { padding: 5px 6px; }
+  .template-actions { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
 }
 </style>
 </head>
@@ -283,278 +374,439 @@ a:hover { text-decoration: underline; }
 
 <div class="header">
   <h1>📧 Outreach Rollout</h1>
-  <div class="subtitle">Week of March 31 - April 4, 2026 · University Mentor Pipeline</div>
+  <div class="subtitle">Week of March 31 – April 4, 2026 · University Mentor Pipeline</div>
 </div>
 
-<div class="status-banner" id="statusBanner">
-  <div>
-    <div class="status-label">CAMPAIGN STATUS</div>
-    <div class="status-value" id="statusText">⏳ Awaiting Harry's Approval</div>
-  </div>
-  <button class="approve-btn" id="approveBtn" onclick="approveRollout()">✅ Approve & Lock In</button>
+<div id="toast" class="toast"></div>
+
+<div class="summary-row" id="summaryRow">
+  <div class="loading"><div class="spinner"></div><br>Loading…</div>
 </div>
 
-<div class="summary-row" id="summaryRow"></div>
+<!-- Section 1: Subject Lines -->
+<div class="section" id="subjectSection">
+  <div class="section-title">✉️ Subject Lines (A/B)</div>
+  <div id="subjectContainer"></div>
+</div>
 
-<!-- Section 1: Email Templates -->
-<div class="section">
+<!-- Section 2: Student Blurb -->
+<div class="section" id="blurbSection">
+  <div class="section-title">📨 Student-Facing Blurb</div>
+  <div id="blurbContainer"></div>
+</div>
+
+<!-- Section 3: Email Templates -->
+<div class="section" id="templateSection">
   <div class="section-title">📝 Email Templates</div>
   <div id="templatesContainer"></div>
 </div>
 
-<!-- Section 2: Student Blurb -->
-<div class="section">
-  <div class="section-title">📨 Student-Facing Blurb</div>
-  <div class="blurb-card">
-    <div class="blurb-title">This is what gets forwarded to students</div>
-    <div class="blurb-subtitle">When a coordinator says "yes send me something to share" - this is what we send. Max 150 words, Harry's voice, speaks directly to a 22-year-old student.</div>
-    <div class="template-content">Blues & Greens is looking for uni students to become paid mentors for teenage boys.
-
-The gig: one hour a week, you jump on a video call with a 13-17 year old boy. You chat, check in on his week & become a consistent positive person in his life. That's it.
-
-You get full training before you start & ongoing support the whole way through. It's $50 per session, fully remote & fits around your schedule.
-
-If you're studying psych, education, social work or youth work - this is real experience with young people that you genuinely can't get in a lecture theatre.
-
-Apply here: bluesandgreens.lovable.app/apply</div>
-  </div>
-</div>
-
-<!-- Section 3: Rollout Plan -->
-<div class="section">
-  <div class="section-title">📅 Weekly Rollout Plan</div>
-  <div id="rolloutContainer"></div>
+<!-- Section 4: Day Approvals -->
+<div class="section" id="daySection">
+  <div class="section-title">📅 Daily Send Approval</div>
+  <div id="daysContainer"></div>
 </div>
 
 <script>
-const templates = {
-  T1: {
-    name: 'T1 - WIL Office',
-    tier: 'Tier 1 (WIL Office)',
-    subjectA: 'Youth mentoring opportunity for your students',
-    subjectB: 'Paid mentoring role for [Uni] students - placements available',
-    body: `Hi <span class="placeholder">[Name]</span>,
+// ── Config ──
+const SUPABASE_URL = 'https://ltpkeddkkrexynlhgxal.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0cGtlZGRra3JleHlubGhneGFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk4Mjk4MjcsImV4cCI6MjA4NTQwNTgyN30.pXESrW0hz0ve56F0iTjyzLbBfGz-wXQRN5AB52Pil_g';
 
-I'm Harry, founder of Blues & Greens - a youth mentoring program in Melbourne that pairs teenage boys (13-17) with young male mentors in their 20s for weekly one-on-one video sessions.
+const TEMPLATE_ORDER = ['t1-wil', 't2-unit-coord', 't3-careers', 't6-followup'];
+const SUBJECT_IDS = ['subject-a', 'subject-b'];
+const DAY_ORDER = ['mon', 'tue', 'wed', 'thu', 'fri'];
+const DAY_ROLLOUT_KEYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
 
-I'm reaching out because I think your students would be a great fit for what we do - & we'd love to register as a placement host for your WIL program.
-
-The mentor role is simple: one hour a week, a video call with a teenage boy. We provide full training, ongoing supervision & a structured session framework. For psych, education or youth work students, it's real hands-on experience working with adolescents - not a tick-box placement.
-
-What makes it different: mentors are paid ($50/session), it's fully remote, & every session is real 1:1 time with a young person. It fits neatly within most placement frameworks.
-
-Happy to send through a student-facing blurb your team can share with the cohort - or a one-pager if that's easier to circulate. Whatever works best for you.
-
-Cheers,
-Harry Quayle
-Founder, Blues & Greens
-harry@bluesandgreens.com.au
-bluesandgreens.lovable.app/apply`
-  },
-  T2: {
-    name: 'T2 - Unit Coordinator (BASE)',
-    tier: 'Tier 2 (Unit Coordinator)',
-    subjectA: 'Youth mentoring opportunity for your students',
-    subjectB: 'Paid mentoring role for [Uni] students - placements available',
-    body: `Hi <span class="placeholder">[Name]</span>,
-
-I'm Harry, founder of Blues & Greens - a youth mentoring program in Melbourne.
-
-I used to get emails like this from unit coordinators when I was at uni & honestly, the opportunities that came through those emails were some of the most valuable things I did.
-
-We're looking for young men in their 20s to become paid casual mentors for teenage boys. One hour a week, video call, full training & supervision. $50 per session.
-
-I think this would be really relevant for your <span class="placeholder">[unit name]</span> students - it's real-world experience with adolescents that you can't get in a textbook.
-
-Happy to send through a student-facing blurb your team can share with the cohort - or a one-pager if that's easier to circulate. Whatever works best for you.
-
-Cheers,
-Harry Quayle
-Founder, Blues & Greens
-harry@bluesandgreens.com.au
-bluesandgreens.lovable.app/apply`
-  },
-  T3: {
-    name: 'T3 - Careers, TAFEs & Peak Bodies',
-    tier: 'Tier 3 + Tier 5',
-    subjectA: 'Youth mentoring opportunity for your students',
-    subjectB: 'Paid mentoring role for [Uni] students - placements available',
-    body: `Hi <span class="placeholder">[Name]</span>,
-
-I'm Harry, founder of Blues & Greens - a youth mentoring program in Melbourne.
-
-We're recruiting paid casual mentors for teenage boys (13-17). One hour a week, video call, $50/session. Full training & supervision provided. Ideal for psych, education, youth work & social work students.
-
-Happy to send through a student-facing blurb your team can share with the cohort - or a one-pager if that's easier to circulate. Whatever works best for you.
-
-Cheers,
-Harry Quayle
-Founder, Blues & Greens
-harry@bluesandgreens.com.au
-bluesandgreens.lovable.app/apply`
-  },
-  T6: {
-    name: 'T6 - Follow-Up (Day 7)',
-    tier: 'All tiers',
-    subjectA: 'Re: [original subject]',
-    subjectB: 'Re: [original subject]',
-    body: `Hi <span class="placeholder">[Name]</span>, just bumping this up - totally understand if you're buried in emails.
-
-Happy to send through a student-facing blurb or a one-pager if that's easier to share with your students. Whatever works best for you.
-
-Cheers, Harry`
-  }
-};
-
+let templates = {};
+let days = {};
 let rolloutData = null;
+let originalTemplates = {};
 
-fetch('../../../data/outreach-rollout.json')
-  .then(r => r.json())
-  .then(data => {
-    rolloutData = data;
-    renderSummary(data);
-    renderRollout(data);
-  })
-  .catch(e => {
-    console.error('Failed to load rollout data:', e);
-    document.getElementById('rolloutContainer').innerHTML = '<p style="color:var(--red)">Failed to load rollout data. Check console.</p>';
+// ── Supabase helpers ──
+async function supaFetch(path, opts = {}) {
+  const resp = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': `Bearer ${SUPABASE_KEY}`,
+      'Content-Type': 'application/json',
+      ...(opts.headers || {})
+    },
+    ...opts
   });
+  if (!resp.ok) throw new Error(`Supabase ${resp.status}: ${await resp.text()}`);
+  const text = await resp.text();
+  return text ? JSON.parse(text) : null;
+}
+
+async function loadData() {
+  const [settings, rollout] = await Promise.all([
+    supaFetch('admin_settings?setting_key=in.(mentor_outreach_templates,mentor_outreach_days)'),
+    fetch('../../../data/outreach-rollout.json').then(r => r.json()).catch(() => null)
+  ]);
+
+  for (const row of settings) {
+    if (row.setting_key === 'mentor_outreach_templates') {
+      templates = row.setting_value;
+      originalTemplates = JSON.parse(JSON.stringify(templates));
+    }
+    if (row.setting_key === 'mentor_outreach_days') {
+      days = row.setting_value;
+    }
+  }
+
+  rolloutData = rollout;
+  render();
+}
+
+async function saveTemplate(id) {
+  const textarea = document.getElementById(`editor-${id}`);
+  if (!textarea) return;
+  
+  templates[id].content = textarea.value;
+  templates[id].approved = false;
+  templates[id].approved_at = null;
+
+  await supaFetch('admin_settings?setting_key=eq.mentor_outreach_templates', {
+    method: 'PATCH',
+    body: JSON.stringify({
+      setting_value: templates,
+      updated_at: new Date().toISOString()
+    }),
+    headers: { 'Prefer': 'return=minimal' }
+  });
+
+  originalTemplates[id].content = textarea.value;
+  showToast(`✅ "${templates[id].name}" saved`);
+  renderTemplateCard(id);
+}
+
+async function approveTemplate(id) {
+  templates[id].approved = true;
+  templates[id].approved_at = new Date().toISOString();
+
+  await supaFetch('admin_settings?setting_key=eq.mentor_outreach_templates', {
+    method: 'PATCH',
+    body: JSON.stringify({
+      setting_value: templates,
+      updated_at: new Date().toISOString()
+    }),
+    headers: { 'Prefer': 'return=minimal' }
+  });
+
+  originalTemplates = JSON.parse(JSON.stringify(templates));
+  showToast(`✅ "${templates[id].name}" approved`);
+  renderTemplateCard(id);
+  updateSummary();
+}
+
+async function unapproveTemplate(id) {
+  templates[id].approved = false;
+  templates[id].approved_at = null;
+
+  await supaFetch('admin_settings?setting_key=eq.mentor_outreach_templates', {
+    method: 'PATCH',
+    body: JSON.stringify({
+      setting_value: templates,
+      updated_at: new Date().toISOString()
+    }),
+    headers: { 'Prefer': 'return=minimal' }
+  });
+
+  originalTemplates = JSON.parse(JSON.stringify(templates));
+  renderTemplateCard(id);
+  updateSummary();
+}
+
+async function approveDay(dayId) {
+  days[dayId].status = 'approved';
+  days[dayId].approved_at = new Date().toISOString();
+
+  await supaFetch('admin_settings?setting_key=eq.mentor_outreach_days', {
+    method: 'PATCH',
+    body: JSON.stringify({
+      setting_value: days,
+      updated_at: new Date().toISOString()
+    }),
+    headers: { 'Prefer': 'return=minimal' }
+  });
+
+  showToast(`✅ ${days[dayId].label} approved for sending`);
+  renderDayCard(dayId);
+  updateSummary();
+}
+
+async function unapproveDay(dayId) {
+  days[dayId].status = 'pending';
+  days[dayId].approved_at = null;
+
+  await supaFetch('admin_settings?setting_key=eq.mentor_outreach_days', {
+    method: 'PATCH',
+    body: JSON.stringify({
+      setting_value: days,
+      updated_at: new Date().toISOString()
+    }),
+    headers: { 'Prefer': 'return=minimal' }
+  });
+
+  renderDayCard(dayId);
+  updateSummary();
+}
+
+// ── Toast ──
+function showToast(msg, isError = false) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast show' + (isError ? ' error' : '');
+  setTimeout(() => el.className = 'toast', 3000);
+}
+
+// ── Render ──
+function highlightPlaceholders(text) {
+  return text.replace(/\[([^\]]+)\]/g, '<span class="placeholder-highlight">[$1]</span>');
+}
+
+function render() {
+  renderSummary();
+  renderSubjects();
+  renderBlurb();
+  renderTemplates();
+  renderDays();
+}
+
+function updateSummary() {
+  renderSummary();
+}
+
+function renderSummary() {
+  const totalEmails = Object.values(days).reduce((s, d) => s + (d.contact_count || 0), 0);
+  const approvedTemplates = Object.values(templates).filter(t => t.approved).length;
+  const totalTemplates = Object.keys(templates).length;
+  const approvedDays = Object.values(days).filter(d => d.status === 'approved' || d.status === 'sent').length;
+  const sentDays = Object.values(days).filter(d => d.status === 'sent').length;
+
+  document.getElementById('summaryRow').innerHTML = `
+    <div class="summary-card"><div class="num">${totalEmails}</div><div class="label">Total Emails</div></div>
+    <div class="summary-card"><div class="num">${approvedTemplates}/${totalTemplates}</div><div class="label">Templates Approved</div></div>
+    <div class="summary-card"><div class="num">${approvedDays}/5</div><div class="label">Days Approved</div></div>
+    <div class="summary-card"><div class="num">${sentDays}/5</div><div class="label">Days Sent</div></div>
+  `;
+}
+
+function renderSubjects() {
+  const container = document.getElementById('subjectContainer');
+  let html = '';
+  for (const id of SUBJECT_IDS) {
+    const t = templates[id];
+    if (!t) continue;
+    const isA = id === 'subject-a';
+    html += `<div id="card-${id}" class="template-card">
+      <div class="template-card-header" onclick="toggleCard('${id}')">
+        <span class="title">${isA ? '🅰️' : '🅱️'} ${t.name}</span>
+        <span class="badge ${t.approved ? 'badge-approved' : 'badge-pending'}">${t.approved ? 'Approved ✅' : 'Pending'}</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="template-card-body">
+        <textarea id="editor-${id}" class="template-editor subject-editor" 
+          oninput="onEditorInput('${id}')">${escapeHtml(t.content)}</textarea>
+        <div class="template-actions">
+          <button class="btn btn-save" onclick="wrapAsync(() => saveTemplate('${id}'))">💾 Save</button>
+          ${t.approved
+            ? `<button class="btn btn-unapprove" onclick="wrapAsync(() => unapproveTemplate('${id}'))">↩️ Unapprove</button>`
+            : `<button class="btn btn-approve" onclick="wrapAsync(() => approveTemplate('${id}'))">✅ Approve</button>`
+          }
+          <span id="modified-${id}" class="modified-indicator" style="display:none">• unsaved changes</span>
+        </div>
+      </div>
+    </div>`;
+  }
+  container.innerHTML = html;
+}
+
+function renderBlurb() {
+  const container = document.getElementById('blurbContainer');
+  const t = templates['student-blurb'];
+  if (!t) { container.innerHTML = ''; return; }
+  const id = 'student-blurb';
+  container.innerHTML = `<div id="card-${id}" class="template-card is-blurb">
+    <div class="template-card-header" onclick="toggleCard('${id}')">
+      <span class="title">🎓 ${t.name}</span>
+      <span class="badge ${t.approved ? 'badge-approved' : 'badge-pending'}">${t.approved ? 'Approved ✅' : 'Pending'}</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="template-card-body">
+      <div style="font-size:0.82em;color:var(--cream-dim);margin-bottom:10px;">
+        When a coordinator says "send me something to share" — this is what goes to students. Max 150 words, Harry's voice.
+      </div>
+      <textarea id="editor-${id}" class="template-editor" style="min-height:200px;"
+        oninput="onEditorInput('${id}')">${escapeHtml(t.content)}</textarea>
+      <div class="template-actions">
+        <button class="btn btn-save" onclick="wrapAsync(() => saveTemplate('${id}'))">💾 Save</button>
+        ${t.approved
+          ? `<button class="btn btn-unapprove" onclick="wrapAsync(() => unapproveTemplate('${id}'))">↩️ Unapprove</button>`
+          : `<button class="btn btn-approve" onclick="wrapAsync(() => approveTemplate('${id}'))">✅ Approve</button>`
+        }
+        <span id="modified-${id}" class="modified-indicator" style="display:none">• unsaved changes</span>
+      </div>
+    </div>
+  </div>`;
+}
 
 function renderTemplates() {
   const container = document.getElementById('templatesContainer');
   let html = '';
-  for (const [key, t] of Object.entries(templates)) {
-    html += `
-    <div class="card" onclick="toggleCard(this)">
-      <div class="card-header">
-        <div>
-          <span class="title">${t.name}</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="badge">${t.tier}</span>
-          <span class="chevron">▶</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="subject-line subject-a"><span class="subject-label">Subject A:</span> ${t.subjectA}</div>
-        <div class="subject-line subject-b"><span class="subject-label">Subject B:</span> ${t.subjectB}</div>
-        <div class="template-content">${t.body}</div>
-      </div>
-    </div>`;
+  for (const id of TEMPLATE_ORDER) {
+    html += `<div id="card-wrapper-${id}"></div>`;
   }
   container.innerHTML = html;
-}
-renderTemplates();
-
-function renderSummary(data) {
-  const days = ['monday','tuesday','wednesday','thursday','friday'];
-  let total = 0;
-  let totalA = 0, totalB = 0;
-  days.forEach(d => {
-    total += data[d].total;
-    totalA += data[d].stats.subject_a;
-    totalB += data[d].stats.subject_b;
-  });
-
-  const row = document.getElementById('summaryRow');
-  row.innerHTML = `
-    <div class="summary-card"><div class="num">${total}</div><div class="label">Total Emails</div></div>
-    <div class="summary-card"><div class="num">5</div><div class="label">Send Days</div></div>
-    <div class="summary-card"><div class="num">${totalA}</div><div class="label">Subject A</div></div>
-    <div class="summary-card"><div class="num">${totalB}</div><div class="label">Subject B</div></div>
-    <div class="summary-card"><div class="num">4</div><div class="label">Templates</div></div>
-  `;
+  for (const id of TEMPLATE_ORDER) {
+    renderTemplateCard(id);
+  }
 }
 
-function renderRollout(data) {
-  const container = document.getElementById('rolloutContainer');
-  const dayOrder = ['monday','tuesday','wednesday','thursday','friday'];
-  const dayDescriptions = {
-    monday: 'Tier 1 VIC - WIL offices at Victorian unis',
-    tuesday: 'Tier 1 Interstate - WIL offices outside VIC',
-    wednesday: 'Tier 2 - Unit Coordinators (all states)',
-    thursday: 'Tier 3 - Careers boards & TAFEs',
-    friday: 'Tier 5 + remaining - TAFEs, peak bodies, overflow'
-  };
+function renderTemplateCard(id) {
+  const t = templates[id];
+  if (!t) return;
+  const wrapper = document.getElementById(`card-wrapper-${id}`) || document.getElementById(`card-${id}`)?.parentElement;
+  if (!wrapper) return;
 
+  const wasOpen = document.getElementById(`card-${id}`)?.classList.contains('open');
+  
+  wrapper.innerHTML = `<div id="card-${id}" class="template-card ${wasOpen ? 'open' : ''}">
+    <div class="template-card-header" onclick="toggleCard('${id}')">
+      <span class="title">${t.name}</span>
+      <span class="badge ${t.approved ? 'badge-approved' : 'badge-pending'}">${t.approved ? 'Approved ✅' : 'Pending'}</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="template-card-body">
+      <textarea id="editor-${id}" class="template-editor" style="min-height:240px;"
+        oninput="onEditorInput('${id}')">${escapeHtml(t.content)}</textarea>
+      <div class="template-actions">
+        <button class="btn btn-save" onclick="wrapAsync(() => saveTemplate('${id}'))">💾 Save</button>
+        ${t.approved
+          ? `<button class="btn btn-unapprove" onclick="wrapAsync(() => unapproveTemplate('${id}'))">↩️ Unapprove</button>`
+          : `<button class="btn btn-approve" onclick="wrapAsync(() => approveTemplate('${id}'))">✅ Approve</button>`
+        }
+        <span id="modified-${id}" class="modified-indicator" style="display:none">• unsaved changes</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderDays() {
+  const container = document.getElementById('daysContainer');
   let html = '';
-  dayOrder.forEach(dayKey => {
-    const day = data[dayKey];
-    const unis = Object.entries(day.stats.by_uni).sort((a,b) => b[1]-a[1]);
-
-    html += `
-    <div class="card day-card" onclick="toggleCard(this)">
-      <div class="card-header">
-        <div class="day-header" style="flex:1;">
-          <div>
-            <span class="day-name">${day.label}</span>
-            <div style="font-size:0.8em;color:var(--cream-dim);margin-top:2px;">${dayDescriptions[dayKey]}</div>
-          </div>
-          <span class="day-count">${day.total} emails</span>
-        </div>
-        <span class="chevron" style="margin-left:12px;">▶</span>
-      </div>
-      <div class="card-body">
-        <div class="day-stats">
-          <span class="stat-chip">📊 ${day.stats.subject_a}A / ${day.stats.subject_b}B split</span>
-          <span class="stat-chip">🏫 ${unis.length} organisations</span>
-        </div>
-        <div class="uni-breakdown">
-          ${unis.map(([u, c]) => `<span class="uni-chip">${u || 'Other'} (${c})</span>`).join('')}
-        </div>
-        <table class="contact-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Uni/Org</th>
-              <th>Dept</th>
-              <th>Template</th>
-              <th>A/B</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${day.contacts.slice(0, 3).map(c => `
-            <tr>
-              <td>${c.name || '—'}</td>
-              <td>${c.uni || c.personalisation.uni_name || '—'}</td>
-              <td>${c.dept || '—'}</td>
-              <td>${c.template}</td>
-              <td><span class="ab-badge ${c.subject_variant === 'A' ? 'ab-a' : 'ab-b'}">${c.subject_variant}</span></td>
-            </tr>`).join('')}
-          </tbody>
-        </table>
-        ${day.contacts.length > 3 ? `
-        <span class="preview-toggle" onclick="event.stopPropagation(); showAllContacts(this, '${dayKey}')">
-          ▸ Show all ${day.contacts.length} contacts
-        </span>
-        <div class="all-contacts-container" style="display:none;"></div>
-        ` : ''}
-      </div>
-    </div>`;
-  });
-
+  for (const dayId of DAY_ORDER) {
+    html += `<div id="day-wrapper-${dayId}"></div>`;
+  }
   container.innerHTML = html;
+  for (const dayId of DAY_ORDER) {
+    renderDayCard(dayId);
+  }
 }
 
-function showAllContacts(el, dayKey) {
+function renderDayCard(dayId) {
+  const d = days[dayId];
+  if (!d) return;
+  const wrapper = document.getElementById(`day-wrapper-${dayId}`);
+  if (!wrapper) return;
+
+  const idx = DAY_ORDER.indexOf(dayId);
+  const rolloutKey = DAY_ROLLOUT_KEYS[idx];
+  const dayRollout = rolloutData ? rolloutData[rolloutKey] : null;
+  const wasOpen = document.getElementById(`day-${dayId}`)?.classList.contains('open');
+
+  const statusClass = d.status !== 'pending' ? `status-${d.status}` : '';
+  const badgeClass = d.status === 'sent' ? 'badge-sent' : d.status === 'sending' ? 'badge-sending' : d.status === 'approved' ? 'badge-approved' : 'badge-pending';
+  const statusLabel = d.status === 'sent' ? 'Sent ✅' : d.status === 'sending' ? 'Sending…' : d.status === 'approved' ? 'Approved ✅' : 'Pending';
+
+  let bodyContent = '';
+  if (dayRollout) {
+    const unis = Object.entries(dayRollout.stats?.by_uni || {}).sort((a, b) => b[1] - a[1]);
+    bodyContent = `
+      <div class="day-stats">
+        <span class="stat-chip">📊 ${dayRollout.stats?.subject_a || '?'}A / ${dayRollout.stats?.subject_b || '?'}B split</span>
+        <span class="stat-chip">🏫 ${unis.length} organisations</span>
+      </div>
+      <div class="uni-breakdown">
+        ${unis.map(([u, c]) => `<span class="uni-chip">${u || 'Other'} (${c})</span>`).join('')}
+      </div>
+      <table class="contact-table">
+        <thead><tr><th>Name</th><th>Uni/Org</th><th>Template</th><th>A/B</th></tr></thead>
+        <tbody>
+          ${dayRollout.contacts.slice(0, 5).map(c => `
+          <tr>
+            <td>${escapeHtml(c.name || '—')}</td>
+            <td>${escapeHtml(c.uni || '—')}</td>
+            <td>${escapeHtml(c.template)}</td>
+            <td><span class="ab-badge ${c.subject_variant === 'A' ? 'ab-a' : 'ab-b'}">${c.subject_variant}</span></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+      ${dayRollout.contacts.length > 5 ? `
+        <span class="preview-toggle" onclick="event.stopPropagation(); showAllContacts(this, '${rolloutKey}')">
+          ▸ Show all ${dayRollout.contacts.length} contacts
+        </span>
+        <div class="all-contacts-box" style="display:none;"></div>
+      ` : ''}
+    `;
+  }
+
+  let actionBtn = '';
+  if (d.status === 'pending') {
+    actionBtn = `<button class="btn btn-approve" onclick="event.stopPropagation(); wrapAsync(() => approveDay('${dayId}'))">✅ Approve Send</button>`;
+  } else if (d.status === 'approved') {
+    actionBtn = `<button class="btn btn-unapprove" onclick="event.stopPropagation(); wrapAsync(() => unapproveDay('${dayId}'))" style="margin-top:8px;">↩️ Unapprove</button>`;
+  }
+
+  wrapper.innerHTML = `<div id="day-${dayId}" class="day-card ${statusClass} ${wasOpen ? 'open' : ''}">
+    <div class="day-card-header" onclick="toggleDayCard('${dayId}')">
+      <div class="day-info">
+        <span class="day-name">${escapeHtml(d.label)}</span>
+      </div>
+      <span class="day-count">${d.contact_count} emails</span>
+      <span class="badge ${badgeClass}">${statusLabel}</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="day-card-body">
+      ${bodyContent}
+      <div style="margin-top:12px;">${actionBtn}</div>
+    </div>
+  </div>`;
+}
+
+// ── Interactions ──
+function toggleCard(id) {
+  document.getElementById(`card-${id}`)?.classList.toggle('open');
+}
+
+function toggleDayCard(id) {
+  document.getElementById(`day-${id}`)?.classList.toggle('open');
+}
+
+function onEditorInput(id) {
+  const el = document.getElementById(`modified-${id}`);
+  const editor = document.getElementById(`editor-${id}`);
+  if (el && editor && originalTemplates[id]) {
+    el.style.display = editor.value !== originalTemplates[id].content ? 'inline' : 'none';
+  }
+}
+
+function showAllContacts(el, rolloutKey) {
   const container = el.nextElementSibling;
   if (container.style.display === 'none') {
-    const day = rolloutData[dayKey];
+    const dayData = rolloutData[rolloutKey];
     container.innerHTML = `
       <table class="contact-table" style="margin-top:8px;">
-        <thead>
-          <tr><th>#</th><th>Name</th><th>Email</th><th>Uni/Org</th><th>Dept</th><th>State</th><th>Template</th><th>A/B</th></tr>
-        </thead>
+        <thead><tr><th>#</th><th>Name</th><th>Email</th><th>Uni</th><th>State</th><th>Template</th><th>A/B</th></tr></thead>
         <tbody>
-          ${day.contacts.map((c, i) => `
+          ${dayData.contacts.map((c, i) => `
           <tr>
-            <td>${i+1}</td>
-            <td>${c.name || '—'}</td>
-            <td style="font-size:0.85em;">${c.email || '—'}</td>
-            <td>${c.uni || '—'}</td>
-            <td>${c.dept || '—'}</td>
-            <td>${c.state || '—'}</td>
-            <td>${c.template}</td>
+            <td>${i + 1}</td>
+            <td>${escapeHtml(c.name || '—')}</td>
+            <td style="font-size:0.85em;">${escapeHtml(c.email || '—')}</td>
+            <td>${escapeHtml(c.uni || '—')}</td>
+            <td>${escapeHtml(c.state || '—')}</td>
+            <td>${escapeHtml(c.template)}</td>
             <td><span class="ab-badge ${c.subject_variant === 'A' ? 'ab-a' : 'ab-b'}">${c.subject_variant}</span></td>
           </tr>`).join('')}
         </tbody>
@@ -563,35 +815,29 @@ function showAllContacts(el, dayKey) {
     el.textContent = `▾ Hide contacts`;
   } else {
     container.style.display = 'none';
-    el.textContent = `▸ Show all ${rolloutData[dayKey].contacts.length} contacts`;
+    el.textContent = `▸ Show all ${rolloutData[rolloutKey].contacts.length} contacts`;
   }
 }
 
-function toggleCard(el) {
-  el.classList.toggle('open');
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function approveRollout() {
-  if (confirm('Lock in the outreach rollout? This confirms you\'ve reviewed all templates and the send schedule.')) {
-    document.getElementById('statusText').textContent = '✅ Approved - Day 1 Ready';
-    document.getElementById('statusBanner').style.borderColor = 'var(--green)';
-    document.getElementById('approveBtn').textContent = '🔒 Locked In';
-    document.getElementById('approveBtn').disabled = true;
-    document.getElementById('approveBtn').style.opacity = '0.6';
-    document.getElementById('approveBtn').style.cursor = 'default';
-    localStorage.setItem('outreach-rollout-approved', 'true');
-    localStorage.setItem('outreach-rollout-approved-date', new Date().toISOString());
+async function wrapAsync(fn) {
+  try {
+    await fn();
+  } catch (e) {
+    console.error(e);
+    showToast('❌ ' + e.message, true);
   }
 }
 
-if (localStorage.getItem('outreach-rollout-approved') === 'true') {
-  document.getElementById('statusText').textContent = '✅ Approved - Day 1 Ready';
-  document.getElementById('statusBanner').style.borderColor = 'var(--green)';
-  document.getElementById('approveBtn').textContent = '🔒 Locked In';
-  document.getElementById('approveBtn').disabled = true;
-  document.getElementById('approveBtn').style.opacity = '0.6';
-}
+// ── Init ──
+loadData().catch(e => {
+  console.error(e);
+  document.getElementById('summaryRow').innerHTML = `<div style="color:var(--red);padding:20px;">Failed to load data: ${escapeHtml(e.message)}</div>`;
+});
 </script>
-
 </body>
 </html>
