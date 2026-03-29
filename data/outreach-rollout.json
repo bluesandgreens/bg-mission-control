@@ -14,7 +14,7 @@
         "role": "Senior Lecturer & Placement Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Amanda Dudley",
           "uni_name": "Deakin",
@@ -32,7 +32,7 @@
         "role": "Unit Chair, Psychology at Work (HPS328)",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Deakin students - placements available",
         "personalisation": {
           "contact_name": "Dr Elizabeth Clancy",
           "uni_name": "Deakin",
@@ -50,7 +50,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Federation Education",
           "uni_name": "Federation",
@@ -68,7 +68,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Federation students - placements available",
         "personalisation": {
           "contact_name": "Federation Social Work",
           "uni_name": "Federation",
@@ -86,7 +86,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "La Trobe Social Work",
           "uni_name": "La Trobe",
@@ -104,7 +104,7 @@
         "role": "Placement Liaison, Head Tutor",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Monash students - placements available",
         "personalisation": {
           "contact_name": "Dr Luis Mascaro",
           "uni_name": "Monash",
@@ -122,7 +122,7 @@
         "role": "Field Education Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "RMIT Social Work",
           "uni_name": "RMIT",
@@ -140,7 +140,7 @@
         "role": "Manager, Health Placements",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Swinburne students - placements available",
         "personalisation": {
           "contact_name": "Megan Pote",
           "uni_name": "Swinburne",
@@ -158,7 +158,7 @@
         "role": "Placement Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Swinburne Education",
           "uni_name": "Swinburne",
@@ -176,7 +176,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Torrens students - placements available",
         "personalisation": {
           "contact_name": "Torrens Education",
           "uni_name": "Torrens",
@@ -194,7 +194,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UniMelb Social Work",
           "uni_name": "UniMelb",
@@ -212,7 +212,7 @@
         "role": "Placement Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for VU students - placements available",
         "personalisation": {
           "contact_name": "VU Education",
           "uni_name": "VU",
@@ -230,7 +230,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "VU Social Work",
           "uni_name": "VU",
@@ -248,7 +248,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for ACU students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "ACU",
@@ -266,7 +266,7 @@
         "role": "Field Education Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "ACU",
@@ -284,7 +284,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for La Trobe students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "La Trobe",
@@ -302,7 +302,7 @@
         "role": "Psychology Placements Team (PSY3034)",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Monash",
@@ -320,7 +320,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for RMIT students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "RMIT",
@@ -338,7 +338,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Torrens",
@@ -356,7 +356,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UNSW students - placements available",
         "personalisation": {
           "contact_name": "UNSW Social Work",
           "uni_name": "UNSW",
@@ -374,7 +374,7 @@
         "role": "Placement Manager (Clinical Psych)",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Donna Corcoran",
           "uni_name": "UQ",
@@ -392,7 +392,7 @@
         "role": "Practicum Officer (Internships)",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UQ students - placements available",
         "personalisation": {
           "contact_name": "Emma-Jane Harrison",
           "uni_name": "UQ",
@@ -410,7 +410,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "CDU",
@@ -428,7 +428,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for CSU students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "CSU",
@@ -446,7 +446,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Curtin",
@@ -464,7 +464,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for ECU students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "ECU",
@@ -482,7 +482,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Flinders",
@@ -500,7 +500,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Griffith students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Griffith",
@@ -518,7 +518,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "JCU",
@@ -536,7 +536,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Newcastle students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Newcastle",
@@ -554,7 +554,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "QUT",
@@ -572,7 +572,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for SCU students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "SCU",
@@ -590,7 +590,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UC",
@@ -608,7 +608,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UNE students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UNE",
@@ -626,7 +626,7 @@
         "role": "Faculty of Science Placements Officer",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "USyd",
@@ -644,7 +644,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UTAS students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UTAS",
@@ -662,7 +662,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UWA",
@@ -680,7 +680,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UniSA students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UniSA",
@@ -698,7 +698,7 @@
         "role": "Work Integrated Learning",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UniSC",
@@ -716,7 +716,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for WSU students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "WSU",
@@ -734,7 +734,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Wollongong",
@@ -752,7 +752,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Bond students - placements available",
         "personalisation": {
           "contact_name": "Bond Psychology",
           "uni_name": "Bond",
@@ -770,7 +770,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Curtin Sport Science",
           "uni_name": "Curtin",
@@ -788,7 +788,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for ECU students - placements available",
         "personalisation": {
           "contact_name": "ECU Psychology",
           "uni_name": "ECU",
@@ -806,7 +806,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Griffith Youth Work & Human Services",
           "uni_name": "Griffith",
@@ -824,7 +824,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for JCU students - placements available",
         "personalisation": {
           "contact_name": "JCU Sport & Exercise Science",
           "uni_name": "JCU",
@@ -842,7 +842,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Murdoch Psychology",
           "uni_name": "Murdoch",
@@ -860,7 +860,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for QUT students - placements available",
         "personalisation": {
           "contact_name": "QUT Justice & Legal Studies",
           "uni_name": "QUT",
@@ -878,7 +878,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UC Sport Science",
           "uni_name": "UC",
@@ -896,7 +896,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for USyd students - placements available",
         "personalisation": {
           "contact_name": "USyd Exercise & Sport Science",
           "uni_name": "USyd",
@@ -914,7 +914,7 @@
         "role": "Graduate School of Education",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UniMelb Education",
           "uni_name": "UniMelb",
@@ -932,7 +932,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UniSA students - placements available",
         "personalisation": {
           "contact_name": "UniSA Sport & Exercise Science",
           "uni_name": "UniSA",
@@ -950,7 +950,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UniSC Sport Science",
           "uni_name": "UniSC",
@@ -968,7 +968,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for WSU students - placements available",
         "personalisation": {
           "contact_name": "WSU Sport & Exercise Science",
           "uni_name": "WSU",
@@ -984,9 +984,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "State Branch",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "AASW Victorian Branch",
           "uni_name": "",
@@ -1002,9 +1002,9 @@
         "tier": "Tier 5 (Other)",
         "state": "ACT",
         "role": "Partnerships",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for [Uni] students - placements available",
         "personalisation": {
           "contact_name": "Australian Youth Affairs Coalition",
           "uni_name": "",
@@ -1020,9 +1020,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "GOTAFE - Community Services",
           "uni_name": "TAFE",
@@ -1038,9 +1038,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for TAFE students - placements available",
         "personalisation": {
           "contact_name": "Holmesglen TAFE - Community Services",
           "uni_name": "TAFE",
@@ -1061,31 +1061,31 @@
         "UniMelb": 2,
         "VU": 2,
         "ACU": 2,
+        "UNSW": 1,
         "UQ": 2,
+        "CDU": 1,
+        "CSU": 1,
         "Curtin": 2,
         "ECU": 2,
+        "Flinders": 1,
         "Griffith": 2,
         "JCU": 2,
+        "Newcastle": 1,
         "QUT": 2,
+        "SCU": 1,
         "UC": 2,
+        "UNE": 1,
         "USyd": 2,
+        "UTAS": 1,
+        "UWA": 1,
         "UniSA": 2,
         "UniSC": 2,
         "WSU": 2,
-        "": 2,
-        "TAFE": 2,
-        "UNSW": 1,
-        "CDU": 1,
-        "CSU": 1,
-        "Flinders": 1,
-        "Newcastle": 1,
-        "SCU": 1,
-        "UNE": 1,
-        "UTAS": 1,
-        "UWA": 1,
         "Wollongong": 1,
         "Bond": 1,
-        "Murdoch": 1
+        "Murdoch": 1,
+        "": 2,
+        "TAFE": 2
       },
       "by_tier": {
         "Tier 1 (WIL Office)": 41,
@@ -1111,7 +1111,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Adelaide Education",
           "uni_name": "Adelaide",
@@ -1129,7 +1129,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for CDU students - placements available",
         "personalisation": {
           "contact_name": "CDU Education",
           "uni_name": "CDU",
@@ -1147,7 +1147,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "CDU Social Work",
           "uni_name": "CDU",
@@ -1165,7 +1165,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for CQU students - placements available",
         "personalisation": {
           "contact_name": "CQU Social Work & Community Services",
           "uni_name": "CQU",
@@ -1183,7 +1183,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "CSU Education",
           "uni_name": "CSU",
@@ -1201,7 +1201,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for CSU students - placements available",
         "personalisation": {
           "contact_name": "CSU Social Work",
           "uni_name": "CSU",
@@ -1219,7 +1219,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Curtin Education",
           "uni_name": "Curtin",
@@ -1237,7 +1237,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Curtin students - placements available",
         "personalisation": {
           "contact_name": "Curtin Social Work",
           "uni_name": "Curtin",
@@ -1255,7 +1255,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "ECU Education",
           "uni_name": "ECU",
@@ -1273,7 +1273,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for ECU students - placements available",
         "personalisation": {
           "contact_name": "ECU Social Work",
           "uni_name": "ECU",
@@ -1291,7 +1291,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Flinders Education",
           "uni_name": "Flinders",
@@ -1309,7 +1309,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Flinders students - placements available",
         "personalisation": {
           "contact_name": "Flinders Social Work",
           "uni_name": "Flinders",
@@ -1327,7 +1327,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Griffith Social Work",
           "uni_name": "Griffith",
@@ -1345,7 +1345,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for JCU students - placements available",
         "personalisation": {
           "contact_name": "JCU Education",
           "uni_name": "JCU",
@@ -1363,7 +1363,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "JCU Social Work",
           "uni_name": "JCU",
@@ -1381,7 +1381,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Macquarie students - placements available",
         "personalisation": {
           "contact_name": "Macquarie Education",
           "uni_name": "Macquarie",
@@ -1399,7 +1399,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Macquarie Social Work",
           "uni_name": "Macquarie",
@@ -1417,7 +1417,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Murdoch students - placements available",
         "personalisation": {
           "contact_name": "Murdoch Education",
           "uni_name": "Murdoch",
@@ -1435,7 +1435,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Newcastle Education",
           "uni_name": "Newcastle",
@@ -1453,7 +1453,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Newcastle students - placements available",
         "personalisation": {
           "contact_name": "Newcastle Social Work",
           "uni_name": "Newcastle",
@@ -1471,7 +1471,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "QUT Social Work",
           "uni_name": "QUT",
@@ -1489,7 +1489,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for SCU students - placements available",
         "personalisation": {
           "contact_name": "SCU Education",
           "uni_name": "SCU",
@@ -1507,7 +1507,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "SCU Social Work",
           "uni_name": "SCU",
@@ -1525,7 +1525,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UC students - placements available",
         "personalisation": {
           "contact_name": "UC Education",
           "uni_name": "UC",
@@ -1543,7 +1543,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UC Social Work",
           "uni_name": "UC",
@@ -1561,7 +1561,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UNE students - placements available",
         "personalisation": {
           "contact_name": "UNE Education",
           "uni_name": "UNE",
@@ -1579,7 +1579,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UNE Social Work",
           "uni_name": "UNE",
@@ -1597,7 +1597,7 @@
         "role": "Clinic Director & Placement Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UNSW students - placements available",
         "personalisation": {
           "contact_name": "Shane Lee Vassallo",
           "uni_name": "UNSW",
@@ -1615,7 +1615,7 @@
         "role": "Placement Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UNSW Education",
           "uni_name": "UNSW",
@@ -1633,7 +1633,7 @@
         "role": "Placement Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UQ students - placements available",
         "personalisation": {
           "contact_name": "Adheesha Ratnayake",
           "uni_name": "UQ",
@@ -1651,7 +1651,7 @@
         "role": "Placement Manager",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Andrea Richardson",
           "uni_name": "UQ",
@@ -1669,7 +1669,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for USyd students - placements available",
         "personalisation": {
           "contact_name": "USyd Social Work",
           "uni_name": "USyd",
@@ -1687,7 +1687,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UTAS Education",
           "uni_name": "UTAS",
@@ -1705,7 +1705,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UTAS students - placements available",
         "personalisation": {
           "contact_name": "UTAS Social Work",
           "uni_name": "UTAS",
@@ -1723,7 +1723,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UWA Education",
           "uni_name": "UWA",
@@ -1741,7 +1741,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UWA students - placements available",
         "personalisation": {
           "contact_name": "UWA Social Work",
           "uni_name": "UWA",
@@ -1759,7 +1759,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UniSA Education",
           "uni_name": "UniSA",
@@ -1777,7 +1777,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UniSA students - placements available",
         "personalisation": {
           "contact_name": "UniSA Social Work",
           "uni_name": "UniSA",
@@ -1795,7 +1795,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UniSC Education",
           "uni_name": "UniSC",
@@ -1813,7 +1813,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UniSC students - placements available",
         "personalisation": {
           "contact_name": "UniSC Social Work",
           "uni_name": "UniSC",
@@ -1831,7 +1831,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "WSU Education",
           "uni_name": "WSU",
@@ -1849,7 +1849,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for WSU students - placements available",
         "personalisation": {
           "contact_name": "WSU Social Work",
           "uni_name": "WSU",
@@ -1867,7 +1867,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UOW Education",
           "uni_name": "Wollongong",
@@ -1885,7 +1885,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Wollongong students - placements available",
         "personalisation": {
           "contact_name": "UOW Social Work",
           "uni_name": "Wollongong",
@@ -1903,7 +1903,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "ANU",
@@ -1921,7 +1921,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Adelaide students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Adelaide",
@@ -1939,7 +1939,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Bond",
@@ -1957,7 +1957,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for CQU students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "CQU",
@@ -1975,7 +1975,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Griffith",
@@ -1993,7 +1993,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Murdoch students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Murdoch",
@@ -2011,7 +2011,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "QUT",
@@ -2029,7 +2029,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for USyd students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "USyd",
@@ -2047,7 +2047,7 @@
         "role": "Unit Chair, Health Practicum",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Dr Neetu George",
           "uni_name": "Deakin",
@@ -2065,7 +2065,7 @@
         "role": "Course Director, Public Health / Unit Chair Health Practicum",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Deakin students - placements available",
         "personalisation": {
           "contact_name": "Dr Patricia Taylor",
           "uni_name": "Deakin",
@@ -2083,7 +2083,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Swinburne Social Work",
           "uni_name": "Swinburne",
@@ -2101,7 +2101,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for VU students - placements available",
         "personalisation": {
           "contact_name": "VU Sport & Exercise Science",
           "uni_name": "VU",
@@ -2119,7 +2119,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "ACU",
@@ -2137,7 +2137,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Federation students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Federation",
@@ -2155,7 +2155,7 @@
         "role": "Work Based Learning Team",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "La Trobe",
@@ -2173,7 +2173,7 @@
         "role": "Field Education Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Monash students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Monash",
@@ -2191,7 +2191,7 @@
         "role": "Work Integrated Learning",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "VU",
@@ -2209,7 +2209,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for La Trobe students - placements available",
         "personalisation": {
           "contact_name": "La Trobe Sport Science",
           "uni_name": "La Trobe",
@@ -2227,7 +2227,7 @@
         "role": "Chief Examiner, PSY3034",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Dr Elise Facer-Childs",
           "uni_name": "Monash",
@@ -2245,7 +2245,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for RMIT students - placements available",
         "personalisation": {
           "contact_name": "RMIT Psychology",
           "uni_name": "RMIT",
@@ -2263,7 +2263,7 @@
         "role": "School of Psychological Sciences",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UniMelb Psych Sciences",
           "uni_name": "UniMelb",
@@ -2281,7 +2281,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UniMelb students - placements available",
         "personalisation": {
           "contact_name": "UniMelb Sport Science",
           "uni_name": "UniMelb",
@@ -2299,7 +2299,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "ACU",
@@ -2315,9 +2315,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Partnerships Manager",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for [Uni] students - placements available",
         "personalisation": {
           "contact_name": "GoVolunteer - Partnerships",
           "uni_name": "",
@@ -2333,9 +2333,9 @@
         "tier": "Tier 5 (Other)",
         "state": "QLD",
         "role": "Partnerships",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Queensland Youth Alliance",
           "uni_name": "",
@@ -2351,9 +2351,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for TAFE students - placements available",
         "personalisation": {
           "contact_name": "Kangan Institute - Community Services",
           "uni_name": "TAFE",
@@ -2369,9 +2369,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Melbourne Polytechnic - Community Services",
           "uni_name": "TAFE",
@@ -2407,19 +2407,19 @@
         "UniSC": 2,
         "WSU": 2,
         "Wollongong": 2,
-        "Deakin": 2,
-        "VU": 2,
-        "ACU": 2,
-        "La Trobe": 2,
-        "Monash": 2,
-        "UniMelb": 2,
-        "": 2,
-        "TAFE": 2,
         "ANU": 1,
         "Bond": 1,
+        "Deakin": 2,
         "Swinburne": 1,
+        "VU": 2,
+        "ACU": 2,
         "Federation": 1,
-        "RMIT": 1
+        "La Trobe": 2,
+        "Monash": 2,
+        "RMIT": 1,
+        "UniMelb": 2,
+        "": 2,
+        "TAFE": 2
       },
       "by_tier": {
         "Tier 1 (WIL Office)": 61,
@@ -2445,7 +2445,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "ACU Counselling",
           "uni_name": "ACU",
@@ -2463,7 +2463,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for ACU students - placements available",
         "personalisation": {
           "contact_name": "ACU Youth Work & Community",
           "uni_name": "ACU",
@@ -2481,7 +2481,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "ANU Criminology",
           "uni_name": "ANU",
@@ -2499,7 +2499,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for ANU students - placements available",
         "personalisation": {
           "contact_name": "ANU Psychology",
           "uni_name": "ANU",
@@ -2517,7 +2517,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Adelaide Criminology",
           "uni_name": "Adelaide",
@@ -2535,7 +2535,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Adelaide students - placements available",
         "personalisation": {
           "contact_name": "Adelaide Psychology",
           "uni_name": "Adelaide",
@@ -2553,7 +2553,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Bond Counselling",
           "uni_name": "Bond",
@@ -2571,7 +2571,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Bond students - placements available",
         "personalisation": {
           "contact_name": "Bond Criminology",
           "uni_name": "Bond",
@@ -2589,7 +2589,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "CDU Psychology",
           "uni_name": "CDU",
@@ -2607,7 +2607,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for CQU students - placements available",
         "personalisation": {
           "contact_name": "CQU Psychology",
           "uni_name": "CQU",
@@ -2625,7 +2625,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "CSU Criminal Justice",
           "uni_name": "CSU",
@@ -2643,7 +2643,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for CSU students - placements available",
         "personalisation": {
           "contact_name": "CSU Psychology",
           "uni_name": "CSU",
@@ -2661,7 +2661,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Curtin Counselling",
           "uni_name": "Curtin",
@@ -2679,7 +2679,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Curtin students - placements available",
         "personalisation": {
           "contact_name": "Curtin Psychology",
           "uni_name": "Curtin",
@@ -2697,7 +2697,7 @@
         "role": "Program Director",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Criminology Program",
           "uni_name": "Deakin",
@@ -2715,7 +2715,7 @@
         "role": "Head of School of Psychology",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Deakin students - placements available",
         "personalisation": {
           "contact_name": "Prof Jane McGillivray",
           "uni_name": "Deakin",
@@ -2733,7 +2733,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "ECU Counselling",
           "uni_name": "ECU",
@@ -2751,7 +2751,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for ECU students - placements available",
         "personalisation": {
           "contact_name": "ECU Exercise & Sport Science",
           "uni_name": "ECU",
@@ -2769,7 +2769,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Federation Community Services",
           "uni_name": "Federation",
@@ -2787,7 +2787,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Federation students - placements available",
         "personalisation": {
           "contact_name": "Federation Psychology",
           "uni_name": "Federation",
@@ -2805,7 +2805,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Flinders Criminology",
           "uni_name": "Flinders",
@@ -2823,7 +2823,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Flinders students - placements available",
         "personalisation": {
           "contact_name": "Flinders Psychology",
           "uni_name": "Flinders",
@@ -2841,7 +2841,7 @@
         "role": "DHoS (Learning & Teaching)",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "A/Prof Heather Green",
           "uni_name": "Griffith",
@@ -2859,7 +2859,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Griffith students - placements available",
         "personalisation": {
           "contact_name": "Griffith Criminology",
           "uni_name": "Griffith",
@@ -2877,7 +2877,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "JCU Community Welfare",
           "uni_name": "JCU",
@@ -2895,7 +2895,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for JCU students - placements available",
         "personalisation": {
           "contact_name": "JCU Psychology",
           "uni_name": "JCU",
@@ -2913,7 +2913,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "La Trobe Counselling",
           "uni_name": "La Trobe",
@@ -2931,7 +2931,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for La Trobe students - placements available",
         "personalisation": {
           "contact_name": "La Trobe Psychology",
           "uni_name": "La Trobe",
@@ -2949,7 +2949,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Macquarie Criminology",
           "uni_name": "Macquarie",
@@ -2967,7 +2967,7 @@
         "role": "Head of School, Psychological Sciences",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Macquarie students - placements available",
         "personalisation": {
           "contact_name": "Prof Maria Kangas",
           "uni_name": "Macquarie",
@@ -2985,7 +2985,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Counselling Program",
           "uni_name": "Monash",
@@ -3003,7 +3003,7 @@
         "role": "Education Services Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Monash students - placements available",
         "personalisation": {
           "contact_name": "Dr Chris Siva",
           "uni_name": "Monash",
@@ -3021,7 +3021,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Murdoch Counselling",
           "uni_name": "Murdoch",
@@ -3039,7 +3039,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Murdoch students - placements available",
         "personalisation": {
           "contact_name": "Murdoch Criminology",
           "uni_name": "Murdoch",
@@ -3057,7 +3057,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Newcastle Psychology",
           "uni_name": "Newcastle",
@@ -3075,7 +3075,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Newcastle students - placements available",
         "personalisation": {
           "contact_name": "Newcastle Youth Studies",
           "uni_name": "Newcastle",
@@ -3093,7 +3093,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "QUT Exercise & Sport Science",
           "uni_name": "QUT",
@@ -3111,7 +3111,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for QUT students - placements available",
         "personalisation": {
           "contact_name": "QUT Human Services & Counselling",
           "uni_name": "QUT",
@@ -3129,7 +3129,7 @@
         "role": "School of Global, Urban & Social Studies",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "RMIT - GUSS",
           "uni_name": "RMIT",
@@ -3147,7 +3147,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for RMIT students - placements available",
         "personalisation": {
           "contact_name": "RMIT Criminology & Justice",
           "uni_name": "RMIT",
@@ -3165,7 +3165,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "SCU Psychology",
           "uni_name": "SCU",
@@ -3183,7 +3183,7 @@
         "role": "Clinic Student Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Swinburne students - placements available",
         "personalisation": {
           "contact_name": "Jenny Linossier",
           "uni_name": "Swinburne",
@@ -3201,7 +3201,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Swinburne Criminology",
           "uni_name": "Swinburne",
@@ -3219,7 +3219,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Torrens students - placements available",
         "personalisation": {
           "contact_name": "Torrens Counselling & Social Work",
           "uni_name": "Torrens",
@@ -3237,7 +3237,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UC Counselling",
           "uni_name": "UC",
@@ -3255,7 +3255,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UC students - placements available",
         "personalisation": {
           "contact_name": "UC Psychology",
           "uni_name": "UC",
@@ -3273,7 +3273,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UNE Criminology",
           "uni_name": "UNE",
@@ -3291,7 +3291,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UNE students - placements available",
         "personalisation": {
           "contact_name": "UNE Psychology",
           "uni_name": "UNE",
@@ -3309,7 +3309,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UNSW Criminology",
           "uni_name": "UNSW",
@@ -3327,7 +3327,7 @@
         "role": "Placements Manager (Clinical Psych)",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UQ students - placements available",
         "personalisation": {
           "contact_name": "Dr Kristy Sippel",
           "uni_name": "UQ",
@@ -3345,7 +3345,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UQ Counselling",
           "uni_name": "UQ",
@@ -3363,7 +3363,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for USyd students - placements available",
         "personalisation": {
           "contact_name": "USyd Counselling Program",
           "uni_name": "USyd",
@@ -3381,7 +3381,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "USyd Criminology",
           "uni_name": "USyd",
@@ -3399,7 +3399,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UTAS students - placements available",
         "personalisation": {
           "contact_name": "UTAS Psychology",
           "uni_name": "UTAS",
@@ -3417,7 +3417,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UWA Psychology",
           "uni_name": "UWA",
@@ -3435,7 +3435,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UWA students - placements available",
         "personalisation": {
           "contact_name": "UWA Sport Science",
           "uni_name": "UWA",
@@ -3453,7 +3453,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UniMelb Counselling & Psych Sciences",
           "uni_name": "UniMelb",
@@ -3471,7 +3471,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UniMelb students - placements available",
         "personalisation": {
           "contact_name": "UniMelb Criminology",
           "uni_name": "UniMelb",
@@ -3489,7 +3489,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UniSA Human Services",
           "uni_name": "UniSA",
@@ -3507,7 +3507,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UniSA students - placements available",
         "personalisation": {
           "contact_name": "UniSA Psychology",
           "uni_name": "UniSA",
@@ -3525,7 +3525,7 @@
         "role": "Clinical Psych Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Dr Kathina Ali",
           "uni_name": "UniSC",
@@ -3543,7 +3543,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UniSC students - placements available",
         "personalisation": {
           "contact_name": "UniSC Counselling",
           "uni_name": "UniSC",
@@ -3561,7 +3561,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "VU Community Development",
           "uni_name": "VU",
@@ -3579,7 +3579,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for VU students - placements available",
         "personalisation": {
           "contact_name": "VU Psychology",
           "uni_name": "VU",
@@ -3597,7 +3597,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "WSU Criminology & Policing",
           "uni_name": "WSU",
@@ -3615,7 +3615,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for WSU students - placements available",
         "personalisation": {
           "contact_name": "WSU Psychology",
           "uni_name": "WSU",
@@ -3633,7 +3633,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UOW Psychology",
           "uni_name": "Wollongong",
@@ -3649,9 +3649,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Partnerships Manager",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for [Uni] students - placements available",
         "personalisation": {
           "contact_name": "Seek Volunteer - Partnerships",
           "uni_name": "",
@@ -3667,9 +3667,9 @@
         "tier": "Tier 5 (Other)",
         "state": "ACT",
         "role": "National Peak Body",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Volunteering Australia",
           "uni_name": "",
@@ -3685,9 +3685,9 @@
         "tier": "Tier 5 (Other)",
         "state": "WA",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for TAFE students - placements available",
         "personalisation": {
           "contact_name": "North Metro TAFE - Community Services",
           "uni_name": "TAFE",
@@ -3703,9 +3703,9 @@
         "tier": "Tier 5 (Other)",
         "state": "WA",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "South Metro TAFE - Community Services",
           "uni_name": "TAFE",
@@ -3720,6 +3720,8 @@
         "ANU": 2,
         "Adelaide": 2,
         "Bond": 2,
+        "CDU": 1,
+        "CQU": 1,
         "CSU": 2,
         "Curtin": 2,
         "Deakin": 2,
@@ -3735,26 +3737,24 @@
         "Newcastle": 2,
         "QUT": 2,
         "RMIT": 2,
+        "SCU": 1,
         "Swinburne": 2,
+        "Torrens": 1,
         "UC": 2,
         "UNE": 2,
+        "UNSW": 1,
         "UQ": 2,
         "USyd": 2,
+        "UTAS": 1,
         "UWA": 2,
         "UniMelb": 2,
         "UniSA": 2,
         "UniSC": 2,
         "VU": 2,
         "WSU": 2,
+        "Wollongong": 1,
         "": 2,
-        "TAFE": 2,
-        "CDU": 1,
-        "CQU": 1,
-        "SCU": 1,
-        "Torrens": 1,
-        "UNSW": 1,
-        "UTAS": 1,
-        "Wollongong": 1
+        "TAFE": 2
       },
       "by_tier": {
         "Tier 2 (Unit Coordinator)": 67,
@@ -3774,12 +3774,12 @@
         "email": "rusu.jobs@rmit.edu.au",
         "uni": "RMIT",
         "dept": "Club",
-        "tier": "Tier 4 (Student Club)",
+        "tier": "Tier 3 (Careers Board)",
         "state": "VIC",
         "role": "Student Welfare & Mentoring",
-        "template": "T4",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Would love to chat with your members about youth mentoring",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "RUSU Compass Service",
           "uni_name": "RMIT",
@@ -3797,7 +3797,7 @@
         "role": "Careers & Employability Team",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for UQ students - placements available",
         "personalisation": {
           "contact_name": "UQ Employability",
           "uni_name": "UQ",
@@ -3815,7 +3815,7 @@
         "role": "School of Psychology General",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UQ Psych Reception",
           "uni_name": "UQ",
@@ -3833,7 +3833,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for ACU students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "ACU",
@@ -3851,7 +3851,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "ANU",
@@ -3869,7 +3869,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for Adelaide students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Adelaide",
@@ -3887,7 +3887,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Bond",
@@ -3905,7 +3905,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for CQU students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "CQU",
@@ -3923,7 +3923,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "CSU",
@@ -3941,7 +3941,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for Curtin students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Curtin",
@@ -3959,7 +3959,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Deakin",
@@ -3977,7 +3977,7 @@
         "role": "School of Psychology inbox",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for Deakin students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Deakin",
@@ -3995,7 +3995,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "ECU",
@@ -4013,7 +4013,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for Federation students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Federation",
@@ -4031,7 +4031,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Flinders",
@@ -4049,7 +4049,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for Griffith students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Griffith",
@@ -4067,7 +4067,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "JCU",
@@ -4085,7 +4085,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for La Trobe students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "La Trobe",
@@ -4103,7 +4103,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Macquarie",
@@ -4121,7 +4121,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for Monash students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Monash",
@@ -4139,7 +4139,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Murdoch",
@@ -4157,7 +4157,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for Newcastle students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Newcastle",
@@ -4175,7 +4175,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "QUT",
@@ -4193,7 +4193,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for RMIT students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "RMIT",
@@ -4211,7 +4211,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "SCU",
@@ -4229,7 +4229,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for Swinburne students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Swinburne",
@@ -4247,7 +4247,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Torrens",
@@ -4265,7 +4265,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for UC students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UC",
@@ -4283,7 +4283,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UNE",
@@ -4301,7 +4301,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for UNSW students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UNSW",
@@ -4319,7 +4319,7 @@
         "role": "School of Psychology inbox",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UNSW",
@@ -4337,7 +4337,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for USyd students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "USyd",
@@ -4355,7 +4355,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UTAS",
@@ -4373,7 +4373,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for UWA students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UWA",
@@ -4391,7 +4391,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UniMelb",
@@ -4409,7 +4409,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for UniSA students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UniSA",
@@ -4427,7 +4427,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UniSC",
@@ -4445,7 +4445,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for VU students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "VU",
@@ -4463,7 +4463,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "WSU",
@@ -4481,7 +4481,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Youth Mentor role \u2014 1hr/week, $50/session",
+        "subject_line": "Paid mentoring role for Wollongong students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Wollongong",
@@ -4499,7 +4499,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "ECU Youth Work",
           "uni_name": "ECU",
@@ -4517,7 +4517,7 @@
         "role": "Head of School, Applied Psychology",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Griffith students - placements available",
         "personalisation": {
           "contact_name": "Prof Allison Waters",
           "uni_name": "Griffith",
@@ -4535,7 +4535,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "La Trobe Youth & Community",
           "uni_name": "La Trobe",
@@ -4553,7 +4553,7 @@
         "role": "Unit Coordinator, PSY3034",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Monash students - placements available",
         "personalisation": {
           "contact_name": "Elly Francis Pester",
           "uni_name": "Monash",
@@ -4571,7 +4571,7 @@
         "role": "Placement Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "QUT Psychology",
           "uni_name": "QUT",
@@ -4589,7 +4589,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for VU students - placements available",
         "personalisation": {
           "contact_name": "VU Youth Work",
           "uni_name": "VU",
@@ -4605,9 +4605,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "State Peak Body",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Volunteering Victoria",
           "uni_name": "",
@@ -4623,9 +4623,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Partnerships",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for [Uni] students - placements available",
         "personalisation": {
           "contact_name": "YACVic - Youth Affairs Council Victoria",
           "uni_name": "",
@@ -4641,9 +4641,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Swinburne TAFE - Community Services",
           "uni_name": "TAFE",
@@ -4659,9 +4659,9 @@
         "tier": "Tier 5 (Other)",
         "state": "NSW",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for TAFE students - placements available",
         "personalisation": {
           "contact_name": "TAFE NSW - Community Services (Sydney)",
           "uni_name": "TAFE",
@@ -4674,16 +4674,6 @@
       "by_uni": {
         "RMIT": 2,
         "UQ": 2,
-        "Deakin": 2,
-        "ECU": 2,
-        "Griffith": 2,
-        "La Trobe": 2,
-        "Monash": 2,
-        "QUT": 2,
-        "UNSW": 2,
-        "VU": 2,
-        "": 2,
-        "TAFE": 2,
         "ACU": 1,
         "ANU": 1,
         "Adelaide": 1,
@@ -4691,29 +4681,38 @@
         "CQU": 1,
         "CSU": 1,
         "Curtin": 1,
+        "Deakin": 2,
+        "ECU": 2,
         "Federation": 1,
         "Flinders": 1,
+        "Griffith": 2,
         "JCU": 1,
+        "La Trobe": 2,
         "Macquarie": 1,
+        "Monash": 2,
         "Murdoch": 1,
         "Newcastle": 1,
+        "QUT": 2,
         "SCU": 1,
         "Swinburne": 1,
         "Torrens": 1,
         "UC": 1,
         "UNE": 1,
+        "UNSW": 2,
         "USyd": 1,
         "UTAS": 1,
         "UWA": 1,
         "UniMelb": 1,
         "UniSA": 1,
         "UniSC": 1,
+        "VU": 2,
         "WSU": 1,
-        "Wollongong": 1
+        "Wollongong": 1,
+        "": 2,
+        "TAFE": 2
       },
       "by_tier": {
-        "Tier 4 (Student Club)": 1,
-        "Tier 3 (Careers Board)": 39,
+        "Tier 3 (Careers Board)": 40,
         "Tier 2 (Unit Coordinator)": 6,
         "Tier 5 (Other)": 4
       },
@@ -4734,9 +4733,9 @@
         "tier": "Tier 5 (Other)",
         "state": "NSW",
         "role": "State Branch",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "AASW NSW Branch",
           "uni_name": "",
@@ -4752,9 +4751,9 @@
         "tier": "Tier 5 (Other)",
         "state": "QLD",
         "role": "State Branch",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for [Uni] students - placements available",
         "personalisation": {
           "contact_name": "AASW QLD Branch",
           "uni_name": "",
@@ -4770,9 +4769,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Box Hill Institute - Community Services",
           "uni_name": "TAFE",
@@ -4788,9 +4787,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for TAFE students - placements available",
         "personalisation": {
           "contact_name": "Chisholm TAFE - Community Services",
           "uni_name": "TAFE",
@@ -4808,7 +4807,7 @@
         "role": "Senior Advisor WIL",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Emilya Umashankar",
           "uni_name": "Deakin",
@@ -4826,7 +4825,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Deakin students - placements available",
         "personalisation": {
           "contact_name": "Jess McCann",
           "uni_name": "Deakin",
@@ -4844,7 +4843,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Lauren Dinale",
           "uni_name": "Deakin",
@@ -4862,7 +4861,7 @@
         "role": "Senior Adviser WIL",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Deakin students - placements available",
         "personalisation": {
           "contact_name": "Sarah Haintz",
           "uni_name": "Deakin",
@@ -4880,7 +4879,7 @@
         "role": "WIL Manager, Faculty of Health",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Shufen Lin",
           "uni_name": "Deakin",
@@ -4898,7 +4897,7 @@
         "role": "General WIL enquiries",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Deakin students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Deakin",
@@ -4916,7 +4915,7 @@
         "role": "Placement Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Deakin",
@@ -4934,7 +4933,7 @@
         "role": "Placement Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for Deakin students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Deakin",
@@ -4952,7 +4951,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Deakin",
@@ -4970,7 +4969,7 @@
         "role": "Placement Manager",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UQ students - placements available",
         "personalisation": {
           "contact_name": "Michelle Heatley",
           "uni_name": "UQ",
@@ -4988,7 +4987,7 @@
         "role": "Placement Manager",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Michelle McEniery",
           "uni_name": "UQ",
@@ -5006,7 +5005,7 @@
         "role": "WIL Coordinator",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UQ students - placements available",
         "personalisation": {
           "contact_name": "UQ Education",
           "uni_name": "UQ",
@@ -5024,7 +5023,7 @@
         "role": "Field Education",
         "template": "T1",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring placement opportunity for your students",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UQ Social Work",
           "uni_name": "UQ",
@@ -5042,7 +5041,7 @@
         "role": "Placement Manager (Counselling Psych)",
         "template": "T1",
         "subject_variant": "B",
-        "subject_line": "WIL placement host \u2014 youth mentoring program",
+        "subject_line": "Paid mentoring role for UQ students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UQ",
@@ -5060,7 +5059,7 @@
         "role": "Assoc Head (Teaching & Learning)",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Stef Sharman",
           "uni_name": "Deakin",
@@ -5078,7 +5077,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Monash students - placements available",
         "personalisation": {
           "contact_name": "Monash Sport",
           "uni_name": "Monash",
@@ -5096,7 +5095,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Youth & Community Studies",
           "uni_name": "Monash",
@@ -5114,7 +5113,7 @@
         "role": "Program Coordinator",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for UQ students - placements available",
         "personalisation": {
           "contact_name": "UQ Criminology & Criminal Justice",
           "uni_name": "UQ",
@@ -5132,7 +5131,7 @@
         "role": "WIL Coordinator",
         "template": "T2",
         "subject_variant": "A",
-        "subject_line": "Opportunity for your students \u2014 youth mentoring role",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "UQ Sport & Exercise Science",
           "uni_name": "UQ",
@@ -5150,7 +5149,7 @@
         "role": "Education Faculty Placements",
         "template": "T2",
         "subject_variant": "B",
-        "subject_line": "Paid mentoring role \u2014 perfect for your cohort",
+        "subject_line": "Paid mentoring role for Monash students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "Monash",
@@ -5168,7 +5167,7 @@
         "role": "Student Employment",
         "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Paid Casual Youth Mentor \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "UQ",
@@ -5184,9 +5183,9 @@
         "tier": "Tier 5 (Other)",
         "state": "SA",
         "role": "Partnerships",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for [Uni] students - placements available",
         "personalisation": {
           "contact_name": "Youth Affairs Council SA",
           "uni_name": "",
@@ -5202,9 +5201,9 @@
         "tier": "Tier 5 (Other)",
         "state": "WA",
         "role": "Partnerships",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "Youth Affairs Council WA",
           "uni_name": "",
@@ -5220,9 +5219,9 @@
         "tier": "Tier 5 (Other)",
         "state": "NSW",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for TAFE students - placements available",
         "personalisation": {
           "contact_name": "TAFE NSW - Youth Work",
           "uni_name": "TAFE",
@@ -5238,9 +5237,9 @@
         "tier": "Tier 5 (Other)",
         "state": "QLD",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "TAFE QLD - Community Services",
           "uni_name": "TAFE",
@@ -5256,9 +5255,9 @@
         "tier": "Tier 5 (Other)",
         "state": "QLD",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for TAFE students - placements available",
         "personalisation": {
           "contact_name": "TAFE QLD - Youth Work",
           "uni_name": "TAFE",
@@ -5274,9 +5273,9 @@
         "tier": "Tier 5 (Other)",
         "state": "SA",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "TAFE SA - Community Services",
           "uni_name": "TAFE",
@@ -5292,9 +5291,9 @@
         "tier": "Tier 5 (Other)",
         "state": "TAS",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for TAFE students - placements available",
         "personalisation": {
           "contact_name": "TasTAFE - Community Services",
           "uni_name": "TAFE",
@@ -5310,9 +5309,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Student Engagement",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "",
@@ -5328,9 +5327,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Student Engagement",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "B",
-        "subject_line": "Become a youth mentor \u2014 paid, 1hr/week",
+        "subject_line": "Paid mentoring role for [Uni] students - placements available",
         "personalisation": {
           "contact_name": "",
           "uni_name": "",
@@ -5346,9 +5345,9 @@
         "tier": "Tier 5 (Other)",
         "state": "VIC",
         "role": "Course Coordinator",
-        "template": "T5",
+        "template": "T3",
         "subject_variant": "A",
-        "subject_line": "Youth mentoring opportunity \u2014 Blues & Greens",
+        "subject_line": "Youth mentoring opportunity for your students",
         "personalisation": {
           "contact_name": "",
           "uni_name": "TAFE",
@@ -5359,10 +5358,10 @@
     ],
     "stats": {
       "by_uni": {
-        "Deakin": 10,
-        "TAFE": 8,
-        "UQ": 8,
         "": 6,
+        "TAFE": 8,
+        "Deakin": 10,
+        "UQ": 8,
         "Monash": 3
       },
       "by_tier": {
