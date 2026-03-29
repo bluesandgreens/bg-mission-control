@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentor Pipeline | B&G Mission Control</title>
+<style>
+:root {
+  --navy: #104791;
+  --gold: #C8A951;
+  --cream: #FBF8F3;
+  --dark: #0A0E14;
+  --dark-card: #111820;
+  --dark-border: #1a2332;
+  --text: #e8e8e8;
+  --text-muted: #8899aa;
+  --green: #22c55e;
+  --red: #ef4444;
+  --orange: #f59e0b;
+  --blue: #3b82f6;
+  --purple: #a855f7;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--dark);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--navy), #0d3670);
+  padding: 24px 32px;
+  border-bottom: 2px solid var(--gold);
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header .subtitle {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Summary Cards */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.summary-card .number {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.summary-card .label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* Expandable Sections */
+.section {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.section-header:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.section-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-header .badge {
+  background: var(--navy);
+  color: var(--gold);
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.section-header .arrow {
+  transition: transform 0.3s;
+  color: var(--text-muted);
+  font-size: 20px;
+}
+
+.section.open .section-header .arrow {
+  transform: rotate(180deg);
+}
+
+.section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.section.open .section-content {
+  max-height: 2000px;
+}
+
+.section-body {
+  padding: 0 20px 20px;
+}
+
+/* Funnel */
+.funnel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.funnel-stage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.funnel-bar {
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 60px;
+  transition: width 0.5s ease;
+}
+
+.funnel-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  min-width: 140px;
+}
+
+/* Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.data-table td {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.data-table tr:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+/* Coverage Grid */
+.coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.coverage-item {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.coverage-item.covered {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.coverage-item.uncovered {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--red);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* State breakdown */
+.state-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.state-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.state-card .num {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.state-card .lbl {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Tier breakdown */
+.tier-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tier-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tier-bar .label {
+  font-size: 13px;
+  min-width: 180px;
+  color: var(--text-muted);
+}
+
+.tier-bar .bar {
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Action items */
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.action-item:last-child { border-bottom: none; }
+
+.action-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.action-dot.ready { background: var(--green); }
+.action-dot.pending { background: var(--orange); }
+.action-dot.ongoing { background: var(--blue); }
+
+.action-text { font-size: 14px; }
+.action-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: auto;
+}
+.action-tag.approval {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--orange);
+}
+
+/* Dept breakdown */
+.dept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dept-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.dept-card .num {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.dept-card .lbl {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--text-muted);
+}
+
+.back-link {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 14px;
+}
+.back-link:hover { text-decoration: underline; }
+
+.empty-state {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 12px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .header { padding: 16px; }
+  .header h1 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="../" class="back-link">← Mission Control</a>
+  <h1>🎓 Mentor Pipeline</h1>
+  <div class="subtitle">University & TAFE outreach for B&G mentor recruitment</div>
+</div>
+
+<div class="container">
+  <div id="loading" class="loading">Loading pipeline data...</div>
+  <div id="app" style="display:none;">
+    
+    <!-- Summary Cards -->
+    <div class="summary-grid" id="summary-cards"></div>
+    
+    <!-- Funnel Section -->
+    <div class="section open" id="funnel-section">
+      <div class="section-header" onclick="toggleSection('funnel-section')">
+        <h2>📊 Pipeline Funnel</h2>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <div class="funnel" id="funnel"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Breakdown Section -->
+    <div class="section" id="breakdown-section">
+      <div class="section-header" onclick="toggleSection('breakdown-section')">
+        <h2>📈 Breakdown <span class="badge" id="breakdown-badge"></span></h2>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <h3 style="font-size:14px;color:var(--text-muted);margin-bottom:8px;">By State</h3>
+          <div class="state-grid" id="state-grid"></div>
+          <h3 style="font-size:14px;color:var(--text-muted);margin:16px 0 8px;">By Tier</h3>
+          <div class="tier-bars" id="tier-bars"></div>
+          <h3 style="font-size:14px;color:var(--text-muted);margin:16px 0 8px;">By Department</h3>
+          <div class="dept-grid" id="dept-grid"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- This Week Section -->
+    <div class="section" id="week-section">
+      <div class="section-header" onclick="toggleSection('week-section')">
+        <h2>📬 This Week <span class="badge" id="week-badge"></span></h2>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <h3 style="font-size:14px;color:var(--gold);margin-bottom:12px;">Ready to Send</h3>
+          <div id="to-send"></div>
+          <h3 style="font-size:14px;color:var(--orange);margin:16px 0 12px;">Needs Follow-up</h3>
+          <div id="needs-followup"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Response Feed -->
+    <div class="section" id="response-section">
+      <div class="section-header" onclick="toggleSection('response-section')">
+        <h2>💬 Response Feed <span class="badge" id="response-badge"></span></h2>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="section-body" id="response-feed"></div>
+      </div>
+    </div>
+    
+    <!-- University Coverage -->
+    <div class="section" id="coverage-section">
+      <div class="section-header" onclick="toggleSection('coverage-section')">
+        <h2>🗺️ University Coverage <span class="badge" id="coverage-badge"></span></h2>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <div class="coverage-grid" id="coverage-grid"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Next Actions -->
+    <div class="section open" id="actions-section">
+      <div class="section-header" onclick="toggleSection('actions-section')">
+        <h2>🎯 Next Actions</h2>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="section-content">
+        <div class="section-body" id="next-actions"></div>
+      </div>
+    </div>
+    
+    <div style="text-align:center;padding:20px;color:var(--text-muted);font-size:12px;" id="updated-at"></div>
+  </div>
+</div>
+
+<script>
+function toggleSection(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+async function loadData() {
+  try {
+    const resp = await fetch('../data/mentor-pipeline.json');
+    const data = await resp.json();
+    render(data);
+  } catch (e) {
+    document.getElementById('loading').textContent = 'Failed to load data: ' + e.message;
+  }
+}
+
+function render(data) {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  
+  const s = data.summary;
+  const f = data.funnel;
+  
+  // Summary cards
+  const cards = [
+    { num: s.total_contacts, label: 'Total Contacts' },
+    { num: s.universities_covered, label: 'Unis Covered' },
+    { num: f.not_contacted, label: 'Not Contacted' },
+    { num: f.emailed, label: 'Emailed' },
+    { num: f.responded, label: 'Responded' },
+    { num: f.meeting_booked, label: 'Meetings Booked' },
+    { num: f.partner, label: 'Partners' }
+  ];
+  
+  document.getElementById('summary-cards').innerHTML = cards.map(c =>
+    `<div class="summary-card"><div class="number">${c.num}</div><div class="label">${c.label}</div></div>`
+  ).join('');
+  
+  // Funnel
+  const total = Math.max(s.total_contacts, 1);
+  const stages = [
+    { label: 'Not Contacted', count: f.not_contacted, color: 'var(--text-muted)' },
+    { label: 'Emailed', count: f.emailed, color: 'var(--blue)' },
+    { label: 'Responded', count: f.responded, color: 'var(--green)' },
+    { label: 'Meeting Booked', count: f.meeting_booked, color: 'var(--purple)' },
+    { label: 'Partner', count: f.partner, color: 'var(--gold)' },
+    { label: 'No Response', count: f.no_response, color: 'var(--red)' },
+  ];
+  
+  document.getElementById('funnel').innerHTML = stages.map(st => {
+    const pct = Math.max((st.count / total) * 100, 3);
+    return `<div class="funnel-stage">
+      <span class="funnel-label">${st.label}</span>
+      <div class="funnel-bar" style="width:${pct}%;background:${st.color}20;color:${st.color};border:1px solid ${st.color}40;">${st.count}</div>
+    </div>`;
+  }).join('');
+  
+  // Breakdown badge
+  document.getElementById('breakdown-badge').textContent = `${s.total_contacts} contacts`;
+  
+  // State grid
+  const stateOrder = ['VIC','NSW','QLD','WA','SA','ACT','TAS'];
+  document.getElementById('state-grid').innerHTML = stateOrder.map(st =>
+    `<div class="state-card"><div class="num">${s.by_state[st]||0}</div><div class="lbl">${st}</div></div>`
+  ).join('');
+  
+  // Tier bars
+  const tierColors = { 'Tier 1 (WIL Office)': 'var(--red)', 'Tier 2 (Unit Coordinator)': 'var(--orange)', 'Tier 3 (Careers Board)': 'var(--gold)', 'Tier 4 (Student Club)': 'var(--blue)', 'Tier 5 (Other)': 'var(--text-muted)' };
+  document.getElementById('tier-bars').innerHTML = Object.entries(s.by_tier).sort().map(([tier, count]) => {
+    const pct = Math.max((count / total) * 100, 5);
+    const color = tierColors[tier] || 'var(--text-muted)';
+    return `<div class="tier-bar"><span class="label">${tier}</span><div class="bar" style="width:${pct}%;background:${color}20;color:${color};border:1px solid ${color}40;">${count}</div></div>`;
+  }).join('');
+  
+  // Dept grid
+  document.getElementById('dept-grid').innerHTML = Object.entries(s.by_dept).sort((a,b) => b[1]-a[1]).map(([dept, count]) =>
+    `<div class="dept-card"><div class="num">${count}</div><div class="lbl">${dept}</div></div>`
+  ).join('');
+  
+  // This week
+  const toSend = data.this_week?.to_send || [];
+  const followup = data.this_week?.needs_followup || [];
+  document.getElementById('week-badge').textContent = `${toSend.length} to send, ${followup.length} follow-up`;
+  
+  if (toSend.length > 0) {
+    document.getElementById('to-send').innerHTML = `<table class="data-table"><thead><tr><th>Name</th><th>Uni</th><th>Tier</th><th>Email</th></tr></thead><tbody>${
+      toSend.map(c => `<tr><td>${c.name}</td><td>${c.uni}</td><td>${c.tier}</td><td style="color:var(--text-muted)">${c.email}</td></tr>`).join('')
+    }</tbody></table>`;
+  } else {
+    document.getElementById('to-send').innerHTML = '<div class="empty-state">No contacts queued for this week</div>';
+  }
+  
+  if (followup.length > 0) {
+    document.getElementById('needs-followup').innerHTML = `<table class="data-table"><thead><tr><th>Name</th><th>Uni</th><th>Emailed</th><th>Email</th></tr></thead><tbody>${
+      followup.map(c => `<tr><td>${c.name}</td><td>${c.uni}</td><td>${c.date_emailed||'-'}</td><td style="color:var(--text-muted)">${c.email}</td></tr>`).join('')
+    }</tbody></table>`;
+  } else {
+    document.getElementById('needs-followup').innerHTML = '<div class="empty-state">No follow-ups needed yet</div>';
+  }
+  
+  // Response feed
+  const responses = data.responses || [];
+  document.getElementById('response-badge').textContent = `${responses.length} replies`;
+  if (responses.length > 0) {
+    document.getElementById('response-feed').innerHTML = `<table class="data-table"><thead><tr><th>Name</th><th>Uni</th><th>Status</th><th>Response</th></tr></thead><tbody>${
+      responses.map(c => `<tr><td>${c.name}</td><td>${c.uni}</td><td>${c.status}</td><td>${c.response||'-'}</td></tr>`).join('')
+    }</tbody></table>`;
+  } else {
+    document.getElementById('response-feed').innerHTML = '<div class="empty-state">No responses yet - emails haven\'t been sent</div>';
+  }
+  
+  // Coverage
+  const covered = new Set(data.coverage?.covered || []);
+  const allUnis = [...(data.coverage?.covered || []), ...(data.coverage?.uncovered || [])].sort();
+  document.getElementById('coverage-badge').textContent = `${covered.size}/${allUnis.length} unis`;
+  document.getElementById('coverage-grid').innerHTML = allUnis.map(u => {
+    const isCovered = covered.has(u);
+    const count = data.coverage?.by_uni?.[u] || 0;
+    return `<div class="coverage-item ${isCovered ? 'covered' : 'uncovered'}">${u}${isCovered ? ` (${count})` : ''}</div>`;
+  }).join('');
+  
+  // Next actions
+  const actions = data.next_actions || [];
+  document.getElementById('next-actions').innerHTML = actions.map(a =>
+    `<div class="action-item">
+      <div class="action-dot ${a.status}"></div>
+      <span class="action-text">${a.action}</span>
+      ${a.needs_approval ? '<span class="action-tag approval">⚠️ Needs Approval</span>' : ''}
+    </div>`
+  ).join('');
+  
+  // Updated at
+  document.getElementById('updated-at').textContent = `Last updated: ${new Date(data.generated_at).toLocaleString('en-AU')}`;
+}
+
+loadData();
+</script>
+</body>
+</html>

@@ -1,68 +1,80 @@
 {
-  "generated": "2026-03-29T12:00:40.937791",
-  "active_families": 60,
-  "active_total": 68,
+  "generated": "2026-03-29T18:00:03.944169",
+  "active_families": 61,
+  "active_total": 69,
   "paused": 8,
-  "mrr": 41410.76,
-  "cash_7d": 34698.52,
+  "mrr": 41926.03,
+  "cash_7d": 34817.52,
   "balance_available": 24407.81,
-  "balance_pending": 10911.43,
-  "balance_total": 35319.24,
-  "revenue_at_risk": 820.0,
-  "failed_past_due": 4,
-  "meta_spend_mtd": 5328.55,
-  "booked_calls_mtd": 195,
-  "cpbc_mtd": 27.33,
+  "balance_pending": 11028.11,
+  "balance_total": 35435.92,
+  "revenue_at_risk": 701.0,
+  "failed_past_due": 3,
+  "meta_spend_mtd": 5355.42,
+  "booked_calls_mtd": 196,
+  "cpbc_mtd": 27.32,
   "xero_receivable": 14708.04,
   "xero_payable": 25609.93,
   "ndis_total": 1718.0,
-  "forecast_4wk": 20820.5,
+  "forecast_4wk": 20939.5,
+  "lead_to_booked": {
+    "leads_7d": 127,
+    "booked_7d": 14,
+    "rate_7d": 11.0,
+    "leads_mtd": 759,
+    "booked_mtd": 91,
+    "rate_mtd": 12.0,
+    "leads_prev_week": 205,
+    "booked_prev_week": 24,
+    "rate_prev_week": 11.7,
+    "trend": "down"
+  },
   "hormozi": {
     "new_subs_per_month": 30,
     "steady_state_families": 100,
-    "current_collecting": 60,
-    "avg_rev_per_sub": 690.18,
-    "cac": 27.33,
+    "current_collecting": 61,
+    "avg_rev_per_sub": 687.31,
+    "cac": 27.32,
     "ltv_current": 2041.0,
     "roic_multiple": 74.7,
     "payback_days": 1.0,
-    "retention_lever_1mo_annual": 496930.0,
+    "retention_lever_1mo_annual": 503111.0,
     "churn_scenarios": [
       {
         "label": "Current",
         "emoji": "\ud83d\udd34",
         "churn_rate": 0.3,
         "steady_state_families": 100,
-        "ltv": 2301.0,
+        "ltv": 2291.0,
         "lifetime_months": 3.3,
-        "mrr_ceiling": 69018.0
+        "mrr_ceiling": 68731.0
       },
       {
         "label": "Target",
         "emoji": "\ud83d\udfe1",
         "churn_rate": 0.2,
         "steady_state_families": 150,
-        "ltv": 3451.0,
+        "ltv": 3437.0,
         "lifetime_months": 5.0,
-        "mrr_ceiling": 103527.0
+        "mrr_ceiling": 103096.0
       },
       {
         "label": "Dream",
         "emoji": "\ud83d\udfe2",
         "churn_rate": 0.15,
         "steady_state_families": 200,
-        "ltv": 4601.0,
+        "ltv": 4582.0,
         "lifetime_months": 6.7,
-        "mrr_ceiling": 138036.0
+        "mrr_ceiling": 137462.0
       },
       {
         "label": "Elite",
         "emoji": "\ud83d\udc51",
         "churn_rate": 0.1,
         "steady_state_families": 300,
-        "ltv": 6902.0,
+        "ltv": 6873.0,
         "lifetime_months": 10.0,
-        "mrr_ceiling": 207054.0
+        "mrr_ceiling": 206193.0
       }
     ]
   }

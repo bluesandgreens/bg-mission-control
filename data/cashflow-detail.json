@@ -1,9 +1,9 @@
 {
-  "generated": "2026-03-29T12:00:40.937791",
+  "generated": "2026-03-29T18:00:03.944169",
   "weeks": [
     {
       "label": "Week 1 (Mar 29 - Apr 04)",
-      "total": 5283.0,
+      "total": 5402.0,
       "days": [
         {
           "date": "2026-03-30",
@@ -220,8 +220,8 @@
         {
           "date": "2026-04-03",
           "day": "Fri",
-          "charges": 2,
-          "amount": 354.0,
+          "charges": 3,
+          "amount": 473.0,
           "subscribers": [
             {
               "name": "Whitney Trigwell",
@@ -242,6 +242,16 @@
               "customer_id": "cus_SmRsNQ5U6rFpJu",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TA8qz2mA5zLxyK8SmFCfETb",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/141769433122"
+            },
+            {
+              "name": "Luisa Peters",
+              "email": "midworldtv@yahoo.com.au",
+              "amount": 119.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1SpfOO2mA5zLxyK8lzQDKrks",
+              "customer_id": "cus_Tmte86JNLCfNSm",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SpfOO2mA5zLxyK8lzQDKrks",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/145164842544"
             }
           ]
         },
