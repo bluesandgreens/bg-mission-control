@@ -358,13 +358,76 @@ a:hover { text-decoration: underline; }
 .day-card.status-sent { border-color: rgba(46,204,113,0.4); }
 
 @media (max-width: 600px) {
-  body { padding: 12px; }
+  body { padding: 10px; }
   .header h1 { font-size: 1.3em; }
-  .summary-row { grid-template-columns: repeat(2, 1fr); }
-  .contact-table { font-size: 0.75em; }
-  .contact-table th, .contact-table td { padding: 5px 6px; }
-  .template-actions { flex-direction: column; }
-  .btn { width: 100%; justify-content: center; }
+  .header { padding: 20px 0 15px; }
+  .summary-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .summary-card { padding: 12px 8px; }
+  .summary-card .num { font-size: 1.5em; }
+
+  /* Fix textarea mobile interaction */
+  .template-editor {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    min-height: 200px;
+    -webkit-appearance: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+  }
+  .template-editor.subject-editor {
+    min-height: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  /* Large touch targets for buttons (min 44px) */
+  .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+    font-size: 0.95em;
+    padding: 12px 18px;
+  }
+  .template-actions {
+    flex-direction: column;
+    gap: 8px;
+    position: sticky;
+    bottom: 0;
+    background: var(--bg-card);
+    padding: 12px 0 4px;
+    margin: 0 -18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-top: 1px solid var(--border);
+    z-index: 10;
+  }
+
+  /* Template cards stack vertically & no horizontal scroll */
+  .template-card { margin-bottom: 10px; }
+  .template-card-header { padding: 14px 14px; min-height: 48px; }
+  .template-card-body { padding: 0 14px 14px; }
+  .template-card.open .template-card-body { padding-top: 12px; }
+
+  /* Day cards touch-friendly */
+  .day-card-header { padding: 14px; min-height: 48px; }
+  .day-card-body { padding: 0 14px 14px; }
+  .day-card.open .day-card-body { padding-top: 12px; }
+
+  /* Contact table: prevent horizontal overflow */
+  .contact-table { font-size: 0.72em; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .contact-table th, .contact-table td { padding: 5px 6px; white-space: nowrap; }
+
+  /* Expandable toggle touch target */
+  .preview-toggle { min-height: 44px; line-height: 44px; display: inline-block; }
+
+  /* Badge readable on mobile */
+  .badge { font-size: 0.68em; padding: 4px 8px; }
+  .day-count { font-size: 0.75em; padding: 4px 10px; }
+
+  /* Section titles */
+  .section-title { font-size: 1.05em; }
+
+  /* Subject row stacking */
+  .subject-row { flex-direction: column; gap: 6px; }
 }
 </style>
 </head>
