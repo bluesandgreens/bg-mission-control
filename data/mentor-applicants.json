@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30T09:02:49Z",
+  "updated": "2026-03-30T11:12:20Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -816,11 +816,11 @@
     },
     {
       "id": "204324608610",
-      "name": "Ty Haisman",
+      "name": "Ty haisman",
       "email": "tyhaisman21@gmail.com",
       "phone": null,
       "age": "26",
-      "source": "SEEK",
+      "source": "Facebook / Instagram Ad",
       "stage": "applied",
       "hs_stage": "Framer Form Submission",
       "has_laptop": "Yes",
@@ -3616,7 +3616,57 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T09:58:07.792Z"
+      "created": "2026-01-21T09:58:07.792Z",
+      "circle": {
+        "found": true,
+        "joined": "2026-03-13T03:40:47.400Z",
+        "last_seen": "2026-03-30T08:41:05.000Z",
+        "tags": [],
+        "posts": 0,
+        "progress": 10,
+        "steps": [
+          {
+            "name": "\ud83d\udc9c Intro Lets Go",
+            "done": true
+          },
+          {
+            "name": "\ud83c\udf0f Phase 1: Who We Are",
+            "done": false
+          },
+          {
+            "name": "\ud83d\ude48 Phase 2: Understanding Teens",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udcaa Phase 3: The Weapons",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udce3 Phase 4: Session Mastery",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udd30 Phase 5: Member Life",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udc40 Phase 6: How Mentors Win",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udc8c Phase 7: Account Setup",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udc7b Phase 8: The Mentor",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udcdd Next Steps",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "194929575944",
@@ -3723,17 +3773,7 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T21:43:25.445Z",
-      "circle": {
-        "found": false,
-        "progress": 0,
-        "steps": [
-          {
-            "name": "Joined Circle Community",
-            "done": false
-          }
-        ]
-      }
+      "created": "2026-01-21T21:43:25.445Z"
     },
     {
       "id": "195883508239",
@@ -3762,7 +3802,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-25T04:45:15.844Z"
+      "created": "2026-01-25T04:45:15.844Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "196352510864",
@@ -4326,6 +4376,64 @@
       "norri_conversation": null,
       "norri_good_bloke": null,
       "created": "2026-03-30T08:06:07.874Z"
+    },
+    {
+      "id": "212459793712",
+      "name": "Dr Joshua Karras JP",
+      "email": "joshuakarras@gmail.com",
+      "phone": null,
+      "age": "32",
+      "source": "Facebook / Instagram Ad",
+      "stage": "rejected",
+      "hs_stage": "Disqualified",
+      "has_laptop": "Yes",
+      "hours_week": null,
+      "three_month_commit": "Yes",
+      "why_mentor": null,
+      "application_message": null,
+      "location": null,
+      "tg_score": null,
+      "tg_results": null,
+      "tg_link_sent": false,
+      "tg_done": false,
+      "brodie_notes": "",
+      "referred_by": "",
+      "norri_notes": "",
+      "norri_assigned_to": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "created": "2026-03-30T09:46:39.437Z"
+    },
+    {
+      "id": "212468492435",
+      "name": "Zac Peters",
+      "email": "zacpeters01@gmail.com",
+      "phone": null,
+      "age": "33",
+      "source": "Facebook / Instagram Ad",
+      "stage": "rejected",
+      "hs_stage": "Disqualified",
+      "has_laptop": "Yes",
+      "hours_week": null,
+      "three_month_commit": "Yes",
+      "why_mentor": null,
+      "application_message": null,
+      "location": null,
+      "tg_score": null,
+      "tg_results": null,
+      "tg_link_sent": false,
+      "tg_done": false,
+      "brodie_notes": "",
+      "referred_by": "",
+      "norri_notes": "",
+      "norri_assigned_to": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "created": "2026-03-30T10:38:19.858Z"
     }
   ]
 }
