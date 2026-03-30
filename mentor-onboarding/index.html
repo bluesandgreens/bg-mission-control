@@ -446,6 +446,7 @@ const STAGE_CHECKLISTS = {
     'Overall score checked',
     'Personality profile reviewed',
     'Red flags assessed (anti-cheating)',
+    'Score entered (80+ pass, 60-79 flag, <60 fail)',
     'Decision: pass / flag / fail',
   ],
   'screening': [
@@ -458,15 +459,17 @@ const STAGE_CHECKLISTS = {
   'interview': [
     'Group interview date confirmed',
     'Candidate attended',
-    'Participation scored (rubric)',
-    'Rapport score',
-    'Empathy score',
-    'Self-awareness score',
-    'Mission alignment score',
+    'Rapport score (1-5)',
+    'Empathy score (1-5)',
+    'Vulnerability score (1-5)',
+    'Presence score (1-5)',
+    'Self-awareness score (1-5)',
+    'Mission alignment score (1-5)',
   ],
   'billy': [
-    'Billy 1:1 session completed',
-    'Billy feedback entered',
+    'Billy 1:1 mock session completed',
+    'Billy score entered (/20)',
+    'Billy feedback notes entered',
     'Final decision: onboard / reject',
   ],
   'onboarding': [
@@ -505,6 +508,7 @@ let mentors = [];
 let stageAssignments = {}; // mentorId -> stageId
 let mentorNotes = {}; // mentorId -> [{author, text, date}]
 let mentorChecks = {}; // mentorId -> {stageId: {checkIdx: true}}
+let mentorScores = {}; // mentorId -> {tg: number, billy: number, interview: number}
 
 function loadLocal() {
   try {
@@ -512,12 +516,13 @@ function loadLocal() {
     stageAssignments = d.stageAssignments || {};
     mentorNotes = d.mentorNotes || {};
     mentorChecks = d.mentorChecks || {};
+    mentorScores = d.mentorScores || {};
   } catch { /* ignore */ }
 }
 
 function saveLocal() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({
-    stageAssignments, mentorNotes, mentorChecks
+    stageAssignments, mentorNotes, mentorChecks, mentorScores
   }));
 }
 
@@ -620,6 +625,14 @@ function renderCard(m, stageId) {
   if (m.three_month_commit === 'No') flags.push(`<span class="card-flag flag-warn">No commit</span>`);
   if (m.has_laptop === 'No') flags.push(`<span class="card-flag flag-warn">No laptop</span>`);
   if (m.referred_by) flags.push(`<span class="card-flag flag-ok">Referred</span>`);
+  if (mentorScores[m.id]?.tg) {
+    const s = mentorScores[m.id].tg;
+    const cls = s >= 80 ? 'flag-ok' : s >= 60 ? 'flag-warn' : 'flag-stale';
+    flags.push(`<span class="card-flag ${cls}">TG: ${s}</span>`);
+  }
+  if (mentorScores[m.id]?.billy) {
+    flags.push(`<span class="card-flag flag-ok">Billy: ${mentorScores[m.id].billy}/20</span>`);
+  }
   
   return `
     <div class="card ${isStale ? 'stale' : ''}" 
@@ -687,6 +700,39 @@ function openModal(mentorId) {
             <span>${esc(item)}</span>
           </div>
         `).join('')}
+      </div>
+      ` : ''}
+      
+      <!-- TG Score (only for tg-review) -->
+      ${stage === 'tg-review' ? `
+      <div class="modal-section">
+        <h3>🧪 TestGorilla Score</h3>
+        <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px;">
+          <input type="number" id="tgScoreInput" min="0" max="100" placeholder="Score (0-100)" 
+            value="${(mentorScores[m.id] && mentorScores[m.id].tg) || ''}"
+            style="background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--cream);font-size:0.9em;width:140px;outline:none;">
+          <button class="btn btn-primary" onclick="saveTgScore('${m.id}')">Save Score</button>
+          <span id="tgScoreLabel" style="font-size:0.82em;font-weight:700;${
+            mentorScores[m.id]?.tg >= 80 ? 'color:var(--green)' : mentorScores[m.id]?.tg >= 60 ? 'color:var(--orange)' : mentorScores[m.id]?.tg ? 'color:var(--red)' : 'color:var(--cream-dim)'
+          }">${
+            mentorScores[m.id]?.tg >= 80 ? '✅ PASS' : mentorScores[m.id]?.tg >= 60 ? '⚠️ FLAG' : mentorScores[m.id]?.tg ? '❌ FAIL' : ''
+          }</span>
+        </div>
+        <div style="font-size:0.78em;color:var(--cream-dim);">80+ = pass · 60-79 = flag for discussion · Below 60 = fail</div>
+      </div>
+      ` : ''}
+      
+      <!-- Billy Score (only for billy stage) -->
+      ${stage === 'billy' ? `
+      <div class="modal-section">
+        <h3>🎯 Billy's 1:1 Score</h3>
+        <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px;">
+          <input type="number" id="billyScoreInput" min="0" max="20" placeholder="Score (0-20)" 
+            value="${(mentorScores[m.id] && mentorScores[m.id].billy) || ''}"
+            style="background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--cream);font-size:0.9em;width:140px;outline:none;">
+          <button class="btn btn-primary" onclick="saveBillyScore('${m.id}')">Save Score</button>
+        </div>
+        <div style="font-size:0.78em;color:var(--cream-dim);">Did I want to keep talking? · Did they ask or tell? · Did they handle the awkward? · Would I pick this person? (each 1-5)</div>
       </div>
       ` : ''}
       
@@ -769,6 +815,26 @@ function addNote(mentorId) {
   mentorNotes[mentorId].push({ author, text, date: new Date().toISOString() });
   saveLocal();
   showToast('Note added');
+  openModal(mentorId);
+}
+
+function saveTgScore(mentorId) {
+  const val = parseInt(document.getElementById('tgScoreInput').value);
+  if (isNaN(val) || val < 0 || val > 100) { showToast('Enter a score 0-100'); return; }
+  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
+  mentorScores[mentorId].tg = val;
+  saveLocal();
+  showToast(`TG score saved: ${val}${val >= 80 ? ' ✅' : val >= 60 ? ' ⚠️' : ' ❌'}`);
+  openModal(mentorId);
+}
+
+function saveBillyScore(mentorId) {
+  const val = parseInt(document.getElementById('billyScoreInput').value);
+  if (isNaN(val) || val < 0 || val > 20) { showToast('Enter a score 0-20'); return; }
+  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
+  mentorScores[mentorId].billy = val;
+  saveLocal();
+  showToast(`Billy score saved: ${val}/20`);
   openModal(mentorId);
 }
 
