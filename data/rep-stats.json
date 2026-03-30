@@ -1,76 +1,47 @@
 {
-  "last_updated": "2026-03-29",
+  "last_updated": "2026-03-30",
   "reps": [
     {
       "rep": "Anthony",
       "status": "active",
-      "avg_score": 5.96,
-      "close_rate": 40.0,
+      "avg_score": 6.1,
+      "close_rate": 50.0,
       "e_score_avg": 2.2,
       "i_score_avg": 3.0,
-      "s_score_avg": 4.2,
-      "l_score_avg": 2.6,
-      "opening_avg": 3.6,
-      "oh_avg": 3.2,
+      "s_score_avg": 4.5,
+      "l_score_avg": 2.5,
+      "opening_avg": 4.0,
+      "oh_avg": 2.8,
       "total_calls": 5,
       "confirmed_closes": 2,
       "confirmed_w1": 1,
-      "improvement_area_short": "E (Emotional Labelling) avg 2.2/5. Secondary alert: OH dropping (4→2 last 2 calls — Sophie Cuzzy + Beck Reside both BAMFAM caved). Isolation drill needed before next call.",
+      "week_calls": 4,
+      "week_closes": 2,
+      "week_close_rate": 50.0,
+      "improvement_area_short": "E (Emotional Labelling) avg 2.2/5. OH dropped to 2.8 (BAMFAM cave x2: Sophie Cuzzy, Beck Reside). Isolation drill needed.",
       "p3_flag": false,
-      "week_summary": "5/5 prediction accuracy. Judith Lacey Active Sessions (W1 Mar 29). Leanne Black Deposit Paid. Both closes confirmed. Sophie Cuzzy + Beck Reside = no close (predicted, confirmed)."
+      "week_summary": "2/4 closes (50%). Judith Lacey (Active Sessions, W1 confirmed). Leanne Black (Deposit Paid). Sophie Cuzzy + Beck Reside = no close (predicted, confirmed). OH regression is emerging as second concern alongside E."
     },
     {
       "rep": "Rye",
       "status": "active_coaching",
-      "avg_score": 5.17,
+      "avg_score": 5.5,
       "close_rate": 0.0,
-      "e_score_avg": 1.67,
+      "e_score_avg": 2.0,
       "i_score_avg": 2.0,
-      "s_score_avg": 3.33,
+      "s_score_avg": 3.5,
       "l_score_avg": 3.0,
       "opening_avg": 2.0,
-      "oh_avg": 2.67,
+      "oh_avg": 2.5,
       "total_calls": 3,
       "confirmed_closes": 0,
       "confirmed_w1": 0,
-      "improvement_area_short": "URGENT: Jo Kelly re-engage Mar 30 (Day 7 window). Price card memorise. Fear bomb cycling drill before next DC.",
+      "week_calls": 2,
+      "week_closes": 0,
+      "week_close_rate": 0.0,
+      "improvement_area_short": "URGENT: Jo Kelly re-engage (Day 7, window closing). Price card must be memorised. Fear bomb cycling drill before next DC.",
       "p3_flag": true,
-      "week_summary": "0/3 closes confirmed. Jo Kelly PREDICTION MISMATCH (Day 6, still Booked Call). Re-engage tomorrow before window closes. Bianca JESS = no close (prediction match)."
-    },
-    {
-      "rep": "Harry",
-      "status": "exited_dc",
-      "avg_score": 5.5,
-      "close_rate": 100.0,
-      "e_score_avg": 2.0,
-      "i_score_avg": 3.0,
-      "s_score_avg": 3.0,
-      "l_score_avg": 3.0,
-      "opening_avg": 3.0,
-      "oh_avg": 3.0,
-      "total_calls": 1,
-      "confirmed_closes": 1,
-      "improvement_area_short": "N/A — exited DC role. Reference only.",
-      "p3_flag": false,
-      "week_summary": "Reference rep only."
-    },
-    {
-      "rep": "Bailey",
-      "status": "active_commission",
-      "avg_score": 3.37,
-      "close_rate": 33.3,
-      "effective_close_rate": 0.0,
-      "e_score_avg": 1.0,
-      "i_score_avg": 1.0,
-      "s_score_avg": 2.0,
-      "l_score_avg": 2.33,
-      "opening_avg": 2.0,
-      "oh_avg": 2.67,
-      "total_calls": 3,
-      "confirmed_closes": 0,
-      "improvement_area_short": "CRITICAL: I=1.0, E=1.0. Jasmine Lund FALSE POSITIVE confirmed (Call Objection). Lucky Close Protocol not triggered — process gap. No transcripts submitted (0/3).",
-      "p3_flag": true,
-      "week_summary": "Jasmine Lund Call Objection confirmed. Lucky Close Protocol not followed. No new calls this week. Transcript blocking all further coaching."
+      "week_summary": "0/2 closes confirmed. Jo Kelly PREDICTION MISMATCH \u2014 score 6.8, predicted Near Close, still Booked Call Day 7. Re-engage not completed today (Mar 30). Bianca JESS = no close (prediction match). No DCs today \u2014 outbound lead touching only."
     },
     {
       "rep": "Tom",
@@ -86,59 +57,41 @@
       "total_calls": 1,
       "confirmed_closes": 1,
       "confirmed_w1": 0,
-      "improvement_area_short": "I=3 (fear bomb pivot) is the single gap. Fix it, ceiling jumps to 9+. Emily Brady (Booked Call) in pipeline for call 2.",
+      "week_calls": 1,
+      "week_closes": 1,
+      "week_close_rate": 100.0,
+      "improvement_area_short": "P3 Deepening (I=3) \u2014 fear bomb pivot is the single gap. Everything else above rep average. Emily Brady (Booked Call) = potential call 2.",
       "p3_flag": false,
-      "week_summary": "Bec Richardson confirmed Deposit Paid. 7.5/10, Day 10 on the job. Emily Brady added to pipeline (Booked Call, Mar 29). Fear anchor drill before call 2."
-    }
-  ],
-  "top_objections": [
-    {
-      "rank": 1,
-      "category": "price_affordability",
-      "count": 5,
-      "avg_handling_grade": 1.8,
-      "note": "CONFIRMED this week: Every close had confident price delivery. Every miss had hesitant/absent delivery. Price card = most high-leverage skill to train NOW."
+      "week_summary": "1/1 close (Bec Richardson, Deposit Paid confirmed). Dentist metaphor = gold standard P5. 10 days in. Fear anchor drill before call 2."
     },
     {
-      "rank": 2,
-      "category": "partner_coparent",
-      "count": 3,
-      "avg_handling_grade": 3.0,
-      "note": "Judith Lacey (grade 4, isolation) = Active Sessions. Sophie Cuzzy (grade 2, BAMFAM) = no close. The $111 de-risk frame was not used once this week. It's free points."
-    },
-    {
-      "rank": 3,
-      "category": "son_buyin",
-      "count": 2,
-      "avg_handling_grade": 4.0,
-      "note": "Tom's dentist metaphor (grade 5, Bec Richardson) = Deposit Paid confirmed. Pre-emptive handling is the standard to teach."
+      "rep": "Bailey",
+      "status": "active_commission",
+      "avg_score": 3.37,
+      "close_rate": 0.0,
+      "e_score_avg": 1.0,
+      "i_score_avg": 1.0,
+      "s_score_avg": 2.0,
+      "l_score_avg": 2.33,
+      "opening_avg": 2.0,
+      "oh_avg": 2.67,
+      "total_calls": 3,
+      "confirmed_closes": 0,
+      "confirmed_w1": 0,
+      "week_calls": 0,
+      "week_closes": 0,
+      "week_close_rate": 0.0,
+      "improvement_area_short": "CRITICAL: I=1.0, E=1.0 across all calls. Jasmine Lund = Call Objection (false positive confirmed). No transcript submitted \u2014 blocking coaching. Lucky Close Protocol not followed.",
+      "p3_flag": true,
+      "week_summary": "No new calls this week. Jasmine Lund Call Objection confirmed (false positive). Lucky Close Protocol gap = preventable. No transcript submission = no new coaching possible."
     }
   ],
-  "flags": {
-    "prediction_mismatches": [
-      {
-        "call": "Jo Kelly — Rye — Mar 23",
-        "score": 6.8,
-        "predicted": "Near Close",
-        "actual": "Booked Call (Day 6)",
-        "reason": "Uncycled abandonment bomb — Tyson 'why did dad leave me' moment not cycled. Anchor incomplete.",
-        "action_required": "Rye to call Mar 30. Re-anchor only."
-      }
-    ],
-    "false_positives": [
-      {
-        "call": "Jasmine Lund — Bailey — Mar 21",
-        "score": 3.7,
-        "predicted": "Lucky Close / reversal risk",
-        "actual": "Call Objection confirmed",
-        "reason": "I=1, E=1. Closed without emotional anchoring. Reversal in 7 days exactly as predicted.",
-        "action_required": "Brodie re-engage. Lucky Close Protocol gap — add to Brodie's activation checklist."
-      }
-    ],
-    "process_gaps": [
-      "Lucky Close Protocol not triggered for Jasmine Lund (Bailey, Mar 21). Brodie must add to checklist.",
-      "Bailey transcript submission: 0/3. Coaching is blind without recordings.",
-      "Bec Richardson W1 not yet scheduled in HubSpot despite Deposit Paid — Brodie to follow up."
-    ]
+  "week_total": {
+    "dcs": 7,
+    "closes": 3,
+    "close_rate": 42.9,
+    "top_objection": "price_affordability",
+    "score_to_close_threshold": "6.5+",
+    "price_confidence_correlation": "confirmed \u2014 all 3 closes had confident price delivery, all 4 misses had hesitant/absent/caved"
   }
 }

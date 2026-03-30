@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-28",
+  "last_updated": "2026-03-30",
   "total_calls_analysed": 19,
   "weekly_reset_date": "2026-03-28",
   "categories": {
@@ -356,5 +356,14 @@
       "one_drill": "FEAR ANCHOR DRILL: When mum reveals worst fear \u2014 STOP. Repeat her exact words back. Say: 'Tell me more about that.' Stay for 2 full cycles before moving to Discovery close. Practise on Bec Richardson transcript: find the fear bomb, speak your cycling response out loud 3\u00d7.",
       "contact_hubspot_id": ""
     }
-  ]
+  ],
+  "daily_notes": {
+    "2026-03-30": {
+      "dcs_today": 0,
+      "note": "No DCs today. Rye ran outbound lead touches only. Jo Kelly re-engage not completed (Day 7 window). Weekly summary sent to Harry + Rye.",
+      "jo_kelly_status": "Day 7 - URGENT - re-engage window closing",
+      "weekly_close_rate": "43% (3/7)",
+      "key_insight": "Price confidence = close. 3/3 closes had confident price delivery. 4/4 misses had hesitant/absent/caved price delivery."
+    }
+  }
 }
