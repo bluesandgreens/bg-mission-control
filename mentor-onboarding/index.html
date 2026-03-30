@@ -1401,28 +1401,20 @@ function addSessionNote(mentorId, dateStr) {
 
 function openGroupInterviewView() {
   const interviewMentors = mentors.filter(m => inferStage(m) === 'interview');
+  const selectedIds = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
+  const liveSession = sessionStorage.getItem('gi-live') === 'true';
   
-  // Group by date
-  const byDate = {};
-  const noDate = [];
-  interviewMentors.forEach(m => {
-    const d = mentorInterviewDate[m.id];
-    if (d) {
-      if (!byDate[d]) byDate[d] = [];
-      byDate[d].push(m);
-    } else {
-      noDate.push(m);
-    }
-  });
-  const sortedDates = Object.keys(byDate).sort();
-  
-  const SCORE_DIMS = ['Good Bloke','Energy','Emotional IQ','Intelligence'];
+  if (liveSession) {
+    // If a live session is running, go straight to scoring
+    openLiveSessionView();
+    return;
+  }
   
   document.getElementById('modal').innerHTML = `
     <div class="modal-header">
       <div>
-        <h2>🤝 Group Interview Hub</h2>
-        <div style="font-size:0.85em;color:var(--cream-dim);margin-top:4px;">${interviewMentors.length} candidate${interviewMentors.length!==1?'s':''} in pipeline</div>
+        <h2>🤝 Group Interview</h2>
+        <div style="font-size:0.85em;color:var(--cream-dim);margin-top:4px;">${interviewMentors.length} candidate${interviewMentors.length!==1?'s':''} ready</div>
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
         <a href="billy.html" target="_blank" class="btn btn-primary" style="text-decoration:none;">🎯 Mock Mentor View (Billy)</a>
@@ -1430,67 +1422,257 @@ function openGroupInterviewView() {
       </div>
     </div>
     <div class="modal-body" style="padding:12px;">
-      ${sortedDates.length ? sortedDates.map(d => {
-        const candidates = byDate[d];
-        const dateLabel = new Date(d+'T00:00').toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long'});
-        return `
-          <div style="margin-bottom:20px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-              <h3 style="font-size:1em;">📅 ${dateLabel} <span style="font-size:0.8em;color:var(--cream-dim);">(${candidates.length})</span></h3>
-              <button class="btn btn-ghost" style="font-size:0.78em;padding:6px 12px;" onclick="openSessionView('${d}')">Open Scoring View →</button>
-            </div>
-            ${candidates.map(m => {
-              const scores = mentorScores[m.id]?.interview || {};
-              const billyScore = mentorScores[m.id]?.billy || 0;
-              const attended = mentorScores[m.id]?.attended;
-              const hiring = mentorScores[m.id]?.hiring;
-              const total = SCORE_DIMS.reduce((s, dim) => s + (scores[dim] || 0), 0) + billyScore;
-              
-              return `
-              <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;">
-                <div style="display:flex;align-items:center;gap:10px;">
-                  <span style="font-size:1.1em;">${attended === true ? '✅' : attended === false ? '❌' : '⬜'}</span>
-                  <div>
-                    <strong style="font-size:0.9em;">${esc(m.name)}</strong>
-                    <div style="font-size:0.75em;color:var(--cream-dim);">${m.age ? m.age+'yo' : ''} ${m.source ? '· '+esc(m.source) : ''}</div>
-                  </div>
-                </div>
-                <div style="display:flex;align-items:center;gap:12px;">
-                  ${hiring ? `<span style="font-size:0.75em;padding:3px 8px;border-radius:6px;font-weight:700;${
-                    hiring==='strong-yes'?'background:rgba(46,204,113,0.15);color:var(--green)':
-                    hiring==='yes'?'background:rgba(200,169,81,0.15);color:var(--gold)':
-                    hiring==='maybe'?'background:rgba(243,156,18,0.15);color:var(--orange)':
-                    'background:rgba(231,76,60,0.15);color:var(--red)'
-                  }">${hiring==='strong-yes'?'STRONG YES':hiring.toUpperCase()}</span>` : ''}
-                  <div style="text-align:right;">
-                    <div style="font-size:1.2em;font-weight:700;color:${total>=28?'var(--green)':total>=20?'var(--gold)':total>=12?'var(--orange)':'var(--cream-dim)'};">${total||'—'}<span style="font-size:0.5em;color:var(--cream-dim)">/40</span></div>
-                  </div>
-                  <button class="btn btn-ghost" style="padding:4px 8px;font-size:0.75em;" onclick="event.stopPropagation();openModal('${m.id}')">Details</button>
-                </div>
-              </div>`;
-            }).join('')}
-          </div>`;
-      }).join('') : ''}
       
-      ${noDate.length ? `
-        <div style="margin-bottom:20px;">
-          <h3 style="font-size:1em;margin-bottom:10px;">📋 Unscheduled <span style="font-size:0.8em;color:var(--cream-dim);">(${noDate.length})</span></h3>
-          ${noDate.map(m => `
-            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;">
-              <div>
-                <strong style="font-size:0.9em;">${esc(m.name)}</strong>
-                <div style="font-size:0.75em;color:var(--cream-dim);">${m.age ? m.age+'yo' : ''} ${m.source ? '· '+esc(m.source) : ''}</div>
-              </div>
-              <button class="btn btn-primary" style="padding:6px 12px;font-size:0.78em;" onclick="showInterviewDatePicker('${m.id}')">📅 Schedule</button>
-            </div>
-          `).join('')}
+      ${interviewMentors.length ? `
+        <!-- Select All -->
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);margin-bottom:12px;">
+          <button onclick="giToggleAll()" style="background:none;border:2px solid var(--gold);border-radius:6px;width:28px;height:28px;cursor:pointer;color:var(--gold);font-size:0.8em;font-weight:700;">✓</button>
+          <span style="font-size:0.85em;color:var(--cream-muted);">Select All</span>
+          <span style="flex:1;"></span>
+          <span id="giSelectedCount" style="font-size:0.82em;color:var(--gold);font-weight:600;">${selectedIds.length} selected</span>
         </div>
-      ` : ''}
-      
-      ${!interviewMentors.length ? '<div style="text-align:center;padding:30px;color:var(--cream-dim);">No candidates in the Group Interview stage yet.<br>Move people here from Screening.</div>' : ''}
+        
+        <!-- Candidate list with checkboxes -->
+        ${interviewMentors.map(m => {
+          const checked = selectedIds.includes(m.id);
+          const scores = mentorScores[m.id]?.interview || {};
+          const hiring = mentorScores[m.id]?.hiring;
+          return `
+          <div style="background:var(--bg-card);border:1px solid ${checked?'var(--gold)':'var(--border)'};border-radius:8px;padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:border-color 0.2s;" onclick="giToggle('${m.id}')">
+            <div style="width:28px;height:28px;border-radius:6px;border:2px solid ${checked?'var(--gold)':'var(--border)'};background:${checked?'var(--gold)':'transparent'};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              ${checked ? '<span style="color:var(--bg);font-weight:700;font-size:0.85em;">✓</span>' : ''}
+            </div>
+            <div style="flex:1;">
+              <strong style="font-size:0.9em;">${esc(m.name)}</strong>
+              <div style="font-size:0.75em;color:var(--cream-dim);">${m.age ? m.age+'yo' : ''} ${m.email ? '· '+esc(m.email) : ''} ${m.source ? '· '+esc(m.source) : ''}</div>
+            </div>
+            ${hiring ? `<span style="font-size:0.7em;padding:3px 8px;border-radius:6px;font-weight:700;${
+              hiring==='strong-yes'?'background:rgba(46,204,113,0.15);color:var(--green)':
+              hiring==='yes'?'background:rgba(200,169,81,0.15);color:var(--gold)':
+              hiring==='maybe'?'background:rgba(243,156,18,0.15);color:var(--orange)':
+              'background:rgba(231,76,60,0.15);color:var(--red)'
+            }">${hiring==='strong-yes'?'STRONG YES':hiring.toUpperCase()}</span>` : ''}
+          </div>`;
+        }).join('')}
+        
+        <!-- Action buttons -->
+        <div style="position:sticky;bottom:0;background:var(--bg-card);padding:14px 0 4px;border-top:1px solid var(--border);margin-top:16px;">
+          <div style="font-size:0.7em;text-transform:uppercase;letter-spacing:0.5px;color:var(--cream-dim);margin-bottom:8px;">⚡ Bulk Actions (for selected)</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <button class="btn btn-email" style="width:100%;justify-content:center;" onclick="giBulkEmail()">
+              📧 Send Group Onboarding Invite Email
+            </button>
+            <button class="btn btn-success" style="width:100%;justify-content:center;font-size:0.95em;padding:14px;" onclick="giBeginSession()">
+              🎬 Begin Interview Session (Live Scoring)
+            </button>
+          </div>
+        </div>
+      ` : '<div style="text-align:center;padding:30px;color:var(--cream-dim);">No candidates in the Group Interview stage yet.<br>Move people here from Screening.</div>'}
     </div>
   `;
   document.getElementById('modalOverlay').classList.add('open');
+}
+
+function giToggle(mentorId) {
+  let sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
+  if (sel.includes(mentorId)) {
+    sel = sel.filter(id => id !== mentorId);
+  } else {
+    sel.push(mentorId);
+  }
+  sessionStorage.setItem('gi-selected', JSON.stringify(sel));
+  openGroupInterviewView();
+}
+
+function giToggleAll() {
+  const interviewMentors = mentors.filter(m => inferStage(m) === 'interview');
+  let sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
+  if (sel.length === interviewMentors.length) {
+    sel = [];
+  } else {
+    sel = interviewMentors.map(m => m.id);
+  }
+  sessionStorage.setItem('gi-selected', JSON.stringify(sel));
+  openGroupInterviewView();
+}
+
+function giBulkEmail() {
+  const sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
+  if (!sel.length) { showToast('Select candidates first'); return; }
+  
+  const selected = sel.map(id => mentors.find(m => m.id === id)).filter(Boolean);
+  const emails = selected.map(m => m.email).filter(Boolean);
+  
+  if (!emails.length) { showToast('No email addresses'); return; }
+  
+  const subject = 'Blues & Greens - Group Onboarding Session Invite 🤝';
+  const body = `Hi there,
+
+You're through to the next stage of becoming a Blues & Greens mentor - awesome!
+
+We're running a group onboarding session where you'll meet a few other potential mentors. It's a relaxed round-circle conversation - no presentations, no pressure. You'll also do a short 1-on-1 mock mentor session with one of our team.
+
+[INSERT DATE, TIME & ZOOM LINK HERE]
+
+Looking forward to meeting you!
+
+Cheers,
+Norri
+Blues & Greens Team
+norri@bluesandgreens.com.au`;
+  
+  const cc = 'brodie@bluesandgreens.com.au,norri@bluesandgreens.com.au';
+  const bcc = emails.join(',');
+  const mailto = `mailto:?bcc=${encodeURIComponent(bcc)}&cc=${encodeURIComponent(cc)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.open(mailto, '_blank');
+  showToast(`📧 Email opened for ${emails.length} candidates`);
+}
+
+function giBeginSession() {
+  const sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
+  if (!sel.length) { showToast('Select candidates first'); return; }
+  
+  sessionStorage.setItem('gi-live', 'true');
+  openLiveSessionView();
+}
+
+function openLiveSessionView() {
+  const sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
+  const candidates = sel.map(id => mentors.find(m => m.id === id)).filter(Boolean);
+  const SCORE_DIMS = ['Good Bloke','Energy','Emotional IQ','Intelligence'];
+  
+  document.getElementById('modal').innerHTML = `
+    <div class="modal-header" style="background:linear-gradient(135deg,rgba(26,188,156,0.1),rgba(16,71,145,0.1));">
+      <div>
+        <h2>🔴 Live Interview Session</h2>
+        <div style="font-size:0.85em;color:var(--cream-dim);margin-top:4px;">${candidates.length} candidate${candidates.length!==1?'s':''}</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <a href="billy.html" target="_blank" class="btn btn-primary" style="text-decoration:none;">🎯 Billy's View</a>
+        <button class="btn btn-danger" style="font-size:0.78em;" onclick="giEndSession()">End Session</button>
+        <button class="modal-close" onclick="closeModal()">×</button>
+      </div>
+    </div>
+    <div class="modal-body" style="padding:12px;">
+      ${candidates.map(m => {
+        const scores = mentorScores[m.id]?.interview || {};
+        const billyScore = mentorScores[m.id]?.billy || 0;
+        const attended = mentorScores[m.id]?.attended;
+        const hiringInclination = mentorScores[m.id]?.hiring;
+        const interviewTotal = SCORE_DIMS.reduce((s, dim) => s + (scores[dim] || 0), 0);
+        const total = interviewTotal + billyScore;
+        const notes = mentorNotes[m.id] || [];
+        
+        return `
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;">
+          <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <button onclick="toggleAttendanceLive('${m.id}')" 
+                style="width:36px;height:36px;border-radius:50%;border:2px solid ${attended?'var(--green)':'var(--border)'};background:${attended?'var(--green)':'transparent'};color:${attended?'var(--bg)':'var(--cream-dim)'};font-size:1em;cursor:pointer;font-weight:700;">${attended?'✓':'?'}</button>
+              <div>
+                <strong style="font-size:1.05em;">${esc(m.name)}</strong>
+                <div style="font-size:0.8em;color:var(--cream-dim);">${m.age ? m.age+'yo' : ''} ${m.source ? '· '+esc(m.source) : ''}</div>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:1.5em;font-weight:700;color:${total>=28?'var(--green)':total>=20?'var(--gold)':total>=12?'var(--orange)':'var(--cream-dim)'};">${total||'—'}<span style="font-size:0.45em;color:var(--cream-dim)">/40</span></div>
+            </div>
+          </div>
+          ${attended !== false ? `
+          <div style="padding:12px 16px;">
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px;">
+              ${SCORE_DIMS.map(dim => `
+                <div>
+                  <div style="font-size:0.7em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:4px;">${dim}</div>
+                  <div style="display:flex;gap:3px;">
+                    ${[1,2,3,4,5].map(n => `
+                      <button onclick="setLiveScore('${m.id}','${dim}',${n})" 
+                        style="width:40px;height:40px;border-radius:8px;border:1px solid ${(scores[dim]||0)>=n?'var(--gold)':'var(--border)'};
+                        background:${(scores[dim]||0)>=n?'var(--gold)':'transparent'};
+                        color:${(scores[dim]||0)>=n?'var(--bg)':'var(--cream-dim)'};
+                        font-size:0.9em;font-weight:700;cursor:pointer;">${n}</button>
+                    `).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+            
+            <div style="padding:10px 0;border-top:1px solid var(--border);">
+              <div style="font-size:0.7em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:6px;">Hiring Inclination</div>
+              <div style="display:flex;gap:6px;">
+                ${[{v:'strong-yes',l:'Strong Yes',c:'var(--green)'},{v:'yes',l:'Yes',c:'var(--gold)'},{v:'maybe',l:'Maybe',c:'var(--orange)'},{v:'no',l:'No',c:'var(--red)'}].map(opt => `
+                  <button onclick="setLiveHiring('${m.id}','${opt.v}')"
+                    style="flex:1;padding:10px 4px;border-radius:8px;border:2px solid ${hiringInclination===opt.v?opt.c:'var(--border)'};
+                    background:${hiringInclination===opt.v?opt.c+'22':'transparent'};
+                    color:${hiringInclination===opt.v?opt.c:'var(--cream-dim)'};
+                    font-size:0.8em;font-weight:700;cursor:pointer;">${opt.l}</button>
+                `).join('')}
+              </div>
+            </div>
+            
+            <div style="margin-top:8px;">
+              <div style="display:flex;gap:6px;">
+                <input type="text" id="liveNote-${m.id}" placeholder="Quick note..." 
+                  style="flex:1;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:6px;padding:8px 10px;color:var(--cream);font-size:0.85em;outline:none;"
+                  onkeydown="if(event.key==='Enter'){addLiveNote('${m.id}')}">
+                <button class="btn btn-ghost" style="padding:6px 12px;font-size:0.78em;" onclick="addLiveNote('${m.id}')">+</button>
+              </div>
+              ${notes.length ? `<div style="margin-top:6px;">${notes.slice(-3).map(n => 
+                `<div style="font-size:0.78em;color:var(--cream-dim);padding:2px 0;"><strong style="color:var(--gold)">${esc(n.author)}</strong>: ${esc(n.text)}</div>`
+              ).join('')}</div>` : ''}
+            </div>
+          </div>
+          <div style="padding:8px 16px 12px;border-top:1px solid var(--border);display:flex;gap:6px;">
+            <button class="btn btn-success" style="padding:8px 12px;font-size:0.82em;flex:1;" onclick="moveTo('${m.id}','billy');openLiveSessionView()">→ Billy 1:1</button>
+            <button class="btn btn-success" style="padding:8px 12px;font-size:0.82em;flex:1;" onclick="moveTo('${m.id}','onboarding');openLiveSessionView()">→ Onboard</button>
+            <button class="btn btn-danger" style="padding:8px 12px;font-size:0.82em;" onclick="moveTo('${m.id}','rejected');openLiveSessionView()">✕</button>
+          </div>
+          ` : `<div style="padding:12px 16px;color:var(--cream-dim);font-size:0.85em;">Tap ✓ to mark as attended</div>`}
+        </div>`;
+      }).join('')}
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function toggleAttendanceLive(mentorId) {
+  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
+  mentorScores[mentorId].attended = !mentorScores[mentorId].attended;
+  saveLocal();
+  openLiveSessionView();
+}
+
+function setLiveScore(mentorId, dim, score) {
+  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
+  if (!mentorScores[mentorId].interview) mentorScores[mentorId].interview = {};
+  mentorScores[mentorId].interview[dim] = score;
+  saveLocal();
+  openLiveSessionView();
+}
+
+function setLiveHiring(mentorId, value) {
+  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
+  mentorScores[mentorId].hiring = value;
+  saveLocal();
+  openLiveSessionView();
+}
+
+function addLiveNote(mentorId) {
+  const input = document.getElementById(`liveNote-${mentorId}`);
+  const text = input?.value.trim();
+  if (!text) return;
+  if (!mentorNotes[mentorId]) mentorNotes[mentorId] = [];
+  mentorNotes[mentorId].push({ author: 'Session', text, date: new Date().toISOString() });
+  saveLocal();
+  openLiveSessionView();
+}
+
+function giEndSession() {
+  sessionStorage.removeItem('gi-live');
+  sessionStorage.removeItem('gi-selected');
+  closeModal();
+  render();
+  showToast('Session ended');
 }
 
 function openBillyQueue() {
