@@ -561,7 +561,10 @@ async function init() {
     const resp = await fetch('../data/mentor-applicants.json');
     const data = await resp.json();
     mentors = data.mentors;
-    document.getElementById('lastUpdated').textContent = `Updated: ${formatDate(data.updated)}`;
+    const updatedDate = new Date(data.updated);
+    const mins = Math.floor((Date.now() - updatedDate.getTime()) / 60000);
+    const freshness = mins < 5 ? '🟢 Live' : mins < 120 ? `🟡 ${mins}m ago` : `🔴 ${Math.floor(mins/60)}h ago`;
+    document.getElementById('lastUpdated').innerHTML = `${freshness} · <span style="font-size:0.8em;">${updatedDate.toLocaleString('en-AU',{day:'numeric',month:'short',hour:'numeric',minute:'2-digit'})}</span>`;
   } catch (e) {
     console.error('Failed to load data:', e);
   }
