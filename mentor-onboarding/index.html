@@ -842,15 +842,42 @@ function openModal(mentorId) {
     </div>
     
     <div id="emailPanel"></div>
-    <div class="modal-actions">
-      ${stage !== 'active' && stage !== 'rejected' ? `
-        <button class="btn btn-success" onclick="moveToNext('${m.id}', '${stage}')">→ Move to Next Stage</button>
+    <div class="modal-actions" style="flex-direction:column;gap:6px;">
+      <div style="font-size:0.72em;text-transform:uppercase;letter-spacing:0.5px;color:var(--cream-dim);margin-bottom:2px;">⚡ Actions</div>
+      ${stage === 'applied' ? `
+        <button class="btn btn-email" style="width:100%" onclick="autoSendEmail('${m.id}','applied')">📧 Send TestGorilla Link & Move to TG Started</button>
+        <button class="btn btn-danger" style="width:100%" onclick="moveTo('${m.id}','rejected')">✕ Not Suitable</button>
       ` : ''}
-      ${stage === 'tg-review' || stage === 'screening' || stage === 'billy' ? `
-        <button class="btn btn-danger" onclick="moveTo('${m.id}', 'rejected')">✕ Not Suitable</button>
+      ${stage === 'tg-sent' ? `
+        <button class="btn btn-email" style="width:100%" onclick="autoSendEmail('${m.id}','tg-sent')">📧 Chase TestGorilla (Reminder)</button>
+        <button class="btn btn-danger" style="width:100%" onclick="moveTo('${m.id}','rejected')">✕ Not Suitable</button>
       ` : ''}
-      ${m.email && EMAIL_TEMPLATES[stage] ? `
-        <button class="btn btn-email" onclick="openEmailPanel('${m.id}', '${stage}')">✉️ ${EMAIL_TEMPLATES[stage].label}</button>
+      ${stage === 'tg-review' ? `
+        <button class="btn btn-email" style="width:100%" onclick="autoSendEmail('${m.id}','tg-review')">📧 Invite to Screening Call</button>
+        <button class="btn btn-success" style="width:100%" onclick="moveTo('${m.id}','screening')">→ Move to Screening (no email)</button>
+        <button class="btn btn-danger" style="width:100%" onclick="moveTo('${m.id}','rejected')">✕ Failed TG / Not Suitable</button>
+      ` : ''}
+      ${stage === 'screening' ? `
+        <button class="btn btn-email" style="width:100%" onclick="autoSendEmail('${m.id}','screening')">📧 Invite to Group Interview</button>
+        <button class="btn btn-success" style="width:100%" onclick="showInterviewDatePicker('${m.id}')">📅 Schedule Group Interview</button>
+        <button class="btn btn-danger" style="width:100%" onclick="moveTo('${m.id}','rejected')">✕ Failed Screening</button>
+      ` : ''}
+      ${stage === 'interview' ? `
+        <button class="btn btn-success" style="width:100%" onclick="moveTo('${m.id}','billy')">→ Passed → Billy 1:1</button>
+        <button class="btn btn-success" style="width:100%" onclick="moveTo('${m.id}','onboarding')">→ Passed → Straight to Onboarding</button>
+        <button class="btn btn-danger" style="width:100%" onclick="moveTo('${m.id}','rejected')">✕ Not Suitable</button>
+      ` : ''}
+      ${stage === 'billy' ? `
+        <button class="btn btn-success" style="width:100%" onclick="autoSendEmail('${m.id}','onboarding');moveTo('${m.id}','onboarding')">✅ Passed → Send Onboarding Email</button>
+        <button class="btn btn-danger" style="width:100%" onclick="moveTo('${m.id}','rejected')">✕ Not Suitable</button>
+      ` : ''}
+      ${stage === 'onboarding' ? `
+        <button class="btn btn-success" style="width:100%" onclick="moveTo('${m.id}','active')">🎉 Fully Onboarded → Active Mentor</button>
+        <button class="btn btn-email" style="width:100%" onclick="autoSendEmail('${m.id}','onboarding')">📧 Re-send Onboarding Details</button>
+      ` : ''}
+      ${stage === 'rejected' ? `
+        <button class="btn btn-ghost" style="width:100%" onclick="moveTo('${m.id}','applied')">↩️ Re-open Application</button>
+        <button class="btn btn-email" style="width:100%" onclick="autoSendEmail('${m.id}','rejected')">📧 Send Rejection Email</button>
       ` : ''}
     </div>
   `;
@@ -1033,6 +1060,43 @@ norri@bluesandgreens.com.au`,
   },
 };
 
+function autoSendEmail(mentorId, stage) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m || !m.email) { showToast('No email address'); return; }
+  const tmpl = EMAIL_TEMPLATES[stage];
+  if (!tmpl) { showToast('No template for this stage'); return; }
+  
+  const emailBody = tmpl.body(m);
+  const cc = 'brodie@bluesandgreens.com.au,norri@bluesandgreens.com.au';
+  
+  // Open pre-filled email — one tap to send
+  const mailto = `mailto:${encodeURIComponent(m.email)}?cc=${encodeURIComponent(cc)}&subject=${encodeURIComponent(tmpl.subject)}&body=${encodeURIComponent(emailBody)}`;
+  window.open(mailto, '_blank');
+  
+  // Auto-move to next stage
+  const STAGE_AFTER_EMAIL = {
+    'applied': 'tg-sent',
+    'tg-sent': null, // stays in tg-sent (just a chase)
+    'tg-review': 'screening',
+    'screening': null, // needs interview date picker
+  };
+  
+  const nextStage = STAGE_AFTER_EMAIL[stage];
+  if (nextStage) {
+    stageAssignments[m.id] = nextStage;
+    saveLocal();
+  }
+  
+  // Track
+  const sent = JSON.parse(localStorage.getItem('bg-mentor-sent-emails') || '{}');
+  sent[mentorId] = { stage, sentAt: new Date().toISOString() };
+  localStorage.setItem('bg-mentor-sent-emails', JSON.stringify(sent));
+  
+  showToast(`📧 Email opened for ${m.name} — hit Send, then they'll move automatically`);
+  closeModal();
+  render();
+}
+
 function openEmailPanel(mentorId, stage) {
   const m = mentors.find(x => x.id === mentorId);
   if (!m || !m.email) { showToast('No email address'); return; }
@@ -1204,7 +1268,7 @@ function openSessionView(dateStr) {
   const candidates = (session.mentorIds || []).map(id => mentors.find(x => x.id === id)).filter(Boolean);
   const dateLabel = new Date(dateStr+'T00:00').toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long', year:'numeric'});
   
-  const SCORE_DIMS = ['Rapport','Empathy','Vulnerability','Presence','Self-Awareness','Mission Alignment'];
+  const SCORE_DIMS = ['Good Bloke','Energy','Emotional IQ','Intelligence'];
   
   document.getElementById('modal').innerHTML = `
     <div class="modal-header">
@@ -1218,56 +1282,65 @@ function openSessionView(dateStr) {
       ${candidates.map(m => {
         const scores = mentorScores[m.id]?.interview || {};
         const billyScore = mentorScores[m.id]?.billy || '';
-        const total = SCORE_DIMS.reduce((s, dim) => s + (scores[dim] || 0), 0) + (billyScore || 0);
+        const attended = mentorScores[m.id]?.attended;
+        const hiringInclination = mentorScores[m.id]?.hiring;
+        const interviewTotal = SCORE_DIMS.reduce((s, dim) => s + (scores[dim] || 0), 0);
+        const total = interviewTotal + (billyScore || 0);
         const notes = mentorNotes[m.id] || [];
         
         return `
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;">
           <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);">
-            <div>
-              <strong style="font-size:1em;">${esc(m.name)}</strong>
-              <div style="font-size:0.8em;color:var(--cream-dim);">${m.age ? m.age+'yo' : ''} ${m.source ? '· '+esc(m.source) : ''} ${m.location ? '· '+esc(m.location) : ''}</div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <button onclick="toggleAttendance('${m.id}','${dateStr}')" 
+                style="width:32px;height:32px;border-radius:50%;border:2px solid ${attended?'var(--green)':'var(--border)'};background:${attended?'var(--green)':'transparent'};color:${attended?'var(--bg)':'var(--cream-dim)'};font-size:0.9em;cursor:pointer;">${attended?'✓':'?'}</button>
+              <div>
+                <strong style="font-size:1em;">${esc(m.name)}</strong>
+                <div style="font-size:0.8em;color:var(--cream-dim);">${m.age ? m.age+'yo' : ''} ${m.source ? '· '+esc(m.source) : ''}</div>
+              </div>
             </div>
             <div style="text-align:right;">
-              <div style="font-size:1.4em;font-weight:700;color:${total>=40?'var(--green)':total>=30?'var(--gold)':total>=20?'var(--orange)':'var(--cream-dim)'};">${total||'—'}<span style="font-size:0.5em;color:var(--cream-dim);">/50</span></div>
+              <div style="font-size:1.4em;font-weight:700;color:${total>=28?'var(--green)':total>=20?'var(--gold)':total>=12?'var(--orange)':'var(--cream-dim)'};">${total||'—'}<span style="font-size:0.5em;color:var(--cream-dim);">/40</span></div>
             </div>
           </div>
+          ${attended !== false ? `
           <div style="padding:12px 16px;">
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px;">
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px;">
               ${SCORE_DIMS.map(dim => `
-                <div style="text-align:center;">
-                  <div style="font-size:0.65em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:2px;">${dim}</div>
-                  <div style="display:flex;gap:2px;justify-content:center;">
+                <div>
+                  <div style="font-size:0.7em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:4px;">${dim}</div>
+                  <div style="display:flex;gap:3px;">
                     ${[1,2,3,4,5].map(n => `
                       <button onclick="setInterviewScore('${m.id}','${dim}',${n},'${dateStr}')" 
-                        style="width:28px;height:28px;border-radius:50%;border:1px solid ${(scores[dim]||0)>=n?'var(--gold)':'var(--border)'};
+                        style="width:36px;height:36px;border-radius:8px;border:1px solid ${(scores[dim]||0)>=n?'var(--gold)':'var(--border)'};
                         background:${(scores[dim]||0)>=n?'var(--gold)':'transparent'};
                         color:${(scores[dim]||0)>=n?'var(--bg)':'var(--cream-dim)'};
-                        font-size:0.75em;font-weight:700;cursor:pointer;">${n}</button>
+                        font-size:0.85em;font-weight:700;cursor:pointer;">${n}</button>
                     `).join('')}
                   </div>
                 </div>
               `).join('')}
             </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--border);">
-              <span style="font-size:0.75em;color:var(--cream-dim);min-width:80px;">Billy's Score:</span>
-              <div style="display:flex;gap:3px;">
-                ${[4,8,12,16,20].map(n => `
-                  <button onclick="setBillyScoreSession('${m.id}',${n},'${dateStr}')"
-                    style="padding:4px 8px;border-radius:6px;border:1px solid ${(billyScore||0)>=n?'var(--gold)':'var(--border)'};
-                    background:${(billyScore||0)>=n?'rgba(200,169,81,0.2)':'transparent'};
-                    color:${(billyScore||0)>=n?'var(--gold)':'var(--cream-dim)'};
-                    font-size:0.75em;cursor:pointer;">${n}</button>
+            
+            <div style="padding:10px 0;border-top:1px solid var(--border);">
+              <div style="font-size:0.7em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:6px;">Hiring Inclination</div>
+              <div style="display:flex;gap:6px;">
+                ${[{v:'strong-yes',l:'Strong Yes',c:'var(--green)'},{v:'yes',l:'Yes',c:'var(--gold)'},{v:'maybe',l:'Maybe',c:'var(--orange)'},{v:'no',l:'No',c:'var(--red)'}].map(opt => `
+                  <button onclick="setHiring('${m.id}','${opt.v}','${dateStr}')"
+                    style="flex:1;padding:8px 4px;border-radius:8px;border:2px solid ${hiringInclination===opt.v?opt.c:'var(--border)'};
+                    background:${hiringInclination===opt.v?opt.c+'22':'transparent'};
+                    color:${hiringInclination===opt.v?opt.c:'var(--cream-dim)'};
+                    font-size:0.78em;font-weight:700;cursor:pointer;">${opt.l}</button>
                 `).join('')}
               </div>
-              <span style="font-size:0.85em;font-weight:700;color:var(--gold);">${billyScore||'—'}/20</span>
             </div>
+            
             <div style="margin-top:8px;">
               <div style="display:flex;gap:6px;">
                 <input type="text" id="sessNote-${m.id}" placeholder="Quick note..." 
-                  style="flex:1;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:6px;padding:6px 10px;color:var(--cream);font-size:0.82em;outline:none;"
+                  style="flex:1;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:6px;padding:8px 10px;color:var(--cream);font-size:0.85em;outline:none;"
                   onkeydown="if(event.key==='Enter'){addSessionNote('${m.id}','${dateStr}')}">
-                <button class="btn btn-ghost" style="padding:6px 12px;font-size:0.78em;" onclick="addSessionNote('${m.id}','${dateStr}')">+ Note</button>
+                <button class="btn btn-ghost" style="padding:6px 12px;font-size:0.78em;" onclick="addSessionNote('${m.id}','${dateStr}')">+</button>
               </div>
               ${notes.length ? `<div style="margin-top:6px;">${notes.slice(-3).map(n => 
                 `<div style="font-size:0.78em;color:var(--cream-dim);padding:2px 0;"><strong style="color:var(--gold)">${esc(n.author)}</strong>: ${esc(n.text)}</div>`
@@ -1275,15 +1348,30 @@ function openSessionView(dateStr) {
             </div>
           </div>
           <div style="padding:8px 16px 12px;border-top:1px solid var(--border);display:flex;gap:6px;">
-            <button class="btn btn-success" style="padding:6px 12px;font-size:0.78em;" onclick="moveTo('${m.id}','billy');openSessionView('${dateStr}')">→ Billy 1:1</button>
-            <button class="btn btn-success" style="padding:6px 12px;font-size:0.78em;" onclick="moveTo('${m.id}','onboarding');openSessionView('${dateStr}')">→ Onboard</button>
-            <button class="btn btn-danger" style="padding:6px 12px;font-size:0.78em;" onclick="moveTo('${m.id}','rejected');openSessionView('${dateStr}')">✕ Reject</button>
+            <button class="btn btn-success" style="padding:8px 12px;font-size:0.82em;flex:1;" onclick="moveTo('${m.id}','billy');openSessionView('${dateStr}')">→ Billy 1:1</button>
+            <button class="btn btn-success" style="padding:8px 12px;font-size:0.82em;flex:1;" onclick="moveTo('${m.id}','onboarding');openSessionView('${dateStr}')">→ Onboard</button>
+            <button class="btn btn-danger" style="padding:8px 12px;font-size:0.82em;" onclick="moveTo('${m.id}','rejected');openSessionView('${dateStr}')">✕</button>
           </div>
+          ` : `<div style="padding:12px 16px;color:var(--cream-dim);font-size:0.85em;">Did not attend</div>`}
         </div>`;
       }).join('')}
     </div>
   `;
   document.getElementById('modalOverlay').classList.add('open');
+}
+
+function toggleAttendance(mentorId, dateStr) {
+  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
+  mentorScores[mentorId].attended = !mentorScores[mentorId].attended;
+  saveLocal();
+  openSessionView(dateStr);
+}
+
+function setHiring(mentorId, value, dateStr) {
+  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
+  mentorScores[mentorId].hiring = value;
+  saveLocal();
+  openSessionView(dateStr);
 }
 
 function setInterviewScore(mentorId, dim, score, dateStr) {
