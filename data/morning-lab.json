@@ -1,46 +1,46 @@
 {
-  "generated": "2026-03-30T07:58:00+11:00",
+  "generated": "2026-03-31T08:03:00+11:00",
   "items": [
     {
-      "type": "leverage",
-      "emoji": "🔥",
-      "headline": "1,929 warm leads sitting idle - reactivation sequence built",
-      "detail": "3-email sequence created in HubSpot (IDs 210149699674, 210149699677, 210149977892). Conservative 2.5% booking = ~$28K revenue. 5% = ~$58K. Harry needs 2 mins in HubSpot to schedule sends: tonight 7pm, Thu 8am, next Mon 7pm.",
-      "tag": "revenue"
-    },
-    {
       "type": "counter_intuitive",
-      "emoji": "📉",
-      "headline": "MRR dropped $52K to $41K - but close rate is 57%",
-      "detail": "Revenue dip is a BOOKING problem, not a closing problem. 119 leads last week, only 14 booked (11.8%). When reps get on calls, they close. Tom starting April 6 adds 15+ slots/week. The 92 contacts that bounced are still warm.",
-      "tag": "constraint"
+      "emoji": "🔴",
+      "headline": "Tom has called 6 of 47 leads. Ever.",
+      "detail": "Tom Activity Tracker revealed 46 out of 47 leads have NEVER been called. Last call logged March 26. This isn't a booking rate problem - it's an activity problem. The 9.8% DC booking rate has a name.",
+      "tag": "dc-constraint"
     },
     {
-      "type": "insight",
-      "emoji": "⚡",
-      "headline": "36 families closed but never activated - Brodie now gets daily chase list",
-      "detail": "Daily 7:45am cron sends Brodie an HTML email with his activation chase list. 14+ days without W1 = critical. Revenue at risk from non-activated families: ~$6,500/week. The 46% first-month churn starts here.",
-      "tag": "retention"
+      "type": "leverage",
+      "emoji": "💰",
+      "headline": "$157K in open Stripe invoices. $15K is recoverable today.",
+      "detail": "226 open invoices total. 9 are active customers whose cards are failing ($15,412). 28 are recoverable 15-90 day ($20,891). Zombie/aged is write-off territory. Personal outreach on the active 9 = highest ROI call Harry can make.",
+      "tag": "revenue-recovery"
     },
     {
       "type": "big_idea",
-      "emoji": "🎯",
-      "headline": "Retention call engine is live - no more scheduling friction",
-      "detail": "Daily 8:30am email lands in Harry's inbox with top 5 families to call, personalised talking points, renewal dates, commitment lock offer script. 49 families renew in next 30 days = $28,461/week at risk. Previous 50 retention calls = $30K+ recovered.",
-      "tag": "retention"
+      "emoji": "📧",
+      "headline": "3-email nurture sequence ready - 1,929 warm leads waiting.",
+      "detail": "Lead nurture workflow (108241348) built in HubSpot. 3 emails over 72hrs for unbooked leads. Warm re-engagement sequence (3 emails to List 1021 - 1,929 leads) also ready. Conservative estimate: $28K revenue from warm list at 2.5% booking rate.",
+      "tag": "pipeline"
+    },
+    {
+      "type": "insight",
+      "emoji": "📉",
+      "headline": "Booking rate dropped to 5.4% this week (was 13.7% last week).",
+      "detail": "112 leads in, 6 booked. MTD still 11.7% (784 leads, 92 booked). The weekly trend is accelerating downward. Tom's inactivity is the direct cause - 46 leads sitting untouched.",
+      "tag": "dc-constraint"
     },
     {
       "type": "research",
-      "emoji": "🧪",
-      "headline": "Mentor pipeline: 285 contacts queued, approval page live",
-      "detail": "Interactive approval page at MC /mentor-pipeline/outreach/. 285 emails across Mon-Fri (58/71/71/50/35). Templates editable in browser, Supabase-backed. Harry approves templates + days, Leo sends. Student-facing blurb ready.",
-      "tag": "growth"
+      "emoji": "🎯",
+      "headline": "Price confidence = the close predictor. 3/3 closes, 4/4 misses.",
+      "detail": "Every close last week had confident price delivery. Every miss had hesitant, absent, or caved pricing. Price Delivery Drill Card shipped to all reps. Anthony's OH regression (caved x2) is the emerging concern.",
+      "tag": "sales-quality"
     }
   ],
   "leo_actions": [
-    "Running Fireflies backfill for about_the_son field (22 families matched, API reset at 7:30am)",
-    "Monitoring mentor outreach approval - ready to send W1 batch when Harry greenlights",
-    "Warm lead reactivation emails staged - waiting for Harry to schedule in HubSpot UI",
-    "Agent Stack: 9/14 skills shipped, continuing build on remaining 5"
+    "Tom accountability - activity tracker live (6pm daily cron). Today's email: zero calls flagged.",
+    "Speed-to-lead alerts firing every 15 mins for Tom's new leads. 32 backlog leads sent with call scripts.",
+    "Failed payment recovery engine running daily 9:30am. First auto-retry collected $119 (Stephanie Mckeown).",
+    "Retention call engine sending Harry top 5 families daily at 8:30am. 49 renewals in next 30 days."
   ]
 }

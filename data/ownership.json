@@ -5,8 +5,8 @@
       "name": "Sales Engine",
       "owner": "Rye",
       "status": "amber",
-      "constraint": "DC booking rate 11.8% (target 25%). Tom starts April 6. Anthony at 40% close rate. Rye coaching-focused, low volume. 92 warm contacts bounced off no-availability last week.",
-      "key_metric": "Close Rate: 40% (Anthony) | 100% (Tom, n=1) | 196 BCs MTD at $27.57 CPBC",
+      "constraint": "DC booking rate 5.4% weekly (was 13.7%). Tom has called 6 of 47 leads. 46 untouched. Activity problem, not lead quality.",
+      "key_metric": "Close Rate: 50% (Anthony) | 100% (Tom, n=1) | 199 BCs MTD at $27.91 CPBC",
       "highest_leverage_task": "Re-engage 92 warm contacts from last week + prep Tom's onboarding",
       "team": ["Rye", "Anthony", "Tom (starts Apr 6)"]
     },
@@ -23,8 +23,8 @@
       "name": "Member Experience",
       "owner": "Brodie & Norri",
       "status": "amber",
-      "constraint": "4 past-due subs ($820 at risk). 60 collecting, 8 paused. Retention call engine live.",
-      "key_metric": "60 collecting | 8 paused | 4 past due | $41.4K MRR",
+      "constraint": "5 past-due subs. 59 collecting, 8 paused. $157K open invoices mapped - $15K active customer recovery target.",
+      "key_metric": "59 collecting | 8 paused | 5 past due | $41.1K MRR",
       "highest_leverage_task": "Harry makes 3 retention calls from hitlist - 49 renewals in 30 days",
       "team": ["Brodie", "Norri"]
     },
