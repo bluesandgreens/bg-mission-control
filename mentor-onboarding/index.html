@@ -527,10 +527,11 @@ function saveLocal() {
 }
 
 function inferStage(m) {
-  // If we have a manual assignment, use it
+  // Manual override takes priority
   if (stageAssignments[m.id]) return stageAssignments[m.id];
-  
-  // Auto-infer from Notion data
+  // Use pre-computed stage from HubSpot + Notion merge
+  if (m.stage && STAGES.find(s => s.id === m.stage)) return m.stage;
+  // Fallback
   if (m.tg_done) return 'tg-review';
   if (m.tg_link_sent) return 'tg-sent';
   return 'applied';
@@ -686,8 +687,12 @@ function openModal(mentorId) {
         <div class="modal-field"><span class="field-label">3-Month Commit</span><span class="field-value">${esc(m.three_month_commit) || '—'}</span></div>
         <div class="modal-field"><span class="field-label">Has Laptop</span><span class="field-value">${esc(m.has_laptop) || '—'}</span></div>
         <div class="modal-field"><span class="field-label">Referred By</span><span class="field-value">${esc(m.referred_by) || '—'}</span></div>
+        <div class="modal-field"><span class="field-label">Location</span><span class="field-value">${esc(m.location) || '—'}</span></div>
+        <div class="modal-field"><span class="field-label">HubSpot Stage</span><span class="field-value">${esc(m.hs_stage) || '—'}</span></div>
         <div class="modal-field"><span class="field-label">Applied</span><span class="field-value">${formatDate(m.created)}</span></div>
         <div class="modal-field"><span class="field-label">Days in Pipeline</span><span class="field-value">${daysSince(m.created) || 0} days</span></div>
+        ${m.why_mentor ? `<div class="modal-field" style="flex-direction:column;gap:4px;"><span class="field-label">Why They Want to Mentor</span><span class="field-value" style="text-align:left;max-width:100%;font-size:0.85em;color:var(--cream-muted);line-height:1.5;">${esc(m.why_mentor)}</span></div>` : ''}
+        ${m.application_message ? `<div class="modal-field" style="flex-direction:column;gap:4px;"><span class="field-label">Application Message</span><span class="field-value" style="text-align:left;max-width:100%;font-size:0.85em;color:var(--cream-muted);line-height:1.5;">${esc(m.application_message)}</span></div>` : ''}
       </div>
       
       <!-- Stage Checklist -->
@@ -778,6 +783,7 @@ function openModal(mentorId) {
       </div>
     </div>
     
+    <div id="emailPanel"></div>
     <div class="modal-actions">
       ${stage !== 'active' && stage !== 'rejected' ? `
         <button class="btn btn-success" onclick="moveToNext('${m.id}', '${stage}')">→ Move to Next Stage</button>
@@ -785,8 +791,8 @@ function openModal(mentorId) {
       ${stage === 'tg-review' || stage === 'screening' || stage === 'billy' ? `
         <button class="btn btn-danger" onclick="moveTo('${m.id}', 'rejected')">✕ Not Suitable</button>
       ` : ''}
-      ${m.email && (stage === 'applied' || stage === 'screening' || stage === 'interview') ? `
-        <button class="btn btn-email" onclick="draftEmail('${m.id}', '${stage}')">✉️ Draft Email</button>
+      ${m.email && EMAIL_TEMPLATES[stage] ? `
+        <button class="btn btn-email" onclick="openEmailPanel('${m.id}', '${stage}')">✉️ ${EMAIL_TEMPLATES[stage].label}</button>
       ` : ''}
     </div>
   `;
@@ -854,26 +860,166 @@ function moveTo(mentorId, stageId) {
   render();
 }
 
-function draftEmail(mentorId, stage) {
+const EMAIL_TEMPLATES = {
+  'applied': {
+    label: 'Send TestGorilla Link',
+    subject: 'Blues & Greens Mentoring - Next Step 🎯',
+    body: (m) => `Hi ${m.name.split(' ')[0]},
+
+Thanks so much for applying to be a mentor with Blues & Greens! We're really excited to have you in the pipeline.
+
+The next step is a quick online assessment - it takes about 20 minutes and helps us get to know your strengths and personality a bit better.
+
+Here's the link: https://app.testgorilla.com/s/6ixaig81
+
+If you could knock it out in the next 48 hours that would be awesome - we're keen to get you started.
+
+Any questions at all, just reply to this email.
+
+Cheers,
+Norri
+Blues & Greens Team
+norri@bluesandgreens.com.au`,
+  },
+  'tg-sent': {
+    label: 'Chase TestGorilla',
+    subject: 'Quick reminder - Blues & Greens Assessment',
+    body: (m) => `Hey ${m.name.split(' ')[0]},
+
+Just checking in - have you had a chance to complete the online assessment yet?
+
+Here's the link again if you need it: https://app.testgorilla.com/s/6ixaig81
+
+It only takes about 20 minutes and it's the last step before we can move you forward. We've got a group session coming up soon and would love to have you there!
+
+Let me know if you've hit any issues or have any questions.
+
+Cheers,
+Norri
+Blues & Greens Team
+norri@bluesandgreens.com.au`,
+  },
+  'tg-review': {
+    label: 'Invite to Screening Call',
+    subject: 'Blues & Greens - You\'re through! Next step 🙌',
+    body: (m) => `Hi ${m.name.split(' ')[0]},
+
+Great news - you've completed the assessment and we'd love to move you to the next stage!
+
+The next step is a quick 10-minute phone chat with our team. It's super casual - just want to get to know you a bit before the group session.
+
+When would suit you best this week for a quick call? Happy to work around your schedule.
+
+Cheers,
+Norri
+Blues & Greens Team
+norri@bluesandgreens.com.au`,
+  },
+  'screening': {
+    label: 'Invite to Group Interview',
+    subject: 'Blues & Greens - Group Session Invite 🤝',
+    body: (m) => `Hi ${m.name.split(' ')[0]},
+
+You're through to the group interview stage - awesome!
+
+We're running a group onboarding session where you'll meet a few other potential mentors. It's a relaxed round-circle conversation - no presentations, no pressure. You'll also do a short 1-on-1 mock mentor session.
+
+I'll send through the date and Zoom link shortly. Looking forward to meeting you!
+
+Cheers,
+Norri
+Blues & Greens Team
+norri@bluesandgreens.com.au`,
+  },
+  'onboarding': {
+    label: 'Send Onboarding Details',
+    subject: 'Blues & Greens - Welcome to the Team! 💙💚',
+    body: (m) => `Hi ${m.name.split(' ')[0]},
+
+Welcome to Blues & Greens! We're so excited to have you on board as a mentor.
+
+Here's what happens next:
+1. We'll send through your Working With Children Check (WWCC) information
+2. You'll complete a short online training module
+3. We'll match you with a young person and schedule your first session
+
+I'll be in touch soon with all the details. In the meantime, if you have any questions at all, just reply to this email.
+
+Cheers,
+Norri
+Blues & Greens Team
+norri@bluesandgreens.com.au`,
+  },
+  'rejected': {
+    label: 'Send Rejection',
+    subject: 'Blues & Greens - Application Update',
+    body: (m) => `Hi ${m.name.split(' ')[0]},
+
+Thanks so much for your interest in mentoring with Blues & Greens. We really appreciate the time you took to apply.
+
+After careful consideration, we've decided not to move forward with your application at this stage. This isn't necessarily a reflection on you - we're looking for a very specific fit for our young members and sometimes the timing or match just isn't right.
+
+We wish you all the best and thank you again for wanting to make a difference in a young person's life.
+
+Kind regards,
+Norri
+Blues & Greens Team
+norri@bluesandgreens.com.au`,
+  },
+};
+
+function openEmailPanel(mentorId, stage) {
   const m = mentors.find(x => x.id === mentorId);
-  if (!m || !m.email) return;
+  if (!m || !m.email) { showToast('No email address'); return; }
   
-  let subject = '', body = '';
+  const tmpl = EMAIL_TEMPLATES[stage];
+  if (!tmpl) { showToast('No email template for this stage'); return; }
   
-  if (stage === 'applied') {
-    subject = 'Blues & Greens - Complete Your Assessment';
-    body = `Hi ${m.name.split(' ')[0]},\n\nThanks for applying to be a mentor with Blues & Greens! Really excited to have you.\n\nNext step is a quick online assessment (takes about 20 min). Here's the link:\nhttps://app.testgorilla.com/s/6ixaig81\n\nIf you could knock it out in the next 48 hours that would be awesome - we're keen to get you started.\n\nCheers,\nHarry`;
-  } else if (stage === 'screening') {
-    subject = 'Blues & Greens - Quick Chat';
-    body = `Hi ${m.name.split(' ')[0]},\n\nGreat news - you've passed the initial assessment.\n\nWould love to have a quick 10-minute chat to get to know you a bit before the group session. When suits you this week?\n\nCheers,\nHarry`;
-  } else if (stage === 'interview') {
-    subject = 'Blues & Greens - Group Interview Invite';
-    body = `Hi ${m.name.split(' ')[0]},\n\nYou're through to the next stage! We're running a group onboarding session where you'll meet a few other potential mentors and do a short mock session with one of our team.\n\nI'll send through the details shortly. Looking forward to meeting you.\n\nCheers,\nHarry`;
+  const emailBody = tmpl.body(m);
+  const emailSubject = tmpl.subject;
+  
+  // Store in modal
+  const panel = document.getElementById('emailPanel');
+  if (panel) {
+    panel.innerHTML = `
+      <div style="margin-top:12px;background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:16px;">
+        <div style="font-size:0.82em;color:var(--cream-dim);margin-bottom:8px;">
+          <strong>To:</strong> ${esc(m.email)}<br>
+          <strong>CC:</strong> brodie@bluesandgreens.com.au, norri@bluesandgreens.com.au<br>
+          <strong>From:</strong> admin@bluesandgreens.com.au (signed as Norri)<br>
+          <strong>Subject:</strong> ${esc(emailSubject)}
+        </div>
+        <textarea id="emailBodyEditor" class="template-editor" style="min-height:250px;font-family:inherit;font-size:0.85em;line-height:1.6;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--cream-muted);width:100%;resize:vertical;">${esc(emailBody)}</textarea>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+          <button class="btn btn-success" onclick="sendEmail('${m.id}', '${stage}')">✅ Approve & Send</button>
+          <button class="btn btn-ghost" onclick="document.getElementById('emailPanel').innerHTML=''">Cancel</button>
+        </div>
+      </div>
+    `;
+    panel.scrollIntoView({behavior:'smooth'});
   }
+}
+
+function sendEmail(mentorId, stage) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
   
-  const mailto = `mailto:${m.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const body = document.getElementById('emailBodyEditor')?.value;
+  const tmpl = EMAIL_TEMPLATES[stage];
+  if (!body || !tmpl) return;
+  
+  // Open mailto with CC pre-filled — from admin@, CC brodie + norri
+  const mailto = `mailto:${encodeURIComponent(m.email)}?cc=${encodeURIComponent('brodie@bluesandgreens.com.au,norri@bluesandgreens.com.au')}&subject=${encodeURIComponent(tmpl.subject)}&body=${encodeURIComponent(body)}`;
   window.open(mailto, '_blank');
-  showToast('Email draft opened');
+  
+  showToast(`✅ Email opened for ${m.name} — hit Send in your email client`);
+  document.getElementById('emailPanel').innerHTML = '';
+  
+  // Track that email was sent
+  const sentEmails = JSON.parse(localStorage.getItem('bg-mentor-sent-emails') || '{}');
+  sentEmails[mentorId] = { stage, sentAt: new Date().toISOString() };
+  localStorage.setItem('bg-mentor-sent-emails', JSON.stringify(sentEmails));
+  saveLocal();
 }
 
 // ── Drag & Drop ──
