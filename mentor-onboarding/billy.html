@@ -99,6 +99,8 @@ h1 { font-size: 1.3em; margin-bottom: 4px; }
 }
 .verdict-btn.yes { color: var(--green); }
 .verdict-btn.yes.active { border-color: var(--green); background: rgba(46,204,113,0.15); }
+.verdict-btn.lean-yes { color: var(--gold); }
+.verdict-btn.lean-yes.active { border-color: var(--gold); background: rgba(200,169,81,0.15); }
 .verdict-btn.maybe { color: var(--orange); }
 .verdict-btn.maybe.active { border-color: var(--orange); background: rgba(243,156,18,0.15); }
 .verdict-btn.no { color: var(--red); }
@@ -223,9 +225,10 @@ function render() {
         <div class="score-section">
           <div class="score-label">🏆 Would you hire this person?</div>
           <div class="verdict-section" style="padding:0;">
-            <button class="verdict-btn yes ${verdict==='yes'?'active':''}" onclick="setBillyVerdict('${m.id}','yes')">👍 Yes</button>
-            <button class="verdict-btn maybe ${verdict==='maybe'?'active':''}" onclick="setBillyVerdict('${m.id}','maybe')">🤷 Maybe</button>
-            <button class="verdict-btn no ${verdict==='no'?'active':''}" onclick="setBillyVerdict('${m.id}','no')">👎 No</button>
+            <button class="verdict-btn yes ${verdict==='yes'?'active':''}" onclick="setBillyVerdict('${m.id}','yes')">Yes</button>
+            <button class="verdict-btn maybe ${verdict==='leaning-yes'?'active':''}" style="color:var(--gold);" onclick="setBillyVerdict('${m.id}','leaning-yes')">Leaning Yes</button>
+            <button class="verdict-btn maybe ${verdict==='leaning-no'?'active':''}" onclick="setBillyVerdict('${m.id}','leaning-no')">Leaning No</button>
+            <button class="verdict-btn no ${verdict==='no'?'active':''}" onclick="setBillyVerdict('${m.id}','no')">No</button>
           </div>
         </div>
         
