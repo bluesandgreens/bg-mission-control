@@ -1563,8 +1563,11 @@ function openLiveSessionView() {
         const total = interviewTotal + billyScore;
         const notes = mentorNotes[m.id] || [];
         
+        const decision = mentorScores[m.id]?.sessionDecision;
+        const borderColor = decision === 'onboard' ? 'var(--green)' : decision === 'reject' ? 'var(--red)' : decision === 'billy' ? '#1ABC9C' : 'var(--border)';
+        
         return `
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;">
+        <div style="background:var(--bg-card);border:2px solid ${borderColor};border-radius:var(--radius);margin-bottom:14px;overflow:hidden;${decision === 'onboard' ? 'box-shadow:0 0 12px rgba(46,204,113,0.15);' : decision === 'reject' ? 'box-shadow:0 0 12px rgba(231,76,60,0.15);' : ''}">
           <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);">
             <div style="display:flex;align-items:center;gap:10px;">
               <button onclick="toggleAttendanceLive('${m.id}')" 
@@ -1622,10 +1625,18 @@ function openLiveSessionView() {
               ).join('')}</div>` : ''}
             </div>
           </div>
-          <div style="padding:8px 16px 12px;border-top:1px solid var(--border);display:flex;gap:6px;">
-            <button class="btn btn-success" style="padding:8px 12px;font-size:0.82em;flex:1;" onclick="moveTo('${m.id}','billy');openLiveSessionView()">→ Billy 1:1</button>
-            <button class="btn btn-success" style="padding:8px 12px;font-size:0.82em;flex:1;" onclick="moveTo('${m.id}','onboarding');openLiveSessionView()">→ Onboard</button>
-            <button class="btn btn-danger" style="padding:8px 12px;font-size:0.82em;" onclick="moveTo('${m.id}','rejected');openLiveSessionView()">✕</button>
+          <div style="padding:10px 16px 12px;border-top:1px solid var(--border);">
+            <div style="font-size:0.7em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:6px;">Decision</div>
+            <div style="display:flex;gap:6px;">
+              ${[{v:'onboard',l:'✅ Onboard',c:'var(--green)'},{v:'billy',l:'🎯 Billy 1:1',c:'#1ABC9C'},{v:'reject',l:'✕ Reject',c:'var(--red)'}].map(opt => {
+                const current = mentorScores[m.id]?.sessionDecision;
+                return `<button onclick="setSessionDecision('${m.id}','${opt.v}')"
+                  style="flex:1;padding:10px 4px;border-radius:8px;border:2px solid ${current===opt.v?opt.c:'var(--border)'};
+                  background:${current===opt.v?opt.c+'22':'transparent'};
+                  color:${current===opt.v?opt.c:'var(--cream-dim)'};
+                  font-size:0.8em;font-weight:700;cursor:pointer;">${opt.l}</button>`;
+              }).join('')}
+            </div>
           </div>
           ` : `<div style="padding:12px 16px;color:var(--cream-dim);font-size:0.85em;">Tap ✓ to mark as attended</div>`}
         </div>`;
@@ -1657,6 +1668,14 @@ function setLiveHiring(mentorId, value) {
   openLiveSessionView();
 }
 
+function setSessionDecision(mentorId, decision) {
+  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
+  // Toggle off if already selected
+  mentorScores[mentorId].sessionDecision = mentorScores[mentorId].sessionDecision === decision ? null : decision;
+  saveLocal();
+  openLiveSessionView();
+}
+
 function addLiveNote(mentorId) {
   const input = document.getElementById(`liveNote-${mentorId}`);
   const text = input?.value.trim();
@@ -1668,11 +1687,99 @@ function addLiveNote(mentorId) {
 }
 
 function giEndSession() {
+  const sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
+  const candidates = sel.map(id => mentors.find(m => m.id === id)).filter(Boolean);
+  
+  const onboard = candidates.filter(m => mentorScores[m.id]?.sessionDecision === 'onboard');
+  const billy = candidates.filter(m => mentorScores[m.id]?.sessionDecision === 'billy');
+  const reject = candidates.filter(m => mentorScores[m.id]?.sessionDecision === 'reject');
+  const undecided = candidates.filter(m => !mentorScores[m.id]?.sessionDecision);
+  
+  document.getElementById('modal').innerHTML = `
+    <div class="modal-header">
+      <div>
+        <h2>📋 Session Results</h2>
+        <div style="font-size:0.85em;color:var(--cream-dim);margin-top:4px;">${candidates.length} candidates reviewed</div>
+      </div>
+      <button class="modal-close" onclick="giFinalClose()">×</button>
+    </div>
+    <div class="modal-body" style="padding:16px;">
+      
+      ${onboard.length ? `
+      <div style="margin-bottom:16px;">
+        <h3 style="font-size:0.9em;color:var(--green);margin-bottom:8px;">✅ Onboard (${onboard.length})</h3>
+        ${onboard.map(m => `
+          <div style="background:rgba(46,204,113,0.08);border:1px solid rgba(46,204,113,0.3);border-radius:8px;padding:12px 14px;margin-bottom:8px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong>${esc(m.name)}</strong>
+              <button class="btn btn-email" style="padding:6px 12px;font-size:0.78em;" onclick="autoSendEmail('${m.id}','onboarding')">📧 Send Onboarding Email</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>` : ''}
+      
+      ${billy.length ? `
+      <div style="margin-bottom:16px;">
+        <h3 style="font-size:0.9em;color:#1ABC9C;margin-bottom:8px;">🎯 Billy 1:1 (${billy.length})</h3>
+        ${billy.map(m => `
+          <div style="background:rgba(26,188,156,0.08);border:1px solid rgba(26,188,156,0.3);border-radius:8px;padding:12px 14px;margin-bottom:8px;">
+            <strong>${esc(m.name)}</strong>
+          </div>
+        `).join('')}
+      </div>` : ''}
+      
+      ${reject.length ? `
+      <div style="margin-bottom:16px;">
+        <h3 style="font-size:0.9em;color:var(--red);margin-bottom:8px;">✕ Rejected (${reject.length})</h3>
+        ${reject.map(m => `
+          <div style="background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.3);border-radius:8px;padding:12px 14px;margin-bottom:8px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong>${esc(m.name)}</strong>
+              <button class="btn btn-ghost" style="padding:6px 12px;font-size:0.78em;" onclick="autoSendEmail('${m.id}','rejected')">📧 Send Rejection</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>` : ''}
+      
+      ${undecided.length ? `
+      <div style="margin-bottom:16px;">
+        <h3 style="font-size:0.9em;color:var(--cream-dim);margin-bottom:8px;">⬜ Undecided (${undecided.length})</h3>
+        ${undecided.map(m => `
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px;">
+            <strong>${esc(m.name)}</strong>
+          </div>
+        `).join('')}
+      </div>` : ''}
+    </div>
+    <div class="modal-actions" style="flex-direction:column;gap:8px;">
+      <button class="btn btn-success" style="width:100%" onclick="giApplyDecisions()">✅ Apply All Decisions & Close</button>
+      <button class="btn btn-ghost" style="width:100%" onclick="openLiveSessionView()">← Back to Scoring</button>
+    </div>
+  `;
+}
+
+function giApplyDecisions() {
+  const sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
+  let moved = 0;
+  sel.forEach(id => {
+    const decision = mentorScores[id]?.sessionDecision;
+    if (decision === 'onboard') { stageAssignments[id] = 'onboarding'; moved++; }
+    else if (decision === 'billy') { stageAssignments[id] = 'billy'; moved++; }
+    else if (decision === 'reject') { stageAssignments[id] = 'rejected'; moved++; }
+  });
+  saveLocal();
   sessionStorage.removeItem('gi-live');
   sessionStorage.removeItem('gi-selected');
   closeModal();
   render();
-  showToast('Session ended');
+  showToast(`Session complete — ${moved} candidates moved`);
+}
+
+function giFinalClose() {
+  sessionStorage.removeItem('gi-live');
+  sessionStorage.removeItem('gi-selected');
+  closeModal();
+  render();
 }
 
 function openBillyQueue() {
