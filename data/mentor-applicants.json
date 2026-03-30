@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30T21:03:02Z",
+  "updated": "2026-03-30T23:02:16Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -3019,35 +3019,6 @@
       "created": "2026-02-25T06:44:24.544Z"
     },
     {
-      "id": "208224774947",
-      "name": "Naite Hoskin",
-      "email": "naite.hoskin@gmail.com",
-      "phone": "0455470949",
-      "age": 20,
-      "source": "Someone else",
-      "stage": "tg-review",
-      "hs_stage": "Test Gorilla Complete",
-      "has_laptop": "Yes",
-      "hours_week": "6+ hours",
-      "three_month_commit": "Yes",
-      "why_mentor": null,
-      "application_message": null,
-      "location": null,
-      "tg_score": null,
-      "tg_results": null,
-      "tg_link_sent": true,
-      "tg_done": false,
-      "brodie_notes": "Submitted, but apparently we can\u2019t see it? Seems good though.",
-      "referred_by": "Aiden Librio",
-      "norri_notes": "You liked him to answer the questions well. He had the test gorilla with only the three questions, which is a shame because I would have liked to perhaps see a little more; however the way he answered the three questions on this particular test gorilla was awesome. Particularly liked his one using the Japanese word Kaizen, meaning wanting to be 1% better every day, but looks cool, speaks well, seems like a friendly, warm kind of fella that would easily engage with young blokes. Invite to group interview. ",
-      "norri_assigned_to": "",
-      "norri_passion": null,
-      "norri_energy": null,
-      "norri_conversation": null,
-      "norri_good_bloke": null,
-      "created": "2026-03-10T08:05:03.221Z"
-    },
-    {
       "id": "209156889524",
       "name": "Mario Armota",
       "email": "armotamario@outlook.com",
@@ -3396,6 +3367,35 @@
       "created": "2026-03-10T02:10:10.845Z"
     },
     {
+      "id": "208224774947",
+      "name": "Naite Hoskin",
+      "email": "naite.hoskin@gmail.com",
+      "phone": "0455470949",
+      "age": 20,
+      "source": "Someone else",
+      "stage": "screening",
+      "hs_stage": "Test Gorilla Complete",
+      "has_laptop": "Yes",
+      "hours_week": "6+ hours",
+      "three_month_commit": "Yes",
+      "why_mentor": null,
+      "application_message": null,
+      "location": null,
+      "tg_score": null,
+      "tg_results": null,
+      "tg_link_sent": true,
+      "tg_done": false,
+      "brodie_notes": "Submitted, but apparently we can\u2019t see it? Seems good though.",
+      "referred_by": "Aiden Librio",
+      "norri_notes": "You liked him to answer the questions well. He had the test gorilla with only the three questions, which is a shame because I would have liked to perhaps see a little more; however the way he answered the three questions on this particular test gorilla was awesome. Particularly liked his one using the Japanese word Kaizen, meaning wanting to be 1% better every day, but looks cool, speaks well, seems like a friendly, warm kind of fella that would easily engage with young blokes. Invite to group interview. ",
+      "norri_assigned_to": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "created": "2026-03-10T08:05:03.221Z"
+    },
+    {
       "id": "209493267600",
       "name": "William Worsfold",
       "email": "worsfoldwilliam@gmail.com",
@@ -3452,35 +3452,6 @@
       "norri_conversation": null,
       "norri_good_bloke": null,
       "created": "2026-03-17T06:37:26.602Z"
-    },
-    {
-      "id": "210822302737",
-      "name": "James Washington",
-      "email": "jameswasho339@gmail.com",
-      "phone": "0421237600",
-      "age": 21,
-      "source": "A current mentor",
-      "stage": "screening",
-      "hs_stage": "Test Gorilla Complete",
-      "has_laptop": "Yes",
-      "hours_week": "6+ hours",
-      "three_month_commit": "Yes",
-      "why_mentor": null,
-      "application_message": null,
-      "location": null,
-      "tg_score": null,
-      "tg_results": null,
-      "tg_link_sent": true,
-      "tg_done": true,
-      "brodie_notes": "Done the test gorilla",
-      "referred_by": "Aidan Librio",
-      "norri_notes": "Reminds me of Shane to look at - friend of Adian L works in Primary School good energy definite move to speak to Bill",
-      "norri_assigned_to": "Brodie",
-      "norri_passion": null,
-      "norri_energy": null,
-      "norri_conversation": null,
-      "norri_good_bloke": null,
-      "created": "2026-03-22T10:05:41.688Z"
     },
     {
       "id": "211182685276",
@@ -3568,6 +3539,35 @@
       "norri_conversation": null,
       "norri_good_bloke": null,
       "created": "2026-03-15T00:10:11.480Z"
+    },
+    {
+      "id": "210822302737",
+      "name": "James Washington",
+      "email": "jameswasho339@gmail.com",
+      "phone": "0421237600",
+      "age": 21,
+      "source": "A current mentor",
+      "stage": "interview",
+      "hs_stage": "Test Gorilla Complete",
+      "has_laptop": "Yes",
+      "hours_week": "6+ hours",
+      "three_month_commit": "Yes",
+      "why_mentor": null,
+      "application_message": null,
+      "location": null,
+      "tg_score": null,
+      "tg_results": null,
+      "tg_link_sent": true,
+      "tg_done": true,
+      "brodie_notes": "Done the test gorilla",
+      "referred_by": "Aidan Librio",
+      "norri_notes": "Reminds me of Shane to look at - friend of Adian L works in Primary School good energy definite move to speak to Bill",
+      "norri_assigned_to": "Brodie",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "created": "2026-03-22T10:05:41.688Z"
     },
     {
       "id": "210959168783",
@@ -3705,11 +3705,51 @@
       "norri_good_bloke": null,
       "created": "2026-01-21T09:58:07.792Z",
       "circle": {
-        "found": false,
-        "progress": 0,
+        "found": true,
+        "joined": "2026-03-13T03:40:47.400Z",
+        "last_seen": "2026-03-30T08:41:05.000Z",
+        "tags": [],
+        "posts": 0,
+        "progress": 10,
         "steps": [
           {
-            "name": "Joined Circle Community",
+            "name": "\ud83d\udc9c Intro Lets Go",
+            "done": true
+          },
+          {
+            "name": "\ud83c\udf0f Phase 1: Who We Are",
+            "done": false
+          },
+          {
+            "name": "\ud83d\ude48 Phase 2: Understanding Teens",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udcaa Phase 3: The Weapons",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udce3 Phase 4: Session Mastery",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udd30 Phase 5: Member Life",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udc40 Phase 6: How Mentors Win",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udc8c Phase 7: Account Setup",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udc7b Phase 8: The Mentor",
+            "done": false
+          },
+          {
+            "name": "\ud83d\udcdd Next Steps",
             "done": false
           }
         ]
@@ -3781,7 +3821,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T11:11:41.170Z"
+      "created": "2026-01-21T11:11:41.170Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "195041149771",
@@ -3888,7 +3938,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-27T00:18:39.569Z"
+      "created": "2026-01-27T00:18:39.569Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "198295564805",
