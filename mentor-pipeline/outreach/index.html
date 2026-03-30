@@ -44,7 +44,6 @@ a:hover { text-decoration: underline; }
 .header .subtitle { color: var(--cream-muted); font-size: 0.95em; }
 .back-link { display: inline-block; margin-bottom: 15px; font-size: 0.85em; color: var(--cream-dim); }
 
-/* Toast notification */
 .toast {
   position: fixed;
   top: 20px;
@@ -63,7 +62,6 @@ a:hover { text-decoration: underline; }
 .toast.show { transform: translateX(0); }
 .toast.error { background: var(--red); color: white; }
 
-/* Loading spinner */
 .loading {
   text-align: center;
   padding: 40px;
@@ -81,7 +79,6 @@ a:hover { text-decoration: underline; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Summary row */
 .summary-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -98,7 +95,6 @@ a:hover { text-decoration: underline; }
 .summary-card .num { font-size: 1.8em; font-weight: 700; color: var(--gold); }
 .summary-card .label { font-size: 0.8em; color: var(--cream-dim); margin-top: 2px; }
 
-/* Section headers */
 .section { margin-bottom: 35px; }
 .section-title {
   font-size: 1.2em;
@@ -109,7 +105,6 @@ a:hover { text-decoration: underline; }
   gap: 8px;
 }
 
-/* Template cards */
 .template-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -160,7 +155,6 @@ a:hover { text-decoration: underline; }
 }
 .template-card.open .template-card-body { display: block; padding-top: 14px; }
 
-/* Textarea editor */
 .template-editor {
   width: 100%;
   min-height: 180px;
@@ -176,9 +170,7 @@ a:hover { text-decoration: underline; }
   outline: none;
   transition: border-color 0.2s;
 }
-.template-editor:focus {
-  border-color: var(--gold);
-}
+.template-editor:focus { border-color: var(--gold); }
 .template-editor.subject-editor {
   min-height: 42px;
   height: 42px;
@@ -186,7 +178,6 @@ a:hover { text-decoration: underline; }
   font-size: 0.88em;
 }
 
-/* Action buttons */
 .template-actions {
   display: flex;
   gap: 10px;
@@ -209,17 +200,15 @@ a:hover { text-decoration: underline; }
 .btn:hover { transform: scale(1.03); }
 .btn:active { transform: scale(0.97); }
 .btn:disabled { opacity: 0.5; cursor: default; transform: none; }
-.btn-save { background: var(--gold); color: var(--bg); }
 .btn-approve { background: var(--green); color: var(--bg); }
 .btn-unapprove { background: rgba(251,248,243,0.1); color: var(--cream-dim); }
-.btn-reset { background: rgba(251,248,243,0.06); color: var(--cream-dim); font-weight: 500; font-size: 0.8em; }
+
 .modified-indicator {
   font-size: 0.8em;
   color: var(--orange);
   font-style: italic;
 }
 
-/* Subject line labels */
 .subject-row {
   display: flex;
   align-items: center;
@@ -237,7 +226,6 @@ a:hover { text-decoration: underline; }
 .label-a { background: rgba(16,71,145,0.3); color: var(--cream); }
 .label-b { background: rgba(200,169,81,0.2); color: var(--gold); }
 
-/* Day cards */
 .day-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -343,19 +331,24 @@ a:hover { text-decoration: underline; }
   display: inline-block;
 }
 
-/* Placeholder highlighting in preview */
-.placeholder-highlight {
-  background: rgba(200,169,81,0.2);
-  color: var(--gold);
-  padding: 1px 4px;
-  border-radius: 3px;
-  font-weight: 600;
-}
-
-/* Approved border glow */
 .day-card.status-approved { border-color: rgba(200,169,81,0.4); }
 .day-card.status-sending { border-color: rgba(52,152,219,0.4); }
 .day-card.status-sent { border-color: rgba(46,204,113,0.4); }
+
+.approve-all-bar {
+  background: linear-gradient(135deg, rgba(46,204,113,0.1), rgba(16,71,145,0.1));
+  border: 1px solid rgba(46,204,113,0.3);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.approve-all-bar .info { font-size: 0.9em; color: var(--cream-muted); }
+.approve-all-bar .info strong { color: var(--cream); }
 
 @media (max-width: 600px) {
   body { padding: 10px; }
@@ -364,70 +357,30 @@ a:hover { text-decoration: underline; }
   .summary-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .summary-card { padding: 12px 8px; }
   .summary-card .num { font-size: 1.5em; }
-
-  /* Fix textarea mobile interaction */
-  .template-editor {
-    font-size: 16px; /* Prevents iOS zoom on focus */
-    min-height: 200px;
-    -webkit-appearance: none;
-    -webkit-overflow-scrolling: touch;
-    touch-action: manipulation;
-  }
-  .template-editor.subject-editor {
-    min-height: 48px;
-    height: 48px;
-    font-size: 16px;
-  }
-
-  /* Large touch targets for buttons (min 44px) */
-  .btn {
-    width: 100%;
-    justify-content: center;
-    min-height: 48px;
-    font-size: 0.95em;
-    padding: 12px 18px;
-  }
+  .template-editor { font-size: 16px; min-height: 200px; -webkit-appearance: none; touch-action: manipulation; }
+  .template-editor.subject-editor { min-height: 48px; height: 48px; font-size: 16px; }
+  .btn { width: 100%; justify-content: center; min-height: 48px; font-size: 0.95em; padding: 12px 18px; }
   .template-actions {
-    flex-direction: column;
-    gap: 8px;
-    position: sticky;
-    bottom: 0;
-    background: var(--bg-card);
-    padding: 12px 0 4px;
-    margin: 0 -18px;
-    padding-left: 18px;
-    padding-right: 18px;
-    border-top: 1px solid var(--border);
-    z-index: 10;
+    flex-direction: column; gap: 8px;
+    position: sticky; bottom: 0;
+    background: var(--bg-card); padding: 12px 0 4px;
+    margin: 0 -18px; padding-left: 18px; padding-right: 18px;
+    border-top: 1px solid var(--border); z-index: 10;
   }
-
-  /* Template cards stack vertically & no horizontal scroll */
-  .template-card { margin-bottom: 10px; }
   .template-card-header { padding: 14px 14px; min-height: 48px; }
   .template-card-body { padding: 0 14px 14px; }
   .template-card.open .template-card-body { padding-top: 12px; }
-
-  /* Day cards touch-friendly */
   .day-card-header { padding: 14px; min-height: 48px; }
   .day-card-body { padding: 0 14px 14px; }
   .day-card.open .day-card-body { padding-top: 12px; }
-
-  /* Contact table: prevent horizontal overflow */
   .contact-table { font-size: 0.72em; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .contact-table th, .contact-table td { padding: 5px 6px; white-space: nowrap; }
-
-  /* Expandable toggle touch target */
-  .preview-toggle { min-height: 44px; line-height: 44px; display: inline-block; }
-
-  /* Badge readable on mobile */
+  .preview-toggle { min-height: 44px; line-height: 44px; }
   .badge { font-size: 0.68em; padding: 4px 8px; }
   .day-count { font-size: 0.75em; padding: 4px 10px; }
-
-  /* Section titles */
   .section-title { font-size: 1.05em; }
-
-  /* Subject row stacking */
   .subject-row { flex-direction: column; gap: 6px; }
+  .approve-all-bar { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
@@ -442,180 +395,88 @@ a:hover { text-decoration: underline; }
 
 <div id="toast" class="toast"></div>
 
+<div id="approveAllBar"></div>
+
 <div class="summary-row" id="summaryRow">
   <div class="loading"><div class="spinner"></div><br>Loading…</div>
 </div>
 
-<!-- Section 1: Subject Lines -->
 <div class="section" id="subjectSection">
   <div class="section-title">✉️ Subject Lines (A/B)</div>
   <div id="subjectContainer"></div>
 </div>
 
-<!-- Section 2: Student Blurb -->
 <div class="section" id="blurbSection">
   <div class="section-title">📨 Student-Facing Blurb</div>
   <div id="blurbContainer"></div>
 </div>
 
-<!-- Section 3: Email Templates -->
 <div class="section" id="templateSection">
   <div class="section-title">📝 Email Templates</div>
   <div id="templatesContainer"></div>
 </div>
 
-<!-- Section 4: Day Approvals -->
 <div class="section" id="daySection">
   <div class="section-title">📅 Daily Send Approval</div>
   <div id="daysContainer"></div>
 </div>
 
 <script>
-// ── Config ──
-const SUPABASE_URL = 'https://ltpkeddkkrexynlhgxal.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0cGtlZGRra3JleHlubGhneGFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk4Mjk4MjcsImV4cCI6MjA4NTQwNTgyN30.pXESrW0hz0ve56F0iTjyzLbBfGz-wXQRN5AB52Pil_g';
-
 const TEMPLATE_ORDER = ['t1-wil', 't2-unit-coord', 't3-careers', 't6-followup'];
 const SUBJECT_IDS = ['subject-a', 'subject-b'];
 const DAY_ORDER = ['mon', 'tue', 'wed', 'thu', 'fri'];
 const DAY_ROLLOUT_KEYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+const STORAGE_KEY = 'bg-outreach-approvals';
 
 let templates = {};
 let days = {};
 let rolloutData = null;
-let originalTemplates = {};
+let approvals = {};
 
-// ── Supabase helpers ──
-async function supaFetch(path, opts = {}) {
-  const resp = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
-    headers: {
-      'apikey': SUPABASE_KEY,
-      'Authorization': `Bearer ${SUPABASE_KEY}`,
-      'Content-Type': 'application/json',
-      ...(opts.headers || {})
-    },
-    ...opts
-  });
-  if (!resp.ok) throw new Error(`Supabase ${resp.status}: ${await resp.text()}`);
-  const text = await resp.text();
-  return text ? JSON.parse(text) : null;
+function loadApprovals() {
+  try {
+    approvals = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  } catch { approvals = {}; }
+}
+
+function saveApprovals() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(approvals));
+}
+
+function isApproved(type, id) {
+  return !!(approvals[type] && approvals[type][id]);
+}
+
+function setApproved(type, id, val) {
+  if (!approvals[type]) approvals[type] = {};
+  if (val) {
+    approvals[type][id] = new Date().toISOString();
+  } else {
+    delete approvals[type][id];
+  }
+  saveApprovals();
 }
 
 async function loadData() {
-  const [settings, rollout] = await Promise.all([
-    supaFetch('admin_settings?setting_key=in.(mentor_outreach_templates,mentor_outreach_days)'),
-    fetch('../../../data/outreach-rollout.json').then(r => r.json()).catch(() => null)
+  loadApprovals();
+  
+  const [configResp, rolloutResp] = await Promise.all([
+    fetch('../../data/outreach-config.json'),
+    fetch('../../data/outreach-rollout.json')
   ]);
 
-  for (const row of settings) {
-    if (row.setting_key === 'mentor_outreach_templates') {
-      templates = row.setting_value;
-      originalTemplates = JSON.parse(JSON.stringify(templates));
-    }
-    if (row.setting_key === 'mentor_outreach_days') {
-      days = row.setting_value;
-    }
-  }
+  if (!configResp.ok) throw new Error('Failed to load outreach-config.json');
+  if (!rolloutResp.ok) throw new Error('Failed to load outreach-rollout.json');
 
-  rolloutData = rollout;
+  const config = await configResp.json();
+  rolloutData = await rolloutResp.json();
+
+  templates = config.mentor_outreach_templates || {};
+  days = config.mentor_outreach_days || {};
+
   render();
 }
 
-async function saveTemplate(id) {
-  const textarea = document.getElementById(`editor-${id}`);
-  if (!textarea) return;
-  
-  templates[id].content = textarea.value;
-  templates[id].approved = false;
-  templates[id].approved_at = null;
-
-  await supaFetch('admin_settings?setting_key=eq.mentor_outreach_templates', {
-    method: 'PATCH',
-    body: JSON.stringify({
-      setting_value: templates,
-      updated_at: new Date().toISOString()
-    }),
-    headers: { 'Prefer': 'return=minimal' }
-  });
-
-  originalTemplates[id].content = textarea.value;
-  showToast(`✅ "${templates[id].name}" saved`);
-  renderTemplateCard(id);
-}
-
-async function approveTemplate(id) {
-  templates[id].approved = true;
-  templates[id].approved_at = new Date().toISOString();
-
-  await supaFetch('admin_settings?setting_key=eq.mentor_outreach_templates', {
-    method: 'PATCH',
-    body: JSON.stringify({
-      setting_value: templates,
-      updated_at: new Date().toISOString()
-    }),
-    headers: { 'Prefer': 'return=minimal' }
-  });
-
-  originalTemplates = JSON.parse(JSON.stringify(templates));
-  showToast(`✅ "${templates[id].name}" approved`);
-  renderTemplateCard(id);
-  updateSummary();
-}
-
-async function unapproveTemplate(id) {
-  templates[id].approved = false;
-  templates[id].approved_at = null;
-
-  await supaFetch('admin_settings?setting_key=eq.mentor_outreach_templates', {
-    method: 'PATCH',
-    body: JSON.stringify({
-      setting_value: templates,
-      updated_at: new Date().toISOString()
-    }),
-    headers: { 'Prefer': 'return=minimal' }
-  });
-
-  originalTemplates = JSON.parse(JSON.stringify(templates));
-  renderTemplateCard(id);
-  updateSummary();
-}
-
-async function approveDay(dayId) {
-  days[dayId].status = 'approved';
-  days[dayId].approved_at = new Date().toISOString();
-
-  await supaFetch('admin_settings?setting_key=eq.mentor_outreach_days', {
-    method: 'PATCH',
-    body: JSON.stringify({
-      setting_value: days,
-      updated_at: new Date().toISOString()
-    }),
-    headers: { 'Prefer': 'return=minimal' }
-  });
-
-  showToast(`✅ ${days[dayId].label} approved for sending`);
-  renderDayCard(dayId);
-  updateSummary();
-}
-
-async function unapproveDay(dayId) {
-  days[dayId].status = 'pending';
-  days[dayId].approved_at = null;
-
-  await supaFetch('admin_settings?setting_key=eq.mentor_outreach_days', {
-    method: 'PATCH',
-    body: JSON.stringify({
-      setting_value: days,
-      updated_at: new Date().toISOString()
-    }),
-    headers: { 'Prefer': 'return=minimal' }
-  });
-
-  renderDayCard(dayId);
-  updateSummary();
-}
-
-// ── Toast ──
 function showToast(msg, isError = false) {
   const el = document.getElementById('toast');
   el.textContent = msg;
@@ -623,12 +484,56 @@ function showToast(msg, isError = false) {
   setTimeout(() => el.className = 'toast', 3000);
 }
 
-// ── Render ──
-function highlightPlaceholders(text) {
-  return text.replace(/\[([^\]]+)\]/g, '<span class="placeholder-highlight">[$1]</span>');
+function approveTemplate(id) {
+  setApproved('templates', id, true);
+  showToast(`✅ "${templates[id].name}" approved`);
+  render();
+}
+
+function unapproveTemplate(id) {
+  setApproved('templates', id, false);
+  render();
+}
+
+function approveDay(dayId) {
+  setApproved('days', dayId, true);
+  showToast(`✅ ${days[dayId].label} approved for sending`);
+  render();
+}
+
+function unapproveDay(dayId) {
+  setApproved('days', dayId, false);
+  render();
+}
+
+function approveAll() {
+  // Approve all templates
+  for (const id of [...SUBJECT_IDS, 'student-blurb', ...TEMPLATE_ORDER]) {
+    if (templates[id]) setApproved('templates', id, true);
+  }
+  // Approve all days
+  for (const id of DAY_ORDER) {
+    if (days[id]) setApproved('days', id, true);
+  }
+  showToast('✅ Everything approved! Leo will begin sending Monday morning.');
+  render();
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function toggleCard(id) {
+  document.getElementById(`card-${id}`)?.classList.toggle('open');
+}
+
+function toggleDayCard(id) {
+  document.getElementById(`day-${id}`)?.classList.toggle('open');
 }
 
 function render() {
+  renderApproveAllBar();
   renderSummary();
   renderSubjects();
   renderBlurb();
@@ -636,22 +541,38 @@ function render() {
   renderDays();
 }
 
-function updateSummary() {
-  renderSummary();
+function renderApproveAllBar() {
+  const allTemplateIds = [...SUBJECT_IDS, 'student-blurb', ...TEMPLATE_ORDER].filter(id => templates[id]);
+  const allDayIds = DAY_ORDER.filter(id => days[id]);
+  const totalItems = allTemplateIds.length + allDayIds.length;
+  const approvedCount = allTemplateIds.filter(id => isApproved('templates', id)).length
+    + allDayIds.filter(id => isApproved('days', id)).length;
+
+  const bar = document.getElementById('approveAllBar');
+  if (approvedCount >= totalItems) {
+    bar.innerHTML = `<div class="approve-all-bar" style="border-color: rgba(46,204,113,0.5);">
+      <div class="info">🎉 <strong>All approved!</strong> Leo will send emails on each day's schedule.</div>
+    </div>`;
+  } else {
+    bar.innerHTML = `<div class="approve-all-bar">
+      <div class="info"><strong>${approvedCount}/${totalItems}</strong> items approved. Review below or approve everything at once.</div>
+      <button class="btn btn-approve" onclick="approveAll()" style="width:auto;min-width:180px;">✅ Approve Everything</button>
+    </div>`;
+  }
 }
 
 function renderSummary() {
   const totalEmails = Object.values(days).reduce((s, d) => s + (d.contact_count || 0), 0);
-  const approvedTemplates = Object.values(templates).filter(t => t.approved).length;
-  const totalTemplates = Object.keys(templates).length;
-  const approvedDays = Object.values(days).filter(d => d.status === 'approved' || d.status === 'sent').length;
-  const sentDays = Object.values(days).filter(d => d.status === 'sent').length;
+  const allTemplateIds = [...SUBJECT_IDS, 'student-blurb', ...TEMPLATE_ORDER].filter(id => templates[id]);
+  const approvedTemplates = allTemplateIds.filter(id => isApproved('templates', id)).length;
+  const totalTemplates = allTemplateIds.length;
+  const approvedDays = DAY_ORDER.filter(id => days[id] && isApproved('days', id)).length;
 
   document.getElementById('summaryRow').innerHTML = `
     <div class="summary-card"><div class="num">${totalEmails}</div><div class="label">Total Emails</div></div>
     <div class="summary-card"><div class="num">${approvedTemplates}/${totalTemplates}</div><div class="label">Templates Approved</div></div>
     <div class="summary-card"><div class="num">${approvedDays}/5</div><div class="label">Days Approved</div></div>
-    <div class="summary-card"><div class="num">${sentDays}/5</div><div class="label">Days Sent</div></div>
+    <div class="summary-card"><div class="num">0/5</div><div class="label">Days Sent</div></div>
   `;
 }
 
@@ -661,23 +582,21 @@ function renderSubjects() {
   for (const id of SUBJECT_IDS) {
     const t = templates[id];
     if (!t) continue;
+    const approved = isApproved('templates', id);
     const isA = id === 'subject-a';
     html += `<div id="card-${id}" class="template-card">
       <div class="template-card-header" onclick="toggleCard('${id}')">
-        <span class="title">${isA ? '🅰️' : '🅱️'} ${t.name}</span>
-        <span class="badge ${t.approved ? 'badge-approved' : 'badge-pending'}">${t.approved ? 'Approved ✅' : 'Pending'}</span>
+        <span class="title">${isA ? '🅰️' : '🅱️'} ${escapeHtml(t.name)}</span>
+        <span class="badge ${approved ? 'badge-approved' : 'badge-pending'}">${approved ? 'Approved ✅' : 'Pending'}</span>
         <span class="chevron">▶</span>
       </div>
       <div class="template-card-body">
-        <textarea id="editor-${id}" class="template-editor subject-editor" 
-          oninput="onEditorInput('${id}')">${escapeHtml(t.content)}</textarea>
+        <textarea id="editor-${id}" class="template-editor subject-editor" readonly>${escapeHtml(t.content)}</textarea>
         <div class="template-actions">
-          <button class="btn btn-save" onclick="wrapAsync(() => saveTemplate('${id}'))">💾 Save</button>
-          ${t.approved
-            ? `<button class="btn btn-unapprove" onclick="wrapAsync(() => unapproveTemplate('${id}'))">↩️ Unapprove</button>`
-            : `<button class="btn btn-approve" onclick="wrapAsync(() => approveTemplate('${id}'))">✅ Approve</button>`
+          ${approved
+            ? `<button class="btn btn-unapprove" onclick="unapproveTemplate('${id}')">↩️ Unapprove</button>`
+            : `<button class="btn btn-approve" onclick="approveTemplate('${id}')">✅ Approve</button>`
           }
-          <span id="modified-${id}" class="modified-indicator" style="display:none">• unsaved changes</span>
         </div>
       </div>
     </div>`;
@@ -690,25 +609,23 @@ function renderBlurb() {
   const t = templates['student-blurb'];
   if (!t) { container.innerHTML = ''; return; }
   const id = 'student-blurb';
+  const approved = isApproved('templates', id);
   container.innerHTML = `<div id="card-${id}" class="template-card is-blurb">
     <div class="template-card-header" onclick="toggleCard('${id}')">
-      <span class="title">🎓 ${t.name}</span>
-      <span class="badge ${t.approved ? 'badge-approved' : 'badge-pending'}">${t.approved ? 'Approved ✅' : 'Pending'}</span>
+      <span class="title">🎓 ${escapeHtml(t.name)}</span>
+      <span class="badge ${approved ? 'badge-approved' : 'badge-pending'}">${approved ? 'Approved ✅' : 'Pending'}</span>
       <span class="chevron">▶</span>
     </div>
     <div class="template-card-body">
       <div style="font-size:0.82em;color:var(--cream-dim);margin-bottom:10px;">
         When a coordinator says "send me something to share" — this is what goes to students. Max 150 words, Harry's voice.
       </div>
-      <textarea id="editor-${id}" class="template-editor" style="min-height:200px;"
-        oninput="onEditorInput('${id}')">${escapeHtml(t.content)}</textarea>
+      <textarea id="editor-${id}" class="template-editor" style="min-height:200px;" readonly>${escapeHtml(t.content)}</textarea>
       <div class="template-actions">
-        <button class="btn btn-save" onclick="wrapAsync(() => saveTemplate('${id}'))">💾 Save</button>
-        ${t.approved
-          ? `<button class="btn btn-unapprove" onclick="wrapAsync(() => unapproveTemplate('${id}'))">↩️ Unapprove</button>`
-          : `<button class="btn btn-approve" onclick="wrapAsync(() => approveTemplate('${id}'))">✅ Approve</button>`
+        ${approved
+          ? `<button class="btn btn-unapprove" onclick="unapproveTemplate('${id}')">↩️ Unapprove</button>`
+          : `<button class="btn btn-approve" onclick="approveTemplate('${id}')">✅ Approve</button>`
         }
-        <span id="modified-${id}" class="modified-indicator" style="display:none">• unsaved changes</span>
       </div>
     </div>
   </div>`;
@@ -718,140 +635,97 @@ function renderTemplates() {
   const container = document.getElementById('templatesContainer');
   let html = '';
   for (const id of TEMPLATE_ORDER) {
-    html += `<div id="card-wrapper-${id}"></div>`;
+    const t = templates[id];
+    if (!t) continue;
+    const approved = isApproved('templates', id);
+    html += `<div id="card-${id}" class="template-card">
+      <div class="template-card-header" onclick="toggleCard('${id}')">
+        <span class="title">${escapeHtml(t.name)}</span>
+        <span class="badge ${approved ? 'badge-approved' : 'badge-pending'}">${approved ? 'Approved ✅' : 'Pending'}</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="template-card-body">
+        <textarea id="editor-${id}" class="template-editor" style="min-height:240px;" readonly>${escapeHtml(t.content)}</textarea>
+        <div class="template-actions">
+          ${approved
+            ? `<button class="btn btn-unapprove" onclick="unapproveTemplate('${id}')">↩️ Unapprove</button>`
+            : `<button class="btn btn-approve" onclick="approveTemplate('${id}')">✅ Approve</button>`
+          }
+        </div>
+      </div>
+    </div>`;
   }
   container.innerHTML = html;
-  for (const id of TEMPLATE_ORDER) {
-    renderTemplateCard(id);
-  }
-}
-
-function renderTemplateCard(id) {
-  const t = templates[id];
-  if (!t) return;
-  const wrapper = document.getElementById(`card-wrapper-${id}`) || document.getElementById(`card-${id}`)?.parentElement;
-  if (!wrapper) return;
-
-  const wasOpen = document.getElementById(`card-${id}`)?.classList.contains('open');
-  
-  wrapper.innerHTML = `<div id="card-${id}" class="template-card ${wasOpen ? 'open' : ''}">
-    <div class="template-card-header" onclick="toggleCard('${id}')">
-      <span class="title">${t.name}</span>
-      <span class="badge ${t.approved ? 'badge-approved' : 'badge-pending'}">${t.approved ? 'Approved ✅' : 'Pending'}</span>
-      <span class="chevron">▶</span>
-    </div>
-    <div class="template-card-body">
-      <textarea id="editor-${id}" class="template-editor" style="min-height:240px;"
-        oninput="onEditorInput('${id}')">${escapeHtml(t.content)}</textarea>
-      <div class="template-actions">
-        <button class="btn btn-save" onclick="wrapAsync(() => saveTemplate('${id}'))">💾 Save</button>
-        ${t.approved
-          ? `<button class="btn btn-unapprove" onclick="wrapAsync(() => unapproveTemplate('${id}'))">↩️ Unapprove</button>`
-          : `<button class="btn btn-approve" onclick="wrapAsync(() => approveTemplate('${id}'))">✅ Approve</button>`
-        }
-        <span id="modified-${id}" class="modified-indicator" style="display:none">• unsaved changes</span>
-      </div>
-    </div>
-  </div>`;
 }
 
 function renderDays() {
   const container = document.getElementById('daysContainer');
   let html = '';
   for (const dayId of DAY_ORDER) {
-    html += `<div id="day-wrapper-${dayId}"></div>`;
+    const d = days[dayId];
+    if (!d) continue;
+    const approved = isApproved('days', dayId);
+    const idx = DAY_ORDER.indexOf(dayId);
+    const rolloutKey = DAY_ROLLOUT_KEYS[idx];
+    const dayRollout = rolloutData ? rolloutData[rolloutKey] : null;
+
+    const statusClass = approved ? 'status-approved' : '';
+    const badgeClass = approved ? 'badge-approved' : 'badge-pending';
+    const statusLabel = approved ? 'Approved ✅' : 'Pending';
+
+    let bodyContent = '';
+    if (dayRollout) {
+      const unis = Object.entries(dayRollout.stats?.by_uni || {}).sort((a, b) => b[1] - a[1]);
+      bodyContent = `
+        <div class="day-stats">
+          <span class="stat-chip">📊 ${dayRollout.stats?.subject_a || '?'}A / ${dayRollout.stats?.subject_b || '?'}B split</span>
+          <span class="stat-chip">🏫 ${unis.length} organisations</span>
+        </div>
+        <div class="uni-breakdown">
+          ${unis.map(([u, c]) => `<span class="uni-chip">${escapeHtml(u) || 'Other'} (${c})</span>`).join('')}
+        </div>
+        <table class="contact-table">
+          <thead><tr><th>Name</th><th>Uni/Org</th><th>Template</th><th>A/B</th></tr></thead>
+          <tbody>
+            ${dayRollout.contacts.slice(0, 5).map(c => `
+            <tr>
+              <td>${escapeHtml(c.name || '—')}</td>
+              <td>${escapeHtml(c.uni || '—')}</td>
+              <td>${escapeHtml(c.template)}</td>
+              <td><span class="ab-badge ${c.subject_variant === 'A' ? 'ab-a' : 'ab-b'}">${c.subject_variant}</span></td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+        ${dayRollout.contacts.length > 5 ? `
+          <span class="preview-toggle" onclick="event.stopPropagation(); showAllContacts(this, '${rolloutKey}')">
+            ▸ Show all ${dayRollout.contacts.length} contacts
+          </span>
+          <div class="all-contacts-box" style="display:none;"></div>
+        ` : ''}
+      `;
+    }
+
+    html += `<div id="day-${dayId}" class="day-card ${statusClass}">
+      <div class="day-card-header" onclick="toggleDayCard('${dayId}')">
+        <div class="day-info">
+          <span class="day-name">${escapeHtml(d.label)}</span>
+        </div>
+        <span class="day-count">${d.contact_count} emails</span>
+        <span class="badge ${badgeClass}">${statusLabel}</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="day-card-body">
+        ${bodyContent}
+        <div style="margin-top:12px;">
+          ${approved
+            ? `<button class="btn btn-unapprove" onclick="event.stopPropagation(); unapproveDay('${dayId}')">↩️ Unapprove</button>`
+            : `<button class="btn btn-approve" onclick="event.stopPropagation(); approveDay('${dayId}')">✅ Approve Send</button>`
+          }
+        </div>
+      </div>
+    </div>`;
   }
   container.innerHTML = html;
-  for (const dayId of DAY_ORDER) {
-    renderDayCard(dayId);
-  }
-}
-
-function renderDayCard(dayId) {
-  const d = days[dayId];
-  if (!d) return;
-  const wrapper = document.getElementById(`day-wrapper-${dayId}`);
-  if (!wrapper) return;
-
-  const idx = DAY_ORDER.indexOf(dayId);
-  const rolloutKey = DAY_ROLLOUT_KEYS[idx];
-  const dayRollout = rolloutData ? rolloutData[rolloutKey] : null;
-  const wasOpen = document.getElementById(`day-${dayId}`)?.classList.contains('open');
-
-  const statusClass = d.status !== 'pending' ? `status-${d.status}` : '';
-  const badgeClass = d.status === 'sent' ? 'badge-sent' : d.status === 'sending' ? 'badge-sending' : d.status === 'approved' ? 'badge-approved' : 'badge-pending';
-  const statusLabel = d.status === 'sent' ? 'Sent ✅' : d.status === 'sending' ? 'Sending…' : d.status === 'approved' ? 'Approved ✅' : 'Pending';
-
-  let bodyContent = '';
-  if (dayRollout) {
-    const unis = Object.entries(dayRollout.stats?.by_uni || {}).sort((a, b) => b[1] - a[1]);
-    bodyContent = `
-      <div class="day-stats">
-        <span class="stat-chip">📊 ${dayRollout.stats?.subject_a || '?'}A / ${dayRollout.stats?.subject_b || '?'}B split</span>
-        <span class="stat-chip">🏫 ${unis.length} organisations</span>
-      </div>
-      <div class="uni-breakdown">
-        ${unis.map(([u, c]) => `<span class="uni-chip">${u || 'Other'} (${c})</span>`).join('')}
-      </div>
-      <table class="contact-table">
-        <thead><tr><th>Name</th><th>Uni/Org</th><th>Template</th><th>A/B</th></tr></thead>
-        <tbody>
-          ${dayRollout.contacts.slice(0, 5).map(c => `
-          <tr>
-            <td>${escapeHtml(c.name || '—')}</td>
-            <td>${escapeHtml(c.uni || '—')}</td>
-            <td>${escapeHtml(c.template)}</td>
-            <td><span class="ab-badge ${c.subject_variant === 'A' ? 'ab-a' : 'ab-b'}">${c.subject_variant}</span></td>
-          </tr>`).join('')}
-        </tbody>
-      </table>
-      ${dayRollout.contacts.length > 5 ? `
-        <span class="preview-toggle" onclick="event.stopPropagation(); showAllContacts(this, '${rolloutKey}')">
-          ▸ Show all ${dayRollout.contacts.length} contacts
-        </span>
-        <div class="all-contacts-box" style="display:none;"></div>
-      ` : ''}
-    `;
-  }
-
-  let actionBtn = '';
-  if (d.status === 'pending') {
-    actionBtn = `<button class="btn btn-approve" onclick="event.stopPropagation(); wrapAsync(() => approveDay('${dayId}'))">✅ Approve Send</button>`;
-  } else if (d.status === 'approved') {
-    actionBtn = `<button class="btn btn-unapprove" onclick="event.stopPropagation(); wrapAsync(() => unapproveDay('${dayId}'))" style="margin-top:8px;">↩️ Unapprove</button>`;
-  }
-
-  wrapper.innerHTML = `<div id="day-${dayId}" class="day-card ${statusClass} ${wasOpen ? 'open' : ''}">
-    <div class="day-card-header" onclick="toggleDayCard('${dayId}')">
-      <div class="day-info">
-        <span class="day-name">${escapeHtml(d.label)}</span>
-      </div>
-      <span class="day-count">${d.contact_count} emails</span>
-      <span class="badge ${badgeClass}">${statusLabel}</span>
-      <span class="chevron">▶</span>
-    </div>
-    <div class="day-card-body">
-      ${bodyContent}
-      <div style="margin-top:12px;">${actionBtn}</div>
-    </div>
-  </div>`;
-}
-
-// ── Interactions ──
-function toggleCard(id) {
-  document.getElementById(`card-${id}`)?.classList.toggle('open');
-}
-
-function toggleDayCard(id) {
-  document.getElementById(`day-${id}`)?.classList.toggle('open');
-}
-
-function onEditorInput(id) {
-  const el = document.getElementById(`modified-${id}`);
-  const editor = document.getElementById(`editor-${id}`);
-  if (el && editor && originalTemplates[id]) {
-    el.style.display = editor.value !== originalTemplates[id].content ? 'inline' : 'none';
-  }
 }
 
 function showAllContacts(el, rolloutKey) {
@@ -882,21 +756,6 @@ function showAllContacts(el, rolloutKey) {
   }
 }
 
-function escapeHtml(str) {
-  if (!str) return '';
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
-async function wrapAsync(fn) {
-  try {
-    await fn();
-  } catch (e) {
-    console.error(e);
-    showToast('❌ ' + e.message, true);
-  }
-}
-
-// ── Init ──
 loadData().catch(e => {
   console.error(e);
   document.getElementById('summaryRow').innerHTML = `<div style="color:var(--red);padding:20px;">Failed to load data: ${escapeHtml(e.message)}</div>`;
