@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30T07:02:03Z",
+  "updated": "2026-03-30T07:03:10Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -3596,40 +3596,7 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T09:58:07.792Z",
-      "circle": {
-        "joined": "2026-03-13T03:40:47.400Z",
-        "last_seen": null,
-        "tags": [],
-        "posts": 0,
-        "progress": 16,
-        "steps": [
-          {
-            "name": "Joined Circle",
-            "done": true
-          },
-          {
-            "name": "Profile set up",
-            "done": false
-          },
-          {
-            "name": "Intro post",
-            "done": false
-          },
-          {
-            "name": "WWCC submitted",
-            "done": false
-          },
-          {
-            "name": "Training complete",
-            "done": false
-          },
-          {
-            "name": "Ready for matching",
-            "done": false
-          }
-        ]
-      }
+      "created": "2026-01-21T09:58:07.792Z"
     },
     {
       "id": "194929575944",
