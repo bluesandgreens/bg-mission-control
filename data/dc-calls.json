@@ -359,11 +359,12 @@
   ],
   "daily_notes": {
     "2026-03-30": {
-      "dcs_today": 0,
-      "note": "No DCs today. Rye ran outbound lead touches only. Jo Kelly re-engage not completed (Day 7 window). Weekly summary sent to Harry + Rye.",
-      "jo_kelly_status": "Day 7 - URGENT - re-engage window closing",
-      "weekly_close_rate": "43% (3/7)",
-      "key_insight": "Price confidence = close. 3/3 closes had confident price delivery. 4/4 misses had hesitant/absent/caved price delivery."
+      "run": "evening_10pm",
+      "new_calls_scored": 0,
+      "notes": "No qualifying DC transcripts today. Outbound-only session. Moana Ruka (Anthony) No Show. Mel Williams rescheduled. Rye outbound only. Jo Kelly re-engage window closed (Day 7+). Leanne Black W1 Day 7 pending. Bec Richardson W1 Day 4 pending.",
+      "step1": "SKIP - no unscored DC transcripts",
+      "step2": "Jo Kelly mismatch confirmed closed. Notion updated.",
+      "step4": "Rep profiles updated."
     }
   }
 }

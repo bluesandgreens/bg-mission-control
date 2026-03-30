@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-30",
+  "last_updated": "2026-03-30T22:12:00+11:00",
   "reps": [
     {
       "rep": "Anthony",
@@ -39,9 +39,9 @@
       "week_calls": 2,
       "week_closes": 0,
       "week_close_rate": 0.0,
-      "improvement_area_short": "URGENT: Jo Kelly re-engage (Day 7, window closing). Price card must be memorised. Fear bomb cycling drill before next DC.",
+      "improvement_area_short": "Price card memorisation + fear bomb cycling. Jo Kelly re-engage not completed \u2014 execution accountability gap now flagged alongside skill gaps.",
       "p3_flag": true,
-      "week_summary": "0/2 closes confirmed. Jo Kelly PREDICTION MISMATCH \u2014 score 6.8, predicted Near Close, still Booked Call Day 7. Re-engage not completed today (Mar 30). Bianca JESS = no close (prediction match). No DCs today \u2014 outbound lead touching only."
+      "week_summary": "0/3 closes confirmed (full week). Jo Kelly PREDICTION MISMATCH \u2014 score 6.8, AI: Near Close, result: Booked Call (Day 7+, window closed). Re-engage call NOT executed despite explicit coaching. Bianca JESS = no close (prediction match). No DCs today \u2014 outbound only. 0/3 confirmed close rate for DC cohort."
     },
     {
       "rep": "Tom",
@@ -62,7 +62,7 @@
       "week_close_rate": 100.0,
       "improvement_area_short": "P3 Deepening (I=3) \u2014 fear bomb pivot is the single gap. Everything else above rep average. Emily Brady (Booked Call) = potential call 2.",
       "p3_flag": false,
-      "week_summary": "1/1 close (Bec Richardson, Deposit Paid confirmed). Dentist metaphor = gold standard P5. 10 days in. Fear anchor drill before call 2."
+      "week_summary": "1/1 close (Bec Richardson, Deposit Paid). W1 pending Day 4. Kirian Andreou booked Thursday. Emily Brady still Booked Call. 15 new pipeline leads. Fear anchor drill = call 2 objective."
     },
     {
       "rep": "Bailey",
