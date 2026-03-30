@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30T11:12:20Z",
+  "updated": "2026-03-30T15:02:14Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -2178,6 +2178,35 @@
       "created": "2026-03-29T07:43:40.350Z"
     },
     {
+      "id": "212471981719",
+      "name": "Coen Haag",
+      "email": "coenhaag@icloud.com",
+      "phone": null,
+      "age": "20",
+      "source": "Facebook / Instagram Ad",
+      "stage": "applied",
+      "hs_stage": "Framer Form Submission",
+      "has_laptop": "Yes",
+      "hours_week": "6+ hours",
+      "three_month_commit": "Yes",
+      "why_mentor": null,
+      "application_message": null,
+      "location": null,
+      "tg_score": null,
+      "tg_results": null,
+      "tg_link_sent": false,
+      "tg_done": false,
+      "brodie_notes": "",
+      "referred_by": "",
+      "norri_notes": "",
+      "norri_assigned_to": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "created": "2026-03-30T11:43:09.694Z"
+    },
+    {
       "id": "130018144929",
       "name": "Dheer Dojin Shah",
       "email": "shahdheer3@gmail.com",
@@ -3734,17 +3763,7 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T11:11:41.170Z",
-      "circle": {
-        "found": false,
-        "progress": 0,
-        "steps": [
-          {
-            "name": "Joined Circle Community",
-            "done": false
-          }
-        ]
-      }
+      "created": "2026-01-21T11:11:41.170Z"
     },
     {
       "id": "195041149771",
@@ -3773,7 +3792,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T21:43:25.445Z"
+      "created": "2026-01-21T21:43:25.445Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "195883508239",
