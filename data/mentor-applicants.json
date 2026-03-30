@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30T05:08:52Z",
+  "updated": "2026-03-30T07:02:03Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -3596,7 +3596,40 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T09:58:07.792Z"
+      "created": "2026-01-21T09:58:07.792Z",
+      "circle": {
+        "joined": "2026-03-13T03:40:47.400Z",
+        "last_seen": null,
+        "tags": [],
+        "posts": 0,
+        "progress": 16,
+        "steps": [
+          {
+            "name": "Joined Circle",
+            "done": true
+          },
+          {
+            "name": "Profile set up",
+            "done": false
+          },
+          {
+            "name": "Intro post",
+            "done": false
+          },
+          {
+            "name": "WWCC submitted",
+            "done": false
+          },
+          {
+            "name": "Training complete",
+            "done": false
+          },
+          {
+            "name": "Ready for matching",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "194929575944",
@@ -3799,7 +3832,40 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-02-05T02:47:39.368Z"
+      "created": "2026-02-05T02:47:39.368Z",
+      "circle": {
+        "joined": "2026-03-22T08:32:40.702Z",
+        "last_seen": null,
+        "tags": [],
+        "posts": 0,
+        "progress": 16,
+        "steps": [
+          {
+            "name": "Joined Circle",
+            "done": true
+          },
+          {
+            "name": "Profile set up",
+            "done": false
+          },
+          {
+            "name": "Intro post",
+            "done": false
+          },
+          {
+            "name": "WWCC submitted",
+            "done": false
+          },
+          {
+            "name": "Training complete",
+            "done": false
+          },
+          {
+            "name": "Ready for matching",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "194831158446",
@@ -4148,6 +4214,35 @@
       "norri_conversation": null,
       "norri_good_bloke": null,
       "created": "2026-03-27T08:42:06.648Z"
+    },
+    {
+      "id": "212432526766",
+      "name": "Andy Byrne",
+      "email": "andy84byrne@outlook.com",
+      "phone": null,
+      "age": "41",
+      "source": "Facebook / Instagram Ad",
+      "stage": "rejected",
+      "hs_stage": "Disqualified",
+      "has_laptop": "Yes",
+      "hours_week": "6+ hours",
+      "three_month_commit": "Yes",
+      "why_mentor": null,
+      "application_message": null,
+      "location": null,
+      "tg_score": null,
+      "tg_results": null,
+      "tg_link_sent": false,
+      "tg_done": false,
+      "brodie_notes": "",
+      "referred_by": "",
+      "norri_notes": "",
+      "norri_assigned_to": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "created": "2026-03-30T06:57:40.287Z"
     }
   ]
 }
