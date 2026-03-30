@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30T07:03:10Z",
+  "updated": "2026-03-30T07:09:51Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -3538,7 +3538,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T03:14:40.908Z"
+      "created": "2026-01-21T03:14:40.908Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "194881019453",
@@ -3567,7 +3577,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T08:34:36.764Z"
+      "created": "2026-01-21T08:34:36.764Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "194718695174",
@@ -3596,7 +3616,37 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T09:58:07.792Z"
+      "created": "2026-01-21T09:58:07.792Z",
+      "circle": {
+        "found": true,
+        "joined": "2026-03-13T03:40:47.400Z",
+        "last_seen": "2026-03-23T07:44:58.000Z",
+        "tags": [],
+        "posts": 0,
+        "progress": 20,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": true
+          },
+          {
+            "name": "Active in Community",
+            "done": false
+          },
+          {
+            "name": "WWCC Submitted",
+            "done": false
+          },
+          {
+            "name": "Training Complete",
+            "done": false
+          },
+          {
+            "name": "Ready for Matching",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "194929575944",
@@ -3625,7 +3675,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T11:06:18.769Z"
+      "created": "2026-01-21T11:06:18.769Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "194930718121",
@@ -3654,7 +3714,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T11:11:41.170Z"
+      "created": "2026-01-21T11:11:41.170Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "195041149771",
@@ -3683,7 +3753,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T21:43:25.445Z"
+      "created": "2026-01-21T21:43:25.445Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "195883508239",
@@ -3712,7 +3792,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-25T04:45:15.844Z"
+      "created": "2026-01-25T04:45:15.844Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "196352510864",
@@ -3741,7 +3831,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-27T00:18:39.569Z"
+      "created": "2026-01-27T00:18:39.569Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "198295564805",
@@ -3770,7 +3870,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-02-01T06:19:28.461Z"
+      "created": "2026-02-01T06:19:28.461Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "199435277619",
@@ -3801,34 +3911,31 @@
       "norri_good_bloke": null,
       "created": "2026-02-05T02:47:39.368Z",
       "circle": {
+        "found": true,
         "joined": "2026-03-22T08:32:40.702Z",
-        "last_seen": null,
+        "last_seen": "2026-03-25T17:22:53.000Z",
         "tags": [],
         "posts": 0,
-        "progress": 16,
+        "progress": 20,
         "steps": [
           {
-            "name": "Joined Circle",
+            "name": "Joined Circle Community",
             "done": true
           },
           {
-            "name": "Profile set up",
+            "name": "Active in Community",
             "done": false
           },
           {
-            "name": "Intro post",
+            "name": "WWCC Submitted",
             "done": false
           },
           {
-            "name": "WWCC submitted",
+            "name": "Training Complete",
             "done": false
           },
           {
-            "name": "Training complete",
-            "done": false
-          },
-          {
-            "name": "Ready for matching",
+            "name": "Ready for Matching",
             "done": false
           }
         ]
