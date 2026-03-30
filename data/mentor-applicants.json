@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30T02:50:00Z",
+  "updated": "2026-03-30T02:55:00Z",
   "mentors": [
     {
       "id": "194837295730",
@@ -1862,7 +1862,13 @@
       "tg_done": false,
       "brodie_notes": "VM",
       "referred_by": "",
-      "created": "2025-06-08T13:55:58.074Z"
+      "created": "2025-06-08T13:55:58.074Z",
+      "norri_notes": "works in school with vunrable cohort non mainstream school as a youth worker.  done research knew a lot about BG 26 yrs old Aussie nation champ in table tennis really kind face, spoke really well think he\u2019ll be great",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": ""
     },
     {
       "id": "144710456461",
@@ -1986,7 +1992,7 @@
       "phone": null,
       "age": null,
       "source": null,
-      "stage": "tg-review",
+      "stage": "screening",
       "hs_stage": "Test Gorilla Complete",
       "has_laptop": null,
       "hours_week": null,
@@ -2000,7 +2006,13 @@
       "tg_done": false,
       "brodie_notes": "",
       "referred_by": "",
-      "created": "2026-01-21T05:49:02.510Z"
+      "created": "2026-01-21T05:49:02.510Z",
+      "norri_notes": "applied in Jan by the looks - a bit monotone be interested to see what Bill thinks - didn\u2019t give much away - only 3 questions interview which I feel doesn't allow a lot to go by  ",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": "Brodie"
     },
     {
       "id": "194903145827",
@@ -2308,7 +2320,7 @@
       "phone": null,
       "age": "22",
       "source": "SEEK",
-      "stage": "tg-review",
+      "stage": "screening",
       "hs_stage": "Test Gorilla Complete",
       "has_laptop": "Yes",
       "hours_week": "6+ hours",
@@ -2322,7 +2334,13 @@
       "tg_done": false,
       "brodie_notes": "",
       "referred_by": "",
-      "created": "2026-02-18T02:32:32.923Z"
+      "created": "2026-02-18T02:32:32.923Z",
+      "norri_notes": "has had a lot of mental heath issues. OCD as a young fella - loved his answer as to why he chooses BG found him quite intriguing - 2nd year Psychology student",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": "Norri"
     },
     {
       "id": "204365016968",
@@ -2423,7 +2441,7 @@
       "phone": "0497085166",
       "age": 26,
       "source": "SEEK",
-      "stage": "tg-review",
+      "stage": "screening",
       "hs_stage": "Test Gorilla Complete",
       "has_laptop": "Yes",
       "hours_week": "6+ hours",
@@ -2437,7 +2455,13 @@
       "tg_done": false,
       "brodie_notes": "",
       "referred_by": "",
-      "created": "2026-03-10T02:10:10.845Z"
+      "created": "2026-03-10T02:10:10.845Z",
+      "norri_notes": "a random no connection - didn\u2019t know anything about Bg but seems to have done his research  - loved his skill to teach to tie a tie practical life skill I loved it\u202626 top end of age  could be really relatable to the older cohort of our boys - nose ring tats etc.   Coaches U18\u2019s footy - would question his availablity ? I liked him a cool calm energy",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": "Rye"
     },
     {
       "id": "208224774947",
@@ -2460,7 +2484,13 @@
       "tg_done": false,
       "brodie_notes": "Submitted, but apparently we can\u2019t see it? Seems good though.",
       "referred_by": "Aiden Librio",
-      "created": "2026-03-10T08:05:03.221Z"
+      "created": "2026-03-10T08:05:03.221Z",
+      "norri_notes": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": ""
     },
     {
       "id": "209156889524",
@@ -2492,7 +2522,7 @@
       "phone": "0420 523 515",
       "age": 19,
       "source": "Someone else",
-      "stage": "tg-review",
+      "stage": "interview",
       "hs_stage": "Test Gorilla Complete",
       "has_laptop": "Yes",
       "hours_week": "6+ hours",
@@ -2506,7 +2536,13 @@
       "tg_done": false,
       "brodie_notes": "VM",
       "referred_by": "my mum saw the seek page and said this is exactly what I was looking for",
-      "created": "2026-03-15T00:10:11.480Z"
+      "created": "2026-03-15T00:10:11.480Z",
+      "norri_notes": "Taught how to play a chord on a gutiar it was random but cool seemed cool - a music producer be great for the kids who love music into the arts",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": "Brodie"
     },
     {
       "id": "209311531610",
@@ -2538,7 +2574,7 @@
       "phone": "0424405381",
       "age": 21,
       "source": "A current mentor",
-      "stage": "tg-review",
+      "stage": "screening",
       "hs_stage": "Test Gorilla Complete",
       "has_laptop": "Yes",
       "hours_week": "4-6 hours",
@@ -2552,7 +2588,13 @@
       "tg_done": false,
       "brodie_notes": "like him, doing it again tonight.",
       "referred_by": "Aidan Librio",
-      "created": "2026-03-16T11:13:24.256Z"
+      "created": "2026-03-16T11:13:24.256Z",
+      "norri_notes": "knows some of our mentors didn't say who can solve a Rubik's cube in 2 minutes answers were short and sweet  seemed quiet young -   not sure how he would go connecting might be worth putting him to Bill he\u2019s probably not much older than Bill",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": "Brodie"
     },
     {
       "id": "209698509606",
@@ -2561,7 +2603,7 @@
       "phone": "0455424324",
       "age": 21,
       "source": "A current mentor",
-      "stage": "tg-review",
+      "stage": "screening",
       "hs_stage": "Test Gorilla Complete",
       "has_laptop": "Yes",
       "hours_week": "2-4 hours",
@@ -2575,7 +2617,13 @@
       "tg_done": false,
       "brodie_notes": "VM",
       "referred_by": "Miles Dalgliesh",
-      "created": "2026-03-17T06:37:26.602Z"
+      "created": "2026-03-17T06:37:26.602Z",
+      "norri_notes": "at Uni studyingPT and Physio - didn\u2019t show a lot of energy - although seems like a \u201cnice bloke\u201d would question his availablity with a heavy uni load.. has brothers good communicator though articulates himself well  seems the real curious type which is a good trait ",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": "Brodie"
     },
     {
       "id": "210822302737",
@@ -2584,7 +2632,7 @@
       "phone": "0421237600",
       "age": 21,
       "source": "A current mentor",
-      "stage": "tg-review",
+      "stage": "screening",
       "hs_stage": "Test Gorilla Complete",
       "has_laptop": "Yes",
       "hours_week": "6+ hours",
@@ -2598,7 +2646,13 @@
       "tg_done": true,
       "brodie_notes": "Done the test gorilla",
       "referred_by": "Aidan Librio",
-      "created": "2026-03-22T10:05:41.688Z"
+      "created": "2026-03-22T10:05:41.688Z",
+      "norri_notes": "Reminds me of Shane to look at - friend of Adian L works in Primary School good energy definite move to speak to Bill",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": "Brodie"
     },
     {
       "id": "210959008314",
@@ -2699,7 +2753,7 @@
       "phone": null,
       "age": "23",
       "source": null,
-      "stage": "tg-review",
+      "stage": "screening",
       "hs_stage": "Test Gorilla Complete",
       "has_laptop": "Yes",
       "hours_week": "6+ hours",
@@ -2713,7 +2767,13 @@
       "tg_done": false,
       "brodie_notes": "",
       "referred_by": "",
-      "created": "2026-03-24T07:42:14.735Z"
+      "created": "2026-03-24T07:42:14.735Z",
+      "norri_notes": "seems like he had a bit of a rough teenage years - seemed quiet serious  hard to predict his age.. lacked energy not sure if it was nerves though\u2026..could be good for those boys who are really isolated perhaps struggling with friends etc\u2026.he did struggle to articulate himself",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": "Norri"
     },
     {
       "id": "212171196958",
@@ -2874,7 +2934,13 @@
       "tg_done": false,
       "brodie_notes": "",
       "referred_by": "",
-      "created": "2026-01-21T11:06:18.769Z"
+      "created": "2026-01-21T11:06:18.769Z",
+      "norri_notes": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "norri_assigned_to": ""
     },
     {
       "id": "194930718121",
@@ -3291,5 +3357,5 @@
       "created": "2026-03-27T08:42:06.648Z"
     }
   ],
-  "source": "hubspot+notion"
+  "source": "hubspot+notion+norri"
 }

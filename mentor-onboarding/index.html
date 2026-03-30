@@ -672,6 +672,12 @@ function renderCard(m, stageId) {
   if (mentorScores[m.id]?.billy) {
     flags.push(`<span class="card-flag flag-ok">Billy: ${mentorScores[m.id].billy}/20</span>`);
   }
+  if (m.norri_notes) {
+    flags.push(`<span class="card-flag flag-ok">Norri ✓</span>`);
+  }
+  if (m.norri_assigned_to) {
+    flags.push(`<span class="card-flag flag-source">${m.norri_assigned_to}</span>`);
+  }
   
   return `
     <div class="card ${isStale ? 'stale' : ''}" 
@@ -731,6 +737,17 @@ function openModal(mentorId) {
         <div class="modal-field"><span class="field-label">Days in Pipeline</span><span class="field-value">${daysSince(m.created) || 0} days</span></div>
         ${m.why_mentor ? `<div class="modal-field" style="flex-direction:column;gap:4px;"><span class="field-label">Why They Want to Mentor</span><span class="field-value" style="text-align:left;max-width:100%;font-size:0.85em;color:var(--cream-muted);line-height:1.5;">${esc(m.why_mentor)}</span></div>` : ''}
         ${m.application_message ? `<div class="modal-field" style="flex-direction:column;gap:4px;"><span class="field-label">Application Message</span><span class="field-value" style="text-align:left;max-width:100%;font-size:0.85em;color:var(--cream-muted);line-height:1.5;">${esc(m.application_message)}</span></div>` : ''}
+      </div>
+      
+      <!-- Norri's Screening Notes -->
+      ${m.norri_notes || m.norri_assigned_to ? `
+      <div class="modal-section">
+        <h3>📋 Norri's Screening Notes</h3>
+        ${m.norri_assigned_to ? `<div class="modal-field"><span class="field-label">Assigned To</span><span class="field-value">${esc(m.norri_assigned_to)}</span></div>` : ''}
+        ${m.norri_notes ? `<div class="note-entry"><div class="note-author">Norri</div><div class="note-text">${esc(m.norri_notes)}</div></div>` : ''}
+      </div>
+      ` : ''}
+      ${'' /* close the contact section that was already open */}
       </div>
       
       <!-- Stage Checklist -->
