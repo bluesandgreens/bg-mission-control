@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30T19:03:18Z",
+  "updated": "2026-03-30T21:03:02Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -3705,51 +3705,11 @@
       "norri_good_bloke": null,
       "created": "2026-01-21T09:58:07.792Z",
       "circle": {
-        "found": true,
-        "joined": "2026-03-13T03:40:47.400Z",
-        "last_seen": "2026-03-30T08:41:05.000Z",
-        "tags": [],
-        "posts": 0,
-        "progress": 10,
+        "found": false,
+        "progress": 0,
         "steps": [
           {
-            "name": "\ud83d\udc9c Intro Lets Go",
-            "done": true
-          },
-          {
-            "name": "\ud83c\udf0f Phase 1: Who We Are",
-            "done": false
-          },
-          {
-            "name": "\ud83d\ude48 Phase 2: Understanding Teens",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udcaa Phase 3: The Weapons",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udce3 Phase 4: Session Mastery",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udd30 Phase 5: Member Life",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udc40 Phase 6: How Mentors Win",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udc8c Phase 7: Account Setup",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udc7b Phase 8: The Mentor",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udcdd Next Steps",
+            "name": "Joined Circle Community",
             "done": false
           }
         ]
@@ -3782,7 +3742,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T11:06:18.769Z"
+      "created": "2026-01-21T11:06:18.769Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "194930718121",
@@ -3811,17 +3781,7 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T11:11:41.170Z",
-      "circle": {
-        "found": false,
-        "progress": 0,
-        "steps": [
-          {
-            "name": "Joined Circle Community",
-            "done": false
-          }
-        ]
-      }
+      "created": "2026-01-21T11:11:41.170Z"
     },
     {
       "id": "195041149771",
@@ -3928,17 +3888,7 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-27T00:18:39.569Z",
-      "circle": {
-        "found": false,
-        "progress": 0,
-        "steps": [
-          {
-            "name": "Joined Circle Community",
-            "done": false
-          }
-        ]
-      }
+      "created": "2026-01-27T00:18:39.569Z"
     },
     {
       "id": "198295564805",
@@ -3967,7 +3917,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-02-01T06:19:28.461Z"
+      "created": "2026-02-01T06:19:28.461Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "199435277619",
