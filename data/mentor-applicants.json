@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30T15:02:14Z",
+  "updated": "2026-03-30T19:03:18Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -2207,6 +2207,64 @@
       "created": "2026-03-30T11:43:09.694Z"
     },
     {
+      "id": "212555209823",
+      "name": "Josiah Adeyemo",
+      "email": "jojoadeyemoo@gmail.com",
+      "phone": null,
+      "age": "20",
+      "source": null,
+      "stage": "applied",
+      "hs_stage": "Framer Form Submission",
+      "has_laptop": "Yes",
+      "hours_week": null,
+      "three_month_commit": "Yes",
+      "why_mentor": null,
+      "application_message": null,
+      "location": null,
+      "tg_score": null,
+      "tg_results": null,
+      "tg_link_sent": false,
+      "tg_done": false,
+      "brodie_notes": "",
+      "referred_by": "",
+      "norri_notes": "",
+      "norri_assigned_to": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "created": "2026-03-30T18:13:05.178Z"
+    },
+    {
+      "id": "212556367973",
+      "name": "Joshua harding",
+      "email": "joshharding126@gmail.com",
+      "phone": null,
+      "age": "22",
+      "source": null,
+      "stage": "applied",
+      "hs_stage": "Framer Form Submission",
+      "has_laptop": "Yes",
+      "hours_week": null,
+      "three_month_commit": "Yes",
+      "why_mentor": null,
+      "application_message": null,
+      "location": null,
+      "tg_score": null,
+      "tg_results": null,
+      "tg_link_sent": false,
+      "tg_done": false,
+      "brodie_notes": "",
+      "referred_by": "",
+      "norri_notes": "",
+      "norri_assigned_to": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "created": "2026-03-30T18:29:09.828Z"
+    },
+    {
       "id": "130018144929",
       "name": "Dheer Dojin Shah",
       "email": "shahdheer3@gmail.com",
@@ -3724,17 +3782,7 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T11:06:18.769Z",
-      "circle": {
-        "found": false,
-        "progress": 0,
-        "steps": [
-          {
-            "name": "Joined Circle Community",
-            "done": false
-          }
-        ]
-      }
+      "created": "2026-01-21T11:06:18.769Z"
     },
     {
       "id": "194930718121",
@@ -3763,7 +3811,17 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T11:11:41.170Z"
+      "created": "2026-01-21T11:11:41.170Z",
+      "circle": {
+        "found": false,
+        "progress": 0,
+        "steps": [
+          {
+            "name": "Joined Circle Community",
+            "done": false
+          }
+        ]
+      }
     },
     {
       "id": "195041149771",
@@ -3909,17 +3967,7 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-02-01T06:19:28.461Z",
-      "circle": {
-        "found": false,
-        "progress": 0,
-        "steps": [
-          {
-            "name": "Joined Circle Community",
-            "done": false
-          }
-        ]
-      }
+      "created": "2026-02-01T06:19:28.461Z"
     },
     {
       "id": "199435277619",
