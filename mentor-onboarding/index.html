@@ -409,10 +409,10 @@ a:hover { text-decoration: underline; }
 const STAGES = [
   { id: 'applied', label: 'Applied', owner: 'Brodie', color: 'col-applied',
     desc: 'New applicant. Brodie nurtures them to complete TestGorilla.' },
-  { id: 'tg-sent', label: 'TG Sent', owner: 'Brodie', color: 'col-tg-sent',
-    desc: 'TestGorilla link sent. Chase if not completed in 48hrs.' },
-  { id: 'tg-review', label: 'TG Review', owner: 'Norri', color: 'col-tg-review',
-    desc: 'TestGorilla complete. Norri reviews scores against rubric.' },
+  { id: 'tg-sent', label: 'TG Started', owner: 'Brodie', color: 'col-tg-sent',
+    desc: 'TestGorilla assessment started. Chase if not completed in 48hrs.' },
+  { id: 'tg-review', label: 'TG Complete', owner: 'Norri', color: 'col-tg-review',
+    desc: 'TestGorilla complete. Norri reviews scores, then invite to screening.' },
   { id: 'screening', label: 'Screening Call', owner: 'Brodie', color: 'col-screening',
     desc: 'Phone screen before group interview. Use the screening script.' },
   { id: 'interview', label: 'Group Interview', owner: 'Harry', color: 'col-interview',
@@ -509,6 +509,8 @@ let stageAssignments = {}; // mentorId -> stageId
 let mentorNotes = {}; // mentorId -> [{author, text, date}]
 let mentorChecks = {}; // mentorId -> {stageId: {checkIdx: true}}
 let mentorScores = {}; // mentorId -> {tg: number, billy: number, interview: number}
+let interviewSessions = {}; // date string -> { date, mentorIds: [] }
+let mentorInterviewDate = {}; // mentorId -> date string
 
 function loadLocal() {
   try {
@@ -517,12 +519,14 @@ function loadLocal() {
     mentorNotes = d.mentorNotes || {};
     mentorChecks = d.mentorChecks || {};
     mentorScores = d.mentorScores || {};
+    interviewSessions = d.interviewSessions || {};
+    mentorInterviewDate = d.mentorInterviewDate || {};
   } catch { /* ignore */ }
 }
 
 function saveLocal() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({
-    stageAssignments, mentorNotes, mentorChecks, mentorScores
+    stageAssignments, mentorNotes, mentorChecks, mentorScores, interviewSessions, mentorInterviewDate
   }));
 }
 
@@ -598,6 +602,40 @@ function renderBoard() {
   
   document.getElementById('board').innerHTML = STAGES.map(stage => {
     const cards = grouped[stage.id];
+    
+    let bodyContent = '';
+    if (stage.id === 'interview') {
+      // Group by session date
+      const byDate = {};
+      const noDate = [];
+      cards.forEach(m => {
+        const d = mentorInterviewDate[m.id];
+        if (d) {
+          if (!byDate[d]) byDate[d] = [];
+          byDate[d].push(m);
+        } else {
+          noDate.push(m);
+        }
+      });
+      const sortedDates = Object.keys(byDate).sort();
+      
+      bodyContent = sortedDates.map(d => {
+        const candidates = byDate[d];
+        const dateLabel = new Date(d+'T00:00').toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'});
+        return `
+          <div class="card" onclick="openSessionView('${d}')" style="cursor:pointer;border-left:3px solid #1ABC9C;">
+            <div class="card-name">📅 ${dateLabel}</div>
+            <div class="card-meta"><span>${candidates.length} candidate${candidates.length!==1?'s':''}</span></div>
+            <div style="margin-top:4px;font-size:0.75em;color:var(--cream-dim);">
+              ${candidates.map(m => esc(m.name)).join(' · ')}
+            </div>
+          </div>
+        `;
+      }).join('') + noDate.map(m => renderCard(m, stage.id)).join('');
+    } else {
+      bodyContent = cards.map(m => renderCard(m, stage.id)).join('');
+    }
+    
     return `
       <div class="column ${stage.color}" id="col-${stage.id}">
         <div class="column-header">
@@ -610,7 +648,7 @@ function renderBoard() {
           ondragover="onDragOver(event)" 
           ondragleave="onDragLeave(event)"
           ondrop="onDrop(event, '${stage.id}')">
-          ${cards.map(m => renderCard(m, stage.id)).join('')}
+          ${bodyContent}
         </div>
       </div>
     `;
@@ -848,6 +886,13 @@ function moveToNext(mentorId, currentStage) {
   const idx = STAGES.findIndex(s => s.id === currentStage);
   const nextStage = STAGES[idx + 1];
   if (!nextStage || nextStage.id === 'rejected') return;
+  
+  // If moving to interview, show date picker
+  if (nextStage.id === 'interview') {
+    showInterviewDatePicker(mentorId);
+    return;
+  }
+  
   moveTo(mentorId, nextStage.id);
 }
 
@@ -1051,11 +1096,199 @@ function onDrop(e, stageId) {
   e.currentTarget.classList.remove('drag-over');
   if (!dragId) return;
   
+  if (stageId === 'interview') {
+    // Show date picker for group interview
+    showInterviewDatePicker(dragId);
+    return;
+  }
+  
   stageAssignments[dragId] = stageId;
   saveLocal();
   const stageName = STAGES.find(s => s.id === stageId)?.label || stageId;
   showToast(`Moved to ${stageName}`);
   render();
+}
+
+// ── Interview Sessions ──
+function showInterviewDatePicker(mentorId) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  
+  // Get existing session dates
+  const existingDates = Object.keys(interviewSessions).sort();
+  
+  document.getElementById('modal').innerHTML = `
+    <div class="modal-header">
+      <div>
+        <h2>Schedule Group Interview</h2>
+        <div style="font-size:0.85em;color:var(--cream-dim);margin-top:4px;">
+          Assigning <strong style="color:var(--gold)">${esc(m.name)}</strong> to a group interview session
+        </div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      ${existingDates.length ? `
+        <div class="modal-section">
+          <h3>Join Existing Session</h3>
+          ${existingDates.map(d => {
+            const ids = interviewSessions[d].mentorIds || [];
+            const names = ids.map(id => mentors.find(x => x.id === id)?.name || '?').join(', ');
+            return `<div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;" onclick="assignToInterview('${mentorId}','${d}')">
+              <div>
+                <strong>${new Date(d+'T00:00').toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long'})}</strong>
+                <div style="font-size:0.8em;color:var(--cream-dim);">${ids.length} candidate${ids.length!==1?'s':''}: ${esc(names)}</div>
+              </div>
+              <span style="color:var(--gold);font-size:0.85em;">+ Add →</span>
+            </div>`;
+          }).join('')}
+        </div>
+      ` : ''}
+      <div class="modal-section">
+        <h3>Create New Session</h3>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <input type="date" id="newInterviewDate" 
+            style="background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--cream);font-size:0.9em;outline:none;"
+            min="${new Date().toISOString().split('T')[0]}">
+          <button class="btn btn-primary" onclick="createInterviewSession('${mentorId}')">Create & Assign</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function assignToInterview(mentorId, dateStr) {
+  stageAssignments[mentorId] = 'interview';
+  mentorInterviewDate[mentorId] = dateStr;
+  if (!interviewSessions[dateStr]) interviewSessions[dateStr] = { mentorIds: [] };
+  if (!interviewSessions[dateStr].mentorIds.includes(mentorId)) {
+    interviewSessions[dateStr].mentorIds.push(mentorId);
+  }
+  saveLocal();
+  closeModal();
+  showToast(`Added to ${new Date(dateStr+'T00:00').toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'})} session`);
+  render();
+}
+
+function createInterviewSession(mentorId) {
+  const dateStr = document.getElementById('newInterviewDate')?.value;
+  if (!dateStr) { showToast('Pick a date'); return; }
+  assignToInterview(mentorId, dateStr);
+}
+
+function openSessionView(dateStr) {
+  const session = interviewSessions[dateStr];
+  if (!session) return;
+  
+  const candidates = (session.mentorIds || []).map(id => mentors.find(x => x.id === id)).filter(Boolean);
+  const dateLabel = new Date(dateStr+'T00:00').toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long', year:'numeric'});
+  
+  const SCORE_DIMS = ['Rapport','Empathy','Vulnerability','Presence','Self-Awareness','Mission Alignment'];
+  
+  document.getElementById('modal').innerHTML = `
+    <div class="modal-header">
+      <div>
+        <h2>🤝 Group Interview — ${dateLabel}</h2>
+        <div style="font-size:0.85em;color:var(--cream-dim);margin-top:4px;">${candidates.length} candidate${candidates.length!==1?'s':''}</div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body" style="padding:12px;">
+      ${candidates.map(m => {
+        const scores = mentorScores[m.id]?.interview || {};
+        const billyScore = mentorScores[m.id]?.billy || '';
+        const total = SCORE_DIMS.reduce((s, dim) => s + (scores[dim] || 0), 0) + (billyScore || 0);
+        const notes = mentorNotes[m.id] || [];
+        
+        return `
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;">
+          <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);">
+            <div>
+              <strong style="font-size:1em;">${esc(m.name)}</strong>
+              <div style="font-size:0.8em;color:var(--cream-dim);">${m.age ? m.age+'yo' : ''} ${m.source ? '· '+esc(m.source) : ''} ${m.location ? '· '+esc(m.location) : ''}</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:1.4em;font-weight:700;color:${total>=40?'var(--green)':total>=30?'var(--gold)':total>=20?'var(--orange)':'var(--cream-dim)'};">${total||'—'}<span style="font-size:0.5em;color:var(--cream-dim);">/50</span></div>
+            </div>
+          </div>
+          <div style="padding:12px 16px;">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px;">
+              ${SCORE_DIMS.map(dim => `
+                <div style="text-align:center;">
+                  <div style="font-size:0.65em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:2px;">${dim}</div>
+                  <div style="display:flex;gap:2px;justify-content:center;">
+                    ${[1,2,3,4,5].map(n => `
+                      <button onclick="setInterviewScore('${m.id}','${dim}',${n},'${dateStr}')" 
+                        style="width:28px;height:28px;border-radius:50%;border:1px solid ${(scores[dim]||0)>=n?'var(--gold)':'var(--border)'};
+                        background:${(scores[dim]||0)>=n?'var(--gold)':'transparent'};
+                        color:${(scores[dim]||0)>=n?'var(--bg)':'var(--cream-dim)'};
+                        font-size:0.75em;font-weight:700;cursor:pointer;">${n}</button>
+                    `).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--border);">
+              <span style="font-size:0.75em;color:var(--cream-dim);min-width:80px;">Billy's Score:</span>
+              <div style="display:flex;gap:3px;">
+                ${[4,8,12,16,20].map(n => `
+                  <button onclick="setBillyScoreSession('${m.id}',${n},'${dateStr}')"
+                    style="padding:4px 8px;border-radius:6px;border:1px solid ${(billyScore||0)>=n?'var(--gold)':'var(--border)'};
+                    background:${(billyScore||0)>=n?'rgba(200,169,81,0.2)':'transparent'};
+                    color:${(billyScore||0)>=n?'var(--gold)':'var(--cream-dim)'};
+                    font-size:0.75em;cursor:pointer;">${n}</button>
+                `).join('')}
+              </div>
+              <span style="font-size:0.85em;font-weight:700;color:var(--gold);">${billyScore||'—'}/20</span>
+            </div>
+            <div style="margin-top:8px;">
+              <div style="display:flex;gap:6px;">
+                <input type="text" id="sessNote-${m.id}" placeholder="Quick note..." 
+                  style="flex:1;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:6px;padding:6px 10px;color:var(--cream);font-size:0.82em;outline:none;"
+                  onkeydown="if(event.key==='Enter'){addSessionNote('${m.id}','${dateStr}')}">
+                <button class="btn btn-ghost" style="padding:6px 12px;font-size:0.78em;" onclick="addSessionNote('${m.id}','${dateStr}')">+ Note</button>
+              </div>
+              ${notes.length ? `<div style="margin-top:6px;">${notes.slice(-3).map(n => 
+                `<div style="font-size:0.78em;color:var(--cream-dim);padding:2px 0;"><strong style="color:var(--gold)">${esc(n.author)}</strong>: ${esc(n.text)}</div>`
+              ).join('')}</div>` : ''}
+            </div>
+          </div>
+          <div style="padding:8px 16px 12px;border-top:1px solid var(--border);display:flex;gap:6px;">
+            <button class="btn btn-success" style="padding:6px 12px;font-size:0.78em;" onclick="moveTo('${m.id}','billy');openSessionView('${dateStr}')">→ Billy 1:1</button>
+            <button class="btn btn-success" style="padding:6px 12px;font-size:0.78em;" onclick="moveTo('${m.id}','onboarding');openSessionView('${dateStr}')">→ Onboard</button>
+            <button class="btn btn-danger" style="padding:6px 12px;font-size:0.78em;" onclick="moveTo('${m.id}','rejected');openSessionView('${dateStr}')">✕ Reject</button>
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function setInterviewScore(mentorId, dim, score, dateStr) {
+  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
+  if (!mentorScores[mentorId].interview) mentorScores[mentorId].interview = {};
+  mentorScores[mentorId].interview[dim] = score;
+  saveLocal();
+  openSessionView(dateStr);
+}
+
+function setBillyScoreSession(mentorId, score, dateStr) {
+  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
+  mentorScores[mentorId].billy = score;
+  saveLocal();
+  openSessionView(dateStr);
+}
+
+function addSessionNote(mentorId, dateStr) {
+  const input = document.getElementById(`sessNote-${mentorId}`);
+  const text = input?.value.trim();
+  if (!text) return;
+  if (!mentorNotes[mentorId]) mentorNotes[mentorId] = [];
+  mentorNotes[mentorId].push({ author: 'Session', text, date: new Date().toISOString() });
+  saveLocal();
+  openSessionView(dateStr);
 }
 
 function scrollToColumn(stageId) {
