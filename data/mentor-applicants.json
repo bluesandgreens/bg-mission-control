@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30T08:11:04Z",
+  "updated": "2026-03-30T09:02:49Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -3616,57 +3616,7 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T09:58:07.792Z",
-      "circle": {
-        "found": true,
-        "joined": "2026-03-13T03:40:47.400Z",
-        "last_seen": "2026-03-23T07:44:58.000Z",
-        "tags": [],
-        "posts": 0,
-        "progress": 10,
-        "steps": [
-          {
-            "name": "\ud83d\udc9c Intro Lets Go",
-            "done": true
-          },
-          {
-            "name": "\ud83c\udf0f Phase 1: Who We Are",
-            "done": false
-          },
-          {
-            "name": "\ud83d\ude48 Phase 2: Understanding Teens",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udcaa Phase 3: The Weapons",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udce3 Phase 4: Session Mastery",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udd30 Phase 5: Member Life",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udc40 Phase 6: How Mentors Win",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udc8c Phase 7: Account Setup",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udc7b Phase 8: The Mentor",
-            "done": false
-          },
-          {
-            "name": "\ud83d\udcdd Next Steps",
-            "done": false
-          }
-        ]
-      }
+      "created": "2026-01-21T09:58:07.792Z"
     },
     {
       "id": "194929575944",
@@ -3812,17 +3762,7 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-25T04:45:15.844Z",
-      "circle": {
-        "found": false,
-        "progress": 0,
-        "steps": [
-          {
-            "name": "Joined Circle Community",
-            "done": false
-          }
-        ]
-      }
+      "created": "2026-01-25T04:45:15.844Z"
     },
     {
       "id": "196352510864",
