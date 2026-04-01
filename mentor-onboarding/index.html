@@ -33,7 +33,6 @@ body {
 a { color: var(--gold); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* Header */
 .header {
   padding: 20px 24px 16px;
   border-bottom: 1px solid var(--border);
@@ -47,7 +46,22 @@ a:hover { text-decoration: underline; }
 .header .subtitle { color: var(--cream-dim); font-size: 0.85em; }
 .back-link { font-size: 0.82em; color: var(--cream-dim); }
 
-/* Summary bar */
+.sync-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(46,204,113,0.1);
+  color: var(--green);
+  border: 1px solid rgba(46,204,113,0.2);
+}
+.sync-badge.error { background: rgba(231,76,60,0.1); color: var(--red); border-color: rgba(231,76,60,0.2); }
+.sync-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+.sync-badge.error .sync-dot { background: var(--red); animation: none; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
 .summary-bar {
   display: flex;
   gap: 1px;
@@ -70,7 +84,6 @@ a:hover { text-decoration: underline; }
 .summary-item .num { font-size: 1.5em; font-weight: 700; color: var(--gold); }
 .summary-item .label { font-size: 0.7em; color: var(--cream-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
 
-/* Kanban board */
 .board-container {
   display: flex;
   gap: 12px;
@@ -120,8 +133,6 @@ a:hover { text-decoration: underline; }
   outline-offset: -4px;
   border-radius: 0 0 var(--radius) var(--radius);
 }
-
-/* Owner badge under column header */
 .column-owner {
   padding: 4px 14px 8px;
   font-size: 0.72em;
@@ -130,7 +141,6 @@ a:hover { text-decoration: underline; }
 }
 .column-owner strong { color: var(--cream-muted); }
 
-/* Cards */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -170,7 +180,6 @@ a:hover { text-decoration: underline; }
 }
 .card .days-badge.stale { background: rgba(231,76,60,0.15); color: var(--red); }
 
-/* Modal */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -244,12 +253,12 @@ a:hover { text-decoration: underline; }
   padding: 8px 0;
   font-size: 0.88em;
   border-bottom: 1px solid rgba(251,248,243,0.03);
+  cursor: pointer;
 }
 .check-icon { font-size: 1.1em; }
 .check-done { color: var(--green); }
 .check-pending { color: var(--cream-dim); }
 
-/* Notes section */
 .notes-container { margin-top: 10px; }
 .note-entry {
   background: rgba(0,0,0,0.2);
@@ -263,11 +272,7 @@ a:hover { text-decoration: underline; }
 .note-entry .note-text { color: var(--cream-muted); line-height: 1.5; }
 .note-entry .note-date { font-size: 0.72em; color: var(--cream-dim); margin-top: 4px; }
 
-.note-input-row {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-}
+.note-input-row { display: flex; gap: 8px; margin-top: 10px; }
 .note-input {
   flex: 1;
   background: rgba(0,0,0,0.3);
@@ -293,7 +298,6 @@ a:hover { text-decoration: underline; }
   min-width: 80px;
 }
 
-/* Action buttons in modal */
 .modal-actions {
   display: flex;
   gap: 8px;
@@ -324,7 +328,6 @@ a:hover { text-decoration: underline; }
 .btn-ghost { background: rgba(251,248,243,0.06); color: var(--cream-dim); }
 .btn-email { background: rgba(52,152,219,0.2); color: var(--blue); }
 
-/* Screening script overlay */
 .script-panel {
   background: rgba(0,0,0,0.3);
   border: 1px solid var(--border);
@@ -341,7 +344,6 @@ a:hover { text-decoration: underline; }
 .script-panel ol { padding-left: 20px; }
 .script-panel li { margin-bottom: 6px; }
 
-/* Toast */
 .toast {
   position: fixed;
   top: 20px;
@@ -359,7 +361,18 @@ a:hover { text-decoration: underline; }
 }
 .toast.show { transform: translateX(0); }
 
-/* Stage color accents */
+.error-banner {
+  background: rgba(231,76,60,0.15);
+  border: 1px solid rgba(231,76,60,0.3);
+  color: var(--red);
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 0.85em;
+  font-weight: 600;
+  display: none;
+}
+.error-banner.show { display: block; }
+
 .col-applied { border-top: 3px solid var(--blue); }
 .col-tg-sent { border-top: 3px solid var(--purple); }
 .col-tg-review { border-top: 3px solid var(--orange); }
@@ -370,7 +383,6 @@ a:hover { text-decoration: underline; }
 .col-active { border-top: 3px solid #00E676; }
 .col-rejected { border-top: 3px solid var(--red); }
 
-/* Responsive */
 @media (max-width: 768px) {
   .header { padding: 14px 16px 12px; }
   .header h1 { font-size: 1.1em; }
@@ -385,13 +397,18 @@ a:hover { text-decoration: underline; }
 </head>
 <body>
 
+<div class="error-banner" id="errorBanner">⚠️ Could not connect to database. Changes won't sync across devices.</div>
+
 <div class="header">
   <div>
     <a href="../" class="back-link">← Mission Control</a>
     <h1>🧑‍🤝‍🧑 Mentor Onboarding Pipeline</h1>
-    <div class="subtitle">Drag mentors between stages. Click a card for details & actions.</div>
+    <div class="subtitle">Drag mentors between stages. Click a card for details & actions. <strong>Live-synced across all devices.</strong></div>
   </div>
-  <div class="subtitle" id="lastUpdated"></div>
+  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+    <div class="sync-badge" id="syncBadge"><span class="sync-dot"></span> Live</div>
+    <div class="subtitle" id="lastUpdated"></div>
+  </div>
 </div>
 
 <div class="summary-bar" id="summaryBar"></div>
@@ -404,7 +421,16 @@ a:hover { text-decoration: underline; }
 
 <div class="toast" id="toast"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+// ── Supabase Config ──
+const SUPABASE_URL = 'https://ltpkeddkkrexynlhgxal.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0cGtlZGRra3JleHlubGhneGFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk4Mjk4MjcsImV4cCI6MjA4NTQwNTgyN30.pXESrW0hz0ve56F0iTjyzLbBfGz-wXQRN5AB52Pil_g';
+
+let sb;
+let mentors = [];
+let dbConnected = false;
+
 // ── Stages ──
 const STAGES = [
   { id: 'applied', label: 'Applied', owner: 'Brodie', color: 'col-applied',
@@ -503,49 +529,109 @@ const SCREENING_SCRIPT = `
 </ol>
 `;
 
-const STORAGE_KEY = 'bg-mentor-pipeline';
-let mentors = [];
-let stageAssignments = {}; // mentorId -> stageId
-let mentorNotes = {}; // mentorId -> [{author, text, date}]
-let mentorChecks = {}; // mentorId -> {stageId: {checkIdx: true}}
-let mentorScores = {}; // mentorId -> {tg: number, billy: number, interview: number}
-let interviewSessions = {}; // date string -> { date, mentorIds: [] }
-let mentorInterviewDate = {}; // mentorId -> date string
+const EMAIL_TEMPLATES = {
+  'applied': {
+    label: 'Send TestGorilla Link',
+    subject: 'Blues & Greens Mentoring - Next Step 🎯',
+    body: (m) => `Hi ${m.name.split(' ')[0]},\n\nThanks so much for applying to be a mentor with Blues & Greens! We're really excited to have you in the pipeline.\n\nThe next step is a quick online assessment - it takes about 20 minutes and helps us get to know your strengths and personality a bit better.\n\nHere's the link: https://app.testgorilla.com/s/6ixaig81\n\nIf you could knock it out in the next 48 hours that would be awesome - we're keen to get you started.\n\nAny questions at all, just reply to this email.\n\nCheers,\nNorri\nBlues & Greens Team\nnorri@bluesandgreens.com.au`,
+  },
+  'tg-sent': {
+    label: 'Chase TestGorilla',
+    subject: 'Quick reminder - Blues & Greens Assessment',
+    body: (m) => `Hey ${m.name.split(' ')[0]},\n\nJust checking in - have you had a chance to complete the online assessment yet?\n\nHere's the link again if you need it: https://app.testgorilla.com/s/6ixaig81\n\nIt only takes about 20 minutes and it's the last step before we can move you forward. We've got a group session coming up soon and would love to have you there!\n\nLet me know if you've hit any issues or have any questions.\n\nCheers,\nNorri\nBlues & Greens Team\nnorri@bluesandgreens.com.au`,
+  },
+  'tg-review': {
+    label: 'Invite to Screening Call',
+    subject: "Blues & Greens - You're through! Next step 🙌",
+    body: (m) => `Hi ${m.name.split(' ')[0]},\n\nGreat news - you've completed the assessment and we'd love to move you to the next stage!\n\nThe next step is a quick 10-minute phone chat with our team. It's super casual - just want to get to know you a bit before the group session.\n\nWhen would suit you best this week for a quick call? Happy to work around your schedule.\n\nCheers,\nNorri\nBlues & Greens Team\nnorri@bluesandgreens.com.au`,
+  },
+  'screening': {
+    label: 'Invite to Group Interview',
+    subject: 'Blues & Greens - Group Session Invite 🤝',
+    body: (m) => `Hi ${m.name.split(' ')[0]},\n\nYou're through to the group interview stage - awesome!\n\nWe're running a group onboarding session where you'll meet a few other potential mentors. It's a relaxed round-circle conversation - no presentations, no pressure. You'll also do a short 1-on-1 mock mentor session.\n\nI'll send through the date and Zoom link shortly. Looking forward to meeting you!\n\nCheers,\nNorri\nBlues & Greens Team\nnorri@bluesandgreens.com.au`,
+  },
+  'onboarding': {
+    label: 'Send Onboarding Details',
+    subject: 'Blues & Greens - Welcome to the Team! 💙💚',
+    body: (m) => `Hi ${m.name.split(' ')[0]},\n\nWelcome to Blues & Greens! We're so excited to have you on board as a mentor.\n\nHere's what happens next:\n1. We'll send through your Working With Children Check (WWCC) information\n2. You'll complete a short online training module\n3. We'll match you with a young person and schedule your first session\n\nI'll be in touch soon with all the details. In the meantime, if you have any questions at all, just reply to this email.\n\nCheers,\nNorri\nBlues & Greens Team\nnorri@bluesandgreens.com.au`,
+  },
+  'rejected': {
+    label: 'Send Rejection',
+    subject: 'Blues & Greens - Application Update',
+    body: (m) => `Hi ${m.name.split(' ')[0]},\n\nThanks so much for your interest in mentoring with Blues & Greens. We really appreciate the time you took to apply.\n\nAfter careful consideration, we've decided not to move forward with your application at this stage. This isn't necessarily a reflection on you - we're looking for a very specific fit for our young members and sometimes the timing or match just isn't right.\n\nWe wish you all the best and thank you again for wanting to make a difference in a young person's life.\n\nKind regards,\nNorri\nBlues & Greens Team\nnorri@bluesandgreens.com.au`,
+  },
+};
 
-function loadLocal() {
+// ── Supabase Helpers ──
+async function sbUpdate(id, fields) {
+  if (!sb) return;
+  const { error } = await sb.from('mentor_pipeline').update(fields).eq('id', id);
+  if (error) console.error('Supabase update error:', error);
+}
+
+async function loadFromSupabase() {
   try {
-    const d = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    stageAssignments = d.stageAssignments || {};
-    mentorNotes = d.mentorNotes || {};
-    mentorChecks = d.mentorChecks || {};
-    mentorScores = d.mentorScores || {};
-    interviewSessions = d.interviewSessions || {};
-    mentorInterviewDate = d.mentorInterviewDate || {};
-  } catch { /* ignore */ }
+    sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    const { data, error } = await sb.from('mentor_pipeline').select('*');
+    if (error) throw error;
+    mentors = data || [];
+    dbConnected = true;
+    document.getElementById('syncBadge').innerHTML = '<span class="sync-dot"></span> Live';
+    document.getElementById('syncBadge').classList.remove('error');
+    document.getElementById('errorBanner').classList.remove('show');
+    document.getElementById('lastUpdated').textContent = `${mentors.length} applicants`;
+
+    // Subscribe to realtime changes
+    sb.channel('mentor_pipeline_changes')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'mentor_pipeline' }, (payload) => {
+        handleRealtimeChange(payload);
+      })
+      .subscribe();
+
+    return true;
+  } catch (e) {
+    console.error('Failed to load from Supabase:', e);
+    dbConnected = false;
+    document.getElementById('syncBadge').innerHTML = '<span class="sync-dot"></span> Offline';
+    document.getElementById('syncBadge').classList.add('error');
+    document.getElementById('errorBanner').classList.add('show');
+    return false;
+  }
 }
 
-function saveLocal() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({
-    stageAssignments, mentorNotes, mentorChecks, mentorScores, interviewSessions, mentorInterviewDate
-  }));
+function handleRealtimeChange(payload) {
+  const { eventType, new: newRec, old: oldRec } = payload;
+  if (eventType === 'UPDATE' || eventType === 'INSERT') {
+    const idx = mentors.findIndex(m => m.id === newRec.id);
+    if (idx >= 0) {
+      mentors[idx] = newRec;
+    } else {
+      mentors.push(newRec);
+    }
+  } else if (eventType === 'DELETE') {
+    mentors = mentors.filter(m => m.id !== oldRec.id);
+  }
+  render();
+  // Flash sync indicator
+  const badge = document.getElementById('syncBadge');
+  badge.innerHTML = '<span class="sync-dot"></span> Synced!';
+  setTimeout(() => { badge.innerHTML = '<span class="sync-dot"></span> Live'; }, 1500);
 }
 
-function inferStage(m) {
-  // Manual override takes priority
-  if (stageAssignments[m.id]) return stageAssignments[m.id];
-  // Use pre-computed stage from HubSpot + Notion merge
-  if (m.stage && STAGES.find(s => s.id === m.stage)) return m.stage;
-  // Fallback
-  if (m.tg_done) return 'tg-review';
-  if (m.tg_link_sent) return 'tg-sent';
-  return 'applied';
+// ── Helpers ──
+function getStage(m) { return m.stage || 'applied'; }
+
+function getNotes(m) {
+  const n = m.notes || {};
+  return Array.isArray(n) ? n : (n.entries || []);
 }
+
+function getChecklist(m) { return m.checklist || {}; }
+function getScores(m) { return m.scores || {}; }
 
 function daysSince(dateStr) {
   if (!dateStr) return null;
-  const d = new Date(dateStr);
-  const now = new Date();
-  return Math.floor((now - d) / (1000 * 60 * 60 * 24));
+  return Math.floor((Date.now() - new Date(dateStr).getTime()) / (1000 * 60 * 60 * 24));
 }
 
 function formatDate(dateStr) {
@@ -553,25 +639,163 @@ function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
 }
 
-// ── Render ──
-async function init() {
-  loadLocal();
-  
-  try {
-    const resp = await fetch('../data/mentor-applicants.json');
-    const data = await resp.json();
-    mentors = data.mentors;
-    const updatedDate = new Date(data.updated);
-    const mins = Math.floor((Date.now() - updatedDate.getTime()) / 60000);
-    const freshness = mins < 5 ? '🟢 Live' : mins < 120 ? `🟡 ${mins}m ago` : `🔴 ${Math.floor(mins/60)}h ago`;
-    document.getElementById('lastUpdated').innerHTML = `${freshness} · <span style="font-size:0.8em;">${updatedDate.toLocaleString('en-AU',{day:'numeric',month:'short',hour:'numeric',minute:'2-digit'})}</span>`;
-  } catch (e) {
-    console.error('Failed to load data:', e);
-  }
-  
+function esc(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ── Stage Change (writes to Supabase) ──
+async function moveTo(mentorId, stageId) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  m.stage = stageId;
+  await sbUpdate(mentorId, { stage: stageId });
+  const stageName = STAGES.find(s => s.id === stageId)?.label || stageId;
+  showToast(`Moved to ${stageName}`);
+  closeModal();
   render();
 }
 
+async function toggleCheck(mentorId, stageId, idx) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const cl = { ...(m.checklist || {}) };
+  if (!cl[stageId]) cl[stageId] = {};
+  cl[stageId] = { ...cl[stageId] };
+  cl[stageId][idx] = !cl[stageId][idx];
+  m.checklist = cl;
+  await sbUpdate(mentorId, { checklist: cl });
+  openModal(mentorId);
+}
+
+async function addNote(mentorId) {
+  const text = document.getElementById('noteInput')?.value.trim();
+  const author = document.getElementById('noteAuthor')?.value;
+  if (!text) return;
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const notes = { ...(m.notes || {}) };
+  if (!notes.entries) notes.entries = [];
+  notes.entries = [...notes.entries, { author, text, date: new Date().toISOString() }];
+  m.notes = notes;
+  await sbUpdate(mentorId, { notes });
+  showToast('Note added');
+  openModal(mentorId);
+}
+
+async function saveTgScore(mentorId) {
+  const val = parseInt(document.getElementById('tgScoreInput')?.value);
+  if (isNaN(val) || val < 0 || val > 100) { showToast('Enter a score 0-100'); return; }
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const scores = { ...(m.scores || {}), tg: val };
+  m.scores = scores;
+  m.tg_score = val;
+  await sbUpdate(mentorId, { scores, tg_score: val });
+  showToast(`TG score saved: ${val}${val >= 80 ? ' ✅' : val >= 60 ? ' ⚠️' : ' ❌'}`);
+  openModal(mentorId);
+}
+
+async function saveBillyScore(mentorId) {
+  const val = parseInt(document.getElementById('billyScoreInput')?.value);
+  if (isNaN(val) || val < 0 || val > 20) { showToast('Enter a score 0-20'); return; }
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const scores = { ...(m.scores || {}), billy: val };
+  m.scores = scores;
+  await sbUpdate(mentorId, { scores });
+  showToast(`Billy score saved: ${val}/20`);
+  openModal(mentorId);
+}
+
+async function setInterviewScore(mentorId, dim, score, dateStr) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const scores = { ...(m.scores || {}) };
+  if (!scores.interview) scores.interview = {};
+  scores.interview = { ...scores.interview, [dim]: score };
+  m.scores = scores;
+  await sbUpdate(mentorId, { scores });
+  if (dateStr) openSessionView(dateStr); else openModal(mentorId);
+}
+
+async function setHiring(mentorId, value, dateStr) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const scores = { ...(m.scores || {}), hiring: value };
+  m.scores = scores;
+  await sbUpdate(mentorId, { scores });
+  if (dateStr) openSessionView(dateStr); else openModal(mentorId);
+}
+
+async function toggleAttendance(mentorId, dateStr) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const scores = { ...(m.scores || {}), attended: !(m.scores?.attended) };
+  m.scores = scores;
+  await sbUpdate(mentorId, { scores });
+  openSessionView(dateStr);
+}
+
+async function setSessionDecision(mentorId, decision) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const scores = { ...(m.scores || {}) };
+  scores.sessionDecision = scores.sessionDecision === decision ? null : decision;
+  m.scores = scores;
+  await sbUpdate(mentorId, { scores });
+  openLiveSessionView();
+}
+
+async function addSessionNote(mentorId, dateStr) {
+  const input = document.getElementById(`sessNote-${mentorId}`);
+  const text = input?.value.trim();
+  if (!text) return;
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const notes = { ...(m.notes || {}) };
+  if (!notes.entries) notes.entries = [];
+  notes.entries = [...notes.entries, { author: 'Session', text, date: new Date().toISOString() }];
+  m.notes = notes;
+  await sbUpdate(mentorId, { notes });
+  openSessionView(dateStr);
+}
+
+async function assignToInterview(mentorId, dateStr) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  m.stage = 'interview';
+  m.interview_date = dateStr;
+  await sbUpdate(mentorId, { stage: 'interview', interview_date: dateStr });
+  closeModal();
+  showToast(`Added to ${new Date(dateStr+'T00:00').toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'})} session`);
+  render();
+}
+
+async function createInterviewSession(mentorId) {
+  const dateStr = document.getElementById('newInterviewDate')?.value;
+  if (!dateStr) { showToast('Pick a date'); return; }
+  await assignToInterview(mentorId, dateStr);
+}
+
+// ── Email ──
+function autoSendEmail(mentorId, stage) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m || !m.email) { showToast('No email address'); return; }
+  const tmpl = EMAIL_TEMPLATES[stage];
+  if (!tmpl) { showToast('No template for this stage'); return; }
+  const emailBody = tmpl.body(m);
+  const cc = 'brodie@bluesandgreens.com.au,norri@bluesandgreens.com.au';
+  const mailto = `mailto:${encodeURIComponent(m.email)}?cc=${encodeURIComponent(cc)}&subject=${encodeURIComponent(tmpl.subject)}&body=${encodeURIComponent(emailBody)}`;
+  window.open(mailto, '_blank');
+
+  const STAGE_AFTER_EMAIL = { 'applied': 'tg-sent', 'tg-review': 'screening' };
+  const nextStage = STAGE_AFTER_EMAIL[stage];
+  if (nextStage) moveTo(m.id, nextStage);
+  else showToast(`📧 Email opened for ${m.name}`);
+}
+
+// ── Render ──
 function render() {
   renderSummary();
   renderBoard();
@@ -581,10 +805,9 @@ function renderSummary() {
   const counts = {};
   STAGES.forEach(s => counts[s.id] = 0);
   mentors.forEach(m => {
-    const stage = inferStage(m);
+    const stage = getStage(m);
     if (counts[stage] !== undefined) counts[stage]++;
   });
-  
   document.getElementById('summaryBar').innerHTML = STAGES.filter(s => s.id !== 'rejected').map(s => `
     <div class="summary-item" onclick="${s.id === 'interview' ? 'openGroupInterviewView()' : s.id === 'billy' ? 'openBillyQueue()' : `scrollToColumn('${s.id}')`}">
       <div class="num">${counts[s.id]}</div>
@@ -596,49 +819,36 @@ function renderSummary() {
 function renderBoard() {
   const grouped = {};
   STAGES.forEach(s => grouped[s.id] = []);
-  
   mentors.forEach(m => {
-    const stage = inferStage(m);
+    const stage = getStage(m);
     if (grouped[stage]) grouped[stage].push(m);
     else grouped['applied'].push(m);
   });
-  
+
   document.getElementById('board').innerHTML = STAGES.map(stage => {
     const cards = grouped[stage.id];
-    
     let bodyContent = '';
     if (stage.id === 'interview') {
-      // Group by session date
       const byDate = {};
       const noDate = [];
       cards.forEach(m => {
-        const d = mentorInterviewDate[m.id];
-        if (d) {
-          if (!byDate[d]) byDate[d] = [];
-          byDate[d].push(m);
-        } else {
-          noDate.push(m);
-        }
+        const d = m.interview_date;
+        if (d) { if (!byDate[d]) byDate[d] = []; byDate[d].push(m); }
+        else noDate.push(m);
       });
-      const sortedDates = Object.keys(byDate).sort();
-      
-      bodyContent = sortedDates.map(d => {
-        const candidates = byDate[d];
+      bodyContent = Object.keys(byDate).sort().map(d => {
+        const cands = byDate[d];
         const dateLabel = new Date(d+'T00:00').toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'});
-        return `
-          <div class="card" onclick="openSessionView('${d}')" style="cursor:pointer;border-left:3px solid #1ABC9C;">
-            <div class="card-name">📅 ${dateLabel}</div>
-            <div class="card-meta"><span>${candidates.length} candidate${candidates.length!==1?'s':''}</span></div>
-            <div style="margin-top:4px;font-size:0.75em;color:var(--cream-dim);">
-              ${candidates.map(m => esc(m.name)).join(' · ')}
-            </div>
-          </div>
-        `;
+        return `<div class="card" onclick="openSessionView('${d}')" style="cursor:pointer;border-left:3px solid #1ABC9C;">
+          <div class="card-name">📅 ${dateLabel}</div>
+          <div class="card-meta"><span>${cands.length} candidate${cands.length!==1?'s':''}</span></div>
+          <div style="margin-top:4px;font-size:0.75em;color:var(--cream-dim);">${cands.map(m => esc(m.name)).join(' · ')}</div>
+        </div>`;
       }).join('') + noDate.map(m => renderCard(m, stage.id)).join('');
     } else {
       bodyContent = cards.map(m => renderCard(m, stage.id)).join('');
     }
-    
+
     return `
       <div class="column ${stage.color}" id="col-${stage.id}">
         <div class="column-header" ${stage.id === 'interview' ? 'onclick="openGroupInterviewView()" style="cursor:pointer;"' : ''}>
@@ -646,71 +856,51 @@ function renderBoard() {
           <span class="col-count">${cards.length}</span>
         </div>
         <div class="column-owner">Owner: <strong>${stage.owner}</strong></div>
-        <div class="column-body" 
-          data-stage="${stage.id}"
-          ondragover="onDragOver(event)" 
-          ondragleave="onDragLeave(event)"
-          ondrop="onDrop(event, '${stage.id}')">
+        <div class="column-body" data-stage="${stage.id}"
+          ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event, '${stage.id}')">
           ${bodyContent}
         </div>
-      </div>
-    `;
+      </div>`;
   }).join('');
 }
 
 function renderCard(m, stageId) {
-  const days = daysSince(m.created);
-  const isStale = stageId === 'applied' && days > 7 || stageId === 'tg-sent' && days > 5;
-  
+  const days = daysSince(m.created_at);
+  const isStale = (stageId === 'applied' && days > 7) || (stageId === 'tg-sent' && days > 5);
+  const scores = getScores(m);
   let flags = [];
   if (m.source) flags.push(`<span class="card-flag flag-source">${esc(m.source)}</span>`);
-  if (m.three_month_commit === 'No') flags.push(`<span class="card-flag flag-warn">No commit</span>`);
-  if (m.has_laptop === 'No') flags.push(`<span class="card-flag flag-warn">No laptop</span>`);
-  if (m.referred_by) flags.push(`<span class="card-flag flag-ok">Referred</span>`);
-  if (mentorScores[m.id]?.tg) {
-    const s = mentorScores[m.id].tg;
+  if (scores.tg) {
+    const s = scores.tg;
     const cls = s >= 80 ? 'flag-ok' : s >= 60 ? 'flag-warn' : 'flag-stale';
     flags.push(`<span class="card-flag ${cls}">TG: ${s}</span>`);
   }
-  if (mentorScores[m.id]?.billy) {
-    flags.push(`<span class="card-flag flag-ok">Billy: ${mentorScores[m.id].billy}/20</span>`);
-  }
-  if (m.norri_notes) {
-    flags.push(`<span class="card-flag flag-ok">Norri ✓</span>`);
-  }
-  if (m.norri_assigned_to) {
-    flags.push(`<span class="card-flag flag-source">${m.norri_assigned_to}</span>`);
-  }
-  
+  if (scores.billy) flags.push(`<span class="card-flag flag-ok">Billy: ${scores.billy}/20</span>`);
+
   return `
-    <div class="card ${isStale ? 'stale' : ''}" 
-      draggable="true"
-      data-id="${m.id}"
-      ondragstart="onDragStart(event, '${m.id}')"
-      ondragend="onDragEnd(event)"
-      onclick="openModal('${m.id}')">
+    <div class="card ${isStale ? 'stale' : ''}" draggable="true" data-id="${m.id}"
+      ondragstart="onDragStart(event, '${m.id}')" ondragend="onDragEnd(event)" onclick="openModal('${m.id}')">
       <div class="card-name">${esc(m.name)}</div>
       <div class="card-meta">
         ${m.age ? `<span>🎂 ${m.age}</span>` : ''}
-        ${m.hours_week ? `<span>⏰ ${esc(m.hours_week)}</span>` : ''}
+        ${m.email ? `<span>✉️</span>` : ''}
       </div>
       ${flags.length ? `<div class="card-flags">${flags.join('')}</div>` : ''}
       ${days !== null ? `<span class="days-badge ${isStale ? 'stale' : ''}">${days}d</span>` : ''}
-    </div>
-  `;
+    </div>`;
 }
 
 // ── Modal ──
 function openModal(mentorId) {
   const m = mentors.find(x => x.id === mentorId);
   if (!m) return;
-  
-  const stage = inferStage(m);
+  const stage = getStage(m);
   const stageObj = STAGES.find(s => s.id === stage);
   const checklist = STAGE_CHECKLISTS[stage] || [];
-  const checks = (mentorChecks[m.id] && mentorChecks[m.id][stage]) || {};
-  const notes = mentorNotes[m.id] || [];
-  
+  const checks = (m.checklist || {})[stage] || {};
+  const notes = getNotes(m);
+  const scores = getScores(m);
+
   document.getElementById('modal').innerHTML = `
     <div class="modal-header">
       <div>
@@ -721,102 +911,66 @@ function openModal(mentorId) {
       </div>
       <button class="modal-close" onclick="closeModal()">×</button>
     </div>
-    
     <div class="modal-body">
-      <!-- Contact Info -->
       <div class="modal-section">
         <h3>📋 Contact Details</h3>
         <div class="modal-field"><span class="field-label">Email</span><span class="field-value">${m.email ? `<a href="mailto:${esc(m.email)}">${esc(m.email)}</a>` : '—'}</span></div>
         <div class="modal-field"><span class="field-label">Phone</span><span class="field-value">${m.phone ? `<a href="tel:${esc(m.phone)}">${esc(m.phone)}</a>` : '—'}</span></div>
         <div class="modal-field"><span class="field-label">Age</span><span class="field-value">${m.age || '—'}</span></div>
-        <div class="modal-field"><span class="field-label">Source</span><span class="field-value">${esc(m.source) || '—'}</span></div>
-        <div class="modal-field"><span class="field-label">Hours/Week</span><span class="field-value">${esc(m.hours_week) || '—'}</span></div>
-        <div class="modal-field"><span class="field-label">3-Month Commit</span><span class="field-value">${esc(m.three_month_commit) || '—'}</span></div>
-        <div class="modal-field"><span class="field-label">Has Laptop</span><span class="field-value">${esc(m.has_laptop) || '—'}</span></div>
-        <div class="modal-field"><span class="field-label">Referred By</span><span class="field-value">${esc(m.referred_by) || '—'}</span></div>
         <div class="modal-field"><span class="field-label">Location</span><span class="field-value">${esc(m.location) || '—'}</span></div>
+        <div class="modal-field"><span class="field-label">Source</span><span class="field-value">${esc(m.source) || '—'}</span></div>
         <div class="modal-field"><span class="field-label">HubSpot Stage</span><span class="field-value">${esc(m.hs_stage) || '—'}</span></div>
-        <div class="modal-field"><span class="field-label">Applied</span><span class="field-value">${formatDate(m.created)}</span></div>
-        <div class="modal-field"><span class="field-label">Days in Pipeline</span><span class="field-value">${daysSince(m.created) || 0} days</span></div>
-        ${m.why_mentor ? `<div class="modal-field" style="flex-direction:column;gap:4px;"><span class="field-label">Why They Want to Mentor</span><span class="field-value" style="text-align:left;max-width:100%;font-size:0.85em;color:var(--cream-muted);line-height:1.5;">${esc(m.why_mentor)}</span></div>` : ''}
+        <div class="modal-field"><span class="field-label">Applied</span><span class="field-value">${formatDate(m.created_at)}</span></div>
+        <div class="modal-field"><span class="field-label">Days in Pipeline</span><span class="field-value">${daysSince(m.created_at) || 0} days</span></div>
         ${m.application_message ? `<div class="modal-field" style="flex-direction:column;gap:4px;"><span class="field-label">Application Message</span><span class="field-value" style="text-align:left;max-width:100%;font-size:0.85em;color:var(--cream-muted);line-height:1.5;">${esc(m.application_message)}</span></div>` : ''}
       </div>
-      
-      <!-- Norri's Screening Notes -->
-      ${m.norri_notes || m.norri_assigned_to ? `
-      <div class="modal-section">
-        <h3>📋 Norri's Screening Notes</h3>
-        ${m.norri_assigned_to ? `<div class="modal-field"><span class="field-label">Assigned To</span><span class="field-value">${esc(m.norri_assigned_to)}</span></div>` : ''}
-        ${m.norri_notes ? `<div class="note-entry"><div class="note-author">Norri</div><div class="note-text">${esc(m.norri_notes)}</div></div>` : ''}
-      </div>
-      ` : ''}
-      ${'' /* close the contact section that was already open */}
-      </div>
-      
-      <!-- Stage Checklist -->
+
       ${checklist.length ? `
       <div class="modal-section">
         <h3>✅ ${stageObj.label} Checklist</h3>
         ${checklist.map((item, idx) => `
-          <div class="checklist-item" onclick="toggleCheck('${m.id}', '${stage}', ${idx})" style="cursor:pointer;">
+          <div class="checklist-item" onclick="toggleCheck('${m.id}', '${stage}', ${idx})">
             <span class="check-icon ${checks[idx] ? 'check-done' : 'check-pending'}">${checks[idx] ? '✅' : '⬜'}</span>
             <span>${esc(item)}</span>
           </div>
         `).join('')}
-      </div>
-      ` : ''}
-      
-      <!-- TG Score (only for tg-review) -->
+      </div>` : ''}
+
       ${stage === 'tg-review' ? `
       <div class="modal-section">
         <h3>🧪 TestGorilla Score</h3>
         <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px;">
-          <input type="number" id="tgScoreInput" min="0" max="100" placeholder="Score (0-100)" 
-            value="${(mentorScores[m.id] && mentorScores[m.id].tg) || ''}"
+          <input type="number" id="tgScoreInput" min="0" max="100" placeholder="Score (0-100)"
+            value="${scores.tg || m.tg_score || ''}"
             style="background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--cream);font-size:0.9em;width:140px;outline:none;">
           <button class="btn btn-primary" onclick="saveTgScore('${m.id}')">Save Score</button>
-          <span id="tgScoreLabel" style="font-size:0.82em;font-weight:700;${
-            mentorScores[m.id]?.tg >= 80 ? 'color:var(--green)' : mentorScores[m.id]?.tg >= 60 ? 'color:var(--orange)' : mentorScores[m.id]?.tg ? 'color:var(--red)' : 'color:var(--cream-dim)'
-          }">${
-            mentorScores[m.id]?.tg >= 80 ? '✅ PASS' : mentorScores[m.id]?.tg >= 60 ? '⚠️ FLAG' : mentorScores[m.id]?.tg ? '❌ FAIL' : ''
-          }</span>
+          <span style="font-size:0.82em;font-weight:700;${
+            (scores.tg||0) >= 80 ? 'color:var(--green)' : (scores.tg||0) >= 60 ? 'color:var(--orange)' : scores.tg ? 'color:var(--red)' : 'color:var(--cream-dim)'
+          }">${(scores.tg||0) >= 80 ? '✅ PASS' : (scores.tg||0) >= 60 ? '⚠️ FLAG' : scores.tg ? '❌ FAIL' : ''}</span>
         </div>
         <div style="font-size:0.78em;color:var(--cream-dim);">80+ = pass · 60-79 = flag for discussion · Below 60 = fail</div>
-      </div>
-      ` : ''}
-      
-      <!-- Billy Score (only for billy stage) -->
+      </div>` : ''}
+
       ${stage === 'billy' ? `
       <div class="modal-section">
         <h3>🎯 Billy's 1:1 Score</h3>
         <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px;">
-          <input type="number" id="billyScoreInput" min="0" max="20" placeholder="Score (0-20)" 
-            value="${(mentorScores[m.id] && mentorScores[m.id].billy) || ''}"
+          <input type="number" id="billyScoreInput" min="0" max="20" placeholder="Score (0-20)"
+            value="${scores.billy || ''}"
             style="background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--cream);font-size:0.9em;width:140px;outline:none;">
           <button class="btn btn-primary" onclick="saveBillyScore('${m.id}')">Save Score</button>
         </div>
-        <div style="font-size:0.78em;color:var(--cream-dim);">Did I want to keep talking? · Did they ask or tell? · Did they handle the awkward? · Would I pick this person? (each 1-5)</div>
-      </div>
-      ` : ''}
-      
-      <!-- Screening Script (only show for screening stage) -->
+      </div>` : ''}
+
       ${stage === 'screening' ? `
       <div class="modal-section">
         <button class="btn btn-ghost" onclick="document.getElementById('scriptPanel').classList.toggle('open')">📞 Show Screening Script</button>
         <div class="script-panel" id="scriptPanel">${SCREENING_SCRIPT}</div>
-      </div>
-      ` : ''}
-      
-      <!-- Notes -->
+      </div>` : ''}
+
       <div class="modal-section">
         <h3>📝 Notes</h3>
         <div class="notes-container">
-          ${m.brodie_notes ? `
-            <div class="note-entry">
-              <div class="note-author">Brodie (from Notion)</div>
-              <div class="note-text">${esc(m.brodie_notes)}</div>
-            </div>
-          ` : ''}
           ${notes.map(n => `
             <div class="note-entry">
               <div class="note-author">${esc(n.author)}</div>
@@ -824,9 +978,7 @@ function openModal(mentorId) {
               <div class="note-date">${formatDate(n.date)}</div>
             </div>
           `).join('')}
-          <div class="note-input-row">
-            <textarea class="note-input" id="noteInput" placeholder="Add a note..."></textarea>
-          </div>
+          <div class="note-input-row"><textarea class="note-input" id="noteInput" placeholder="Add a note..."></textarea></div>
           <div style="display:flex;gap:8px;margin-top:8px;align-items:center;">
             <select class="note-author-select" id="noteAuthor">
               <option value="Harry">Harry</option>
@@ -840,8 +992,7 @@ function openModal(mentorId) {
         </div>
       </div>
     </div>
-    
-    <div id="emailPanel"></div>
+
     <div class="modal-actions" style="flex-direction:column;gap:6px;">
       <div style="font-size:0.72em;text-transform:uppercase;letter-spacing:0.5px;color:var(--cream-dim);margin-bottom:2px;">⚡ Actions</div>
       ${stage === 'applied' ? `
@@ -881,359 +1032,44 @@ function openModal(mentorId) {
       ` : ''}
     </div>
   `;
-  
   document.getElementById('modalOverlay').classList.add('open');
 }
 
-function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('open');
-}
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
 
-function toggleCheck(mentorId, stageId, idx) {
-  if (!mentorChecks[mentorId]) mentorChecks[mentorId] = {};
-  if (!mentorChecks[mentorId][stageId]) mentorChecks[mentorId][stageId] = {};
-  mentorChecks[mentorId][stageId][idx] = !mentorChecks[mentorId][stageId][idx];
-  saveLocal();
-  openModal(mentorId); // re-render
-}
-
-function addNote(mentorId) {
-  const text = document.getElementById('noteInput').value.trim();
-  const author = document.getElementById('noteAuthor').value;
-  if (!text) return;
-  
-  if (!mentorNotes[mentorId]) mentorNotes[mentorId] = [];
-  mentorNotes[mentorId].push({ author, text, date: new Date().toISOString() });
-  saveLocal();
-  showToast('Note added');
-  openModal(mentorId);
-}
-
-function saveTgScore(mentorId) {
-  const val = parseInt(document.getElementById('tgScoreInput').value);
-  if (isNaN(val) || val < 0 || val > 100) { showToast('Enter a score 0-100'); return; }
-  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
-  mentorScores[mentorId].tg = val;
-  saveLocal();
-  showToast(`TG score saved: ${val}${val >= 80 ? ' ✅' : val >= 60 ? ' ⚠️' : ' ❌'}`);
-  openModal(mentorId);
-}
-
-function saveBillyScore(mentorId) {
-  const val = parseInt(document.getElementById('billyScoreInput').value);
-  if (isNaN(val) || val < 0 || val > 20) { showToast('Enter a score 0-20'); return; }
-  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
-  mentorScores[mentorId].billy = val;
-  saveLocal();
-  showToast(`Billy score saved: ${val}/20`);
-  openModal(mentorId);
-}
-
-function moveToNext(mentorId, currentStage) {
-  const idx = STAGES.findIndex(s => s.id === currentStage);
-  const nextStage = STAGES[idx + 1];
-  if (!nextStage || nextStage.id === 'rejected') return;
-  
-  // If moving to interview, show date picker
-  if (nextStage.id === 'interview') {
-    showInterviewDatePicker(mentorId);
-    return;
-  }
-  
-  moveTo(mentorId, nextStage.id);
-}
-
-function moveTo(mentorId, stageId) {
-  stageAssignments[mentorId] = stageId;
-  saveLocal();
-  const stageName = STAGES.find(s => s.id === stageId)?.label || stageId;
-  showToast(`Moved to ${stageName}`);
-  closeModal();
-  render();
-}
-
-const EMAIL_TEMPLATES = {
-  'applied': {
-    label: 'Send TestGorilla Link',
-    subject: 'Blues & Greens Mentoring - Next Step 🎯',
-    body: (m) => `Hi ${m.name.split(' ')[0]},
-
-Thanks so much for applying to be a mentor with Blues & Greens! We're really excited to have you in the pipeline.
-
-The next step is a quick online assessment - it takes about 20 minutes and helps us get to know your strengths and personality a bit better.
-
-Here's the link: https://app.testgorilla.com/s/6ixaig81
-
-If you could knock it out in the next 48 hours that would be awesome - we're keen to get you started.
-
-Any questions at all, just reply to this email.
-
-Cheers,
-Norri
-Blues & Greens Team
-norri@bluesandgreens.com.au`,
-  },
-  'tg-sent': {
-    label: 'Chase TestGorilla',
-    subject: 'Quick reminder - Blues & Greens Assessment',
-    body: (m) => `Hey ${m.name.split(' ')[0]},
-
-Just checking in - have you had a chance to complete the online assessment yet?
-
-Here's the link again if you need it: https://app.testgorilla.com/s/6ixaig81
-
-It only takes about 20 minutes and it's the last step before we can move you forward. We've got a group session coming up soon and would love to have you there!
-
-Let me know if you've hit any issues or have any questions.
-
-Cheers,
-Norri
-Blues & Greens Team
-norri@bluesandgreens.com.au`,
-  },
-  'tg-review': {
-    label: 'Invite to Screening Call',
-    subject: 'Blues & Greens - You\'re through! Next step 🙌',
-    body: (m) => `Hi ${m.name.split(' ')[0]},
-
-Great news - you've completed the assessment and we'd love to move you to the next stage!
-
-The next step is a quick 10-minute phone chat with our team. It's super casual - just want to get to know you a bit before the group session.
-
-When would suit you best this week for a quick call? Happy to work around your schedule.
-
-Cheers,
-Norri
-Blues & Greens Team
-norri@bluesandgreens.com.au`,
-  },
-  'screening': {
-    label: 'Invite to Group Interview',
-    subject: 'Blues & Greens - Group Session Invite 🤝',
-    body: (m) => `Hi ${m.name.split(' ')[0]},
-
-You're through to the group interview stage - awesome!
-
-We're running a group onboarding session where you'll meet a few other potential mentors. It's a relaxed round-circle conversation - no presentations, no pressure. You'll also do a short 1-on-1 mock mentor session.
-
-I'll send through the date and Zoom link shortly. Looking forward to meeting you!
-
-Cheers,
-Norri
-Blues & Greens Team
-norri@bluesandgreens.com.au`,
-  },
-  'onboarding': {
-    label: 'Send Onboarding Details',
-    subject: 'Blues & Greens - Welcome to the Team! 💙💚',
-    body: (m) => `Hi ${m.name.split(' ')[0]},
-
-Welcome to Blues & Greens! We're so excited to have you on board as a mentor.
-
-Here's what happens next:
-1. We'll send through your Working With Children Check (WWCC) information
-2. You'll complete a short online training module
-3. We'll match you with a young person and schedule your first session
-
-I'll be in touch soon with all the details. In the meantime, if you have any questions at all, just reply to this email.
-
-Cheers,
-Norri
-Blues & Greens Team
-norri@bluesandgreens.com.au`,
-  },
-  'rejected': {
-    label: 'Send Rejection',
-    subject: 'Blues & Greens - Application Update',
-    body: (m) => `Hi ${m.name.split(' ')[0]},
-
-Thanks so much for your interest in mentoring with Blues & Greens. We really appreciate the time you took to apply.
-
-After careful consideration, we've decided not to move forward with your application at this stage. This isn't necessarily a reflection on you - we're looking for a very specific fit for our young members and sometimes the timing or match just isn't right.
-
-We wish you all the best and thank you again for wanting to make a difference in a young person's life.
-
-Kind regards,
-Norri
-Blues & Greens Team
-norri@bluesandgreens.com.au`,
-  },
-};
-
-function autoSendEmail(mentorId, stage) {
-  const m = mentors.find(x => x.id === mentorId);
-  if (!m || !m.email) { showToast('No email address'); return; }
-  const tmpl = EMAIL_TEMPLATES[stage];
-  if (!tmpl) { showToast('No template for this stage'); return; }
-  
-  const emailBody = tmpl.body(m);
-  const cc = 'brodie@bluesandgreens.com.au,norri@bluesandgreens.com.au';
-  
-  // Open pre-filled email — one tap to send
-  const mailto = `mailto:${encodeURIComponent(m.email)}?cc=${encodeURIComponent(cc)}&subject=${encodeURIComponent(tmpl.subject)}&body=${encodeURIComponent(emailBody)}`;
-  window.open(mailto, '_blank');
-  
-  // Auto-move to next stage
-  const STAGE_AFTER_EMAIL = {
-    'applied': 'tg-sent',
-    'tg-sent': null, // stays in tg-sent (just a chase)
-    'tg-review': 'screening',
-    'screening': null, // needs interview date picker
-  };
-  
-  const nextStage = STAGE_AFTER_EMAIL[stage];
-  if (nextStage) {
-    stageAssignments[m.id] = nextStage;
-    saveLocal();
-  }
-  
-  // Track
-  const sent = JSON.parse(localStorage.getItem('bg-mentor-sent-emails') || '{}');
-  sent[mentorId] = { stage, sentAt: new Date().toISOString() };
-  localStorage.setItem('bg-mentor-sent-emails', JSON.stringify(sent));
-  
-  showToast(`📧 Email opened for ${m.name} — hit Send, then they'll move automatically`);
-  closeModal();
-  render();
-}
-
-function openEmailPanel(mentorId, stage) {
-  const m = mentors.find(x => x.id === mentorId);
-  if (!m || !m.email) { showToast('No email address'); return; }
-  
-  const tmpl = EMAIL_TEMPLATES[stage];
-  if (!tmpl) { showToast('No email template for this stage'); return; }
-  
-  const emailBody = tmpl.body(m);
-  const emailSubject = tmpl.subject;
-  
-  // Store in modal
-  const panel = document.getElementById('emailPanel');
-  if (panel) {
-    panel.innerHTML = `
-      <div style="margin-top:12px;background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:16px;">
-        <div style="font-size:0.82em;color:var(--cream-dim);margin-bottom:8px;">
-          <strong>To:</strong> ${esc(m.email)}<br>
-          <strong>CC:</strong> brodie@bluesandgreens.com.au, norri@bluesandgreens.com.au<br>
-          <strong>From:</strong> admin@bluesandgreens.com.au (signed as Norri)<br>
-          <strong>Subject:</strong> ${esc(emailSubject)}
-        </div>
-        <textarea id="emailBodyEditor" class="template-editor" style="min-height:250px;font-family:inherit;font-size:0.85em;line-height:1.6;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--cream-muted);width:100%;resize:vertical;">${esc(emailBody)}</textarea>
-        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
-          <button class="btn btn-success" onclick="sendEmail('${m.id}', '${stage}')">✅ Approve & Send</button>
-          <button class="btn btn-ghost" onclick="document.getElementById('emailPanel').innerHTML=''">Cancel</button>
-        </div>
-      </div>
-    `;
-    panel.scrollIntoView({behavior:'smooth'});
-  }
-}
-
-function sendEmail(mentorId, stage) {
-  const m = mentors.find(x => x.id === mentorId);
-  if (!m) return;
-  
-  const body = document.getElementById('emailBodyEditor')?.value;
-  const tmpl = EMAIL_TEMPLATES[stage];
-  if (!body || !tmpl) return;
-  
-  // Open mailto with CC pre-filled — from admin@, CC brodie + norri
-  const mailto = `mailto:${encodeURIComponent(m.email)}?cc=${encodeURIComponent('brodie@bluesandgreens.com.au,norri@bluesandgreens.com.au')}&subject=${encodeURIComponent(tmpl.subject)}&body=${encodeURIComponent(body)}`;
-  window.open(mailto, '_blank');
-  
-  showToast(`✅ Email opened for ${m.name} — hit Send in your email client`);
-  document.getElementById('emailPanel').innerHTML = '';
-  
-  // Track that email was sent
-  const sentEmails = JSON.parse(localStorage.getItem('bg-mentor-sent-emails') || '{}');
-  sentEmails[mentorId] = { stage, sentAt: new Date().toISOString() };
-  localStorage.setItem('bg-mentor-sent-emails', JSON.stringify(sentEmails));
-  saveLocal();
-}
-
-// ── Drag & Drop ──
-let dragId = null;
-
-function onDragStart(e, mentorId) {
-  dragId = mentorId;
-  e.target.classList.add('dragging');
-  e.dataTransfer.effectAllowed = 'move';
-}
-
-function onDragEnd(e) {
-  e.target.classList.remove('dragging');
-  dragId = null;
-  document.querySelectorAll('.column-body').forEach(el => el.classList.remove('drag-over'));
-}
-
-function onDragOver(e) {
-  e.preventDefault();
-  e.currentTarget.classList.add('drag-over');
-}
-
-function onDragLeave(e) {
-  e.currentTarget.classList.remove('drag-over');
-}
-
-function onDrop(e, stageId) {
-  e.preventDefault();
-  e.currentTarget.classList.remove('drag-over');
-  if (!dragId) return;
-  
-  if (stageId === 'interview') {
-    // Show date picker for group interview
-    showInterviewDatePicker(dragId);
-    return;
-  }
-  
-  stageAssignments[dragId] = stageId;
-  saveLocal();
-  const stageName = STAGES.find(s => s.id === stageId)?.label || stageId;
-  showToast(`Moved to ${stageName}`);
-  render();
-}
-
-// ── Interview Sessions ──
+// ── Interview Session Views ──
 function showInterviewDatePicker(mentorId) {
   const m = mentors.find(x => x.id === mentorId);
   if (!m) return;
-  
-  // Get existing session dates
-  const existingDates = Object.keys(interviewSessions).sort();
-  
+  const existingDates = [...new Set(mentors.filter(x => x.interview_date && getStage(x) === 'interview').map(x => x.interview_date))].sort();
+
   document.getElementById('modal').innerHTML = `
     <div class="modal-header">
       <div>
         <h2>Schedule Group Interview</h2>
-        <div style="font-size:0.85em;color:var(--cream-dim);margin-top:4px;">
-          Assigning <strong style="color:var(--gold)">${esc(m.name)}</strong> to a group interview session
-        </div>
+        <div style="font-size:0.85em;color:var(--cream-dim);margin-top:4px;">Assigning <strong style="color:var(--gold)">${esc(m.name)}</strong></div>
       </div>
       <button class="modal-close" onclick="closeModal()">×</button>
     </div>
     <div class="modal-body">
       ${existingDates.length ? `
-        <div class="modal-section">
-          <h3>Join Existing Session</h3>
-          ${existingDates.map(d => {
-            const ids = interviewSessions[d].mentorIds || [];
-            const names = ids.map(id => mentors.find(x => x.id === id)?.name || '?').join(', ');
-            return `<div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;" onclick="assignToInterview('${mentorId}','${d}')">
-              <div>
-                <strong>${new Date(d+'T00:00').toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long'})}</strong>
-                <div style="font-size:0.8em;color:var(--cream-dim);">${ids.length} candidate${ids.length!==1?'s':''}: ${esc(names)}</div>
-              </div>
-              <span style="color:var(--gold);font-size:0.85em;">+ Add →</span>
-            </div>`;
-          }).join('')}
-        </div>
-      ` : ''}
+      <div class="modal-section">
+        <h3>Join Existing Session</h3>
+        ${existingDates.map(d => {
+          const cands = mentors.filter(x => x.interview_date === d && getStage(x) === 'interview');
+          return `<div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;" onclick="assignToInterview('${mentorId}','${d}')">
+            <div>
+              <strong>${new Date(d+'T00:00').toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long'})}</strong>
+              <div style="font-size:0.8em;color:var(--cream-dim);">${cands.length} candidate${cands.length!==1?'s':''}: ${cands.map(x=>esc(x.name)).join(', ')}</div>
+            </div>
+            <span style="color:var(--gold);font-size:0.85em;">+ Add →</span>
+          </div>`;
+        }).join('')}
+      </div>` : ''}
       <div class="modal-section">
         <h3>Create New Session</h3>
         <div style="display:flex;gap:10px;align-items:center;">
-          <input type="date" id="newInterviewDate" 
-            style="background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--cream);font-size:0.9em;outline:none;"
-            min="${new Date().toISOString().split('T')[0]}">
+          <input type="date" id="newInterviewDate" style="background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--cream);font-size:0.9em;outline:none;" min="${new Date().toISOString().split('T')[0]}">
           <button class="btn btn-primary" onclick="createInterviewSession('${mentorId}')">Create & Assign</button>
         </div>
       </div>
@@ -1242,34 +1078,11 @@ function showInterviewDatePicker(mentorId) {
   document.getElementById('modalOverlay').classList.add('open');
 }
 
-function assignToInterview(mentorId, dateStr) {
-  stageAssignments[mentorId] = 'interview';
-  mentorInterviewDate[mentorId] = dateStr;
-  if (!interviewSessions[dateStr]) interviewSessions[dateStr] = { mentorIds: [] };
-  if (!interviewSessions[dateStr].mentorIds.includes(mentorId)) {
-    interviewSessions[dateStr].mentorIds.push(mentorId);
-  }
-  saveLocal();
-  closeModal();
-  showToast(`Added to ${new Date(dateStr+'T00:00').toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'})} session`);
-  render();
-}
-
-function createInterviewSession(mentorId) {
-  const dateStr = document.getElementById('newInterviewDate')?.value;
-  if (!dateStr) { showToast('Pick a date'); return; }
-  assignToInterview(mentorId, dateStr);
-}
-
 function openSessionView(dateStr) {
-  const session = interviewSessions[dateStr];
-  if (!session) return;
-  
-  const candidates = (session.mentorIds || []).map(id => mentors.find(x => x.id === id)).filter(Boolean);
-  const dateLabel = new Date(dateStr+'T00:00').toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long', year:'numeric'});
-  
+  const candidates = mentors.filter(m => m.interview_date === dateStr && getStage(m) === 'interview');
+  const dateLabel = new Date(dateStr+'T00:00').toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
   const SCORE_DIMS = ['Good Bloke','Energy','Emotional IQ','Intelligence'];
-  
+
   document.getElementById('modal').innerHTML = `
     <div class="modal-header">
       <div>
@@ -1280,19 +1093,19 @@ function openSessionView(dateStr) {
     </div>
     <div class="modal-body" style="padding:12px;">
       ${candidates.map(m => {
-        const scores = mentorScores[m.id]?.interview || {};
-        const billyScore = mentorScores[m.id]?.billy || '';
-        const attended = mentorScores[m.id]?.attended;
-        const hiringInclination = mentorScores[m.id]?.hiring;
-        const interviewTotal = SCORE_DIMS.reduce((s, dim) => s + (scores[dim] || 0), 0);
-        const total = interviewTotal + (billyScore || 0);
-        const notes = mentorNotes[m.id] || [];
-        
+        const scores = m.scores || {};
+        const interviewScores = scores.interview || {};
+        const billyScore = scores.billy || 0;
+        const attended = scores.attended;
+        const hiringInclination = scores.hiring;
+        const interviewTotal = SCORE_DIMS.reduce((s, dim) => s + (interviewScores[dim] || 0), 0);
+        const total = interviewTotal + billyScore;
+        const notes = getNotes(m);
         return `
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;">
           <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);">
             <div style="display:flex;align-items:center;gap:10px;">
-              <button onclick="toggleAttendance('${m.id}','${dateStr}')" 
+              <button onclick="toggleAttendance('${m.id}','${dateStr}')"
                 style="width:32px;height:32px;border-radius:50%;border:2px solid ${attended?'var(--green)':'var(--border)'};background:${attended?'var(--green)':'transparent'};color:${attended?'var(--bg)':'var(--cream-dim)'};font-size:0.9em;cursor:pointer;">${attended?'✓':'?'}</button>
               <div>
                 <strong style="font-size:1em;">${esc(m.name)}</strong>
@@ -1311,17 +1124,16 @@ function openSessionView(dateStr) {
                   <div style="font-size:0.7em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:4px;">${dim}</div>
                   <div style="display:flex;gap:3px;">
                     ${[1,2,3,4,5].map(n => `
-                      <button onclick="setInterviewScore('${m.id}','${dim}',${n},'${dateStr}')" 
-                        style="width:36px;height:36px;border-radius:8px;border:1px solid ${(scores[dim]||0)>=n?'var(--gold)':'var(--border)'};
-                        background:${(scores[dim]||0)>=n?'var(--gold)':'transparent'};
-                        color:${(scores[dim]||0)>=n?'var(--bg)':'var(--cream-dim)'};
+                      <button onclick="setInterviewScore('${m.id}','${dim}',${n},'${dateStr}')"
+                        style="width:36px;height:36px;border-radius:8px;border:1px solid ${(interviewScores[dim]||0)>=n?'var(--gold)':'var(--border)'};
+                        background:${(interviewScores[dim]||0)>=n?'var(--gold)':'transparent'};
+                        color:${(interviewScores[dim]||0)>=n?'var(--bg)':'var(--cream-dim)'};
                         font-size:0.85em;font-weight:700;cursor:pointer;">${n}</button>
                     `).join('')}
                   </div>
                 </div>
               `).join('')}
             </div>
-            
             <div style="padding:10px 0;border-top:1px solid var(--border);">
               <div style="font-size:0.7em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:6px;">Hiring Inclination</div>
               <div style="display:flex;gap:6px;">
@@ -1334,23 +1146,22 @@ function openSessionView(dateStr) {
                 `).join('')}
               </div>
             </div>
-            
             <div style="margin-top:8px;">
               <div style="display:flex;gap:6px;">
-                <input type="text" id="sessNote-${m.id}" placeholder="Quick note..." 
+                <input type="text" id="sessNote-${m.id}" placeholder="Quick note..."
                   style="flex:1;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:6px;padding:8px 10px;color:var(--cream);font-size:0.85em;outline:none;"
                   onkeydown="if(event.key==='Enter'){addSessionNote('${m.id}','${dateStr}')}">
                 <button class="btn btn-ghost" style="padding:6px 12px;font-size:0.78em;" onclick="addSessionNote('${m.id}','${dateStr}')">+</button>
               </div>
-              ${notes.length ? `<div style="margin-top:6px;">${notes.slice(-3).map(n => 
+              ${notes.length ? `<div style="margin-top:6px;">${notes.slice(-3).map(n =>
                 `<div style="font-size:0.78em;color:var(--cream-dim);padding:2px 0;"><strong style="color:var(--gold)">${esc(n.author)}</strong>: ${esc(n.text)}</div>`
               ).join('')}</div>` : ''}
             </div>
           </div>
           <div style="padding:8px 16px 12px;border-top:1px solid var(--border);display:flex;gap:6px;">
-            <button class="btn btn-success" style="padding:8px 12px;font-size:0.82em;flex:1;" onclick="moveTo('${m.id}','billy');openSessionView('${dateStr}')">→ Billy 1:1</button>
-            <button class="btn btn-success" style="padding:8px 12px;font-size:0.82em;flex:1;" onclick="moveTo('${m.id}','onboarding');openSessionView('${dateStr}')">→ Onboard</button>
-            <button class="btn btn-danger" style="padding:8px 12px;font-size:0.82em;" onclick="moveTo('${m.id}','rejected');openSessionView('${dateStr}')">✕</button>
+            <button class="btn btn-success" style="padding:8px 12px;font-size:0.82em;flex:1;" onclick="moveTo('${m.id}','billy');setTimeout(()=>openSessionView('${dateStr}'),100)">→ Billy 1:1</button>
+            <button class="btn btn-success" style="padding:8px 12px;font-size:0.82em;flex:1;" onclick="moveTo('${m.id}','onboarding');setTimeout(()=>openSessionView('${dateStr}'),100)">→ Onboard</button>
+            <button class="btn btn-danger" style="padding:8px 12px;font-size:0.82em;" onclick="moveTo('${m.id}','rejected');setTimeout(()=>openSessionView('${dateStr}'),100)">✕</button>
           </div>
           ` : `<div style="padding:12px 16px;color:var(--cream-dim);font-size:0.85em;">Did not attend</div>`}
         </div>`;
@@ -1360,56 +1171,12 @@ function openSessionView(dateStr) {
   document.getElementById('modalOverlay').classList.add('open');
 }
 
-function toggleAttendance(mentorId, dateStr) {
-  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
-  mentorScores[mentorId].attended = !mentorScores[mentorId].attended;
-  saveLocal();
-  openSessionView(dateStr);
-}
-
-function setHiring(mentorId, value, dateStr) {
-  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
-  mentorScores[mentorId].hiring = value;
-  saveLocal();
-  openSessionView(dateStr);
-}
-
-function setInterviewScore(mentorId, dim, score, dateStr) {
-  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
-  if (!mentorScores[mentorId].interview) mentorScores[mentorId].interview = {};
-  mentorScores[mentorId].interview[dim] = score;
-  saveLocal();
-  openSessionView(dateStr);
-}
-
-function setBillyScoreSession(mentorId, score, dateStr) {
-  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
-  mentorScores[mentorId].billy = score;
-  saveLocal();
-  openSessionView(dateStr);
-}
-
-function addSessionNote(mentorId, dateStr) {
-  const input = document.getElementById(`sessNote-${mentorId}`);
-  const text = input?.value.trim();
-  if (!text) return;
-  if (!mentorNotes[mentorId]) mentorNotes[mentorId] = [];
-  mentorNotes[mentorId].push({ author: 'Session', text, date: new Date().toISOString() });
-  saveLocal();
-  openSessionView(dateStr);
-}
-
 function openGroupInterviewView() {
-  const interviewMentors = mentors.filter(m => inferStage(m) === 'interview');
+  const interviewMentors = mentors.filter(m => getStage(m) === 'interview');
   const selectedIds = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
   const liveSession = sessionStorage.getItem('gi-live') === 'true';
-  
-  if (liveSession) {
-    // If a live session is running, go straight to scoring
-    openLiveSessionView();
-    return;
-  }
-  
+  if (liveSession) { openLiveSessionView(); return; }
+
   document.getElementById('modal').innerHTML = `
     <div class="modal-header">
       <div>
@@ -1422,29 +1189,24 @@ function openGroupInterviewView() {
       </div>
     </div>
     <div class="modal-body" style="padding:12px;">
-      
       ${interviewMentors.length ? `
-        <!-- Select All -->
         <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);margin-bottom:12px;">
           <button onclick="giToggleAll()" style="background:none;border:2px solid var(--gold);border-radius:6px;width:28px;height:28px;cursor:pointer;color:var(--gold);font-size:0.8em;font-weight:700;">✓</button>
           <span style="font-size:0.85em;color:var(--cream-muted);">Select All</span>
           <span style="flex:1;"></span>
-          <span id="giSelectedCount" style="font-size:0.82em;color:var(--gold);font-weight:600;">${selectedIds.length} selected</span>
+          <span style="font-size:0.82em;color:var(--gold);font-weight:600;">${selectedIds.length} selected</span>
         </div>
-        
-        <!-- Candidate list with checkboxes -->
         ${interviewMentors.map(m => {
           const checked = selectedIds.includes(m.id);
-          const scores = mentorScores[m.id]?.interview || {};
-          const hiring = mentorScores[m.id]?.hiring;
+          const hiring = (m.scores||{}).hiring;
           return `
-          <div style="background:var(--bg-card);border:1px solid ${checked?'var(--gold)':'var(--border)'};border-radius:8px;padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:border-color 0.2s;" onclick="giToggle('${m.id}')">
+          <div style="background:var(--bg-card);border:1px solid ${checked?'var(--gold)':'var(--border)'};border-radius:8px;padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="giToggle('${m.id}')">
             <div style="width:28px;height:28px;border-radius:6px;border:2px solid ${checked?'var(--gold)':'var(--border)'};background:${checked?'var(--gold)':'transparent'};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               ${checked ? '<span style="color:var(--bg);font-weight:700;font-size:0.85em;">✓</span>' : ''}
             </div>
             <div style="flex:1;">
               <strong style="font-size:0.9em;">${esc(m.name)}</strong>
-              <div style="font-size:0.75em;color:var(--cream-dim);">${m.age ? m.age+'yo' : ''} ${m.email ? '· '+esc(m.email) : ''} ${m.source ? '· '+esc(m.source) : ''}</div>
+              <div style="font-size:0.75em;color:var(--cream-dim);">${m.age||''} ${m.email ? '· '+esc(m.email) : ''}</div>
             </div>
             ${hiring ? `<span style="font-size:0.7em;padding:3px 8px;border-radius:6px;font-weight:700;${
               hiring==='strong-yes'?'background:rgba(46,204,113,0.15);color:var(--green)':
@@ -1454,20 +1216,10 @@ function openGroupInterviewView() {
             }">${hiring==='strong-yes'?'STRONG YES':hiring.toUpperCase()}</span>` : ''}
           </div>`;
         }).join('')}
-        
-        <!-- Action buttons -->
         <div style="position:sticky;bottom:0;background:var(--bg-card);padding:14px 0 4px;border-top:1px solid var(--border);margin-top:16px;">
-          <div style="font-size:0.7em;text-transform:uppercase;letter-spacing:0.5px;color:var(--cream-dim);margin-bottom:8px;">⚡ Bulk Actions (for selected)</div>
-          <div style="display:flex;flex-direction:column;gap:8px;">
-            <button class="btn btn-email" style="width:100%;justify-content:center;" onclick="giBulkEmail()">
-              📧 Send Group Onboarding Invite Email
-            </button>
-            <button class="btn btn-success" style="width:100%;justify-content:center;font-size:0.95em;padding:14px;" onclick="giBeginSession()">
-              🎬 Begin Interview Session (Live Scoring)
-            </button>
-          </div>
+          <button class="btn btn-success" style="width:100%;justify-content:center;font-size:0.95em;padding:14px;" onclick="giBeginSession()">🎬 Begin Interview Session (Live Scoring)</button>
         </div>
-      ` : '<div style="text-align:center;padding:30px;color:var(--cream-dim);">No candidates in the Group Interview stage yet.<br>Move people here from Screening.</div>'}
+      ` : '<div style="text-align:center;padding:30px;color:var(--cream-dim);">No candidates in the Group Interview stage yet.</div>'}
     </div>
   `;
   document.getElementById('modalOverlay').classList.add('open');
@@ -1475,63 +1227,23 @@ function openGroupInterviewView() {
 
 function giToggle(mentorId) {
   let sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
-  if (sel.includes(mentorId)) {
-    sel = sel.filter(id => id !== mentorId);
-  } else {
-    sel.push(mentorId);
-  }
+  if (sel.includes(mentorId)) sel = sel.filter(id => id !== mentorId);
+  else sel.push(mentorId);
   sessionStorage.setItem('gi-selected', JSON.stringify(sel));
   openGroupInterviewView();
 }
 
 function giToggleAll() {
-  const interviewMentors = mentors.filter(m => inferStage(m) === 'interview');
+  const interviewMentors = mentors.filter(m => getStage(m) === 'interview');
   let sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
-  if (sel.length === interviewMentors.length) {
-    sel = [];
-  } else {
-    sel = interviewMentors.map(m => m.id);
-  }
+  sel = sel.length === interviewMentors.length ? [] : interviewMentors.map(m => m.id);
   sessionStorage.setItem('gi-selected', JSON.stringify(sel));
   openGroupInterviewView();
-}
-
-function giBulkEmail() {
-  const sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
-  if (!sel.length) { showToast('Select candidates first'); return; }
-  
-  const selected = sel.map(id => mentors.find(m => m.id === id)).filter(Boolean);
-  const emails = selected.map(m => m.email).filter(Boolean);
-  
-  if (!emails.length) { showToast('No email addresses'); return; }
-  
-  const subject = 'Blues & Greens - Group Onboarding Session Invite 🤝';
-  const body = `Hi there,
-
-You're through to the next stage of becoming a Blues & Greens mentor - awesome!
-
-We're running a group onboarding session where you'll meet a few other potential mentors. It's a relaxed round-circle conversation - no presentations, no pressure. You'll also do a short 1-on-1 mock mentor session with one of our team.
-
-[INSERT DATE, TIME & ZOOM LINK HERE]
-
-Looking forward to meeting you!
-
-Cheers,
-Norri
-Blues & Greens Team
-norri@bluesandgreens.com.au`;
-  
-  const cc = 'brodie@bluesandgreens.com.au,norri@bluesandgreens.com.au';
-  const bcc = emails.join(',');
-  const mailto = `mailto:?bcc=${encodeURIComponent(bcc)}&cc=${encodeURIComponent(cc)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  window.open(mailto, '_blank');
-  showToast(`📧 Email opened for ${emails.length} candidates`);
 }
 
 function giBeginSession() {
   const sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
   if (!sel.length) { showToast('Select candidates first'); return; }
-  
   sessionStorage.setItem('gi-live', 'true');
   openLiveSessionView();
 }
@@ -1540,7 +1252,7 @@ function openLiveSessionView() {
   const sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
   const candidates = sel.map(id => mentors.find(m => m.id === id)).filter(Boolean);
   const SCORE_DIMS = ['Good Bloke','Energy','Emotional IQ','Intelligence'];
-  
+
   document.getElementById('modal').innerHTML = `
     <div class="modal-header" style="background:linear-gradient(135deg,rgba(26,188,156,0.1),rgba(16,71,145,0.1));">
       <div>
@@ -1548,38 +1260,34 @@ function openLiveSessionView() {
         <div style="font-size:0.85em;color:var(--cream-dim);margin-top:4px;">${candidates.length} candidate${candidates.length!==1?'s':''}</div>
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
-        <a href="billy.html" target="_blank" class="btn btn-primary" style="text-decoration:none;">🎯 Billy's View</a>
         <button class="btn btn-danger" style="font-size:0.78em;" onclick="giEndSession()">End Session</button>
         <button class="modal-close" onclick="closeModal()">×</button>
       </div>
     </div>
     <div class="modal-body" style="padding:12px;">
       ${candidates.map(m => {
-        const scores = mentorScores[m.id]?.interview || {};
-        const billyScore = mentorScores[m.id]?.billy || 0;
-        const attended = mentorScores[m.id]?.attended;
-        const hiringInclination = mentorScores[m.id]?.hiring;
-        const interviewTotal = SCORE_DIMS.reduce((s, dim) => s + (scores[dim] || 0), 0);
+        const scores = m.scores || {};
+        const interviewScores = scores.interview || {};
+        const billyScore = scores.billy || 0;
+        const attended = scores.attended;
+        const hiringInclination = scores.hiring;
+        const interviewTotal = SCORE_DIMS.reduce((s, dim) => s + (interviewScores[dim] || 0), 0);
         const total = interviewTotal + billyScore;
-        const notes = mentorNotes[m.id] || [];
-        
-        const decision = mentorScores[m.id]?.sessionDecision;
+        const decision = scores.sessionDecision;
         const borderColor = decision === 'onboard' ? 'var(--green)' : decision === 'reject' ? 'var(--red)' : decision === 'billy' ? '#1ABC9C' : 'var(--border)';
-        
+        const notes = getNotes(m);
         return `
-        <div style="background:var(--bg-card);border:2px solid ${borderColor};border-radius:var(--radius);margin-bottom:14px;overflow:hidden;${decision === 'onboard' ? 'box-shadow:0 0 12px rgba(46,204,113,0.15);' : decision === 'reject' ? 'box-shadow:0 0 12px rgba(231,76,60,0.15);' : ''}">
+        <div style="background:var(--bg-card);border:2px solid ${borderColor};border-radius:var(--radius);margin-bottom:14px;overflow:hidden;">
           <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);">
             <div style="display:flex;align-items:center;gap:10px;">
-              <button onclick="toggleAttendanceLive('${m.id}')" 
+              <button onclick="toggleAttendanceLive('${m.id}')"
                 style="width:36px;height:36px;border-radius:50%;border:2px solid ${attended?'var(--green)':'var(--border)'};background:${attended?'var(--green)':'transparent'};color:${attended?'var(--bg)':'var(--cream-dim)'};font-size:1em;cursor:pointer;font-weight:700;">${attended?'✓':'?'}</button>
               <div>
                 <strong style="font-size:1.05em;">${esc(m.name)}</strong>
-                <div style="font-size:0.8em;color:var(--cream-dim);">${m.age ? m.age+'yo' : ''} ${m.source ? '· '+esc(m.source) : ''}</div>
+                <div style="font-size:0.8em;color:var(--cream-dim);">${m.age ? m.age+'yo' : ''}</div>
               </div>
             </div>
-            <div style="text-align:right;">
-              <div style="font-size:1.5em;font-weight:700;color:${total>=28?'var(--green)':total>=20?'var(--gold)':total>=12?'var(--orange)':'var(--cream-dim)'};">${total||'—'}<span style="font-size:0.45em;color:var(--cream-dim)">/40</span></div>
-            </div>
+            <div style="font-size:1.5em;font-weight:700;color:${total>=28?'var(--green)':total>=20?'var(--gold)':total>=12?'var(--orange)':'var(--cream-dim)'};">${total||'—'}<span style="font-size:0.45em;color:var(--cream-dim)">/40</span></div>
           </div>
           ${attended !== false ? `
           <div style="padding:12px 16px;">
@@ -1589,17 +1297,16 @@ function openLiveSessionView() {
                   <div style="font-size:0.7em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:4px;">${dim}</div>
                   <div style="display:flex;gap:3px;">
                     ${[1,2,3,4,5].map(n => `
-                      <button onclick="setLiveScore('${m.id}','${dim}',${n})" 
-                        style="width:40px;height:40px;border-radius:8px;border:1px solid ${(scores[dim]||0)>=n?'var(--gold)':'var(--border)'};
-                        background:${(scores[dim]||0)>=n?'var(--gold)':'transparent'};
-                        color:${(scores[dim]||0)>=n?'var(--bg)':'var(--cream-dim)'};
+                      <button onclick="setLiveScore('${m.id}','${dim}',${n})"
+                        style="width:40px;height:40px;border-radius:8px;border:1px solid ${(interviewScores[dim]||0)>=n?'var(--gold)':'var(--border)'};
+                        background:${(interviewScores[dim]||0)>=n?'var(--gold)':'transparent'};
+                        color:${(interviewScores[dim]||0)>=n?'var(--bg)':'var(--cream-dim)'};
                         font-size:0.9em;font-weight:700;cursor:pointer;">${n}</button>
                     `).join('')}
                   </div>
                 </div>
               `).join('')}
             </div>
-            
             <div style="padding:10px 0;border-top:1px solid var(--border);">
               <div style="font-size:0.7em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:6px;">Hiring Inclination</div>
               <div style="display:flex;gap:6px;">
@@ -1612,15 +1319,14 @@ function openLiveSessionView() {
                 `).join('')}
               </div>
             </div>
-            
             <div style="margin-top:8px;">
               <div style="display:flex;gap:6px;">
-                <input type="text" id="liveNote-${m.id}" placeholder="Quick note..." 
+                <input type="text" id="liveNote-${m.id}" placeholder="Quick note..."
                   style="flex:1;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:6px;padding:8px 10px;color:var(--cream);font-size:0.85em;outline:none;"
                   onkeydown="if(event.key==='Enter'){addLiveNote('${m.id}')}">
                 <button class="btn btn-ghost" style="padding:6px 12px;font-size:0.78em;" onclick="addLiveNote('${m.id}')">+</button>
               </div>
-              ${notes.length ? `<div style="margin-top:6px;">${notes.slice(-3).map(n => 
+              ${notes.length ? `<div style="margin-top:6px;">${notes.slice(-3).map(n =>
                 `<div style="font-size:0.78em;color:var(--cream-dim);padding:2px 0;"><strong style="color:var(--gold)">${esc(n.author)}</strong>: ${esc(n.text)}</div>`
               ).join('')}</div>` : ''}
             </div>
@@ -1628,14 +1334,13 @@ function openLiveSessionView() {
           <div style="padding:10px 16px 12px;border-top:1px solid var(--border);">
             <div style="font-size:0.7em;color:var(--cream-dim);text-transform:uppercase;margin-bottom:6px;">Decision</div>
             <div style="display:flex;gap:6px;">
-              ${[{v:'onboard',l:'✅ Onboard',c:'var(--green)'},{v:'billy',l:'🎯 Billy 1:1',c:'#1ABC9C'},{v:'reject',l:'✕ Reject',c:'var(--red)'}].map(opt => {
-                const current = mentorScores[m.id]?.sessionDecision;
-                return `<button onclick="setSessionDecision('${m.id}','${opt.v}')"
-                  style="flex:1;padding:10px 4px;border-radius:8px;border:2px solid ${current===opt.v?opt.c:'var(--border)'};
-                  background:${current===opt.v?opt.c+'22':'transparent'};
-                  color:${current===opt.v?opt.c:'var(--cream-dim)'};
-                  font-size:0.8em;font-weight:700;cursor:pointer;">${opt.l}</button>`;
-              }).join('')}
+              ${[{v:'onboard',l:'✅ Onboard',c:'var(--green)'},{v:'billy',l:'🎯 Billy 1:1',c:'#1ABC9C'},{v:'reject',l:'✕ Reject',c:'var(--red)'}].map(opt => `
+                <button onclick="setSessionDecision('${m.id}','${opt.v}')"
+                  style="flex:1;padding:10px 4px;border-radius:8px;border:2px solid ${decision===opt.v?opt.c:'var(--border)'};
+                  background:${decision===opt.v?opt.c+'22':'transparent'};
+                  color:${decision===opt.v?opt.c:'var(--cream-dim)'};
+                  font-size:0.8em;font-weight:700;cursor:pointer;">${opt.l}</button>
+              `).join('')}
             </div>
           </div>
           ` : `<div style="padding:12px 16px;color:var(--cream-dim);font-size:0.85em;">Tap ✓ to mark as attended</div>`}
@@ -1646,128 +1351,59 @@ function openLiveSessionView() {
   document.getElementById('modalOverlay').classList.add('open');
 }
 
-function toggleAttendanceLive(mentorId) {
-  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
-  mentorScores[mentorId].attended = !mentorScores[mentorId].attended;
-  saveLocal();
+async function toggleAttendanceLive(mentorId) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const scores = { ...(m.scores || {}), attended: !(m.scores?.attended) };
+  m.scores = scores;
+  await sbUpdate(mentorId, { scores });
   openLiveSessionView();
 }
 
-function setLiveScore(mentorId, dim, score) {
-  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
-  if (!mentorScores[mentorId].interview) mentorScores[mentorId].interview = {};
-  mentorScores[mentorId].interview[dim] = score;
-  saveLocal();
+async function setLiveScore(mentorId, dim, score) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const scores = { ...(m.scores || {}) };
+  if (!scores.interview) scores.interview = {};
+  scores.interview = { ...scores.interview, [dim]: score };
+  m.scores = scores;
+  await sbUpdate(mentorId, { scores });
   openLiveSessionView();
 }
 
-function setLiveHiring(mentorId, value) {
-  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
-  mentorScores[mentorId].hiring = value;
-  saveLocal();
+async function setLiveHiring(mentorId, value) {
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const scores = { ...(m.scores || {}), hiring: value };
+  m.scores = scores;
+  await sbUpdate(mentorId, { scores });
   openLiveSessionView();
 }
 
-function setSessionDecision(mentorId, decision) {
-  if (!mentorScores[mentorId]) mentorScores[mentorId] = {};
-  // Toggle off if already selected
-  mentorScores[mentorId].sessionDecision = mentorScores[mentorId].sessionDecision === decision ? null : decision;
-  saveLocal();
-  openLiveSessionView();
-}
-
-function addLiveNote(mentorId) {
+async function addLiveNote(mentorId) {
   const input = document.getElementById(`liveNote-${mentorId}`);
   const text = input?.value.trim();
   if (!text) return;
-  if (!mentorNotes[mentorId]) mentorNotes[mentorId] = [];
-  mentorNotes[mentorId].push({ author: 'Session', text, date: new Date().toISOString() });
-  saveLocal();
+  const m = mentors.find(x => x.id === mentorId);
+  if (!m) return;
+  const notes = { ...(m.notes || {}) };
+  if (!notes.entries) notes.entries = [];
+  notes.entries = [...notes.entries, { author: 'Session', text, date: new Date().toISOString() }];
+  m.notes = notes;
+  await sbUpdate(mentorId, { notes });
   openLiveSessionView();
 }
 
-function giEndSession() {
+async function giEndSession() {
   const sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
   const candidates = sel.map(id => mentors.find(m => m.id === id)).filter(Boolean);
-  
-  const onboard = candidates.filter(m => mentorScores[m.id]?.sessionDecision === 'onboard');
-  const billy = candidates.filter(m => mentorScores[m.id]?.sessionDecision === 'billy');
-  const reject = candidates.filter(m => mentorScores[m.id]?.sessionDecision === 'reject');
-  const undecided = candidates.filter(m => !mentorScores[m.id]?.sessionDecision);
-  
-  document.getElementById('modal').innerHTML = `
-    <div class="modal-header">
-      <div>
-        <h2>📋 Session Results</h2>
-        <div style="font-size:0.85em;color:var(--cream-dim);margin-top:4px;">${candidates.length} candidates reviewed</div>
-      </div>
-      <button class="modal-close" onclick="giFinalClose()">×</button>
-    </div>
-    <div class="modal-body" style="padding:16px;">
-      
-      ${onboard.length ? `
-      <div style="margin-bottom:16px;">
-        <h3 style="font-size:0.9em;color:var(--green);margin-bottom:8px;">✅ Onboard (${onboard.length})</h3>
-        ${onboard.map(m => `
-          <div style="background:rgba(46,204,113,0.08);border:1px solid rgba(46,204,113,0.3);border-radius:8px;padding:12px 14px;margin-bottom:8px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <strong>${esc(m.name)}</strong>
-              <button class="btn btn-email" style="padding:6px 12px;font-size:0.78em;" onclick="autoSendEmail('${m.id}','onboarding')">📧 Send Onboarding Email</button>
-            </div>
-          </div>
-        `).join('')}
-      </div>` : ''}
-      
-      ${billy.length ? `
-      <div style="margin-bottom:16px;">
-        <h3 style="font-size:0.9em;color:#1ABC9C;margin-bottom:8px;">🎯 Billy 1:1 (${billy.length})</h3>
-        ${billy.map(m => `
-          <div style="background:rgba(26,188,156,0.08);border:1px solid rgba(26,188,156,0.3);border-radius:8px;padding:12px 14px;margin-bottom:8px;">
-            <strong>${esc(m.name)}</strong>
-          </div>
-        `).join('')}
-      </div>` : ''}
-      
-      ${reject.length ? `
-      <div style="margin-bottom:16px;">
-        <h3 style="font-size:0.9em;color:var(--red);margin-bottom:8px;">✕ Rejected (${reject.length})</h3>
-        ${reject.map(m => `
-          <div style="background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.3);border-radius:8px;padding:12px 14px;margin-bottom:8px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <strong>${esc(m.name)}</strong>
-              <button class="btn btn-ghost" style="padding:6px 12px;font-size:0.78em;" onclick="autoSendEmail('${m.id}','rejected')">📧 Send Rejection</button>
-            </div>
-          </div>
-        `).join('')}
-      </div>` : ''}
-      
-      ${undecided.length ? `
-      <div style="margin-bottom:16px;">
-        <h3 style="font-size:0.9em;color:var(--cream-dim);margin-bottom:8px;">⬜ Undecided (${undecided.length})</h3>
-        ${undecided.map(m => `
-          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px;">
-            <strong>${esc(m.name)}</strong>
-          </div>
-        `).join('')}
-      </div>` : ''}
-    </div>
-    <div class="modal-actions" style="flex-direction:column;gap:8px;">
-      <button class="btn btn-success" style="width:100%" onclick="giApplyDecisions()">✅ Apply All Decisions & Close</button>
-      <button class="btn btn-ghost" style="width:100%" onclick="openLiveSessionView()">← Back to Scoring</button>
-    </div>
-  `;
-}
-
-function giApplyDecisions() {
-  const sel = JSON.parse(sessionStorage.getItem('gi-selected') || '[]');
   let moved = 0;
-  sel.forEach(id => {
-    const decision = mentorScores[id]?.sessionDecision;
-    if (decision === 'onboard') { stageAssignments[id] = 'onboarding'; moved++; }
-    else if (decision === 'billy') { stageAssignments[id] = 'billy'; moved++; }
-    else if (decision === 'reject') { stageAssignments[id] = 'rejected'; moved++; }
-  });
-  saveLocal();
+  for (const m of candidates) {
+    const decision = (m.scores||{}).sessionDecision;
+    if (decision === 'onboard') { await moveTo(m.id, 'onboarding'); moved++; }
+    else if (decision === 'billy') { await moveTo(m.id, 'billy'); moved++; }
+    else if (decision === 'reject') { await moveTo(m.id, 'rejected'); moved++; }
+  }
   sessionStorage.removeItem('gi-live');
   sessionStorage.removeItem('gi-selected');
   closeModal();
@@ -1775,31 +1411,25 @@ function giApplyDecisions() {
   showToast(`Session complete — ${moved} candidates moved`);
 }
 
-function giFinalClose() {
-  sessionStorage.removeItem('gi-live');
-  sessionStorage.removeItem('gi-selected');
-  closeModal();
-  render();
-}
-
 function openBillyQueue() {
-  const billyMentors = mentors.filter(m => {
-    const stage = inferStage(m);
-    return stage === 'billy' || stage === 'interview';
-  });
-  
-  if (!billyMentors.length) {
-    showToast('No one in Billy\'s queue yet');
-    return;
-  }
-  
-  // Open Billy's view in a new tab
   window.open('billy.html', '_blank');
 }
 
-function scrollToColumn(stageId) {
-  document.getElementById(`col-${stageId}`)?.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+// ── Drag & Drop ──
+let dragId = null;
+function onDragStart(e, mentorId) { dragId = mentorId; e.target.classList.add('dragging'); e.dataTransfer.effectAllowed = 'move'; }
+function onDragEnd(e) { e.target.classList.remove('dragging'); dragId = null; document.querySelectorAll('.column-body').forEach(el => el.classList.remove('drag-over')); }
+function onDragOver(e) { e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
+function onDragLeave(e) { e.currentTarget.classList.remove('drag-over'); }
+function onDrop(e, stageId) {
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+  if (!dragId) return;
+  if (stageId === 'interview') { showInterviewDatePicker(dragId); return; }
+  moveTo(dragId, stageId);
 }
+
+function scrollToColumn(stageId) { document.getElementById(`col-${stageId}`)?.scrollIntoView({ behavior: 'smooth', inline: 'center' }); }
 
 function showToast(msg) {
   const el = document.getElementById('toast');
@@ -1808,17 +1438,13 @@ function showToast(msg) {
   setTimeout(() => el.classList.remove('show'), 2500);
 }
 
-function esc(str) {
-  if (!str) return '';
-  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── Init ──
+async function init() {
+  await loadFromSupabase();
+  render();
 }
-
-// Keyboard shortcuts
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
-
-// Init
 init();
 </script>
 </body>
