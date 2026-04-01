@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-01T07:04:18Z",
+  "updated": "2026-04-01T09:03:07Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -2294,6 +2294,35 @@
       "created": "2026-04-01T06:33:48.993Z"
     },
     {
+      "id": "212922577581",
+      "name": "Shane Barford",
+      "email": "sbarford@hotmail.com",
+      "phone": null,
+      "age": "30",
+      "source": "Facebook / Instagram Ad",
+      "stage": "applied",
+      "hs_stage": "Framer Form Submission",
+      "has_laptop": "Yes",
+      "hours_week": null,
+      "three_month_commit": "Yes",
+      "why_mentor": null,
+      "application_message": null,
+      "location": null,
+      "tg_score": null,
+      "tg_results": null,
+      "tg_link_sent": false,
+      "tg_done": false,
+      "brodie_notes": "",
+      "referred_by": "",
+      "norri_notes": "",
+      "norri_assigned_to": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "created": "2026-04-01T07:41:16.111Z"
+    },
+    {
       "id": "130018144929",
       "name": "Dheer Dojin Shah",
       "email": "shahdheer3@gmail.com",
@@ -3693,17 +3722,7 @@
       "norri_energy": null,
       "norri_conversation": null,
       "norri_good_bloke": null,
-      "created": "2026-01-21T08:34:36.764Z",
-      "circle": {
-        "found": false,
-        "progress": 0,
-        "steps": [
-          {
-            "name": "Joined Circle Community",
-            "done": false
-          }
-        ]
-      }
+      "created": "2026-01-21T08:34:36.764Z"
     },
     {
       "id": "194718695174",
