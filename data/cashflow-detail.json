@@ -1,28 +1,10 @@
 {
-  "generated": "2026-04-01T18:00:05.301613",
+  "generated": "2026-04-02T06:31:16.664330",
   "weeks": [
     {
-      "label": "Week 1 (Apr 01 - Apr 07)",
-      "total": 8606.0,
+      "label": "Week 1 (Apr 02 - Apr 08)",
+      "total": 9529.0,
       "days": [
-        {
-          "date": "2026-04-02",
-          "day": "Thu",
-          "charges": 1,
-          "amount": 940.0,
-          "subscribers": [
-            {
-              "name": "Marianne Thorburn",
-              "email": "mariannethorburn@gmail.com",
-              "amount": 940.0,
-              "interval": "Monthly",
-              "sub_id": "sub_1T69ug2mA5zLxyK8qENiMRXd",
-              "customer_id": "cus_U0kiF4BG5Slnch",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T69ug2mA5zLxyK8qENiMRXd",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/203852094603"
-            }
-          ]
-        },
         {
           "date": "2026-04-03",
           "day": "Fri",
@@ -302,13 +284,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/162645741726"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 2 (Apr 08 - Apr 14)",
-      "total": 3902.0,
-      "days": [
+        },
         {
           "date": "2026-04-08",
           "day": "Wed",
@@ -376,7 +352,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 2 (Apr 09 - Apr 15)",
+      "total": 2039.0,
+      "days": [
         {
           "date": "2026-04-09",
           "day": "Thu",
@@ -426,8 +408,8 @@
       ]
     },
     {
-      "label": "Week 3 (Apr 15 - Apr 21)",
-      "total": 6508.0,
+      "label": "Week 3 (Apr 16 - Apr 22)",
+      "total": 7973.5,
       "days": [
         {
           "date": "2026-04-16",
@@ -520,13 +502,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/194010862702"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 4 (Apr 22 - Apr 28)",
-      "total": 3937.5,
-      "days": [
+        },
         {
           "date": "2026-04-22",
           "day": "Wed",
@@ -554,7 +530,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 4 (Apr 23 - Apr 29)",
+      "total": 2472.0,
+      "days": [
         {
           "date": "2026-04-26",
           "day": "Sun",
