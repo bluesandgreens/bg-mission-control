@@ -1,58 +1,10 @@
 {
-  "generated": "2026-04-01T12:00:48.546379",
+  "generated": "2026-04-01T18:00:05.301613",
   "weeks": [
     {
       "label": "Week 1 (Apr 01 - Apr 07)",
-      "total": 9108.0,
+      "total": 8606.0,
       "days": [
-        {
-          "date": "2026-04-01",
-          "day": "Wed",
-          "charges": 4,
-          "amount": 737.0,
-          "subscribers": [
-            {
-              "name": "Annie Stazak",
-              "email": "stazak24@gmail.com",
-              "amount": 235.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1TC9Nc2mA5zLxyK8oLsHaoVl",
-              "customer_id": "cus_U5EAMlAEQsOtOy",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TC9Nc2mA5zLxyK8oLsHaoVl",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207559251551"
-            },
-            {
-              "name": "LEAH WEST",
-              "email": "Leah_ellen1995@icloud.com",
-              "amount": 235.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1TC8NN2mA5zLxyK8aMFSaFSq",
-              "customer_id": "cus_U7U7U7L0gbrjII",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TC8NN2mA5zLxyK8aMFSaFSq",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207947485189"
-            },
-            {
-              "name": "Jess Ward",
-              "email": "madewithlove@live.com.au",
-              "amount": 166.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1T79MC2mA5zLxyK8GpqYtb76",
-              "customer_id": "cus_U1sdQ0MXbmilzK",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T79MC2mA5zLxyK8GpqYtb76",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/204452331309"
-            },
-            {
-              "name": "Jeremy Bull",
-              "email": "jeremy@alexanderand.co",
-              "amount": 101.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1RDINj2mA5zLxyK8z55icErH",
-              "customer_id": "cus_S7XS1cWfAPUrO1",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RDINj2mA5zLxyK8z55icErH",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/115998356243"
-            }
-          ]
-        },
         {
           "date": "2026-04-02",
           "day": "Thu",
@@ -74,8 +26,8 @@
         {
           "date": "2026-04-03",
           "day": "Fri",
-          "charges": 3,
-          "amount": 473.0,
+          "charges": 4,
+          "amount": 708.0,
           "subscribers": [
             {
               "name": "Whitney Trigwell",
@@ -86,6 +38,16 @@
               "customer_id": "cus_U6nqUAAqIVdxHF",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T9gRS2mA5zLxyK8Low8UedS",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207642859110"
+            },
+            {
+              "name": "Vannessa Simpson",
+              "email": "vannessasimpson@yahoo.com",
+              "amount": 235.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1T7pyw2mA5zLxyK8AAvbkFXW",
+              "customer_id": "cus_U0l4g3hj2DQZqa",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T7pyw2mA5zLxyK8AAvbkFXW",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/203226633903"
             },
             {
               "name": "Fallon Glossop",
@@ -337,7 +299,7 @@
               "sub_id": "sub_1SRtlU2mA5zLxyK8vo3iSxJL",
               "customer_id": "cus_TH1HafpMIRhaa5",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SRtlU2mA5zLxyK8vo3iSxJL",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/162645741726"
             }
           ]
         }
@@ -345,14 +307,34 @@
     },
     {
       "label": "Week 2 (Apr 08 - Apr 14)",
-      "total": 3165.0,
+      "total": 3902.0,
       "days": [
         {
           "date": "2026-04-08",
           "day": "Wed",
-          "charges": 2,
-          "amount": 1126.0,
+          "charges": 6,
+          "amount": 1863.0,
           "subscribers": [
+            {
+              "name": "Kate Harding",
+              "email": "kate.harding13@gmail.com",
+              "amount": 235.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1THGrV2mA5zLxyK8rvQQVRkv",
+              "customer_id": "cus_UAq654x4Ur9s7m",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1THGrV2mA5zLxyK8rvQQVRkv",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/208947085584"
+            },
+            {
+              "name": "Annie Stazak",
+              "email": "stazak24@gmail.com",
+              "amount": 235.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1TC9Nc2mA5zLxyK8oLsHaoVl",
+              "customer_id": "cus_U5EAMlAEQsOtOy",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TC9Nc2mA5zLxyK8oLsHaoVl",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207559251551"
+            },
             {
               "name": "Tanya Major",
               "email": "major.t@bigpond.com",
@@ -362,6 +344,26 @@
               "customer_id": "cus_TCDVkq9NsYj47n",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SlGrN2mA5zLxyK87uOZu1Tw",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/161592595362"
+            },
+            {
+              "name": "Jess Ward",
+              "email": "madewithlove@live.com.au",
+              "amount": 166.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1T79MC2mA5zLxyK8GpqYtb76",
+              "customer_id": "cus_U1sdQ0MXbmilzK",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T79MC2mA5zLxyK8GpqYtb76",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/204452331309"
+            },
+            {
+              "name": "Jeremy Bull",
+              "email": "jeremy@alexanderand.co",
+              "amount": 101.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1RDINj2mA5zLxyK8z55icErH",
+              "customer_id": "cus_S7XS1cWfAPUrO1",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1RDINj2mA5zLxyK8z55icErH",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/115998356243"
             },
             {
               "name": "KAREN LOUWRENS",
