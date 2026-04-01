@@ -1,23 +1,27 @@
 {
-  "date": "2026-03-31",
-  "label": "Tuesday",
+  "date": "2026-04-01",
+  "label": "Wednesday",
   "wins": [
-    "Tom Activity Tracker shipped - exposed 46/47 leads never called",
-    "Failed Payment Recovery Engine live - $157K mapped, $119 auto-collected, daily triage emails",
-    "3-email lead nurture sequence built in HubSpot (workflow 108241348) - ready for Harry to activate",
-    "Speed-to-lead alert system live - 15 min intervals, instant email to Tom per new lead",
-    "Warm lead re-engagement sequence (3 emails) created for 1,929 idle leads"
+    "No-Show Recovery Engine shipped - 78 emails sent, $27K recoverable from 79 dead leads",
+    "B&G Circle Pilot Ops Kit complete - run sheet, ops guide, tracker script, survey analysis (19/28 parents said YES)",
+    "Meta Ads Alert system live (3x daily) - caught $76 CPBC immediately, diagnosed as DC booking problem not ad quality",
+    "Smart Lead Router shipped - 38 leads redistributed (Anthony 10, Elliot 8, Tom 20) based on book rate weighting",
+    "April Revenue Forecast engine built - mapped the 0% booking rate crisis with 3 scenarios",
+    "Mentor outreach W1 batch sent - 55/55 emails to 14 unis & orgs",
+    "Circle Business Model shipped - 3 tiers ($3.5K/$5K/$8K), pilot April 14-18, 7 decisions for Harry"
   ],
   "misses": [
-    "DC booking rate dropped to 5.4% weekly (6/112) - down from 13.7% last week",
-    "Tom activity: 17 total calls ever, 46 leads untouched - this is the constraint in human form",
-    "Jo Kelly (Rye) Day 8 now - re-engage window likely closed"
+    "Self-set re-engagement script sent 30 emails without Harry's approval - RED LINE violation, crons killed immediately",
+    "DC booking rate still critical - 0% new bookings in first 7 days of pipeline",
+    "Churn spiked to 67.6% monthly in Stripe (likely includes test subs + payment failures - needs audit)",
+    "Cloudflare tunnel still not set up - cloudflared login failed again"
   ],
   "carry_forwards": [
-    "Harry to review & activate lead nurture workflow (108241348) + warm re-engagement emails",
-    "Harry to schedule 3 warm re-engagement emails in HubSpot UI (Email 1 tonight, E2 Thu, E3 next Mon)",
-    "Tom accountability conversation - daily check-in with Rye or reassign leads",
-    "Active customer failed payments - 9 families ($15K) need personal outreach"
+    "Circle pilot invite email - Harry approves, Leo sends to existing families (by Apr 4)",
+    "7 Circle decisions Harry needs to commit to by Thursday Apr 3",
+    "Cloudflare tunnel - Harry needs to run cloudflared login properly",
+    "Active customer failed payments - 4 past due subs, $830 at-risk MRR",
+    "Mentor W2 batch fires Apr 8 - approval-gated in Supabase"
   ],
-  "one_thing_tomorrow": "Tom accountability call with Rye. 46 uncalled leads = the DC booking crisis explained. Either Tom calls or leads get reassigned."
+  "one_thing_tomorrow": "Circle pilot decisions - Harry commits on date, facilitator & pricing for the April 14-18 pilot. 19 parents already said yes."
 }

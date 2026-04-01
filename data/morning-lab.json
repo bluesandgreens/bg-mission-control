@@ -1,46 +1,46 @@
 {
-  "generated": "2026-03-31T08:03:00+11:00",
+  "generated": "2026-04-02T07:35:00+11:00",
   "items": [
     {
       "type": "counter_intuitive",
-      "emoji": "🔴",
-      "headline": "Tom has called 6 of 47 leads. Ever.",
-      "detail": "Tom Activity Tracker revealed 46 out of 47 leads have NEVER been called. Last call logged March 26. This isn't a booking rate problem - it's an activity problem. The 9.8% DC booking rate has a name.",
-      "tag": "dc-constraint"
+      "emoji": "📉",
+      "headline": "MRR dropped $5.4K in 48 hours. 60 active families, down from 68.",
+      "detail": "Dashboard shows 60 active (was 68 in Monday's forecast). 9 paused. MRR fell from $47K to $41.6K. The churn rate flagged at 67.6% needs a Stripe audit - likely includes test subs and payment failures that aren't real churn. But 8 real families leaving in 2 days is a signal.",
+      "tag": "retention"
     },
     {
       "type": "leverage",
-      "emoji": "💰",
-      "headline": "$157K in open Stripe invoices. $15K is recoverable today.",
-      "detail": "226 open invoices total. 9 are active customers whose cards are failing ($15,412). 28 are recoverable 15-90 day ($20,891). Zombie/aged is write-off territory. Personal outreach on the active 9 = highest ROI call Harry can make.",
-      "tag": "revenue-recovery"
-    },
-    {
-      "type": "big_idea",
-      "emoji": "📧",
-      "headline": "3-email nurture sequence ready - 1,929 warm leads waiting.",
-      "detail": "Lead nurture workflow (108241348) built in HubSpot. 3 emails over 72hrs for unbooked leads. Warm re-engagement sequence (3 emails to List 1021 - 1,929 leads) also ready. Conservative estimate: $28K revenue from warm list at 2.5% booking rate.",
+      "emoji": "🔁",
+      "headline": "No-show engine is live. 78 contacts getting 3-touch recovery - $27K upside.",
+      "detail": "79 no-shows found in HubSpot, zero previously recovered. 56 were Elliot's old leads. Touch 1 sent to 78 contacts. At 20% rebook and 63% close, that's ~10 new families for zero ad spend. Touch 2 fires in 3 days.",
       "tag": "pipeline"
     },
     {
-      "type": "insight",
-      "emoji": "📉",
-      "headline": "Booking rate dropped to 5.4% this week (was 13.7% last week).",
-      "detail": "112 leads in, 6 booked. MTD still 11.7% (784 leads, 92 booked). The weekly trend is accelerating downward. Tom's inactivity is the direct cause - 46 leads sitting untouched.",
+      "type": "big_idea",
+      "emoji": "🟢",
+      "headline": "Lead-to-booked rate jumped to 69% MTD. The router is working.",
+      "detail": "13 leads MTD, 9 booked (69.2%). Last week was 11% (11/100). Smart Lead Router went live yesterday - Anthony and Elliot are getting leads now instead of everything dumping on Tom. Still early but the signal is strong.",
       "tag": "dc-constraint"
     },
     {
+      "type": "insight",
+      "emoji": "🧪",
+      "headline": "Circle pilot has 68% parent buy-in before you've even asked properly.",
+      "detail": "19 of 28 surveyed parents said YES to Circle. 7 said maybe. Top concern is cost - pilot is free, so that's handled. Boys want financial literacy, business ideas & content creation. April 14-18 school holidays window is perfect.",
+      "tag": "circle"
+    },
+    {
       "type": "research",
-      "emoji": "🎯",
-      "headline": "Price confidence = the close predictor. 3/3 closes, 4/4 misses.",
-      "detail": "Every close last week had confident price delivery. Every miss had hesitant, absent, or caved pricing. Price Delivery Drill Card shipped to all reps. Anthony's OH regression (caved x2) is the emerging concern.",
+      "emoji": "⚠️",
+      "headline": "Anthony's OH score dropped from 4 to 2 in last 2 calls. Caving at close.",
+      "detail": "Anthony is your best closer (40% close rate, 100% book rate) but SIEL scoring shows he caved on price in both recent calls (Sophie Cuzzy, Beck Reside). If this continues to call 6, Objection Handling becomes his primary gap alongside Emotional Labelling (2.2 avg).",
       "tag": "sales-quality"
     }
   ],
   "leo_actions": [
-    "Tom accountability - activity tracker live (6pm daily cron). Today's email: zero calls flagged.",
-    "Speed-to-lead alerts firing every 15 mins for Tom's new leads. 32 backlog leads sent with call scripts.",
-    "Failed payment recovery engine running daily 9:30am. First auto-retry collected $119 (Stephanie Mckeown).",
-    "Retention call engine sending Harry top 5 families daily at 8:30am. 49 renewals in next 30 days."
+    "No-show recovery engine running daily 10am - Touch 2 fires Friday for 78 contacts",
+    "Smart Lead Router distributing leads at 7:30am - Anthony/Elliot filling first, Tom gets overflow",
+    "Meta ads alert checking 3x daily - last alert: $76 CPBC (7d), CTR healthy at 4.6%",
+    "Mentor W2 batch (100 contacts) prepped for April 8 - approval-gated, Harry activates in MC"
   ]
 }
