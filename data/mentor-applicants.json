@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-01T03:02:48Z",
+  "updated": "2026-04-01T05:06:30Z",
   "source": "hubspot+notion+norri",
   "mentors": [
     {
@@ -4589,6 +4589,35 @@
       "norri_conversation": null,
       "norri_good_bloke": null,
       "created": "2026-03-31T08:04:05.908Z"
+    },
+    {
+      "id": "212905999753",
+      "name": "Kailum graeme learoyd",
+      "email": "kailum.graeme.learoyd@hotmail.com",
+      "phone": null,
+      "age": "21",
+      "source": "Facebook / Instagram Ad",
+      "stage": "rejected",
+      "hs_stage": "Disqualified",
+      "has_laptop": "Yes",
+      "hours_week": null,
+      "three_month_commit": "Yes",
+      "why_mentor": null,
+      "application_message": null,
+      "location": null,
+      "tg_score": null,
+      "tg_results": null,
+      "tg_link_sent": false,
+      "tg_done": false,
+      "brodie_notes": "",
+      "referred_by": "",
+      "norri_notes": "",
+      "norri_assigned_to": "",
+      "norri_passion": null,
+      "norri_energy": null,
+      "norri_conversation": null,
+      "norri_good_bloke": null,
+      "created": "2026-04-01T04:04:43.078Z"
     }
   ]
 }
