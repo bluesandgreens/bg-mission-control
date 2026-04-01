@@ -1,6 +1,15 @@
 {
-  "generated": "2026-03-31T12:00:59.663523",
+  "generated": "2026-04-01T12:00:48.546379",
   "paused_subs": [
+    {
+      "name": "Natalie Brennan",
+      "email": "nbrennan@gelatissimo.com.au",
+      "amount": 1808.0,
+      "resumes_at": "indefinite",
+      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sylmv2mA5zLxyK8jXOFKBwl",
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
+    },
     {
       "name": "Jo Flanagan",
       "email": "joflanagan@hotmail.com",
@@ -74,5 +83,5 @@
       "hs_member_status": "Active Sessions"
     }
   ],
-  "total_count": 8
+  "total_count": 9
 }
