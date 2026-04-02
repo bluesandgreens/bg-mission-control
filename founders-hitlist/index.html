@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💙 Founder's Experience — Hit List</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+.app { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+.header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+.header-left h1 { font-size: 22px; font-weight: 700; }
+.header-left h1 span { color: #818cf8; }
+.header-left p { font-size: 12px; color: #64748b; margin-top: 3px; }
+
+/* Stats */
+.stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px; }
+.stat { background: rgba(30,41,59,0.8); border: 1px solid rgba(148,163,184,0.1); border-radius: 10px; padding: 12px 14px; }
+.stat .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; }
+.stat .value { font-size: 22px; font-weight: 700; margin-top: 3px; }
+.stat .sub { font-size: 11px; color: #64748b; margin-top: 1px; }
+.stat.green .value { color: #22c55e; }
+.stat.purple .value { color: #a855f7; }
+.stat.blue .value { color: #3b82f6; }
+.stat.yellow .value { color: #eab308; }
+.stat.indigo .value { color: #818cf8; }
+
+/* Tabs */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid rgba(148,163,184,0.1); margin-bottom: 20px; }
+.tab { padding: 9px 16px; font-size: 13px; font-weight: 500; color: #64748b; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s; }
+.tab:hover { color: #e2e8f0; }
+.tab.active { color: #818cf8; border-bottom-color: #6366f1; }
+.tab-count { background: #1e293b; border-radius: 10px; padding: 1px 6px; font-size: 11px; margin-left: 4px; }
+
+/* Section header */
+.section-header { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin: 20px 0 10px; display: flex; align-items: center; gap: 8px; }
+.section-header::after { content: ''; flex: 1; height: 1px; background: rgba(148,163,184,0.1); }
+
+/* Filter bar */
+.filter-bar { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+.filter-btn { padding: 5px 12px; border-radius: 16px; border: 1px solid rgba(148,163,184,0.15); background: #1e293b; color: #94a3b8; cursor: pointer; font-size: 12px; transition: all 0.15s; }
+.filter-btn:hover, .filter-btn.active { background: #6366f1; color: white; border-color: #6366f1; }
+.search { background: #1e293b; border: 1px solid rgba(148,163,184,0.15); border-radius: 8px; padding: 6px 12px; color: #e2e8f0; font-size: 13px; width: 200px; outline: none; margin-left: auto; }
+.search:focus { border-color: #6366f1; }
+
+/* Cards */
+.cards { display: flex; flex-direction: column; gap: 8px; }
+.card { background: rgba(30,41,59,0.8); border: 1px solid rgba(148,163,184,0.1); border-radius: 12px; overflow: hidden; transition: border-color 0.15s; }
+.card:hover { border-color: rgba(148,163,184,0.25); }
+.card.contacted { border-left: 3px solid #eab308; }
+.card.offer-sent { border-left: 3px solid #a855f7; }
+.card.accepted { border-left: 3px solid #22c55e; }
+.card.passed { opacity: 0.5; }
+.card.hidden { display: none; }
+
+.card-top { display: grid; grid-template-columns: 44px 1fr auto auto auto; gap: 12px; align-items: center; padding: 14px 16px; cursor: pointer; }
+.score-ring { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+.score-high { background: rgba(34,197,94,0.15); color: #22c55e; border: 1.5px solid rgba(34,197,94,0.3); }
+.score-med { background: rgba(234,179,8,0.15); color: #eab308; border: 1.5px solid rgba(234,179,8,0.3); }
+.score-low { background: rgba(99,102,241,0.15); color: #818cf8; border: 1.5px solid rgba(99,102,241,0.3); }
+
+.card-name { font-size: 15px; font-weight: 600; }
+.card-meta { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+.spend-badge { font-size: 13px; font-weight: 700; color: #22c55e; white-space: nowrap; }
+.tenure-badge { font-size: 11px; color: #94a3b8; white-space: nowrap; }
+.stage-select { background: #1e293b; border: 1px solid rgba(148,163,184,0.2); border-radius: 6px; padding: 4px 8px; font-size: 11px; color: #94a3b8; cursor: pointer; outline: none; }
+
+/* Expanded */
+.card-body { display: none; padding: 0 16px 16px; border-top: 1px solid rgba(148,163,184,0.08); }
+.card.expanded .card-body { display: block; }
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+.info-block label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; display: block; margin-bottom: 4px; }
+.info-block p { font-size: 13px; color: #cbd5e1; line-height: 1.5; }
+.flags-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.flag { font-size: 11px; background: #1e293b; border: 1px solid rgba(148,163,184,0.1); border-radius: 6px; padding: 3px 8px; color: #94a3b8; }
+.convo-list { list-style: none; }
+.convo-list li { font-size: 12px; color: #94a3b8; padding: 3px 0; border-bottom: 1px solid rgba(148,163,184,0.06); }
+.convo-list li:last-child { border: none; }
+.convo-list li::before { content: '→ '; color: #6366f1; }
+.actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; align-items: center; }
+.action-btn { padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; }
+.btn-called { background: rgba(234,179,8,0.15); color: #fde68a; }
+.btn-called:hover { background: rgba(234,179,8,0.25); }
+.btn-offer { background: rgba(168,85,247,0.15); color: #d8b4fe; }
+.btn-offer:hover { background: rgba(168,85,247,0.25); }
+.btn-accepted { background: rgba(34,197,94,0.15); color: #86efac; }
+.btn-accepted:hover { background: rgba(34,197,94,0.25); }
+.btn-pass { background: rgba(148,163,184,0.1); color: #94a3b8; }
+.btn-pass:hover { background: rgba(148,163,184,0.2); }
+.btn-hs { background: rgba(249,115,22,0.15); color: #fdba74; }
+.btn-hs:hover { background: rgba(249,115,22,0.25); }
+
+/* Notes */
+.notes-wrap { margin-top: 10px; }
+.notes-wrap label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; display: block; margin-bottom: 4px; }
+.notes-wrap textarea { width: 100%; background: #1e293b; border: 1px solid rgba(148,163,184,0.15); border-radius: 8px; padding: 8px 12px; color: #e2e8f0; font-size: 12px; resize: vertical; min-height: 50px; font-family: inherit; }
+.notes-wrap textarea:focus { outline: none; border-color: #6366f1; }
+
+/* Talk tracks tab */
+.tracks { display: flex; flex-direction: column; gap: 16px; }
+.track { background: rgba(30,41,59,0.8); border: 1px solid rgba(148,163,184,0.1); border-radius: 12px; padding: 20px; }
+.track h3 { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: #818cf8; }
+.track-script { background: #0f172a; border-radius: 8px; padding: 14px; font-size: 13px; color: #cbd5e1; line-height: 1.7; }
+.track-script strong { color: #fde68a; }
+.track-note { font-size: 11px; color: #64748b; margin-top: 8px; font-style: italic; }
+.price-box { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); border-radius: 10px; padding: 16px; margin-top: 16px; }
+.price-box h4 { font-size: 13px; font-weight: 600; color: #818cf8; margin-bottom: 8px; }
+.price-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(148,163,184,0.08); font-size: 13px; }
+.price-row:last-child { border: none; }
+.price-row .price { font-weight: 700; color: #22c55e; }
+
+/* Empty state */
+.empty { text-align: center; padding: 40px; color: #64748b; font-size: 14px; }
+
+/* Refresh */
+.refresh-info { font-size: 11px; color: #64748b; }
+
+@media (max-width: 640px) {
+  .stats-row { grid-template-columns: repeat(3, 1fr); }
+  .card-grid { grid-template-columns: 1fr; }
+  .card-top { grid-template-columns: 36px 1fr auto; }
+  .tenure-badge, .stage-select { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="header-left">
+      <h1>💙 Founder's Experience — <span>Hit List</span></h1>
+      <p class="refresh-info" id="refreshInfo">Loading...</p>
+    </div>
+  </div>
+
+  <div class="stats-row" id="statsRow">
+    <div class="stat green"><div class="label">Active Candidates</div><div class="value" id="statActive">-</div><div class="sub">4+ weeks in</div></div>
+    <div class="stat purple"><div class="label">Re-Engage</div><div class="value" id="statReengage">-</div><div class="sub">high-spend churned</div></div>
+    <div class="stat yellow"><div class="label">Contacted</div><div class="value" id="statContacted">0</div><div class="sub">this round</div></div>
+    <div class="stat indigo"><div class="label">Offer Sent</div><div class="value" id="statOffer">0</div><div class="sub">waiting</div></div>
+    <div class="stat green"><div class="label">Pipeline Value</div><div class="value" id="statPipeline">$0</div><div class="sub">incl. FE Lite</div></div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="hitlist">Hit List <span class="tab-count" id="tc-hitlist">0</span></div>
+    <div class="tab" data-tab="reengage">Re-Engage <span class="tab-count" id="tc-reengage">0</span></div>
+    <div class="tab" data-tab="tracks">Talk Tracks</div>
+    <div class="tab" data-tab="economics">Economics</div>
+  </div>
+
+  <!-- Hit List Tab -->
+  <div id="tab-hitlist">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="melb">Melbourne</button>
+      <button class="filter-btn" data-filter="ndis">NDIS</button>
+      <button class="filter-btn" data-filter="not-contacted">Not Contacted</button>
+      <button class="filter-btn" data-filter="contacted">Contacted</button>
+      <button class="filter-btn" data-filter="offer-sent">Offer Sent</button>
+      <input type="text" class="search" placeholder="Search name..." id="searchActive" oninput="renderCards()">
+    </div>
+    <div class="cards" id="activeCards"></div>
+  </div>
+
+  <!-- Re-Engage Tab -->
+  <div id="tab-reengage" style="display:none">
+    <div class="section-header">💰 High-Spend Churned Families — Re-engage First, Then Pitch FE</div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter2="all">All</button>
+      <button class="filter-btn" data-filter2="melb">Melbourne</button>
+      <button class="filter-btn" data-filter2="ndis">NDIS</button>
+      <input type="text" class="search" placeholder="Search name..." id="searchReengage" oninput="renderCards()">
+    </div>
+    <div class="cards" id="reengageCards"></div>
+  </div>
+
+  <!-- Talk Tracks Tab -->
+  <div id="tab-tracks" style="display:none">
+    <div class="tracks">
+      <div class="track">
+        <h3>🎯 Active Member — FE Pitch (Call Opening)</h3>
+        <div class="track-script">
+          "Hey [Name], it's Harry from Blues &amp; Greens. <strong>How is [son] going?</strong>"
+          <br><br>
+          [Let her talk. Don't interrupt. 2-3 min minimum.]
+          <br><br>
+          "That's amazing. I love hearing that. <strong>You were actually one of the first names I thought of</strong> when I was thinking about this. We've got something new and I only want to do it with a handful of families."
+          <br><br>
+          "Have you got 5 minutes?"
+        </div>
+        <div class="track-note">Key: she talks first. Always. The more she shares, the warmer the pitch lands.</div>
+      </div>
+
+      <div class="track">
+        <h3>💙 The Offer — What FE Is</h3>
+        <div class="track-script">
+          "So here's what it is. I'm doing a <strong>Founder's Experience</strong> with a small group of families — maybe 3 or 4. It's different to what you're doing now."
+          <br><br>
+          "It starts with a full day IRL — [son] and I, in Melbourne. We do a proper deep dive — identity work, future goals, the stuff that takes months over Zoom to get to. <strong>We do it in one day.</strong>"
+          <br><br>
+          "Then it's 90 days intensive — weekly sessions with me directly, not a mentor. I'm personally in it."
+          <br><br>
+          "And we cover accommodation — [son] flies down, we cover where he stays."
+          <br><br>
+          "The investment is $9,980. That includes everything."
+        </div>
+        <div class="track-note">Price last. Always accommodation line second-to-last — it lands hardest. Don't ask "is that okay?" — just pause after the price.</div>
+      </div>
+
+      <div class="track">
+        <h3>🔄 Re-Engage Script (Churned / High Spender)</h3>
+        <div class="track-script">
+          "Hey [Name], it's Harry — from Blues &amp; Greens. <strong>I've been thinking about [son]</strong> actually."
+          <br><br>
+          "I know it's been a while. I just wanted to check in — <strong>how's he doing?</strong>"
+          <br><br>
+          [Let her talk — 2 min minimum.]
+          <br><br>
+          "Yeah, I hear that. Look — the reason I'm calling is we've been building something I think is actually perfect for a family like yours..."
+          <br><br>
+          [→ Bridge into FE offer if she's warm. If not, just check in, end warm, follow up next week.]
+        </div>
+        <div class="track-note">Don't push. The goal of call 1 is reconnection. FE pitch on call 2 if she's warm.</div>
+      </div>
+
+      <div class="track">
+        <h3>💰 FE Lite — Virtual Version ($4,990)</h3>
+        <div class="track-script">
+          "If the IRL isn't right for you guys right now — travel, school, whatever — we also have a virtual version. <strong>Same 90 days, same direct access to me.</strong> No IRL day, no travel."
+          <br><br>
+          "That one's $4,990."
+          <br><br>
+          "Both are capped. Once spots are gone, they're gone."
+        </div>
+        <div class="track-note">Offer the Lite when: family is interstate + travel is a real barrier, OR when price hesitation is immediate.</div>
+      </div>
+
+      <div class="track">
+        <h3>🛡️ Handling: "I need to think about it"</h3>
+        <div class="track-script">
+          "Of course. What part are you thinking about?"
+          <br><br>
+          [Listen. Then isolate one thing.]
+          <br><br>
+          "So if [that thing] wasn't an issue — would this feel right for [son]?"
+          <br><br>
+          [If yes:] "Okay. Let's solve [that thing]. What would it look like if..."
+          <br><br>
+          [If price:] "Here's the way I think about it. You've already invested [amount] in [son]'s development. That's already shown you how much it matters. This is just going further."
+        </div>
+      </div>
+
+      <div class="price-box">
+        <h4>💙 FE Pricing Reference</h4>
+        <div class="price-row"><span>Founder's Experience (Full)</span><span class="price">$9,980</span></div>
+        <div class="price-row"><span>FE Lite (Virtual only)</span><span class="price">$4,990</span></div>
+        <div class="price-row"><span>Includes: IRL day, accommodation, 90-day intensive with Harry</span><span></span></div>
+        <div class="price-row"><span>Max families: 3-4 per round</span><span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Economics Tab -->
+  <div id="tab-economics" style="display:none">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;">
+      <div class="track">
+        <h3>📊 FE Unit Economics</h3>
+        <div class="price-box" style="margin-top:0">
+          <div class="price-row"><span>FE Full price</span><span class="price">$9,980</span></div>
+          <div class="price-row"><span>FE Lite price</span><span class="price">$4,990</span></div>
+          <div class="price-row"><span>Variable cost estimate</span><span style="color:#f87171">~$1,200</span></div>
+          <div class="price-row"><span>Harry's time (1 day + 90 sessions)</span><span style="color:#64748b">~92 hrs</span></div>
+          <div class="price-row" style="border-top:1px solid rgba(148,163,184,0.2);padding-top:8px;margin-top:4px;"><span><strong>GP per FE family</strong></span><span class="price"><strong>~$8,780</strong></span></div>
+          <div class="price-row"><span>3 families = </span><span class="price">$29,940</span></div>
+          <div class="price-row"><span>5 families = </span><span class="price">$49,900</span></div>
+          <div class="price-row"><span>10 families = </span><span class="price">$99,800</span></div>
+        </div>
+      </div>
+      <div class="track">
+        <h3>🎯 Conversion Assumptions</h3>
+        <div class="track-script" style="font-size:13px">
+          Based on B&amp;G DC data:<br><br>
+          - <strong>Active members</strong> (4+ weeks): ~60% conversion likelihood if called<br>
+          - <strong>Re-engage families</strong>: ~25% re-engage, then ~40% FE conversion<br><br>
+          <strong>If Harry calls top 10 active:</strong><br>
+          → ~6 interested → ~4 convert = $39,920<br><br>
+          <strong>If Harry calls top 10 re-engage:</strong><br>
+          → ~2.5 re-engage → ~1 FE = ~$9,980<br><br>
+          <strong>10 calls total = ~$50K FE pipeline</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+let DATA = null;
+let activeFilter = 'all';
+let reengageFilter = 'all';
+let activeTab = 'hitlist';
+
+// Load saved stages from localStorage
+function getState() {
+  try { return JSON.parse(localStorage.getItem('fe-hitlist-v2') || '{}'); } catch { return {}; }
+}
+function saveState(id, key, val) {
+  const s = getState();
+  if (!s[id]) s[id] = {};
+  s[id][key] = val;
+  localStorage.setItem('fe-hitlist-v2', JSON.stringify(s));
+}
+
+async function loadData() {
+  try {
+    const r = await fetch('../data/fe-candidates.json?t=' + Date.now());
+    DATA = await r.json();
+    
+    // Apply saved stages
+    const state = getState();
+    DATA.candidates.forEach(c => {
+      if (state[c.id]) {
+        c.stage = state[c.id].stage || c.stage;
+        c.notes = state[c.id].notes || '';
+      } else { c.notes = ''; }
+    });
+    
+    updateStats();
+    renderCards();
+    document.getElementById('refreshInfo').textContent = 'Updated: ' + new Date(DATA.generated).toLocaleString('en-AU', {dateStyle:'short', timeStyle:'short'});
+  } catch (e) {
+    document.getElementById('refreshInfo').textContent = 'Error loading data';
+    console.error(e);
+  }
+}
+
+function updateStats() {
+  if (!DATA) return;
+  const state = getState();
+  const active = DATA.candidates.filter(c => c.section === 'active');
+  const reengage = DATA.candidates.filter(c => c.section === 'reengage');
+  const contacted = DATA.candidates.filter(c => {
+    const s = (state[c.id] || {}).stage || c.stage;
+    return s === 'contacted';
+  });
+  const offerSent = DATA.candidates.filter(c => {
+    const s = (state[c.id] || {}).stage || c.stage;
+    return s === 'offer-sent';
+  });
+  const accepted = DATA.candidates.filter(c => {
+    const s = (state[c.id] || {}).stage || c.stage;
+    return s === 'accepted';
+  });
+  
+  document.getElementById('statActive').textContent = active.length;
+  document.getElementById('statReengage').textContent = reengage.length;
+  document.getElementById('statContacted').textContent = contacted.length;
+  document.getElementById('statOffer').textContent = offerSent.length;
+  document.getElementById('tc-hitlist').textContent = active.length;
+  document.getElementById('tc-reengage').textContent = reengage.length;
+  
+  // Pipeline value (offer-sent + accepted)
+  let pipeline = 0;
+  [...offerSent, ...accepted].forEach(c => { pipeline += 9980; });
+  document.getElementById('statPipeline').textContent = pipeline > 0 ? '$' + (pipeline/1000).toFixed(0) + 'K' : '$0';
+}
+
+function renderCards() {
+  if (!DATA) return;
+  const state = getState();
+  const searchActive = (document.getElementById('searchActive')?.value || '').toLowerCase();
+  const searchReengage = (document.getElementById('searchReengage')?.value || '').toLowerCase();
+  
+  const activeC = document.getElementById('activeCards');
+  const reengageC = document.getElementById('reengageCards');
+  
+  if (activeC) {
+    const cards = DATA.candidates.filter(c => c.section === 'active');
+    activeC.innerHTML = '';
+    let visible = 0;
+    cards.forEach(c => {
+      const savedStage = (state[c.id] || {}).stage || c.stage;
+      const show = matchFilter(c, activeFilter, searchActive, savedStage);
+      if (show) visible++;
+      activeC.appendChild(buildCard(c, savedStage, !show));
+    });
+    if (visible === 0) activeC.innerHTML = '<div class="empty">No candidates match this filter.</div>';
+  }
+  
+  if (reengageC) {
+    const cards = DATA.candidates.filter(c => c.section === 'reengage');
+    reengageC.innerHTML = '';
+    let visible = 0;
+    cards.forEach(c => {
+      const savedStage = (state[c.id] || {}).stage || c.stage;
+      const show = matchFilter(c, reengageFilter, searchReengage, savedStage);
+      if (show) visible++;
+      reengageC.appendChild(buildCard(c, savedStage, !show));
+    });
+    if (visible === 0) reengageC.innerHTML = '<div class="empty">No candidates match this filter.</div>';
+  }
+}
+
+function matchFilter(c, filter, search, stage) {
+  if (search && !c.name.toLowerCase().includes(search)) return false;
+  if (filter === 'all') return true;
+  if (filter === 'melb') return c.is_melb;
+  if (filter === 'ndis') return c.is_ndis;
+  if (filter === 'not-contacted') return stage === 'not-contacted';
+  if (filter === 'contacted') return stage === 'contacted';
+  if (filter === 'offer-sent') return stage === 'offer-sent';
+  return true;
+}
+
+function buildCard(c, stage, hidden) {
+  const div = document.createElement('div');
+  div.className = 'card' + (stage !== 'not-contacted' ? ' ' + stage : '') + (hidden ? ' hidden' : '');
+  div.dataset.id = c.id || c.email;
+  
+  const scoreClass = c.score >= 6 ? 'score-high' : c.score >= 4 ? 'score-med' : 'score-low';
+  const spendDisplay = c.total_paid > 0 ? '$' + c.total_paid.toLocaleString('en-AU', {minimumFractionDigits: 0, maximumFractionDigits: 0}) : 'N/A';
+  const tenureDisplay = c.weeks > 0 ? c.weeks + 'w active' : 'Churned';
+  
+  const stageLabels = {'not-contacted': 'Not Called', 'contacted': 'Called', 'offer-sent': 'Offer Sent', 'accepted': 'Accepted ✅', 'passed': 'Passed'};
+  
+  const savedNotes = (getState()[c.id || c.email] || {}).notes || '';
+  
+  div.innerHTML = `
+    <div class="card-top" onclick="toggleCard(this.closest('.card'))">
+      <div class="score-ring ${scoreClass}">${c.score}</div>
+      <div>
+        <div class="card-name">${c.name}</div>
+        <div class="card-meta">${c.city || 'Location unknown'}${c.son_age ? ' · Son ' + c.son_age + 'yo' : ''}${c.is_melb ? ' · 📍 Melb' : ''}${c.is_ndis ? ' · 🏥 NDIS' : ''}</div>
+      </div>
+      <div class="spend-badge">${spendDisplay}</div>
+      <div class="tenure-badge">${tenureDisplay}</div>
+      <select class="stage-select" onchange="updateStage('${c.id || c.email}', this.value)" onclick="event.stopPropagation()">
+        ${Object.entries(stageLabels).map(([v, l]) => `<option value="${v}"${stage===v?' selected':''}>${l}</option>`).join('')}
+      </select>
+    </div>
+    <div class="card-body">
+      <div class="card-grid">
+        <div class="info-block">
+          <label>Flags</label>
+          <div class="flags-list">${(c.flags||[]).map(f => `<span class="flag">${f}</span>`).join('')}</div>
+        </div>
+        <div class="info-block">
+          <label>Son Context</label>
+          <p>${c.about_son || 'No context recorded'}</p>
+        </div>
+      </div>
+      <div class="info-block" style="margin-top:12px">
+        <label>Conversation Angles</label>
+        <ul class="convo-list">
+          ${(c.convo_points||[]).map(p => `<li>${p}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="notes-wrap">
+        <label>Your Notes</label>
+        <textarea placeholder="Call notes, objections, follow-up..." 
+          onchange="updateNotes('${c.id || c.email}', this.value)">${savedNotes}</textarea>
+      </div>
+      <div class="actions">
+        ${c.hubspot_url ? `<button class="action-btn btn-hs" onclick="window.open('${c.hubspot_url}','_blank')">HubSpot →</button>` : ''}
+        ${c.phone ? `<button class="action-btn btn-called" onclick="window.open('tel:${c.phone}')">📞 ${c.phone}</button>` : ''}
+        <button class="action-btn btn-called" onclick="updateStage('${c.id || c.email}', 'contacted');event.stopPropagation()">Mark Called</button>
+        <button class="action-btn btn-offer" onclick="updateStage('${c.id || c.email}', 'offer-sent');event.stopPropagation()">Offer Sent</button>
+        <button class="action-btn btn-accepted" onclick="updateStage('${c.id || c.email}', 'accepted');event.stopPropagation()">Accepted ✅</button>
+        <button class="action-btn btn-pass" onclick="updateStage('${c.id || c.email}', 'passed');event.stopPropagation()">Pass</button>
+      </div>
+    </div>
+  `;
+  return div;
+}
+
+function toggleCard(card) {
+  card.classList.toggle('expanded');
+}
+
+function updateStage(id, stage) {
+  saveState(id, 'stage', stage);
+  updateStats();
+  renderCards();
+}
+
+function updateNotes(id, notes) {
+  saveState(id, 'notes', notes);
+}
+
+// Tab switching
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    const tabId = t.dataset.tab;
+    ['hitlist', 'reengage', 'tracks', 'economics'].forEach(id => {
+      document.getElementById('tab-' + id).style.display = id === tabId ? 'block' : 'none';
+    });
+    activeTab = tabId;
+    renderCards();
+  });
+});
+
+// Filter buttons
+document.addEventListener('click', e => {
+  if (e.target.matches('[data-filter]')) {
+    const section = e.target.closest('#tab-hitlist') ? 'active' : null;
+    if (section === 'active') {
+      e.target.closest('.filter-bar').querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      activeFilter = e.target.dataset.filter;
+      renderCards();
+    }
+  }
+  if (e.target.matches('[data-filter2]')) {
+    e.target.closest('.filter-bar').querySelectorAll('[data-filter2]').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    reengageFilter = e.target.dataset.filter2;
+    renderCards();
+  }
+});
+
+loadData();
+</script>
+</body>
+</html>
