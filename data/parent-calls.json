@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-02T16:37:21.472126+10:00",
-  "date": "2026-04-02",
-  "total": 16,
+  "generated_at": "2026-04-03T07:09:07.671297+10:00",
+  "date": "2026-04-03",
+  "total": 17,
   "by_type": {
     "SAVE": 2,
-    "DEBRIEF": 5,
-    "CHECK-IN": 4,
-    "OPPORTUNITY": 5
+    "DEBRIEF": 6,
+    "CHECK-IN": 5,
+    "OPPORTUNITY": 4
   },
   "calls": [
     {
@@ -33,8 +33,8 @@
       "weekly_amount": 0,
       "days_to_renew": null,
       "renew_date": "",
-      "w1_days_ago": 20,
-      "last_contact_days": 2,
+      "w1_days_ago": 21,
+      "last_contact_days": 3,
       "debrief_done": false,
       "stripe_status": "past_due",
       "notes": ""
@@ -47,7 +47,7 @@
       "call_type": "SAVE",
       "priority": 90,
       "reasons": [
-        "\u23f0 Renews in 2d, not contacted in 25d"
+        "\u23f0 Renews in 2d, not contacted in 26d"
       ],
       "call_angle": [
         "Check in before renewal, ensure momentum"
@@ -61,10 +61,70 @@
       "owner": "Norri",
       "microowner": "Brodie Paul",
       "weekly_amount": 940.0,
-      "days_to_renew": 2.3,
+      "days_to_renew": 1.7,
       "renew_date": "Apr 04",
-      "w1_days_ago": 28,
-      "last_contact_days": 25,
+      "w1_days_ago": 29,
+      "last_contact_days": 26,
+      "debrief_done": false,
+      "stripe_status": "active",
+      "notes": ""
+    },
+    {
+      "contact_id": "208772351069",
+      "name": "Lacey Jurd",
+      "phone": "+610427948874",
+      "email": "laceyjurd83@gmail.com",
+      "call_type": "DEBRIEF",
+      "priority": 83,
+      "reasons": [
+        "\ud83d\udcde W1 was 2d ago \u2014 debrief not done"
+      ],
+      "call_angle": [
+        "How did W1 go? What did your son share? Any questions?"
+      ],
+      "son_name": "",
+      "son_age": "",
+      "about_son": "",
+      "parent_story": "",
+      "parent_type": "",
+      "energy": "",
+      "owner": "Norri",
+      "microowner": "Brodie Paul",
+      "weekly_amount": 0,
+      "days_to_renew": null,
+      "renew_date": "",
+      "w1_days_ago": 2,
+      "last_contact_days": 1,
+      "debrief_done": false,
+      "stripe_status": "unknown",
+      "notes": ""
+    },
+    {
+      "contact_id": "210822952054",
+      "name": "BEC RICHARDSON",
+      "phone": "+610402416209",
+      "email": "bec.j.richardson@gmail.com",
+      "call_type": "DEBRIEF",
+      "priority": 83,
+      "reasons": [
+        "\ud83d\udcde W1 was 2d ago \u2014 debrief not done"
+      ],
+      "call_angle": [
+        "How did W1 go? What did your son share? Any questions?"
+      ],
+      "son_name": "",
+      "son_age": "14",
+      "about_son": "- Max is 14\n- Loves Rugby\n- Plays video games, in his room lots\n- Has an older cousin he really looks up to\n- Healthy relationship with dad, but has been giving him a hard time lately\n- Needs to be en",
+      "parent_story": "",
+      "parent_type": "Super lovely, excited about the program, not much pushback. Emotional around Max's mental health",
+      "energy": "Excited \u2014 ready to start, asking about next steps, high energy",
+      "owner": "Tom",
+      "microowner": "Brodie Paul",
+      "weekly_amount": 904.0,
+      "days_to_renew": 30.1,
+      "renew_date": "May 03",
+      "w1_days_ago": 2,
+      "last_contact_days": 1,
       "debrief_done": false,
       "stripe_status": "active",
       "notes": ""
@@ -75,9 +135,9 @@
       "phone": "+610434596632",
       "email": "caroline.gill.snow@gmail.com",
       "call_type": "DEBRIEF",
-      "priority": 83,
+      "priority": 82,
       "reasons": [
-        "\ud83d\udcde W1 was 2d ago \u2014 debrief not done"
+        "\ud83d\udcde W1 was 3d ago \u2014 debrief not done"
       ],
       "call_angle": [
         "How did W1 go? What did your son share? Any questions?"
@@ -91,10 +151,10 @@
       "owner": "Anthony",
       "microowner": "Brodie Paul",
       "weekly_amount": 2730.0,
-      "days_to_renew": 89.7,
+      "days_to_renew": 89.1,
       "renew_date": "Jul 01",
-      "w1_days_ago": 2,
-      "last_contact_days": 0,
+      "w1_days_ago": 3,
+      "last_contact_days": 1,
       "debrief_done": false,
       "stripe_status": "active",
       "notes": ""
@@ -105,9 +165,9 @@
       "phone": "+61419786822",
       "email": "kate.harding13@gmail.com",
       "call_type": "DEBRIEF",
-      "priority": 81,
+      "priority": 80,
       "reasons": [
-        "\ud83d\udcde W1 was 4d ago \u2014 debrief not done"
+        "\ud83d\udcde W1 was 5d ago \u2014 debrief not done"
       ],
       "call_angle": [
         "How did W1 go? What did your son share? Any questions?"
@@ -118,13 +178,13 @@
       "parent_story": "",
       "parent_type": "",
       "energy": "",
-      "owner": "Harry",
+      "owner": "Anthony",
       "microowner": "Brodie Paul",
       "weekly_amount": 235.0,
-      "days_to_renew": 5.9,
+      "days_to_renew": 5.3,
       "renew_date": "Apr 08",
-      "w1_days_ago": 4,
-      "last_contact_days": 0,
+      "w1_days_ago": 5,
+      "last_contact_days": 1,
       "debrief_done": false,
       "stripe_status": "active",
       "notes": ""
@@ -135,9 +195,9 @@
       "phone": "+61415662327",
       "email": "phudyjillips@hotmail.com",
       "call_type": "DEBRIEF",
-      "priority": 81,
+      "priority": 80,
       "reasons": [
-        "\ud83d\udcde W1 was 4d ago \u2014 debrief not done"
+        "\ud83d\udcde W1 was 5d ago \u2014 debrief not done"
       ],
       "call_angle": [
         "How did W1 go? What did your son share? Any questions?"
@@ -151,10 +211,10 @@
       "owner": "Anthony",
       "microowner": "Brodie Paul",
       "weekly_amount": 664.0,
-      "days_to_renew": 24.3,
+      "days_to_renew": 23.7,
       "renew_date": "Apr 26",
-      "w1_days_ago": 4,
-      "last_contact_days": 0,
+      "w1_days_ago": 5,
+      "last_contact_days": 1,
       "debrief_done": false,
       "stripe_status": "active",
       "notes": ""
@@ -165,9 +225,9 @@
       "phone": "+61423305807",
       "email": "monica@brightlives.com.au",
       "call_type": "DEBRIEF",
-      "priority": 81,
+      "priority": 80,
       "reasons": [
-        "\ud83d\udcde W1 was 4d ago \u2014 debrief not done"
+        "\ud83d\udcde W1 was 5d ago \u2014 debrief not done"
       ],
       "call_angle": [
         "How did W1 go? What did your son share? Any questions?"
@@ -181,42 +241,12 @@
       "owner": "Elliot",
       "microowner": "Brodie Paul",
       "weekly_amount": 2730.0,
-      "days_to_renew": 87.0,
+      "days_to_renew": 86.4,
       "renew_date": "Jun 28",
-      "w1_days_ago": 4,
-      "last_contact_days": 0,
+      "w1_days_ago": 5,
+      "last_contact_days": 1,
       "debrief_done": false,
       "stripe_status": "active",
-      "notes": ""
-    },
-    {
-      "contact_id": "177213693329",
-      "name": "Rhiannon Medcaft",
-      "phone": "+61405689993",
-      "email": "rhiannonmedcraft@hotmail.com",
-      "call_type": "DEBRIEF",
-      "priority": 78,
-      "reasons": [
-        "\ud83d\udcde W1 was 7d ago \u2014 debrief not done"
-      ],
-      "call_angle": [
-        "How did W1 go? What did your son share? Any questions?"
-      ],
-      "son_name": "",
-      "son_age": "",
-      "about_son": "",
-      "parent_story": "",
-      "parent_type": "",
-      "energy": "",
-      "owner": "Harry",
-      "microowner": "Brodie Paul",
-      "weekly_amount": 0,
-      "days_to_renew": null,
-      "renew_date": "",
-      "w1_days_ago": 7,
-      "last_contact_days": 0,
-      "debrief_done": false,
-      "stripe_status": "unknown",
       "notes": ""
     },
     {
@@ -227,7 +257,7 @@
       "call_type": "CHECK-IN",
       "priority": 70,
       "reasons": [
-        "\ud83d\udd07 Silent for 13d (weeks 1-6 risk zone)"
+        "\ud83d\udd07 Silent for 14d (weeks 1-6 risk zone)"
       ],
       "call_angle": [
         "Warm touch \u2014 \"Just checking in on how it's going\""
@@ -241,10 +271,10 @@
       "owner": "Elliot",
       "microowner": "Rye Penny",
       "weekly_amount": 166.0,
-      "days_to_renew": 3.3,
+      "days_to_renew": 2.7,
       "renew_date": "Apr 05",
-      "w1_days_ago": 28,
-      "last_contact_days": 13,
+      "w1_days_ago": 29,
+      "last_contact_days": 14,
       "debrief_done": false,
       "stripe_status": "active",
       "notes": ""
@@ -257,7 +287,7 @@
       "call_type": "CHECK-IN",
       "priority": 70,
       "reasons": [
-        "\ud83d\udd07 Silent for 14d (weeks 1-6 risk zone)"
+        "\ud83d\udd07 Silent for 15d (weeks 1-6 risk zone)"
       ],
       "call_angle": [
         "Warm touch \u2014 \"Just checking in on how it's going\""
@@ -273,8 +303,8 @@
       "weekly_amount": 0,
       "days_to_renew": null,
       "renew_date": "",
-      "w1_days_ago": 19,
-      "last_contact_days": 14,
+      "w1_days_ago": 20,
+      "last_contact_days": 15,
       "debrief_done": false,
       "stripe_status": "unknown",
       "notes": ""
@@ -287,7 +317,7 @@
       "call_type": "CHECK-IN",
       "priority": 70,
       "reasons": [
-        "\ud83d\udd07 Silent for 25d (weeks 1-6 risk zone)"
+        "\ud83d\udd07 Silent for 26d (weeks 1-6 risk zone)"
       ],
       "call_angle": [
         "Warm touch \u2014 \"Just checking in on how it's going\""
@@ -303,8 +333,38 @@
       "weekly_amount": 0,
       "days_to_renew": null,
       "renew_date": "",
-      "w1_days_ago": 31,
-      "last_contact_days": 25,
+      "w1_days_ago": 32,
+      "last_contact_days": 26,
+      "debrief_done": false,
+      "stripe_status": "unknown",
+      "notes": ""
+    },
+    {
+      "contact_id": "205989322767",
+      "name": "Leanne Scott",
+      "phone": "+61410978329",
+      "email": "85leanne@gmail.com",
+      "call_type": "CHECK-IN",
+      "priority": 70,
+      "reasons": [
+        "\ud83d\udd07 Silent for 11d (weeks 1-6 risk zone)"
+      ],
+      "call_angle": [
+        "Warm touch \u2014 \"Just checking in on how it's going\""
+      ],
+      "son_name": "",
+      "son_age": "",
+      "about_son": "",
+      "parent_story": "",
+      "parent_type": "",
+      "energy": "",
+      "owner": "Harry",
+      "microowner": "Brodie Paul",
+      "weekly_amount": 0,
+      "days_to_renew": null,
+      "renew_date": "",
+      "w1_days_ago": 19,
+      "last_contact_days": 11,
       "debrief_done": false,
       "stripe_status": "unknown",
       "notes": ""
@@ -317,7 +377,7 @@
       "call_type": "CHECK-IN",
       "priority": 70,
       "reasons": [
-        "\ud83d\udd07 Silent for 20d (weeks 1-6 risk zone)"
+        "\ud83d\udd07 Silent for 21d (weeks 1-6 risk zone)"
       ],
       "call_angle": [
         "Warm touch \u2014 \"Just checking in on how it's going\""
@@ -331,10 +391,10 @@
       "owner": "Norri",
       "microowner": "Brodie Paul",
       "weekly_amount": 2730.0,
-      "days_to_renew": 68.3,
+      "days_to_renew": 67.7,
       "renew_date": "Jun 09",
-      "w1_days_ago": 22,
-      "last_contact_days": 20,
+      "w1_days_ago": 23,
+      "last_contact_days": 21,
       "debrief_done": false,
       "stripe_status": "active",
       "notes": ""
@@ -361,10 +421,10 @@
       "owner": "Rye",
       "microowner": "Rye Penny",
       "weekly_amount": 940.0,
-      "days_to_renew": 17.3,
+      "days_to_renew": 16.7,
       "renew_date": "Apr 19",
-      "w1_days_ago": 14,
-      "last_contact_days": 0,
+      "w1_days_ago": 15,
+      "last_contact_days": 1,
       "debrief_done": false,
       "stripe_status": "active",
       "notes": ""
@@ -391,10 +451,10 @@
       "owner": "Anthony",
       "microowner": "",
       "weekly_amount": 940.0,
-      "days_to_renew": 15.3,
+      "days_to_renew": 14.7,
       "renew_date": "Apr 17",
-      "w1_days_ago": 16,
-      "last_contact_days": 9,
+      "w1_days_ago": 17,
+      "last_contact_days": 10,
       "debrief_done": false,
       "stripe_status": "active",
       "notes": ""
@@ -421,10 +481,10 @@
       "owner": "Norri",
       "microowner": "Brodie Paul",
       "weekly_amount": 940.0,
-      "days_to_renew": 15.3,
+      "days_to_renew": 14.7,
       "renew_date": "Apr 17",
-      "w1_days_ago": 17,
-      "last_contact_days": 9,
+      "w1_days_ago": 18,
+      "last_contact_days": 10,
       "debrief_done": false,
       "stripe_status": "active",
       "notes": ""
@@ -437,7 +497,7 @@
       "call_type": "OPPORTUNITY",
       "priority": 35,
       "reasons": [
-        "\ud83d\udd04 Renewing in 17d (Apr 19)"
+        "\ud83d\udd04 Renewing in 16d (Apr 19)"
       ],
       "call_angle": [
         "Renewal conversation \u2014 celebrate wins, re-enrol early"
@@ -451,40 +511,10 @@
       "owner": "Norri",
       "microowner": "",
       "weekly_amount": 940.0,
-      "days_to_renew": 16.8,
+      "days_to_renew": 16.2,
       "renew_date": "Apr 19",
-      "w1_days_ago": 15,
-      "last_contact_days": 9,
-      "debrief_done": false,
-      "stripe_status": "active",
-      "notes": ""
-    },
-    {
-      "contact_id": "208659433730",
-      "name": "Sarah Anwar",
-      "phone": "+61455186278",
-      "email": "sarah.anw4r@gmail.com",
-      "call_type": "OPPORTUNITY",
-      "priority": 35,
-      "reasons": [
-        "\ud83d\udd04 Renewing in 14d (Apr 16)"
-      ],
-      "call_angle": [
-        "Renewal conversation \u2014 celebrate wins, re-enrol early"
-      ],
-      "son_name": "",
-      "son_age": "",
-      "about_son": "",
-      "parent_story": "",
-      "parent_type": "",
-      "energy": "",
-      "owner": "Norri",
-      "microowner": "Brodie Paul",
-      "weekly_amount": 940.0,
-      "days_to_renew": 14.3,
-      "renew_date": "Apr 16",
-      "w1_days_ago": 17,
-      "last_contact_days": 9,
+      "w1_days_ago": 16,
+      "last_contact_days": 10,
       "debrief_done": false,
       "stripe_status": "active",
       "notes": ""
