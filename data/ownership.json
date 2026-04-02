@@ -1,40 +1,40 @@
 {
-  "generated": "2026-04-02T07:35:00+11:00",
+  "generated": "2026-04-03T07:36:00+11:00",
   "functions": [
     {
       "name": "Sales Engine",
       "owner": "Rye",
       "status": "amber",
-      "constraint": "Lead-to-booked jumped to 69% MTD (13 leads, 9 booked) after Smart Lead Router went live. Tom still 12% book rate but Anthony/Elliot now getting priority leads. 275 Harry-owned leads still queued for redistribution.",
-      "key_metric": "Book Rate: 69% MTD | Close Rate: 63% | CPBC: $76 (7d, critical) | Router: 38 leads redistributed",
-      "highest_leverage_task": "Tom accountability - daily activity tracked, speed-to-lead alerts live",
-      "team": ["Rye", "Anthony", "Tom", "Elliot"]
+      "constraint": "Lead-to-booked jumped to 69% MTD after Smart Lead Router. Tom has 1pm callback today (Christy Richards). Emily Brady follow-up Tuesday. Anthony's OH score dropping - caving at close.",
+      "key_metric": "Book Rate: 69% MTD | Close Rate: 50% (Tom) | CPBC: $0 MTD (2 days) | Router: live",
+      "highest_leverage_task": "Tom's 1pm Christy callback + weekly coaching session with Rye",
+      "team": ["Rye", "Anthony", "Tom"]
     },
     {
       "name": "Mentor Journey",
       "owner": "Brodie",
       "status": "red",
-      "constraint": "63% of churned families never assigned a mentor. Activation is the #1 retention lever. No-show recovery engine now running (78 contacts in pipeline).",
+      "constraint": "63% of churned families never assigned a mentor. 60 active, 9 paused, 4 past due. Parent Call Dashboard now live for daily prioritisation.",
       "key_metric": "60 active families | 9 paused | 4 past due | $830 at-risk MRR",
-      "highest_leverage_task": "Brodie activation chase - daily automated list at 7:45am",
-      "team": ["Mentors", "Brodie"]
+      "highest_leverage_task": "Brodie activation chase + Norri/Harry parent calls from dashboard",
+      "team": ["Mentors", "Brodie", "Norri"]
     },
     {
       "name": "Member Experience",
       "owner": "Brodie & Norri",
       "status": "amber",
-      "constraint": "MRR dropped $5.4K in 48hrs (68 to 60 active families). Churn rate 67.6% needs Stripe audit - likely inflated by test subs. Circle pilot = retention play.",
-      "key_metric": "60 collecting | 9 paused | $41.6K MRR | Circle: 19 parents said YES",
-      "highest_leverage_task": "Circle pilot decisions by Apr 3 - date, facilitator, pricing",
+      "constraint": "MRR down to $41.6K (was $47K). Circle pilot has 68% parent buy-in. 3 decisions blocking launch.",
+      "key_metric": "60 collecting | $41.6K MRR | Circle: 19 YES, 7 maybe | Pilot window: Apr 14-18",
+      "highest_leverage_task": "Circle pilot decisions today - date, facilitator, pricing",
       "team": ["Brodie", "Norri"]
     },
     {
       "name": "Brand & Content",
       "owner": "Harry",
       "status": "amber",
-      "constraint": "Mentor outreach W1 sent (55 emails). W2-W5 scheduled Apr 8-11. All content still depends on Harry.",
-      "key_metric": "55 mentor emails sent | 200 pipeline contacts in Supabase | W2 batch Apr 8",
-      "highest_leverage_task": "Brand Operator hiring decision + approve Circle pilot invite email",
+      "constraint": "Mentor outreach W1 done (55 emails). W2 batch (100 contacts) fires Apr 8. Operating Bible built in Notion.",
+      "key_metric": "55 emails sent | 205 pipeline records | W2 Apr 8 | Bible: 7 stages live",
+      "highest_leverage_task": "Approve Circle pilot invite + W2 mentor batch",
       "team": ["Harry", "Leo"]
     }
   ]
