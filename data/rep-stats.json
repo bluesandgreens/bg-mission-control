@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-01T22:24:57.004588",
+  "generated": "2026-04-02T02:20:59.740819",
   "reps": {
     "anthony": {
       "calls_scored": 5,
@@ -50,16 +50,24 @@
       "oh_avg": 2.67
     },
     "tom": {
-      "calls_scored": 2,
+      "calls_scored": 6,
       "status": "active",
-      "overall_avg": 6.35,
+      "overall_avg": 6.63,
       "close_rate": 50.0,
-      "trend": "declining",
-      "improvement_area": "P3 Deepening (E=2.0 avg, I=3.0 avg) \u2014 combined gap. SECONDARY: OH now 3.0 avg but dropped to 2 on call 2. Critical new gap identified: BOTH-PARENTS CLOSE \u2014 when two decision-makers are live, Tom did not leverage the dad's presence. That was the close.",
+      "trend": "improving",
+      "improvement_area": "ANALYTICAL PARENT DEEPENING \u2014 next gap. High-functioning parents (Lorissa, Elisabeth) require opportunity-cost deepening instead of fear-bomb strategy. PRIMARY still: E score avg 3.17 \u2014 fear anchor improving but not yet reflexive. Both-parents close sequence (Elisabeth pattern) unresolved.",
       "p3_flag": false,
-      "e_avg": 2.5,
-      "i_avg": 3.0,
-      "oh_avg": 3.0
+      "e_avg": 3.17,
+      "i_avg": 3.33,
+      "oh_avg": 3.0,
+      "last_4_scores": [
+        7.1,
+        6.8,
+        5.6,
+        7.6
+      ],
+      "last_4_trend": "mixed (2 closes, 1 near-close, 1 miss)",
+      "weekly_focus": "Analytical Parent Deepening + isolation before Lighthouse"
     }
   }
 }

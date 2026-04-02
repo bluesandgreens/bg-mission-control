@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-01",
-  "total_calls_analysed": 20,
+  "last_updated": "2026-04-02T02:20:59.741419",
+  "total_calls_analysed": 24,
   "weekly_reset_date": "2026-03-28",
   "categories": {
     "price_affordability": {
@@ -290,6 +290,88 @@
         "tom"
       ],
       "recommendation": "Both-parents close sequence: When both parents are live and mum defers to dad \u2014 turn immediately to dad. Don't let it be an \"I'll check with him later.\" \"Jason, you've heard everything \u2014 from your perspective, does this feel like what Michael needs right now?\""
+    }
+  ],
+  "calls": [
+    {
+      "id": "DC-2026-03-31-JAMES-TOM",
+      "contact": "James McLennan",
+      "son": "Thomas (Tommy)",
+      "rep": "Tom",
+      "date": "2026-03-31",
+      "outcome": "Closed",
+      "overall": 7.1,
+      "scores": {
+        "s": 4,
+        "i": 4,
+        "e": 4,
+        "l": 3,
+        "opening": 3,
+        "oh": 3
+      },
+      "hs_call_id": "107232194608",
+      "key_moment": "Tom stayed with the fear: 'That's quite a scary thought losing your son' \u2014 James revealed he felt like he'd already lost the boy he knew",
+      "drill": "FATHER STACK DRILL: James's exact words back in pain stack"
+    },
+    {
+      "id": "DC-2026-03-31-EMILY-TOM",
+      "contact": "Emily Brady",
+      "son": "Charlie",
+      "rep": "Tom",
+      "date": "2026-03-31",
+      "outcome": "Near Close (follow-up Tue)",
+      "overall": 6.8,
+      "scores": {
+        "s": 4,
+        "i": 4,
+        "e": 4,
+        "l": 3,
+        "opening": 3,
+        "oh": 3
+      },
+      "hs_call_id": "107232986897",
+      "key_moment": "Emily: 'I'm worried he's going to end up treating a woman this way' \u2014 Tom anchored this well",
+      "drill": "PRE-EMPT SINGLE MUM FINANCES: $111 frame before $2,700 when financial pressure visible in discovery"
+    },
+    {
+      "id": "DC-2026-03-31-SKY-TOM",
+      "contact": "Sky Schramm",
+      "son": "Sam (Sampson)",
+      "rep": "Tom",
+      "date": "2026-03-31",
+      "outcome": "Booked Call (Lighthouse info sent)",
+      "overall": 5.6,
+      "scores": {
+        "s": 4,
+        "i": 3,
+        "e": 3,
+        "l": 2,
+        "opening": 4,
+        "oh": 2
+      },
+      "hs_call_id": "107233081717",
+      "key_moment": "Lighthouse introduced before isolation \u2014 gave Sky an exit before weekly plan attempted",
+      "drill": "SINGLE PRICE RULE: isolate \u2192 $111 \u2192 weekly plan \u2192 only then Lighthouse"
+    },
+    {
+      "id": "DC-2026-04-01-LORISSA-TOM",
+      "contact": "Lorissa Garcia",
+      "son": "Samuel",
+      "rep": "Tom",
+      "date": "2026-04-01",
+      "outcome": "Closed",
+      "overall": 7.6,
+      "scores": {
+        "s": 4,
+        "i": 3,
+        "e": 3,
+        "l": 4,
+        "opening": 4,
+        "oh": 4
+      },
+      "hs_call_id": "107297724478",
+      "key_moment": "Clean close on analytical parent \u2014 payment link friction handled warmly, stayed on call until processed",
+      "drill": "ANALYTICAL PARENT DRILL: opportunity-cost deepening for professionals"
     }
   ]
 }
