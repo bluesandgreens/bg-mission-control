@@ -1,207 +1,19 @@
 {
-  "last_updated": "2026-04-02T11:15:30.271740",
-  "total_calls_analysed": 24,
-  "weekly_reset_date": "2026-03-28",
+  "last_updated": "2026-04-02T22:00:00+11:00",
+  "total_calls_analysed": 22,
+  "weekly_reset_date": "2026-03-31",
   "categories": {
     "price_affordability": {
-      "count": 6,
-      "last_week": 6,
-      "trend": "increasing",
-      "by_rep": {
-        "anthony": 1,
-        "bailey": 2,
-        "rye": 2,
-        "tom": 1
-      },
-      "avg_handling_grade": 1.8,
-      "best_example": {
-        "call": "Leanne Black \u2014 Anthony \u2014 Mar 23",
-        "parent_quote": "NDIS funding question raised",
-        "rep_response": "Proactively offered NDIS pathway before objection fully formed",
-        "grade": 4,
-        "outcome_confirmed": "Deposit Paid",
-        "note": "Best example of pre-handling \u2014 solved before it became a blocker. Leanne Black confirmed Deposit Paid."
-      },
-      "worst_example": {
-        "call": "Bianca JESS \u2014 Rye \u2014 Mar 26",
-        "parent_quote": "$450 a fortnight? Oh shit.",
-        "rep_response": "\"Off the top of my head, about $450, I think.\" Immediately offered to send email info without any objection handling.",
-        "grade": 1,
-        "outcome_confirmed": "Booked Call (no close)",
-        "note": "Worst price handling on record. Rep did not know his own payment plans, calculated live, retreated to email at first resistance. Bianca said 'I'll find a way' \u2014 a clear buying signal that Rye acknowledged with 'yeah yeah 100%' and booked a follow-up. Outcome confirmed: no close."
-      },
-      "weekly_note": "Mar 29 update: Price handling avg (1.8) remains the weakest category. All closes this week (Judith, Leanne, Bec Richardson) had confident price delivery. All misses had hesitant or absent price delivery. The data is unambiguous: know your price card. $2,700 lump / $450 fortnightly / $225 weekly / $900 monthly. No calculation on-call. Ever."
-    },
-    "partner_coparent": {
-      "count": 4,
-      "last_week": 4,
-      "trend": "stable",
-      "by_rep": {
-        "anthony": 3,
-        "tom": 1
-      },
-      "avg_handling_grade": 2.5,
-      "best_example": {
-        "call": "Judith Lacey \u2014 Anthony \u2014 Mar 23",
-        "parent_quote": "His dad needs to agree",
-        "rep_response": "Excellent isolation: 'If dad wasn't on board, what would happen?' \u2014 isolated the conditional and addressed the auth question cleanly. Achieved 10/10 after.",
-        "grade": 4,
-        "outcome_confirmed": "Active Sessions (W1 completed Mar 29)",
-        "note": "Best Anthony objection handling on record \u2014 proactive isolation + conditional close. Judith confirmed Active Sessions with W1 on Mar 29. Gold standard partner objection handling leads to confirmed activation."
-      },
-      "worst_example": {
-        "call": "Sophie Cuzzy \u2014 Anthony \u2014 Mar 23",
-        "parent_quote": "Probably just to talk to his dad and maybe just think it over",
-        "rep_response": "A hundred percent. Sit with that a little bit.",
-        "grade": 2,
-        "outcome_confirmed": "Booked Call (no close, prediction matched)",
-        "note": "Classic BAMFAM cave. Outcome confirmed: Sophie Cuzzy still Booked Call, no close. The cave at the close cost the sale. Should have isolated: 'Apart from talking to dad, are we good to go?' then de-risked with $111 framing."
-      }
+      "count": 10,
+      "trend": "increasing"
     },
     "son_buyin": {
-      "count": 2,
-      "last_week": 2,
-      "trend": "increasing",
-      "by_rep": {
-        "rye": 1,
-        "tom": 1
-      },
-      "avg_handling_grade": 4.0,
-      "best_example": {
-        "call": "Bec Richardson \u2014 Tom \u2014 Mar 26",
-        "parent_quote": "He'll be anti it to start with. It's all about picking your moment.",
-        "rep_response": "Dentist metaphor delivered naturally: 'It's a bit like getting them to the dentist, just get them in the chair and they'll get it done. You get them on the phone with us and boys that were reluctant will be buzzing for the next call.'",
-        "grade": 5,
-        "outcome_confirmed": "Deposit Paid",
-        "note": "Mar 29 CONFIRMED: Bec Richardson = Deposit Paid. Tom's dentist metaphor + pre-emptive son buy-in handling contributed to a clean close. Grade 5 from confirmed close only."
-      },
-      "worst_example": null
+      "count": 6,
+      "trend": "stable"
     },
-    "timing_not_now": {
-      "count": 1,
-      "last_week": 1,
-      "trend": "stable",
-      "by_rep": {
-        "rye": 1
-      },
-      "avg_handling_grade": 3.0,
-      "best_example": {
-        "call": "Steffany Campbell \u2014 Rye \u2014 Mar 21",
-        "parent_quote": "Want to wait until Koban gets back from Bendigo",
-        "rep_response": "Used son's return as urgency window",
-        "grade": 3,
-        "outcome_confirmed": null,
-        "note": "Decent urgency reframe but financial blocker not addressed"
-      },
-      "worst_example": null
-    },
-    "misunderstanding": {
-      "count": 0,
-      "last_week": 0,
-      "trend": "new",
-      "by_rep": {},
-      "avg_handling_grade": 0,
-      "best_example": null,
-      "worst_example": null
-    },
-    "trust_credibility": {
-      "count": 1,
-      "last_week": 1,
-      "trend": "stable",
-      "by_rep": {
-        "anthony": 1
-      },
-      "avg_handling_grade": 3.0,
-      "best_example": {
-        "call": "Beck Reside \u2014 Anthony \u2014 Mar 23",
-        "parent_quote": "I've heard all this before. And I'm pretty sure none of this is going to help.",
-        "rep_response": "Acknowledged skepticism, stayed warm, continued with pitch.",
-        "grade": 3,
-        "outcome_confirmed": "Follow Up Scheduled",
-        "note": "Beck Reside confirmed Follow Up. The 'past failure' + financial constraint combination was likely unwinnable regardless. Anthony read the room correctly."
-      },
-      "worst_example": null
-    },
-    "past_failure": {
-      "count": 1,
-      "last_week": 1,
-      "trend": "stable",
-      "by_rep": {
-        "anthony": 1
-      },
-      "avg_handling_grade": 3.0,
-      "best_example": {
-        "call": "Beck Reside \u2014 Anthony \u2014 Mar 23",
-        "parent_quote": "It all sounds very good. Like I said, I've heard all this before.",
-        "rep_response": "Maintained warmth but didn't use the gold standard 'what missed the mark' question to reframe",
-        "grade": 3,
-        "outcome_confirmed": "Follow Up Scheduled",
-        "note": "Gold standard from Harry: 'What do you think missed the mark with previous supports?' Not used here. Outcome: Follow Up \u2014 likely unwinnable given financial constraints, but the gold standard question should still be in every call."
-      },
-      "worst_example": null
-    },
-    "think_about_it": {
-      "count": 3,
-      "last_week": 3,
-      "trend": "increasing",
-      "by_rep": {
-        "anthony": 2,
-        "tom": 1
-      },
-      "avg_handling_grade": 2.0,
-      "best_example": {
-        "call": "Tayla Colman \u2014 Anthony \u2014 Mar 20",
-        "parent_quote": "I need to have a chat with my husband first",
-        "rep_response": "Partial isolation \u2014 'if Anthony said no, would you still go?' secured a YES.",
-        "grade": 3,
-        "outcome_confirmed": null,
-        "note": "Got the conditional YES. Failed to convert it to a close."
-      },
-      "worst_example": {
-        "call": "Sophie Cuzzy \u2014 Anthony \u2014 Mar 23",
-        "parent_quote": "Maybe just think it over",
-        "rep_response": "A hundred percent. Sit with that a little bit.",
-        "grade": 2,
-        "outcome_confirmed": "Booked Call (no close)",
-        "note": "CONFIRMED \u2014 Sophie Cuzzy remains Booked Call. BAMFAM cave without isolation = no close. This is now a confirmed outcome linked to OH=2 handling. The $111 de-risk frame would have given Sophie an easy yes. Not used."
-      }
-    },
-    "logistics": {
-      "count": 2,
-      "last_week": 2,
-      "trend": "stable",
-      "by_rep": {
-        "anthony": 1,
-        "bailey": 1
-      },
-      "avg_handling_grade": 3.5,
-      "best_example": {
-        "call": "Leanne Black \u2014 Anthony \u2014 Mar 23",
-        "parent_quote": "NDIS funding availability",
-        "rep_response": "Proactively identified and offered NDIS pathway",
-        "grade": 4,
-        "outcome_confirmed": "Deposit Paid",
-        "note": "CONFIRMED: Leanne Black = Deposit Paid. Pre-handling the logistics objection before it became a blocker = close. Know your lead's profile before the call."
-      },
-      "worst_example": null
-    },
-    "emotional_overwhelm": {
-      "count": 1,
-      "last_week": 1,
-      "trend": "stable",
-      "by_rep": {
-        "anthony": 1
-      },
-      "avg_handling_grade": 3.0,
-      "best_example": {
-        "call": "Beck Reside \u2014 Anthony \u2014 Mar 23",
-        "parent_quote": "I'm absolutely exhausted. We've tried everything.",
-        "rep_response": "Acknowledged with empathy, did not push the close.",
-        "grade": 3,
-        "outcome_confirmed": "Follow Up Scheduled",
-        "note": "Sometimes the right call is to preserve the relationship. Outcome: Follow Up \u2014 consistent with reading."
-      },
-      "worst_example": null
+    "partner_coparent": {
+      "count": 6,
+      "trend": "increasing"
     }
   },
   "weekly_top_3": [
@@ -381,5 +193,24 @@
       "true_outcome": "Onboarding Booked",
       "prediction_match": true
     }
-  ]
+  ],
+  "week_summary": {
+    "week": "2026-03-31",
+    "total_calls": 6,
+    "closes": 3,
+    "close_rate": "50% (Tom)",
+    "confirmed_this_run": [
+      "James McLennan \u2192 Deposit Paid \u2705",
+      "Lorissa Garcia \u2192 Deposit Paid \u2705",
+      "Sky Schramm \u2192 Booked Call \u2705",
+      "Elisabeth Poole \u2192 Call Objection (MISMATCH)"
+    ],
+    "pending": [
+      "Emily Brady \u2192 Booked Call (Tuesday follow-up \u2014 Near Close predicted)"
+    ],
+    "mismatch_flags": [
+      "Elisabeth Poole \u2014 score 5.2, predicted Follow Up Scheduled, actual Call Objection/Price Objection"
+    ],
+    "prediction_accuracy": "4/5 resolved calls this week (80%)"
+  }
 }

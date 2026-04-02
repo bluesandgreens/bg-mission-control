@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T11:15:30.271002",
+  "generated": "2026-04-02T22:00:00+11:00",
   "reps": {
     "anthony": {
       "calls_scored": 5,
@@ -90,5 +90,27 @@
       "last_4_trend": "2 closes (James McLennan 7.1, Lorissa Garcia 7.6), 1 near-close (Emily Brady 6.8 \u2014 pending Tuesday), 1 miss (Elisabeth Poole 5.2 \u2014 mismatch/Call Objection)",
       "weekly_focus": "Both-Parents Close + Analytical Parent Deepening"
     }
-  }
+  },
+  "week_closes": {
+    "tom": {
+      "calls": 4,
+      "closes": 2,
+      "rate": "50%",
+      "names": [
+        "James McLennan",
+        "Lorissa Garcia"
+      ]
+    },
+    "team": {
+      "calls": 4,
+      "closes": 2,
+      "rate": "50%"
+    }
+  },
+  "mismatch_alerts": [
+    "Elisabeth Poole (Tom, Apr 1) \u2014 predicted Follow Up, actual Call Objection. Root: passive dad on call, Tom accepted deferral without engaging Jason directly."
+  ],
+  "pending_outcomes": [
+    "Emily Brady (Tom, Mar 31) \u2014 predicted Near Close, currently Booked Call. Tuesday follow-up call is critical."
+  ]
 }
