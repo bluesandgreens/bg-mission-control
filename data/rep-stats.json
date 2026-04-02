@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T02:20:59.740819",
+  "generated": "2026-04-02T11:15:30.271002",
   "reps": {
     "anthony": {
       "calls_scored": 5,
@@ -11,7 +11,16 @@
       "p3_flag": false,
       "e_avg": 2.2,
       "i_avg": 3.0,
-      "oh_avg": 3.2
+      "oh_avg": 3.2,
+      "s_avg": 4.2,
+      "l_avg": 2.6,
+      "rolling_10_overall": [
+        5.3,
+        6.7,
+        6.5,
+        5.6,
+        5.7
+      ]
     },
     "rye": {
       "calls_scored": 3,
@@ -23,19 +32,14 @@
       "p3_flag": true,
       "e_avg": 1.67,
       "i_avg": 2.0,
-      "oh_avg": 2.67
-    },
-    "harry": {
-      "calls_scored": 1,
-      "status": "exited_dc",
-      "overall_avg": 5.5,
-      "close_rate": 100.0,
-      "trend": "n/a",
-      "improvement_area": "N/A \u2014 exited DC role. Reference only.",
-      "p3_flag": false,
-      "e_avg": 2.0,
-      "i_avg": 3.0,
-      "oh_avg": 3.0
+      "oh_avg": 2.67,
+      "s_avg": 3.33,
+      "l_avg": 3.0,
+      "rolling_10_overall": [
+        4.4,
+        6.8,
+        4.3
+      ]
     },
     "bailey": {
       "calls_scored": 3,
@@ -47,7 +51,14 @@
       "p3_flag": true,
       "e_avg": 1.0,
       "i_avg": 1.0,
-      "oh_avg": 2.67
+      "oh_avg": 2.67,
+      "s_avg": 2.0,
+      "l_avg": 2.33,
+      "rolling_10_overall": [
+        3.7,
+        3.1,
+        3.3
+      ]
     },
     "tom": {
       "calls_scored": 6,
@@ -55,19 +66,29 @@
       "overall_avg": 6.63,
       "close_rate": 50.0,
       "trend": "improving",
-      "improvement_area": "ANALYTICAL PARENT DEEPENING \u2014 next gap. High-functioning parents (Lorissa, Elisabeth) require opportunity-cost deepening instead of fear-bomb strategy. PRIMARY still: E score avg 3.17 \u2014 fear anchor improving but not yet reflexive. Both-parents close sequence (Elisabeth pattern) unresolved.",
+      "improvement_area": "BOTH-PARENTS CLOSE + ANALYTICAL PARENT DEEPENING. Elisabeth Poole (MISMATCH) confirmed: silent dad on call = missed close when Tom accepted mum's deferral. Also: Sky Schramm Lighthouse too early. Primary E score avg 3.17 \u2014 improving but not reflexive. Next: turn to the passive dad before accepting any partner deferral.",
       "p3_flag": false,
       "e_avg": 3.17,
       "i_avg": 3.33,
       "oh_avg": 3.0,
+      "s_avg": 3.83,
+      "l_avg": 3.17,
+      "rolling_10_overall": [
+        7.5,
+        5.2,
+        7.1,
+        6.8,
+        5.6,
+        7.6
+      ],
       "last_4_scores": [
         7.1,
         6.8,
         5.6,
         7.6
       ],
-      "last_4_trend": "mixed (2 closes, 1 near-close, 1 miss)",
-      "weekly_focus": "Analytical Parent Deepening + isolation before Lighthouse"
+      "last_4_trend": "2 closes (James McLennan 7.1, Lorissa Garcia 7.6), 1 near-close (Emily Brady 6.8 \u2014 pending Tuesday), 1 miss (Elisabeth Poole 5.2 \u2014 mismatch/Call Objection)",
+      "weekly_focus": "Both-Parents Close + Analytical Parent Deepening"
     }
   }
 }

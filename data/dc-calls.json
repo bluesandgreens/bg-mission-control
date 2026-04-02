@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-02T02:20:59.741419",
+  "last_updated": "2026-04-02T11:15:30.271740",
   "total_calls_analysed": 24,
   "weekly_reset_date": "2026-03-28",
   "categories": {
@@ -311,7 +311,9 @@
       },
       "hs_call_id": "107232194608",
       "key_moment": "Tom stayed with the fear: 'That's quite a scary thought losing your son' \u2014 James revealed he felt like he'd already lost the boy he knew",
-      "drill": "FATHER STACK DRILL: James's exact words back in pain stack"
+      "drill": "FATHER STACK DRILL: James's exact words back in pain stack",
+      "true_outcome": "Onboarding Booked",
+      "prediction_match": true
     },
     {
       "id": "DC-2026-03-31-EMILY-TOM",
@@ -331,7 +333,9 @@
       },
       "hs_call_id": "107232986897",
       "key_moment": "Emily: 'I'm worried he's going to end up treating a woman this way' \u2014 Tom anchored this well",
-      "drill": "PRE-EMPT SINGLE MUM FINANCES: $111 frame before $2,700 when financial pressure visible in discovery"
+      "drill": "PRE-EMPT SINGLE MUM FINANCES: $111 frame before $2,700 when financial pressure visible in discovery",
+      "true_outcome": "Booked Call",
+      "pending": true
     },
     {
       "id": "DC-2026-03-31-SKY-TOM",
@@ -351,7 +355,9 @@
       },
       "hs_call_id": "107233081717",
       "key_moment": "Lighthouse introduced before isolation \u2014 gave Sky an exit before weekly plan attempted",
-      "drill": "SINGLE PRICE RULE: isolate \u2192 $111 \u2192 weekly plan \u2192 only then Lighthouse"
+      "drill": "SINGLE PRICE RULE: isolate \u2192 $111 \u2192 weekly plan \u2192 only then Lighthouse",
+      "true_outcome": "Booked Call",
+      "prediction_match": true
     },
     {
       "id": "DC-2026-04-01-LORISSA-TOM",
@@ -371,7 +377,9 @@
       },
       "hs_call_id": "107297724478",
       "key_moment": "Clean close on analytical parent \u2014 payment link friction handled warmly, stayed on call until processed",
-      "drill": "ANALYTICAL PARENT DRILL: opportunity-cost deepening for professionals"
+      "drill": "ANALYTICAL PARENT DRILL: opportunity-cost deepening for professionals",
+      "true_outcome": "Onboarding Booked",
+      "prediction_match": true
     }
   ]
 }
