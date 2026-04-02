@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💙 Parent Calls — Blues &amp; Greens</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; padding: 24px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Header */
+  .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+  .header h1 { font-size: 22px; font-weight: 700; color: #e2e8f0; }
+  .header p { font-size: 13px; color: #64748b; margin-top: 2px; }
+  .refresh-btn { background: #3b82f6; color: white; border: none; border-radius: 8px; padding: 8px 16px; font-size: 13px; cursor: pointer; font-weight: 500; }
+  .refresh-btn:hover { background: #2563eb; }
+
+  /* Stats row */
+  .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 24px; }
+  .stat-card { background: rgba(30,41,59,0.8); border: 1px solid rgba(148,163,184,0.1); border-radius: 12px; padding: 14px 16px; }
+  .stat-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; }
+  .stat-card .value { font-size: 26px; font-weight: 700; margin-top: 4px; }
+  .stat-card .sub { font-size: 11px; color: #64748b; margin-top: 2px; }
+
+  /* Filter bar */
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .filter-btn { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; border: 2px solid transparent; transition: all 0.15s; }
+  .filter-btn.active { border-color: white; }
+  .filter-ALL { background: #1e293b; color: #94a3b8; }
+  .filter-ALL.active { background: #334155; color: white; }
+  .filter-SAVE { background: rgba(239,68,68,0.15); color: #fca5a5; }
+  .filter-SAVE.active { border-color: #ef4444; }
+  .filter-DEBRIEF { background: rgba(249,115,22,0.15); color: #fed7aa; }
+  .filter-DEBRIEF.active { border-color: #f97316; }
+  .filter-CHECK-IN { background: rgba(234,179,8,0.15); color: #fef08a; }
+  .filter-CHECK-IN.active { border-color: #eab308; }
+  .filter-RELATIONSHIP { background: rgba(34,197,94,0.15); color: #86efac; }
+  .filter-RELATIONSHIP.active { border-color: #22c55e; }
+  .filter-OPPORTUNITY { background: rgba(59,130,246,0.15); color: #93c5fd; }
+  .filter-OPPORTUNITY.active { border-color: #3b82f6; }
+
+  /* Call cards */
+  .calls-list { display: flex; flex-direction: column; gap: 8px; }
+  .call-card { background: rgba(30,41,59,0.8); border: 1px solid rgba(148,163,184,0.1); border-radius: 12px; padding: 16px; transition: border-color 0.15s; cursor: pointer; }
+  .call-card:hover { border-color: rgba(148,163,184,0.3); }
+  .call-card.expanded .card-body { display: block; }
+  .call-card .card-header { display: grid; grid-template-columns: 40px 1fr auto auto; gap: 12px; align-items: center; }
+  .call-number { width: 32px; height: 32px; background: #1e293b; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #94a3b8; }
+  .call-name { font-size: 15px; font-weight: 600; }
+  .call-sub { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+  .call-type-badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+  .badge-SAVE { background: rgba(239,68,68,0.2); color: #fca5a5; }
+  .badge-DEBRIEF { background: rgba(249,115,22,0.2); color: #fed7aa; }
+  .badge-CHECK-IN { background: rgba(234,179,8,0.2); color: #fef08a; }
+  .badge-RELATIONSHIP { background: rgba(34,197,94,0.2); color: #86efac; }
+  .badge-OPPORTUNITY { background: rgba(59,130,246,0.2); color: #93c5fd; }
+  .call-value { font-size: 12px; color: #64748b; text-align: right; }
+
+  .card-body { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(148,163,184,0.1); }
+  .card-body-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .info-block label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; display: block; margin-bottom: 4px; }
+  .info-block p { font-size: 13px; color: #cbd5e1; }
+  .angle-box { background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); border-radius: 8px; padding: 10px 12px; margin-top: 10px; }
+  .angle-box p { font-size: 13px; color: #93c5fd; font-style: italic; }
+  .reasons-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .reason-chip { font-size: 11px; background: #1e293b; border-radius: 6px; padding: 3px 8px; color: #94a3b8; }
+
+  /* Notes area */
+  .notes-area { margin-top: 10px; }
+  .notes-area label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; display: block; margin-bottom: 4px; }
+  .notes-area textarea { width: 100%; background: #1e293b; border: 1px solid rgba(148,163,184,0.15); border-radius: 8px; padding: 8px 12px; color: #e2e8f0; font-size: 13px; resize: vertical; min-height: 60px; font-family: inherit; }
+  .notes-area textarea:focus { outline: none; border-color: #3b82f6; }
+  .call-actions { display: flex; gap: 8px; margin-top: 10px; }
+  .action-btn { padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; }
+  .btn-called { background: rgba(34,197,94,0.2); color: #86efac; }
+  .btn-called:hover { background: rgba(34,197,94,0.3); }
+  .btn-skip { background: rgba(148,163,184,0.1); color: #94a3b8; }
+  .btn-skip:hover { background: rgba(148,163,184,0.2); }
+  .btn-note { background: rgba(59,130,246,0.2); color: #93c5fd; }
+  .btn-note:hover { background: rgba(59,130,246,0.3); }
+  .called-badge { display: none; font-size: 11px; color: #86efac; font-weight: 600; }
+
+  /* Empty state */
+  .empty-state { text-align: center; padding: 60px 20px; color: #64748b; }
+  .empty-state .big { font-size: 40px; }
+
+  /* Loading */
+  .loading { text-align: center; padding: 60px; color: #64748b; }
+
+  /* Back link */
+  .back-link { font-size: 12px; color: #64748b; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+  .back-link:hover { color: #94a3b8; }
+
+  @media (max-width: 700px) {
+    .stats-row { grid-template-columns: repeat(3, 1fr); }
+    .card-body-grid { grid-template-columns: 1fr; }
+    .call-card .card-header { grid-template-columns: 32px 1fr auto; }
+    .call-value { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <a href="../" class="back-link">← Mission Control</a>
+
+  <div class="header">
+    <div>
+      <h1>💙 Parent Calls</h1>
+      <p id="subtitle">Loading today's call list...</p>
+    </div>
+    <button class="refresh-btn" onclick="loadData()">↻ Refresh</button>
+  </div>
+
+  <div class="stats-row" id="statsRow">
+    <div class="stat-card"><div class="label">Total Calls</div><div class="value" id="statTotal">—</div><div class="sub">today</div></div>
+    <div class="stat-card"><div class="label">🔴 Save</div><div class="value" id="statSave" style="color:#fca5a5">—</div><div class="sub">urgent</div></div>
+    <div class="stat-card"><div class="label">🟠 Debrief</div><div class="value" id="statDebrief" style="color:#fed7aa">—</div><div class="sub">post-W1</div></div>
+    <div class="stat-card"><div class="label">🟡 Check-In</div><div class="value" id="statCheckin" style="color:#fef08a">—</div><div class="sub">early phase</div></div>
+    <div class="stat-card"><div class="label">🟢/💙 Other</div><div class="value" id="statOther" style="color:#86efac">—</div><div class="sub">rel + opp</div></div>
+  </div>
+
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn filter-ALL active" onclick="setFilter('ALL')">All</button>
+    <button class="filter-btn filter-SAVE" onclick="setFilter('SAVE')">🔴 Save</button>
+    <button class="filter-btn filter-DEBRIEF" onclick="setFilter('DEBRIEF')">🟠 Debrief</button>
+    <button class="filter-btn filter-CHECK-IN" onclick="setFilter('CHECK-IN')">🟡 Check-In</button>
+    <button class="filter-btn filter-RELATIONSHIP" onclick="setFilter('RELATIONSHIP')">🟢 Relationship</button>
+    <button class="filter-btn filter-OPPORTUNITY" onclick="setFilter('OPPORTUNITY')">💙 Opportunity</button>
+  </div>
+
+  <div class="calls-list" id="callsList">
+    <div class="loading">Loading families...</div>
+  </div>
+
+</div>
+
+<script>
+let allCalls = [];
+let activeFilter = 'ALL';
+const calledSet = new Set(JSON.parse(localStorage.getItem('calledSet') || '[]'));
+const notes = JSON.parse(localStorage.getItem('callNotes') || '{}');
+
+const TYPE_ICONS = {
+  'SAVE': '🔴',
+  'DEBRIEF': '🟠',
+  'CHECK-IN': '🟡',
+  'RELATIONSHIP': '🟢',
+  'OPPORTUNITY': '💙'
+};
+
+async function loadData() {
+  try {
+    const resp = await fetch('../data/parent-calls.json?t=' + Date.now());
+    if (!resp.ok) throw new Error('No data');
+    const data = await resp.json();
+    allCalls = data.calls || [];
+
+    // Stats
+    document.getElementById('statTotal').textContent = data.total || allCalls.length;
+    document.getElementById('statSave').textContent = (data.by_type || {})['SAVE'] || 0;
+    document.getElementById('statDebrief').textContent = (data.by_type || {})['DEBRIEF'] || 0;
+    document.getElementById('statCheckin').textContent = (data.by_type || {})['CHECK-IN'] || 0;
+    const other = ((data.by_type || {})['RELATIONSHIP'] || 0) + ((data.by_type || {})['OPPORTUNITY'] || 0);
+    document.getElementById('statOther').textContent = other;
+
+    // Date
+    const genDate = new Date(data.generated_at);
+    document.getElementById('subtitle').textContent =
+      `${allCalls.length} families · Last updated ${genDate.toLocaleTimeString('en-AU', {hour:'2-digit',minute:'2-digit'})} AEST`;
+
+    renderCalls();
+  } catch(e) {
+    document.getElementById('callsList').innerHTML =
+      '<div class="empty-state"><div class="big">📭</div><p style="margin-top:12px">No call data yet. Run the parent call engine to generate today\'s list.</p><p style="font-size:12px;margin-top:8px;color:#475569">python3 /workspace/scripts/parent-call-engine.py</p></div>';
+  }
+}
+
+function setFilter(f) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.filter-${f}`).classList.add('active');
+  renderCalls();
+}
+
+function renderCalls() {
+  const filtered = activeFilter === 'ALL'
+    ? allCalls
+    : allCalls.filter(c => c.call_type === activeFilter);
+
+  if (!filtered.length) {
+    document.getElementById('callsList').innerHTML =
+      '<div class="empty-state"><div class="big">✅</div><p style="margin-top:12px">No calls in this category.</p></div>';
+    return;
+  }
+
+  const html = filtered.map((c, i) => buildCard(c, i + 1)).join('');
+  document.getElementById('callsList').innerHTML = html;
+}
+
+function buildCard(c, n) {
+  const called = calledSet.has(c.contact_id);
+  const noteVal = notes[c.contact_id] || c.notes || '';
+  const sonStr = c.son_name ? ` &amp; ${c.son_name}${c.son_age ? ` (${c.son_age}yo)` : ''}` : '';
+  const valueStr = c.weekly_amount ? `$${Math.round(c.weekly_amount)}/wk` : '';
+  const lastContact = c.last_contact_days ? `${c.last_contact_days}d since contact` : '';
+  const renewal = c.renew_date ? `Renews ${c.renew_date}` : '';
+  const subParts = [lastContact, renewal].filter(Boolean);
+
+  const reasonsHtml = (c.reasons || []).map(r =>
+    `<span class="reason-chip">${r}</span>`).join('');
+
+  const anglesHtml = (c.call_angle || []).map(a =>
+    `<p>• ${a}</p>`).join('');
+
+  const aboutSon = c.about_son
+    ? `<div class="info-block"><label>About the Son</label><p>${escHtml(c.about_son)}</p></div>`
+    : '';
+  const parentStory = c.parent_story
+    ? `<div class="info-block"><label>Parent Story</label><p>${escHtml(c.parent_story)}</p></div>`
+    : '';
+  const ownerStr = c.microowner || c.owner || '';
+
+  return `
+  <div class="call-card ${called ? 'opacity-50' : ''}" id="card-${c.contact_id}">
+    <div class="card-header" onclick="toggleCard('${c.contact_id}')">
+      <div class="call-number">${n}</div>
+      <div>
+        <div class="call-name">${escHtml(c.name)}${sonStr}
+          ${called ? '<span class="called-badge" style="display:inline-block;margin-left:8px">✅ Called</span>' : ''}
+        </div>
+        <div class="call-sub">${subParts.join(' · ')}${ownerStr ? ' · ' + escHtml(ownerStr) : ''}</div>
+      </div>
+      <span class="call-type-badge badge-${c.call_type}">${TYPE_ICONS[c.call_type]} ${c.call_type}</span>
+      <div class="call-value">${valueStr}</div>
+    </div>
+
+    <div class="card-body" id="body-${c.contact_id}">
+      <div class="reasons-list">${reasonsHtml}</div>
+
+      ${anglesHtml ? `<div class="angle-box">${anglesHtml}</div>` : ''}
+
+      <div class="card-body-grid" style="margin-top:12px">
+        ${aboutSon}
+        ${parentStory}
+        ${c.phone ? `<div class="info-block"><label>Phone</label><p><a href="tel:${c.phone}" style="color:#93c5fd">${c.phone}</a></p></div>` : ''}
+        ${c.parent_type ? `<div class="info-block"><label>Parent Type</label><p>${escHtml(c.parent_type)}</p></div>` : ''}
+        ${c.energy ? `<div class="info-block"><label>Starting Energy</label><p>${escHtml(c.energy)}</p></div>` : ''}
+      </div>
+
+      <div class="notes-area">
+        <label>Notes (saved locally)</label>
+        <textarea id="notes-${c.contact_id}" placeholder="What happened on the call? Any key context..."
+          onchange="saveNote('${c.contact_id}', this.value)">${escHtml(noteVal)}</textarea>
+      </div>
+
+      <div class="call-actions">
+        <button class="action-btn btn-called" onclick="markCalled('${c.contact_id}')">
+          ${called ? '↩ Undo' : '✅ Mark Called'}
+        </button>
+        <button class="action-btn btn-skip" onclick="skipCard('${c.contact_id}')">⏭ Skip Today</button>
+        ${c.phone ? `<a href="tel:${c.phone}" class="action-btn btn-note" style="text-decoration:none">📞 Call ${c.phone}</a>` : ''}
+      </div>
+    </div>
+  </div>`;
+}
+
+function toggleCard(id) {
+  const body = document.getElementById('body-' + id);
+  if (body) body.style.display = body.style.display === 'block' ? 'none' : 'block';
+}
+
+function markCalled(id) {
+  if (calledSet.has(id)) {
+    calledSet.delete(id);
+  } else {
+    calledSet.add(id);
+  }
+  localStorage.setItem('calledSet', JSON.stringify([...calledSet]));
+  renderCalls();
+  // Re-open the card
+  setTimeout(() => {
+    const body = document.getElementById('body-' + id);
+    if (body) body.style.display = 'block';
+  }, 50);
+}
+
+function skipCard(id) {
+  // Add to a "skipped today" set in localStorage
+  const skipped = new Set(JSON.parse(localStorage.getItem('skippedToday') || '[]'));
+  skipped.add(id);
+  localStorage.setItem('skippedToday', JSON.stringify([...skipped]));
+  allCalls = allCalls.filter(c => c.contact_id !== id);
+  renderCalls();
+}
+
+function saveNote(id, val) {
+  notes[id] = val;
+  localStorage.setItem('callNotes', JSON.stringify(notes));
+}
+
+function escHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// Clear stale skipped list at midnight
+const lastSkipClear = localStorage.getItem('skipClearDate');
+const todayStr = new Date().toDateString();
+if (lastSkipClear !== todayStr) {
+  localStorage.removeItem('skippedToday');
+  localStorage.setItem('skipClearDate', todayStr);
+}
+
+loadData();
+</script>
+</body>
+</html>
