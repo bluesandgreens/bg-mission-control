@@ -1,33 +1,15 @@
 {
-  "generated": "2026-04-03T13:44:04.041446",
+  "generated": "2026-04-04T03:37:57.946732",
   "weeks": [
     {
-      "label": "Week 1 (Apr 03 - Apr 09)",
-      "total": 8701.0,
+      "label": "Week 1 (Apr 04 - Apr 10)",
+      "total": 8936.0,
       "days": [
-        {
-          "date": "2026-04-03",
-          "day": "Fri",
-          "charges": 1,
-          "amount": 235.0,
-          "subscribers": [
-            {
-              "name": "Vannessa Simpson",
-              "email": "vannessasimpson@yahoo.com",
-              "amount": 235.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1T7pyw2mA5zLxyK8AAvbkFXW",
-              "customer_id": "cus_U0l4g3hj2DQZqa",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T7pyw2mA5zLxyK8AAvbkFXW",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/203226633903"
-            }
-          ]
-        },
         {
           "date": "2026-04-04",
           "day": "Sat",
-          "charges": 2,
-          "amount": 1162.0,
+          "charges": 1,
+          "amount": 930.0,
           "subscribers": [
             {
               "name": "Amy Parsons",
@@ -38,16 +20,6 @@
               "customer_id": "cus_Sebd3OXY01npyM",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SwfFT2mA5zLxyK8mZH7mt1W",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/136145383448"
-            },
-            {
-              "name": "DEB CARUSO",
-              "email": "deb@inpublishing.com.au",
-              "amount": 232.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1SvAIb2mA5zLxyK8WEUUtU9l",
-              "customer_id": "cus_Trk5686XtHhwrW",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SvAIb2mA5zLxyK8WEUUtU9l",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/126700344428"
             }
           ]
         },
@@ -248,8 +220,8 @@
         {
           "date": "2026-04-08",
           "day": "Wed",
-          "charges": 6,
-          "amount": 1863.0,
+          "charges": 7,
+          "amount": 2098.0,
           "subscribers": [
             {
               "name": "Kate Harding",
@@ -270,6 +242,16 @@
               "customer_id": "cus_U5EAMlAEQsOtOy",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TC9Nc2mA5zLxyK8oLsHaoVl",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207559251551"
+            },
+            {
+              "name": "LEAH WEST",
+              "email": "Leah_ellen1995@icloud.com",
+              "amount": 235.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1TC8NN2mA5zLxyK8aMFSaFSq",
+              "customer_id": "cus_U7U7U7L0gbrjII",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TC8NN2mA5zLxyK8aMFSaFSq",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207947485189"
             },
             {
               "name": "Tanya Major",
@@ -350,12 +332,40 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/141769433122"
             }
           ]
+        },
+        {
+          "date": "2026-04-10",
+          "day": "Fri",
+          "charges": 2,
+          "amount": 467.0,
+          "subscribers": [
+            {
+              "name": "Vannessa Simpson",
+              "email": "vannessasimpson@yahoo.com",
+              "amount": 235.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1T7pyw2mA5zLxyK8AAvbkFXW",
+              "customer_id": "cus_U0l4g3hj2DQZqa",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T7pyw2mA5zLxyK8AAvbkFXW",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/203226633903"
+            },
+            {
+              "name": "DEB CARUSO",
+              "email": "deb@inpublishing.com.au",
+              "amount": 232.0,
+              "interval": "Weekly",
+              "sub_id": "sub_1SvAIb2mA5zLxyK8WEUUtU9l",
+              "customer_id": "cus_Trk5686XtHhwrW",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SvAIb2mA5zLxyK8WEUUtU9l",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/126700344428"
+            }
+          ]
         }
       ]
     },
     {
-      "label": "Week 2 (Apr 10 - Apr 16)",
-      "total": 2748.0,
+      "label": "Week 2 (Apr 11 - Apr 17)",
+      "total": 4628.0,
       "days": [
         {
           "date": "2026-04-13",
@@ -402,13 +412,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/208659433730"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 3 (Apr 17 - Apr 23)",
-      "total": 7033.5,
-      "days": [
+        },
         {
           "date": "2026-04-17",
           "day": "Fri",
@@ -436,7 +440,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207777789452"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 3 (Apr 18 - Apr 24)",
+      "total": 4223.5,
+      "days": [
         {
           "date": "2026-04-18",
           "day": "Sat",
@@ -486,8 +496,8 @@
         {
           "date": "2026-04-22",
           "day": "Wed",
-          "charges": 2,
-          "amount": 1465.5,
+          "charges": 1,
+          "amount": 535.5,
           "subscribers": [
             {
               "name": "Troy Speed",
@@ -498,24 +508,14 @@
               "customer_id": "cus_Tnbj2BTpeLPHtr",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sq0Vf2mA5zLxyK8weKggu2e",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/186715470737"
-            },
-            {
-              "name": "SHARON ARTHUR",
-              "email": "",
-              "amount": 930.0,
-              "interval": "DRAFT",
-              "type": "invoice",
-              "status": "draft",
-              "stripe_url": "https://dashboard.stripe.com/invoices/in_1T7E2K2mA5zLxyK8XfAfZA8B",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
         }
       ]
     },
     {
-      "label": "Week 4 (Apr 24 - Apr 30)",
-      "total": 2661.0,
+      "label": "Week 4 (Apr 25 - May 01)",
+      "total": 4830.0,
       "days": [
         {
           "date": "2026-04-26",
@@ -560,6 +560,44 @@
               "customer_id": "cus_SgMoJtjZbqlvGq",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TAQ2p2mA5zLxyK8ID3D1mUF",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/136549360048"
+            }
+          ]
+        },
+        {
+          "date": "2026-05-01",
+          "day": "Fri",
+          "charges": 3,
+          "amount": 2169.0,
+          "subscribers": [
+            {
+              "name": "Marianne Thorburn",
+              "email": "mariannethorburn@gmail.com",
+              "amount": 940.0,
+              "interval": "Monthly",
+              "sub_id": "sub_1T69ug2mA5zLxyK8qENiMRXd",
+              "customer_id": "cus_U0kiF4BG5Slnch",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T69ug2mA5zLxyK8qENiMRXd",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/203852094603"
+            },
+            {
+              "name": "Krystal Gradisen",
+              "email": "krystalgradisen@outlook.com",
+              "amount": 930.0,
+              "interval": "Every 60 days",
+              "sub_id": "sub_1T69l52mA5zLxyK8XxyMmQUn",
+              "customer_id": "cus_TtDrbPzTV0Wskh",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T69l52mA5zLxyK8XxyMmQUn",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/197535773075"
+            },
+            {
+              "name": "Jen Murray",
+              "email": "jenmurray1986@gmail.com",
+              "amount": 299.0,
+              "interval": "Monthly",
+              "sub_id": "sub_1THCnb2mA5zLxyK89pCXRqmQ",
+              "customer_id": "cus_TpZaUHZruig2hv",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1THCnb2mA5zLxyK89pCXRqmQ",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/186564580356"
             }
           ]
         }
