@@ -61,34 +61,37 @@
       ]
     },
     "tom": {
-      "calls_scored": 6,
+      "calls_scored": 7,
       "status": "active",
-      "overall_avg": 6.63,
-      "close_rate": 50.0,
-      "trend": "improving",
-      "improvement_area": "BOTH-PARENTS CLOSE + ANALYTICAL PARENT DEEPENING. Elisabeth Poole (MISMATCH) confirmed: silent dad on call = missed close when Tom accepted mum's deferral. Also: Sky Schramm Lighthouse too early. Primary E score avg 3.17 \u2014 improving but not reflexive. Next: turn to the passive dad before accepting any partner deferral.",
+      "overall_avg": 6.49,
+      "close_rate": 42.9,
+      "trend": "holding",
+      "improvement_area": "CALL PREP + PAST-FAILURE QUESTION + BOTH-PARENTS CLOSE. Kristy Richards (Apr 1): name error (Riley called 'Samuel') + Harry's past-failure question missed. Easter follow-up risk on lead. E avg 3.14 \u2014 holding.",
       "p3_flag": false,
-      "e_avg": 3.17,
-      "i_avg": 3.33,
+      "e_avg": 3.14,
+      "i_avg": 3.29,
       "oh_avg": 3.0,
-      "s_avg": 3.83,
-      "l_avg": 3.17,
+      "s_avg": 3.71,
+      "l_avg": 3.14,
       "rolling_10_overall": [
         7.5,
         5.2,
         7.1,
         6.8,
         5.6,
-        7.6
+        7.6,
+        6.2
       ],
-      "last_4_scores": [
+      "last_5_scores": [
         7.1,
         6.8,
         5.6,
-        7.6
+        7.6,
+        6.2
       ],
-      "last_4_trend": "2 closes (James McLennan 7.1, Lorissa Garcia 7.6), 1 near-close (Emily Brady 6.8 \u2014 pending Tuesday), 1 miss (Elisabeth Poole 5.2 \u2014 mismatch/Call Objection)",
-      "weekly_focus": "Both-Parents Close + Analytical Parent Deepening"
+      "last_5_trend": "3 closes (James McLennan, Lorissa Garcia + Bec Richardson), 2 follow-ups (Kristy Richards, Sky Schramm). Emily Brady pending Tuesday.",
+      "weekly_focus": "Past-Failure Question + Call Prep Ritual + Both-Parents Close",
+      "latest_call": "Kristy Richards — 2026-04-01 — 6.2/10"
     }
   },
   "week_closes": {

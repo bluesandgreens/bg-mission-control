@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-02T22:00:00+11:00",
-  "total_calls_analysed": 22,
+  "last_updated": "2026-04-03T12:42:00+11:00",
+  "total_calls_analysed": 23,
   "weekly_reset_date": "2026-03-31",
   "categories": {
     "price_affordability": {
@@ -212,5 +212,30 @@
       "Elisabeth Poole \u2014 score 5.2, predicted Follow Up Scheduled, actual Call Objection/Price Objection"
     ],
     "prediction_accuracy": "4/5 resolved calls this week (80%)"
+  },
+  "latest_scored": {
+    "id": "DC-2026-04-01-KRISTY-TOM",
+    "contact": "Kristy Richards",
+    "son": "Riley",
+    "rep": "Tom",
+    "date": "2026-04-01",
+    "outcome": "Follow Up Scheduled",
+    "overall": 6.2,
+    "scores": {
+      "s": 3,
+      "i": 3,
+      "e": 3,
+      "l": 3,
+      "opening": 4,
+      "oh": 3
+    },
+    "hs_call_id": "107330132661",
+    "key_moment": "Tom called Riley 'Samuel' mid-pitch (Lorissa Garcia carryover from prior day). Kristy also gave past-failure setup: 'fought for years, lasted 6 months' — Harry's gold standard question never used.",
+    "drill": "PAST FAILURE DRILL + PREP RITUAL: Write son's name before every call. When past support failure mentioned — use Harry's question.",
+    "ai_predicted_outcome": "Follow Up Scheduled",
+    "true_outcome": "Booked Call (OPEN — Easter follow-up risk)",
+    "next_step_risk": "No booked time. Easter break. Tom said 'you've got my number.' Lead at cold risk by Tue Apr 7.",
+    "prediction_match": null,
+    "pending": true
   }
 }
