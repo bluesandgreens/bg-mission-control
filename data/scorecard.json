@@ -1,27 +1,66 @@
 {
-  "date": "2026-04-02",
-  "label": "Thursday",
-  "wins": [
-    "Parent Call Dashboard shipped - 16 families prioritised, live at bg-mission-control/parent-calls/",
-    "Smart Lead Router restored - 274 Harry-owned leads now routing to active reps",
-    "DC Activity Monitor live - alerts Harry if no rep has called in 4+ hours",
-    "11 broken crons fixed pre-8am (channel errors, timeouts, delivery conflicts)",
-    "Mentor pipeline sync bug fixed - 205 records now syncing cleanly (was 5/205)",
-    "B&G Operating Bible built in Notion - 7 stages, 8 layers, 3 databases",
-    "Weekly DC Coaching Pack shipped - Rye gets drill rotation, Harry gets exec summary"
-  ],
-  "misses": [
-    "Kristy Richards transcript still missing from HubSpot (11h+) - needs manual pull",
-    "Circle pilot SQL not run yet - Harry needs to execute in Supabase dashboard",
-    "3 Circle decisions still open (date/facilitator/pricing)",
-    "Mentor sync null error for 4 contacts - column needs nullable fix"
-  ],
-  "carry_forwards": [
-    "Circle pilot invite email - Harry approves, then send to 19 YES families",
-    "3 Circle decisions: date (rec Apr 15), facilitator (Harry or Rye?), pricing (free or $500?)",
-    "Kristy Richards transcript - manual HubSpot pull",
-    "Mentor sync null fix (4 contacts: Kate Alchin, Chayse O'Shea, Tristan Lenaz, Joshua Harding)",
-    "Tom -> Christy callback at 1pm today"
-  ],
-  "one_thing_tomorrow": "Circle pilot decisions - lock in date, facilitator & pricing. 19 parents already said yes. School holidays window is April 14-18."
+  "last_updated": "2026-04-03T22:00:00+11:00",
+  "week_summary": {
+    "total_dcs_this_week": 6,
+    "total_closes_this_week": 2,
+    "week_close_rate": 33.3,
+    "confirmed_closes": [
+      "James McLennan (Tom)",
+      "Lorissa Garcia (Tom)"
+    ],
+    "call_objections": [
+      "Elisabeth Poole (Tom)",
+      "Kristy Richards (Tom)"
+    ],
+    "pending": [
+      "Emily Brady (Tom) \u2014 Tuesday Apr 7 critical re-anchor"
+    ],
+    "prediction_accuracy": "4/5 resolved = 80%",
+    "mismatches": [
+      {
+        "call": "Elisabeth Poole",
+        "predicted": "Follow Up Scheduled",
+        "actual": "Call Objection",
+        "cause": "Both-parents close miss"
+      },
+      {
+        "call": "Kristy Richards",
+        "predicted": "Follow Up Scheduled",
+        "actual": "Call Objection",
+        "cause": "No booked partner call before Easter"
+      }
+    ]
+  },
+  "team_scores": {
+    "tom": {
+      "avg": 6.57,
+      "calls": 7,
+      "close_rate": 42.9,
+      "trend": "declining_slight"
+    },
+    "anthony": {
+      "avg": 5.96,
+      "calls": 5,
+      "close_rate": 40.0,
+      "trend": "holding"
+    },
+    "rye": {
+      "avg": 5.17,
+      "calls": 3,
+      "close_rate": 0.0,
+      "trend": "declining"
+    },
+    "bailey": {
+      "avg": 3.37,
+      "calls": 3,
+      "close_rate": 33.3,
+      "trend": "flat"
+    }
+  },
+  "top_objection": "partner_coparent \u2014 7 instances, avg grade 2.6",
+  "flag_count": {
+    "p3_critical": 2,
+    "mismatches_this_week": 2,
+    "false_positives_total": 1
+  }
 }

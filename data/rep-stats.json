@@ -1,119 +1,54 @@
 {
-  "generated": "2026-04-02T22:00:00+11:00",
+  "last_updated": "2026-04-03T22:00:00+11:00",
+  "week_of": "2026-03-31",
   "reps": {
     "anthony": {
       "calls_scored": 5,
-      "status": "active",
-      "overall_avg": 5.96,
       "close_rate": 40.0,
-      "trend": "holding",
-      "improvement_area": "E (Emotional Labelling) \u2014 avg 2.2/5. Consistently uses generic labels. SECONDARY ALERT: OH Score has dropped from 4 \u2192 2 in last 2 calls (Sophie Cuzzy cave = 2, Beck Reside cave = 2). Both caved at the close without isolating. If this trend continues to call 6, OH becomes co-primary with E.",
-      "p3_flag": false,
+      "closes": 2,
+      "siel_avg": 5.96,
       "e_avg": 2.2,
       "i_avg": 3.0,
       "oh_avg": 3.2,
-      "s_avg": 4.2,
-      "l_avg": 2.6,
-      "rolling_10_overall": [
-        5.3,
-        6.7,
-        6.5,
-        5.6,
-        5.7
-      ]
+      "trend": "holding",
+      "p3_flag": false,
+      "improvement_area": "E (Emotional Labelling) \u2014 avg 2.2/5. Consistently uses generic labels. SECONDARY"
     },
     "rye": {
       "calls_scored": 3,
-      "status": "active_coaching",
-      "overall_avg": 5.17,
       "close_rate": 0.0,
-      "trend": "declining",
-      "improvement_area": "PRICE CARD + FEAR BOMB CYCLING (primary). Jo Kelly mismatch now closed \u2014 re-engage window expired. Next DC priorities: (1) Price card memorised \u2014 $2,700 / $450 fortnightly / $225 weekly / $900 monthly. No calculation ever. (2) Fear cycling \u2014 when mum reveals child pain, stop and cycle 2+ questions. (3) Execution of coached actions \u2014 Jo Kelly re-engage was explicitly coached and not executed. This is now a coaching accountability gap.",
-      "p3_flag": true,
+      "closes": 0,
+      "siel_avg": 5.17,
       "e_avg": 1.67,
       "i_avg": 2.0,
       "oh_avg": 2.67,
-      "s_avg": 3.33,
-      "l_avg": 3.0,
-      "rolling_10_overall": [
-        4.4,
-        6.8,
-        4.3
-      ]
+      "trend": "declining",
+      "p3_flag": true,
+      "improvement_area": "PRICE CARD + FEAR BOMB CYCLING (primary). Jo Kelly mismatch now closed \u2014 re-enga"
     },
     "bailey": {
       "calls_scored": 3,
-      "status": "active_commission",
-      "overall_avg": 3.37,
       "close_rate": 33.3,
-      "trend": "flat",
-      "improvement_area": "CRITICAL: I Score = 1.0, E Score = 1.0 \u2014 no emotional deepening in any scored call. FALSE POSITIVE on Jasmine Lund is now confirmed teaching case. Discovery/deepening fundamentals required before any close skill development.",
-      "p3_flag": true,
+      "closes": 1,
+      "siel_avg": 3.37,
       "e_avg": 1.0,
       "i_avg": 1.0,
       "oh_avg": 2.67,
-      "s_avg": 2.0,
-      "l_avg": 2.33,
-      "rolling_10_overall": [
-        3.7,
-        3.1,
-        3.3
-      ]
+      "trend": "flat",
+      "p3_flag": true,
+      "improvement_area": "CRITICAL: I Score = 1.0, E Score = 1.0 \u2014 no emotional deepening in any scored ca"
     },
     "tom": {
       "calls_scored": 7,
-      "status": "active",
-      "overall_avg": 6.49,
       "close_rate": 42.9,
-      "trend": "holding",
-      "improvement_area": "CALL PREP + PAST-FAILURE QUESTION + BOTH-PARENTS CLOSE. Kristy Richards (Apr 1): name error (Riley called 'Samuel') + Harry's past-failure question missed. Easter follow-up risk on lead. E avg 3.14 \u2014 holding.",
-      "p3_flag": false,
+      "closes": 3,
+      "siel_avg": 6.57,
       "e_avg": 3.14,
       "i_avg": 3.29,
       "oh_avg": 3.0,
-      "s_avg": 3.71,
-      "l_avg": 3.14,
-      "rolling_10_overall": [
-        7.5,
-        5.2,
-        7.1,
-        6.8,
-        5.6,
-        7.6,
-        6.2
-      ],
-      "last_5_scores": [
-        7.1,
-        6.8,
-        5.6,
-        7.6,
-        6.2
-      ],
-      "last_5_trend": "3 closes (James McLennan, Lorissa Garcia + Bec Richardson), 2 follow-ups (Kristy Richards, Sky Schramm). Emily Brady pending Tuesday.",
-      "weekly_focus": "Past-Failure Question + Call Prep Ritual + Both-Parents Close",
-      "latest_call": "Kristy Richards — 2026-04-01 — 6.2/10"
+      "trend": "declining_slight",
+      "p3_flag": false,
+      "improvement_area": "PARTNER CLOSE SEQUENCING + PAST-FAILURE QUESTION (primary this week). Both misma"
     }
-  },
-  "week_closes": {
-    "tom": {
-      "calls": 4,
-      "closes": 2,
-      "rate": "50%",
-      "names": [
-        "James McLennan",
-        "Lorissa Garcia"
-      ]
-    },
-    "team": {
-      "calls": 4,
-      "closes": 2,
-      "rate": "50%"
-    }
-  },
-  "mismatch_alerts": [
-    "Elisabeth Poole (Tom, Apr 1) \u2014 predicted Follow Up, actual Call Objection. Root: passive dad on call, Tom accepted deferral without engaging Jason directly."
-  ],
-  "pending_outcomes": [
-    "Emily Brady (Tom, Mar 31) \u2014 predicted Near Close, currently Booked Call. Tuesday follow-up call is critical."
-  ]
+  }
 }
