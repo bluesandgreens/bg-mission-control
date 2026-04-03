@@ -1,46 +1,46 @@
 {
-  "generated": "2026-04-03T07:36:00+11:00",
+  "generated": "2026-04-04T07:34:00+11:00",
   "items": [
     {
+      "type": "insight",
+      "emoji": "🔧",
+      "headline": "37 broken crons fixed yesterday. Infra is clean for the first time in weeks.",
+      "detail": "5 work queue sessions, 37 cron fixes. Root cause was hello@ OAuth token expiring - every script using it was silently hanging. All 28 scripts now on admin@. Channel conflicts, timeouts, path errors all resolved. Every automated system should fire clean today.",
+      "tag": "infrastructure"
+    },
+    {
       "type": "counter_intuitive",
-      "emoji": "📉",
-      "headline": "8 families gone in 48hrs. MRR down $5.4K to $41.6K.",
-      "detail": "60 active families, down from 68. 9 paused. Stripe shows 67.6% monthly churn but that likely includes test subs & payment failures. Still - 8 real families leaving in 2 days is a signal worth investigating. Parent Call Dashboard is live to help catch the next wave early.",
-      "tag": "retention"
+      "emoji": "📈",
+      "headline": "MRR bounced back to $44.8K - up $3.2K from Thursday's $41.6K low.",
+      "detail": "63 collecting families, up from 60 two days ago. 3 families came back or activated. The dip was real but the recovery is fast. Stripe balance at $24.5K ($14.3K available, $10.1K pending). Revenue at risk down to $714 from $830.",
+      "tag": "revenue"
     },
     {
       "type": "leverage",
-      "emoji": "🔁",
-      "headline": "No-show engine recovering dead leads - 78 contacts, $27K upside, zero ad spend.",
-      "detail": "79 no-shows found in HubSpot. Zero previously recovered. 56 were Elliot's old leads. Touch 1 sent to 78 contacts. Touch 2 fires today. At 20% rebook & 63% close = ~10 new families. This is free pipeline.",
-      "tag": "pipeline"
+      "emoji": "🎯",
+      "headline": "Tom is your DC engine right now - 3 closes, 42.9% rate, highest SIEL on the team.",
+      "detail": "Tom scored 6.57 avg across 7 calls. Emily Brady follow-up on Tuesday is the next live deal. Anthony holding at 40% but E score (2.2) is the gap. Rye at 0% close rate with declining trend - coaching pack shipped but needs to land this week.",
+      "tag": "sales"
     },
     {
       "type": "big_idea",
-      "emoji": "🟢",
-      "headline": "Lead-to-booked hit 69% MTD. Smart Lead Router is working.",
-      "detail": "13 leads, 9 booked (69.2%) since router went live. Last week was 11% (11 of 100). Anthony & Elliot now get priority leads instead of everything dumping on Tom. Early but the signal is strong.",
-      "tag": "dc-constraint"
-    },
-    {
-      "type": "insight",
-      "emoji": "🧪",
-      "headline": "Tom's trending up - 50% close rate, callback booked for 1pm today.",
-      "detail": "Tom scored 6.63 avg across 6 calls this week. 2 closes (James McLennan, Lorissa Garcia). Christy Richards said 'call me at 1pm tomorrow' - that's today. Emily Brady follow-up Tuesday is also live. His weak spot: both-parents close & analytical parent deepening.",
-      "tag": "sales-quality"
+      "emoji": "💡",
+      "headline": "Program Milestone Engine is live - W4/W8/W12 check-ins now automated.",
+      "detail": "11 families flagged in W4 window yesterday. Norri gets call lists with openers, questions, green/red flags & renewal scripts. Harry gets exec view. 6 new HubSpot properties tracking check-in completion. This is the retention infrastructure that didn't exist before.",
+      "tag": "retention"
     },
     {
       "type": "research",
       "emoji": "⚠️",
-      "headline": "Team-wide Emotion score is the gap. All 3 reps weakest on E.",
-      "detail": "Anthony E=2.2, Rye E=1.67, Tom E=3.17. Weekly coaching pack shipped to Rye - drills: Co-Score, Hold Space, Fear Anchor. Rye's own calls declining (5.17 avg, 0% close). This week's coaching session needs to land.",
+      "headline": "Partner/co-parent objection is killing deals - 7 instances this week, avg grade 2.6/5.",
+      "detail": "Both Tom & Anthony are losing deals on the 'need to check with my partner' objection. Elisabeth Poole & Kristy Richards both went to Call Objection instead of Follow Up. The partner close sequence isn't landing. This is coachable but needs a specific drill.",
       "tag": "sales-quality"
     }
   ],
   "leo_actions": [
-    "No-show recovery Touch 2 firing today for 78 contacts - zero cost pipeline",
-    "Smart Lead Router distributing at 7:30am - Anthony/Elliot priority, Tom overflow",
-    "Weekly DC Coaching Pack delivered to Rye - team Emotion drill focus",
-    "Parent Call Dashboard live at 8am - 16 families flagged for calls today"
+    "Cron infrastructure fully rebuilt - all 37 fixes live, monitoring for clean runs today",
+    "Program Milestone Engine running daily 8:30am - Norri & Harry getting W4/W8/W12 call lists",
+    "Weekly Business Digest shipping Fridays 5pm - first one went out yesterday with real data",
+    "DC daily summary script live - Harry & Rye get automated rep reports at 4pm"
   ]
 }

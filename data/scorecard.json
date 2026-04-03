@@ -1,66 +1,23 @@
 {
-  "last_updated": "2026-04-03T22:00:00+11:00",
-  "week_summary": {
-    "total_dcs_this_week": 6,
-    "total_closes_this_week": 2,
-    "week_close_rate": 33.3,
-    "confirmed_closes": [
-      "James McLennan (Tom)",
-      "Lorissa Garcia (Tom)"
-    ],
-    "call_objections": [
-      "Elisabeth Poole (Tom)",
-      "Kristy Richards (Tom)"
-    ],
-    "pending": [
-      "Emily Brady (Tom) \u2014 Tuesday Apr 7 critical re-anchor"
-    ],
-    "prediction_accuracy": "4/5 resolved = 80%",
-    "mismatches": [
-      {
-        "call": "Elisabeth Poole",
-        "predicted": "Follow Up Scheduled",
-        "actual": "Call Objection",
-        "cause": "Both-parents close miss"
-      },
-      {
-        "call": "Kristy Richards",
-        "predicted": "Follow Up Scheduled",
-        "actual": "Call Objection",
-        "cause": "No booked partner call before Easter"
-      }
-    ]
-  },
-  "team_scores": {
-    "tom": {
-      "avg": 6.57,
-      "calls": 7,
-      "close_rate": 42.9,
-      "trend": "declining_slight"
-    },
-    "anthony": {
-      "avg": 5.96,
-      "calls": 5,
-      "close_rate": 40.0,
-      "trend": "holding"
-    },
-    "rye": {
-      "avg": 5.17,
-      "calls": 3,
-      "close_rate": 0.0,
-      "trend": "declining"
-    },
-    "bailey": {
-      "avg": 3.37,
-      "calls": 3,
-      "close_rate": 33.3,
-      "trend": "flat"
-    }
-  },
-  "top_objection": "partner_coparent \u2014 7 instances, avg grade 2.6",
-  "flag_count": {
-    "p3_critical": 2,
-    "mismatches_this_week": 2,
-    "false_positives_total": 1
-  }
+  "date": "2026-04-04",
+  "label": "Saturday",
+  "wins": [
+    "37 broken crons fixed across 5 sessions - entire automated infrastructure rebuilt",
+    "hello@ root cause found & fixed system-wide (28 scripts migrated to admin@)",
+    "MRR recovered to $44.8K from $41.6K low",
+    "Program Milestone Engine shipped & live (W4/W8/W12 retention check-ins)",
+    "Weekly Business Digest v1 shipped to Harry",
+    "Mentor Pipeline Sync running clean - 207 records, zero errors"
+  ],
+  "misses": [
+    "hello@ OAuth still expired - Harry needs to re-auth when convenient",
+    "Rye at 0% close rate with declining trend - coaching pack sent but no feedback yet",
+    "Bailey P3 flagged - I=1.0, E=1.0 across all scored calls"
+  ],
+  "carry_forwards": [
+    "Emily Brady follow-up Tuesday Apr 7 - Tom's re-anchor call",
+    "Circle pilot decisions still pending - date, facilitator, pricing",
+    "W2 mentor outreach batch (100 contacts) fires Apr 8"
+  ],
+  "one_thing_tomorrow": "Saturday rest day - but if Harry's working: review Program Milestone Engine output & decide on Circle pilot date"
 }

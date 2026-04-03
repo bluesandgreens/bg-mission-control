@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-04T06:40:04.007199",
+  "generated": "2026-04-04T07:35:40.433201",
   "active_families": 63,
   "active_total": 72,
   "paused": 9,
@@ -10,9 +10,9 @@
   "balance_total": 24462.62,
   "revenue_at_risk": 714.0,
   "failed_past_due": 4,
-  "meta_spend_mtd": 253.36,
+  "meta_spend_mtd": 254.67,
   "booked_calls_mtd": 5,
-  "cpbc_mtd": 50.67,
+  "cpbc_mtd": 50.93,
   "xero_receivable": 15855.03,
   "xero_payable": 23885.56,
   "ndis_total": 2069.0,
@@ -24,9 +24,9 @@
     "leads_mtd": 44,
     "booked_mtd": 11,
     "rate_mtd": 25.0,
-    "leads_prev_week": 165,
+    "leads_prev_week": 164,
     "booked_prev_week": 18,
-    "rate_prev_week": 10.9,
+    "rate_prev_week": 11.0,
     "trend": "up"
   },
   "hormozi": {
@@ -34,9 +34,9 @@
     "steady_state_families": 100,
     "current_collecting": 63,
     "avg_rev_per_sub": 711.49,
-    "cac": 50.67,
+    "cac": 50.93,
     "ltv_current": 2041.0,
-    "roic_multiple": 40.3,
+    "roic_multiple": 40.1,
     "payback_days": 2.0,
     "retention_lever_1mo_annual": 537886.0,
     "churn_scenarios": [
