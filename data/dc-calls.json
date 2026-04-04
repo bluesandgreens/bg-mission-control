@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-03T12:42:00+11:00",
-  "total_calls_analysed": 23,
+  "last_updated": "2026-04-04T22:00:00+11:00",
+  "total_calls_analysed": 28,
   "weekly_reset_date": "2026-03-31",
   "categories": {
     "price_affordability": {
@@ -19,24 +19,24 @@
   "weekly_top_3": [
     {
       "rank": 1,
-      "category": "price_affordability",
-      "count": 5,
-      "avg_handling_grade": 1.8,
-      "note": "Mar 29 CONFIRMED: All three week closes (Judith Lacey, Leanne Black, Bec Richardson) had confident price delivery. All three misses (Sophie Cuzzy, Beck Reside, Bianca JESS) had hesitant, absent, or caved price delivery. Price confidence = close correlation is now empirically supported across 5 confirmed outcomes this week. Price card memorisation is non-negotiable."
+      "category": "partner_coparent",
+      "count": 7,
+      "avg_handling_grade": 2.6,
+      "note": "Apr 4 FINAL: Two Call Objection outcomes this week (Elisabeth Poole + Kristy Richards) both trace to partner deferral not actioned on-call. Team's #1 close leak. Fix: address present-but-silent dad before mum defers; absent partner \u2192 isolate \u2192 conditional yes \u2192 book 3-way call same conversation."
     },
     {
       "rank": 2,
-      "category": "partner_coparent",
-      "count": 3,
-      "avg_handling_grade": 3.0,
-      "note": "Apr 1 update: Tom's Elisabeth Poole adds a new pattern \u2014 the PASSIVE PARTNER (dad on the call, not engaged). Different from absent partner. This week: 4 partner/think-it-over objections. 0 uses of $111 de-risk frame. Anthony grade 1-2 on 3 calls. Tom grade 1 on first attempt. This is the most consistently mishandled close sequence on the team."
+      "category": "price_affordability",
+      "count": 10,
+      "avg_handling_grade": 2.0,
+      "note": "Apr 4: Rebecca Drury Lucky Close (Deposit Paid despite price objection, no full isolation by rep) added. Tom's price isolation technique is clean but follow-through on partner side is weak. Lorissa Garcia: paid on-call cleanly."
     },
     {
       "rank": 3,
       "category": "son_buyin",
-      "count": 2,
-      "avg_handling_grade": 4.0,
-      "note": "Best-handled category. Tom's dentist metaphor (Bec Richardson, grade 5) = Deposit Paid confirmed. Pre-emptive handling absorbs the objection before it becomes a blocker. This is gold standard that all reps should study."
+      "count": 6,
+      "avg_handling_grade": 4.3,
+      "note": "STRENGTH. Tom's dentist metaphor reflexive across all 6 calls. Pre-emptive handling. Grade 4-5 across the board. Anthony and Rye need this in their toolkit."
     }
   ],
   "new_patterns": [
@@ -230,10 +230,10 @@
       "oh": 3
     },
     "hs_call_id": "107330132661",
-    "key_moment": "Tom called Riley 'Samuel' mid-pitch (Lorissa Garcia carryover from prior day). Kristy also gave past-failure setup: 'fought for years, lasted 6 months' — Harry's gold standard question never used.",
-    "drill": "PAST FAILURE DRILL + PREP RITUAL: Write son's name before every call. When past support failure mentioned — use Harry's question.",
+    "key_moment": "Tom called Riley 'Samuel' mid-pitch (Lorissa Garcia carryover from prior day). Kristy also gave past-failure setup: 'fought for years, lasted 6 months' \u2014 Harry's gold standard question never used.",
+    "drill": "PAST FAILURE DRILL + PREP RITUAL: Write son's name before every call. When past support failure mentioned \u2014 use Harry's question.",
     "ai_predicted_outcome": "Follow Up Scheduled",
-    "true_outcome": "Booked Call (OPEN — Easter follow-up risk)",
+    "true_outcome": "Booked Call (OPEN \u2014 Easter follow-up risk)",
     "next_step_risk": "No booked time. Easter break. Tom said 'you've got my number.' Lead at cold risk by Tue Apr 7.",
     "prediction_match": null,
     "pending": true

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-03T22:00:00+11:00",
+  "last_updated": "2026-04-04T22:00:00+11:00",
   "week_of": "2026-03-31",
   "reps": {
     "anthony": {
@@ -12,7 +12,10 @@
       "oh_avg": 3.2,
       "trend": "holding",
       "p3_flag": false,
-      "improvement_area": "E (Emotional Labelling) \u2014 avg 2.2/5. Consistently uses generic labels. SECONDARY"
+      "improvement_area": "E (Emotional Labelling) \u2014 avg 2.2/5. Consistently uses generic labels. SECONDARY",
+      "this_week_calls": 0,
+      "this_week_closes": 0,
+      "close_rate_this_week": "0/0 (no calls)"
     },
     "rye": {
       "calls_scored": 3,
@@ -24,7 +27,10 @@
       "oh_avg": 2.67,
       "trend": "declining",
       "p3_flag": true,
-      "improvement_area": "PRICE CARD + FEAR BOMB CYCLING (primary). Jo Kelly mismatch now closed \u2014 re-enga"
+      "improvement_area": "PRICE CARD + FEAR BOMB CYCLING (primary). Jo Kelly mismatch now closed \u2014 re-enga",
+      "this_week_calls": 0,
+      "this_week_closes": 0,
+      "close_rate_this_week": "0/0 (no calls)"
     },
     "bailey": {
       "calls_scored": 3,
@@ -48,7 +54,15 @@
       "oh_avg": 3.0,
       "trend": "declining_slight",
       "p3_flag": false,
-      "improvement_area": "PARTNER CLOSE SEQUENCING + PAST-FAILURE QUESTION (primary this week). Both misma"
+      "improvement_area": "Partner Close Sequencing",
+      "this_week_calls": 6,
+      "this_week_closes": 3,
+      "close_rate_this_week": "3/6 (50%)",
+      "avg_score_this_week": 6.42,
+      "pending": [
+        "Emily Brady (Tuesday)",
+        "Sky Schramm (post-Easter)"
+      ]
     }
   }
 }
