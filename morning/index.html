@@ -2,981 +2,457 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Blues & Greens - Morning Mission Control</title>
-<meta name="theme-color" content="#104791">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>☀️ Morning Brief — Blues &amp; Greens</title>
 <style>
-:root{--navy:#104791;--deep-navy:#0A2E5C;--gold:#C8A951;--green:#386217;--sage:#E8EFE2;--cream:#FBF8F3;--dark:#0A0E14;--dark2:#101520;--red:#E05252;--amber:#E8A030;--green-bright:#4CAF50;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);min-height:100vh;-webkit-font-smoothing:antialiased;}
-::-webkit-scrollbar{width:6px;}
-::-webkit-scrollbar-track{background:transparent;}
-::-webkit-scrollbar-thumb{background:#2a3040;border-radius:3px;}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; padding: 20px 16px 40px; }
+  .container { max-width: 900px; margin: 0 auto; }
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(10,14,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,169,81,0.3);gap:8px;}
-.nav-left{display:flex;align-items:center;gap:10px;}
-.nav-logo{font-family:'Archivo Black',sans-serif;font-size:18px;color:var(--navy);}
-.nav-logo a{color:var(--navy);text-decoration:none;}
-.nav-title{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
-.nav-right{display:flex;align-items:center;gap:12px;}
-.nav-clock{font-size:12px;color:rgba(251,248,243,0.4);font-variant-numeric:tabular-nums;}
+  /* Header */
+  .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 10px; }
+  .header-left h1 { font-size: 22px; font-weight: 700; }
+  .header-left .tagline { font-size: 12px; color: #64748b; margin-top: 3px; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+  .date-badge { font-size: 12px; color: #94a3b8; background: #1e293b; border-radius: 8px; padding: 5px 12px; font-weight: 500; }
+  .refresh-btn { background: #1e40af; color: white; border: none; border-radius: 8px; padding: 7px 14px; font-size: 12px; cursor: pointer; font-weight: 600; }
+  .refresh-btn:hover { background: #1d4ed8; }
 
-/* TAB TOGGLE */
-.view-toggle{display:flex;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);}
-.view-btn{padding:5px 12px;font-size:11px;font-weight:600;cursor:pointer;border:none;background:none;color:rgba(251,248,243,0.5);transition:all 0.2s;white-space:nowrap;}
-.view-btn.active{background:var(--gold);color:var(--dark);}
+  /* Sections */
+  .section { margin-bottom: 28px; }
+  .section-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #475569; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(148,163,184,0.15); }
 
-/* MAIN */
-.main{max-width:860px;margin:0 auto;padding:16px 16px 100px;}
+  /* Hero metric grid */
+  .hero-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px; }
+  .hero-card { background: #1e293b; border: 1px solid rgba(148,163,184,0.1); border-radius: 12px; padding: 14px 16px; }
+  .hero-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; margin-bottom: 4px; font-weight: 600; }
+  .hero-card .value { font-size: 28px; font-weight: 700; line-height: 1.1; }
+  .hero-card .sub { font-size: 11px; color: #64748b; margin-top: 4px; }
+  .hero-card .trend-up { color: #4ade80; }
+  .hero-card .trend-down { color: #f87171; }
+  .hero-card .trend-flat { color: #94a3b8; }
 
-/* PULSE */
-.pulse-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
-.pulse-card{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:14px 12px;text-align:center;transition:border-color 0.2s;}
-.pulse-card:hover{border-color:rgba(200,169,81,0.25);}
-.pulse-card.highlight{border-color:rgba(200,169,81,0.3);}
-.pulse-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
-.pulse-val{font-family:'Archivo Black',sans-serif;font-size:22px;line-height:1.2;}
-.pulse-trend{font-size:11px;margin-top:2px;}
-.pulse-sub{font-size:9px;color:rgba(251,248,243,0.3);margin-top:2px;}
-.trend-up{color:var(--green-bright);}
-.trend-down{color:var(--red);}
-.trend-flat{color:rgba(251,248,243,0.4);}
+  /* Secondary metric grid */
+  .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .metric-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(148,163,184,0.08); border-radius: 10px; padding: 10px 12px; }
+  .metric-card .label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #475569; margin-bottom: 3px; font-weight: 600; }
+  .metric-card .value { font-size: 18px; font-weight: 700; color: #e2e8f0; }
+  .metric-card .sub { font-size: 10px; color: #475569; margin-top: 2px; }
 
-.pulse-summary{font-size:12px;color:rgba(251,248,243,0.5);text-align:center;padding:8px 0 20px;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:20px;}
-.pulse-summary strong{color:var(--cream);}
+  /* Scorecard */
+  .scorecard-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .scorecard-col { background: #1e293b; border: 1px solid rgba(148,163,184,0.1); border-radius: 10px; padding: 12px; }
+  .scorecard-col .col-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .wins .col-title { color: #4ade80; }
+  .misses .col-title { color: #f87171; }
+  .carry .col-title { color: #fbbf24; }
+  .scorecard-col ul { list-style: none; }
+  .scorecard-col li { font-size: 12px; color: #cbd5e1; padding: 4px 0; border-bottom: 1px solid rgba(148,163,184,0.07); line-height: 1.4; }
+  .scorecard-col li:last-child { border-bottom: none; }
+  .scorecard-col li::before { margin-right: 6px; }
+  .wins li::before { content: "✓"; color: #4ade80; }
+  .misses li::before { content: "✕"; color: #f87171; }
+  .carry li::before { content: "→"; color: #fbbf24; }
 
-/* SECTIONS */
-.section{margin-bottom:12px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);background:rgba(16,21,32,0.6);}
-.section-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;user-select:none;transition:background 0.15s;}
-.section-head:hover{background:rgba(255,255,255,0.02);}
-.section-head-left{display:flex;align-items:center;gap:10px;}
-.section-icon{font-size:16px;}
-.section-title{font-family:'Archivo Black',sans-serif;font-size:13px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;}
-.section-preview{font-size:11px;color:rgba(251,248,243,0.4);margin-left:8px;}
-.section-chevron{font-size:12px;color:rgba(251,248,243,0.3);transition:transform 0.3s ease;}
-.section-chevron.open{transform:rotate(180deg);}
-.section-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease;}
-.section-body.open{max-height:5000px;}
-.section-content{padding:0 16px 16px;}
+  /* Leo's Lab */
+  .lab-item { background: #1e293b; border: 1px solid rgba(148,163,184,0.1); border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; transition: border-color 0.15s; }
+  .lab-item:hover { border-color: rgba(148,163,184,0.25); }
+  .lab-item.expanded { border-color: rgba(59,130,246,0.4); }
+  .lab-header { display: flex; align-items: flex-start; gap: 10px; }
+  .lab-emoji { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+  .lab-content { flex: 1; }
+  .lab-headline { font-size: 13px; font-weight: 600; color: #e2e8f0; line-height: 1.4; }
+  .lab-tag { display: inline-block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 7px; border-radius: 10px; margin-top: 5px; background: rgba(59,130,246,0.15); color: #93c5fd; }
+  .lab-tag.infrastructure { background: rgba(168,85,247,0.15); color: #d8b4fe; }
+  .lab-tag.revenue { background: rgba(34,197,94,0.15); color: #86efac; }
+  .lab-tag.sales { background: rgba(249,115,22,0.15); color: #fed7aa; }
+  .lab-tag.retention { background: rgba(234,179,8,0.15); color: #fef08a; }
+  .lab-tag.sales-quality { background: rgba(239,68,68,0.15); color: #fca5a5; }
+  .lab-detail { display: none; margin-top: 10px; font-size: 13px; color: #94a3b8; line-height: 1.6; padding-top: 10px; border-top: 1px solid rgba(148,163,184,0.1); }
+  .lab-item.expanded .lab-detail { display: block; }
+  .lab-chevron { font-size: 12px; color: #475569; flex-shrink: 0; transition: transform 0.15s; margin-top: 2px; }
+  .lab-item.expanded .lab-chevron { transform: rotate(90deg); }
 
-/* LEO'S LAB special */
-.section.leo-lab{background:linear-gradient(135deg,rgba(200,169,81,0.06),rgba(16,21,32,0.8));border-color:rgba(200,169,81,0.15);}
-.leo-greeting{font-size:18px;color:var(--cream);margin-bottom:16px;font-weight:300;}
-.leo-greeting strong{font-weight:700;color:var(--gold);}
-.leo-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px 16px;margin-bottom:8px;cursor:pointer;transition:all 0.2s;}
-.leo-item:hover{border-color:rgba(200,169,81,0.2);background:rgba(255,255,255,0.05);}
-.leo-item-num{font-family:'Archivo Black',sans-serif;font-size:11px;color:var(--gold);margin-bottom:6px;}
-.leo-item-text{font-size:13px;color:rgba(251,248,243,0.7);line-height:1.6;}
-.leo-item-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);font-size:12px;color:rgba(251,248,243,0.5);line-height:1.5;}
-.leo-item-detail.show{display:block;}
+  /* One Thing */
+  .one-thing { background: linear-gradient(135deg, #1e3a5f, #1e293b); border: 1px solid rgba(59,130,246,0.3); border-radius: 12px; padding: 16px 20px; text-align: center; }
+  .one-thing .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #3b82f6; font-weight: 700; margin-bottom: 8px; }
+  .one-thing .text { font-size: 15px; font-weight: 600; color: #e2e8f0; line-height: 1.5; }
 
-/* METRIC ROWS */
-.metric-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px;}
-.metric-row.triple{grid-template-columns:repeat(3,1fr);}
-.mini-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:12px;}
-.mini-lbl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(251,248,243,0.4);margin-bottom:4px;}
-.mini-val{font-family:'Archivo Black',sans-serif;font-size:18px;}
-.mini-sub{font-size:10px;color:rgba(251,248,243,0.3);margin-top:2px;}
+  /* DC Reps */
+  .rep-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .rep-card { background: #1e293b; border: 1px solid rgba(148,163,184,0.1); border-radius: 10px; padding: 12px 14px; }
+  .rep-card.p3-flag { border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.05); }
+  .rep-name { font-size: 13px; font-weight: 700; color: #e2e8f0; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  .rep-name .flag { font-size: 11px; background: rgba(239,68,68,0.2); color: #fca5a5; padding: 2px 6px; border-radius: 6px; font-weight: 600; }
+  .rep-stats { display: flex; gap: 12px; margin-bottom: 6px; }
+  .rep-stat { text-align: center; }
+  .rep-stat .val { font-size: 17px; font-weight: 700; }
+  .rep-stat .lbl { font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; color: #475569; }
+  .rep-close-rate .val { color: #4ade80; }
+  .rep-siel .val { color: #93c5fd; }
+  .rep-trend { font-size: 10px; color: #64748b; margin-top: 4px; }
+  .rep-trend.declining { color: #f87171; }
+  .rep-trend.holding { color: #fbbf24; }
+  .rep-trend.up { color: #4ade80; }
+  .rep-improvement { font-size: 11px; color: #475569; margin-top: 6px; line-height: 1.4; }
 
-/* REP CARDS */
-.rep-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:border-color 0.2s;}
-.rep-card:hover{border-color:rgba(200,169,81,0.25);}
-.rep-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
-.rep-name{font-size:14px;font-weight:700;}
-.rep-status{font-size:9px;font-weight:700;padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.5px;}
-.rep-status.active{background:rgba(76,175,80,0.2);color:var(--green-bright);}
-.rep-status.coaching{background:rgba(232,160,48,0.2);color:var(--amber);}
-.rep-status.exited{background:rgba(255,255,255,0.06);color:rgba(251,248,243,0.4);}
-.rep-status.commission{background:rgba(224,82,82,0.2);color:var(--red);}
-.rep-stats{display:flex;gap:16px;font-size:11px;color:rgba(251,248,243,0.5);}
-.rep-stats span{display:flex;align-items:center;gap:3px;}
-.rep-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);font-size:12px;color:rgba(251,248,243,0.5);line-height:1.5;}
-.rep-detail.show{display:block;}
+  /* Dashboard links */
+  .dash-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .dash-link { display: flex; align-items: center; gap: 10px; background: #1e293b; border: 1px solid rgba(148,163,184,0.1); border-radius: 10px; padding: 12px 14px; text-decoration: none; color: #e2e8f0; transition: all 0.15s; }
+  .dash-link:hover { border-color: rgba(59,130,246,0.4); background: rgba(30,41,59,0.8); transform: translateY(-1px); }
+  .dash-link .icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
+  .dash-link .info {}
+  .dash-link .name { font-size: 13px; font-weight: 600; }
+  .dash-link .desc { font-size: 11px; color: #64748b; margin-top: 2px; }
+  .dash-link .arrow { margin-left: auto; font-size: 14px; color: #475569; }
 
-/* FLAGS */
-.flag-card{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;margin-bottom:6px;font-size:12px;line-height:1.4;}
-.flag-red{background:rgba(224,82,82,0.08);border:1px solid rgba(224,82,82,0.15);}
-.flag-amber{background:rgba(232,160,48,0.08);border:1px solid rgba(232,160,48,0.15);}
-.flag-icon{font-size:14px;flex-shrink:0;padding-top:1px;}
+  /* Revenue row */
+  .revenue-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 
-/* OBJECTION ROW */
-.obj-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;}
-.obj-row:last-child{border-bottom:none;}
-.obj-rank{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);min-width:24px;}
-.obj-cat{font-weight:600;flex:1;}
-.obj-count{color:rgba(251,248,243,0.4);}
-.obj-grade{font-weight:700;padding:2px 8px;border-radius:6px;font-size:10px;}
+  /* Alert banner */
+  .alert-banner { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); border-radius: 10px; padding: 10px 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .alert-banner .icon { font-size: 18px; flex-shrink: 0; }
+  .alert-banner .text { font-size: 13px; color: #fca5a5; font-weight: 500; }
 
-/* CASHFLOW */
-.cf-day{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;cursor:pointer;transition:background 0.15s;border-radius:6px;}
-.cf-day:hover{background:rgba(255,255,255,0.02);}
-.cf-day:last-child{border-bottom:none;}
-.cf-day-row{display:flex;align-items:center;justify-content:space-between;padding:2px 4px;}
-.cf-date{font-weight:600;min-width:100px;}
-.cf-charges{color:rgba(251,248,243,0.4);}
-.cf-amount{font-family:'Archivo Black',sans-serif;color:var(--gold);}
-.cf-day-detail{display:none;padding:8px 8px 4px;margin-top:4px;background:rgba(255,255,255,0.02);border-radius:8px;}
-.cf-day-detail.show{display:block;}
-.cf-sub-row{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.03);font-size:11px;color:rgba(251,248,243,0.5);}
-.cf-sub-row:last-child{border-bottom:none;}
-.cf-sub-name{font-weight:600;color:rgba(251,248,243,0.7);}
-.cf-sub-amount{font-family:'Archivo Black',sans-serif;font-size:11px;color:var(--gold);}
-.cf-sub-links{display:flex;gap:8px;margin-top:2px;}
-.cf-sub-links a{font-size:9px;color:var(--navy);text-decoration:none;padding:2px 6px;border-radius:4px;background:rgba(16,71,145,0.15);}
-.cf-sub-links a:hover{background:rgba(16,71,145,0.3);}
+  /* Loading */
+  .loading { text-align: center; padding: 60px 20px; color: #475569; font-size: 13px; }
+  .loading .spinner { font-size: 24px; margin-bottom: 8px; animation: spin 1s linear infinite; display: block; }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
-/* CALL DETAIL EXPANDED */
-.call-expanded{display:none;margin-top:8px;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px;border:1px solid rgba(255,255,255,0.04);}
-.call-expanded.show{display:block;}
-.siel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px;}
-.siel-box{text-align:center;padding:8px 4px;border-radius:8px;background:rgba(255,255,255,0.04);}
-.siel-letter{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);}
-.siel-score{font-family:'Archivo Black',sans-serif;font-size:18px;margin-top:2px;}
-.siel-score.high{color:var(--green-bright);}
-.siel-score.mid{color:var(--amber);}
-.siel-score.low{color:var(--red);}
-.call-section-lbl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin:10px 0 4px;}
-.call-bullet{font-size:11px;color:rgba(251,248,243,0.5);padding:3px 0;line-height:1.4;}
+  /* Footer */
+  .footer { text-align: center; font-size: 11px; color: #334155; margin-top: 40px; }
+  .footer a { color: #475569; text-decoration: none; }
+  .footer a:hover { color: #94a3b8; }
 
-/* OBJECTION EXPANDED */
-.obj-row{display:flex;align-items:center;gap:8px;padding:8px 4px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;cursor:pointer;border-radius:6px;transition:background 0.15s;}
-.obj-row:hover{background:rgba(255,255,255,0.02);}
-.obj-expanded{display:none;padding:8px 12px;background:rgba(255,255,255,0.02);border-radius:8px;margin-bottom:4px;}
-.obj-expanded.show{display:block;}
+  /* Leo Actions */
+  .leo-actions { background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.08); border-radius: 10px; padding: 12px 14px; }
+  .leo-action-item { font-size: 12px; color: #64748b; padding: 4px 0; line-height: 1.4; display: flex; align-items: flex-start; gap: 8px; }
+  .leo-action-item::before { content: "💙"; font-size: 11px; flex-shrink: 0; margin-top: 1px; }
 
-/* LEO LAB DEEP DIVE */
-.leo-item-deep{display:none;margin-top:10px;padding:12px 14px;background:rgba(200,169,81,0.04);border:1px solid rgba(200,169,81,0.1);border-radius:8px;font-size:12px;color:rgba(251,248,243,0.6);line-height:1.6;}
-.leo-item-deep.show{display:block;}
-
-/* FUNNEL */
-.funnel{display:flex;align-items:center;justify-content:center;gap:4px;padding:16px 0;flex-wrap:wrap;}
-.funnel-stage{text-align:center;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);min-width:70px;}
-.funnel-val{font-family:'Archivo Black',sans-serif;font-size:16px;}
-.funnel-lbl{font-size:9px;color:rgba(251,248,243,0.4);text-transform:uppercase;letter-spacing:1px;}
-.funnel-arrow{font-size:14px;color:rgba(251,248,243,0.2);}
-.funnel-pct{font-size:10px;color:var(--gold);font-weight:700;}
-
-/* CONSTRAINT CARDS */
-.constraint-input-wrap{margin-bottom:20px;}
-.constraint-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:14px 16px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;}
-.constraint-input:focus{border-color:var(--gold);}
-.constraint-input::placeholder{color:rgba(251,248,243,0.3);}
-.constraint-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:24px;}
-.c-card{background:rgba(16,21,32,0.8);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px;transition:border-color 0.2s;}
-.c-card:hover{border-color:rgba(200,169,81,0.2);}
-.c-card-fn{font-family:'Archivo Black',sans-serif;font-size:12px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
-.c-card-owner{font-size:11px;color:rgba(251,248,243,0.4);margin-bottom:10px;}
-.c-card-constraint{font-size:12px;color:rgba(251,248,243,0.6);margin-bottom:8px;line-height:1.4;padding:8px 10px;background:rgba(224,82,82,0.06);border-radius:8px;border-left:3px solid var(--red);}
-.c-card-task{font-size:11px;color:rgba(251,248,243,0.5);line-height:1.4;}
-.c-card-task strong{color:var(--gold);}
-
-/* OWNERSHIP MAP */
-.own-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
-.own-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;}
-.own-status{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
-.own-status.green{background:var(--green-bright);}
-.own-status.amber{background:var(--amber);}
-.own-status.red{background:var(--red);}
-.own-info{flex:1;}
-.own-fn{font-size:12px;font-weight:700;}
-.own-name{font-size:10px;color:rgba(251,248,243,0.4);}
-.own-metric{font-size:11px;font-weight:600;color:var(--gold);}
-
-/* PLACEHOLDER */
-.placeholder{text-align:center;padding:24px 16px;color:rgba(251,248,243,0.3);font-size:13px;font-style:italic;}
-
-/* THOUGHT BUTTON */
-.thought-btn{position:fixed;bottom:24px;right:24px;z-index:90;width:52px;height:52px;border-radius:50%;background:var(--gold);border:none;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(200,169,81,0.3);transition:all 0.2s;}
-.thought-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(200,169,81,0.4);}
-
-/* THOUGHT MODAL */
-.thought-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:500;display:none;align-items:flex-end;justify-content:center;padding:16px;}
-.thought-overlay.open{display:flex;}
-.thought-box{background:#141924;border:1px solid rgba(200,169,81,0.25);border-radius:16px;padding:20px;width:100%;max-width:440px;margin-bottom:60px;animation:slideUp 0.2s ease;}
-@keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.thought-title{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--gold);margin-bottom:12px;}
-.thought-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;resize:none;min-height:60px;}
-.thought-input:focus{border-color:var(--gold);}
-.thought-input::placeholder{color:rgba(251,248,243,0.3);}
-.thought-hint{font-size:10px;color:rgba(251,248,243,0.25);margin-top:6px;}
-.thought-list{margin-top:12px;max-height:200px;overflow-y:auto;}
-.thought-item{font-size:12px;color:rgba(251,248,243,0.5);padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
-.thought-item:last-child{border-bottom:none;}
-.thought-item-time{font-size:10px;color:rgba(251,248,243,0.25);margin-bottom:2px;}
-
-/* VIEW PANELS */
-.view-panel{display:none;}
-.view-panel.active{display:block;}
-
-/* SECTION LABEL */
-.section-label{font-family:'Archivo Black',sans-serif;font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin:24px 0 12px;display:flex;align-items:center;gap:8px;}
-.section-label::after{content:'';flex:1;height:1px;background:rgba(200,169,81,0.15);}
-
-/* TOAST */
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--gold);color:var(--dark);padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:2000;transition:transform 0.3s ease;pointer-events:none;}
-.toast.show{transform:translateX(-50%) translateY(0);}
-
-/* ANIMATIONS */
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-.hidden{display:none!important;}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-  .pulse-grid{grid-template-columns:repeat(2,1fr);}
-  .constraint-grid{grid-template-columns:1fr;}
-  .own-grid{grid-template-columns:1fr;}
-  .metric-row{grid-template-columns:1fr;}
-  .metric-row.triple{grid-template-columns:repeat(2,1fr);}
-  .funnel{flex-direction:column;gap:2px;}
-  .funnel-arrow{transform:rotate(90deg);}
-  .section-preview{display:none;}
-}
-@media(min-width:601px) and (max-width:800px){
-  .pulse-grid{grid-template-columns:repeat(3,1fr);}
-}
+  @media (max-width: 600px) {
+    .hero-grid { grid-template-columns: 1fr 1fr; }
+    .metric-grid { grid-template-columns: repeat(2, 1fr); }
+    .scorecard-grid { grid-template-columns: 1fr; }
+    .rep-grid { grid-template-columns: 1fr; }
+    .dash-grid { grid-template-columns: 1fr; }
+    .revenue-row { grid-template-columns: repeat(2, 1fr); }
+    body { padding: 14px 12px 40px; }
+  }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-left">
-    <div class="nav-logo"><a href="../">B&G</a></div>
-    <div class="nav-title">Morning Brief</div>
-  </div>
-  <div class="nav-right">
-    <div class="view-toggle">
-      <button class="view-btn active" id="btn-dashboard" onclick="setView('dashboard')">Dashboard</button>
-      <button class="view-btn" id="btn-constraints" onclick="setView('constraints')">Constraints</button>
-    </div>
-    <div class="nav-clock" id="clock"></div>
-  </div>
-</nav>
-
-<!-- MAIN -->
-<div class="main">
-
-<!-- ===== DASHBOARD VIEW ===== -->
-<div class="view-panel active" id="view-dashboard">
-
-<!-- THE PULSE -->
-<div class="section-label" style="margin-top:8px;">The Pulse</div>
-<div class="pulse-grid" id="pulse-grid"></div>
-<div class="pulse-summary" id="pulse-summary"></div>
-
-<!-- SECTIONS -->
-<div id="sections-container"></div>
-
-</div><!-- /dashboard -->
-
-<!-- ===== CONSTRAINTS VIEW ===== -->
-<div class="view-panel" id="view-constraints">
-
-<div class="section-label" style="margin-top:8px;">What's On Your Mind?</div>
-<div class="constraint-input-wrap">
-  <input type="text" class="constraint-input" id="constraint-input" placeholder="What are you working on today?" />
-</div>
-
-<div class="section-label">Current Constraints by Function</div>
-<div class="constraint-grid" id="constraint-grid"></div>
-
-<div class="section-label">Ownership Map</div>
-<div class="own-grid" id="ownership-grid"></div>
-
-</div><!-- /constraints -->
-
-</div><!-- /main -->
-
-<!-- THOUGHT BUTTON -->
-<button class="thought-btn" onclick="toggleThought()" title="Quick capture">💭</button>
-
-<!-- THOUGHT MODAL -->
-<div class="thought-overlay" id="thought-overlay" onclick="closeThoughtOutside(event)">
-  <div class="thought-box">
-    <div class="thought-title">What's on your mind?</div>
-    <textarea class="thought-input" id="thought-input" placeholder="Type a thought, hit Enter..." rows="2"></textarea>
-    <div class="thought-hint">Press Enter to save. Shift+Enter for new line.</div>
-    <div class="thought-list" id="thought-list"></div>
+<div class="container" id="app">
+  <div class="loading">
+    <span class="spinner">⏳</span>
+    Loading morning brief...
   </div>
 </div>
-
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
 
 <script>
-// ─── DATA ───
-let D = {}; // dashboard-data
-let R = {}; // rep-stats
-let C = {}; // dc-calls
-let I = {}; // insights
-let CF = {}; // cashflow
-let ML = {}; // morning-lab
-let SC = {}; // scorecard
-let OW = {}; // ownership
+const BASE = '..';
+const DATA = BASE + '/data';
 
-const DATA_BASE = '../data/';
+function fmt(n, prefix='$', dash='—') {
+  if (n == null || n === '' || n === undefined) return dash;
+  const v = parseFloat(n);
+  if (isNaN(v)) return dash;
+  if (prefix === '$') {
+    if (v >= 1000) return '$' + Math.round(v).toLocaleString();
+    return '$' + v.toFixed(0);
+  }
+  return v.toLocaleString();
+}
 
-async function loadData() {
-  const [d, r, c, i, cf, ml, sc, ow] = await Promise.all([
-    fetch(DATA_BASE + 'dashboard-data.json').then(r => r.json()).catch(() => ({})),
-    fetch(DATA_BASE + 'rep-stats.json').then(r => r.json()).catch(() => ({})),
-    fetch(DATA_BASE + 'dc-calls.json').then(r => r.json()).catch(() => ({})),
-    fetch(DATA_BASE + 'insights.json').then(r => r.json()).catch(() => ({})),
-    fetch(DATA_BASE + 'cashflow-detail.json').then(r => r.json()).catch(() => ({})),
-    fetch(DATA_BASE + 'morning-lab.json').then(r => r.json()).catch(() => ({})),
-    fetch(DATA_BASE + 'scorecard.json').then(r => r.json()).catch(() => ({})),
-    fetch(DATA_BASE + 'ownership.json').then(r => r.json()).catch(() => ({})),
+function fmtPct(n, dash='—') {
+  if (n == null || n === '' || n === undefined) return dash;
+  return parseFloat(n).toFixed(1) + '%';
+}
+
+function trendClass(t) {
+  if (!t) return '';
+  const s = t.toLowerCase();
+  if (s.includes('up') || s.includes('increas')) return 'up';
+  if (s.includes('declin')) return 'declining';
+  return 'holding';
+}
+
+function escHtml(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function loadJSON(path) {
+  try {
+    const r = await fetch(path + '?t=' + Date.now());
+    if (!r.ok) return null;
+    return await r.json();
+  } catch(e) {
+    return null;
+  }
+}
+
+function formatDate(isoStr) {
+  if (!isoStr) return '';
+  try {
+    const d = new Date(isoStr);
+    return d.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  } catch(e) { return isoStr; }
+}
+
+function formatTime(isoStr) {
+  if (!isoStr) return '';
+  try {
+    const d = new Date(isoStr);
+    return d.toLocaleTimeString('en-AU', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'Australia/Melbourne' }) + ' AEST';
+  } catch(e) { return ''; }
+}
+
+async function render() {
+  const [dash, lab, scorecard, reps] = await Promise.all([
+    loadJSON(DATA + '/dashboard-data.json'),
+    loadJSON(DATA + '/morning-lab.json'),
+    loadJSON(DATA + '/scorecard.json'),
+    loadJSON(DATA + '/rep-stats.json'),
   ]);
-  D = d; R = r; C = c; I = i; CF = cf; ML = ml; SC = sc; OW = ow;
-  render();
-}
 
-// ─── HELPERS ───
-function fmt$(n) { return '$' + Number(n||0).toLocaleString('en-AU', {minimumFractionDigits:0, maximumFractionDigits:0}); }
-function fmtPct(n) { return Number(n||0).toFixed(1) + '%'; }
-function escHtml(s) { const d = document.createElement('div'); d.textContent = s||''; return d.innerHTML; }
+  const today = scorecard
+    ? new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Australia/Melbourne' })
+    : new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 
-// ─── RENDER ───
-function render() {
-  renderPulse();
-  renderSections();
-  renderConstraints();
-  renderOwnership();
-}
+  const genTime = dash ? formatTime(dash.generated) : '';
 
-function renderPulse() {
-  const grid = document.getElementById('pulse-grid');
-  const closeRate = I.summary ? I.summary.overall_close_rate : 0;
-  const cards = [
-    { lbl: 'MRR', val: fmt$(D.mrr), trend: 'up', trendTxt: 'Up this month', sub: D.active_families + ' collecting families' },
-    { lbl: 'Active Families', val: (D.active_families||0) + '/' + (D.active_total||0), trend: 'flat', trendTxt: (D.paused||0) + ' paused', sub: fmtPct(((D.active_families||0)/(D.active_total||1))*100) + ' active rate' },
-    { lbl: 'Booked Calls MTD', val: D.booked_calls_mtd||0, trend: 'up', trendTxt: '192 this month', sub: 'Meta + organic' },
-    { lbl: 'Close Rate', val: fmtPct(closeRate), trend: closeRate >= 40 ? 'up' : 'down', trendTxt: 'Rolling avg', sub: (I.summary ? I.summary.total_closes : 0) + ' closes / ' + (I.summary ? I.summary.total_scored : 0) + ' scored' },
-    { lbl: 'CAC', val: fmt$(D.cac_mtd), trend: D.cac_mtd < 150 ? 'up' : 'down', trendTxt: 'CPBC ' + fmt$(D.cpbc_mtd), sub: fmt$(D.meta_spend_mtd) + ' spend / ' + (D.closes_mtd||0) + ' closes' },
-    { lbl: 'Stripe Balance', val: fmt$(D.balance_total), trend: 'flat', trendTxt: fmt$(D.balance_available) + ' available', sub: fmt$(D.balance_pending) + ' pending' },
-  ];
-  grid.innerHTML = cards.map((c, i) => `
-    <div class="pulse-card${i===0?' highlight':''}">
-      <div class="pulse-lbl">${c.lbl}</div>
-      <div class="pulse-val">${c.val}</div>
-      <div class="pulse-trend trend-${c.trend}">${c.trend==='up'?'↑':c.trend==='down'?'↓':'→'} ${c.trendTxt}</div>
-      <div class="pulse-sub">${c.sub}</div>
-    </div>
-  `).join('');
-
-  // Summary line
-  const reps = R.reps || [];
-  const lowE = reps.filter(r => r.e_score_avg < 2.5).map(r => r.rep);
-  let summaryParts = [
-    `<strong>${fmt$(D.mrr)}</strong> MRR`,
-    `<strong>${D.failed_past_due||0}</strong> failed/past due`,
-    `<strong>${fmt$(D.revenue_at_risk)}</strong> revenue at risk`,
-  ];
-  if (lowE.length) summaryParts.push(`<strong>${lowE.join(' & ')}</strong> need E-score coaching`);
-  document.getElementById('pulse-summary').innerHTML = summaryParts.join(' · ');
-}
-
-function renderSections() {
-  const container = document.getElementById('sections-container');
-  const sections = [
-    { id:'pipeline', icon:'🔄', title:'Pipeline', preview: getPipelinePreview, render: renderPipeline },
-    { id:'dc-war', icon:'🎯', title:'DC War Room', preview: getDCPreview, render: renderDC },
-    { id:'revenue', icon:'💰', title:'Revenue & Retention', preview: getRevenuePreview, render: renderRevenue },
-    { id:'ads', icon:'📣', title:'Ads', preview: getAdsPreview, render: renderAds },
-    { id:'fe-pipeline', icon:'🏗️', title:'FE Pipeline', preview: () => 'Placeholder', render: renderFE },
-    { id:'today', icon:'📅', title:'Today', preview: () => getTodayDate(), render: renderToday },
-    { id:'leo-lab', icon:'🧪', title:"Leo's Lab", preview: () => '5 insights', render: renderLeo, defaultOpen: true, special: 'leo-lab' },
-    { id:'scorecard', icon:'📋', title:"Yesterday's Scorecard", preview: () => 'Review', render: renderScorecard },
-  ];
-
-  const savedStates = JSON.parse(localStorage.getItem('mc-section-states') || '{}');
-
-  container.innerHTML = sections.map(s => {
-    const isOpen = savedStates[s.id] !== undefined ? savedStates[s.id] : (s.defaultOpen || false);
-    return `
-      <div class="section${s.special ? ' '+s.special : ''}" id="section-${s.id}">
-        <div class="section-head" onclick="toggleSection('${s.id}')">
-          <div class="section-head-left">
-            <span class="section-icon">${s.icon}</span>
-            <span class="section-title">${s.title}</span>
-            <span class="section-preview" id="preview-${s.id}">${s.preview()}</span>
-          </div>
-          <span class="section-chevron${isOpen?' open':''}" id="chev-${s.id}">▼</span>
-        </div>
-        <div class="section-body${isOpen?' open':''}" id="body-${s.id}">
-          <div class="section-content" id="content-${s.id}"></div>
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  // Render content for each section
-  sections.forEach(s => s.render());
-}
-
-function toggleSection(id) {
-  const body = document.getElementById('body-' + id);
-  const chev = document.getElementById('chev-' + id);
-  const isOpen = body.classList.toggle('open');
-  chev.classList.toggle('open', isOpen);
-  const saved = JSON.parse(localStorage.getItem('mc-section-states') || '{}');
-  saved[id] = isOpen;
-  localStorage.setItem('mc-section-states', JSON.stringify(saved));
-}
-
-// ─── PIPELINE ───
-function getPipelinePreview() {
-  return `${D.booked_calls_mtd||0} booked MTD · ${D.active_families||0} active`;
-}
-function renderPipeline() {
-  const el = document.getElementById('content-pipeline');
-  el.innerHTML = `
-    <div class="metric-row triple">
-      <div class="mini-card">
-        <div class="mini-lbl">Booked Calls MTD</div>
-        <div class="mini-val">${D.booked_calls_mtd||0}</div>
-        <div class="mini-sub">Via Meta + organic</div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-lbl">Active Families</div>
-        <div class="mini-val">${D.active_families||0}</div>
-        <div class="mini-sub">${D.paused||0} paused</div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-lbl">4-Week Forecast</div>
-        <div class="mini-val">${fmt$(D.forecast_4wk)}</div>
-        <div class="mini-sub">Upcoming charges</div>
-      </div>
-    </div>
-    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Funnel</div>
-    <div class="funnel">
-      <div class="funnel-stage"><div class="funnel-val">${D.booked_calls_mtd||0}</div><div class="funnel-lbl">Leads</div></div>
-      <div><span class="funnel-arrow">→</span><div class="funnel-pct">${fmtPct(((I.summary?.total_scored||0)/(D.booked_calls_mtd||1))*100)}</div></div>
-      <div class="funnel-stage"><div class="funnel-val">${I.summary?.total_scored||0}</div><div class="funnel-lbl">DC Calls</div></div>
-      <div><span class="funnel-arrow">→</span><div class="funnel-pct">${fmtPct(I.summary?.overall_close_rate||0)}</div></div>
-      <div class="funnel-stage"><div class="funnel-val">${I.summary?.total_closes||0}</div><div class="funnel-lbl">Deposits</div></div>
-      <div><span class="funnel-arrow">→</span></div>
-      <div class="funnel-stage"><div class="funnel-val">${D.active_families||0}</div><div class="funnel-lbl">Active</div></div>
-    </div>
-    ${D.hormozi ? `
-    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Unit Economics</div>
-    <div class="metric-row">
-      <div class="mini-card">
-        <div class="mini-lbl">CAC</div>
-        <div class="mini-val" style="color:var(--green-bright)">${fmt$(D.hormozi.cac)}</div>
-        <div class="mini-sub">Cost to acquire</div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-lbl">LTV</div>
-        <div class="mini-val">${fmt$(D.hormozi.ltv_current)}</div>
-        <div class="mini-sub">ROIC ${D.hormozi.roic_multiple}x</div>
-      </div>
-    </div>` : ''}
-  `;
-}
-
-// ─── DC WAR ROOM ───
-function getDCPreview() {
-  const reps = R.reps||[];
-  const active = reps.filter(r => r.status !== 'exited_dc');
-  return `${active.length} active reps · Avg ${(I.summary?.avg_overall_score||0).toFixed(1)} score`;
-}
-function renderDC() {
-  const el = document.getElementById('content-dc-war');
-  const reps = R.reps || [];
-  const objs = R.top_objections || [];
-  const flags = R.flags || {};
-
-  let flagsHtml = '';
-  if (flags.post_close_risk) flagsHtml += `<div class="flag-card flag-red"><span class="flag-icon">🚨</span><div>${escHtml(flags.post_close_risk).replace(/\u2014/g,' - ')}</div></div>`;
-  if (flags.pending_outcome) flagsHtml += `<div class="flag-card flag-amber"><span class="flag-icon">⏳</span><div>${escHtml(flags.pending_outcome).replace(/\u2014/g,' - ')}</div></div>`;
-
-  let repsHtml = reps.map(r => {
-    const statusClass = r.status === 'active' ? 'active' : r.status === 'active_coaching' ? 'coaching' : r.status === 'exited_dc' ? 'exited' : 'commission';
-    const statusLabel = r.status.replace(/_/g, ' ');
-    const calls = (C.calls||[]).filter(c => c.rep_name === r.rep).slice(0, 5);
-    const callsHtml = calls.map((c, ci) => {
-      const siel = c.siel_scores||{};
-      const sielColor = (v) => v >= 4 ? 'high' : v >= 2.5 ? 'mid' : 'low';
-      const strengths = (c.key_strengths||[]).map(s => `<div class="call-bullet">✅ ${escHtml(s)}</div>`).join('');
-      const misses = (c.critical_misses||[]).map(m => `<div class="call-bullet">❌ ${escHtml(m)}</div>`).join('');
-      const flags = (c.flags||[]).map(f => `<div class="call-bullet">🚩 ${escHtml(f)}</div>`).join('');
-      const callId = (r.rep + ci).replace(/\s/g,'');
-      return `
-        <div style="border-bottom:1px solid rgba(255,255,255,0.04);padding:4px 0;">
-          <div style="font-size:11px;padding:6px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;" onclick="event.stopPropagation();document.getElementById('call-${callId}').classList.toggle('show')">
-            <span><strong>${escHtml(c.contact_name)}</strong>${c.son_name?' ('+escHtml(c.son_name)+')':''} — ${c.duration||'?'}min</span>
-            <span style="display:flex;gap:6px;align-items:center;">
-              <span style="font-family:'Archivo Black',sans-serif;color:${c.overall_score>=7?'var(--green-bright)':c.overall_score>=5?'var(--amber)':'var(--red)'}">${c.overall_score}</span>
-              <span style="font-size:9px;padding:2px 6px;border-radius:4px;background:${c.true_outcome==='Onboarding Booked'?'rgba(76,175,80,0.2)':'rgba(255,255,255,0.06)'};color:${c.true_outcome==='Onboarding Booked'?'var(--green-bright)':'rgba(251,248,243,0.4)'}">${c.true_outcome||'Pending'}</span>
-              <span style="font-size:10px;color:rgba(251,248,243,0.3)">▼</span>
-            </span>
-          </div>
-          <div class="call-expanded" id="call-${callId}">
-            <div class="siel-grid">
-              <div class="siel-box"><div class="siel-letter">S</div><div class="siel-score ${sielColor(siel.S||0)}">${siel.S||'-'}</div></div>
-              <div class="siel-box"><div class="siel-letter">I</div><div class="siel-score ${sielColor(siel.I||0)}">${siel.I||'-'}</div></div>
-              <div class="siel-box"><div class="siel-letter">E</div><div class="siel-score ${sielColor(siel.E||0)}">${siel.E||'-'}</div></div>
-              <div class="siel-box"><div class="siel-letter">L</div><div class="siel-score ${sielColor(siel.L||0)}">${siel.L||'-'}</div></div>
-            </div>
-            ${siel.Opening!==undefined?`<div style="display:flex;gap:12px;margin-bottom:8px;font-size:11px;"><span>Opening: <strong>${siel.Opening}/5</strong></span><span>Objection: <strong>${siel.Objection}/5</strong></span></div>`:''}
-            ${c.one_line?`<div style="font-size:12px;color:var(--cream);margin-bottom:8px;font-style:italic;">"${escHtml(c.one_line)}"</div>`:''}
-            ${strengths?`<div class="call-section-lbl">Strengths</div>${strengths}`:''}
-            ${misses?`<div class="call-section-lbl">Critical Misses</div>${misses}`:''}
-            ${flags?`<div class="call-section-lbl">Flags</div>${flags}`:''}
-            ${c.one_drill?`<div class="call-section-lbl">One Drill</div><div class="call-bullet" style="color:var(--gold);">🎯 ${escHtml(c.one_drill)}</div>`:''}
-            ${c.contact_hubspot_id?`<div style="margin-top:8px;"><a href="https://app.hubspot.com/contacts/48782903/contact/${c.contact_hubspot_id}" target="_blank" style="font-size:10px;color:var(--navy);text-decoration:none;padding:3px 8px;border-radius:4px;background:rgba(16,71,145,0.15);">Open in HubSpot →</a></div>`:''}
-          </div>
-        </div>
-      `;
-    }).join('');
-    return `
-      <div class="rep-card" onclick="this.querySelector('.rep-detail').classList.toggle('show')">
-        <div class="rep-top">
-          <span class="rep-name">${escHtml(r.rep)}</span>
-          <span class="rep-status ${statusClass}">${statusLabel}</span>
-        </div>
-        <div class="rep-stats">
-          <span>Avg: <strong>${r.avg_score.toFixed(1)}</strong></span>
-          <span>Close: <strong>${fmtPct(r.close_rate)}</strong></span>
-          <span>E: <strong style="color:${r.e_score_avg<2.5?'var(--red)':'var(--green-bright)'}">${r.e_score_avg.toFixed(1)}</strong></span>
-          <span>I: <strong>${r.i_score_avg.toFixed(1)}</strong></span>
-          ${r.p3_flag?'<span style="color:var(--red)">⚠ P3</span>':''}
-        </div>
-        <div class="rep-detail">
-          <div style="margin-bottom:8px;color:rgba(251,248,243,0.6)">${escHtml(r.improvement_area_short).replace(/\u2014/g,' - ')}</div>
-          ${callsHtml?'<div style="font-size:10px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:8px 0 4px;">Recent Calls <span style="font-weight:400;color:rgba(251,248,243,0.3)">tap to expand</span></div>'+callsHtml:''}
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  let objsHtml = objs.map((o, oi) => {
-    const gradeColor = o.avg_handling_grade >= 3 ? 'var(--amber)' : 'var(--red)';
-    // Find calls with this objection category
-    const objCalls = (C.calls||[]).filter(c => {
-      const callFlags = (c.flags||[]).join(' ').toLowerCase();
-      const callMisses = (c.critical_misses||[]).join(' ').toLowerCase();
-      const callOne = (c.one_line||'').toLowerCase();
-      const cat = o.category.replace(/_/g, ' ').toLowerCase();
-      return callFlags.includes(cat) || callMisses.includes(cat) || callOne.includes(cat) ||
-        (c.siel_scores && c.siel_scores.Objection !== undefined && cat.includes('think') && c.siel_scores.Objection <= 2);
-    });
-    const objCallsHtml = objCalls.length > 0 ? objCalls.map(c => `
-      <div class="cf-sub-row">
-        <div>
-          <div class="cf-sub-name">${escHtml(c.contact_name)} — ${escHtml(c.rep_name)}</div>
-          <div style="font-size:10px;color:rgba(251,248,243,0.3);">${c.call_date} · Score: ${c.overall_score} · ${c.true_outcome||'Pending'}</div>
-        </div>
-        ${c.contact_hubspot_id?`<a href="https://app.hubspot.com/contacts/48782903/contact/${c.contact_hubspot_id}" target="_blank" style="font-size:9px;color:var(--navy);text-decoration:none;padding:2px 6px;border-radius:4px;background:rgba(16,71,145,0.15);">HubSpot</a>`:''}
-      </div>
-    `).join('') : '<div style="font-size:11px;color:rgba(251,248,243,0.3);padding:6px 0;">Call matching coming with next scoring run</div>';
-    return `
-      <div class="obj-row" onclick="document.getElementById('obj-${oi}').classList.toggle('show')">
-        <span class="obj-rank">#${o.rank}</span>
-        <span class="obj-cat">${escHtml(o.category).replace(/_/g, ' ')}</span>
-        <span class="obj-count">${o.count}x</span>
-        <span class="obj-grade" style="background:${gradeColor}22;color:${gradeColor}">${o.avg_handling_grade.toFixed(1)}/5</span>
-        <span style="font-size:10px;color:rgba(251,248,243,0.3)">▼</span>
-      </div>
-      <div class="obj-expanded" id="obj-${oi}">
-        ${o.note?`<div style="font-size:11px;color:rgba(251,248,243,0.5);margin-bottom:8px;font-style:italic;">${escHtml(o.note)}</div>`:''}
-        <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Calls with this objection</div>
-        ${objCallsHtml}
-      </div>
-    `;
-  }).join('');
-
-  el.innerHTML = `
-    ${flagsHtml?'<div style="margin-bottom:12px;">'+flagsHtml+'</div>':''}
-    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Rep Scorecards</div>
-    ${repsHtml}
-    ${objs.length?`
-    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Top Objections This Week</div>
-    ${objsHtml}
-    `:''}
-  `;
-}
-
-// ─── REVENUE & RETENTION ───
-function getRevenuePreview() {
-  return `${fmt$(D.mrr)} MRR · ${fmt$(D.revenue_at_risk)} at risk`;
-}
-function renderRevenue() {
-  const el = document.getElementById('content-revenue');
-  const weeks = CF.weeks || [];
-  const thisWeek = weeks[0] || { days:[], total:0 };
-  const topDays = thisWeek.days.slice(0, 5);
-
-  el.innerHTML = `
-    <div class="metric-row triple">
-      <div class="mini-card">
-        <div class="mini-lbl">MRR</div>
-        <div class="mini-val">${fmt$(D.mrr)}</div>
-        <div class="mini-sub">${D.active_families||0} collecting</div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-lbl">Revenue at Risk</div>
-        <div class="mini-val" style="color:var(--red)">${fmt$(D.revenue_at_risk)}</div>
-        <div class="mini-sub">${D.failed_past_due||0} failed/past due</div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-lbl">Xero Receivable</div>
-        <div class="mini-val">${fmt$(D.xero_receivable)}</div>
-        <div class="mini-sub">${fmt$(D.xero_payable)} payable</div>
-      </div>
-    </div>
-    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Upcoming Charges - ${thisWeek.label||'This Week'} <span style="font-weight:400;color:rgba(251,248,243,0.3);font-size:9px;">tap day to expand</span></div>
-    ${topDays.map((d, di) => {
-      const subs = d.subscribers || [];
-      const subsHtml = subs.map(s => `
-        <div class="cf-sub-row">
-          <div style="flex:1;">
-            <div class="cf-sub-name">${escHtml(s.name)}</div>
-            <div style="font-size:10px;color:rgba(251,248,243,0.3);">${s.interval||'Weekly'}</div>
-            <div class="cf-sub-links">
-              ${s.stripe_url?`<a href="${s.stripe_url}" target="_blank">Stripe</a>`:''}
-              ${s.hubspot_url?`<a href="${s.hubspot_url}" target="_blank">HubSpot</a>`:''}
-            </div>
-          </div>
-          <div class="cf-sub-amount">${fmt$(s.amount)}</div>
-        </div>
-      `).join('');
-      return `
-        <div class="cf-day" onclick="document.getElementById('cfday-${di}').classList.toggle('show')">
-          <div class="cf-day-row">
-            <span class="cf-date">${d.day} ${d.date.slice(5)}</span>
-            <span class="cf-charges">${d.charges} charge${d.charges!==1?'s':''}</span>
-            <span class="cf-amount">${fmt$(d.amount)}</span>
-            <span style="font-size:10px;color:rgba(251,248,243,0.3);margin-left:4px;">▼</span>
-          </div>
-          <div class="cf-day-detail" id="cfday-${di}">
-            ${subs.length > 0 ? subsHtml : '<div style="font-size:11px;color:rgba(251,248,243,0.3);padding:6px 0;">Subscriber detail loading...</div>'}
-          </div>
-        </div>
-      `;
-    }).join('')}
-    <div style="margin-top:8px;font-size:12px;color:rgba(251,248,243,0.4);">Week total: <strong style="color:var(--gold)">${fmt$(thisWeek.total)}</strong></div>
-    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Churn Scenarios (Hormozi Model)</div>
-    <div class="metric-row">
-      ${(D.hormozi?.churn_scenarios||[]).map(s => `
-        <div class="mini-card">
-          <div class="mini-lbl">${s.emoji} ${s.label}</div>
-          <div class="mini-val">${fmt$(s.mrr_ceiling)}</div>
-          <div class="mini-sub">${fmtPct(s.churn_rate*100)} churn · ${s.steady_state_families} families · ${s.lifetime_months}mo LTV</div>
-        </div>
-      `).join('')}
-    </div>
-  `;
-}
-
-// ─── ADS ───
-function getAdsPreview() {
-  return `CPBC ${fmt$(D.cpbc_mtd)} · ${fmt$(D.meta_spend_mtd)} spend`;
-}
-function renderAds() {
-  const el = document.getElementById('content-ads');
-  el.innerHTML = `
-    <div class="metric-row triple">
-      <div class="mini-card">
-        <div class="mini-lbl">CPBC</div>
-        <div class="mini-val" style="color:var(--green-bright)">${fmt$(D.cpbc_mtd)}</div>
-        <div class="mini-sub">Cost per booked call</div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-lbl">Meta Spend MTD</div>
-        <div class="mini-val">${fmt$(D.meta_spend_mtd)}</div>
-        <div class="mini-sub">${D.booked_calls_mtd||0} booked calls</div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-lbl">NDIS Revenue</div>
-        <div class="mini-val">${fmt$(D.ndis_total)}</div>
-        <div class="mini-sub">Total NDIS billing</div>
-      </div>
-    </div>
-    <div class="placeholder" style="margin-top:16px;">Hook performance & ROAS by ad - coming soon</div>
-  `;
-}
-
-// ─── FE PIPELINE ───
-function renderFE() {
-  const el = document.getElementById('content-fe-pipeline');
-  el.innerHTML = `<div class="placeholder">FE pipeline data source not yet connected. Check back soon.</div>`;
-}
-
-// ─── TODAY ───
-function getTodayDate() {
-  const d = new Date();
-  return d.toLocaleDateString('en-AU', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
-}
-function renderToday() {
-  const el = document.getElementById('content-today');
-  el.innerHTML = `
-    <div style="font-size:16px;font-weight:600;margin-bottom:12px;">${getTodayDate()}</div>
-    <div class="metric-row">
-      <div class="mini-card">
-        <div class="mini-lbl">DC Calls Today</div>
-        <div class="mini-val">${C.calls_today||0}</div>
-        <div class="mini-sub">${C.calls_today===0?'No calls scheduled':'Check HubSpot'}</div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-lbl">Cash 7 Day</div>
-        <div class="mini-val">${fmt$(D.cash_7d)}</div>
-        <div class="mini-sub">Last 7 days collected</div>
-      </div>
-    </div>
-    <div class="placeholder" style="margin-top:12px;">Connect calendar for live schedule view</div>
-  `;
-}
-
-// ─── LEO'S LAB ───
-function renderLeo() {
-  const el = document.getElementById('content-leo-lab');
-  
-  // Pull from morning-lab.json if available, otherwise use defaults
-  const labItems = (ML && ML.items) ? ML.items : [];
-  const greeting = (ML && ML.greeting) ? ML.greeting : 'Good morning, Harry.';
-  const actions = (ML && ML.leo_actions) ? ML.leo_actions : [];
-  
-  const items = labItems.length > 0 ? labItems.map((item, idx) => ({
-    num: idx + 1,
-    emoji: item.emoji || '💡',
-    tag: item.tag || '',
-    text: item.headline,
-    detail: item.detail,
-    deep_dive: item.deep_dive || ''
-  })) : [];
-
-  el.innerHTML = `
-    <div class="leo-greeting">Good morning, <strong>Harry.</strong></div>
-    ${items.map((i, idx) => `
-      <div class="leo-item" onclick="toggleLabItem(${idx}, event)">
-        <div class="leo-item-num">${i.emoji} ${i.tag ? '<span style="background:rgba(200,169,81,0.15);padding:2px 8px;border-radius:4px;font-size:9px;letter-spacing:1px;">' + escHtml(i.tag.toUpperCase()) + '</span>' : 'INSIGHT ' + i.num}</div>
-        <div class="leo-item-text">${escHtml(i.text)}</div>
-        <div class="leo-item-detail" id="lab-detail-${idx}">${escHtml(i.detail)}${i.deep_dive ? '<div style="font-size:10px;color:var(--gold);margin-top:8px;font-weight:600;">↓ Tap again to go deeper</div>' : '<div style="font-size:10px;color:rgba(251,248,243,0.3);margin-top:8px;">Tap to collapse</div>'}</div>
-        ${i.deep_dive ? `<div class="leo-item-deep" id="lab-deep-${idx}">${i.deep_dive}</div>` : ''}
-      </div>
-    `).join('')}
-    ${actions.length > 0 ? `
-      <div style="margin-top:16px;padding:12px 16px;background:rgba(16,71,145,0.1);border:1px solid rgba(16,71,145,0.2);border-radius:10px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--navy);text-transform:uppercase;margin-bottom:8px;">What Leo's Working On Today</div>
-        ${actions.map(a => `<div style="font-size:12px;color:rgba(251,248,243,0.5);padding:3px 0;">→ ${escHtml(a)}</div>`).join('')}
-      </div>
-    ` : ''}
-  `;
-}
-
-// ─── LAB ITEM TOGGLE (double-expand) ───
-function toggleLabItem(idx, event) {
-  const detail = document.getElementById('lab-detail-' + idx);
-  const deep = document.getElementById('lab-deep-' + idx);
-  
-  if (!detail.classList.contains('show')) {
-    // First click — show summary
-    detail.classList.add('show');
-  } else if (deep && !deep.classList.contains('show')) {
-    // Second click — show deep dive
-    deep.classList.add('show');
-  } else {
-    // Third click — collapse all
-    detail.classList.remove('show');
-    if (deep) deep.classList.remove('show');
+  // ── Revenue at risk alert ──
+  let alertHtml = '';
+  if (dash && dash.revenue_at_risk && dash.revenue_at_risk > 800) {
+    alertHtml = `<div class="alert-banner"><span class="icon">🚨</span><span class="text">Revenue at risk: ${fmt(dash.revenue_at_risk)} — ${dash.failed_past_due || 0} failed / past-due payments need attention</span></div>`;
   }
-}
 
-// ─── YESTERDAY'S SCORECARD ───
-function renderScorecard() {
-  const el = document.getElementById('content-scorecard');
-  el.innerHTML = `
-    <div class="metric-row">
-      <div class="mini-card">
-        <div class="mini-lbl">Calls Scored</div>
-        <div class="mini-val">${I.summary?.total_scored||0}</div>
-        <div class="mini-sub">Across all reps</div>
+  // ── Hero metrics ──
+  const heroHtml = `
+    <div class="hero-grid">
+      <div class="hero-card">
+        <div class="label">Active Families</div>
+        <div class="value">${dash ? dash.active_families || '—' : '—'}</div>
+        <div class="sub">of ${dash ? dash.active_total || '—' : '—'} total (${dash ? dash.paused || 0 : 0} paused)</div>
       </div>
-      <div class="mini-card">
-        <div class="mini-lbl">Avg Score</div>
-        <div class="mini-val">${(I.summary?.avg_overall_score||0).toFixed(1)}</div>
-        <div class="mini-sub">${I.score_distribution?Object.entries(I.score_distribution).map(([k,v])=>k.replace('_',': ')+' = '+v).join(', '):''}</div>
+      <div class="hero-card" style="${dash && dash.revenue_at_risk > 800 ? 'border-color:rgba(239,68,68,0.35);background:rgba(239,68,68,0.05)' : ''}">
+        <div class="label">Revenue at Risk</div>
+        <div class="value" style="${dash && dash.revenue_at_risk > 800 ? 'color:#f87171' : ''}">${dash ? fmt(dash.revenue_at_risk) : '—'}</div>
+        <div class="sub">${dash ? (dash.failed_past_due || 0) : 0} payments flagged</div>
       </div>
-    </div>
-    <div style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Key Stats</div>
-    <div class="flag-card flag-amber"><span class="flag-icon">📊</span><div>Close rate: <strong>${fmtPct(I.summary?.overall_close_rate||0)}</strong> - ${I.summary?.total_closes||0} closes from ${I.summary?.total_scored||0} scored calls</div></div>
-    ${I.summary?.lucky_closes?`<div class="flag-card flag-red"><span class="flag-icon">🍀</span><div><strong>${I.summary.lucky_closes}</strong> lucky close${I.summary.lucky_closes>1?'s':''} detected - high churn risk on these</div></div>`:''}
-    ${SC && SC.wins ? `
-      <div style="font-size:11px;color:var(--green-bright);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">✅ Wins</div>
-      ${SC.wins.map(w => `<div style="font-size:12px;color:rgba(251,248,243,0.6);padding:4px 0;">→ ${escHtml(w)}</div>`).join('')}
-    ` : ''}
-    ${SC && SC.misses ? `
-      <div style="font-size:11px;color:var(--red);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">❌ Misses</div>
-      ${SC.misses.map(m => `<div style="font-size:12px;color:rgba(251,248,243,0.6);padding:4px 0;">→ ${escHtml(m)}</div>`).join('')}
-    ` : ''}
-    ${SC && SC.carry_forwards ? `
-      <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">📋 Carry Forward</div>
-      ${SC.carry_forwards.map(cf => `<div style="font-size:12px;color:rgba(251,248,243,0.6);padding:4px 0;">→ ${escHtml(cf)}</div>`).join('')}
-    ` : ''}
-    ${SC && SC.one_thing_tomorrow ? `
-      <div style="margin-top:16px;padding:12px 16px;background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.2);border-radius:10px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Tomorrow's ONE THING</div>
-        <div style="font-size:14px;color:var(--cream);font-weight:600;">${escHtml(SC.one_thing_tomorrow)}</div>
+      <div class="hero-card">
+        <div class="label">MRR</div>
+        <div class="value">${dash ? fmt(dash.mrr) : '—'}</div>
+        <div class="sub">normalised</div>
       </div>
-    ` : '<div class="placeholder" style="margin-top:12px;">Scorecard data loads from scorecard.json</div>'}
-  `;
-}
-
-// ─── CONSTRAINTS ───
-function renderConstraints() {
-  const grid = document.getElementById('constraint-grid');
-  const constraints = (OW && OW.functions) ? OW.functions.map(f => ({
-    fn: f.name,
-    owner: f.owner,
-    status: f.status,
-    constraint: f.constraint,
-    task: f.highest_leverage_task,
-    metric: f.key_metric
-  })) : [
-    { fn: 'Sales Engine', owner: 'Rye', status: 'amber', constraint: 'DC capacity - only 2 active closers', task: 'Get Tom on DCs & coach Anthony', metric: 'Close Rate: 36% (Anthony) / 90% (Rye)' },
-    { fn: 'Mentor Journey', owner: 'TBD', status: 'red', constraint: 'No single owner', task: 'Assign owner & connect Fireflies', metric: 'Session gap avg: needs measurement' },
-    { fn: 'Member Experience', owner: 'Brodie & Norri', status: 'amber', constraint: '63% churned never got a mentor', task: 'Tighten activation to <7 days', metric: 'Close-to-W1: ~59%' },
-    { fn: 'Brand & Content', owner: 'Harry', status: 'green', constraint: 'Content bottlenecked on Harry', task: 'Batch-produce from newsletters', metric: '18 newsletters drafted' },
-  ];
-
-  const statusColor = { green: 'var(--green-bright)', amber: 'var(--amber)', red: 'var(--red)' };
-  grid.innerHTML = constraints.map(c => `
-    <div class="c-card" style="border-left:3px solid ${statusColor[c.status]||'var(--amber)'};">
-      <div class="c-card-fn">${c.fn}</div>
-      <div class="c-card-owner">${c.owner}</div>
-      ${c.metric ? `<div style="font-size:11px;color:var(--gold);margin:4px 0;">${escHtml(c.metric)}</div>` : ''}
-      <div class="c-card-constraint">${c.constraint}</div>
-      <div class="c-card-task"><strong>Highest leverage:</strong> ${c.task}</div>
-    </div>
-  `).join('');
-}
-
-function renderOwnership() {
-  const grid = document.getElementById('ownership-grid');
-  const items = [
-    { fn: 'Sales Engine', name: 'Rye', status: 'amber', metric: '40% close rate' },
-    { fn: 'DC Operations', name: 'Anthony', status: 'green', metric: 'Avg 5.96 score' },
-    { fn: 'Member Experience', name: 'Brodie & Norri', status: 'amber', metric: '60 active families' },
-    { fn: 'Brand & Content', name: 'Harry', status: 'red', metric: 'H14-B1 paused' },
-    { fn: 'Mentor Pipeline', name: 'TBD', status: 'red', metric: 'No owner assigned' },
-    { fn: 'Finance & Ops', name: 'Harry', status: 'green', metric: fmt$(D.balance_total) + ' balance' },
-  ];
-
-  grid.innerHTML = items.map(i => `
-    <div class="own-card">
-      <div class="own-status ${i.status}"></div>
-      <div class="own-info">
-        <div class="own-fn">${i.fn}</div>
-        <div class="own-name">${i.name}</div>
+      <div class="hero-card">
+        <div class="label">Cash (7d)</div>
+        <div class="value">${dash ? fmt(dash.cash_7d) : '—'}</div>
+        <div class="sub">real Stripe charges</div>
       </div>
-      <div class="own-metric">${i.metric}</div>
-    </div>
-  `).join('');
-}
+    </div>`;
 
-// ─── VIEW TOGGLE ───
-function setView(view) {
-  document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('btn-' + view).classList.add('active');
-  document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('view-' + view).classList.add('active');
-  localStorage.setItem('mc-morning-view', view);
-}
+  // ── Secondary metrics ──
+  const ltb = dash && dash.lead_to_booked;
+  const secondaryHtml = `
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="label">CPBC (MTD)</div>
+        <div class="value" style="${dash && dash.cpbc_mtd > 40 ? 'color:#f87171' : dash && dash.cpbc_mtd > 35 ? 'color:#fbbf24' : 'color:#4ade80'}">${dash ? fmt(dash.cpbc_mtd) : '—'}</div>
+        <div class="sub">${dash && dash.cpbc_mtd > 40 ? '🚨 Critical' : dash && dash.cpbc_mtd > 35 ? '⚠️ High' : '✓ On target'}</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Booked Calls (MTD)</div>
+        <div class="value">${dash ? (dash.booked_calls_mtd || '—') : '—'}</div>
+        <div class="sub">Meta spend: ${dash ? fmt(dash.meta_spend_mtd) : '—'}</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Lead → Booked</div>
+        <div class="value" style="${ltb && ltb.rate_7d < 15 ? 'color:#f87171' : 'color:#e2e8f0'}">${ltb ? fmtPct(ltb.rate_7d) : '—'}</div>
+        <div class="sub">${ltb ? ltb.booked_7d + '/' + ltb.leads_7d + ' leads (7d)' : ''} <span style="color:${ltb && ltb.trend === 'up' ? '#4ade80' : '#f87171'}">${ltb && ltb.trend === 'up' ? '↑' : '↓'}</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Xero Receivable</div>
+        <div class="value">${dash ? fmt(dash.xero_receivable) : '—'}</div>
+        <div class="sub">Payable: ${dash ? fmt(dash.xero_payable) : '—'}</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Stripe Balance</div>
+        <div class="value">${dash ? fmt(dash.balance_available) : '—'}</div>
+        <div class="sub">Available · Pending: ${dash ? fmt(dash.balance_pending) : '—'}</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">4-Wk Forecast</div>
+        <div class="value">${dash ? fmt(dash.forecast_4wk) : '—'}</div>
+        <div class="sub">NDIS: ${dash ? fmt(dash.ndis_total) : '—'}</div>
+      </div>
+    </div>`;
 
-// Restore view
-const savedView = localStorage.getItem('mc-morning-view');
-if (savedView) setView(savedView);
+  // ── One Thing ──
+  const oneThing = scorecard ? escHtml(scorecard.one_thing_tomorrow || scorecard.one_thing || '—') : '—';
+  const oneThingHtml = `
+    <div class="one-thing">
+      <div class="label">Today's ONE THING</div>
+      <div class="text">${oneThing}</div>
+    </div>`;
 
-// ─── THOUGHT CAPTURE ───
-function toggleThought() {
-  document.getElementById('thought-overlay').classList.toggle('open');
-  if (document.getElementById('thought-overlay').classList.contains('open')) {
-    document.getElementById('thought-input').focus();
-    renderThoughts();
+  // ── Scorecard ──
+  let scorecardHtml = '<div class="scorecard-grid"><div style="color:#475569;font-size:12px;grid-column:1/-1">Scorecard loading...</div></div>';
+  if (scorecard) {
+    const wins = (scorecard.wins || []).map(w => `<li>${escHtml(w)}</li>`).join('');
+    const misses = (scorecard.misses || []).map(m => `<li>${escHtml(m)}</li>`).join('');
+    const carries = (scorecard.carry_forwards || []).map(c => `<li>${escHtml(c)}</li>`).join('');
+    scorecardHtml = `
+      <div class="scorecard-grid">
+        <div class="scorecard-col wins">
+          <div class="col-title">✅ Wins</div>
+          <ul>${wins || '<li style="color:#475569">None logged</li>'}</ul>
+        </div>
+        <div class="scorecard-col misses">
+          <div class="col-title">❌ Misses</div>
+          <ul>${misses || '<li style="color:#475569">None logged</li>'}</ul>
+        </div>
+        <div class="scorecard-col carry">
+          <div class="col-title">➡️ Carry Forward</div>
+          <ul>${carries || '<li style="color:#475569">Nothing pending</li>'}</ul>
+        </div>
+      </div>`;
   }
-}
-function closeThoughtOutside(e) {
-  if (e.target === e.currentTarget) toggleThought();
-}
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    document.getElementById('thought-overlay').classList.remove('open');
-  }
-});
+  // ── Leo's Lab ──
+  let labHtml = '<div style="color:#475569;font-size:12px">Lab loading...</div>';
+  if (lab && lab.items) {
+    labHtml = lab.items.map((item, i) => `
+      <div class="lab-item" onclick="toggleLab(${i})">
+        <div class="lab-header">
+          <div class="lab-emoji">${escHtml(item.emoji || '💡')}</div>
+          <div class="lab-content">
+            <div class="lab-headline">${escHtml(item.headline)}</div>
+            <span class="lab-tag ${escHtml(item.tag || '')}">${escHtml(item.tag || item.type || 'insight')}</span>
+          </div>
+          <div class="lab-chevron" id="chev-${i}">›</div>
+        </div>
+        <div class="lab-detail" id="detail-${i}">${escHtml(item.detail || '')}</div>
+      </div>`).join('');
 
-function getThoughts() {
-  return JSON.parse(localStorage.getItem('mc-thoughts') || '[]');
-}
-
-function saveThought(text) {
-  if (!text.trim()) return;
-  const thoughts = getThoughts();
-  thoughts.unshift({ text: text.trim(), ts: new Date().toISOString() });
-  if (thoughts.length > 50) thoughts.length = 50;
-  localStorage.setItem('mc-thoughts', JSON.stringify(thoughts));
-  renderThoughts();
-  showToast('Thought saved');
-}
-
-function renderThoughts() {
-  const list = document.getElementById('thought-list');
-  const thoughts = getThoughts().slice(0, 5);
-  list.innerHTML = thoughts.length ? thoughts.map(t => {
-    const d = new Date(t.ts);
-    const timeStr = d.toLocaleDateString('en-AU', {day:'numeric',month:'short'}) + ' ' + d.toLocaleTimeString('en-AU', {hour:'2-digit',minute:'2-digit'});
-    return `<div class="thought-item"><div class="thought-item-time">${timeStr}</div>${escHtml(t.text)}</div>`;
-  }).join('') : '<div style="font-size:11px;color:rgba(251,248,243,0.2);padding:8px 0;">No thoughts captured yet</div>';
-}
-
-document.getElementById('thought-input').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault();
-    saveThought(this.value);
-    this.value = '';
-  }
-});
-
-// Constraint input save
-document.getElementById('constraint-input').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    const val = this.value.trim();
-    if (val) {
-      localStorage.setItem('mc-today-focus', JSON.stringify({ text: val, ts: new Date().toISOString() }));
-      showToast('Focus saved');
+    if (lab.leo_actions && lab.leo_actions.length > 0) {
+      labHtml += `<div class="leo-actions">${lab.leo_actions.map(a => `<div class="leo-action-item">${escHtml(a)}</div>`).join('')}</div>`;
     }
   }
-});
-// Restore
-const savedFocus = JSON.parse(localStorage.getItem('mc-today-focus') || 'null');
-if (savedFocus) document.getElementById('constraint-input').value = savedFocus.text;
 
-// ─── CLOCK ───
-function updateClock() {
-  const now = new Date();
-  document.getElementById('clock').textContent = now.toLocaleTimeString('en-AU', { hour:'2-digit', minute:'2-digit' });
+  // ── DC Reps ──
+  let repsHtml = '<div style="color:#475569;font-size:12px">Rep stats loading...</div>';
+  if (reps && reps.reps) {
+    const repCards = Object.entries(reps.reps).map(([key, rep]) => {
+      const p3 = rep.p3_flag ? '<span class="flag">P3 FLAG</span>' : '';
+      const closeRate = rep.this_week_calls > 0 ? rep.close_rate_this_week : (fmtPct(rep.close_rate) + ' rolling');
+      const siel = rep.siel_avg ? rep.siel_avg.toFixed(1) : '—';
+      const tc = trendClass(rep.trend);
+      const pending = rep.pending && rep.pending.length > 0
+        ? `<div style="font-size:11px;color:#fbbf24;margin-top:4px;">Pending: ${rep.pending.map(p => escHtml(p)).join(', ')}</div>` : '';
+      return `
+        <div class="rep-card ${rep.p3_flag ? 'p3-flag' : ''}">
+          <div class="rep-name">${escHtml(key.charAt(0).toUpperCase() + key.slice(1))} ${p3}</div>
+          <div class="rep-stats">
+            <div class="rep-stat rep-close-rate">
+              <div class="val">${closeRate}</div>
+              <div class="lbl">Close rate</div>
+            </div>
+            <div class="rep-stat rep-siel">
+              <div class="val">${siel}</div>
+              <div class="lbl">SIEL avg</div>
+            </div>
+            <div class="rep-stat">
+              <div class="val" style="font-size:14px">${rep.calls_scored || 0}</div>
+              <div class="lbl">Calls scored</div>
+            </div>
+          </div>
+          <div class="rep-trend ${tc}">Trend: ${escHtml(rep.trend || 'unknown')}</div>
+          ${rep.improvement_area ? `<div class="rep-improvement">Focus: ${escHtml(rep.improvement_area.substring(0, 80))}${rep.improvement_area.length > 80 ? '…' : ''}</div>` : ''}
+          ${pending}
+        </div>`;
+    }).join('');
+    repsHtml = `<div class="rep-grid">${repCards}</div>`;
+  }
+
+  // ── Dashboard links ──
+  const links = [
+    { icon: '🏠', name: 'Mission Control', desc: 'Main dashboard — pulse & tabs', href: 'https://bluesandgreens.github.io/bg-mission-control/' },
+    { icon: '💙', name: 'Parent Calls', desc: "Today's call list — saves, debriefs, check-ins", href: 'https://bluesandgreens.github.io/bg-mission-control/parent-calls/' },
+    { icon: '🎯', name: "Founder's Hitlist", desc: 'Top accounts & action board', href: 'https://bluesandgreens.github.io/bg-mission-control/founders-hitlist/' },
+    { icon: '🧑‍🤝‍🧑', name: 'Mentor Pipeline', desc: 'Applicants by stage, all schools', href: 'https://bluesandgreens.github.io/bg-mission-control/mentor-pipeline/' },
+    { icon: '🎓', name: 'Mentor Onboarding', desc: 'Screened → active mentor tracker', href: 'https://bluesandgreens.github.io/bg-mission-control/mentor-onboarding/' },
+    { icon: '🎙️', name: 'DC Training Hub', desc: 'Call library — 86 calls, 63 playable', href: 'https://bg-dc-hub.lovable.app' },
+    { icon: '📋', name: 'Parent Portal', desc: 'Family onboarding portal', href: 'https://bluesandgreens.lovable.app' },
+  ];
+  const dashHtml = `<div class="dash-grid">${links.map(l => `
+    <a href="${l.href}" target="_blank" class="dash-link">
+      <span class="icon">${l.icon}</span>
+      <div class="info">
+        <div class="name">${escHtml(l.name)}</div>
+        <div class="desc">${escHtml(l.desc)}</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>`).join('')}</div>`;
+
+  // ── Assemble ──
+  document.getElementById('app').innerHTML = `
+    <div class="header">
+      <div class="header-left">
+        <h1>☀️ Morning Brief</h1>
+        <div class="tagline">Blues &amp; Greens · ${today}${genTime ? ' · Data at ' + genTime : ''}</div>
+      </div>
+      <div class="header-right">
+        <button class="refresh-btn" onclick="location.reload()">↻ Refresh</button>
+      </div>
+    </div>
+
+    ${alertHtml}
+
+    <div class="section">
+      <div class="section-title">Business Pulse</div>
+      ${heroHtml}
+      ${secondaryHtml}
+    </div>
+
+    <div class="section">
+      ${oneThingHtml}
+    </div>
+
+    <div class="section">
+      <div class="section-title">Yesterday's Scorecard</div>
+      ${scorecardHtml}
+    </div>
+
+    <div class="section">
+      <div class="section-title">Leo's Lab — What I Found</div>
+      ${labHtml}
+    </div>
+
+    <div class="section">
+      <div class="section-title">DC Rep Scorecard</div>
+      ${repsHtml}
+    </div>
+
+    <div class="section">
+      <div class="section-title">Quick Links</div>
+      ${dashHtml}
+    </div>
+
+    <div class="footer">
+      <p>Blues &amp; Greens Morning Brief · Data refreshes each morning 6:30am AEST</p>
+      <p style="margin-top:4px">
+        <a href="https://bluesandgreens.github.io/bg-mission-control/">← Mission Control</a>
+      </p>
+    </div>`;
 }
-updateClock();
-setInterval(updateClock, 30000);
 
-// ─── TOAST ───
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2000);
+function toggleLab(i) {
+  const item = document.querySelectorAll('.lab-item')[i];
+  item.classList.toggle('expanded');
 }
 
-// ─── INIT ───
-loadData();
+render();
 </script>
 </body>
 </html>
