@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-04T22:00:00+11:00",
-  "total_calls_analysed": 28,
+  "last_updated": "2026-04-05",
+  "total_calls_analysed": 29,
   "weekly_reset_date": "2026-03-31",
   "categories": {
     "price_affordability": {
@@ -144,9 +144,9 @@
         "oh": 3
       },
       "hs_call_id": "107232986897",
-      "key_moment": "Emily: 'I'm worried he's going to end up treating a woman this way' \u2014 Tom anchored this well",
-      "drill": "PRE-EMPT SINGLE MUM FINANCES: $111 frame before $2,700 when financial pressure visible in discovery",
-      "true_outcome": "Booked Call",
+      "key_moment": "Emily: 'Don't worry about doing a closing pitch. I'm in sales. I'm keen to do it. I'll make it work.' \u2014 $111 close signal not recognised. Tuesday follow-up booked. Small YES miss.",
+      "drill": "SMALL YES DRILL: When parent isolates to cash flow only + confirms value + says 'I'm keen' \u2014 ask for $111 before booking follow-up.",
+      "true_outcome": "Booked Call \u2014 Easter Sunday, Tuesday re-anchor Apr 7",
       "pending": true
     },
     {
@@ -192,26 +192,108 @@
       "drill": "ANALYTICAL PARENT DRILL: opportunity-cost deepening for professionals",
       "true_outcome": "Onboarding Booked",
       "prediction_match": true
+    },
+    {
+      "id": "DC-2026-04-01-REBECCA-TOM",
+      "contact": "Rebecca Drury",
+      "son": "Deakan",
+      "rep": "Tom",
+      "date": "2026-04-01",
+      "outcome": "Lucky Close",
+      "overall": null,
+      "scores": {
+        "s": null,
+        "i": null,
+        "e": null,
+        "l": null,
+        "opening": null,
+        "oh": null
+      },
+      "hs_call_id": "107297684091",
+      "key_moment": "Rep self-note: 'Poor by me \u2014 I believed her but really should have isolated.' Price Objection in HubSpot outcome. Deposit Paid. Notes-only \u2014 no full transcript. Lucky Close Protocol: Brodie re-anchor by April 7.",
+      "drill": "Lucky Close Protocol: Brodie to call by Apr 7. Re-anchor on what made her decide. Confirm expectations.",
+      "true_outcome": "Deposit Paid (Price Objection in HubSpot)",
+      "lucky_close": true,
+      "prediction_match": null,
+      "pending": true,
+      "note": "Unscored \u2014 notes-only transcript. Lucky Close flag set. Brodie activation protocol required."
+    },
+    {
+      "id": "DC-2026-04-01-KRISTY-TOM",
+      "contact": "Kristy Richards",
+      "son": "Riley",
+      "rep": "Tom",
+      "date": "2026-04-01",
+      "outcome": "Follow Up Scheduled",
+      "overall": 6.2,
+      "scores": {
+        "s": 3,
+        "i": 3,
+        "e": 3,
+        "l": 3,
+        "opening": 4,
+        "oh": 3
+      },
+      "hs_call_id": "107330132661",
+      "key_moment": "Tom called Riley 'Samuel' mid-pitch. Past-failure gold standard question never asked despite Kristy handing Tom the perfect setup ('fought for years, lasted 6 months'). No booked time with James before Easter = Call Objection.",
+      "drill": "PREP RITUAL + PAST FAILURE QUESTION: Write son's name before every call. When past support failure mentioned \u2014 ask Harry's question immediately.",
+      "ai_predicted_outcome": "Follow Up Scheduled",
+      "true_outcome": "Call Objection (HubSpot confirmed)",
+      "prediction_match": false,
+      "mismatch": true,
+      "pending": false
+    },
+    {
+      "id": "DC-2026-04-01-ELISABETH-TOM",
+      "contact": "Elisabeth Poole",
+      "son": "Michael",
+      "rep": "Tom",
+      "date": "2026-04-01",
+      "outcome": "Follow Up Scheduled",
+      "overall": 5.2,
+      "scores": {
+        "s": 3,
+        "i": 3,
+        "e": 2,
+        "l": 3,
+        "opening": 4,
+        "oh": 1
+      },
+      "hs_call_id": "107298015085",
+      "key_moment": "Elizabeth: 'Let me chat to Jason and myself.' Jason had been on the call the entire time. Tom: 'Yeah of course.' The both-parents close was right there \u2014 never attempted.",
+      "drill": "BOTH-PARENTS CLOSE DRILL: When both parents are live and mum defers to dad \u2014 turn to dad before responding to mum. 'Jason, you've heard everything \u2014 does this feel like what Michael needs?'",
+      "ai_predicted_outcome": "Follow Up Scheduled",
+      "true_outcome": "Call Objection (HubSpot confirmed \u2014 Price Objection)",
+      "prediction_match": false,
+      "mismatch": true,
+      "pending": false
     }
   ],
   "week_summary": {
     "week": "2026-03-31",
-    "total_calls": 6,
+    "total_calls": 7,
     "closes": 3,
-    "close_rate": "50% (Tom)",
+    "close_rate": "42.9% (Tom)",
     "confirmed_this_run": [
-      "James McLennan \u2192 Deposit Paid \u2705",
-      "Lorissa Garcia \u2192 Deposit Paid \u2705",
-      "Sky Schramm \u2192 Booked Call \u2705",
-      "Elisabeth Poole \u2192 Call Objection (MISMATCH)"
+      "James McLennan \u2192 Deposit Paid \u2705 (prediction match)",
+      "Lorissa Garcia \u2192 Onboarding Booked \u2705 (prediction match)",
+      "Sky Schramm \u2192 Booked Call \u2705 (prediction match)",
+      "Rebecca Drury \u2192 Deposit Paid (Lucky Close \u26a0\ufe0f \u2014 Brodie re-anchor needed)",
+      "Elisabeth Poole \u2192 Call Objection (MISMATCH \u2014 both-parents close miss)",
+      "Kristy Richards \u2192 Call Objection (MISMATCH \u2014 partner deferral + Easter break)"
     ],
     "pending": [
-      "Emily Brady \u2192 Booked Call (Tuesday follow-up \u2014 Near Close predicted)"
+      "Emily Brady \u2192 Booked Call (Tuesday Apr 7 re-anchor \u2014 Near Close predicted, 6.8)",
+      "Sky Schramm \u2192 Booked Call (post-Easter)"
     ],
     "mismatch_flags": [
-      "Elisabeth Poole \u2014 score 5.2, predicted Follow Up Scheduled, actual Call Objection/Price Objection"
+      "Elisabeth Poole \u2014 score 5.2, predicted Follow Up Scheduled, actual Call Objection (both-parents close miss)",
+      "Kristy Richards \u2014 score 6.2, predicted Follow Up Scheduled, actual Call Objection (partner deferral accepted + Easter cold risk)"
     ],
-    "prediction_accuracy": "4/5 resolved calls this week (80%)"
+    "lucky_close_flags": [
+      "Rebecca Drury \u2014 Deposit Paid, Price Objection in HubSpot, rep self-noted isolation failure. Brodie re-anchor by Apr 7."
+    ],
+    "prediction_accuracy": "3/5 fully resolved calls this week (60%) \u2014 2 mismatches both trace to partner close sequencing failure"
   },
   "latest_scored": {
     "id": "DC-2026-04-01-KRISTY-TOM",

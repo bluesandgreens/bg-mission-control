@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-04T22:00:00+11:00",
+  "last_updated": "2026-04-05T22:00:00+11:00",
   "week_of": "2026-03-31",
   "reps": {
     "anthony": {
@@ -12,10 +12,10 @@
       "oh_avg": 3.2,
       "trend": "holding",
       "p3_flag": false,
-      "improvement_area": "E (Emotional Labelling) \u2014 avg 2.2/5. Consistently uses generic labels. SECONDARY",
+      "improvement_area": "E (Emotional Labelling) \u2014 avg 2.2/5. Consistently uses generic labels. OH regression to watch (4\u21922 last 2 calls).",
       "this_week_calls": 0,
       "this_week_closes": 0,
-      "close_rate_this_week": "0/0 (no calls)"
+      "close_rate_this_week": "0/0 (Easter \u2014 no calls)"
     },
     "rye": {
       "calls_scored": 3,
@@ -27,10 +27,10 @@
       "oh_avg": 2.67,
       "trend": "declining",
       "p3_flag": true,
-      "improvement_area": "PRICE CARD + FEAR BOMB CYCLING (primary). Jo Kelly mismatch now closed \u2014 re-enga",
+      "improvement_area": "PRICE CARD + FEAR BOMB CYCLING. Jo Kelly mismatch confirmed closed. Price card must be memorised before next DC.",
       "this_week_calls": 0,
       "this_week_closes": 0,
-      "close_rate_this_week": "0/0 (no calls)"
+      "close_rate_this_week": "0/0 (Easter \u2014 no calls)"
     },
     "bailey": {
       "calls_scored": 3,
@@ -42,26 +42,29 @@
       "oh_avg": 2.67,
       "trend": "flat",
       "p3_flag": true,
-      "improvement_area": "CRITICAL: I Score = 1.0, E Score = 1.0 \u2014 no emotional deepening in any scored ca"
+      "improvement_area": "CRITICAL: I Score = 1.0, E Score = 1.0. Jasmine Lund FALSE POSITIVE confirmed. No new calls this week."
     },
     "tom": {
-      "calls_scored": 7,
+      "calls_scored": 8,
       "close_rate": 42.9,
       "closes": 3,
       "siel_avg": 6.57,
       "e_avg": 3.14,
       "i_avg": 3.29,
       "oh_avg": 3.0,
-      "trend": "declining_slight",
+      "trend": "holding",
       "p3_flag": false,
-      "improvement_area": "Partner Close Sequencing",
-      "this_week_calls": 6,
+      "improvement_area": "Partner Close Sequencing + Small YES Close recognition",
+      "this_week_calls": 7,
       "this_week_closes": 3,
-      "close_rate_this_week": "3/6 (50%)",
-      "avg_score_this_week": 6.42,
+      "close_rate_this_week": "3/7 scored this week (42.9%) \u2014 3 confirmed + 2 pending",
+      "avg_score_this_week": 6.43,
       "pending": [
-        "Emily Brady (Tuesday)",
-        "Sky Schramm (post-Easter)"
+        "Emily Brady \u2014 Tuesday Apr 7 re-anchor (Near Close, 6.8)",
+        "Sky Schramm \u2014 post-Easter (Booked Call, 5.6)"
+      ],
+      "lucky_close_flags": [
+        "Rebecca Drury \u2014 Brodie re-anchor needed by Apr 7"
       ]
     }
   }

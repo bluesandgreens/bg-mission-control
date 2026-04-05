@@ -1,23 +1,30 @@
 {
-  "date": "2026-04-04",
-  "label": "Saturday",
+  "date": "2026-04-05",
+  "label": "Sunday (Easter)",
   "wins": [
-    "37 broken crons fixed across 5 sessions - entire automated infrastructure rebuilt",
-    "hello@ root cause found & fixed system-wide (28 scripts migrated to admin@)",
-    "MRR recovered to $44.8K from $41.6K low",
-    "Program Milestone Engine shipped & live (W4/W8/W12 retention check-ins)",
-    "Weekly Business Digest v1 shipped to Harry",
-    "Mentor Pipeline Sync running clean - 207 records, zero errors"
+    "Tom closed 3 DCs this week: James McLennan, Lorissa Garcia, Rebecca Drury (3/7 = 43%)",
+    "Fear Anchor now reflexive on Tom \u2014 Emily Brady: 'becoming his dad' revelation, reflected accurately",
+    "Dentist metaphor deployed on every call \u2014 son buy-in never reaching close phase",
+    "Lorissa Garcia: analytical parent closed via opportunity-cost framing",
+    "Payment link friction handled perfectly twice (Lorissa Garcia + Rebecca Drury both paid on-call)",
+    "Prediction accuracy: 3/5 resolved calls matched (60%) \u2014 mismatches both diagnosed to same root cause"
   ],
   "misses": [
-    "hello@ OAuth still expired - Harry needs to re-auth when convenient",
-    "Rye at 0% close rate with declining trend - coaching pack sent but no feedback yet",
-    "Bailey P3 flagged - I=1.0, E=1.0 across all scored calls"
+    "Elisabeth Poole: Jason on the call the whole time \u2014 Tom never turned to him. Call Objection.",
+    "Kristy Richards: partner deferral accepted + no booked 3-way before Easter = Call Objection",
+    "Emily Brady: 'I'm in sales, I'm keen' \u2014 $111 close not attempted. Tuesday follow-up booked instead.",
+    "Rebecca Drury: Lucky Close \u2014 rep self-noted isolation failure. Brodie re-anchor needed by Apr 7.",
+    "Rye: 0/3 close rate, Jo Kelly window confirmed closed, 0 DCs over Easter",
+    "Bailey: Jasmine Lund FALSE POSITIVE confirmed reversed. I=1.0, E=1.0 across all scored calls."
   ],
   "carry_forwards": [
-    "Emily Brady follow-up Tuesday Apr 7 - Tom's re-anchor call",
-    "Circle pilot decisions still pending - date, facilitator, pricing",
-    "W2 mentor outreach batch (100 contacts) fires Apr 8"
+    "Emily Brady re-anchor: Tuesday Apr 7 \u2014 Tom to open with the DV/becoming-his-dad fear",
+    "Rebecca Drury Lucky Close: Brodie to call by Apr 7 \u2014 re-anchor, confirm expectations",
+    "Kristy Richards: Rye or Tom to attempt re-engage by Apr 8 with partner involved",
+    "Sky Schramm: post-Easter follow-up (Booked Call \u2192 warm lead)",
+    "Circle pilot decisions still pending",
+    "W2 mentor outreach batch fires Apr 8",
+    "Bailey: transcript submission required before next coaching session"
   ],
-  "one_thing_tomorrow": "Saturday rest day - but if Harry's working: review Program Milestone Engine output & decide on Circle pilot date"
+  "one_thing_tomorrow": "Monday: Confirm Brodie has Rebecca Drury Lucky Close Protocol triggered (call by Apr 7). Tom prep for Emily Brady Tuesday."
 }
