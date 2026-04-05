@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-04T07:35:40.433201",
+  "generated": "2026-04-06T06:30:05.554855",
   "paused_subs": [
     {
       "name": "Natalie Brennan",
@@ -25,6 +25,15 @@
       "amount": 1808.0,
       "resumes_at": "indefinite",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sqp092mA5zLxyK834krAn3L",
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
+    },
+    {
+      "name": "Emily Greaves",
+      "email": "em-greaves@hotmail.com",
+      "amount": 232.0,
+      "resumes_at": "indefinite",
+      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sjd6L2mA5zLxyK8XzL49PU9",
       "hs_url": "",
       "hs_member_status": "Active Sessions"
     },
@@ -83,5 +92,5 @@
       "hs_member_status": "Active Sessions"
     }
   ],
-  "total_count": 9
+  "total_count": 10
 }
