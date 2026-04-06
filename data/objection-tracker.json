@@ -1,0 +1,370 @@
+{
+  "last_updated": "2026-04-06",
+  "total_calls_analysed": 29,
+  "weekly_reset_date": "2026-03-28",
+  "categories": {
+    "price_affordability": {
+      "count": 11,
+      "last_week": 7,
+      "trend": "increasing",
+      "by_rep": {
+        "anthony": 1,
+        "bailey": 2,
+        "rye": 2,
+        "tom": 6
+      },
+      "avg_handling_grade": 1.8,
+      "best_example": {
+        "call": "Leanne Black \u2014 Anthony \u2014 Mar 23",
+        "parent_quote": "NDIS funding question raised",
+        "rep_response": "Proactively offered NDIS pathway before objection fully formed",
+        "grade": 4,
+        "outcome_confirmed": "Deposit Paid",
+        "note": "Best example of pre-handling \u2014 solved before it became a blocker. Leanne Black confirmed Deposit Paid."
+      },
+      "worst_example": {
+        "call": "Bianca JESS \u2014 Rye \u2014 Mar 26",
+        "parent_quote": "$450 a fortnight? Oh shit.",
+        "rep_response": "\"Off the top of my head, about $450, I think.\" Immediately offered to send email info without any objection handling.",
+        "grade": 1,
+        "outcome_confirmed": "Booked Call (no close)",
+        "note": "Worst price handling on record. Rep did not know his own payment plans, calculated live, retreated to email at first resistance. Bianca said 'I'll find a way' \u2014 a clear buying signal that Rye acknowledged with 'yeah yeah 100%' and booked a follow-up. Outcome confirmed: no close."
+      },
+      "weekly_note": "Apr 6 update: Two new Anthony DCs (Leah Stephens Apr 6, Helen Hope Apr 5) both resulted in Price Objection. Neither has transcript for analysis. Anthony's price objection count now: 1 scored + 2 unscored = 3 total. Combined with team data: 11 scored + 2 unscored. Tom's price confidence remains solid (Lorissa Garcia closed cleanly, James McLennan closed cleanly). The gap is Anthony and the unscorable calls."
+    },
+    "partner_coparent": {
+      "count": 7,
+      "last_week": 3,
+      "trend": "increasing",
+      "by_rep": {
+        "anthony": 3,
+        "tom": 2
+      },
+      "avg_handling_grade": 2.6,
+      "best_example": {
+        "call": "Judith Lacey \u2014 Anthony \u2014 Mar 23",
+        "parent_quote": "His dad needs to agree",
+        "rep_response": "Excellent isolation: 'If dad wasn't on board, what would happen?' \u2014 isolated the conditional and addressed the auth question cleanly. Achieved 10/10 after.",
+        "grade": 4,
+        "outcome_confirmed": "Active Sessions (W1 completed Mar 29)",
+        "note": "Best Anthony objection handling on record \u2014 proactive isolation + conditional close. Judith confirmed Active Sessions with W1 on Mar 29. Gold standard partner objection handling leads to confirmed activation."
+      },
+      "worst_example": {
+        "call": "Elisabeth Poole \u2014 Tom \u2014 Apr 1",
+        "parent_quote": "Let me chat to Jason and myself.",
+        "rep_response": "Yeah of course, completely understand.",
+        "grade": 1,
+        "outcome_confirmed": "Call Objection (HubSpot Apr 3)",
+        "note": "CRITICAL miss: Jason had been on the call the entire time. Elizabeth cited him as the decision-maker. Tom accepted the deferral without turning to Jason directly. The sequence: turn to dad \u2014 'Jason, you've heard everything \u2014 does this feel like what Michael needs?' \u2014 was not used. Outcome hardened to Call Objection within 2 days. Both of this week's Call Objection outcomes trace to this same pattern."
+      },
+      "weekly_note": "Apr 6 MONDAY FINAL: Easter week closed. Elisabeth Poole + Kristy Richards = 2 Call Objection outcomes from partner deferral. Both already flagged. No new partner objection data this pass (no new scored calls). Emily Brady follow-up tomorrow \u2014 partner is not a factor on this call (single mum). Next partner-close test will be Tom's next two-parent call."
+    },
+    "son_buyin": {
+      "count": 7,
+      "last_week": 3,
+      "trend": "increasing",
+      "by_rep": {
+        "rye": 1,
+        "tom": 5
+      },
+      "avg_handling_grade": 4.3,
+      "best_example": {
+        "call": "Bec Richardson \u2014 Tom \u2014 Mar 26",
+        "parent_quote": "He'll be anti it to start with. It's all about picking your moment.",
+        "rep_response": "Dentist metaphor delivered naturally: 'It's a bit like getting them to the dentist, just get them in the chair and they'll get it done. You get them on the phone with us and boys that were reluctant will be buzzing for the next call.'",
+        "grade": 5,
+        "outcome_confirmed": "Deposit Paid",
+        "note": "Mar 29 CONFIRMED: Bec Richardson = Deposit Paid. Tom's dentist metaphor + pre-emptive son buy-in handling contributed to a clean close. Grade 5 from confirmed close only."
+      },
+      "worst_example": null,
+      "weekly_note": "Apr 2 update: Tom's dentist metaphor now deployed on all 4 calls naturally. Pre-emptive handling is gold standard. New data point: Lorissa/Samuel (organised resistance), James/Tommy (flat no), Emily/Charlie (gaming distraction), Sky/Sam (guarded). All handled at 4/5 with dentist."
+    },
+    "timing_not_now": {
+      "count": 1,
+      "last_week": 1,
+      "trend": "stable",
+      "by_rep": {
+        "rye": 1
+      },
+      "avg_handling_grade": 3.0,
+      "best_example": {
+        "call": "Steffany Campbell \u2014 Rye \u2014 Mar 21",
+        "parent_quote": "Want to wait until Koban gets back from Bendigo",
+        "rep_response": "Used son's return as urgency window",
+        "grade": 3,
+        "outcome_confirmed": null,
+        "note": "Decent urgency reframe but financial blocker not addressed"
+      },
+      "worst_example": null
+    },
+    "misunderstanding": {
+      "count": 0,
+      "last_week": 0,
+      "trend": "new",
+      "by_rep": {},
+      "avg_handling_grade": 0,
+      "best_example": null,
+      "worst_example": null
+    },
+    "trust_credibility": {
+      "count": 1,
+      "last_week": 1,
+      "trend": "stable",
+      "by_rep": {
+        "anthony": 1
+      },
+      "avg_handling_grade": 3.0,
+      "best_example": {
+        "call": "Beck Reside \u2014 Anthony \u2014 Mar 23",
+        "parent_quote": "I've heard all this before. And I'm pretty sure none of this is going to help.",
+        "rep_response": "Acknowledged skepticism, stayed warm, continued with pitch.",
+        "grade": 3,
+        "outcome_confirmed": "Follow Up Scheduled",
+        "note": "Beck Reside confirmed Follow Up. The 'past failure' + financial constraint combination was likely unwinnable regardless. Anthony read the room correctly."
+      },
+      "worst_example": null
+    },
+    "past_failure": {
+      "count": 1,
+      "last_week": 1,
+      "trend": "stable",
+      "by_rep": {
+        "anthony": 1
+      },
+      "avg_handling_grade": 3.0,
+      "best_example": {
+        "call": "Beck Reside \u2014 Anthony \u2014 Mar 23",
+        "parent_quote": "It all sounds very good. Like I said, I've heard all this before.",
+        "rep_response": "Maintained warmth but didn't use the gold standard 'what missed the mark' question to reframe",
+        "grade": 3,
+        "outcome_confirmed": "Follow Up Scheduled",
+        "note": "Gold standard from Harry: 'What do you think missed the mark with previous supports?' Not used here. Outcome: Follow Up \u2014 likely unwinnable given financial constraints, but the gold standard question should still be in every call."
+      },
+      "worst_example": null
+    },
+    "think_about_it": {
+      "count": 3,
+      "last_week": 3,
+      "trend": "increasing",
+      "by_rep": {
+        "anthony": 2,
+        "tom": 1
+      },
+      "avg_handling_grade": 2.0,
+      "best_example": {
+        "call": "Tayla Colman \u2014 Anthony \u2014 Mar 20",
+        "parent_quote": "I need to have a chat with my husband first",
+        "rep_response": "Partial isolation \u2014 'if Anthony said no, would you still go?' secured a YES.",
+        "grade": 3,
+        "outcome_confirmed": null,
+        "note": "Got the conditional YES. Failed to convert it to a close."
+      },
+      "worst_example": {
+        "call": "Sophie Cuzzy \u2014 Anthony \u2014 Mar 23",
+        "parent_quote": "Maybe just think it over",
+        "rep_response": "A hundred percent. Sit with that a little bit.",
+        "grade": 2,
+        "outcome_confirmed": "Booked Call (no close)",
+        "note": "CONFIRMED \u2014 Sophie Cuzzy remains Booked Call. BAMFAM cave without isolation = no close. This is now a confirmed outcome linked to OH=2 handling. The $111 de-risk frame would have given Sophie an easy yes. Not used."
+      }
+    },
+    "logistics": {
+      "count": 2,
+      "last_week": 2,
+      "trend": "stable",
+      "by_rep": {
+        "anthony": 1,
+        "bailey": 1
+      },
+      "avg_handling_grade": 3.5,
+      "best_example": {
+        "call": "Leanne Black \u2014 Anthony \u2014 Mar 23",
+        "parent_quote": "NDIS funding availability",
+        "rep_response": "Proactively identified and offered NDIS pathway",
+        "grade": 4,
+        "outcome_confirmed": "Deposit Paid",
+        "note": "CONFIRMED: Leanne Black = Deposit Paid. Pre-handling the logistics objection before it became a blocker = close. Know your lead's profile before the call."
+      },
+      "worst_example": null
+    },
+    "emotional_overwhelm": {
+      "count": 1,
+      "last_week": 1,
+      "trend": "stable",
+      "by_rep": {
+        "anthony": 1
+      },
+      "avg_handling_grade": 3.0,
+      "best_example": {
+        "call": "Beck Reside \u2014 Anthony \u2014 Mar 23",
+        "parent_quote": "I'm absolutely exhausted. We've tried everything.",
+        "rep_response": "Acknowledged with empathy, did not push the close.",
+        "grade": 3,
+        "outcome_confirmed": "Follow Up Scheduled",
+        "note": "Sometimes the right call is to preserve the relationship. Outcome: Follow Up \u2014 consistent with reading."
+      },
+      "worst_example": null
+    }
+  },
+  "weekly_top_3": [
+    {
+      "rank": 1,
+      "category": "price_affordability",
+      "count": 11,
+      "avg_handling_grade": 2.1,
+      "note": "EASTER SUNDAY FINAL \u2014 Week of Mar 31\u2013Apr 4 closed. Emily Brady (Tom, Mar 31): clean isolation ('apart from investment, would you go forward?' \u2014 got YES). Gap: didn't attempt $111 close on-call after Emily said 'I'm in sales, I'm keen.' Booked Tuesday instead. Pattern: Tom isolates cleanly but doesn't recognise 'I'm keen' as a $111 close signal. Elisabeth Poole (Call Objection) = partner close miss, not price handling failure. Lorissa Garcia = paid on call cleanly. Price confidence is not the issue. Small YES recognition is."
+    },
+    {
+      "rank": 2,
+      "category": "partner_coparent",
+      "count": 7,
+      "avg_handling_grade": 2.6,
+      "note": "Week confirmed at 2 Call Objection outcomes: Elisabeth Poole (dad on call, not engaged) + Kristy Richards (Easter break + no booked 3-way). Partner deferral is now the team's #1 close leak this week. Fix confirmed: present-but-silent dad \u2014 address before mum can defer; absent partner \u2014 isolate \u2192 conditional YES \u2192 book 3-way same call. No new partner objections added this pass."
+    },
+    {
+      "rank": 3,
+      "category": "son_buyin",
+      "count": 7,
+      "avg_handling_grade": 4.3,
+      "note": "STRENGTH \u2014 Tom's dentist metaphor deployed on Emily Brady, personalised to Charlie's Fortnite/gaming context. 'Less about who we are and more who we're not' framing used perfectly. All 7 calls with Tom show pre-emptive son buy-in handling. Emily responded: 'People will be all for that.' Grade 4/5. Team strength \u2014 now in playbook."
+    }
+  ],
+  "new_patterns": [
+    {
+      "date": "2026-03-25",
+      "pattern": "Post-close activation risk from emotional under-anchoring",
+      "description": "Jasmine Lund (Bailey, Mar 21) \u2014 Lucky close (score 3.7), confirmed 'Call Objection' in HubSpot. Consistent with no emotional investment during the call.",
+      "reps_affected": [
+        "bailey"
+      ],
+      "recommendation": "Lucky Close Protocol: any call flagged Lucky Close triggers a Brodie activation call within 48hrs. Protocol was NOT followed for Jasmine Lund. Add to Brodie's checklist."
+    },
+    {
+      "date": "2026-03-26",
+      "pattern": "Payment plan ignorance \u2014 Rye calculated fortnightly payments live on call",
+      "description": "Bianca JESS: Rye said 'off the top of my head, about $450, I think, a fortnight'. Price card must be memorised by all reps.",
+      "reps_affected": [
+        "rye"
+      ],
+      "recommendation": "Price card drill: $2,700 lump / $450 fortnightly / $225 weekly / $900 monthly. No rep should ever calculate live."
+    },
+    {
+      "date": "2026-03-26",
+      "pattern": "'I'll find a way' \u2014 buying signal after price shock misidentified as a stall",
+      "description": "Bianca JESS (Rye): After price shock, Bianca said 'I'll find a way.' Rye booked a follow-up. THIS IS A YES.",
+      "reps_affected": [
+        "rye"
+      ],
+      "recommendation": "Add 'I'll find a way' to buying signal recognition drill. Respond: 'You just said you'll find a way \u2014 I believe you. If I can find a payment schedule that works, are we doing this today?'"
+    },
+    {
+      "date": "2026-03-28",
+      "pattern": "Jo Kelly (Rye, Mar 23) \u2014 PREDICTION MISMATCH",
+      "description": "Score 6.8, predicted Near Close. Day 6 (Mar 29): still Booked Call in HubSpot, no DC outcome. Uncycled abandonment bomb (Tyson: 'if he was so worried about me, why would he leave me?') left anchor incomplete.",
+      "reps_affected": [
+        "rye"
+      ],
+      "recommendation": "Rye to call Jo Kelly Mar 30. Re-anchor only \u2014 'I've been thinking about Tyson since our call.' Day 7 is the close of the window."
+    },
+    {
+      "date": "2026-03-29",
+      "pattern": "CONFIRMED: Price confidence correlates with close rate this week (3/3)",
+      "description": "Week of Mar 23-29: Every confirmed close (Judith Lacey, Leanne Black, Bec Richardson) had confident single-price delivery. Every non-close had hesitant, absent, or caved price delivery. This is 6 calls with a clean split. The data is clear.",
+      "reps_affected": [
+        "all"
+      ],
+      "recommendation": "Price card is now ranked as the single highest-leverage skill to train this week \u2014 above even emotional labelling. Without confident price delivery, deepening quality is irrelevant. Memorise the card."
+    },
+    {
+      "date": "2026-03-29",
+      "pattern": "Lucky Close Protocol gap \u2014 Jasmine Lund Call Objection was preventable",
+      "description": "Jasmine Lund paid Mar 21, flagged Lucky Close Mar 21, Call Objection confirmed Mar 28-29. Brodie re-anchor call should have been placed by Mar 23. It was not. The reversal was preventable with the protocol.",
+      "reps_affected": [
+        "bailey"
+      ],
+      "recommendation": "Harry to confirm with Brodie: Lucky Close flag triggers a 48hr activation call. Add to Brodie's standard onboarding checklist. Bailey: no new coaching sessions until transcript submitted."
+    },
+    {
+      "date": "2026-04-01",
+      "pattern": "Both-parents close miss \u2014 Tom had Dad on the call but didn't use him",
+      "description": "Elisabeth Poole: Elizabeth cited \"need to chat with Jason\" as reason to defer. Jason had been on the call for the entire conversation but hadn't spoken in 20+ minutes. Tom never directed a question at Jason. One direct question to dad \u2014 \"Jason, does this feel like what Michael needs?\" \u2014 would have removed the blocker and likely closed. This is a new failure mode: the PASSIVE PARTNER. Different from the absent partner objection (handled well by Anthony on Judith). Needs dedicated handling.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "Both-parents close sequence: When both parents are live and mum defers to dad \u2014 turn immediately to dad. Don't let it be an \"I'll check with him later.\" \"Jason, you've heard everything \u2014 from your perspective, does this feel like what Michael needs right now?\""
+    },
+    {
+      "date": "2026-04-02",
+      "pattern": "Analytical parent needs opportunity-cost deepening, not fear questions",
+      "description": "Lorissa Garcia (organisational psychologist) processed all fear questions cognitively. Standard fear bomb ('what worries you most?') surfaced a risk narrative, not an emotional revelation. Tom got to surface-level fear but didn't unlock real depth. Opportunity-cost framing ('what would you regret most if you waited 6 months?') is the alternative strategy for high-functioning parents.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "Add analytical parent deepening sequence to Tom's drill set. Trigger: when parent is a professional in helping/coaching/corporate field \u2014 pivot from fear to opportunity-cost framing."
+    },
+    {
+      "date": "2026-04-02",
+      "pattern": "Lighthouse program introduced too early as financial escape hatch",
+      "description": "Sky Schramm: Tom introduced the Lighthouse program before properly isolating the financial objection. This gave Sky an easy exit ('I'll look at the info and email Thursday') instead of continuing toward a $111 close. Lighthouse is a valid fallback but should only surface AFTER: isolate \u2192 $111 de-risk \u2192 weekly plan \u2192 still blocked.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "Lighthouse = last resort only. Sequence: isolate \u2192 $111 \u2192 weekly/fortnightly \u2192 if still no \u2192 Lighthouse. Never introduce Lighthouse unprompted when weekly payment plan hasn't been fully explored."
+    },
+    {
+      "date": "2026-04-02",
+      "pattern": "Passive-partner-on-call close miss (Elisabeth Poole pattern)",
+      "description": "Elisabeth Poole: dad (Jason) was on the call the entire time but silent. After Tom completed the pitch, Elizabeth said 'Let me chat to Jason and myself.' Tom accepted this without turning to Jason. The close was available \u2014 Jason was right there. Outcome hardened to Call Objection/Price Objection in HubSpot. This is DIFFERENT from the absent partner objection: the partner is present, not absent. The fix is to address the passive partner BEFORE the mum can defer to him.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "Both-Parents Close sequence: When both parents are live \u2192 turn to dad directly after mum speaks. 'Jason/[Dad], you've heard everything \u2014 from your perspective, does this sound like what [son] needs?' Get his YES on record before she can defer. This neutralises the deferral before it forms."
+    },
+    {
+      "date": "2026-04-03",
+      "pattern": "Name carryover error \u2014 rep called son by wrong name mid-pitch",
+      "description": "Tom called Riley 'Samuel' during the pitch (Kristy Richards call). Samuel was Lorissa Garcia's son \u2014 the call scored the day before. This is a context carryover error from back-to-back DCs. If the parent caught it, trust broke mid-pitch. Even if unnoticed, it signals lack of prep. This is a low-frequency but high-impact error that can cost an otherwise clean call.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "Prep ritual before every DC: write [Son Name] + [Mum Name] on paper. Say son's name in the first 2 minutes to anchor it. Never score > 1 call per day without this ritual. Add to Tom's weekly training doc."
+    },
+    {
+      "date": "2026-04-03",
+      "pattern": "Past-failure question never asked \u2014 gold standard positioning missed",
+      "description": "Kristy Richards described: 'we fought for years just to get something in place... it lasted like six months.' This is the exact setup for Harry's gold standard question: 'What do you think missed the mark with previous supports?' Tom moved past it. That question does three things: surfaces the gap in prior support, lets the mum articulate what she needs, positions B&G as the answer to HER specific problem. Not using it leaves B&G as one of many options instead of THE answer.",
+      "reps_affected": [
+        "tom",
+        "anthony"
+      ],
+      "recommendation": "Add 'past failure' trigger to all reps: when a parent mentions previous support that didn't last or didn't work \u2014 STOP. Ask: 'What do you think missed the mark with those supports?' This is Harry's gold standard. Anthony has never asked it. Tom missed it here. It belongs in every call where past support is mentioned."
+    },
+    {
+      "date": "2026-04-03",
+      "pattern": "Easter break + unresolved partner objection = Call Objection hardening",
+      "description": "Kristy Richards (Tom, Apr 1): Tom got a conditional yes from Kristy but didn't book a specific time with James before hanging up. Easter break (Apr 2-7) means no rep-initiated follow-up until Tuesday. Objection hardened to Call Objection in HubSpot by Apr 2. This is a sequencing/timing lesson: when the decision needs a second party's input, the re-engagement must be locked in during the same call \u2014 not left to chance. Holidays amplify the cold-lead risk from any unresolved partner objection.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "When partner buy-in is needed and holiday/busy period incoming: 'I know things get busy over Easter \u2014 let's lock in a 15-minute call on [specific day] with James. What's a good time?' Book it before hanging up. Never leave it as 'I'll leave that with you.'"
+    },
+    {
+      "date": "2026-04-04",
+      "pattern": "Rebecca Drury Lucky Close \u2014 price objection accepted without full isolation",
+      "description": "Rebecca Drury (Apr 1): Rep self-noted 'believed her but really should of isolated even tho it was a fkn random one, but didnt even give myself the chance to.' Deposit Paid despite partial isolation. Price Objection listed in HubSpot discovery_call_outcome. This is a Lucky Close \u2014 emotional anchor uncertain, Brodie re-activation call required within 48hrs of April 5 (back from Easter).",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "Lucky Close Protocol: Brodie to call Rebecca Drury by April 7. Re-anchor: 'What made you decide to go ahead?' Confirm she's clear on what she signed up for. If shaky \u2192 rebook expectations conversation. Do NOT wait for W1 to find out she's not activated."
+    },
+    {
+      "date": "2026-04-05",
+      "pattern": "Single YES close signal not recognised \u2014 'I'm in sales, I'm keen' is a $111 signal",
+      "description": "Emily Brady (Tom, Mar 31): Emily said 'Don't worry about doing a closing pitch. I'm in sales. I'm keen to do it. I'll make it work.' Tom had already isolated price as the only blocker and got a YES on value. Instead of asking 'The $111 is literally $111 \u2014 is that doable today?', Tom booked Tuesday. This is a follow-up risk that could have been closed on-call. Pattern: rep recognises the stall but doesn't recognise the 'I'm keen' signal as a green light to attempt the small YES before booking follow-up.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "Small YES Close drill: when the parent has isolated to cash flow only + confirmed value + says 'I'm keen' \u2014 ask specifically for $111 before booking follow-up. '$111 is literally $111, not the big number. Is that doable today?' One question. If still no, book the follow-up. Add to weekly training doc."
+    }
+  ]
+}
