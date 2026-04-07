@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-04-06",
-  "total_calls_analysed": 29,
+  "last_updated": "2026-04-07",
+  "total_calls_analysed": 30,
   "weekly_reset_date": "2026-03-28",
   "categories": {
     "price_affordability": {
-      "count": 11,
+      "count": 12,
       "last_week": 7,
       "trend": "increasing",
       "by_rep": {
         "anthony": 1,
         "bailey": 2,
         "rye": 2,
-        "tom": 6
+        "tom": 7
       },
       "avg_handling_grade": 1.8,
       "best_example": {
@@ -60,12 +60,12 @@
       "weekly_note": "Apr 6 MONDAY FINAL: Easter week closed. Elisabeth Poole + Kristy Richards = 2 Call Objection outcomes from partner deferral. Both already flagged. No new partner objection data this pass (no new scored calls). Emily Brady follow-up tomorrow \u2014 partner is not a factor on this call (single mum). Next partner-close test will be Tom's next two-parent call."
     },
     "son_buyin": {
-      "count": 7,
+      "count": 8,
       "last_week": 3,
       "trend": "increasing",
       "by_rep": {
         "rye": 1,
-        "tom": 5
+        "tom": 6
       },
       "avg_handling_grade": 4.3,
       "best_example": {
