@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-10T12:00:00+10:00",
+  "last_updated": "2026-04-10T22:00:00+10:00",
   "reps": {
     "anthony": {
       "hubspot_owner_id": "87029276",
@@ -70,7 +70,7 @@
         "last_5_avg": 5.96,
         "prior_5_avg": null,
         "direction": "holding",
-        "note": "Mar 29 update: Week confirmed. Judith Lacey = Active Sessions (W1 completed Mar 29 \u2705). Leanne Black = Deposit Paid \u2705. Sophie Cuzzy = Booked Call (no close, prediction matched \u2705). Beck Reside = Follow Up (prediction matched \u2705). 2/4 closes = 50% close rate. Both closes (Judith, Leanne) at E=2-3 \u2014 closes happening despite weak labelling on high-fit leads. Sophie Cuzzy and Beck Reside are the ceiling proof: E=2 + no bomb cycling = no close. Improvement area unchanged: E score avg 2.2. OH regression (4\u21922 in last 2 calls) is emerging as second concern."
+        "note": "Apr 10: Leah Stephens (30min DC this week) \u2014 NO recording. Anthony now has 3 unscored DCs (Leah Stephens, Helen Hope, Leah Stephens Apr 10). Close rate: 2/5 scored (40%). Transcript submission blocking development. E=2.2 unchanged. OH regression from 4\u21922 still unaddressed."
       },
       "close_rate_vs_siel": {
         "calls": 5,
@@ -175,7 +175,7 @@
         "last_5_avg": 5.17,
         "prior_5_avg": null,
         "direction": "declining",
-        "note": "Mar 30 FINAL: Jo Kelly window closed. Re-engage not made. 0/3 close rate confirmed for this DC cohort. No new DCs today (outbound only). Week summary: 3 DCs, 0 closes, 1 mismatch (Jo Kelly). Two non-negotiable drills before next DC: (1) Price card \u2014 $2,700 / $450 fortnightly / $225 weekly / $900 monthly, no calculation ever. (2) Fear bomb cycling \u2014 when a parent reveals the child's pain, STOP, repeat exact words, 2 follow-up questions minimum. These are the two things standing between Rye and a close."
+        "note": "Apr 10: ZERO DCs in 15+ days (last DC: Mar 26 Bianca JESS). Only outbound touches logged. 0/3 close rate unchanged. Drills cannot be evaluated without a live call. Regression risk increasing with every day without a DC."
       },
       "close_rate_vs_siel": {
         "calls": 3,
@@ -353,7 +353,7 @@
         "last_5_avg": 3.73,
         "prior_5_avg": null,
         "direction": "improving",
-        "note": "Apr 10: Jen Howgate scored 4.8/10 \u2014 Bailey's highest score. Structure improved (S=3, Opening=3) but E=1 unchanged. Discovery patience improved. $111 de-risk framing was clean. Core gap remains: no emotional deepening. Mark (partner) was on call but never addressed at close. HubSpot owner ID confirmed: 88035516."
+        "note": "Apr 10: THREE potential closes this week (Titis Bindarstuti, Gezzell Johnson, Rebecca Hill-Douglas) \u2014 all Deposit Paid. Jen Howgate scored 4.8 (highest ever). CRITICAL: None of the 3 closes have recordings/transcripts. Cannot verify if closes are emotionally anchored or Lucky Closes. Transcript submission remains blocking issue. If 3 closes confirmed genuine: close rate jumps from 25% to potentially 4/7 (57%). Lucky Close Protocol must be applied to all 3 \u2014 Brodie activation calls within 48hrs."
       },
       "close_rate_vs_siel": {
         "calls": 4,
@@ -361,7 +361,7 @@
         "rate": 25.0,
         "avg_close_siel": 3.7,
         "avg_miss_siel": 3.73,
-        "note": "Apr 10: Jen Howgate = Follow Up (Price Concern). 1/4 close rate (25%). Only close (Jasmine Lund) was a false positive. Effective close rate: 0/4 (0%). Jen Howgate was Bailey's best-structured call but E=1 prevented emotional anchoring."
+        "note": "Apr 10: 3 NEW closes without transcripts (Titis Bindarstuti, Gezzell Johnson, Rebecca Hill-Douglas). Cannot be scored. Lucky Close risk HIGH \u2014 Bailey E=1.0 avg. Brodie must activate all 3 within 48hrs. If all hold: close rate jumps from 1/4 (25%) to potentially 4/7 (57%). Jasmine Lund reversal is the warning."
       },
       "top_objections": [
         "price_affordability",
@@ -554,9 +554,9 @@
       },
       "trend": {
         "last_5_avg": 6.28,
-        "prior_5_avg": 6.44,
+        "prior_5_avg": 6.65,
         "direction": "declining",
-        "note": "Apr 7: Kirian Andreou scored 6.0/10 \u2014 FOURTH consecutive deferral acceptance without $111 close attempt. OH score: 4->3->2->2. Overall declining: 7.6->6.2->6.0->6.0. Close phase is now CRITICAL gap. George was at the psych with Anthony \u2014 the partner was INVESTED and Tom still deferred to info pack. 3/9 closes (33.3%). Emily Brady follow-up was TODAY \u2014 outcome unknown. Rebecca Smith Saturday follow-up is second priority."
+        "note": "Apr 10: Week confirmed. Rebecca Smith = Follow Up Scheduled (prediction match \u2705). Kirian Andreou = Call Objection/Partner (prediction mismatch \u2014 predicted Follow Up, hardened to Call Objection). Lorissa Garcia W1 completed Apr 8 \u2705 \u2014 now Active Sessions. Emily Brady STILL Booked Call after 10+ days \u2014 follow-up appears stalled. Close rate: 3/9 (33.3%). OH avg 2.78 declining. 4+ consecutive deferrals without $111 attempt."
       },
       "close_rate_vs_siel": {
         "calls": 9,
@@ -901,26 +901,26 @@
         }
       ],
       "weekly_training": {
-        "week_of": "2026-04-07",
-        "headline": "FOURTH Consecutive Deferral \u2014 The $111 Close Is Now Non-Negotiable",
+        "week_of": "2026-04-10",
+        "headline": "FIFTH Consecutive Deferral Pattern \u2014 Close Phase Is Now The #1 Priority",
         "where_you_stand": {
           "calls_scored": 9,
-          "close_rate": "3/9 confirmed (33.3%) \u2014 declining from 37.5%",
-          "siel_score": 6.41,
-          "this_week": "Rebecca Smith (6.0, Saturday follow-up), Kirian Andreou (6.0, Call Objection)",
-          "pending": "Emily Brady follow-up (TODAY), Rebecca Smith (Saturday)"
+          "close_rate": "3/9 confirmed (33.3%) \u2014 flat",
+          "siel_score": 6.44,
+          "this_week": "Rebecca Smith (6.0), Kirian Andreou (6.0). Plus 2 unscored (Cara Brondolino, Magena Abua) \u2014 pending transcription.",
+          "pending": "Emily Brady still Booked Call \u2014 follow-up appears stalled. Rebecca Smith Saturday follow-up unknown. Lorissa Garcia W1 completed Apr 8 \u2705."
         },
         "what_you_do_well": [
-          "Warm-up is consistently natural and disarming \u2014 IT issues with Kirian, Mildura with Rebecca",
+          "Warm-up consistently natural \u2014 Mildura (Rebecca), IT issues (Kirian)",
           "All deepening questions asked on every call",
-          "Dentist metaphor deployed naturally every time",
-          "Pitch personalisation is strong \u2014 bridge metaphor, psych connection",
-          "Professional follow-up proposals (call George, book joint call)"
+          "Dentist metaphor natural on every call",
+          "Pitch personalisation strong \u2014 bridge metaphor, psych connection",
+          "Professional follow-up proposals"
         ],
         "one_thing_to_fix": {
           "dimension": "OH/Close",
           "headline": "Ask For The $111 ONCE Before Accepting ANY Deferral",
-          "detail": "Four consecutive deferrals accepted. Emily Brady (I'm keen \u2192 Tuesday), Kristy Richards (I'll leave that with you), Rebecca Smith (Saturday), Kirian Andreou (info pack). ONE question: 'The $111 is literally just $111 \u2014 is that doable today?'",
+          "detail": "Four+ consecutive deferrals accepted. Pattern confirmed and hardening. Every warm lead deferred without $111 attempt is a lost close.",
           "ceiling_without": 6.0,
           "ceiling_with": 8.5
         },
@@ -932,10 +932,10 @@
           "prep_ritual"
         ],
         "rye_role": [
-          "Run Small YES Close drill 5x using Kirian + Rebecca transcripts",
-          "Saturday Rebecca Smith: check Tom attempted $111",
+          "Run Small YES Close drill using Kirian + Rebecca transcripts",
           "Role-play partner deferral scenario \u2014 Tom must isolate before accepting",
-          "End-of-week debrief: did close rate improve?"
+          "Check: did Tom attempt $111 on any call this week?",
+          "End-of-week debrief: has close rate improved?"
         ]
       }
     }
