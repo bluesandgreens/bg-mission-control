@@ -1,21 +1,21 @@
 {
-  "generated": "2026-04-07T06:30:06.244012",
+  "generated": "2026-04-11T06:30:05.273439",
   "paused_subs": [
+    {
+      "name": "Judy Lacey (Son Jack)",
+      "email": "phudyjillips@hotmail.com",
+      "amount": 664.0,
+      "resumes_at": "indefinite",
+      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TEh802mA5zLxyK8HK6eCH9I",
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
+    },
     {
       "name": "Natalie Brennan",
       "email": "nbrennan@gelatissimo.com.au",
       "amount": 1808.0,
       "resumes_at": "indefinite",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sylmv2mA5zLxyK8jXOFKBwl",
-      "hs_url": "",
-      "hs_member_status": "Active Sessions"
-    },
-    {
-      "name": "Jo Flanagan",
-      "email": "joflanagan@hotmail.com",
-      "amount": 222.0,
-      "resumes_at": "2026-04-09",
-      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Su1ef2mA5zLxyK8nl7FlIn8",
       "hs_url": "",
       "hs_member_status": "Active Sessions"
     },
@@ -56,29 +56,11 @@
       "hs_member_status": "Active Sessions"
     },
     {
-      "name": "Sylvia Rogowska",
-      "email": "sylwiarogowska@yahoo.co.uk",
-      "amount": 1808.0,
-      "resumes_at": "2026-04-07",
-      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1STDqs2mA5zLxyK8aEUdrY7S",
-      "hs_url": "",
-      "hs_member_status": "Active Sessions"
-    },
-    {
       "name": "Gaby Welton",
       "email": "gabys.kiddos@gmail.com",
       "amount": 66.0,
       "resumes_at": "indefinite",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SS5pV2mA5zLxyK8Dci5AwnS",
-      "hs_url": "",
-      "hs_member_status": "Active Sessions"
-    },
-    {
-      "name": "Kristen Birkett",
-      "email": "kristen_hooson@yahoo.com.au",
-      "amount": 2001.32,
-      "resumes_at": "indefinite",
-      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SDwQZ2mA5zLxyK83rtIfcJP",
       "hs_url": "",
       "hs_member_status": "Active Sessions"
     },
@@ -92,5 +74,5 @@
       "hs_member_status": "Active Sessions"
     }
   ],
-  "total_count": 10
+  "total_count": 8
 }
