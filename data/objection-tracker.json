@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-04-07",
-  "total_calls_analysed": 30,
+  "last_updated": "2026-04-10",
+  "total_calls_analysed": 32,
   "weekly_reset_date": "2026-03-28",
   "categories": {
     "price_affordability": {
-      "count": 12,
+      "count": 14,
       "last_week": 7,
       "trend": "increasing",
       "by_rep": {
         "anthony": 1,
-        "bailey": 2,
+        "bailey": 3,
         "rye": 2,
-        "tom": 7
+        "tom": 8
       },
       "avg_handling_grade": 1.8,
       "best_example": {
@@ -30,15 +30,16 @@
         "outcome_confirmed": "Booked Call (no close)",
         "note": "Worst price handling on record. Rep did not know his own payment plans, calculated live, retreated to email at first resistance. Bianca said 'I'll find a way' \u2014 a clear buying signal that Rye acknowledged with 'yeah yeah 100%' and booked a follow-up. Outcome confirmed: no close."
       },
-      "weekly_note": "Apr 6 update: Two new Anthony DCs (Leah Stephens Apr 6, Helen Hope Apr 5) both resulted in Price Objection. Neither has transcript for analysis. Anthony's price objection count now: 1 scored + 2 unscored = 3 total. Combined with team data: 11 scored + 2 unscored. Tom's price confidence remains solid (Lorissa Garcia closed cleanly, James McLennan closed cleanly). The gap is Anthony and the unscorable calls."
+      "weekly_note": "Apr 10: Jen Howgate (Bailey) \u2014 Mark had price shock at $2,700. Bailey offered alternatives (Lighthouse, Mentor Connect) but didn't isolate or attempt $111 with Mark directly. Bailey price objection count now 3. Mark was on the call \u2014 this is the both-parents pattern where the partner's price concern could have been addressed directly."
     },
     "partner_coparent": {
-      "count": 7,
+      "count": 9,
       "last_week": 3,
       "trend": "increasing",
       "by_rep": {
         "anthony": 3,
-        "tom": 2
+        "tom": 3,
+        "bailey": 1
       },
       "avg_handling_grade": 2.6,
       "best_example": {
@@ -57,15 +58,15 @@
         "outcome_confirmed": "Call Objection (HubSpot Apr 3)",
         "note": "CRITICAL miss: Jason had been on the call the entire time. Elizabeth cited him as the decision-maker. Tom accepted the deferral without turning to Jason directly. The sequence: turn to dad \u2014 'Jason, you've heard everything \u2014 does this feel like what Michael needs?' \u2014 was not used. Outcome hardened to Call Objection within 2 days. Both of this week's Call Objection outcomes trace to this same pattern."
       },
-      "weekly_note": "Apr 6 MONDAY FINAL: Easter week closed. Elisabeth Poole + Kristy Richards = 2 Call Objection outcomes from partner deferral. Both already flagged. No new partner objection data this pass (no new scored calls). Emily Brady follow-up tomorrow \u2014 partner is not a factor on this call (single mum). Next partner-close test will be Tom's next two-parent call."
+      "weekly_note": "Apr 10: Jen Howgate (Bailey) \u2014 Jen deferred to Mark about finances, but Mark was ON THE CALL. Bailey never turned to Mark directly. This is the Elisabeth Poole/Kirian Andreou pattern now appearing in Bailey's calls too. Partner-on-call close miss is becoming a team-wide pattern."
     },
     "son_buyin": {
-      "count": 8,
+      "count": 9,
       "last_week": 3,
       "trend": "increasing",
       "by_rep": {
         "rye": 1,
-        "tom": 6
+        "tom": 7
       },
       "avg_handling_grade": 4.3,
       "best_example": {
@@ -143,12 +144,12 @@
       "worst_example": null
     },
     "think_about_it": {
-      "count": 3,
+      "count": 4,
       "last_week": 3,
       "trend": "increasing",
       "by_rep": {
         "anthony": 2,
-        "tom": 1
+        "tom": 2
       },
       "avg_handling_grade": 2.0,
       "best_example": {
@@ -210,23 +211,23 @@
     {
       "rank": 1,
       "category": "price_affordability",
-      "count": 11,
+      "count": 14,
       "avg_handling_grade": 2.1,
-      "note": "EASTER SUNDAY FINAL \u2014 Week of Mar 31\u2013Apr 4 closed. Emily Brady (Tom, Mar 31): clean isolation ('apart from investment, would you go forward?' \u2014 got YES). Gap: didn't attempt $111 close on-call after Emily said 'I'm in sales, I'm keen.' Booked Tuesday instead. Pattern: Tom isolates cleanly but doesn't recognise 'I'm keen' as a $111 close signal. Elisabeth Poole (Call Objection) = partner close miss, not price handling failure. Lorissa Garcia = paid on call cleanly. Price confidence is not the issue. Small YES recognition is."
+      "note": "Apr 10: Jen Howgate (Bailey) \u2014 Mark price shock. $111 not attempted. 14 total price objections across team."
     },
     {
       "rank": 2,
       "category": "partner_coparent",
-      "count": 7,
-      "avg_handling_grade": 2.6,
-      "note": "Week confirmed at 2 Call Objection outcomes: Elisabeth Poole (dad on call, not engaged) + Kristy Richards (Easter break + no booked 3-way). Partner deferral is now the team's #1 close leak this week. Fix confirmed: present-but-silent dad \u2014 address before mum can defer; absent partner \u2014 isolate \u2192 conditional YES \u2192 book 3-way same call. No new partner objections added this pass."
+      "count": 9,
+      "avg_handling_grade": 2.5,
+      "note": "Apr 7: Kirian Andreou \u2014 George was at the psych with Anthony (invested parent). Tom accepted 'I'll run past him' without isolating. Three partner deferrals from Tom now: Elisabeth Poole (dad on call), Kristy Richards (Easter delay), Kirian Andreou (George at psych). Zero isolations attempted on any."
     },
     {
       "rank": 3,
       "category": "son_buyin",
-      "count": 7,
-      "avg_handling_grade": 4.3,
-      "note": "STRENGTH \u2014 Tom's dentist metaphor deployed on Emily Brady, personalised to Charlie's Fortnite/gaming context. 'Less about who we are and more who we're not' framing used perfectly. All 7 calls with Tom show pre-emptive son buy-in handling. Emily responded: 'People will be all for that.' Grade 4/5. Team strength \u2014 now in playbook."
+      "count": 9,
+      "avg_handling_grade": 4.2,
+      "note": "STRENGTH \u2014 Tom's dentist metaphor deployed on Kirian Andreou naturally. Connected to Anthony's positive psych engagement as proof. Team strength confirmed."
     }
   ],
   "new_patterns": [
@@ -365,6 +366,24 @@
         "tom"
       ],
       "recommendation": "Small YES Close drill: when the parent has isolated to cash flow only + confirmed value + says 'I'm keen' \u2014 ask specifically for $111 before booking follow-up. '$111 is literally $111, not the big number. Is that doable today?' One question. If still no, book the follow-up. Add to weekly training doc."
+    },
+    {
+      "date": "2026-04-07",
+      "pattern": "Invested partner at appointment = unused urgency anchor",
+      "description": "Kirian Andreou: George was at the psychologist with Anthony during the call. This means George is already investing time and money in Anthony's wellbeing. Tom never used this: 'George is literally investing in Anthony right now \u2014 the $111 just adds a mentor alongside what the psych is doing.' The partner isn't a blocker \u2014 they're already bought in. Different from Elisabeth Poole (passive partner) and Kristy Richards (absent partner). This is ACTIVE PARTNER AT APPOINTMENT.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "When a partner is currently at an appointment or actively supporting the child: reframe from 'need to check with partner' to 'partner is already invested \u2014 this is an AND, not an OR.' The $111 close is framed as adding to what they're already doing."
+    },
+    {
+      "date": "2026-04-07",
+      "pattern": "Info pack offer = escape route creation",
+      "description": "Kirian Andreou: Tom asked 'Is there any more information available?' and offered to send an info pack. This gave Kirian an easy exit: 'Yeah, if you could send that through.' Every time an info pack is offered before the $111 close attempt, the parent takes the escape route. The info pack should only be offered AFTER: isolation \u2192 $111 attempt \u2192 if still no \u2192 info pack as follow-up tool.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "Info pack = LAST RESORT only. Sequence: value confirmation \u2192 $111 attempt \u2192 if no \u2192 propose specific follow-up time \u2192 THEN offer info pack as supporting material for the follow-up. Never offer info pack unprompted before the $111 close."
     }
   ]
 }
