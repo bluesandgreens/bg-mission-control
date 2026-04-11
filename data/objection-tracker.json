@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-10",
+  "last_updated": "2026-04-11",
   "total_calls_analysed": 32,
   "weekly_reset_date": "2026-03-28",
   "categories": {
@@ -213,14 +213,14 @@
       "category": "price_affordability",
       "count": 14,
       "avg_handling_grade": 2.1,
-      "note": "Apr 10 WEEKLY: Price remains #1 objection. Jen Howgate (Bailey) \u2014 Mark price shock at $2,700. Bailey offered alternatives but didn't attempt $111 with Mark. Tom's NDIS-funded Rebecca Smith deferred to Saturday without $111. Price handling grades declining."
+      "note": "Apr 11 WEEKLY: Price remains #1 objection. Tammy Adams (Bailey, Apr 11) = Follow Up \u2014 objection unknown (no transcript). Amy Rigby (Harry, Apr 10) = Price Objection. Rebecca Drury reversal confirmed (Call Objection). Price handling grades declining across team."
     },
     {
       "rank": 2,
       "category": "partner_coparent",
       "count": 10,
       "avg_handling_grade": 2.4,
-      "note": "Apr 10 WEEKLY: Partner objections now at 10. Jen Howgate (Bailey) \u2014 Mark ON THE CALL, never addressed. Kirian Andreou (Tom) \u2014 George at psych, Tom offered info pack. This is now a TEAM-WIDE pattern: when partner is present, reps don't turn to them."
+      "note": "Apr 11 WEEKLY: Partner objections at 10. Kirian Andreou Call Objection confirmed \u2014 partner present but unused. Team-wide pattern: when partner is present, reps don't turn to them. Bailey and Tom both affected."
     },
     {
       "rank": 3,
@@ -384,6 +384,24 @@
         "tom"
       ],
       "recommendation": "Info pack = LAST RESORT only. Sequence: value confirmation \u2192 $111 attempt \u2192 if no \u2192 propose specific follow-up time \u2192 THEN offer info pack as supporting material for the follow-up. Never offer info pack unprompted before the $111 close."
+    },
+    {
+      "date": "2026-04-11",
+      "pattern": "Emily Brady MISMATCH \u2014 follow-up stall to cold lead",
+      "description": "Emily Brady (Tom, Mar 31, Score 6.8): DC had strong buying signals ('I'm in sales, I'm keen'). $111 not attempted. Tuesday follow-up booked. 14+ days later: still Booked Call, no outcome change. This confirms that warm leads who defer without $111 attempt go cold even when follow-up is scheduled. Combined with Elisabeth Poole (mismatch) and Kirian Andreou (mismatch), Tom now has 3 mismatches \u2014 all tracing to deferral acceptance at the close.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "$111 close attempt is no longer optional. Tom has lost 3 warm leads (Elisabeth, Emily, Kirian) to the same pattern. The line is written, the drills are assigned. The gap is execution."
+    },
+    {
+      "date": "2026-04-11",
+      "pattern": "Rebecca Drury reversal \u2014 Deposit Paid \u2192 Call Objection",
+      "description": "Rebecca Drury was Deposit Paid (Apr 1), now Call Objection / Price Objection in HubSpot. Rep self-noted 'should of isolated.' This is the second confirmed reversal after Jasmine Lund. Both share the same root: insufficient emotional anchoring + incomplete objection isolation \u2192 buyer's remorse \u2192 reversal.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "Lucky Close Protocol must trigger within 48hrs of Deposit Paid for any call without deep emotional anchoring."
     }
   ]
 }

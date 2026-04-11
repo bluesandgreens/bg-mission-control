@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-10T22:00:00+10:00",
+  "last_updated": "2026-04-11T22:00:00+10:00",
   "reps": {
     "anthony": {
       "hubspot_owner_id": "87029276",
@@ -70,7 +70,7 @@
         "last_5_avg": 5.96,
         "prior_5_avg": null,
         "direction": "holding",
-        "note": "Apr 10: Leah Stephens (30min DC this week) \u2014 NO recording. Anthony now has 3 unscored DCs (Leah Stephens, Helen Hope, Leah Stephens Apr 10). Close rate: 2/5 scored (40%). Transcript submission blocking development. E=2.2 unchanged. OH regression from 4\u21922 still unaddressed."
+        "note": "Apr 11: Anne Cook (Apr 8) = Deposit Paid (unscored, no transcript). Close count: 3 (Judith, Leanne, Anne Cook). Leanne Black W1 completed Apr 2 \u2705 \u2014 Active Sessions. Close rate including unscored: 3/6 (50%). E=2.2 unchanged. OH regression from 4\u21922 still unaddressed. Transcript submission blocking development: 4 DCs without transcripts (Leah Stephens x2, Helen Hope, Anne Cook). Anne Cook is a close without verifiable data \u2014 Lucky Close risk applies."
       },
       "close_rate_vs_siel": {
         "calls": 5,
@@ -79,7 +79,7 @@
         "avg_close_siel": 6.6,
         "avg_miss_siel": 5.53,
         "confirmed_w1": 1,
-        "note": "Mar 29 confirmed: Judith Lacey (Deposit Paid \u2192 Active Sessions, W1 Mar 29). Leanne Black (Deposit Paid \u2014 W1 pending). Both legitimate closes, both emotionally anchored enough to hold. All 5 predictions accurate: 5/5 prediction match rate."
+        "note": "Apr 11: Anne Cook = Deposit Paid (unscored). Including unscored: 3/6 (50%). Leanne Black W1 Apr 2 \u2705 \u2014 Active Sessions, fully activated. Anne Cook Lucky Close risk \u2014 E=2.2 avg with no transcript to verify emotional anchoring."
       },
       "top_objections": [
         "partner_coparent",
@@ -117,6 +117,13 @@
           "the_moment": "Two consecutive Price Objection outcomes from Anthony. Last scored call with a Price Objection (Sophie Cuzzy) showed BAMFAM cave without isolation. Pattern emerging: Anthony's E-score gap may be compounding into close-rate decline. Need transcripts to confirm or refute.",
           "drill": "URGENT: Anthony must submit recordings or transcripts for Leah Stephens and Helen Hope. Without data, coaching is flying blind. Rye to follow up on transcript pipeline.",
           "metric_to_watch": "Close rate \u2014 last 5 scored calls: 2/5 (40%). Including unscored: 2/7 (29%). Transcript submission rate: 5/7 with transcripts available."
+        },
+        {
+          "date": "2026-04-11",
+          "pattern": "LONGITUDINAL UPDATE \u2014 Leanne Black fully activated (Active Sessions, W1 Apr 2). Anne Cook (Apr 8) = Deposit Paid, unscored. No transcript. Close count: 3/6 (50%). 4 DCs without transcripts since last scored call. Coaching is stalled without data.",
+          "the_moment": "Anne Cook closed without a recording. At E=2.2 avg, we cannot verify if the emotional anchoring was sufficient to hold. Lucky Close Protocol should apply until W1 is confirmed.",
+          "drill": "TRANSCRIPT SUBMISSION \u2014 Anthony now has 4 unscored DCs. No coaching progress possible without recordings.",
+          "metric_to_watch": "Anne Cook W1. Transcript submission rate: 5/9 total (56%). E=2.2 unchanged."
         }
       ]
     },
@@ -175,7 +182,7 @@
         "last_5_avg": 5.17,
         "prior_5_avg": null,
         "direction": "declining",
-        "note": "Apr 10: ZERO DCs in 15+ days (last DC: Mar 26 Bianca JESS). Only outbound touches logged. 0/3 close rate unchanged. Drills cannot be evaluated without a live call. Regression risk increasing with every day without a DC."
+        "note": "Apr 11: ZERO DCs in 16+ days (last DC: Mar 26 Bianca JESS). Jo Kelly window CLOSED (confirmed). 0/3 close rate unchanged. No data to evaluate any drill progress. Regression risk critical with every day without a DC."
       },
       "close_rate_vs_siel": {
         "calls": 3,
@@ -234,6 +241,13 @@
           "the_moment": "Rye has not taken a DC in 11 days. The drills assigned (price card, fear bomb cycling, buying signal recognition) cannot be evaluated without a live call. The longer the gap, the higher the regression risk.",
           "drill": "Rye needs a DC this week. If one is booked, pre-call prep must include: (1) price card written on paper, (2) fear bomb response rehearsed 5x, (3) buying signal recognition drill (\"I'll find a way\" = YES). Rye should sit in on Tom's Emily Brady follow-up as a learning opportunity.",
           "metric_to_watch": "Days since last DC: 11. Close rate: 0/3 (0%). Next DC is the data point."
+        },
+        {
+          "date": "2026-04-11",
+          "pattern": "16 DAYS WITHOUT A DC. No new data. No drill evaluation possible. Coaching is theoretical only. Next DC is the only meaningful data point.",
+          "the_moment": "16 days since Bianca JESS. The gap between coaching and execution widens daily.",
+          "drill": "Rye needs a DC THIS WEEK. If none booked, escalate to Harry.",
+          "metric_to_watch": "Days since last DC: 16. Close rate: 0/3 (0%)."
         }
       ]
     },
@@ -353,7 +367,7 @@
         "last_5_avg": 3.73,
         "prior_5_avg": null,
         "direction": "improving",
-        "note": "Apr 10: THREE potential closes this week (Titis Bindarstuti, Gezzell Johnson, Rebecca Hill-Douglas) \u2014 all Deposit Paid. Jen Howgate scored 4.8 (highest ever). CRITICAL: None of the 3 closes have recordings/transcripts. Cannot verify if closes are emotionally anchored or Lucky Closes. Transcript submission remains blocking issue. If 3 closes confirmed genuine: close rate jumps from 25% to potentially 4/7 (57%). Lucky Close Protocol must be applied to all 3 \u2014 Brodie activation calls within 48hrs."
+        "note": "Apr 11: Titis Bindarstuti (Apr 9) = Deposit Paid. Rebecca Hill-Douglas (Apr 10) = Deposit Paid. Tammy Adams (Apr 11) = Follow Up Scheduled. NONE have transcripts or recordings. Gezzell Johnson (Apr 10) = Deposit Paid but Owner=Harry (75967744), not Bailey. Attribution unclear. Close count (Bailey-owned): 2 new (Titis, Rebecca H-D) + Jasmine Lund (reversed). Jasmine Lund still Call Objection \u2014 reversal confirmed. If Titis + Rebecca H-D hold: close rate = 3/6 (50%). But E=1.0 avg means Lucky Close risk is EXTREME. ZERO W1 scheduled for either close. Brodie activation URGENT."
       },
       "close_rate_vs_siel": {
         "calls": 4,
@@ -361,7 +375,7 @@
         "rate": 25.0,
         "avg_close_siel": 3.7,
         "avg_miss_siel": 3.73,
-        "note": "Apr 10: 3 NEW closes without transcripts (Titis Bindarstuti, Gezzell Johnson, Rebecca Hill-Douglas). Cannot be scored. Lucky Close risk HIGH \u2014 Bailey E=1.0 avg. Brodie must activate all 3 within 48hrs. If all hold: close rate jumps from 1/4 (25%) to potentially 4/7 (57%). Jasmine Lund reversal is the warning."
+        "note": "Apr 11: Titis Bindarstuti = Deposit Paid (no transcript). Rebecca Hill-Douglas = Deposit Paid (no transcript). Tammy Adams = Follow Up. Jasmine Lund still Call Objection (confirmed reversal). Bailey-owned closes: Titis + Rebecca H-D (both unscored). Including Jasmine reversal: 2/6 confirmed, 1 reversed. Lucky Close risk EXTREME at E=1.0 avg. Neither close has W1 scheduled. Brodie must activate within 48hrs."
       },
       "top_objections": [
         "price_affordability",
@@ -456,6 +470,13 @@
               "grade": 2
             }
           ]
+        },
+        {
+          "date": "2026-04-11",
+          "pattern": "LONGITUDINAL UPDATE \u2014 Two new closes (Titis Bindarstuti Apr 9, Rebecca Hill-Douglas Apr 10) without transcripts. Tammy Adams (Apr 11) = Follow Up. Jasmine Lund reversal confirmed (still Call Objection). E=1.0 avg across all scored calls means emotional anchoring is likely insufficient for retention. Gezzell Johnson is Harry-owned, not Bailey. Attribution needs verification.",
+          "the_moment": "Two Deposit Paid outcomes at E=1.0 avg. Jasmine Lund proved this exact pattern reverses. If Titis and Rebecca H-D follow the same path, Bailey's actual close rate drops further. Brodie activation calls must happen before Monday.",
+          "drill": "URGENT: Brodie Lucky Close Protocol on Titis Bindarstuti and Rebecca Hill-Douglas within 48hrs. Re-anchor: 'What made you decide to go ahead?' If shaky, rebook expectations. Bailey: NO coaching progress possible without transcript submission.",
+          "metric_to_watch": "Titis + Rebecca H-D W1 activation. Jasmine Lund pattern = the risk baseline. E=1.0 unchanged."
         }
       ]
     },
@@ -556,7 +577,7 @@
         "last_5_avg": 6.28,
         "prior_5_avg": 6.65,
         "direction": "declining",
-        "note": "Apr 10: Week confirmed. Rebecca Smith = Follow Up Scheduled (prediction match \u2705). Kirian Andreou = Call Objection/Partner (prediction mismatch \u2014 predicted Follow Up, hardened to Call Objection). Lorissa Garcia W1 completed Apr 8 \u2705 \u2014 now Active Sessions. Emily Brady STILL Booked Call after 10+ days \u2014 follow-up appears stalled. Close rate: 3/9 (33.3%). OH avg 2.78 declining. 4+ consecutive deferrals without $111 attempt."
+        "note": "Apr 11: Emily Brady CONFIRMED MISMATCH \u2014 14+ days since DC (Mar 31), still Booked Call in HubSpot. Follow-up stalled. Effectively COLD. Rebecca Smith still Booked Call \u2014 Saturday follow-up unknown/not converted. Kirian Andreou Call Objection confirmed (mismatch already flagged). NEW: Lou White (Apr 9) = Deposit Paid (unscored, no transcript). Larah Cornthwaite (Apr 8) = Follow Up (unscored). Lorissa Garcia W1 completed Apr 8 \u2705 \u2014 Active Sessions confirmed. James McLennan: STILL Deposit Paid, NO W1 after 10+ days \u2014 AT RISK. Close rate: 3/9 scored (33.3%). Including unscored Lou White close: 4/10 (40%). OH avg 2.78 declining. 5+ consecutive deferrals without $111 attempt."
       },
       "close_rate_vs_siel": {
         "calls": 9,
@@ -564,7 +585,7 @@
         "rate": 33.3,
         "avg_close_siel": 7.4,
         "avg_miss_siel": 5.96,
-        "note": "Apr 7: Kirian Andreou = Call Objection (Partner). 3/9 confirmed closes (33.3%). Close rate declining from 37.5% to 33.3%. All 4 non-close calls in last 6 trace to deferral acceptance. Emily Brady follow-up TODAY \u2014 status unknown."
+        "note": "Apr 11: Emily Brady MISMATCH confirmed \u2014 14 days, Booked Call, cold. Lou White = Deposit Paid (unscored). Larah Cornthwaite = Follow Up (unscored). Lorissa Garcia W1 Apr 8 \u2705. James McLennan Deposit Paid but NO W1 \u2014 10+ days, activation at risk. Scored: 3/9 (33.3%). Including unscored: 4/11 (36%). Emily Brady is the 2nd mismatch (after Elisabeth Poole). Both mismatches trace to deferral acceptance without $111 close attempt."
       },
       "top_objections": [
         "son_buyin",
@@ -898,6 +919,13 @@
               "grade": 4
             }
           ]
+        },
+        {
+          "date": "2026-04-11",
+          "pattern": "LONGITUDINAL UPDATE \u2014 Emily Brady CONFIRMED MISMATCH. 14+ days since DC, still Booked Call. Follow-up series stalled or never executed. Original score 6.8 with 'I'm in sales, I'm keen' buying signal predicted Near Close. Outcome: no close. Root cause: $111 not attempted on-call (Mar 31), follow-up (Apr 7) outcome unknown \u2014 status unchanged. This is Tom's 2nd mismatch after Elisabeth Poole. Both trace to the same pattern: warm lead with buying signals \u2192 deferral accepted \u2192 follow-up cools \u2192 no close.",
+          "the_moment": "Emily Brady said 'I'm in sales, I'm keen to do it' on Mar 31. Tom booked Tuesday. Tuesday came. Status didn't change. 14 days later: still Booked Call. The $111 was available on-call. It wasn't asked.",
+          "drill": "$111 CLOSE ATTEMPT remains the SINGLE priority. Pattern now confirmed across 5+ calls: warm leads that defer without $111 attempt go cold. Lou White (Apr 9) closed \u2014 need transcript to verify if $111 was asked or if this was a high-fit self-close.",
+          "metric_to_watch": "Emily Brady effectively cold. James McLennan W1 at risk (10+ days, no schedule). OH Score avg 2.78 \u2014 declining trend confirmed."
         }
       ],
       "weekly_training": {
