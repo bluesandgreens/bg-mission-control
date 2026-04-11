@@ -1,9 +1,9 @@
 {
-  "generated": "2026-04-11T06:30:05.273439",
+  "generated": "2026-04-12T06:30:07.486626",
   "weeks": [
     {
-      "label": "Week 1 (Apr 11 - Apr 17)",
-      "total": 12521.0,
+      "label": "Week 1 (Apr 12 - Apr 18)",
+      "total": 14094.0,
       "days": [
         {
           "date": "2026-04-12",
@@ -268,8 +268,8 @@
         {
           "date": "2026-04-17",
           "day": "Fri",
-          "charges": 6,
-          "amount": 5409.0,
+          "charges": 5,
+          "amount": 5174.0,
           "subscribers": [
             {
               "name": "Michelle Stephenson",
@@ -302,16 +302,6 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/207630891395"
             },
             {
-              "name": "Kelly Wellsmore",
-              "email": "kellywellsmore@gmail.com",
-              "amount": 235.0,
-              "interval": "Weekly",
-              "sub_id": "sub_1TKJ7v2mA5zLxyK8ivSKvFy8",
-              "customer_id": "cus_UBh5tRBSoySMUs",
-              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TKJ7v2mA5zLxyK8ivSKvFy8",
-              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/210455058520"
-            },
-            {
               "name": "DEB CARUSO",
               "email": "deb@inpublishing.com.au",
               "amount": 232.0,
@@ -332,13 +322,7 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "Week 2 (Apr 18 - Apr 24)",
-      "total": 4786.5,
-      "days": [
+        },
         {
           "date": "2026-04-18",
           "day": "Sat",
@@ -356,7 +340,13 @@
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/181238625886"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "label": "Week 2 (Apr 19 - Apr 25)",
+      "total": 2978.5,
+      "days": [
         {
           "date": "2026-04-19",
           "day": "Sun",
@@ -444,7 +434,7 @@
       ]
     },
     {
-      "label": "Week 3 (Apr 25 - May 01)",
+      "label": "Week 3 (Apr 26 - May 02)",
       "total": 4166.0,
       "days": [
         {
@@ -524,8 +514,8 @@
       ]
     },
     {
-      "label": "Week 4 (May 02 - May 08)",
-      "total": 3503.0,
+      "label": "Week 4 (May 03 - May 09)",
+      "total": 3734.0,
       "days": [
         {
           "date": "2026-05-03",
@@ -616,6 +606,24 @@
               "customer_id": "cus_StxN6uEqco3Cyp",
               "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1T8yOR2mA5zLxyK8yJq81Rdf",
               "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/137233584714"
+            }
+          ]
+        },
+        {
+          "date": "2026-05-09",
+          "day": "Sat",
+          "charges": 1,
+          "amount": 231.0,
+          "subscribers": [
+            {
+              "name": "SARAH MORRIS",
+              "email": "sarahande@hotmail.com",
+              "amount": 231.0,
+              "interval": "Monthly",
+              "sub_id": "sub_1SODNp2mA5zLxyK8sQGKXlL4",
+              "customer_id": "cus_SaQGTSmUPb2cg9",
+              "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SODNp2mA5zLxyK8sQGKXlL4",
+              "hubspot_url": "https://app.hubspot.com/contacts/48782903/record/0-1/132301268801"
             }
           ]
         }
