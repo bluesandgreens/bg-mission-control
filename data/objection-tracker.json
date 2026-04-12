@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-04-11",
-  "total_calls_analysed": 32,
+  "last_updated": "2026-04-12",
+  "total_calls_analysed": 34,
   "weekly_reset_date": "2026-03-28",
   "categories": {
     "price_affordability": {
-      "count": 14,
+      "count": 15,
       "last_week": 7,
       "trend": "increasing",
       "by_rep": {
         "anthony": 1,
-        "bailey": 3,
+        "bailey": 4,
         "rye": 2,
         "tom": 8
       },
@@ -30,7 +30,7 @@
         "outcome_confirmed": "Booked Call (no close)",
         "note": "Worst price handling on record. Rep did not know his own payment plans, calculated live, retreated to email at first resistance. Bianca said 'I'll find a way' \u2014 a clear buying signal that Rye acknowledged with 'yeah yeah 100%' and booked a follow-up. Outcome confirmed: no close."
       },
-      "weekly_note": "Apr 10: Jen Howgate (Bailey) \u2014 Mark had price shock at $2,700. Bailey offered alternatives (Lighthouse, Mentor Connect) but didn't isolate or attempt $111 with Mark directly. Bailey price objection count now 3. Mark was on the call \u2014 this is the both-parents pattern where the partner's price concern could have been addressed directly."
+      "weekly_note": "Apr 12: Sophie Murphy (Bailey, Apr 11) \u2014 deferred $111 to Friday payday. Bailey accepted without isolation. Sophie had said 'sounds amazing' 30 seconds prior. Pattern: Bailey now has 4 price objection encounters, 0 isolations."
     },
     "partner_coparent": {
       "count": 9,
@@ -213,14 +213,14 @@
       "category": "price_affordability",
       "count": 14,
       "avg_handling_grade": 2.1,
-      "note": "Apr 11 WEEKLY: Price remains #1 objection. Tammy Adams (Bailey, Apr 11) = Follow Up \u2014 objection unknown (no transcript). Amy Rigby (Harry, Apr 10) = Price Objection. Rebecca Drury reversal confirmed (Call Objection). Price handling grades declining across team."
+      "note": "Apr 12 WEEKLY: Price remains #1 objection (15 total). Sophie Murphy (Bailey) deferred $111 to Friday \u2014 accepted without isolation. Bailey price handling: 0/4 isolations. Team-wide price handling grade declining."
     },
     {
       "rank": 2,
       "category": "partner_coparent",
       "count": 10,
       "avg_handling_grade": 2.4,
-      "note": "Apr 11 WEEKLY: Partner objections at 10. Kirian Andreou Call Objection confirmed \u2014 partner present but unused. Team-wide pattern: when partner is present, reps don't turn to them. Bailey and Tom both affected."
+      "note": "Apr 12 WEEKLY: Partner objections at 10. Stable this pass \u2014 neither new call had partner-on-call pattern."
     },
     {
       "rank": 3,

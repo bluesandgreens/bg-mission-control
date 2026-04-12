@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-11T22:00:00+10:00",
+  "last_updated": "2026-04-12T22:00:00+10:00",
   "reps": {
     "anthony": {
       "hubspot_owner_id": "87029276",
@@ -309,82 +309,96 @@
       "hubspot_owner_id": "88035516",
       "email": "bailey@bluesandgreens.com.au",
       "status": "active_commission",
-      "calls_scored": 4,
+      "calls_scored": 6,
       "rolling_10": {
         "overall": [
           3.7,
           3.1,
           3.3,
-          4.8
+          4.8,
+          6.0,
+          5.0
         ],
         "s": [
           2,
           2,
           2,
+          3,
+          3,
           3
         ],
         "i": [
           1,
           1,
           1,
-          2
+          2,
+          3,
+          3
         ],
         "e": [
           1,
           1,
           1,
-          1
+          1,
+          2,
+          2
         ],
         "l": [
           3,
           2,
           2,
-          2
+          2,
+          3,
+          3
         ],
         "opening": [
           2,
           2,
           2,
+          3,
+          3,
           3
         ],
         "oh": [
           3,
           2,
           3,
+          2,
+          4,
           2
         ]
       },
       "averages": {
-        "overall": 3.73,
-        "s": 2.25,
-        "i": 1.25,
-        "e": 1.0,
-        "l": 2.25,
-        "opening": 2.25,
-        "oh": 2.5
+        "overall": 4.32,
+        "s": 2.5,
+        "i": 1.83,
+        "e": 1.33,
+        "l": 2.5,
+        "opening": 2.5,
+        "oh": 2.67
       },
       "trend": {
-        "last_5_avg": 3.73,
-        "prior_5_avg": null,
+        "last_5_avg": 4.44,
+        "prior_5_avg": 3.37,
         "direction": "improving",
-        "note": "Apr 11: Titis Bindarstuti (Apr 9) = Deposit Paid. Rebecca Hill-Douglas (Apr 10) = Deposit Paid. Tammy Adams (Apr 11) = Follow Up Scheduled. NONE have transcripts or recordings. Gezzell Johnson (Apr 10) = Deposit Paid but Owner=Harry (75967744), not Bailey. Attribution unclear. Close count (Bailey-owned): 2 new (Titis, Rebecca H-D) + Jasmine Lund (reversed). Jasmine Lund still Call Objection \u2014 reversal confirmed. If Titis + Rebecca H-D hold: close rate = 3/6 (50%). But E=1.0 avg means Lucky Close risk is EXTREME. ZERO W1 scheduled for either close. Brodie activation URGENT."
+        "note": "Apr 12: TWO NEW SCORED CALLS. Rebecca Light (6.0, CLOSED on-call) = Bailey's highest score ever. Sophie Murphy (5.0, Follow Up Friday). Rebecca Light is Bailey's first SCORED close \u2014 $111 paid during the call. Structure improving consistently (S=3 on both). E=2 unchanged across all 6 scored calls. Lucky Close flag on Rebecca Light: E=2 close on a warm lead \u2014 same pattern as Jasmine Lund. Brodie activation critical. Sophie Murphy: warm lead, DV context, said 'sounds amazing' but deferred $111 to Friday \u2014 no isolation attempted. Close rate (scored): 2/6 (33%). Including unscored (Titis, Rebecca H-D): 4/8 (50%). Emma Thorley W1 completed Apr 9 \u2705 \u2014 first Bailey activation confirmed."
       },
       "close_rate_vs_siel": {
-        "calls": 4,
-        "closes": 1,
-        "rate": 25.0,
-        "avg_close_siel": 3.7,
-        "avg_miss_siel": 3.73,
-        "note": "Apr 11: Titis Bindarstuti = Deposit Paid (no transcript). Rebecca Hill-Douglas = Deposit Paid (no transcript). Tammy Adams = Follow Up. Jasmine Lund still Call Objection (confirmed reversal). Bailey-owned closes: Titis + Rebecca H-D (both unscored). Including Jasmine reversal: 2/6 confirmed, 1 reversed. Lucky Close risk EXTREME at E=1.0 avg. Neither close has W1 scheduled. Brodie must activate within 48hrs."
+        "calls": 6,
+        "closes": 2,
+        "rate": 33.3,
+        "avg_close_siel": 4.8,
+        "avg_miss_siel": 4.05,
+        "note": "Apr 12: Rebecca Light = Deposit Paid (6.0, scored). Sophie Murphy = Follow Up (5.0). Jasmine Lund still Call Objection (reversed). Including unscored closes (Titis, Rebecca H-D): 4/8 (50%). Emma Thorley W1 completed \u2014 first confirmed Bailey activation. E=1.67 avg across scored calls means Lucky Close risk remains extreme."
       },
       "top_objections": [
         "price_affordability",
         "partner_coparent",
         "logistics"
       ],
-      "improvement_area": "CRITICAL: E Score = 1.0 avg (unchanged after 4 calls). I Score improved to 1.25. Structure improving (S=3, Opening=3 on Jen Howgate) but no emotional deepening in ANY scored call. New gap: partner-on-call pattern \u2014 Mark was present but never addressed at close. Discovery/deepening fundamentals still required.",
+      "improvement_area": "CRITICAL: E Score = 1.67 avg (6 calls). Rebecca Light closed at E=2 \u2014 same pattern as Jasmine Lund (E=1, reversed). Structure improving (S avg 2.5\u21922.67, Opening 2.5\u21922.67). But ZERO emotional cycling in any scored call. New: Bailey now asks the right questions (fear, stress, label) but does not follow up on the answers. The gap has shifted from 'not asking' to 'not staying.'",
       "p3_flag": true,
-      "p3_note": "CRITICAL FLAG \u2014 I Score avg = 1.0, E Score avg = 1.0. Jasmine Lund Call Objection status CONFIRMS post-close reversal from emotional under-anchoring. Transcript submission is blocking further scoring.",
+      "p3_note": "CRITICAL FLAG \u2014 E avg=1.67, I avg=2.0 across 6 calls. Rebecca Light close at E=2 is Lucky Close territory. Jasmine Lund reversal is the pattern baseline.",
       "coaching_history": [
         {
           "date": "2026-03-25",
@@ -477,6 +491,114 @@
           "the_moment": "Two Deposit Paid outcomes at E=1.0 avg. Jasmine Lund proved this exact pattern reverses. If Titis and Rebecca H-D follow the same path, Bailey's actual close rate drops further. Brodie activation calls must happen before Monday.",
           "drill": "URGENT: Brodie Lucky Close Protocol on Titis Bindarstuti and Rebecca Hill-Douglas within 48hrs. Re-anchor: 'What made you decide to go ahead?' If shaky, rebook expectations. Bailey: NO coaching progress possible without transcript submission.",
           "metric_to_watch": "Titis + Rebecca H-D W1 activation. Jasmine Lund pattern = the risk baseline. E=1.0 unchanged."
+        },
+        {
+          "date": "2026-04-12",
+          "call_name": "Rebecca Light",
+          "outcome": "close",
+          "overall_score": 6.0,
+          "scores": {
+            "s": 3,
+            "i": 3,
+            "e": 2,
+            "l": 3,
+            "opening": 3,
+            "oh": 4
+          },
+          "pattern": "FIRST SCORED CLOSE \u2014 Bailey's highest score (6.0). Rebecca was a warm lead (tried many things, open to anything, dad supportive). Structure held: all deepening questions asked, fear question asked, price delivery clean, $111 framing good, payment processed on-call. BUT E=2 for the 5th consecutive call. The 'I can't do it any longer' moment was the emotional core of the call \u2014 Bailey acknowledged it and moved on. The close happened because Rebecca was pre-sold, not because deepening built the emotional anchor. Lucky Close flag applies.",
+          "the_moment": "Rebecca said 'I just had to ring mum and said, look, you're going to have to have him for a couple of weeks because I can't do it any longer. And he's now eight and a half hours away.' A mother who sent her child away because she couldn't cope anymore. Bailey's response: moved to the next question. One question: 'Rebecca, when you made that call to your mum \u2014 what was going through your head?' changes the entire call.",
+          "key_strengths": [
+            "First on-call close \u2014 $111 paid during conversation, stayed on line",
+            "Discovery patience improved \u2014 Rebecca talked 3+ min uninterrupted",
+            "All deepening questions asked: stress, fear, male role model, auth",
+            "Price delivery clean \u2014 $2700, weekly/monthly, $111 de-risk",
+            "Professional close logistics: noted Kobe away, mentor contact after Wednesday"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "E",
+            "score": 2,
+            "headline": "She Told You She Hit Breaking Point \u2014 That IS The Close",
+            "detail": "Rebecca said 'I can't do it any longer' and sent Kobe 8.5 hours away. That's a mother at breaking point. You acknowledged it and moved on. One question: 'When you made that call to your mum \u2014 what was going through your head?' The close was already in that moment. You got it anyway because she was warm. The next lead who isn't as warm needs that anchor.",
+            "ceiling": "Without fixing E: 6.0 ceiling on warm leads, reversals on marginal. With E at 3+: 7.5+ because structure is now solid."
+          },
+          "drill": "BREAKING POINT DRILL: Review Rebecca Light transcript. Find 'I can't do it any longer.' Practice: 'Rebecca, when you made that phone call \u2014 what was going through your head?' 5 times. Then find the fear answer ('his future, wrong path'). Practice: 'What does that wrong path look like to you?' 5 times. The discipline: when she reveals something heavy, STOP and ask ONE more question.",
+          "assigned_drills": [
+            "fear_anchor",
+            "breaking_point",
+            "gold_standard_listen",
+            "self_review",
+            "co_score_with_rye"
+          ],
+          "rye_coaching_role": [
+            "Review Rebecca Light close \u2014 what made it work despite E=2?",
+            "Run Breaking Point drill with Rebecca Light transcript",
+            "Role-play: Rye plays Rebecca at the 'I can't do it any longer' moment, Bailey must stay",
+            "Friday Sophie Murphy follow-up: did Bailey attempt $111?"
+          ],
+          "weekly_focus": {
+            "headline": "She Told You She Hit Breaking Point \u2014 Stay With It",
+            "detail": "Rebecca Light closed because she was warm. The E gap didn't cost you this time. But Jasmine Lund proved it costs you on marginal leads. The drill is one habit: when she reveals something heavy, ask ONE more question about it."
+          },
+          "key_learning": "Bailey's structure is genuinely improving. This was a well-executed close mechanically. The gap is specifically emotional depth \u2014 he asks the right questions but moves to the next one before staying with the answer.",
+          "objections_faced": []
+        },
+        {
+          "date": "2026-04-12",
+          "call_name": "Sophie Murphy",
+          "outcome": "follow_up",
+          "overall_score": 5.0,
+          "scores": {
+            "s": 3,
+            "i": 3,
+            "e": 2,
+            "l": 3,
+            "opening": 3,
+            "oh": 2
+          },
+          "pattern": "IMPROVING QUESTIONS, FLOOR EMOTION, DEFERRAL ACCEPTED. Sophie revealed: DV dad in jail (4 times), homelessness, DV refuge, 'I'm not a real man because I'm little' from Archie, AI companion app as male substitute. The context was extraordinary \u2014 Bailey had the deepest material of any call this week. But E=2 because none of these moments were cycled. Label was Bailey's best to date: 'carrying a lot of the weight, how's that impacted you?' \u2014 directed at HER. Partial cycling: referenced 'I'm not a man' comment later. BUT: $111 not attempted when Sophie deferred to Friday.",
+          "the_moment": "Sophie said 'he's said to me before, I'm not a real man because I'm little. And oh my God, it breaks my heart.' Bailey said 'Of course.' That 'Of course' is the gap. Harry would have said: 'When he said that to you \u2014 I'm not a real man \u2014 what went through you as his mum?' That one question turns this from a 5.0 to a 7.5.",
+          "key_strengths": [
+            "Best label to date: 'carrying a lot of the weight, how's that impacted you?' \u2014 directed at HER",
+            "Discovery excellent \u2014 held space while Sophie shared DV context",
+            "Fear question asked: 'He'll turn to his dad' \u2014 deep answer",
+            "First cycling attempt: referenced 'I'm not a man' comment later in the call",
+            "Summary clean: wearing many hats, dream question asked",
+            "AI app insight is coaching gold \u2014 Archie is actively seeking a male figure"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "E + OH",
+            "score": 2,
+            "headline": "DV Bomb Walked Past + $111 Not Attempted",
+            "detail": "Two gaps: (1) Sophie revealed DV, homelessness, 'I'm not a real man' \u2014 none cycled deeply. When she said 'it breaks my heart,' Bailey said 'Of course.' Stay there. (2) Sophie said 'I won't be able to pay until Friday.' Bailey accepted without isolation. Sophie had said 'sounds amazing' 30 seconds earlier. One question: 'Is that a payday thing? The $111 is just $111 \u2014 any way we could sort that today so his mentor can start?'",
+            "ceiling": "Without fixing: 5.0 ceiling. With E+OH at 3: 7.0+ because Sophie was warm and engaged."
+          },
+          "drill": "DV DEPTH + $111 DRILL: (1) Review Sophie Murphy transcript. Find 'I'm not a real man because I'm little' and 'it breaks my heart.' Practice: 'When he said that to you \u2014 what went through you as his mum?' 5 times. (2) Find the $111 deferral. Practice: 'Is that a payday thing? The $111 is just $111 \u2014 any way we could get that sorted today?' 5 times.",
+          "assigned_drills": [
+            "fear_anchor",
+            "dv_depth",
+            "small_yes_close",
+            "gold_standard_listen",
+            "self_review"
+          ],
+          "rye_coaching_role": [
+            "Run DV Depth drill with Sophie Murphy transcript \u2014 find the 3 bombs",
+            "Friday pre-call debrief: Bailey MUST attempt $111 before accepting any deferral",
+            "Role-play: Rye plays Sophie at 'I can't pay till Friday', Bailey must isolate",
+            "Review both April 11 calls together \u2014 what's improving, what's stuck?"
+          ],
+          "weekly_focus": {
+            "headline": "When She Says It Breaks My Heart \u2014 Stay There",
+            "detail": "Sophie gave you DV, homelessness, 'I'm not a real man.' The questions are improving. The next step: when the answer is heavy, don't move on. Ask ONE more question about her feeling."
+          },
+          "key_learning": "Bailey's label quality is improving (directed at HER for the first time). Discovery patience is improving. The gap is narrowing from 'everything wrong' to specifically: emotional cycling + $111 close attempt. Two habits away from 7+ calls.",
+          "objections_faced": [
+            {
+              "category": "price_affordability",
+              "parent_quote": "I won't be able to pay that until Friday, is that okay?",
+              "rep_response": "Yeah, that's fine. We can give you a call back on Friday.",
+              "grade": 2
+            }
+          ]
         }
       ]
     },

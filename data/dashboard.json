@@ -1,46 +1,42 @@
 {
-  "last_updated": "2026-04-11T22:00:00+10:00",
-  "summary": {
-    "total_scored": 22,
-    "team_close_rate": "9/22 scored (40.9%)",
-    "unscored_calls": 11,
-    "transcript_gap": "11 calls without transcripts since scoring began",
-    "mismatches": 4,
-    "false_positives": 2,
-    "active_sessions_confirmed": 4
-  },
-  "rep_summary": {
+  "last_updated": "2026-04-12T22:00:00+10:00",
+  "total_calls_scored": 24,
+  "reps_summary": {
     "anthony": {
       "calls_scored": 5,
-      "close_rate": 40.0,
       "overall_avg": 5.96,
+      "close_rate": 40.0,
+      "e_score_avg": 2.2,
+      "oh_score_avg": 3.2,
       "trend": "holding",
-      "top_gap": "E (Emotional Labelling) \u2014 avg 2.2/5. Consistently uses generic labels. SECONDARY ALERT: OH Score has",
-      "p3_flag": false
+      "top_issue": "E (Emotional Labelling) \u2014 avg 2.2/5. Consistently uses generic labels. SECONDARY ALERT: OH Score has"
     },
     "rye": {
       "calls_scored": 3,
-      "close_rate": 0.0,
       "overall_avg": 5.17,
+      "close_rate": 0.0,
+      "e_score_avg": 1.67,
+      "oh_score_avg": 2.67,
       "trend": "declining",
-      "top_gap": "PRICE CARD + FEAR BOMB CYCLING (primary). Jo Kelly mismatch now closed \u2014 re-engage window expired. N",
-      "p3_flag": true
+      "top_issue": "PRICE CARD + FEAR BOMB CYCLING (primary). Jo Kelly mismatch now closed \u2014 re-engage window expired. N"
     },
     "bailey": {
-      "calls_scored": 4,
-      "close_rate": 25.0,
-      "overall_avg": 3.73,
+      "calls_scored": 6,
+      "overall_avg": 4.32,
+      "close_rate": 33.3,
+      "e_score_avg": 1.33,
+      "oh_score_avg": 2.67,
       "trend": "improving",
-      "top_gap": "CRITICAL: E Score = 1.0 avg (unchanged after 4 calls). I Score improved to 1.25. Structure improving",
-      "p3_flag": true
+      "top_issue": "CRITICAL: E Score = 1.67 avg (6 calls). Rebecca Light closed at E=2 \u2014 same pattern as Jasmine Lund ("
     },
     "tom": {
       "calls_scored": 9,
-      "close_rate": 33.3,
       "overall_avg": 6.44,
+      "close_rate": 33.3,
+      "e_score_avg": 3.11,
+      "oh_score_avg": 2.78,
       "trend": "declining",
-      "top_gap": "$111 CLOSE ATTEMPT (CRITICAL). Four consecutive deferrals accepted without asking for the small comm",
-      "p3_flag": false
+      "top_issue": "$111 CLOSE ATTEMPT (CRITICAL). Four consecutive deferrals accepted without asking for the small comm"
     }
   }
 }
