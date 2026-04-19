@@ -1,36 +1,44 @@
 {
-  "last_updated": "2026-04-12T22:00:00+10:00",
+  "last_updated": "2026-04-19T22:00:00+10:00",
   "reps": {
     "anthony": {
       "hubspot_owner_id": "87029276",
       "email": "anthony@bluesandgreens.com.au",
       "status": "active",
-      "calls_scored": 5,
+      "calls_scored": 7,
       "rolling_10": {
         "overall": [
           5.3,
           6.7,
           6.5,
           5.6,
-          5.7
+          5.7,
+          6.3,
+          5.5
         ],
         "s": [
           3,
           4,
           5,
           4,
-          5
+          5,
+          4,
+          4
         ],
         "i": [
           3,
           3,
           3,
           3,
-          3
+          3,
+          3,
+          2
         ],
         "e": [
           2,
           3,
+          2,
+          2,
           2,
           2,
           2
@@ -40,10 +48,14 @@
           3,
           3,
           2,
-          2
+          2,
+          3,
+          3
         ],
         "opening": [
           2,
+          4,
+          4,
           4,
           4,
           4,
@@ -54,39 +66,41 @@
           4,
           4,
           3,
+          2,
+          3,
           2
         ]
       },
       "averages": {
-        "overall": 5.96,
-        "s": 4.2,
-        "i": 3.0,
-        "e": 2.2,
-        "l": 2.6,
-        "opening": 3.6,
-        "oh": 3.2
+        "overall": 5.94,
+        "s": 4.14,
+        "i": 2.86,
+        "e": 2.14,
+        "l": 2.71,
+        "opening": 3.71,
+        "oh": 3.0
       },
       "trend": {
-        "last_5_avg": 5.96,
-        "prior_5_avg": null,
+        "last_5_avg": 5.92,
+        "prior_5_avg": 5.96,
         "direction": "holding",
-        "note": "Apr 11: Anne Cook (Apr 8) = Deposit Paid (unscored, no transcript). Close count: 3 (Judith, Leanne, Anne Cook). Leanne Black W1 completed Apr 2 \u2705 \u2014 Active Sessions. Close rate including unscored: 3/6 (50%). E=2.2 unchanged. OH regression from 4\u21922 still unaddressed. Transcript submission blocking development: 4 DCs without transcripts (Leah Stephens x2, Helen Hope, Anne Cook). Anne Cook is a close without verifiable data \u2014 Lucky Close risk applies."
+        "note": "Apr 19: Linda Harris W1 CONFIRMED (Active Sessions). Jessica Cummings still Booked Call (Day 6 \u2014 window closing). E=2.14 unchanged. Close rate: 3/7 scored (42.9%)."
       },
       "close_rate_vs_siel": {
-        "calls": 5,
-        "closes": 2,
-        "rate": 40.0,
+        "calls": 7,
+        "closes": 3,
+        "rate": 42.9,
         "avg_close_siel": 6.6,
-        "avg_miss_siel": 5.53,
-        "confirmed_w1": 1,
-        "note": "Apr 11: Anne Cook = Deposit Paid (unscored). Including unscored: 3/6 (50%). Leanne Black W1 Apr 2 \u2705 \u2014 Active Sessions, fully activated. Anne Cook Lucky Close risk \u2014 E=2.2 avg with no transcript to verify emotional anchoring."
+        "avg_miss_siel": 5.68,
+        "confirmed_w1": 2,
+        "note": "Apr 19: Linda Harris W1 CONFIRMED (Active Sessions, Apr 15). Pre-warmed lead + dad on board = genuine conversion despite E=2 on DC. POSITIVE MISMATCH RESOLVED. Judith + Linda = 2 confirmed W1. Jessica Cummings still Booked Call (Day 6). Close rate: 3/7 scored (42.9%). Including Anne Cook: 4/8 (50%)."
       },
       "top_objections": [
         "partner_coparent",
         "price_affordability",
-        "think_about_it"
+        "trust_credibility"
       ],
-      "improvement_area": "E (Emotional Labelling) \u2014 avg 2.2/5. Consistently uses generic labels. SECONDARY ALERT: OH Score has dropped from 4 \u2192 2 in last 2 calls (Sophie Cuzzy cave = 2, Beck Reside cave = 2). Both caved at the close without isolating. If this trend continues to call 6, OH becomes co-primary with E.",
+      "improvement_area": "E (Emotional Labelling) \u2014 avg 2.14/5 across 7 calls. Suicide bomb (Jessica Cummings) and distance anxiety (Linda Harris) both walked past. POSITIVE: OH Score improving \u2014 $111 attempt before deferral on Jessica Cummings is the first time Anthony has executed this coached behavior. OH split: 3 (Jessica) / 2 (Linda). If OH holds at 3+ on next call, E becomes the sole gap.",
       "p3_flag": false,
       "p3_note": "I Score avg = 3.0 (borderline). E Score = 2.2 \u2014 labelling failure within deepening is the actual gap. OH regression to watch.",
       "coaching_history": [
@@ -124,6 +138,154 @@
           "the_moment": "Anne Cook closed without a recording. At E=2.2 avg, we cannot verify if the emotional anchoring was sufficient to hold. Lucky Close Protocol should apply until W1 is confirmed.",
           "drill": "TRANSCRIPT SUBMISSION \u2014 Anthony now has 4 unscored DCs. No coaching progress possible without recordings.",
           "metric_to_watch": "Anne Cook W1. Transcript submission rate: 5/9 total (56%). E=2.2 unchanged."
+        },
+        {
+          "date": "2026-04-13",
+          "call_name": "Jessica Cummings",
+          "outcome": "follow_up",
+          "overall_score": 6.3,
+          "scores": {
+            "s": 4,
+            "i": 3,
+            "e": 2,
+            "l": 3,
+            "opening": 4,
+            "oh": 3
+          },
+          "pattern": "MIXED PROGRESS \u2014 Suicide bomb walked past (E=2, recurring since call 1) but $111 close attempt before deferral is NEW. Anthony asked 'did you feel like you wanted to get things in place so when you go to dad that's already working in the background?' \u2014 first execution of the coached close behavior. Jess said no, Anthony caved ('100%, that sounds good') without isolating. Pattern split: E is floor-stuck at 2; OH is showing drill uptake.",
+          "the_moment": "Jess said 'he has revealed that he's been suicidal in the past.' Anthony said 'Okay, yeah.' A mother just told you her 14-year-old has had suicidal thoughts. 'Okay, yeah' is not the response. One question: 'Jess, when he told you that \u2014 what went through you as his mum?' changes the call.",
+          "key_strengths": [
+            "$111 close attempt BEFORE accepting deferral \u2014 first time in 7 scored calls",
+            "Basketball warm-up was natural \u2014 lights, weather, genuine engagement",
+            "Discovery patience \u2014 Jess shared suicidal ideation, vaping, online risk, emotional shutdown since childhood",
+            "All deepening questions asked: stress, fear, auth, male role model",
+            "Lighthouse tier offered cleanly when price shock hit",
+            "Follow-up booked Monday 5pm \u2014 specific and professional"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "E",
+            "score": 2,
+            "headline": "Suicide Bomb = Full Stop. Not 'Okay Yeah.'",
+            "detail": "Jess revealed her 14-year-old has been suicidal. Anthony said 'Okay, yeah' and moved on. This is the highest-stakes emotional disclosure in any call this month. One question: 'Jess, when he told you that \u2014 what went through you as his mum?' The close was in that moment. If Anthony anchors on the suicide fear, Jess doesn't defer to dad \u2014 she acts now because the urgency is real.",
+            "ceiling": "Without fixing E: 6.3 ceiling. With E at 3+: 8.0 because structure and OH are both improving."
+          },
+          "drill": "SUICIDE ANCHOR DRILL: Review Jessica Cummings transcript. Find 'he has revealed that he's been suicidal in the past.' Practice: 'Jess, when he told you that \u2014 what went through you as his mum?' 5 times. Then: 'How long have you been carrying that?' 5 times. The discipline: when a parent reveals suicidal ideation \u2014 FULL STOP. Do not say 'Okay yeah.' Do not move on. Stay there for 2 full cycles.",
+          "assigned_drills": [
+            "fear_anchor",
+            "suicide_anchor",
+            "gold_standard_listen",
+            "self_review",
+            "co_score_with_rye"
+          ],
+          "rye_coaching_role": [
+            "Run Suicide Anchor drill with Jessica Cummings transcript \u2014 find the suicidal ideation moment",
+            "Role-play: Rye plays Jess revealing suicidal thoughts, Anthony must stay with it for 2 cycles",
+            "Review the $111 close attempt \u2014 this is progress. Build on it.",
+            "Monday pre-call prep: Jessica follow-up at 5pm. Anthony must re-anchor on the suicide fear."
+          ],
+          "weekly_focus": {
+            "headline": "Suicide Bomb = Full Stop",
+            "detail": "Jess told you her son has been suicidal. That moment is where the close lives. The $111 attempt was progress \u2014 now anchor the emotion before the close."
+          },
+          "key_learning": "Anthony's close phase is improving \u2014 the $111 attempt before deferral is coached behavior appearing for the first time. The E gap is now the SOLE remaining blocker. Structure, opening, pitch \u2014 all solid. If E lifts to 3 on next call, Anthony breaks through 7.0.",
+          "objections_faced": [
+            {
+              "category": "partner_coparent",
+              "parent_quote": "Like I said, I'd have to talk to his dad and my husband about it.",
+              "rep_response": "Attempted $111 first: 'did you feel like you wanted to get things in place?' Jess said no. Anthony: '100%, that sounds good.' No isolation after rejection.",
+              "grade": 3
+            },
+            {
+              "category": "price_affordability",
+              "parent_quote": "That is a big investment. That's probably more than I was expecting.",
+              "rep_response": "Offered Lighthouse tier cleanly. $1899/$166 week. Jess: 'That's probably better.'",
+              "grade": 3
+            }
+          ]
+        },
+        {
+          "date": "2026-04-13",
+          "call_name": "Linda Harris",
+          "outcome": "follow_up",
+          "overall_score": 5.5,
+          "scores": {
+            "s": 4,
+            "i": 2,
+            "e": 2,
+            "l": 3,
+            "opening": 4,
+            "oh": 2
+          },
+          "pattern": "PRE-WARMED LEAD MISSED \u2014 Linda was already chatting with Harry (B&G founder). Dad (Harry, her husband) was 'pretty much on board.' Liam was open to it. Both parents functional, married, involved. This should have been the easiest close of the month. Anthony treated it like a standard discovery when deepening needed to adapt for low-urgency, two-parent family. Distance anxiety (boarding school, 2 hours south) was the emotional core \u2014 never explored. China urgency (Liam overseas, mentor could match before return) \u2014 never used.",
+          "the_moment": "Linda said 'it's difficult to fix when you're two hours south.' Anthony acknowledged and moved on. That's a boarding school mum's anxiety \u2014 she can't be there. She asks if he's OK. He says yes. She doesn't believe him. One question: 'Linda, when Liam calls and says everything is fine but you know it isn't \u2014 what does that feel like from two hours away?' That surfaces the distance anxiety and makes the mentor essential \u2014 someone WHO IS THERE when she can't be.",
+          "key_strengths": [
+            "Mentor quality concern handled well \u2014 explained onboarding, AFL players, doctor",
+            "Confirmed Liam's name early \u2014 no name errors",
+            "Pitch comprehensive \u2014 all pillars covered, outcome guarantee personalised to 'gratitude' goal",
+            "Perth time zone awareness \u2014 caught the 2-hour gap",
+            "Follow-up booked tomorrow 6pm \u2014 specific and tight"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "E + OH",
+            "score": 2,
+            "headline": "Pre-Warmed Lead + Dad On Board = Close Today",
+            "detail": "Linda told you dad was 'pretty much on board.' Then at the close: 'let me chat to Harry first.' That's the same person she already told you is on board. One line: 'Linda, you mentioned Harry is already pretty much on board \u2014 and with Liam in China right now, if we start the matching now, his mentor could reach out the day he lands. The $111 just starts that process. Is that something we could sort tonight?' Not asked.",
+            "ceiling": "Without fixing: 5.5 ceiling on warm leads. With E+OH at 3: 7.5+ because this was a pre-warmed, high-fit lead."
+          },
+          "drill": "PRE-WARMED LEAD DRILL: Review Linda Harris transcript. Find where she says 'he's pretty much on board.' Then find the close where she says 'let me chat to Harry.' Practice the bridge: 'You mentioned Harry is already on board \u2014 the $111 just gets the matching started. With Liam in China, we could have his mentor ready when he lands. Is that doable tonight?' 5 times. ALSO: DISTANCE ANXIETY DRILL: Find 'difficult to fix when you're two hours south.' Practice: 'What does that feel like when he calls and says everything is fine but you're not sure?' 5 times.",
+          "assigned_drills": [
+            "distance_anxiety",
+            "pre_warmed_close",
+            "gold_standard_listen",
+            "self_review",
+            "co_score_with_rye"
+          ],
+          "rye_coaching_role": [
+            "Tomorrow pre-call debrief: Linda follow-up at 6pm. Anthony must attempt $111 \u2014 dad is on board, use it.",
+            "Review the distance anxiety moment \u2014 when she says 'two hours south', stay with it",
+            "Role-play: Rye plays Linda deferring to husband who is already on board",
+            "End-of-week debrief: did E improve on any call this week?"
+          ],
+          "weekly_focus": {
+            "headline": "When They Tell You Dad Is On Board \u2014 Use It",
+            "detail": "Linda said dad was on board. Then deferred to him at the close. The bridge is: 'You already told me Harry is on board \u2014 the $111 just starts the matching.' Combined with China urgency: 'Mentor could reach out the day Liam lands.'"
+          },
+          "key_learning": "Pre-warmed leads from Harry (founder) are the highest-probability closes. Anthony needs a different playbook for these \u2014 less standard discovery, more 'I know Harry has told you about us, what specifically would you love to see for Liam?' Then fast-track to close. The deepening script for crisis leads doesn't map to functional families. Opportunity-cost framing is the alternative.",
+          "objections_faced": [
+            {
+              "category": "price_affordability",
+              "parent_quote": "Yeah, it comes down to cost, obviously.",
+              "rep_response": "Offered Lighthouse at $1899/$166 week. Then accepted 'let me chat to Harry' without isolation.",
+              "grade": 2
+            },
+            {
+              "category": "trust_credibility",
+              "parent_quote": "They're druggies and stuff, and they're getting over drugs... don't really want anyone like that.",
+              "rep_response": "Explained onboarding, 15hrs training, AFL players, doctor. 'Rest assured they're not going to be mentoring Liam.'",
+              "grade": 3
+            }
+          ]
+        },
+        {
+          "date": "2026-04-14",
+          "pattern": "LINDA HARRIS CONVERTED \u2014 Follow-up closed. Deposit Paid confirmed in HubSpot. DC score was 5.5 with E=2 and OH=2. This is a POSITIVE MISMATCH: predicted Follow Up, actual Deposit Paid. The pre-warmed lead from Harry + dad on board likely carried the conversion despite the DC's emotional gaps. Anthony now 3/8 scored closes (37.5%). Including unscored Anne Cook: 4/9 (44.4%). E=2.14 unchanged but close rate improving. The question: is Linda Harris a genuine conversion or another Lucky Close? W1 monitoring critical.",
+          "the_moment": "Linda Harris closed despite E=2 and OH=2 on the DC. The follow-up (today, 6pm scheduled) apparently executed and converted. Pre-warmed lead + supportive dad = conversion despite emotional gaps. This mirrors the pattern: high-fit leads close even with low deepening. The test is W1 activation.",
+          "drill": "Monitor Linda Harris W1. If she activates cleanly, the pre-warmed lead playbook works and Anthony should use the fast-track approach on all Harry-warmed leads. If W1 stalls, Lucky Close Protocol applies.",
+          "metric_to_watch": "Linda Harris W1. Close rate now 3/8 scored (37.5%). E=2.14 unchanged."
+        },
+        {
+          "date": "2026-04-18",
+          "pattern": "LONGITUDINAL UPDATE \u2014 Jessica Cummings still Follow Up Scheduled / Booked Call after 5 days. Anthony's follow-up (Mon Apr 14, 5pm) did not convert. Window cooling. Linda Harris: still Deposit Paid, no W1 visible. Close rate: 3/7 scored (42.9%). Including Anne Cook: 4/8 (50%). E=2.14 unchanged.",
+          "the_moment": "Jessica Cummings: Anthony's follow-up did not convert. The suicide bomb from the DC (E=2) likely left insufficient emotional anchor for the follow-up to close. Pattern: Anthony's E gap is costing follow-up conversions, not just DC closes.",
+          "drill": "Jessica Cummings window closing. If Anthony hasn't re-engaged by Monday, it's cold. Linda Harris W1 monitoring continues.",
+          "metric_to_watch": "Jessica Cummings outcome. Linda Harris W1. E=2.14 unchanged."
+        },
+        {
+          "date": "2026-04-19",
+          "pattern": "LINDA HARRIS W1 CONFIRMED \u2014 Active Sessions as of Apr 15. Pre-warmed lead + dad on board = genuine conversion despite E=2, OH=2 on DC. POSITIVE MISMATCH RESOLVED \u2014 DC score 5.5, predicted Follow Up, actual Active Sessions with confirmed W1. This validates the pre-warmed lead playbook for Anthony. Jessica Cummings: still Booked Call (Day 6). Follow-up (Mon Apr 14) did not convert. Window effectively closed.",
+          "the_moment": "Linda Harris is Anthony's 2nd confirmed W1 activation (after Judith Lacey). Both closes came from leads with strong external factors (Harry pre-warm + dad on board for Linda; Judith was a 10/10 fit). The question remains: can Anthony close WITHOUT these external assists? E=2.14 unchanged.",
+          "drill": "Jessica Cummings is cold. Focus forward on next DC. E remains the sole gap at 2.14.",
+          "metric_to_watch": "E=2.14 unchanged. Next DC is the test. Close rate: 3/7 (42.9%)."
         }
       ]
     },
@@ -182,7 +344,7 @@
         "last_5_avg": 5.17,
         "prior_5_avg": null,
         "direction": "declining",
-        "note": "Apr 11: ZERO DCs in 16+ days (last DC: Mar 26 Bianca JESS). Jo Kelly window CLOSED (confirmed). 0/3 close rate unchanged. No data to evaluate any drill progress. Regression risk critical with every day without a DC."
+        "note": "Apr 19: 24 DAYS without a DC. 0/3 close rate. All drills unverified. Escalation to Harry Monday if no DC booked."
       },
       "close_rate_vs_siel": {
         "calls": 3,
@@ -248,6 +410,20 @@
           "the_moment": "16 days since Bianca JESS. The gap between coaching and execution widens daily.",
           "drill": "Rye needs a DC THIS WEEK. If none booked, escalate to Harry.",
           "metric_to_watch": "Days since last DC: 16. Close rate: 0/3 (0%)."
+        },
+        {
+          "date": "2026-04-18",
+          "pattern": "23 DAYS WITHOUT A DC. No new data. Last DC: Mar 26 (Bianca JESS). 0/3 close rate. All coaching is theoretical. Every day without a DC increases regression risk.",
+          "the_moment": "23 days since last DC. If Rye takes a call this week, every coached behavior needs to be re-tested from scratch.",
+          "drill": "Rye needs a DC. If none booked by Monday, escalate to Harry.",
+          "metric_to_watch": "Days since last DC: 23. Close rate: 0/3 (0%)."
+        },
+        {
+          "date": "2026-04-19",
+          "pattern": "24 DAYS WITHOUT A DC. No new data since Mar 26 (Bianca JESS). 0/3 close rate. Every day without a DC increases regression risk.",
+          "the_moment": "24 days. If Rye takes a call this week, every coached behavior needs re-testing from scratch.",
+          "drill": "Rye needs a DC. If none booked by Monday, escalate to Harry.",
+          "metric_to_watch": "Days since last DC: 24. Close rate: 0/3 (0%)."
         }
       ]
     },
@@ -309,94 +485,122 @@
       "hubspot_owner_id": "88035516",
       "email": "bailey@bluesandgreens.com.au",
       "status": "active_commission",
-      "calls_scored": 6,
+      "calls_scored": 12,
       "rolling_10": {
         "overall": [
-          3.7,
-          3.1,
           3.3,
           4.8,
           6.0,
-          5.0
+          5.0,
+          5.7,
+          5.1,
+          7.8,
+          5.1,
+          3.6,
+          2.8
         ],
         "s": [
           2,
-          2,
-          2,
           3,
           3,
-          3
+          3,
+          3,
+          3,
+          4,
+          3,
+          2,
+          2
         ],
         "i": [
           1,
-          1,
-          1,
           2,
           3,
-          3
+          3,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1
         ],
         "e": [
           1,
           1,
+          2,
+          2,
+          2,
+          2,
+          3,
+          2,
           1,
-          1,
+          1
+        ],
+        "l": [
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
           2,
           2
         ],
-        "l": [
-          3,
-          2,
-          2,
-          2,
-          3,
-          3
-        ],
         "opening": [
           2,
-          2,
-          2,
           3,
           3,
-          3
+          3,
+          3,
+          3,
+          4,
+          3,
+          3,
+          2
         ],
         "oh": [
           3,
           2,
+          4,
+          2,
           3,
           2,
           4,
-          2
+          2,
+          1,
+          1
         ]
       },
       "averages": {
-        "overall": 4.32,
-        "s": 2.5,
-        "i": 1.83,
-        "e": 1.33,
-        "l": 2.5,
-        "opening": 2.5,
-        "oh": 2.67
+        "overall": 4.92,
+        "s": 2.8,
+        "i": 2.3,
+        "e": 1.7,
+        "l": 2.6,
+        "opening": 2.9,
+        "oh": 2.4
       },
       "trend": {
-        "last_5_avg": 4.44,
-        "prior_5_avg": 3.37,
-        "direction": "improving",
-        "note": "Apr 12: TWO NEW SCORED CALLS. Rebecca Light (6.0, CLOSED on-call) = Bailey's highest score ever. Sophie Murphy (5.0, Follow Up Friday). Rebecca Light is Bailey's first SCORED close \u2014 $111 paid during the call. Structure improving consistently (S=3 on both). E=2 unchanged across all 6 scored calls. Lucky Close flag on Rebecca Light: E=2 close on a warm lead \u2014 same pattern as Jasmine Lund. Brodie activation critical. Sophie Murphy: warm lead, DV context, said 'sounds amazing' but deferred $111 to Friday \u2014 no isolation attempted. Close rate (scored): 2/6 (33%). Including unscored (Titis, Rebecca H-D): 4/8 (50%). Emma Thorley W1 completed Apr 9 \u2705 \u2014 first Bailey activation confirmed."
+        "last_5_avg": 4.88,
+        "prior_5_avg": 4.96,
+        "direction": "volatile",
+        "note": "Apr 19: Jade Wearing 2.8 CRITICAL confirmed. Renee Brereton DEGRADED to Call Objection. Amy Witnish Deposit Paid CONFIRMED. Alenka Strejcova Deposit Paid, no W1 (Day 2). Two CRITICAL calls in 2 days after best-ever. Consistency is THE gap."
       },
       "close_rate_vs_siel": {
-        "calls": 6,
-        "closes": 2,
-        "rate": 33.3,
-        "avg_close_siel": 4.8,
-        "avg_miss_siel": 4.05,
-        "note": "Apr 12: Rebecca Light = Deposit Paid (6.0, scored). Sophie Murphy = Follow Up (5.0). Jasmine Lund still Call Objection (reversed). Including unscored closes (Titis, Rebecca H-D): 4/8 (50%). Emma Thorley W1 completed \u2014 first confirmed Bailey activation. E=1.67 avg across scored calls means Lucky Close risk remains extreme."
+        "calls": 12,
+        "closes": 4,
+        "rate": 36.4,
+        "avg_close_siel": 6.2,
+        "avg_miss_siel": 4.33,
+        "note": "Apr 19: Amy Witnish Deposit Paid CONFIRMED (positive mismatch). Renee Brereton DEGRADED to Call Objection. Close rate: 4/12 scored (33.3%). Including Amy + unscored: 6/14 (42.9%). Alenka W1 pending (Day 2)."
       },
       "top_objections": [
         "price_affordability",
         "partner_coparent",
         "logistics"
       ],
-      "improvement_area": "CRITICAL: E Score = 1.67 avg (6 calls). Rebecca Light closed at E=2 \u2014 same pattern as Jasmine Lund (E=1, reversed). Structure improving (S avg 2.5\u21922.67, Opening 2.5\u21922.67). But ZERO emotional cycling in any scored call. New: Bailey now asks the right questions (fear, stress, label) but does not follow up on the answers. The gap has shifted from 'not asking' to 'not staying.'",
+      "improvement_area": "STRUCTURE DISCIPLINE IS NOW #1. Two CRITICAL calls in 2 days (Kate 3.6, Jade 2.8) after best-ever (Alenka 7.8). Pattern: when parent drives conversation, Bailey skips deepening entirely. E avg=1.64 (12 calls). The fix is ONE habit: redirect to deepening before any pitch, regardless of what the parent asks or says.",
       "p3_flag": true,
       "p3_note": "CRITICAL FLAG \u2014 E avg=1.67, I avg=2.0 across 6 calls. Rebecca Light close at E=2 is Lucky Close territory. Jasmine Lund reversal is the pattern baseline.",
       "coaching_history": [
@@ -599,6 +803,317 @@
               "grade": 2
             }
           ]
+        },
+        {
+          "date": "2026-04-14",
+          "pattern": "LONGITUDINAL UPDATE \u2014 Jen Howgate degraded from Price Objection to Call Objection. Sophie Murphy still Booked Call (owner now Harry). Follow-up Friday may not have converted. Rebecca Light still Deposit Paid, no W1 (Day 3 \u2014 normal). Titis Bindarstuti still Deposit Paid, no W1 (5+ days \u2014 watch). Rebecca Hill-Douglas still Deposit Paid, no W1 (4+ days \u2014 watch). Close rate unchanged: 2/6 scored (33.3%). Including unscored: 4/8 (50%).",
+          "the_moment": "Jen Howgate: Mark was on the call. Bailey never addressed him directly at the close. Outcome degraded from Price Objection to Call Objection. Pattern confirmed: partner-on-call not engaged = deferral \u2192 objection \u2192 cold.",
+          "drill": "PARTNER ENGAGEMENT DRILL remains priority. Three Deposit Paid contacts need W1 monitoring.",
+          "metric_to_watch": "Rebecca Light W1 (Lucky Close flag). Titis and Rebecca H-D W1 activation."
+        },
+        {
+          "date": "2026-04-15",
+          "call_name": "Renee Brereton",
+          "outcome": "follow_up",
+          "overall_score": 5.7,
+          "scores": {
+            "s": 3,
+            "i": 3,
+            "e": 2,
+            "l": 3,
+            "opening": 3,
+            "oh": 3
+          },
+          "pattern": "E=2 FOR 7TH CONSECUTIVE CALL. Renee revealed she's considering leaving her 10-year marriage ('me leaving') to protect Jett from stepfather Travis. Bailey said 'For sure' and redirected to Jett's experience. Same pattern as every prior call: right questions asked, heavy answers walked past. NEW POSITIVE: Got Jett on the phone live \u2014 Jett said 'that actually sounds good.' This is the strongest son buy-in execution in the scored library. $111 committed with creative pause approach \u2014 Renee will pay $111, start onboarding, pause until financially ready.",
+          "the_moment": "Renee said 'me leaving' \u2014 she's considering ending her marriage of nearly 10 years because Travis won't bond with Jett and went ballistic over the feminine clothing. Bailey said 'For sure. And I guess, where do you sort of see Jet fitting in that?' \u2014 redirected from HER to Jett. One question: 'Renee, what does it feel like knowing you might have to walk away from 10 years to protect your son?' That surfaces the full weight of what she's carrying and makes the mentor essential \u2014 someone who takes this pressure off her.",
+          "key_strengths": [
+            "Jett phone handover \u2014 live son buy-in, 'actually sounds good' (NEW GOLD STANDARD)",
+            "$111 commitment with pause approach \u2014 creative financial sensitivity",
+            "Pain stack balanced: Jett AND Renee ('single mum' language)",
+            "Fear question asked and answered",
+            "Stress question directed at HER",
+            "Previous support failure surfaced organically",
+            "Pitch covered all pillars, connection-first"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "E",
+            "score": 2,
+            "headline": "She Told You She Might Leave Her Marriage \u2014 Stay There",
+            "detail": "Renee said 'me leaving' when asked about her fear. She's considering ending a 10-year relationship to protect Jett. Bailey said 'For sure' and asked about Jett. One question: 'What does that feel like \u2014 knowing you might have to walk away from 10 years?' That surfaces the full weight. The $111 was already committed \u2014 the depth was available without risk.",
+            "ceiling": "Without fixing E: 5.7 ceiling. With E at 3+: 7.5+ because Jett was already on board and Renee already committed."
+          },
+          "drill": "MARRIAGE BOMB DRILL: Review Renee Brereton transcript. Find 'me leaving.' Practice: 'Renee, what does it feel like knowing you might have to walk away from 10 years to protect Jett?' 5 times. Then: 'How long have you been sitting with that?' 5 times. When she reveals her marriage is at stake \u2014 FULL STOP. Stay for 2 cycles.",
+          "assigned_drills": [
+            "fear_anchor",
+            "marriage_bomb",
+            "gold_standard_listen",
+            "self_review",
+            "co_score_with_rye"
+          ],
+          "rye_coaching_role": [
+            "Review Renee Brereton transcript \u2014 find the 'me leaving' moment",
+            "Role-play: Rye plays Renee at the marriage fear, Bailey must stay with it",
+            "Celebrate the Jett phone handover \u2014 this is gold. Build on it.",
+            "End-of-week debrief: E=2 for 7 consecutive calls. What's the block?"
+          ],
+          "weekly_focus": {
+            "headline": "She Said She Might Leave Her Marriage \u2014 Stay There",
+            "detail": "Renee revealed the deepest fear yet: ending her marriage to protect Jett. Bailey redirected to Jett. Same pattern, 7th call. The Jett phone handover was brilliant \u2014 the son buy-in is real. Now anchor the emotion before the close."
+          },
+          "key_learning": "Bailey's close creativity is underrated \u2014 the pause approach for financially stressed parents is good sales craft. And the Jett phone handover is the strongest son buy-in execution in the scored library. The gap remains singular: emotional cycling. 7 calls, E\u22642 every time.",
+          "objections_faced": [
+            {
+              "category": "price_affordability",
+              "parent_quote": "Would I be able to look into it again, like, more towards tax time? ... Probably would put me in a bit of a financial strain.",
+              "rep_response": "Accepted tax time deferral initially. Then recovered with pause approach \u2014 $111 now, program paused until ready. Creative but didn't isolate first.",
+              "grade": 3
+            }
+          ]
+        },
+        {
+          "date": "2026-04-15",
+          "call_name": "Melinda Saxe",
+          "outcome": "follow_up",
+          "overall_score": 5.1,
+          "scores": {
+            "s": 3,
+            "i": 3,
+            "e": 2,
+            "l": 3,
+            "opening": 3,
+            "oh": 2
+          },
+          "pattern": "E=2 FOR 8TH CONSECUTIVE CALL. Melinda revealed: DV childhood, DV relationships, cancer (allergic to chemo), lost home in flood, Ruben was her main carer through it all, older son with NDIS, \"committed relationship with myself.\" Bailey shared his own connection (sister with special needs, mum's cancer) \u2014 genuine rapport \u2014 but didn't ask a single follow-up about HER experience. Dream question ABSENT. Pain stack ABSENT. $111 not attempted. Ruben is 22 (borderline age).",
+          "the_moment": "Melinda said \"he was my main carer through chemo, which I was allergic to, and then we lost our home in the flood.\" Bailey said \"I really appreciate you sharing all that. There's clearly been a lot that's gone on.\" That's it. A son who gave up his teenage years to nurse his mum. That's WHY he's drifting \u2014 he never got to be a teenager. One question: \"Melinda, what was it like having Ruben carry that weight when he should have been out being a kid?\" changes the entire call.",
+          "key_strengths": [
+            "Personal connection was genuine and Melinda responded warmly",
+            "Age concern handled transparently and professionally",
+            "Empowerment angle was excellent \u2014 \"boys become mentors\" lit Melinda up",
+            "Lighthouse tier offered proactively",
+            "Same-day callback offered to confirm age eligibility"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "E",
+            "score": 2,
+            "headline": "He Was Her Carer Through Cancer \u2014 That's Why He's Lost",
+            "detail": "Ruben gave up his teenage years to nurse his mum through chemo. Then a flood took their home. He moved away for 3 years. He came back and he's drifting. That's not laziness \u2014 that's a young man who never got to be young. Bailey acknowledged the surface facts but never explored what that COST them both. One question: \"What was it like having your son be your carer when he should have been out living his life?\" reframes everything.",
+            "ceiling": "Without fixing E: 5.1 ceiling. With E at 3+: 7.0+ because the emotional material was the richest of any call this month."
+          },
+          "drill": "CARER BURDEN DRILL: Review Melinda Saxe transcript. Find \"he was my main carer through chemo.\" Practice: \"What was that like, Melinda \u2014 having Ruben carry that weight when he should have been out living his teenage years?\" 5 times. Then find \"I'm in a committed relationship with myself.\" Practice: \"What is it about what you went through that you're most determined to break for Ruben?\" 5 times. ALSO: DREAM QUESTION \u2014 this was completely absent. Before any pitch, ask: \"If we fast forward 90 days, what would success look like for Ruben?\"",
+          "assigned_drills": [
+            "carer_burden",
+            "fear_anchor",
+            "dream_question",
+            "small_yes_close",
+            "self_review",
+            "co_score_with_rye"
+          ],
+          "rye_coaching_role": [
+            "Run Carer Burden drill with Melinda Saxe transcript",
+            "Role-play: Rye plays Melinda at the \"he was my carer through chemo\" moment \u2014 Bailey must stay with it",
+            "Drill the dream question \u2014 it was completely absent. Must be automatic.",
+            "End-of-week debrief: E=2 x8 calls. What is the block?"
+          ],
+          "weekly_focus": {
+            "headline": "He Gave Up His Youth To Care For You \u2014 Stay With That",
+            "detail": "Melinda's son nursed her through cancer. Then they lost their home. He's drifting because he never got to be a teenager. The emotional depth was RIGHT THERE. Dream question and pain stack were both absent. 8 consecutive E\u22642 calls."
+          },
+          "key_learning": "Bailey's personal connection with Melinda was genuine and Melinda responded. The empowerment pitch was his best yet. The gap is STILL the same gap: when the parent reveals something heavy, Bailey acknowledges it and moves on. 8 calls. Same pattern. Intensive E coaching needed or this won't break.",
+          "objections_faced": [
+            {
+              "category": "price_affordability",
+              "parent_quote": "I'm going to need to have a chat to him and my dad, because maybe between the three of us, we'd be able to find that affordable.",
+              "rep_response": "Acknowledged, offered Lighthouse at $166/week. No isolation, no $111 attempt.",
+              "grade": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-04-17",
+          "call_name": "Alenka Strejcova",
+          "outcome": "close",
+          "overall_score": 7.8,
+          "scores": {
+            "s": 4,
+            "i": 3,
+            "e": 3,
+            "l": 3,
+            "opening": 4,
+            "oh": 4
+          },
+          "pattern": "BREAKTHROUGH \u2014 Bailey's highest score ever (7.8). First E=3 in 9 consecutive E\u22642 calls. Alenka revealed Oli says 'when I grow up I'm just gonna be homeless' at age 9. Bailey said 'Wow. At 9 years old, wow. Pretty frightening.' He STAYED with it. Dream question asked. Pain stack balanced. $111 closed on-call with activation completed. The 'regardless' frame from gold standard was used. Bridge metaphor personalised.",
+          "the_moment": "Alenka said 'he sometimes says when I grow up I'm just gonna be homeless and I'm not gonna do anything.' Bailey: 'Wow. And this is what he's saying. At 9 years old, wow. Pretty frightening I imagine to hear from your nine-year-old boy.' He showed genuine surprise and reflected the fear. He didn't redirect. This is the E=3 moment.",
+          "key_strengths": [
+            "FIRST E=3 IN 9 CALLS \u2014 homeless bomb stayed with, not redirected",
+            "Dream question asked and answered (first time in weeks)",
+            "Pain stack balanced: Oli's struggles AND Alenka's single-mum burden",
+            "'Regardless' frame from gold standard executed naturally",
+            "Bridge metaphor personalised: 'take off some of those hats'",
+            "$111 closed on-call \u2014 activation and consent completed",
+            "Acknowledged dad's abandonment without judgment",
+            "Son engagement question asked naturally"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "E",
+            "score": 3,
+            "headline": "E=3 Is The Breakthrough \u2014 Now Add The Follow-Up",
+            "detail": "Alenka said her 9-year-old says he'll be homeless. Bailey stayed with it \u2014 that's the breakthrough. The next level: after reflecting the fear, ask ONE question about HER feeling. 'What does it feel like hearing your nine-year-old say that, Alenka?' That moves E from 3 to 4. The habit is forming \u2014 now deepen it.",
+            "ceiling": "With E at 4: 8.5+ because everything else is now strong."
+          },
+          "drill": "EMOTION FOLLOW-UP: After reflecting a fear bomb, add: 'What does that feel like for you as his mum?' Practice 5x.",
+          "objections_faced": []
+        },
+        {
+          "date": "2026-04-17",
+          "call_name": "Amy Witnish",
+          "outcome": "follow_up",
+          "overall_score": 5.1,
+          "scores": {
+            "s": 3,
+            "i": 3,
+            "e": 2,
+            "l": 3,
+            "opening": 3,
+            "oh": 2
+          },
+          "pattern": "BOTH PARENTS KEEN, DEFERRAL ACCEPTED. Amy and Cade both confirmed value. Cade: 'we'd be absolutely interested' and 'this is not a luxury, love this idea.' But Cade said 'let's talk Wednesday' and Bailey accepted immediately without $111 attempt. Indiana walked into the room \u2014 Bailey didn't engage him (missed Jett-style handover). POSITIVE: Amy paid same-day via link \u2014 Deposit Paid in HubSpot. The call built enough value for post-call conversion.",
+          "the_moment": "Cade said 'we'd be absolutely interested' and 'this is not a luxury. Love this idea.' Then: 'let's talk Wednesday.' Bailey said 'Sounds great.' The $111 was right there. 'Cade, you said you're keen \u2014 the $111 literally just gets the matching started while you work through your contract with Indi. Is that doable today?' Not asked. Also: Indiana walked in. Bailey didn't say a word to him. On Renee Brereton, Bailey got Jett on the phone \u2014 gold standard. Here, the son was IN THE ROOM.",
+          "key_strengths": [
+            "Cade joined mid-call \u2014 Bailey handled the transition smoothly",
+            "Discovery patience improved \u2014 Amy shared extensively",
+            "Both parents confirmed value \u2014 strong rapport with Cade",
+            "Son buy-in pre-handled with 'few steps ahead' framing",
+            "POSITIVE MISMATCH: Deposit Paid same-day despite follow-up booking"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "OH",
+            "score": 2,
+            "headline": "Both Parents Were Keen \u2014 $111 Was Right There",
+            "detail": "Cade said 'absolutely interested' and 'not a luxury.' Then deferred to Wednesday. One question: 'The $111 just gets the matching started \u2014 doable today?' Not asked. Indi walked in and wasn't engaged.",
+            "ceiling": "Without fixing: post-call conversion (which happened here) but unreliable. With $111 on-call: locks the close."
+          },
+          "drill": "BOTH-PARENTS CLOSE: When both parents confirm value and one defers \u2014 attempt $111 before accepting. Also: SON IN ROOM = engage.",
+          "objections_faced": [
+            {
+              "category": "partner_coparent",
+              "parent_quote": "let's talk Wednesday... give me a rundown then we'll sit on boarding for another day",
+              "rep_response": "Sounds great. Yeah.",
+              "grade": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-04-17",
+          "call_name": "Kate Mulcahy",
+          "outcome": "follow_up",
+          "overall_score": 3.6,
+          "scores": {
+            "s": 2,
+            "i": 1,
+            "e": 1,
+            "l": 2,
+            "opening": 3,
+            "oh": 1
+          },
+          "pattern": "CRITICAL REGRESSION. Kate is a mum of 11 (including triplets and 2 sets of twins) who said 'I sit on the edge of my bed every night and see how I've failed him.' Bailey's structure collapsed: Kate asked about the program and Bailey jumped straight to pitch. ZERO deepening questions asked. No fear, no stress, no auth, no male role model, no dream, no pain stack. Multiple prices given upfront ($166-$235/week range). Kate overwhelmed. Every deferral accepted. This is Bailey's worst call since early days and directly follows his best (Alenka 7.8). Consistency is the new gap.",
+          "the_moment": "Kate said 'every night I sit on the edge of my bed and see how I've failed him every day. It crushes you.' Bailey said 'I completely hear you. I think it is important, Kate, to say that the fact that you've been on this phone call is certainly not failing him.' That's a pep talk, not depth. One question: 'Kate, tell me about that moment on the edge of the bed. What goes through your mind?' changes everything. Kate had 11 kids, a separated family, Mason pushing away, 'somebody abducted my son' grief. The material was extraordinary. None of it was explored.",
+          "key_strengths": [
+            "Personal mentoring story was effective \u2014 Kate resonated",
+            "Confirmed boys-only focus when Kate asked",
+            "Bailey was warm and Kate felt heard",
+            "Follow-up promised for tomorrow"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "Structure",
+            "score": 1,
+            "headline": "WHEN SHE ASKS ABOUT THE PROGRAM \u2014 REDIRECT TO DEEPENING",
+            "detail": "Kate asked 'what was it about your company?' and Bailey jumped to pitch. The rule: 'Great question, Kate \u2014 I'd love to run through that. Before I do, I just want to make sure I understand Mason's story so I can show you exactly how we'd help.' Then: deepening. Every question Kate asked got answered immediately. Bailey was reactive, not guiding.",
+            "ceiling": "Without fixing structure: 3-4 ceiling. With structure restored: 6+ because Bailey can build value (Alenka proved it same day)."
+          },
+          "drill": "REDIRECT DRILL: When a parent asks about the program before deepening \u2014 say: 'I'd love to show you \u2014 let me just understand Mason's story first so I can make it specific to you.' Practice 5x. This is non-negotiable before next call.",
+          "objections_faced": [
+            {
+              "category": "price_affordability",
+              "parent_quote": "I'm not actually working at the moment. I could have a think about it?",
+              "rep_response": "100%. I'll send that through. Allow you to read through it.",
+              "grade": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-04-18",
+          "pattern": "LONGITUDINAL UPDATE \u2014 Rebecca Light W1 COMPLETED (Apr 17, Active Sessions). Lucky Close flag RESOLVED \u2014 she activated despite E=2. Renee Brereton degraded to Price Objection ($111 pause approach didn't convert). Sophie Murphy still Booked Call (Day 7+ \u2014 MISMATCH, predicted Near Close). Melinda Saxe UNQUALIFIED (likely age). Kate Mulcahy follow-up tomorrow \u2014 critical test of structure after 3.6 regression.",
+          "the_moment": "Rebecca Light activated \u2014 Lucky Close resolved positively. But Renee Brereton's $111 pause approach (creative financial sensitivity) didn't hold. Pattern: Bailey's creative close approaches work on warm leads (Rebecca, Alenka) but not on financially constrained leads (Renee). The $111 needs to convert during the call, not as a delayed action.",
+          "drill": "Kate Mulcahy follow-up TOMORROW: Bailey MUST redirect to deepening before pitch. 'Kate, before I run through the program \u2014 tell me about Mason. What's been hardest for you?' The edge-of-bed bomb is available if he asks.",
+          "metric_to_watch": "Renee Brereton: Price Objection confirmed. Sophie Murphy: still Booked Call (cooling). Rebecca Light W1 confirmed \u2014 Lucky Close resolved. Close rate: 4/11 scored (36.4%). Including Amy same-day: 5/12."
+        },
+        {
+          "date": "2026-04-18",
+          "call_name": "Jade Wearing",
+          "outcome": "call_objection",
+          "overall_score": 2.8,
+          "scores": {
+            "s": 2,
+            "i": 1,
+            "e": 1,
+            "l": 2,
+            "opening": 2,
+            "oh": 1
+          },
+          "pattern": "CRITICAL REGRESSION x2 \u2014 Same pattern as Kate Mulcahy (3.6, yesterday). Jade is a DV survivor, type 1 diabetic, single mum of 2 (ADHD + autism). She said 'depleted mother syndrome,' 'no energy, hit my limits,' son 'feels no one gives a shit about him.' Bailey said 'I understand' 7+ times and jumped to pitch. ZERO deepening. No fear, stress, label, auth, dream, or pain stack. Called son 'teenage' when he was 8. No close attempt. This is Bailey's worst score since early days and directly follows Alenka (7.8). Pattern: when the PARENT DRIVES the conversation, Bailey is reactive and skips structure entirely.",
+          "the_moment": "Jade said 'he feels as though no one gives a shit about him. And I can completely get it, like I can understand how he feels that way, but how I change it, I just don't know.' Bailey said 'Yeah. Look, firstly, I really appreciate you sharing all that Jade' and went straight to pitch. One question: 'Jade, when he says that \u2014 that no one gives a shit about him \u2014 what does that do to you as his mum?' changes the entire call. The age concern might dissolve if the emotional anchor was strong enough.",
+          "key_strengths": [
+            "Warm and respectful \u2014 didn't pressure when Jade self-disqualified",
+            "Personal mentoring story to address online objection",
+            "Professional exit preserving future re-engagement opportunity",
+            "Acknowledged her situation without judgment"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "Structure + E",
+            "score": 1,
+            "headline": "WHEN THE PARENT DRIVES \u2014 YOU STILL DEEPEN",
+            "detail": "Two consecutive calls (Kate Mulcahy 3.6, Jade Wearing 2.8) where the parent drove the conversation and Bailey skipped all deepening. Jade handed him: DV, depleted mother syndrome, type 1 diabetes, 'no one gives a shit about him,' 'I don't know how to change it.' None explored. The rule: NO MATTER WHAT the parent says or asks \u2014 deepening happens BEFORE pitch. Period.",
+            "ceiling": "Without fixing: 2-4 ceiling when parent drives. With structure restored: 6+ (Alenka proved it same week)."
+          },
+          "drill": "PARENT-DRIVES REDIRECT: Review both Kate Mulcahy and Jade Wearing transcripts side by side. In both cases the parent asked questions or shared context, and Bailey answered/pitched immediately. Practice: when the parent shares something heavy or asks about the program \u2014 say 'Great question, Jade. Before I run through that, I just want to understand Riley's story so I can make it specific. Tell me \u2014 when he says no one gives a shit about him, what does that do to you?' 10 times. This is the SINGLE most important drill for Bailey right now.",
+          "assigned_drills": [
+            "parent_drives_redirect",
+            "fear_anchor",
+            "structure_discipline",
+            "self_review"
+          ],
+          "rye_coaching_role": [
+            "URGENT: Two consecutive CRITICAL calls. Sit with Bailey before Wednesday Keren Backshall DC",
+            "Review Jade Wearing + Kate Mulcahy back to back \u2014 identical pattern",
+            "Rule: even if the parent leads, Bailey MUST deepen before pitching",
+            "Role-play: Rye plays an assertive parent who drives \u2014 Bailey must redirect to deepening"
+          ],
+          "weekly_focus": {
+            "headline": "WHEN THE PARENT DRIVES \u2014 YOU STILL DEEPEN",
+            "detail": "Two CRITICAL regressions in 2 days after best-ever call. The pattern is binary: when Bailey follows structure (Alenka), he closes at 7.8. When the parent drives, he's reactive and scores 2.8-3.6. One habit: redirect to deepening before any pitch."
+          },
+          "key_learning": "Bailey's consistency is now the #1 coaching priority above E-score improvement. He CAN score 7.8 (Alenka). He also scores 2.8 when structure collapses. The trigger is clear: assertive/talkative parents who lead the conversation \u2192 Bailey becomes reactive. Fix is mechanical: any time a parent asks about the program or shares extensively \u2192 redirect to deepening first.",
+          "objections_faced": [
+            {
+              "category": "logistics",
+              "parent_quote": "I just feel like it's not exactly what I was sort of hoping. And that's just his age at the moment.",
+              "rep_response": "Accepted without exploration. 'No, I completely understand that.' No attempt to explore whether program could work at age 8.",
+              "grade": 1
+            },
+            {
+              "category": "logistics",
+              "parent_quote": "I don't want to give him that mixed message because I'm already trying to limit the online stuff.",
+              "rep_response": "Yeah. No, I get it. It's a new approach. Accepted.",
+              "grade": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-04-19",
+          "pattern": "LONGITUDINAL UPDATE \u2014 Renee Brereton DEGRADED from Price Objection to Call Objection. $111 pause approach did NOT convert. Amy Witnish Deposit Paid CONFIRMED (positive mismatch \u2014 scored 5.1, predicted FU, paid same-day via link). Alenka Strejcova: Deposit Paid, no W1 (Day 2 \u2014 normal). Kate Mulcahy: Follow Up Scheduled, Booked Call. Keren Backshall: setter call only, full DC booked Wednesday.",
+          "the_moment": "Renee degradation confirms: Bailey's creative close approaches (pause, delayed payment) don't hold. The $111 must convert during the call. Amy's same-day payment is a positive signal but the score gap (5.1 predicted FU) means it wasn't Bailey's close \u2014 Amy was warm enough to self-convert.",
+          "drill": "Wednesday: Keren Backshall full DC. Bailey MUST redirect to deepening before pitch regardless of what Keren says. The parent-drives-redirect drill is the #1 priority.",
+          "metric_to_watch": "Alenka W1 (Day 2). Amy W1. Keren Backshall DC Wednesday. E avg = 1.7."
         }
       ]
     },
@@ -606,23 +1121,25 @@
       "hubspot_owner_id": "89664116",
       "email": "tom@bluesandgreens.com.au",
       "status": "active",
-      "calls_scored": 9,
+      "calls_scored": 13,
       "rolling_10": {
         "overall": [
-          7.5,
-          5.2,
-          7.1,
           6.8,
           5.6,
           7.6,
           6.2,
           6.0,
-          6.0
+          6.0,
+          7.5,
+          5.2,
+          6.0,
+          7.0
         ],
         "s": [
           4,
-          3,
           4,
+          4,
+          3,
           4,
           4,
           4,
@@ -631,10 +1148,11 @@
           4
         ],
         "i": [
+          4,
           3,
           3,
-          4,
-          4,
+          3,
+          3,
           3,
           3,
           3,
@@ -642,32 +1160,35 @@
           3
         ],
         "e": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
           3,
           2,
-          4,
-          4,
-          3,
-          3,
-          3,
-          3,
           3
         ],
         "l": [
-          4,
-          3,
-          3,
           3,
           2,
           4,
           3,
           3,
-          3
+          3,
+          4,
+          2,
+          4,
+          4
         ],
         "opening": [
+          3,
           4,
           4,
-          3,
-          3,
+          4,
+          4,
           4,
           4,
           4,
@@ -675,39 +1196,40 @@
           4
         ],
         "oh": [
-          4,
-          2,
-          3,
           3,
           2,
           4,
           3,
           2,
-          2
+          2,
+          5,
+          2,
+          3,
+          4
         ]
       },
       "averages": {
-        "overall": 6.44,
-        "s": 3.78,
-        "i": 3.22,
-        "e": 3.11,
-        "l": 3.11,
-        "opening": 3.78,
-        "oh": 2.78
+        "overall": 6.39,
+        "s": 3.8,
+        "i": 3.1,
+        "e": 3.0,
+        "l": 3.2,
+        "opening": 3.9,
+        "oh": 3.0
       },
       "trend": {
-        "last_5_avg": 6.28,
-        "prior_5_avg": 6.65,
+        "last_5_avg": 6.34,
+        "prior_5_avg": 6.44,
         "direction": "declining",
-        "note": "Apr 11: Emily Brady CONFIRMED MISMATCH \u2014 14+ days since DC (Mar 31), still Booked Call in HubSpot. Follow-up stalled. Effectively COLD. Rebecca Smith still Booked Call \u2014 Saturday follow-up unknown/not converted. Kirian Andreou Call Objection confirmed (mismatch already flagged). NEW: Lou White (Apr 9) = Deposit Paid (unscored, no transcript). Larah Cornthwaite (Apr 8) = Follow Up (unscored). Lorissa Garcia W1 completed Apr 8 \u2705 \u2014 Active Sessions confirmed. James McLennan: STILL Deposit Paid, NO W1 after 10+ days \u2014 AT RISK. Close rate: 3/9 scored (33.3%). Including unscored Lou White close: 4/10 (40%). OH avg 2.78 declining. 5+ consecutive deferrals without $111 attempt."
+        "note": "Apr 19: Helen Savoulidis Deposit Paid CONFIRMED. Vanessa Fragapane Deposit Paid, no W1 (Day 5 \u2014 watch). $111 persistence confirmed across 3 consecutive calls. Close rate 5/13 (38.5%) \u2014 best on team."
       },
       "close_rate_vs_siel": {
-        "calls": 9,
-        "closes": 3,
-        "rate": 33.3,
+        "calls": 13,
+        "closes": 5,
+        "rate": 38.5,
         "avg_close_siel": 7.4,
-        "avg_miss_siel": 5.96,
-        "note": "Apr 11: Emily Brady MISMATCH confirmed \u2014 14 days, Booked Call, cold. Lou White = Deposit Paid (unscored). Larah Cornthwaite = Follow Up (unscored). Lorissa Garcia W1 Apr 8 \u2705. James McLennan Deposit Paid but NO W1 \u2014 10+ days, activation at risk. Scored: 3/9 (33.3%). Including unscored: 4/11 (36%). Emily Brady is the 2nd mismatch (after Elisabeth Poole). Both mismatches trace to deferral acceptance without $111 close attempt."
+        "avg_miss_siel": 6.01,
+        "note": "Apr 19: Helen + Vanessa both Deposit Paid. 5/13 (38.5%). $111 persistence locked in. E depth + partner plan = remaining ceiling."
       },
       "top_objections": [
         "son_buyin",
@@ -715,7 +1237,7 @@
         "think_about_it",
         "price_affordability"
       ],
-      "improvement_area": "$111 CLOSE ATTEMPT (CRITICAL). Four consecutive deferrals accepted without asking for the small commitment. Kirian had George at the psych with Anthony \u2014 partner already invested \u2014 and Tom still accepted 'I'll show George.' OH avg now 2.78. Declining: 4->3->2->2->2. Everything else holds (warm-up 3.78, pitch personalisation strong). The ONLY thing blocking Tom from 8+ calls is one question at the close.",
+      "improvement_area": "E DEPTH ON HEAVY MATERIAL \u2014 $111 close persistence is now locked in (Vanessa + Helen). The remaining ceiling is emotional cycling. Helen's DV disclosure was acknowledged but not fully cycled. When a parent reveals DV + sees the pattern in their child, stay for 2 cycles minimum. Name prep ritual confirmed clean on this call.",
       "p3_flag": false,
       "p3_note": "E avg = 3.14. Improving \u2014 Fear Anchor landed on James McLennan. Gap: low-urgency/analytical parents (Elisabeth Poole, Lorissa Garcia) don't self-reveal. Need opportunity-cost deepening sequence as alternative to fear bomb.",
       "coaching_history": [
@@ -1048,44 +1570,276 @@
           "the_moment": "Emily Brady said 'I'm in sales, I'm keen to do it' on Mar 31. Tom booked Tuesday. Tuesday came. Status didn't change. 14 days later: still Booked Call. The $111 was available on-call. It wasn't asked.",
           "drill": "$111 CLOSE ATTEMPT remains the SINGLE priority. Pattern now confirmed across 5+ calls: warm leads that defer without $111 attempt go cold. Lou White (Apr 9) closed \u2014 need transcript to verify if $111 was asked or if this was a high-fit self-close.",
           "metric_to_watch": "Emily Brady effectively cold. James McLennan W1 at risk (10+ days, no schedule). OH Score avg 2.78 \u2014 declining trend confirmed."
+        },
+        {
+          "date": "2026-04-14",
+          "call_name": "Vanessa Fragapane",
+          "outcome": "close",
+          "overall_score": 7.5,
+          "scores": {
+            "s": 4,
+            "i": 3,
+            "e": 3,
+            "l": 4,
+            "opening": 4,
+            "oh": 5
+          },
+          "pattern": "PATTERN BROKEN \u2014 First on-call $111 close in 6 calls. Vanessa was emotionally invested before the visible transcript (said 'I don't feel like I'm succeeding' and 'I know I need help'). Tom delivered $111 on-call, sent payment link, stayed on phone until payment processed AND activation path completed. NDIS question handled proactively. Norrie handoff clean. This is Tom's best close execution. HOWEVER: called Vanessa 'Kyle' near end of call \u2014 2nd name carryover error. TRANSCRIPT LIMITATION: Starts mid-call after phone disconnection. P1-P3 not visible. Score is partial \u2014 visible phases (P4-P6) averaged 4.3/5. Estimated P1-P3 conservatively.",
+          "the_moment": "Vanessa said 'I will put my hand up. I know I need help with this. I know I do. And yeah, I've tried to do it on my own. And yeah, I've tried to get people around me to help. And it's like I'm not getting anywhere.' Tom responded: 'And that's a big step. And I imagine a hard one to wear.' Good acknowledgement \u2014 but didn't ask a follow-up. 'What's been the hardest part of doing it on your own, Vanessa?' would have deepened. The close still happened because Vanessa was emotionally ready, but the depth was available.",
+          "key_strengths": [
+            "PATTERN BROKEN: $111 on-call, payment processed live \u2014 first time in 6 calls",
+            "Activation path completed on-call \u2014 walked Vanessa through parent portal, consent, questionnaire",
+            "NDIS handled proactively \u2014 Norrie handoff explained without hesitation",
+            "'Teenage boys translators' \u2014 natural pitch language, not scripted",
+            "'Giving Ashton that positive mirror' \u2014 bridge metaphor personalised",
+            "Stayed on phone through entire payment and activation process",
+            "'You're not locked into anything until he's engaged' \u2014 de-risk frame clean",
+            "Natural warmth while waiting for payment: asked about her day, nursing visit"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "Name Accuracy",
+            "score": null,
+            "headline": "Called Vanessa 'Kyle' \u2014 2nd Name Error in Scored History",
+            "detail": "Near the close, Tom said 'Kyle, I'm just so excited for you and Ashton.' Vanessa's name is not Kyle. This is the second name carryover error (previously called Riley 'Samuel' on Kristy Richards call). Low-frequency but HIGH trust impact. Fix: write parent name + son name on paper before every call. Say both names in first 2 minutes to anchor.",
+            "ceiling": "Name errors don't affect score directly but can break trust at the critical close moment."
+          },
+          "drill": "NAME PREP RITUAL (mandatory before every call): (1) Write PARENT NAME and SON NAME on paper/sticky note before dialling. (2) Say son's name in first 2 minutes of the call. (3) Use parent's name at least 3x before the pitch. This is now the 2nd occurrence. It's a pattern, not a one-off.",
+          "assigned_drills": [
+            "prep_ritual",
+            "fear_anchor",
+            "self_review",
+            "co_score_with_rye"
+          ],
+          "rye_coaching_role": [
+            "Review Vanessa Fragapane close \u2014 what made the $111 close happen this time?",
+            "Identify what changed from the 5 consecutive deferrals \u2014 was it the lead, the prep, or the drill?",
+            "Name prep ritual check: is Tom writing names before calls?",
+            "End-of-week debrief: has the pattern truly broken or was this a one-off warm lead?"
+          ],
+          "weekly_focus": {
+            "headline": "The $111 Pattern Is Broken \u2014 Now Lock It In",
+            "detail": "Vanessa Fragapane closed on-call. $111 paid, activation completed. 5 consecutive deferrals \u2192 1 clean close. The question: was this the lead (she was warm and ready) or was this Tom executing the drill (asking for $111 before accepting deferral)? Need next 2-3 calls to confirm. Name prep ritual is the new #1 priority."
+          },
+          "key_learning": "Tom CAN close on-call when the lead is warm and he follows through on the $111 sequence. The close was mechanically excellent \u2014 link sent, payment processed, activation completed, all while staying on the phone. This is what every close should look like. The name error is the shadow: even in his best close, a careless moment slipped through.",
+          "objections_faced": [
+            {
+              "category": "price_affordability",
+              "parent_quote": "I'm going to have to do weekly as opposed to paying it all at once.",
+              "rep_response": "Weekly's perfect. When you jump on that call with Norrie, we'll have a look at what's best.",
+              "grade": 4
+            }
+          ]
+        },
+        {
+          "date": "2026-04-15",
+          "call_name": "Karen Granato",
+          "outcome": "follow_up",
+          "overall_score": 5.2,
+          "scores": {
+            "s": 3,
+            "i": 3,
+            "e": 3,
+            "l": 2,
+            "opening": 4,
+            "oh": 2
+          },
+          "pattern": "DEFERRAL PATTERN RE-EMERGING. Karen revealed depression history, sees it in Gabriel's eyes, wants to cry. Tom acknowledged but pivoted to summary within 60 seconds. Derek objection (doesn't believe in mental health, travels constantly) identified but no plan offered. Every deferral accepted: info pack request \u2192 \"discuss with Derek\" \u2192 \"call after Tuesday next week.\" No Lighthouse offered. No urgency lever used (Gabriel happy in NSW holidays, regression when he returns to QLD).",
+          "the_moment": "Karen said \"I've been through depression and looking at him sometimes... I look in his eyes and... I feel like I want to cry all the time and that's how I see him.\" Tom acknowledged and moved to summary. That's a mother seeing her own depression reflected in her son. One question: \"Karen, when you see that in his eyes \u2014 what goes through you?\" holds the space and builds the emotional anchor.",
+          "key_strengths": [
+            "Natural warm-up despite renovation interruption",
+            "Good discovery \u2014 got the move impact, school incident, Derek dynamics",
+            "Clean pitch structure",
+            "Price delivery confident"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "E + OH",
+            "score": 2,
+            "headline": "Depression Disclosure + Every Deferral Accepted",
+            "detail": "Karen sees her own depression in Gabriel's eyes. Tom acknowledged and moved on. Then accepted every deferral without isolation. Derek objection needs a plan \u2014 offer a 5-min dad call.",
+            "ceiling": "Without fixing: 5.2. With E+OH at 3+: 7.5+"
+          },
+          "drill": "DEPRESSION MIRROR DRILL: When a parent reveals they see their own mental health struggle in their child \u2014 STOP. That is the deepest fear: history repeating. \"Karen, when you see that in his eyes \u2014 what goes through you?\" + DEREK PLAN DRILL: When partner doesn't believe in mental health \u2014 offer a 5-min call with the dad. \"Would it help if I had a quick chat with Derek? Sometimes dads hear it differently from another bloke.\"",
+          "assigned_drills": [
+            "fear_anchor",
+            "partner_plan",
+            "self_review",
+            "co_score_with_rye"
+          ],
+          "objections_faced": [
+            {
+              "category": "partner_coparent",
+              "parent_quote": "I need to discuss with Derek... he doesn't believe in mental health",
+              "rep_response": "Accepted. No plan offered for Derek. No isolation.",
+              "grade": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-04-15",
+          "call_name": "Noora M",
+          "outcome": "follow_up",
+          "overall_score": 6.0,
+          "scores": {
+            "s": 4,
+            "i": 3,
+            "e": 2,
+            "l": 4,
+            "opening": 4,
+            "oh": 3
+          },
+          "pattern": "LOW-URGENCY IMMIGRANT PARENT. Noora is a functional family, no crisis, son not at risk \u2014 same pattern as Elisabeth Poole. Fear question asked but got surface answer (\"I want him to enjoy his life\") \u2014 not cycled. Tom's E weakness on low-urgency parents confirmed. POSITIVE: Multiple $111 re-attempts after deferral \u2014 Tom tried to separate $111 from full commitment twice. Best close persistence from Tom in several calls.",
+          "the_moment": "Noora said \"I don't know exactly how school system works here. We've been here for 12 years but I haven't gone to school here myself.\" An immigrant mum who can't navigate the system her son needs to succeed in. Tom treated it as context. One question: \"Noora, what's it like wanting to guide Daniel but feeling like you don't have the map yourself?\" surfaces the isolation and makes the mentor essential.",
+          "key_strengths": [
+            "Multiple $111 re-anchor attempts \u2014 best close persistence in recent calls",
+            "Pitch personalised to education pathway and cultural values",
+            "Good awareness \u2014 offered to reschedule when Noora was on train",
+            "Clean price delivery \u2014 $2,700 stated once, confidently"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "E",
+            "score": 2,
+            "headline": "Low-Urgency Parents Need Different Depth",
+            "detail": "Noora's fear answer was aspirational, not existential. Standard fear bomb doesn't unlock depth when there's no crisis. The emotional depth is in HER experience \u2014 navigating a foreign system, unable to guide her son. \"What's it like not having the map?\" is the alternative to \"What worries you the most?\"",
+            "ceiling": "Without fixing: 6.0 on low-urgency. With alternative deepening: 7.5+"
+          },
+          "drill": "IMMIGRANT PARENT DEPTH: When a parent reveals they can't navigate the system \u2014 that IS the emotion. \"What's it like wanting to guide Daniel but not knowing how the system works?\" Practice 5 times. Also: LOW-URGENCY DEEPENING: When fear question gets a surface answer \u2014 reframe to opportunity cost: \"What would you regret most if you waited another 6 months?\"",
+          "assigned_drills": [
+            "opportunity_cost_deepening",
+            "immigrant_parent_depth",
+            "self_review",
+            "co_score_with_rye"
+          ],
+          "objections_faced": [
+            {
+              "category": "son_buyin",
+              "parent_quote": "Let me have a chat with Daniel first.",
+              "rep_response": "Multiple $111 re-anchoring attempts. Did not isolate.",
+              "grade": 3
+            },
+            {
+              "category": "trust_credibility",
+              "parent_quote": "I want to see some past reviews just before fully trusting the program.",
+              "rep_response": "Acknowledged, re-anchored on $111.",
+              "grade": 3
+            }
+          ]
+        },
+        {
+          "date": "2026-04-16",
+          "call_name": "Helen Savoulidis",
+          "outcome": "follow_up",
+          "overall_score": 7.0,
+          "scores": {
+            "s": 4,
+            "i": 3,
+            "e": 3,
+            "l": 4,
+            "opening": 4,
+            "oh": 4
+          },
+          "pattern": "$111 PERSISTENCE LOCKED IN \u2014 2nd consecutive call with 4+ close attempts (after Vanessa 7.5). Helen is a DV survivor on a remote farm, 5 kids, Chris showing father's aggression patterns. Helen was 100% committed \u2014 genuine payday constraint, not a dodge. Tom made 4 close attempts, acknowledged the ghosting risk honestly, booked specific 12pm tomorrow with parent portal walkthrough. DV disclosure: 'same as me against his father again' \u2014 Tom said 'frightening thought' but didn't cycle deeper. Helen pushed deeper herself ('flog his girlfriend around like his father did to me'). E=3 is an improvement from Karen (E=3) and Noora (E=2) but the DV material deserved 2 full cycles.",
+          "the_moment": "Helen said 'I'm not going to really stand a chance. It's going to be the same as me against his father again.' She's 5'5\", 50kg, survived DV, watching her son develop the same patterns. Tom said 'that sounds like a really frightening thought' \u2014 good \u2014 but didn't ask 'Helen, how long have you been sitting with that fear?' Helen then volunteered the deeper fear herself ('he's going to flog his girlfriend around') but that was HER pushing, not Tom guiding.",
+          "key_strengths": [
+            "4x $111 close attempts \u2014 pattern now LOCKED across 2 consecutive calls",
+            "'Regardless' frame from gold standard \u2014 executed naturally",
+            "DV acknowledged as 'frightening' and 'triggering' \u2014 stayed longer than recent calls",
+            "Self-aware ghosting prevention \u2014 honest and effective",
+            "Parent portal walkthrough for tomorrow \u2014 adds follow-up accountability",
+            "No name errors \u2014 clean throughout",
+            "Farm/daughter's 18th warm-up was genuinely natural"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "E",
+            "score": 3,
+            "headline": "DV Disclosure = Full Stop. Two Cycles Minimum.",
+            "detail": "Helen survived DV. She's watching her son develop the same patterns. She told you she can't physically stop him. That's the deepest material possible. You said 'frightening thought' \u2014 good. But one question: 'Helen, how long have you been sitting with that fear?' unlocks everything. She pushed deeper herself, but that was HER driving. On the next call with DV material, YOU guide the depth.",
+            "ceiling": "Without fixing E: 7.0 ceiling on high-conviction leads. With E at 4: 8.5+ because everything else is locked in."
+          },
+          "drill": "DV DEPTH DRILL: Review Helen Savoulidis transcript. Find 'same as me against his father again.' Practice: 'Helen, how long have you been sitting with that fear?' 5 times. Then: 'When you first saw those traits in Chris, what went through you?' 5 times. When a parent reveals DV + sees the pattern \u2014 FULL STOP. Stay for 2 cycles.",
+          "assigned_drills": [
+            "dv_depth",
+            "fear_anchor",
+            "self_review",
+            "co_score_with_rye"
+          ],
+          "rye_coaching_role": [
+            "Helen Savoulidis follow-up TOMORROW 12pm \u2014 Tom must process $111 on-call",
+            "Review DV depth moment \u2014 find 'same as against his father'",
+            "Celebrate the $111 persistence \u2014 this is now locked in across 2 calls",
+            "End-of-week debrief: $111 pattern confirmed. E depth is the remaining ceiling."
+          ],
+          "weekly_focus": {
+            "headline": "$111 Is Locked In \u2014 Now Anchor The Emotion",
+            "detail": "Vanessa + Helen = 2 consecutive calls with proper $111 persistence. The close behavior is automatic. The remaining ceiling is emotional depth: when a parent reveals DV or their deepest fear, stay for 2 full cycles before moving."
+          },
+          "key_learning": "Tom's close phase is now genuinely strong \u2014 4 attempts on Helen, payment processed on Vanessa. The coached behavior has become automatic. The gap has shifted from OH to E: Tom acknowledges heavy moments well but doesn't guide the depth. Helen pushed deeper herself \u2014 on a less motivated lead, that depth wouldn't happen without Tom guiding it.",
+          "objections_faced": [
+            {
+              "category": "price_affordability",
+              "parent_quote": "If I had it, I'd already put it through. I'm waiting for payday... I'm getting paid for two of my five kids.",
+              "rep_response": "4 close attempts: what changes between now and tomorrow, get the ball rolling today, $111 tricky today, did you have the $100 lets roll. Accepted gracefully when genuine.",
+              "grade": 4
+            }
+          ]
+        },
+        {
+          "date": "2026-04-17",
+          "pattern": "HELEN SAVOULIDIS FOLLOW-UP CLOSE CONFIRMED. Tom called back next day, Helen paid $111, activation completed, Chris on phone \u2014 excellent rapport (cooking conversation, Greek recipes). Tom's close persistence across 2 calls (DC: 4 attempts \u2192 follow-up: clean close) is now the team's best follow-up execution. Chris was funny, engaged, zero resistance to the program. This validates the DC score (7.0) and the $111 persistence pattern.",
+          "the_moment": "Chris got on the phone and Tom spent 15+ minutes in genuine conversation about cooking, Greek food, recipes. Chris: 'I want to be a comedian. Sit-down comedy.' Helen: 'Don't encourage it.' Tom: 'Chris, make sure you appreciate your mum's lasagna while you've got it.' The rapport was natural, warm, and Chris is clearly going to engage with a mentor.",
+          "drill": "Continue name prep ritual. Continue $111 persistence. E depth on DV/heavy material is the remaining ceiling.",
+          "metric_to_watch": "Helen W1. Vanessa W1. Close rate now 5/13 (38.5%) \u2014 best on team."
+        },
+        {
+          "date": "2026-04-18",
+          "pattern": "LONGITUDINAL UPDATE \u2014 Helen Savoulidis CONFIRMED Deposit Paid (Onboarding Booked in HubSpot). Vanessa Fragapane: Onboarding Booked, no W1 yet (Day 4 \u2014 normal). Karen Granato: hardened to Partner Objection (Derek sceptical). Noora M: hardened to Son Objection. Close rate: 5/13 (38.5%) \u2014 best on team. $111 persistence CONFIRMED across 3 consecutive calls.",
+          "the_moment": "Helen close validates the DC-to-follow-up pipeline: 4 close attempts on DC \u2192 clean close next day. Karen and Noora both hardened \u2014 Tom's weakness on low-urgency/sceptical-partner leads confirmed. Two outcome types: (1) warm, high-urgency leads = closes (Vanessa, Helen, Bec). (2) low-urgency or sceptical-partner = hardened objection (Elisabeth, Karen, Noora).",
+          "drill": "Continue $111 persistence. E depth on heavy material and PARTNER PLAN for sceptical partners are the remaining ceilings. For next DC with partner objection: offer 5-min dad call.",
+          "metric_to_watch": "Vanessa W1 (Day 4). Helen W1. Karen and Noora confirmed cold."
+        },
+        {
+          "date": "2026-04-19",
+          "pattern": "LONGITUDINAL UPDATE \u2014 Helen Savoulidis Deposit Paid CONFIRMED (Onboarding Booked in HubSpot, no W1 yet \u2014 Day 3). Vanessa Fragapane: still Deposit Paid, no W1 (Day 5 \u2014 watch). Both closes validate the $111 persistence pattern. Karen Granato: Partner Objection confirmed. Noora M: Son Objection confirmed. Close rate: 5/13 (38.5%) \u2014 best on team.",
+          "the_moment": "Tom's close pipeline: Vanessa (Day 5, no W1) and Helen (Day 3, no W1) both need W1 monitoring. Karen and Noora confirmed cold \u2014 low-urgency/sceptical-partner leads remain the gap.",
+          "drill": "Vanessa W1 monitoring \u2014 Day 5, at risk. Helen Day 3 \u2014 normal. Continue $111 persistence. E depth on heavy material is the remaining ceiling.",
+          "metric_to_watch": "Vanessa W1 (Day 5 \u2014 watch). Helen W1 (Day 3). Close rate: 5/13 (38.5%)."
         }
       ],
       "weekly_training": {
-        "week_of": "2026-04-10",
-        "headline": "FIFTH Consecutive Deferral Pattern \u2014 Close Phase Is Now The #1 Priority",
+        "week_of": "2026-04-14",
+        "headline": "Vanessa Breakthrough Followed by 2 More Deferrals \u2014 Lock In The Pattern",
         "where_you_stand": {
-          "calls_scored": 9,
-          "close_rate": "3/9 confirmed (33.3%) \u2014 flat",
-          "siel_score": 6.44,
-          "this_week": "Rebecca Smith (6.0), Kirian Andreou (6.0). Plus 2 unscored (Cara Brondolino, Magena Abua) \u2014 pending transcription.",
-          "pending": "Emily Brady still Booked Call \u2014 follow-up appears stalled. Rebecca Smith Saturday follow-up unknown. Lorissa Garcia W1 completed Apr 8 \u2705."
+          "calls_scored": 12,
+          "close_rate": "4/12 (33.3%)",
+          "siel_score": 6.4,
+          "this_week": "Vanessa (7.5 CLOSED), Karen Granato (5.2 FU), Noora M (6.0 FU), plus booking calls (Helen, Jennifer, Raishelle).",
+          "pending": "James McLennan W1 CRITICAL. Emily Brady confirmed cold. Helen Savoulidis DC booked tomorrow 11am."
         },
         "what_you_do_well": [
-          "Warm-up consistently natural \u2014 Mildura (Rebecca), IT issues (Kirian)",
-          "All deepening questions asked on every call",
-          "Dentist metaphor natural on every call",
-          "Pitch personalisation strong \u2014 bridge metaphor, psych connection",
-          "Professional follow-up proposals"
+          "Vanessa close execution \u2014 $111 on-call, full activation completed",
+          "Noora: multiple $111 re-attempts after deferral (best persistence yet)",
+          "Consistent natural warm-ups",
+          "Personalised pitches (education pathway for Noora, cultural values)",
+          "Price delivery always clean and confident"
         ],
         "one_thing_to_fix": {
-          "dimension": "OH/Close",
-          "headline": "Ask For The $111 ONCE Before Accepting ANY Deferral",
-          "detail": "Four+ consecutive deferrals accepted. Pattern confirmed and hardening. Every warm lead deferred without $111 attempt is a lost close.",
-          "ceiling_without": 6.0,
-          "ceiling_with": 8.5
+          "dimension": "E on low-urgency + OH isolation",
+          "headline": "Low-Urgency Parents Need Different Depth + Isolate Before Accepting",
+          "detail": "Karen and Noora are both functional families with no crisis. Standard fear bomb gets surface answers. Alternative: opportunity-cost deepening (\"What would you regret if you waited 6 months?\"). Also: Karen's Derek objection needed a plan (offer 5-min dad call). Noora's son buy-in needed isolation.",
+          "ceiling_without": "5-6 on low-urgency leads",
+          "ceiling_with": "7.5+ with alternative deepening + isolation"
         },
         "sessions": [
-          "small_yes_close",
-          "fear_anchor",
+          "opportunity_cost_deepening",
+          "partner_plan",
+          "prep_ritual",
           "self_review",
-          "co_score_with_rye",
-          "prep_ritual"
+          "co_score_with_rye"
         ],
         "rye_role": [
-          "Run Small YES Close drill using Kirian + Rebecca transcripts",
-          "Role-play partner deferral scenario \u2014 Tom must isolate before accepting",
-          "Check: did Tom attempt $111 on any call this week?",
-          "End-of-week debrief: has close rate improved?"
+          "Helen Savoulidis DC tomorrow at 11am \u2014 pre-call prep",
+          "Review Karen Granato: did Tom offer a Derek call plan?",
+          "Review Noora M: the $111 re-attempts were progress \u2014 build on it",
+          "Name prep ritual check"
         ]
       }
     }

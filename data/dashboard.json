@@ -1,42 +1,51 @@
 {
-  "last_updated": "2026-04-12T22:00:00+10:00",
-  "total_calls_scored": 24,
-  "reps_summary": {
+  "generated_at": "2026-04-19T22:00:00+10:00",
+  "summary": {
+    "total_calls_scored": 36,
+    "total_closes": 13,
+    "team_close_rate": 36.1,
+    "team_avg_siel": 7.47
+  },
+  "reps": {
     "anthony": {
-      "calls_scored": 5,
-      "overall_avg": 5.96,
-      "close_rate": 40.0,
-      "e_score_avg": 2.2,
-      "oh_score_avg": 3.2,
+      "calls_scored": 7,
+      "close_rate": 42.9,
+      "avg_overall": 5.94,
+      "avg_e": 2.14,
+      "avg_oh": 3.0,
       "trend": "holding",
-      "top_issue": "E (Emotional Labelling) \u2014 avg 2.2/5. Consistently uses generic labels. SECONDARY ALERT: OH Score has"
+      "improvement_area": "E (Emotional Labelling) \u2014 avg 2.14/5 across 7 calls. Suicide bomb (Jessica Cummings) and distance anxiety (Linda Harris) both walked past. POSITIVE: OH Score improving \u2014 $111 attempt before deferral on Jessica Cummings is the first time Anthony has executed this coached behavior. OH split: 3 (Jessica) / 2 (Linda). If OH holds at 3+ on next call, E becomes the sole gap.",
+      "p3_flag": false
     },
     "rye": {
       "calls_scored": 3,
-      "overall_avg": 5.17,
       "close_rate": 0.0,
-      "e_score_avg": 1.67,
-      "oh_score_avg": 2.67,
+      "avg_overall": 5.17,
+      "avg_e": 1.67,
+      "avg_oh": 2.67,
       "trend": "declining",
-      "top_issue": "PRICE CARD + FEAR BOMB CYCLING (primary). Jo Kelly mismatch now closed \u2014 re-engage window expired. N"
+      "improvement_area": "PRICE CARD + FEAR BOMB CYCLING (primary). Jo Kelly mismatch now closed \u2014 re-engage window expired. Next DC priorities: (1) Price card memorised \u2014 $2,700 / $450 fortnightly / $225 weekly / $900 monthly. No calculation ever. (2) Fear cycling \u2014 when mum reveals child pain, stop and cycle 2+ questions. (3) Execution of coached actions \u2014 Jo Kelly re-engage was explicitly coached and not executed. This is now a coaching accountability gap.",
+      "p3_flag": true
     },
     "bailey": {
-      "calls_scored": 6,
-      "overall_avg": 4.32,
-      "close_rate": 33.3,
-      "e_score_avg": 1.33,
-      "oh_score_avg": 2.67,
-      "trend": "improving",
-      "top_issue": "CRITICAL: E Score = 1.67 avg (6 calls). Rebecca Light closed at E=2 \u2014 same pattern as Jasmine Lund ("
+      "calls_scored": 12,
+      "close_rate": 36.4,
+      "avg_overall": 4.92,
+      "avg_e": 1.7,
+      "avg_oh": 2.4,
+      "trend": "volatile",
+      "improvement_area": "STRUCTURE DISCIPLINE IS NOW #1. Two CRITICAL calls in 2 days (Kate 3.6, Jade 2.8) after best-ever (Alenka 7.8). Pattern: when parent drives conversation, Bailey skips deepening entirely. E avg=1.64 (12 calls). The fix is ONE habit: redirect to deepening before any pitch, regardless of what the parent asks or says.",
+      "p3_flag": true
     },
     "tom": {
-      "calls_scored": 9,
-      "overall_avg": 6.44,
-      "close_rate": 33.3,
-      "e_score_avg": 3.11,
-      "oh_score_avg": 2.78,
+      "calls_scored": 13,
+      "close_rate": 38.5,
+      "avg_overall": 6.39,
+      "avg_e": 3.0,
+      "avg_oh": 3.0,
       "trend": "declining",
-      "top_issue": "$111 CLOSE ATTEMPT (CRITICAL). Four consecutive deferrals accepted without asking for the small comm"
+      "improvement_area": "E DEPTH ON HEAVY MATERIAL \u2014 $111 close persistence is now locked in (Vanessa + Helen). The remaining ceiling is emotional cycling. Helen's DV disclosure was acknowledged but not fully cycled. When a parent reveals DV + sees the pattern in their child, stay for 2 cycles minimum. Name prep ritual confirmed clean on this call.",
+      "p3_flag": false
     }
   }
 }

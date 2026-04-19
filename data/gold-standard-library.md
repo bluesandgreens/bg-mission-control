@@ -252,3 +252,39 @@ Harry speaks directly to the mum's isolation — she's been doing this alone for
 *Calls analysed: 19 (7 closed, 9 follow-up, 1 pending, 2 unresolved)*
 *Sources: Judith Lacey (Anthony/closed), Leanne Black (Anthony/closed), Kelly Wellsmore (Harry/closed), Sophie Cuzzy (Anthony/FU), Beck Reside (Anthony/FU), Jo Kelly (Rye/FU-unresolved), Tayla Colman (Anthony/FU), Steffany Campbell (Rye/FU), Jasmine Lund (Bailey/closed-lucky-reversed), Tiffany Fraser (Bailey/FU), Suzette Banks (Bailey/FU), Bec Richardson (Tom/closed), Bianca JESS (Rye/FU)*
 *New additions this pass: Tom's Dentist Metaphor (P5 Son Buy-In, grade 5), Tom's Payment Link Friction Recovery (P6)*
+
+---
+
+## Phase 3: Deepening — Bailey's E=3 Breakthrough
+
+### Bailey — Alenka Strejcova (CLOSED, April 17) ⭐ NEW — First E=3
+> Alenka: "He sometimes says oh you know when I grow up I'm just gonna be homeless and I'm not gonna do anything because I don't wanna do anything."
+> Bailey: "Wow. And this is what he's saying. That's what he's saying. At 9 years old, wow."
+> Alenka: "Yeah."
+> Bailey: "Pretty frightening I imagine it to hear coming from your nine-year-old boy."
+
+**Why it matters:** After 8 consecutive calls at E≤2, Bailey STAYED with the bomb for the first time. He showed genuine surprise, reflected the fear, and didn't redirect. Compare to every prior call where heavy disclosures got "Of course" or "I completely hear you" and a topic change. This isn't gold standard yet (Harry would have asked "What does it feel like hearing your nine-year-old say that?") but it's the breakthrough moment — proof Bailey CAN stay with emotional weight.
+
+**Assessment:** E=3, not 4. The missing piece: after reflecting the fear, Bailey moved to "how do you find he's engaging with supports?" (cognitive question) instead of "what does that feel like for you as his mum?" (emotional question). The habit is forming. One more step.
+
+---
+
+## Phase 6: Close — Follow-Up Close Execution
+
+### Tom — Helen Savoulidis (CLOSED on follow-up, April 17) ⭐ NEW — Best Follow-Up Execution
+> Tom: "I suppose did you want to try to line it up? Are you keen to give it a go and get Chris on a call?"
+> Helen: "Yep."
+> Tom: "Beautiful. I suppose the step there is getting that $111 onboarding and we can have a mentor reaching out over the next 48 hours."
+> Helen: "Yep, yep."
+> [Chris gets on the phone — 15 minutes of genuine cooking conversation, Greek recipes, family stories]
+> Tom: "Make sure you appreciate your mum's lasagna while you've got it."
+
+**Why it works:** Tom didn't re-sell. He confirmed readiness, stated the next step clearly, processed the payment, then spent 15 minutes building genuine rapport with Chris (the son). Chris was funny, engaged, and clearly warmed up. This validates the DC-to-close pipeline: 4 close attempts on the DC → clean follow-up close next day. The son engagement wasn't forced — it happened naturally because Tom was warm and Chris was curious. This is what follow-up closes should look like: no re-pitching, just relationship.
+
+**When to use:** Any follow-up close where the DC built value and the parent deferred to genuine logistics (payday). Open warm, confirm readiness, process payment, build son rapport.
+
+---
+
+*Last updated: April 17, 2026*
+*Calls analysed: 22 (9 closed, 10 follow-up, 1 call objection, 2 unresolved)*
+*New additions this pass: Bailey's E=3 Breakthrough (Alenka, P3), Tom's Follow-Up Close Execution (Helen, P6)*

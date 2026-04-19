@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-04-12",
-  "total_calls_analysed": 34,
+  "last_updated": "2026-04-19",
+  "total_calls_analysed": 47,
   "weekly_reset_date": "2026-03-28",
   "categories": {
     "price_affordability": {
-      "count": 15,
-      "last_week": 7,
+      "count": 22,
+      "last_week": 12,
       "trend": "increasing",
       "by_rep": {
-        "anthony": 1,
-        "bailey": 4,
+        "anthony": 3,
+        "bailey": 7,
         "rye": 2,
-        "tom": 8
+        "tom": 10
       },
       "avg_handling_grade": 1.8,
       "best_example": {
@@ -30,16 +30,16 @@
         "outcome_confirmed": "Booked Call (no close)",
         "note": "Worst price handling on record. Rep did not know his own payment plans, calculated live, retreated to email at first resistance. Bianca said 'I'll find a way' \u2014 a clear buying signal that Rye acknowledged with 'yeah yeah 100%' and booked a follow-up. Outcome confirmed: no close."
       },
-      "weekly_note": "Apr 12: Sophie Murphy (Bailey, Apr 11) \u2014 deferred $111 to Friday payday. Bailey accepted without isolation. Sophie had said 'sounds amazing' 30 seconds prior. Pattern: Bailey now has 4 price objection encounters, 0 isolations."
+      "weekly_note": "Apr 19: Renee Brereton (Bailey) DEGRADED to Call Objection. $111 pause approach confirmed failure. Kate Mulcahy (grade 1) and Jade Wearing (grade 1) \u2014 two CRITICAL price encounters in 2 days. Alenka (grade 4) \u2014 clean $111 close. Bailey binary: follows structure = closes, loses structure = critical."
     },
     "partner_coparent": {
-      "count": 9,
-      "last_week": 3,
+      "count": 12,
+      "last_week": 6,
       "trend": "increasing",
       "by_rep": {
-        "anthony": 3,
-        "tom": 3,
-        "bailey": 1
+        "anthony": 4,
+        "tom": 4,
+        "bailey": 2
       },
       "avg_handling_grade": 2.6,
       "best_example": {
@@ -58,15 +58,15 @@
         "outcome_confirmed": "Call Objection (HubSpot Apr 3)",
         "note": "CRITICAL miss: Jason had been on the call the entire time. Elizabeth cited him as the decision-maker. Tom accepted the deferral without turning to Jason directly. The sequence: turn to dad \u2014 'Jason, you've heard everything \u2014 does this feel like what Michael needs?' \u2014 was not used. Outcome hardened to Call Objection within 2 days. Both of this week's Call Objection outcomes trace to this same pattern."
       },
-      "weekly_note": "Apr 10: Jen Howgate (Bailey) \u2014 Jen deferred to Mark about finances, but Mark was ON THE CALL. Bailey never turned to Mark directly. This is the Elisabeth Poole/Kirian Andreou pattern now appearing in Bailey's calls too. Partner-on-call close miss is becoming a team-wide pattern."
+      "weekly_note": "Apr 19: Karen Granato CONFIRMED Partner Objection. Derek sceptical of mental health. No 5-min dad call offered. Amy Witnish: Cade deferred but Amy paid same-day (positive mismatch). Jessica Cummings: still Booked Call Day 6 \u2014 partner/co-parent objection holding."
     },
     "son_buyin": {
-      "count": 9,
-      "last_week": 3,
+      "count": 10,
+      "last_week": 4,
       "trend": "increasing",
       "by_rep": {
         "rye": 1,
-        "tom": 7
+        "tom": 8
       },
       "avg_handling_grade": 4.3,
       "best_example": {
@@ -78,7 +78,7 @@
         "note": "Mar 29 CONFIRMED: Bec Richardson = Deposit Paid. Tom's dentist metaphor + pre-emptive son buy-in handling contributed to a clean close. Grade 5 from confirmed close only."
       },
       "worst_example": null,
-      "weekly_note": "Apr 2 update: Tom's dentist metaphor now deployed on all 4 calls naturally. Pre-emptive handling is gold standard. New data point: Lorissa/Samuel (organised resistance), James/Tommy (flat no), Emily/Charlie (gaming distraction), Sky/Sam (guarded). All handled at 4/5 with dentist."
+      "weekly_note": "Apr 19: Noora M CONFIRMED Son Objection. Tom made multiple $111 re-attempts (progress) but Daniel buy-in not secured."
     },
     "timing_not_now": {
       "count": 1,
@@ -108,11 +108,12 @@
       "worst_example": null
     },
     "trust_credibility": {
-      "count": 1,
-      "last_week": 1,
+      "count": 3,
+      "last_week": 2,
       "trend": "stable",
       "by_rep": {
-        "anthony": 1
+        "anthony": 2,
+        "tom": 1
       },
       "avg_handling_grade": 3.0,
       "best_example": {
@@ -123,7 +124,8 @@
         "outcome_confirmed": "Follow Up Scheduled",
         "note": "Beck Reside confirmed Follow Up. The 'past failure' + financial constraint combination was likely unwinnable regardless. Anthony read the room correctly."
       },
-      "worst_example": null
+      "worst_example": null,
+      "weekly_note": "Apr 15: Noora M \u2014 \"I want to see some past reviews before fully trusting.\" Tom acknowledged. No proactive testimonials offered during pitch."
     },
     "past_failure": {
       "count": 1,
@@ -170,12 +172,12 @@
       }
     },
     "logistics": {
-      "count": 2,
+      "count": 4,
       "last_week": 2,
       "trend": "stable",
       "by_rep": {
         "anthony": 1,
-        "bailey": 1
+        "bailey": 3
       },
       "avg_handling_grade": 3.5,
       "best_example": {
@@ -186,7 +188,8 @@
         "outcome_confirmed": "Deposit Paid",
         "note": "CONFIRMED: Leanne Black = Deposit Paid. Pre-handling the logistics objection before it became a blocker = close. Know your lead's profile before the call."
       },
-      "worst_example": null
+      "worst_example": null,
+      "weekly_note": "Apr 18: Jade Wearing (Bailey) \u2014 two logistics objections: (1) age concern (son is 8, borderline), (2) online format conflicts with screen limitation goals. Both accepted without exploration. Grade 1 each. Bailey now 3/22 logistics encounters."
     },
     "emotional_overwhelm": {
       "count": 1,
@@ -211,23 +214,23 @@
     {
       "rank": 1,
       "category": "price_affordability",
-      "count": 14,
-      "avg_handling_grade": 2.1,
-      "note": "Apr 12 WEEKLY: Price remains #1 objection (15 total). Sophie Murphy (Bailey) deferred $111 to Friday \u2014 accepted without isolation. Bailey price handling: 0/4 isolations. Team-wide price handling grade declining."
+      "count": 22,
+      "avg_handling_grade": 1.9,
+      "note": "Apr 19: Renee Brereton degraded to Call Objection. 22 total price encounters. Bailey inconsistency confirmed: Alenka (grade 4 close) vs Kate/Jade (grade 1 each)."
     },
     {
       "rank": 2,
       "category": "partner_coparent",
-      "count": 10,
-      "avg_handling_grade": 2.4,
-      "note": "Apr 12 WEEKLY: Partner objections at 10. Stable this pass \u2014 neither new call had partner-on-call pattern."
+      "count": 12,
+      "avg_handling_grade": 2.5,
+      "note": "Apr 19: Karen Granato Partner Objection confirmed. Jessica Cummings still cooling. Amy Witnish paid despite Cade deferral."
     },
     {
       "rank": 3,
       "category": "son_buyin",
-      "count": 9,
-      "avg_handling_grade": 4.2,
-      "note": "STRENGTH \u2014 Dentist metaphor deployed consistently across Tom and Bailey calls. Best-handled objection category."
+      "count": 10,
+      "avg_handling_grade": 4.0,
+      "note": "Apr 19: Noora M Son Objection confirmed. Still best-handled category overall (avg 4.3)."
     }
   ],
   "new_patterns": [
@@ -402,6 +405,42 @@
         "tom"
       ],
       "recommendation": "Lucky Close Protocol must trigger within 48hrs of Deposit Paid for any call without deep emotional anchoring."
+    },
+    {
+      "date": "2026-04-13",
+      "pattern": "Pre-warmed lead from founder not converting \u2014 deepening script mismatch",
+      "description": "Linda Harris was pre-warmed by Harry (founder), dad on board, son open. Anthony ran the standard discovery/deepening script designed for crisis leads. Low-urgency, functional, two-parent family didn't have crisis material to cycle. Result: surface-level deepening, accepted deferral. This lead profile needs opportunity-cost framing not fear-bomb cycling.",
+      "reps_affected": [
+        "anthony"
+      ],
+      "recommendation": "For pre-warmed leads: skip standard discovery opener. Start with: 'I know you've been chatting with Harry \u2014 what specifically would you love to see for [son]?' Then fast-track to personalised pitch. Deepening focuses on opportunity-cost: 'What would you regret most if you waited another 6 months?'"
+    },
+    {
+      "date": "2026-04-13",
+      "pattern": "Ad comment section undermining trust pre-call",
+      "description": "Linda Harris raised mentor quality concerns from Facebook ad comments: 'druggies and stuff' applying to be mentors. This is a trust/credibility objection formed BEFORE the DC. First time this has surfaced in scored calls.",
+      "reps_affected": [
+        "anthony"
+      ],
+      "recommendation": "Marketing flag: review mentor application ad comments. Consider hiding/moderating. For reps: pre-handle with 'Our mentors go through 15 hours of training, background checks, and I personally match every family' BEFORE the pitch, not after."
+    },
+    {
+      "date": "2026-04-14",
+      "pattern": "Pre-warmed lead follow-up conversion despite low DC score",
+      "description": "Linda Harris (Anthony, DC score 5.5, E=2, OH=2) converted to Deposit Paid on follow-up. This was a Harry-warmed lead with dad on board. The DC was scored as weak in emotional depth and objection handling. But the follow-up converted. Pattern: pre-warmed leads from Harry may have higher conversion tolerance for DC quality gaps. Or: Anthony's follow-up execution is improving. Need W1 data to distinguish genuine conversion from delayed Lucky Close.",
+      "reps_affected": [
+        "anthony"
+      ],
+      "recommendation": "Monitor Linda Harris W1. If she activates: the pre-warmed lead playbook works even with lower DC quality. If W1 stalls: Lucky Close Protocol. Either way, this is positive data for Anthony's follow-up execution."
+    },
+    {
+      "date": "2026-04-15",
+      "pattern": "Sceptical partner who doesn't believe in mental health \u2014 needs proactive plan",
+      "description": "Karen Granato: Derek \"doesn't believe in mental health\" and travels constantly. This is different from the absent partner (Kristy Richards) or the passive partner (Elisabeth Poole). Derek is present in the family but ideologically opposed. Tom identified the blocker but offered no plan. Fix: offer a 5-min call with dad (\"sometimes dads hear it differently from another bloke\") or send a video testimonial from a sceptical dad who came around.",
+      "reps_affected": [
+        "tom"
+      ],
+      "recommendation": "SKEPTICAL PARTNER PLAN: When partner is identified as anti-mental-health: (1) Reframe B&G as NOT mental health \u2014 \"we're not counsellors, we're mentors. Think of it as a Big Brother, not therapy.\" (2) Offer a 5-min dad call. (3) If no dad call: send video testimonial from a sceptical dad in the program."
     }
   ]
 }
