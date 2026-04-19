@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-12T06:30:07.486626",
+  "generated": "2026-04-20T06:30:04.831317",
   "paused_subs": [
     {
       "name": "Judy Lacey (Son Jack)",
@@ -11,20 +11,29 @@
       "hs_member_status": "Active Sessions"
     },
     {
+      "name": "Brooke Miranda",
+      "email": "brookegm78@yahoo.com.au",
+      "amount": 940.0,
+      "resumes_at": "indefinite",
+      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TCG1m2mA5zLxyK819BJSq9C",
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
+    },
+    {
+      "name": "Aeshlie Wheeler",
+      "email": "Operations@tastalent.com",
+      "amount": 904.0,
+      "resumes_at": "indefinite",
+      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1TAJET2mA5zLxyK8ffd263uN",
+      "hs_url": "",
+      "hs_member_status": "Active Sessions"
+    },
+    {
       "name": "Natalie Brennan",
       "email": "nbrennan@gelatissimo.com.au",
       "amount": 1808.0,
       "resumes_at": "indefinite",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sylmv2mA5zLxyK8jXOFKBwl",
-      "hs_url": "",
-      "hs_member_status": "Active Sessions"
-    },
-    {
-      "name": "Alysha M Nation",
-      "email": "alysha_nation@outlook.com",
-      "amount": 1808.0,
-      "resumes_at": "indefinite",
-      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1Sqp092mA5zLxyK834krAn3L",
       "hs_url": "",
       "hs_member_status": "Active Sessions"
     },
@@ -52,15 +61,6 @@
       "amount": 2856.0,
       "resumes_at": "indefinite",
       "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SUvxI2mA5zLxyK8LrSQiiNK",
-      "hs_url": "",
-      "hs_member_status": "Active Sessions"
-    },
-    {
-      "name": "Gaby Welton",
-      "email": "gabys.kiddos@gmail.com",
-      "amount": 66.0,
-      "resumes_at": "indefinite",
-      "stripe_url": "https://dashboard.stripe.com/subscriptions/sub_1SS5pV2mA5zLxyK8Dci5AwnS",
       "hs_url": "",
       "hs_member_status": "Active Sessions"
     },
