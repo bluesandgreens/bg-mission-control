@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-19T22:00:00+10:00",
+  "last_updated": "2026-04-20T21:03:00+10:00",
   "reps": {
     "anthony": {
       "hubspot_owner_id": "87029276",
@@ -485,10 +485,9 @@
       "hubspot_owner_id": "88035516",
       "email": "bailey@bluesandgreens.com.au",
       "status": "active_commission",
-      "calls_scored": 12,
+      "calls_scored": 13,
       "rolling_10": {
         "overall": [
-          3.3,
           4.8,
           6.0,
           5.0,
@@ -497,10 +496,10 @@
           7.8,
           5.1,
           3.6,
-          2.8
+          2.8,
+          5.9
         ],
         "s": [
-          2,
           3,
           3,
           3,
@@ -509,10 +508,10 @@
           4,
           3,
           2,
-          2
+          2,
+          3
         ],
         "i": [
-          1,
           2,
           3,
           3,
@@ -521,11 +520,11 @@
           3,
           3,
           1,
-          1
+          1,
+          3
         ],
         "e": [
           1,
-          1,
           2,
           2,
           2,
@@ -533,11 +532,11 @@
           3,
           2,
           1,
-          1
+          1,
+          3
         ],
         "l": [
           2,
-          2,
           3,
           3,
           3,
@@ -545,10 +544,10 @@
           3,
           3,
           2,
-          2
+          2,
+          3
         ],
         "opening": [
-          2,
           3,
           3,
           3,
@@ -557,10 +556,10 @@
           4,
           3,
           3,
-          2
+          2,
+          3
         ],
         "oh": [
-          3,
           2,
           4,
           2,
@@ -569,38 +568,39 @@
           4,
           2,
           1,
-          1
+          1,
+          2
         ]
       },
       "averages": {
-        "overall": 4.92,
-        "s": 2.8,
-        "i": 2.3,
-        "e": 1.7,
-        "l": 2.6,
-        "opening": 2.9,
-        "oh": 2.4
+        "overall": 5.08,
+        "s": 2.9,
+        "i": 2.5,
+        "e": 1.9,
+        "l": 2.7,
+        "opening": 3.0,
+        "oh": 2.3
       },
       "trend": {
-        "last_5_avg": 4.88,
-        "prior_5_avg": 4.96,
-        "direction": "volatile",
-        "note": "Apr 19: Jade Wearing 2.8 CRITICAL confirmed. Renee Brereton DEGRADED to Call Objection. Amy Witnish Deposit Paid CONFIRMED. Alenka Strejcova Deposit Paid, no W1 (Day 2). Two CRITICAL calls in 2 days after best-ever. Consistency is THE gap."
+        "last_5_avg": 5.04,
+        "prior_5_avg": 5.12,
+        "direction": "recovering",
+        "note": "Apr 20: Sonne Holt 5.9 — recovery from 2.8/3.6 CRITICAL pair. E=3 for 2nd time (after Alenka). 'Weight on your shoulders' moment was genuine. BUT OH=2 again — price accepted without isolation. Custody crisis urgency lever available and unused at close. Consistency remains THE gap but E improvement is real."
       },
       "close_rate_vs_siel": {
-        "calls": 12,
+        "calls": 13,
         "closes": 4,
-        "rate": 36.4,
+        "rate": 30.8,
         "avg_close_siel": 6.2,
-        "avg_miss_siel": 4.33,
-        "note": "Apr 19: Amy Witnish Deposit Paid CONFIRMED (positive mismatch). Renee Brereton DEGRADED to Call Objection. Close rate: 4/12 scored (33.3%). Including Amy + unscored: 6/14 (42.9%). Alenka W1 pending (Day 2)."
+        "avg_miss_siel": 4.56,
+        "note": "Apr 20: Sonne Holt 5.9 Follow Up. Close rate: 4/13 scored (30.8%). Including Amy + unscored: 6/15 (40.0%). Alenka W1 pending (Day 3). Sonne Holt: custody crisis active, 48h think-about-it."
       },
       "top_objections": [
         "price_affordability",
         "partner_coparent",
         "logistics"
       ],
-      "improvement_area": "STRUCTURE DISCIPLINE IS NOW #1. Two CRITICAL calls in 2 days (Kate 3.6, Jade 2.8) after best-ever (Alenka 7.8). Pattern: when parent drives conversation, Bailey skips deepening entirely. E avg=1.64 (12 calls). The fix is ONE habit: redirect to deepening before any pitch, regardless of what the parent asks or says.",
+      "improvement_area": "OH (OBJECTION HANDLING) IS NOW #1. E improved to 3 for 2nd time (Alenka + Sonne). Structure recovered after 2 CRITICAL regressions. The remaining ceiling is BRIDGING emotion to close: Bailey builds the emotional case but doesn't USE it at the $111 close. Urgency bridge drill is the unlock. E avg=1.9 (13 calls, improving). OH avg=2.3 (stuck).",
       "p3_flag": true,
       "p3_note": "CRITICAL FLAG \u2014 E avg=1.67, I avg=2.0 across 6 calls. Rebecca Light close at E=2 is Lucky Close territory. Jasmine Lund reversal is the pattern baseline.",
       "coaching_history": [
@@ -1114,6 +1114,72 @@
           "the_moment": "Renee degradation confirms: Bailey's creative close approaches (pause, delayed payment) don't hold. The $111 must convert during the call. Amy's same-day payment is a positive signal but the score gap (5.1 predicted FU) means it wasn't Bailey's close \u2014 Amy was warm enough to self-convert.",
           "drill": "Wednesday: Keren Backshall full DC. Bailey MUST redirect to deepening before pitch regardless of what Keren says. The parent-drives-redirect drill is the #1 priority.",
           "metric_to_watch": "Alenka W1 (Day 2). Amy W1. Keren Backshall DC Wednesday. E avg = 1.7."
+        },
+        {
+          "date": "2026-04-20",
+          "call_name": "Sonne Holt",
+          "outcome": "follow_up",
+          "overall_score": 5.9,
+          "scores": {
+            "s": 3,
+            "i": 3,
+            "e": 3,
+            "l": 3,
+            "opening": 3,
+            "oh": 2
+          },
+          "pattern": "RECOVERING \u2014 E=3 for the 2nd time in 13 scored calls (after Alenka 7.8). 'It sounds like something that you really need as well... that weight will fall on your shoulders' was Bailey's best spontaneous emotional moment. He read the custody crisis (dad pulling away, Curtis cried today) and named Sonne's burden without a scripted prompt. Structure held: dream question asked, all deepening questions asked, pitch was comprehensive and personalised. BUT OH=2 \u2014 price objection accepted without isolation for the 7th time. Sonne confirmed value ('I absolutely do think it can help Curtis'), dad pulling away THIS WEEK, Curtis cried TODAY \u2014 the urgency lever was RIGHT THERE and Bailey never used it at the close. Pattern: E is improving. OH is stuck.",
+          "the_moment": "Sonne said 'I absolutely do' when asked if B&G could help Curtis. She had just told Bailey that dad is pulling away and Curtis cried about the routine change. Bailey's response to the objection: 'Yeah, it is an investment... completely understand that.' One line: 'Sone, you told me Curtis cried about the changes today. Dad is stepping back. The $111 gets someone in Curtis's corner THIS WEEK. Is that doable tonight?' The close was built. The emotion was established. The urgency was real. Bailey just didn't bridge it.",
+          "key_strengths": [
+            "E=3 \u2014 'that weight will fall on your shoulders' was genuine and spontaneous (not scripted)",
+            "Dream question asked script-perfectly",
+            "All deepening questions asked: stress (about HER), fear, auth, male role model",
+            "Pitch was comprehensive \u2014 all pillars, personalised bridge metaphor, online reframe handled",
+            "Proactively addressed younger son (10) as potential 2nd enrolment",
+            "Natural warm-up leveraging 2nd call rapport",
+            "'Back to being mum' \u2014 personalised bridge language",
+            "Value confirmation after objection: 'If we put money aside, do you think it can help?' \u2014 got YES"
+          ],
+          "one_thing_to_fix": {
+            "dimension": "OH",
+            "score": 2,
+            "headline": "Custody Crisis = Close Lever. Use It.",
+            "detail": "Dad is pulling away THIS WEEK. Curtis cried TODAY about the routine change. Sonne confirmed value. The $111 was the right play. But Bailey accepted 'I need to think about it' without isolation and without bridging the crisis to the urgency. One line: 'Sone, with everything happening with Dad right now, I'd hate for Curtis to sit with this on his own for another two weeks. The $111 gets someone in his corner THIS WEEK. Is that doable tonight?' Not said. Bailey was INCHES away \u2014 the intent was visible. The words weren't.",
+            "ceiling": "Without fixing OH: 5.5-6.0 ceiling. With OH at 3+: 7.5+ because E is now at 3 and structure is solid."
+          },
+          "drill": "URGENCY BRIDGE DRILL: When a parent reveals an ACTIVE crisis during the call (not historical, CURRENT), the close must reference it. Practice: 'Sone, you told me Curtis cried about the changes today. Dad is stepping back. The $111 gets someone in Curtis's corner THIS WEEK. Is that doable tonight so we can get moving?' Say it 5 times. The discipline: name the crisis, connect it to the $111, ask once.",
+          "assigned_drills": [
+            "urgency_bridge",
+            "fear_anchor",
+            "small_yes_close",
+            "self_review",
+            "co_score_with_rye"
+          ],
+          "rye_coaching_role": [
+            "Review Sonne Holt transcript \u2014 find the 'weight on your shoulders' moment. Celebrate it.",
+            "Run Urgency Bridge drill: when parent reveals active crisis, bridge it to the $111 close",
+            "Role-play: Rye plays Sonne at 'I need 48 hours to think' \u2014 Bailey must isolate and bridge",
+            "End-of-week debrief: E hit 3 for 2nd time. OH stuck at 2. What's the block?"
+          ],
+          "weekly_focus": {
+            "headline": "The Emotion Is There. Now Bridge It To The Close.",
+            "detail": "'Weight on your shoulders' was real empathy. Curtis cried today. Dad is pulling away. Sonne said yes to value. Bailey had every ingredient. The missing piece: one sentence connecting the crisis to the $111. That sentence is the difference between 5.9 and 7.5."
+          },
+          "key_learning": "Bailey's E improvement is REAL and holding \u2014 Alenka 3, Sonne 3. The spontaneous 'weight on your shoulders' moment proves the emotional read is developing. The gap has shifted: E is no longer the sole blocker. OH is now the primary ceiling. Bailey builds the emotional case but doesn't USE it at the close. The coached behavior (fear anchor, emotional labelling) is appearing. The next coached behavior ($111 close attempt using the emotional anchor) is the unlock.",
+          "objections_faced": [
+            {
+              "category": "price_affordability",
+              "parent_quote": "I really do think that I'm going to have to think about that. That's a lot of money... I may have to keep what I have for lawyers.",
+              "rep_response": "Yeah, it is an investment. 100% completely understand that.",
+              "grade": 2
+            },
+            {
+              "category": "timing",
+              "parent_quote": "Can you give me like maybe 48 hours to let me think about it?",
+              "rep_response": "For sure.",
+              "grade": 2
+            }
+          ]
         }
       ]
     },
